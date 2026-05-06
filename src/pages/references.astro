@@ -2,22 +2,38 @@
 import Layout from '@/layouts/Layout.astro';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { marked } from 'marked';
 
-// Read references.md at build time
-const refPath = resolve(process.cwd(), 'references.md');
-const referencesRaw = readFileSync(refPath, 'utf-8');
+// Strip YAML frontmatter, then render markdown → HTML
+const raw = readFileSync(resolve(process.cwd(), 'references.md'), 'utf-8');
+const withoutFrontmatter = raw.replace(/^---[\s\S]*?---\n/, '');
+
+// Configure marked: GFM enables bare-URL autolinking and tables
+marked.setOptions({ gfm: true });
+const html = await marked.parse(withoutFrontmatter);
 ---
 
 <Layout title="References" description="All sources cited in the OZ 2.0 resource, with last-checked dates.">
   <div class="max-w-3xl">
-    <h1 class="text-3xl font-bold mb-4">References</h1>
+    <h1 class="text-3xl font-bold mb-2">References</h1>
     <p class="text-oz-neutral-500 mb-8">
       Every claim in this resource links to an entry below.
       Each entry includes a <code class="text-xs bg-oz-neutral-100 px-1 py-0.5 rounded">last_checked</code> date.
     </p>
-    <div class="prose prose-sm max-w-none text-oz-neutral-700">
-      <!-- Raw references.md rendered — will use @astrojs/markdown-remark in full build -->
-      <pre class="whitespace-pre-wrap text-xs">{referencesRaw}</pre>
-    </div>
+
+    <div
+      class="
+        prose prose-sm max-w-none
+        prose-headings:font-semibold prose-headings:text-oz-neutral-900
+        prose-h2:text-lg prose-h2:mt-10 prose-h2:mb-3 prose-h2:border-b prose-h2:border-oz-neutral-200 prose-h2:pb-1
+        prose-h3:text-base prose-h3:mt-6 prose-h3:mb-2
+        prose-p:text-oz-neutral-700 prose-p:leading-relaxed prose-p:my-2
+        prose-a:text-oz-blue prose-a:underline hover:prose-a:text-oz-blue/80
+        prose-strong:text-oz-neutral-900
+        prose-code:text-xs prose-code:bg-oz-neutral-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+        prose-em:text-oz-neutral-500
+      "
+      set:html={html}
+    />
   </div>
 </Layout>

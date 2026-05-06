@@ -1,17 +1,20 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { getAllStates } from '@/lib/states';
 
-// Placeholder state list — will be replaced by state_metadata.yaml
-const states = [
-  { slug: 'alabama', name: 'Alabama', fips: '01', totalEligible: 563, ruralEligible: 302, tier: 'no_public_process' },
-  { slug: 'alaska', name: 'Alaska', fips: '02', totalEligible: 32, ruralEligible: 21, tier: 'no_public_process' },
-  { slug: 'arizona', name: 'Arizona', fips: '04', totalEligible: 500, ruralEligible: 137, tier: 'no_public_process' },
-  // TODO: populate remaining states from state_metadata.yaml
-];
+const states = getAllStates();
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+function deadlinePassed(s: ReturnType<typeof getAllStates>[number]) {
+  return s.state_deadline
+    ? new Date(s.state_deadline + 'T00:00:00') < today
+    : false;
+}
 
 const tierLabel: Record<string, string> = {
-  public_process: 'Public process',
-  contact_only:   'Contact only',
+  public_process:    'Public process',
+  contact_only:      'Contact only',
   no_public_process: 'No public process yet',
 };
 
@@ -19,6 +22,12 @@ const tierColor: Record<string, string> = {
   public_process:    'text-oz-green bg-green-50 border-green-200',
   contact_only:      'text-oz-amber bg-amber-50 border-amber-200',
   no_public_process: 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200',
+};
+
+const counts = {
+  public_process:    states.filter(s => s.status_tier === 'public_process').length,
+  contact_only:      states.filter(s => s.status_tier === 'contact_only').length,
+  no_public_process: states.filter(s => s.status_tier === 'no_public_process').length,
 };
 ---
 
@@ -31,10 +40,12 @@ const tierColor: Record<string, string> = {
     </p>
   </div>
 
-  <!-- Legend -->
+  <!-- Legend with live counts -->
   <div class="flex flex-wrap gap-3 mb-8 text-sm">
     {Object.entries(tierLabel).map(([key, label]) => (
-      <span class={`px-3 py-1 rounded border font-medium ${tierColor[key]}`}>{label}</span>
+      <span class={`px-3 py-1 rounded border font-medium ${tierColor[key]}`}>
+        {label} <span class="font-mono ml-1">({counts[key as keyof typeof counts]})</span>
+      </span>
     ))}
   </div>
 
@@ -46,17 +57,17 @@ const tierColor: Record<string, string> = {
       >
         <div class="flex items-start justify-between mb-3">
           <h2 class="font-semibold text-oz-neutral-900 group-hover:text-oz-blue transition-colors">{s.name}</h2>
-          <span class={`text-xs px-2 py-0.5 rounded border font-medium ${tierColor[s.tier]}`}>
-            {tierLabel[s.tier]}
+          <span class={`text-xs px-2 py-0.5 rounded border font-medium ${deadlinePassed(s) ? 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200' : tierColor[s.status_tier]}`}>
+            {deadlinePassed(s) ? 'Input closed' : tierLabel[s.status_tier]}
           </span>
         </div>
         <div class="flex gap-4 text-sm font-mono">
           <div>
-            <p class="text-oz-neutral-900 font-semibold">{s.totalEligible.toLocaleString()}</p>
+            <p class="text-oz-neutral-900 font-semibold">{s.total_eligible.toLocaleString()}</p>
             <p class="text-oz-neutral-500 text-xs">eligible</p>
           </div>
           <div>
-            <p class="text-oz-neutral-900 font-semibold">{s.ruralEligible.toLocaleString()}</p>
+            <p class="text-oz-neutral-900 font-semibold">{s.rural_eligible.toLocaleString()}</p>
             <p class="text-oz-neutral-500 text-xs">rural</p>
           </div>
         </div>

@@ -1,0 +1,3033 @@
+alabama:
+  name: Alabama
+  fips: '01'
+  slug: alabama
+  total_eligible: 563
+  rural_eligible: 302
+  pct_rural: 53.6
+  max_designations: 141
+  top10_counties:
+  - fips: '01073'
+    name: Jefferson County
+    eligible_count: 85
+  - fips: 01097
+    name: Mobile County
+    eligible_count: 54
+  - fips: '01101'
+    name: Montgomery County
+    eligible_count: 34
+  - fips: 01089
+    name: Madison County
+    eligible_count: 26
+  - fips: '01125'
+    name: Tuscaloosa County
+    eligible_count: 25
+  - fips: 01081
+    name: Lee County
+    eligible_count: 21
+  - fips: '01015'
+    name: Calhoun County
+    eligible_count: 16
+  - fips: '01047'
+    name: Dallas County
+    eligible_count: 15
+  - fips: 01049
+    name: DeKalb County
+    eligible_count: 13
+  - fips: '01055'
+    name: Etowah County
+    eligible_count: 13
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Alabama Department of Economic and Community Affairs (ADECA)
+    url: https://adeca.alabama.gov/opportunityzones/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: No OZ 2.0 process published as of 2026-05-05. ADECA is confirmed lead per
+    EIG map.
+alaska:
+  name: Alaska
+  fips: '02'
+  slug: alaska
+  total_eligible: 32
+  rural_eligible: 21
+  pct_rural: 65.6
+  max_designations: 8
+  top10_counties:
+  - fips: '02020'
+    name: Anchorage Municipality
+    eligible_count: 11
+  - fips: 02090
+    name: Fairbanks North Star Borough
+    eligible_count: 3
+  - fips: 02290
+    name: Yukon-Koyukuk Census Area
+    eligible_count: 3
+  - fips: '02050'
+    name: Bethel Census Area
+    eligible_count: 2
+  - fips: '02170'
+    name: Matanuska-Susitna Borough
+    eligible_count: 2
+  - fips: '02013'
+    name: Aleutians East Borough
+    eligible_count: 1
+  - fips: '02016'
+    name: Aleutians West Census Area
+    eligible_count: 1
+  - fips: '02070'
+    name: Dillingham Census Area
+    eligible_count: 1
+  - fips: '02150'
+    name: Kodiak Island Borough
+    eligible_count: 1
+  - fips: 02158
+    name: Kusilvak Census Area
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Alaska Dept. of Commerce, Community, and Economic Development
+    url: https://www.commerce.alaska.gov/web/
+    contact_email: dcced.commissioner@alaska.gov
+    contact_phone: (907) 465-2500
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published.
+arizona:
+  name: Arizona
+  fips: '04'
+  slug: arizona
+  total_eligible: 500
+  rural_eligible: 137
+  pct_rural: 27.4
+  max_designations: 125
+  top10_counties:
+  - fips: '04013'
+    name: Maricopa County
+    eligible_count: 238
+  - fips: 04019
+    name: Pima County
+    eligible_count: 88
+  - fips: '04021'
+    name: Pinal County
+    eligible_count: 28
+  - fips: '04027'
+    name: Yuma County
+    eligible_count: 24
+  - fips: '04015'
+    name: Mohave County
+    eligible_count: 22
+  - fips: '04017'
+    name: Navajo County
+    eligible_count: 21
+  - fips: '04003'
+    name: Cochise County
+    eligible_count: 15
+  - fips: '04001'
+    name: Apache County
+    eligible_count: 14
+  - fips: '04005'
+    name: Coconino County
+    eligible_count: 13
+  - fips: '04025'
+    name: Yavapai County
+    eligible_count: 13
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Arizona Commerce Authority (ACA)
+    url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
+    contact_email: oz@azcommerce.com
+    contact_phone: null
+  process: ACA published a recommendation process with criteria including investment-ready
+    sites, zoning, and infrastructure. Mapping tool in development. ACA intends to
+    submit to Treasury on or around July 1, 2026.
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Deadline described as mid-May 2026 but not officially set as of 2026-05-05.
+arkansas:
+  name: Arkansas
+  fips: '05'
+  slug: arkansas
+  total_eligible: 310
+  rural_eligible: 216
+  pct_rural: 69.7
+  max_designations: 78
+  top10_counties:
+  - fips: 05119
+    name: Pulaski County
+    eligible_count: 45
+  - fips: '05143'
+    name: Washington County
+    eligible_count: 19
+  - fips: 05069
+    name: Jefferson County
+    eligible_count: 13
+  - fips: '05035'
+    name: Crittenden County
+    eligible_count: 11
+  - fips: '05051'
+    name: Garland County
+    eligible_count: 11
+  - fips: '05031'
+    name: Craighead County
+    eligible_count: 10
+  - fips: '05145'
+    name: White County
+    eligible_count: 10
+  - fips: 05093
+    name: Mississippi County
+    eligible_count: 9
+  - fips: '05131'
+    name: Sebastian County
+    eligible_count: 9
+  - fips: 05091
+    name: Miller County
+    eligible_count: 8
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Arkansas Economic Development Commission (AEDC)
+    url: https://www.arkansasedc.com/community-resources/opportunity-zones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: AEDC page addresses OZ 1.0 only as of 2026-05-05. No OZ 2.0 guidance published.
+california:
+  name: California
+  fips: '06'
+  slug: california
+  total_eligible: 2469
+  rural_eligible: 345
+  pct_rural: 14.0
+  max_designations: 618
+  top10_counties:
+  - fips: '06037'
+    name: Los Angeles County
+    eligible_count: 835
+  - fips: '06073'
+    name: San Diego County
+    eligible_count: 171
+  - fips: '06071'
+    name: San Bernardino County
+    eligible_count: 133
+  - fips: '06001'
+    name: Alameda County
+    eligible_count: 112
+  - fips: '06065'
+    name: Riverside County
+    eligible_count: 111
+  - fips: '06067'
+    name: Sacramento County
+    eligible_count: 106
+  - fips: 06029
+    name: Kern County
+    eligible_count: 101
+  - fips: 06019
+    name: Fresno County
+    eligible_count: 98
+  - fips: 06085
+    name: Santa Clara County
+    eligible_count: 89
+  - fips: '06013'
+    name: Contra Costa County
+    eligible_count: 69
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Governor's Office of Business and Economic Development (GO-Biz)
+    url: https://business.ca.gov/resources/infrastructure-development/opportunity-zones-in-california/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders
+    to Help Center. No formal application or deadline published.
+colorado:
+  name: Colorado
+  fips: 08
+  slug: colorado
+  total_eligible: 360
+  rural_eligible: 101
+  pct_rural: 28.1
+  max_designations: 90
+  top10_counties:
+  - fips: 08031
+    name: Denver County
+    eligible_count: 51
+  - fips: 08001
+    name: Adams County
+    eligible_count: 43
+  - fips: 08005
+    name: Arapahoe County
+    eligible_count: 38
+  - fips: 08041
+    name: El Paso County
+    eligible_count: 36
+  - fips: 08123
+    name: Weld County
+    eligible_count: 21
+  - fips: 08059
+    name: Jefferson County
+    eligible_count: 20
+  - fips: 08069
+    name: Larimer County
+    eligible_count: 20
+  - fips: 08101
+    name: Pueblo County
+    eligible_count: 18
+  - fips: 08013
+    name: Boulder County
+    eligible_count: 14
+  - fips: 08043
+    name: Fremont County
+    eligible_count: 9
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Colorado Office of Economic Development and International Trade (OEDIT)
+    url: https://oedit.colorado.gov/colorado-opportunity-zone-program
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Multi-month stakeholder engagement underway. Public GIS mapping tool and
+    nomination feedback in development but not yet live as of 2026-05-05.
+connecticut:
+  name: Connecticut
+  fips: 09
+  slug: connecticut
+  total_eligible: 243
+  rural_eligible: 30
+  pct_rural: 12.3
+  max_designations: 61
+  top10_counties:
+  - fips: 09110
+    name: Capitol Planning Region
+    eligible_count: 72
+  - fips: 09120
+    name: Greater Bridgeport Planning Region
+    eligible_count: 41
+  - fips: 09170
+    name: South Central Connecticut Planning Region
+    eligible_count: 40
+  - fips: 09190
+    name: Western Connecticut Planning Region
+    eligible_count: 32
+  - fips: 09140
+    name: Naugatuck Valley Planning Region
+    eligible_count: 25
+  - fips: 09180
+    name: Southeastern Connecticut Planning Region
+    eligible_count: 17
+  - fips: 09160
+    name: Northwest Hills Planning Region
+    eligible_count: 7
+  - fips: 09130
+    name: Lower Connecticut River Valley Planning Region
+    eligible_count: 5
+  - fips: 09150
+    name: Northeastern Connecticut Planning Region
+    eligible_count: 4
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Connecticut Dept. of Economic and Community Development (DECD)
+    url: https://portal.ct.gov/DECD/Services/Business-Development/Tax-Incentives/Opportunity-Zones
+    contact_email: DECD.ozprojects@ct.gov
+    contact_phone: (860) 280-8710
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Contact confirmed. No application portal or deadline published.
+delaware:
+  name: Delaware
+  fips: '10'
+  slug: delaware
+  total_eligible: 61
+  rural_eligible: 22
+  pct_rural: 36.1
+  max_designations: 16
+  top10_counties:
+  - fips: '10003'
+    name: New Castle County
+    eligible_count: 39
+  - fips: '10005'
+    name: Sussex County
+    eligible_count: 14
+  - fips: '10001'
+    name: Kent County
+    eligible_count: 8
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Delaware Division of Small Business
+    url: https://business.delaware.gov/opportunity-zones/
+    contact_email: business@delaware.gov
+    contact_phone: (302) 739-4271
+  process: Formstack nomination portal launched March 2026. Community nomination deadline
+    May 15, 2026. Governor may nominate maximum 25 tracts.
+  scoring_rubric_url: null
+  state_deadline: '2026-05-15'
+  application_portal_url: https://degovforms.formstack.com/forms/opportunityzonenomination
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Nomination window closing or closed as of check date. No scoring rubric published.
+district-of-columbia:
+  name: District of Columbia
+  fips: '11'
+  slug: district-of-columbia
+  total_eligible: 66
+  rural_eligible: 0
+  pct_rural: 0.0
+  max_designations: 17
+  top10_counties:
+  - fips: '11001'
+    name: District of Columbia
+    eligible_count: 66
+  status_tier: no_public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: DC Office of the Deputy Mayor for Planning and Economic Development (DMPED)
+    url: null
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: DMPED presumed lead. No OZ 2.0 guidance published. DC eligible for statutory
+    minimum 25 zones.
+florida:
+  name: Florida
+  fips: '12'
+  slug: florida
+  total_eligible: 1360
+  rural_eligible: 284
+  pct_rural: 20.9
+  max_designations: 340
+  top10_counties:
+  - fips: '12086'
+    name: Miami-Dade County
+    eligible_count: 245
+  - fips: '12011'
+    name: Broward County
+    eligible_count: 100
+  - fips: '12057'
+    name: Hillsborough County
+    eligible_count: 95
+  - fips: '12095'
+    name: Orange County
+    eligible_count: 87
+  - fips: '12031'
+    name: Duval County
+    eligible_count: 86
+  - fips: '12099'
+    name: Palm Beach County
+    eligible_count: 71
+  - fips: '12105'
+    name: Polk County
+    eligible_count: 57
+  - fips: '12101'
+    name: Pasco County
+    eligible_count: 48
+  - fips: '12103'
+    name: Pinellas County
+    eligible_count: 47
+  - fips: '12071'
+    name: Lee County
+    eligible_count: 38
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: FloridaCommerce
+    url: https://floridajobs.org/business-growth-and-partnerships/for-businesses-and-entrepreneurs/business-resource/opportunity-zones-program
+    contact_email: null
+    contact_phone: null
+  process: FloridaCommerce ran a statewide OZ 2.0 Tour February–April 2026, soliciting
+    community recommendations. Public input window closed approximately April 30,
+    2026. State is now preparing gubernatorial recommendations.
+  scoring_rubric_url: null
+  state_deadline: '2026-04-30'
+  application_portal_url: https://www.floridajobs.org/OpportunityZones
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Public input window closed. 340 tracts to be nominated from 1,360 eligible.
+georgia:
+  name: Georgia
+  fips: '13'
+  slug: georgia
+  total_eligible: 942
+  rural_eligible: 421
+  pct_rural: 44.7
+  max_designations: 236
+  top10_counties:
+  - fips: '13121'
+    name: Fulton County
+    eligible_count: 101
+  - fips: '13089'
+    name: DeKalb County
+    eligible_count: 68
+  - fips: '13135'
+    name: Gwinnett County
+    eligible_count: 62
+  - fips: '13063'
+    name: Clayton County
+    eligible_count: 48
+  - fips: '13051'
+    name: Chatham County
+    eligible_count: 33
+  - fips: '13245'
+    name: Richmond County
+    eligible_count: 30
+  - fips: '13215'
+    name: Muscogee County
+    eligible_count: 27
+  - fips: '13021'
+    name: Bibb County
+    eligible_count: 25
+  - fips: '13067'
+    name: Cobb County
+    eligible_count: 24
+  - fips: '13095'
+    name: Dougherty County
+    eligible_count: 20
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Georgia Department of Community Affairs (DCA)
+    url: https://dca.georgia.gov/financing-tools/incentives/federal-opportunity-zones
+    contact_email: federalopportunityzones@dca.ga.gov
+    contact_phone: (404) 679-4840
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: DCA confirmed lead. No OZ 2.0 application or deadline published.
+hawaii:
+  name: Hawaii
+  fips: '15'
+  slug: hawaii
+  total_eligible: 88
+  rural_eligible: 35
+  pct_rural: 39.8
+  max_designations: 22
+  top10_counties:
+  - fips: '15003'
+    name: Honolulu County
+    eligible_count: 68
+  - fips: '15001'
+    name: Hawaii County
+    eligible_count: 16
+  - fips: '15009'
+    name: Maui County
+    eligible_count: 3
+  - fips: '15005'
+    name: Kalawao County
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Hawaii Dept. of Business, Economic Development and Tourism (DBEDT)
+    url: https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: DBEDT confirmed lead. No OZ 2.0 nomination guidance or deadline published.
+idaho:
+  name: Idaho
+  fips: '16'
+  slug: idaho
+  total_eligible: 80
+  rural_eligible: 32
+  pct_rural: 40.0
+  max_designations: 20
+  top10_counties:
+  - fips: '16001'
+    name: Ada County
+    eligible_count: 15
+  - fips: '16027'
+    name: Canyon County
+    eligible_count: 13
+  - fips: '16005'
+    name: Bannock County
+    eligible_count: 8
+  - fips: '16019'
+    name: Bonneville County
+    eligible_count: 5
+  - fips: '16083'
+    name: Twin Falls County
+    eligible_count: 5
+  - fips: '16017'
+    name: Bonner County
+    eligible_count: 4
+  - fips: '16055'
+    name: Kootenai County
+    eligible_count: 4
+  - fips: '16057'
+    name: Latah County
+    eligible_count: 4
+  - fips: '16065'
+    name: Madison County
+    eligible_count: 4
+  - fips: '16011'
+    name: Bingham County
+    eligible_count: 2
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Idaho Commerce
+    url: https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/
+    contact_email: OZ@commerce.idaho.gov
+    contact_phone: null
+  process: Idaho Commerce published a nomination portal for cities, counties, and
+    tribal governments. Deadline not yet published. Idaho subject to statutory minimum
+    of 25 zones.
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Portal live but deadline unknown as of 2026-05-05.
+illinois:
+  name: Illinois
+  fips: '17'
+  slug: illinois
+  total_eligible: 950
+  rural_eligible: 211
+  pct_rural: 22.2
+  max_designations: 238
+  top10_counties:
+  - fips: '17031'
+    name: Cook County
+    eligible_count: 477
+  - fips: '17201'
+    name: Winnebago County
+    eligible_count: 30
+  - fips: '17163'
+    name: St. Clair County
+    eligible_count: 27
+  - fips: '17197'
+    name: Will County
+    eligible_count: 26
+  - fips: '17089'
+    name: Kane County
+    eligible_count: 24
+  - fips: '17097'
+    name: Lake County
+    eligible_count: 24
+  - fips: '17143'
+    name: Peoria County
+    eligible_count: 21
+  - fips: '17167'
+    name: Sangamon County
+    eligible_count: 20
+  - fips: '17119'
+    name: Madison County
+    eligible_count: 19
+  - fips: '17115'
+    name: Macon County
+    eligible_count: 17
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Illinois Dept. of Commerce and Economic Opportunity (DCEO)
+    url: https://dceo.illinois.gov/oppzn.html
+    contact_email: opportunityzones@illinois.gov
+    contact_phone: null
+  process: DCEO published a live Smartsheet nomination form. Webinar recording and
+    FAQ available. No deadline published as of 2026-05-05.
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: https://app.smartsheet.com/b/form/047a54ef882c425694cfb626d9050041
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 238 tracts to be nominated from 950 eligible.
+indiana:
+  name: Indiana
+  fips: '18'
+  slug: indiana
+  total_eligible: 501
+  rural_eligible: 120
+  pct_rural: 24.0
+  max_designations: 126
+  top10_counties:
+  - fips: '18097'
+    name: Marion County
+    eligible_count: 121
+  - fips: '18089'
+    name: Lake County
+    eligible_count: 68
+  - fips: '18003'
+    name: Allen County
+    eligible_count: 31
+  - fips: '18141'
+    name: St. Joseph County
+    eligible_count: 30
+  - fips: '18163'
+    name: Vanderburgh County
+    eligible_count: 25
+  - fips: '18157'
+    name: Tippecanoe County
+    eligible_count: 19
+  - fips: '18095'
+    name: Madison County
+    eligible_count: 17
+  - fips: '18035'
+    name: Delaware County
+    eligible_count: 16
+  - fips: '18167'
+    name: Vigo County
+    eligible_count: 13
+  - fips: '18091'
+    name: LaPorte County
+    eligible_count: 12
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Indiana Economic Development Corporation (IEDC)
+    url: https://iedc.in.gov/program/indiana-opportunity-zones/overview
+    contact_email: null
+    contact_phone: (317) 232-8800
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: IEDC page references federal September 28, 2026 deadline. No internal state
+    application process published.
+iowa:
+  name: Iowa
+  fips: '19'
+  slug: iowa
+  total_eligible: 175
+  rural_eligible: 58
+  pct_rural: 33.1
+  max_designations: 44
+  top10_counties:
+  - fips: '19153'
+    name: Polk County
+    eligible_count: 34
+  - fips: '19013'
+    name: Black Hawk County
+    eligible_count: 15
+  - fips: '19113'
+    name: Linn County
+    eligible_count: 14
+  - fips: '19163'
+    name: Scott County
+    eligible_count: 12
+  - fips: '19155'
+    name: Pottawattamie County
+    eligible_count: 11
+  - fips: '19103'
+    name: Johnson County
+    eligible_count: 10
+  - fips: '19193'
+    name: Woodbury County
+    eligible_count: 10
+  - fips: '19169'
+    name: Story County
+    eligible_count: 8
+  - fips: '19179'
+    name: Wapello County
+    eligible_count: 6
+  - fips: '19007'
+    name: Appanoose County
+    eligible_count: 3
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Iowa Economic Development Authority (IEDA)
+    url: https://opportunityiowa.gov/community/revitalization/opportunity-zones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: IEDA confirmed lead. No OZ 2.0 nomination process published.
+kansas:
+  name: Kansas
+  fips: '20'
+  slug: kansas
+  total_eligible: 210
+  rural_eligible: 76
+  pct_rural: 36.2
+  max_designations: 53
+  top10_counties:
+  - fips: '20173'
+    name: Sedgwick County
+    eligible_count: 52
+  - fips: '20209'
+    name: Wyandotte County
+    eligible_count: 38
+  - fips: '20177'
+    name: Shawnee County
+    eligible_count: 16
+  - fips: '20091'
+    name: Johnson County
+    eligible_count: 12
+  - fips: '20045'
+    name: Douglas County
+    eligible_count: 9
+  - fips: '20161'
+    name: Riley County
+    eligible_count: 8
+  - fips: '20037'
+    name: Crawford County
+    eligible_count: 7
+  - fips: '20125'
+    name: Montgomery County
+    eligible_count: 7
+  - fips: '20169'
+    name: Saline County
+    eligible_count: 6
+  - fips: '20061'
+    name: Geary County
+    eligible_count: 5
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Kansas Department of Commerce
+    url: https://www.kansascommerce.gov/opportunity-zones-2-0/
+    contact_email: OZ@kansascommerce.gov
+    contact_phone: null
+  process: Community nominations due June 1, 2026 via email to OZ@kansascommerce.gov.
+    Scoring matrix published. No online portal — email submission only. Workshops
+    offered.
+  scoring_rubric_url: https://www.kansascommerce.gov/opportunity-zones-2-0/
+  state_deadline: '2026-06-01'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 53 tracts to be nominated.
+kentucky:
+  name: Kentucky
+  fips: '21'
+  slug: kentucky
+  total_eligible: 545
+  rural_eligible: 381
+  pct_rural: 69.9
+  max_designations: 137
+  top10_counties:
+  - fips: '21111'
+    name: Jefferson County
+    eligible_count: 86
+  - fips: '21067'
+    name: Fayette County
+    eligible_count: 29
+  - fips: '21195'
+    name: Pike County
+    eligible_count: 17
+  - fips: '21199'
+    name: Pulaski County
+    eligible_count: 14
+  - fips: '21117'
+    name: Kenton County
+    eligible_count: 13
+  - fips: '21071'
+    name: Floyd County
+    eligible_count: 12
+  - fips: '21121'
+    name: Knox County
+    eligible_count: 10
+  - fips: '21151'
+    name: Madison County
+    eligible_count: 10
+  - fips: '21227'
+    name: Warren County
+    eligible_count: 10
+  - fips: '21047'
+    name: Christian County
+    eligible_count: 9
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Kentucky Cabinet for Economic Development
+    url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
+    contact_email: null
+    contact_phone: (502) 564-7670
+  process: Application (XLSX) and criteria guidance (DOCX) downloadable from state
+    page. Deadline May 29, 2026. No online portal — file download and email submission.
+    Webinar held March 3, 2026.
+  scoring_rubric_url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
+  state_deadline: '2026-05-29'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 'Contacts: Deven Richardson (Director), Scott Moseley (Project Manager).
+    137 tracts to be nominated.'
+louisiana:
+  name: Louisiana
+  fips: '22'
+  slug: louisiana
+  total_eligible: 620
+  rural_eligible: 309
+  pct_rural: 49.8
+  max_designations: 155
+  top10_counties:
+  - fips: '22071'
+    name: Orleans Parish
+    eligible_count: 93
+  - fips: '22033'
+    name: East Baton Rouge Parish
+    eligible_count: 53
+  - fips: '22051'
+    name: Jefferson Parish
+    eligible_count: 50
+  - fips: '22017'
+    name: Caddo Parish
+    eligible_count: 39
+  - fips: '22055'
+    name: Lafayette Parish
+    eligible_count: 26
+  - fips: '22019'
+    name: Calcasieu Parish
+    eligible_count: 23
+  - fips: '22073'
+    name: Ouachita Parish
+    eligible_count: 21
+  - fips: '22097'
+    name: St. Landry Parish
+    eligible_count: 21
+  - fips: '22079'
+    name: Rapides Parish
+    eligible_count: 19
+  - fips: '22015'
+    name: Bossier Parish
+    eligible_count: 13
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Louisiana Economic Development (LED)
+    url: https://www.opportunitylouisiana.gov/incentive/federal-opportunity-zones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: LED confirmed lead. No OZ 2.0 nomination process published.
+maine:
+  name: Maine
+  fips: '23'
+  slug: maine
+  total_eligible: 78
+  rural_eligible: 74
+  pct_rural: 94.9
+  max_designations: 20
+  top10_counties:
+  - fips: '23019'
+    name: Penobscot County
+    eligible_count: 14
+  - fips: '23001'
+    name: Androscoggin County
+    eligible_count: 9
+  - fips: '23003'
+    name: Aroostook County
+    eligible_count: 9
+  - fips: '23005'
+    name: Cumberland County
+    eligible_count: 8
+  - fips: '23017'
+    name: Oxford County
+    eligible_count: 7
+  - fips: '23031'
+    name: York County
+    eligible_count: 7
+  - fips: '23011'
+    name: Kennebec County
+    eligible_count: 6
+  - fips: '23021'
+    name: Piscataquis County
+    eligible_count: 6
+  - fips: '23025'
+    name: Somerset County
+    eligible_count: 6
+  - fips: '23029'
+    name: Washington County
+    eligible_count: 3
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Maine Dept. of Economic and Community Development (DECD)
+    url: https://www.maine.gov/decd/business-development/financial-incentives-resources/opportunity-zones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: DECD confirmed lead. No OZ 2.0 guidance published.
+maryland:
+  name: Maryland
+  fips: '24'
+  slug: maryland
+  total_eligible: 451
+  rural_eligible: 77
+  pct_rural: 17.1
+  max_designations: 113
+  top10_counties:
+  - fips: '24510'
+    name: Baltimore city
+    eligible_count: 138
+  - fips: '24033'
+    name: Prince George's County
+    eligible_count: 103
+  - fips: '24005'
+    name: Baltimore County
+    eligible_count: 60
+  - fips: '24031'
+    name: Montgomery County
+    eligible_count: 49
+  - fips: '24001'
+    name: Allegany County
+    eligible_count: 19
+  - fips: '24021'
+    name: Frederick County
+    eligible_count: 14
+  - fips: '24003'
+    name: Anne Arundel County
+    eligible_count: 9
+  - fips: '24019'
+    name: Dorchester County
+    eligible_count: 7
+  - fips: '24025'
+    name: Harford County
+    eligible_count: 7
+  - fips: '24043'
+    name: Washington County
+    eligible_count: 7
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Maryland Dept. of Housing and Community Development (DHCD) / MD Commerce
+    url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 'Dual-agency lead: DHCD + Commerce. Page addresses OZ 1.0 only. No OZ 2.0
+    guidance published.'
+massachusetts:
+  name: Massachusetts
+  fips: '25'
+  slug: massachusetts
+  total_eligible: 410
+  rural_eligible: 58
+  pct_rural: 14.1
+  max_designations: 103
+  top10_counties:
+  - fips: '25025'
+    name: Suffolk County
+    eligible_count: 112
+  - fips: '25009'
+    name: Essex County
+    eligible_count: 56
+  - fips: '25017'
+    name: Middlesex County
+    eligible_count: 49
+  - fips: '25027'
+    name: Worcester County
+    eligible_count: 49
+  - fips: '25005'
+    name: Bristol County
+    eligible_count: 46
+  - fips: '25013'
+    name: Hampden County
+    eligible_count: 41
+  - fips: '25023'
+    name: Plymouth County
+    eligible_count: 22
+  - fips: '25021'
+    name: Norfolk County
+    eligible_count: 8
+  - fips: '25003'
+    name: Berkshire County
+    eligible_count: 7
+  - fips: '25011'
+    name: Franklin County
+    eligible_count: 7
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Massachusetts Office of Business Development (MOBD)
+    url: https://www.mass.gov/opportunity-zone-program
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: MOBD confirmed lead. No OZ 2.0 application or deadline published.
+michigan:
+  name: Michigan
+  fips: '26'
+  slug: michigan
+  total_eligible: 856
+  rural_eligible: 251
+  pct_rural: 29.3
+  max_designations: 214
+  top10_counties:
+  - fips: '26163'
+    name: Wayne County
+    eligible_count: 333
+  - fips: '26049'
+    name: Genesee County
+    eligible_count: 56
+  - fips: '26099'
+    name: Macomb County
+    eligible_count: 45
+  - fips: '26125'
+    name: Oakland County
+    eligible_count: 34
+  - fips: '26161'
+    name: Washtenaw County
+    eligible_count: 34
+  - fips: '26081'
+    name: Kent County
+    eligible_count: 32
+  - fips: '26065'
+    name: Ingham County
+    eligible_count: 31
+  - fips: '26077'
+    name: Kalamazoo County
+    eligible_count: 25
+  - fips: '26145'
+    name: Saginaw County
+    eligible_count: 25
+  - fips: '26025'
+    name: Calhoun County
+    eligible_count: 15
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Michigan Economic Development Corporation (MEDC) / MSHDA
+    url: https://www.michigan.gov/opportunityzones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
+    published.
+minnesota:
+  name: Minnesota
+  fips: '27'
+  slug: minnesota
+  total_eligible: 289
+  rural_eligible: 107
+  pct_rural: 37.0
+  max_designations: 73
+  top10_counties:
+  - fips: '27053'
+    name: Hennepin County
+    eligible_count: 73
+  - fips: '27123'
+    name: Ramsey County
+    eligible_count: 45
+  - fips: '27003'
+    name: Anoka County
+    eligible_count: 21
+  - fips: '27137'
+    name: St. Louis County
+    eligible_count: 16
+  - fips: '27145'
+    name: Stearns County
+    eligible_count: 9
+  - fips: '27061'
+    name: Itasca County
+    eligible_count: 8
+  - fips: '27037'
+    name: Dakota County
+    eligible_count: 7
+  - fips: '27109'
+    name: Olmsted County
+    eligible_count: 6
+  - fips: '27095'
+    name: Mille Lacs County
+    eligible_count: 5
+  - fips: '27007'
+    name: Beltrami County
+    eligible_count: 4
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Minnesota Dept. of Employment and Economic Development (DEED)
+    url: https://mn.gov/deed/opportunityzones/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: DEED page explicitly states more information will be posted when the July
+    1, 2026 window opens. No application or deadline published.
+mississippi:
+  name: Mississippi
+  fips: '28'
+  slug: mississippi
+  total_eligible: 404
+  rural_eligible: 320
+  pct_rural: 79.2
+  max_designations: 101
+  top10_counties:
+  - fips: '28049'
+    name: Hinds County
+    eligible_count: 42
+  - fips: '28047'
+    name: Harrison County
+    eligible_count: 30
+  - fips: '28151'
+    name: Washington County
+    eligible_count: 15
+  - fips: '28059'
+    name: Jackson County
+    eligible_count: 14
+  - fips: '28075'
+    name: Lauderdale County
+    eligible_count: 14
+  - fips: '28035'
+    name: Forrest County
+    eligible_count: 11
+  - fips: '28113'
+    name: Pike County
+    eligible_count: 9
+  - fips: '28033'
+    name: DeSoto County
+    eligible_count: 8
+  - fips: '28093'
+    name: Marshall County
+    eligible_count: 8
+  - fips: '28105'
+    name: Oktibbeha County
+    eligible_count: 8
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Mississippi Development Authority (MDA)
+    url: https://mississippi.org/community-resources/opportunity-zones/
+    contact_email: tclimer@mississippi.org
+    contact_phone: (601) 359-9387
+  process: 'Live public feedback form open through May 31, 2026. Four listening sessions
+    held April–May across congressional districts. Contact: Tim T. Climer, PCED, Community
+    and Rural Development.'
+  scoring_rubric_url: null
+  state_deadline: '2026-05-31'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 101 tracts to be nominated from 404 eligible. No formal scoring rubric published.
+missouri:
+  name: Missouri
+  fips: '29'
+  slug: missouri
+  total_eligible: 523
+  rural_eligible: 220
+  pct_rural: 42.1
+  max_designations: 131
+  top10_counties:
+  - fips: '29095'
+    name: Jackson County
+    eligible_count: 101
+  - fips: '29510'
+    name: St. Louis city
+    eligible_count: 66
+  - fips: '29189'
+    name: St. Louis County
+    eligible_count: 57
+  - fips: '29077'
+    name: Greene County
+    eligible_count: 24
+  - fips: '29019'
+    name: Boone County
+    eligible_count: 14
+  - fips: '29021'
+    name: Buchanan County
+    eligible_count: 11
+  - fips: '29047'
+    name: Clay County
+    eligible_count: 10
+  - fips: '29187'
+    name: St. Francois County
+    eligible_count: 10
+  - fips: '29097'
+    name: Jasper County
+    eligible_count: 9
+  - fips: '29069'
+    name: Dunklin County
+    eligible_count: 8
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Missouri Dept. of Economic Development (DED)
+    url: https://ded.mo.gov/programs/business-community/opportunity-zones
+    contact_email: OpportunityZones@ded.mo.gov
+    contact_phone: null
+  process: Submittable portal open April 7–May 17, 2026. DED reviews May–June, releases
+    tentative recommendations for public comment in July, finalizes for governor in
+    August, submits August, effective January 2027.
+  scoring_rubric_url: null
+  state_deadline: '2026-05-17'
+  application_portal_url: https://modedfederalinitiatives.submittable.com/submit/e2490327-5b12-4d24-9c90-64092f51f7ad/missouri-opportunity-zones-2-0-program-intake-form
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 131 tracts to be nominated from 523 eligible.
+montana:
+  name: Montana
+  fips: '30'
+  slug: montana
+  total_eligible: 58
+  rural_eligible: 37
+  pct_rural: 63.8
+  max_designations: 15
+  top10_counties:
+  - fips: '30111'
+    name: Yellowstone County
+    eligible_count: 8
+  - fips: '30063'
+    name: Missoula County
+    eligible_count: 6
+  - fips: '30003'
+    name: Big Horn County
+    eligible_count: 4
+  - fips: '30013'
+    name: Cascade County
+    eligible_count: 4
+  - fips: '30029'
+    name: Flathead County
+    eligible_count: 4
+  - fips: '30035'
+    name: Glacier County
+    eligible_count: 4
+  - fips: '30031'
+    name: Gallatin County
+    eligible_count: 3
+  - fips: '30041'
+    name: Hill County
+    eligible_count: 3
+  - fips: '30053'
+    name: Lincoln County
+    eligible_count: 3
+  - fips: '30005'
+    name: Blaine County
+    eligible_count: 2
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Montana Dept. of Commerce, Community Development Division
+    url: https://commerce.mt.gov/Infrastructure-Planning/Resources/Opportunity-Zones/
+    contact_email: null
+    contact_phone: (406) 841-2700
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum.
+    No OZ 2.0 guidance published.
+nebraska:
+  name: Nebraska
+  fips: '31'
+  slug: nebraska
+  total_eligible: 112
+  rural_eligible: 28
+  pct_rural: 25.0
+  max_designations: 28
+  top10_counties:
+  - fips: '31055'
+    name: Douglas County
+    eligible_count: 54
+  - fips: '31109'
+    name: Lancaster County
+    eligible_count: 22
+  - fips: '31153'
+    name: Sarpy County
+    eligible_count: 4
+  - fips: '31079'
+    name: Hall County
+    eligible_count: 3
+  - fips: '31001'
+    name: Adams County
+    eligible_count: 2
+  - fips: '31019'
+    name: Buffalo County
+    eligible_count: 2
+  - fips: '31111'
+    name: Lincoln County
+    eligible_count: 2
+  - fips: '31119'
+    name: Madison County
+    eligible_count: 2
+  - fips: '31013'
+    name: Box Butte County
+    eligible_count: 1
+  - fips: '31021'
+    name: Burt County
+    eligible_count: 1
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Nebraska Dept. of Economic Development (DED)
+    url: https://opportunity.nebraska.gov/programs/business/opportunity-zones/
+    contact_email: ded.opportunityzones@nebraska.gov
+    contact_phone: (402) 471-3063
+  process: Application period ran March 2–May 1, 2026 (now closed). DED reviewing
+    submissions for gubernatorial recommendation. Final selections announced after
+    Treasury approval.
+  scoring_rubric_url: null
+  state_deadline: '2026-05-01'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Application window closed. 28 tracts to be nominated from 112 eligible.
+nevada:
+  name: Nevada
+  fips: '32'
+  slug: nevada
+  total_eligible: 195
+  rural_eligible: 25
+  pct_rural: 12.8
+  max_designations: 49
+  top10_counties:
+  - fips: '32003'
+    name: Clark County
+    eligible_count: 141
+  - fips: '32031'
+    name: Washoe County
+    eligible_count: 33
+  - fips: '32019'
+    name: Lyon County
+    eligible_count: 8
+  - fips: '32023'
+    name: Nye County
+    eligible_count: 6
+  - fips: '32007'
+    name: Elko County
+    eligible_count: 2
+  - fips: '32510'
+    name: Carson City
+    eligible_count: 2
+  - fips: '32001'
+    name: Churchill County
+    eligible_count: 1
+  - fips: '32011'
+    name: Eureka County
+    eligible_count: 1
+  - fips: '32021'
+    name: Mineral County
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Nevada Governor's Office of Economic Development (GOED)
+    url: https://goed.nv.gov/programs-incentives/opportunity-zones/
+    contact_email: null
+    contact_phone: (800) 336-1600
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: GOED confirmed lead. No OZ 2.0 nomination guidance published.
+new-hampshire:
+  name: New Hampshire
+  fips: '33'
+  slug: new-hampshire
+  total_eligible: 53
+  rural_eligible: 36
+  pct_rural: 67.9
+  max_designations: 14
+  top10_counties:
+  - fips: '33011'
+    name: Hillsborough County
+    eligible_count: 14
+  - fips: '33007'
+    name: Coos County
+    eligible_count: 7
+  - fips: '33017'
+    name: Strafford County
+    eligible_count: 7
+  - fips: '33015'
+    name: Rockingham County
+    eligible_count: 5
+  - fips: '33003'
+    name: Carroll County
+    eligible_count: 4
+  - fips: '33009'
+    name: Grafton County
+    eligible_count: 4
+  - fips: '33019'
+    name: Sullivan County
+    eligible_count: 4
+  - fips: '33005'
+    name: Cheshire County
+    eligible_count: 3
+  - fips: '33013'
+    name: Merrimack County
+    eligible_count: 3
+  - fips: '33001'
+    name: Belknap County
+    eligible_count: 2
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: New Hampshire Dept. of Business and Economic Affairs (BEA)
+    url: https://www.nheconomy.com/grow/opportunity-zones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: BEA confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 process published.
+new-jersey:
+  name: New Jersey
+  fips: '34'
+  slug: new-jersey
+  total_eligible: 516
+  rural_eligible: 37
+  pct_rural: 7.2
+  max_designations: 129
+  top10_counties:
+  - fips: '34013'
+    name: Essex County
+    eligible_count: 114
+  - fips: '34017'
+    name: Hudson County
+    eligible_count: 82
+  - fips: '34031'
+    name: Passaic County
+    eligible_count: 54
+  - fips: '34007'
+    name: Camden County
+    eligible_count: 35
+  - fips: '34039'
+    name: Union County
+    eligible_count: 35
+  - fips: '34023'
+    name: Middlesex County
+    eligible_count: 34
+  - fips: '34021'
+    name: Mercer County
+    eligible_count: 30
+  - fips: '34029'
+    name: Ocean County
+    eligible_count: 30
+  - fips: '34001'
+    name: Atlantic County
+    eligible_count: 25
+  - fips: '34003'
+    name: Bergen County
+    eligible_count: 20
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: NJ Dept. of Community Affairs (DCA) / NJ Economic Development Authority
+      (NJEDA)
+    url: https://nj.gov/governor/njopportunityzones/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Resource center confirmed. No OZ 2.0 nomination process or deadline published.
+new-mexico:
+  name: New Mexico
+  fips: '35'
+  slug: new-mexico
+  total_eligible: 257
+  rural_eligible: 163
+  pct_rural: 63.4
+  max_designations: 65
+  top10_counties:
+  - fips: '35001'
+    name: Bernalillo County
+    eligible_count: 59
+  - fips: '35013'
+    name: DoÃ±a Ana County
+    eligible_count: 30
+  - fips: '35031'
+    name: McKinley County
+    eligible_count: 27
+  - fips: '35045'
+    name: San Juan County
+    eligible_count: 18
+  - fips: '35061'
+    name: Valencia County
+    eligible_count: 12
+  - fips: '35005'
+    name: Chaves County
+    eligible_count: 11
+  - fips: '35049'
+    name: Santa Fe County
+    eligible_count: 10
+  - fips: '35025'
+    name: Lea County
+    eligible_count: 8
+  - fips: '35035'
+    name: Otero County
+    eligible_count: 8
+  - fips: '35047'
+    name: San Miguel County
+    eligible_count: 8
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: New Mexico Economic Development Dept. (EDNM)
+    url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
+    contact_email: info@edd.nm.gov
+    contact_phone: (505) 827-0300
+  process: 'Multi-phase COG-based process: Councils of Governments submit nominations
+    to EDNM by May 15, 2026; EDNM reports to Governor by June 15; 65 tracts submitted
+    to Treasury July 1. Scoring criteria published: development potential, local policies,
+    infrastructure proximity.'
+  scoring_rubric_url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
+  state_deadline: '2026-07-01'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: No online portal — COG-based submission process.
+new-york:
+  name: New York
+  fips: '36'
+  slug: new-york
+  total_eligible: 1702
+  rural_eligible: 303
+  pct_rural: 17.8
+  max_designations: 426
+  top10_counties:
+  - fips: '36047'
+    name: Kings County
+    eligible_count: 401
+  - fips: '36005'
+    name: Bronx County
+    eligible_count: 269
+  - fips: '36081'
+    name: Queens County
+    eligible_count: 240
+  - fips: '36061'
+    name: New York County
+    eligible_count: 97
+  - fips: '36029'
+    name: Erie County
+    eligible_count: 83
+  - fips: '36055'
+    name: Monroe County
+    eligible_count: 71
+  - fips: '36067'
+    name: Onondaga County
+    eligible_count: 44
+  - fips: '36119'
+    name: Westchester County
+    eligible_count: 42
+  - fips: '36085'
+    name: Richmond County
+    eligible_count: 27
+  - fips: '36065'
+    name: Oneida County
+    eligible_count: 25
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Empire State Development (ESD)
+    url: https://esd.ny.gov/opportunity-zones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process
+    published. 426 tracts to be nominated from 1,702 eligible.
+north-carolina:
+  name: North Carolina
+  fips: '37'
+  slug: north-carolina
+  total_eligible: 807
+  rural_eligible: 431
+  pct_rural: 53.4
+  max_designations: 202
+  top10_counties:
+  - fips: '37119'
+    name: Mecklenburg County
+    eligible_count: 74
+  - fips: '37081'
+    name: Guilford County
+    eligible_count: 45
+  - fips: '37183'
+    name: Wake County
+    eligible_count: 40
+  - fips: '37071'
+    name: Gaston County
+    eligible_count: 33
+  - fips: '37051'
+    name: Cumberland County
+    eligible_count: 31
+  - fips: '37155'
+    name: Robeson County
+    eligible_count: 31
+  - fips: '37067'
+    name: Forsyth County
+    eligible_count: 27
+  - fips: '37063'
+    name: Durham County
+    eligible_count: 23
+  - fips: '37101'
+    name: Johnston County
+    eligible_count: 21
+  - fips: '37147'
+    name: Pitt County
+    eligible_count: 18
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: North Carolina Department of Commerce
+    url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
+    contact_email: OZ-Feedback@commerce.nc.gov
+    contact_phone: (919) 814-4600
+  process: 'Public feedback deadline June 7, 2026 at 11:59 p.m. Submissions via Excel
+    form emailed to OZ-Feedback@commerce.nc.gov. Three published scoring criteria:
+    Business Development & Job Creation, Strategic Local Revitalization, Pathways
+    to Housing. ArcGIS mapping tool available.'
+  scoring_rubric_url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
+  state_deadline: '2026-06-07'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning.
+    202 tracts to be nominated.'
+north-dakota:
+  name: North Dakota
+  fips: '38'
+  slug: north-dakota
+  total_eligible: 37
+  rural_eligible: 18
+  pct_rural: 48.6
+  max_designations: 10
+  top10_counties:
+  - fips: '38017'
+    name: Cass County
+    eligible_count: 8
+  - fips: '38035'
+    name: Grand Forks County
+    eligible_count: 8
+  - fips: '38101'
+    name: Ward County
+    eligible_count: 4
+  - fips: '38015'
+    name: Burleigh County
+    eligible_count: 3
+  - fips: '38079'
+    name: Rolette County
+    eligible_count: 3
+  - fips: '38005'
+    name: Benson County
+    eligible_count: 2
+  - fips: '38061'
+    name: Mountrail County
+    eligible_count: 2
+  - fips: '38071'
+    name: Ramsey County
+    eligible_count: 2
+  - fips: '38085'
+    name: Sioux County
+    eligible_count: 2
+  - fips: '38003'
+    name: Barnes County
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: North Dakota Department of Commerce, Economic Development & Finance Division
+    url: null
+    contact_email: null
+    contact_phone: (701) 328-5344
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Contact Rich Garman (Director) confirmed. No URL or OZ 2.0 guidance found.
+    ND subject to 25-zone statutory minimum.
+ohio:
+  name: Ohio
+  fips: '39'
+  slug: ohio
+  total_eligible: 1032
+  rural_eligible: 278
+  pct_rural: 26.9
+  max_designations: 258
+  top10_counties:
+  - fips: '39035'
+    name: Cuyahoga County
+    eligible_count: 185
+  - fips: '39049'
+    name: Franklin County
+    eligible_count: 132
+  - fips: '39061'
+    name: Hamilton County
+    eligible_count: 86
+  - fips: '39095'
+    name: Lucas County
+    eligible_count: 79
+  - fips: '39113'
+    name: Montgomery County
+    eligible_count: 61
+  - fips: '39153'
+    name: Summit County
+    eligible_count: 48
+  - fips: '39099'
+    name: Mahoning County
+    eligible_count: 38
+  - fips: '39017'
+    name: Butler County
+    eligible_count: 28
+  - fips: '39151'
+    name: Stark County
+    eligible_count: 24
+  - fips: '39093'
+    name: Lorain County
+    eligible_count: 22
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Ohio Department of Development (ODOD)
+    url: https://www.greaterohio.org/opportunityzones
+    contact_email: null
+    contact_phone: null
+  process: ODOD opened a 30-day online portal to accept local nominations in April
+    2026. Greater Ohio Policy Center provides technical assistance. Current OZ 1.0
+    designations are not automatically renewed.
+  scoring_rubric_url: null
+  state_deadline: '2026-05-31'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Portal URL (opportunityzones.ohio.gov) returned 404 at time of check. 258
+    tracts to be nominated from 1,032 eligible.
+oklahoma:
+  name: Oklahoma
+  fips: '40'
+  slug: oklahoma
+  total_eligible: 413
+  rural_eligible: 188
+  pct_rural: 45.5
+  max_designations: 104
+  top10_counties:
+  - fips: '40109'
+    name: Oklahoma County
+    eligible_count: 117
+  - fips: '40143'
+    name: Tulsa County
+    eligible_count: 65
+  - fips: '40027'
+    name: Cleveland County
+    eligible_count: 19
+  - fips: '40031'
+    name: Comanche County
+    eligible_count: 16
+  - fips: '40119'
+    name: Payne County
+    eligible_count: 14
+  - fips: '40013'
+    name: Bryan County
+    eligible_count: 7
+  - fips: '40101'
+    name: Muskogee County
+    eligible_count: 7
+  - fips: '40133'
+    name: Seminole County
+    eligible_count: 7
+  - fips: '40019'
+    name: Carter County
+    eligible_count: 6
+  - fips: '40037'
+    name: Creek County
+    eligible_count: 6
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Oklahoma Department of Commerce
+    url: https://www.okcommerce.gov/doing-business/business-relocation-expansion/incentives/federal-opportunity-zones/
+    contact_email: jon.chiappe@okcommerce.gov
+    contact_phone: (405) 815-5210
+  process: 'Nomination form published April 10, 2026. Contacts: Jon Chiappe (405-815-5210)
+    and Aldwyn Sappleton (405-815-5369). No formal deadline stated for community submissions.'
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: https://forms.okcommerce.gov/260495603721860
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 104 tracts to be nominated from 413 eligible; 188 qualify as rural.
+oregon:
+  name: Oregon
+  fips: '41'
+  slug: oregon
+  total_eligible: 229
+  rural_eligible: 106
+  pct_rural: 46.3
+  max_designations: 58
+  top10_counties:
+  - fips: '41051'
+    name: Multnomah County
+    eligible_count: 52
+  - fips: '41039'
+    name: Lane County
+    eligible_count: 22
+  - fips: '41067'
+    name: Washington County
+    eligible_count: 16
+  - fips: '41019'
+    name: Douglas County
+    eligible_count: 13
+  - fips: '41047'
+    name: Marion County
+    eligible_count: 13
+  - fips: '41035'
+    name: Klamath County
+    eligible_count: 12
+  - fips: '41011'
+    name: Coos County
+    eligible_count: 10
+  - fips: '41029'
+    name: Jackson County
+    eligible_count: 9
+  - fips: '41003'
+    name: Benton County
+    eligible_count: 7
+  - fips: '41005'
+    name: Clackamas County
+    eligible_count: 7
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Business Oregon
+    url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
+    contact_email: incentives.program@biz.oregon.gov
+    contact_phone: (503) 986-0123
+  process: 'RFA open with deadline May 22, 2026 at 5:00 p.m. PT. Scoring criteria:
+    Project Viability & Investment Readiness, Local Support & Capacity, Strategic
+    Alignment. Eligible applicants: cities, counties, ports, tribes, EDOs. Single
+    application per tract.'
+  scoring_rubric_url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
+  state_deadline: '2026-05-22'
+  application_portal_url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts
+    to be nominated.'
+pennsylvania:
+  name: Pennsylvania
+  fips: '42'
+  slug: pennsylvania
+  total_eligible: 866
+  rural_eligible: 274
+  pct_rural: 31.6
+  max_designations: 217
+  top10_counties:
+  - fips: '42101'
+    name: Philadelphia County
+    eligible_count: 218
+  - fips: '42003'
+    name: Allegheny County
+    eligible_count: 97
+  - fips: '42045'
+    name: Delaware County
+    eligible_count: 43
+  - fips: '42079'
+    name: Luzerne County
+    eligible_count: 39
+  - fips: '42129'
+    name: Westmoreland County
+    eligible_count: 28
+  - fips: '42077'
+    name: Lehigh County
+    eligible_count: 27
+  - fips: '42049'
+    name: Erie County
+    eligible_count: 26
+  - fips: '42011'
+    name: Berks County
+    eligible_count: 25
+  - fips: '42069'
+    name: Lackawanna County
+    eligible_count: 21
+  - fips: '42043'
+    name: Dauphin County
+    eligible_count: 18
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Pennsylvania Dept. of Community and Economic Development (DCED)
+    url: https://dced.pa.gov/programs-funding/federal-funding-opportunities/qualified-opportunity-zones/
+    contact_email: oppzones@pa.gov
+    contact_phone: null
+  process: 'Phased timeline published: spring 2026 stakeholder engagement, summer
+    2026 draft map, early fall 2026 state submission. Five priority sectors: housing,
+    industrial sites, main street, rural, innovation. Webinars and public input method
+    forthcoming.'
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: No portal open yet. Classifying contact_only because no submission mechanism
+    is live. 217 tracts to be nominated.
+rhode-island:
+  name: Rhode Island
+  fips: '44'
+  slug: rhode-island
+  total_eligible: 55
+  rural_eligible: 1
+  pct_rural: 1.8
+  max_designations: 14
+  top10_counties:
+  - fips: '44007'
+    name: Providence County
+    eligible_count: 50
+  - fips: '44003'
+    name: Kent County
+    eligible_count: 2
+  - fips: '44005'
+    name: Newport County
+    eligible_count: 2
+  - fips: '44009'
+    name: Washington County
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Rhode Island Commerce Corporation
+    url: https://commerceri.com/site-selection/opportunity-zones/
+    contact_email: null
+    contact_phone: (401) 278-9100
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Commerce RI confirmed lead. Website addresses OZ 1.0. Subject to 25-zone
+    statutory minimum. No OZ 2.0 guidance published.
+south-carolina:
+  name: South Carolina
+  fips: '45'
+  slug: south-carolina
+  total_eligible: 445
+  rural_eligible: 326
+  pct_rural: 73.3
+  max_designations: 112
+  top10_counties:
+  - fips: '45079'
+    name: Richland County
+    eligible_count: 39
+  - fips: '45045'
+    name: Greenville County
+    eligible_count: 32
+  - fips: '45083'
+    name: Spartanburg County
+    eligible_count: 25
+  - fips: '45019'
+    name: Charleston County
+    eligible_count: 22
+  - fips: '45075'
+    name: Orangeburg County
+    eligible_count: 21
+  - fips: '45051'
+    name: Horry County
+    eligible_count: 19
+  - fips: '45007'
+    name: Anderson County
+    eligible_count: 18
+  - fips: '45003'
+    name: Aiken County
+    eligible_count: 17
+  - fips: '45015'
+    name: Berkeley County
+    eligible_count: 15
+  - fips: '45041'
+    name: Florence County
+    eligible_count: 15
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: South Carolina Department of Commerce (SC Commerce)
+    url: https://www.sccommerce.com/opportunity-zone
+    contact_email: oz@sccommerce.com
+    contact_phone: null
+  process: 'Community nomination deadline June 1, 2026. SC Commerce provides recommendations
+    to Governor by July 15. Criteria: highest growth/economic impact potential, infrastructure,
+    alignment with state economic strategy. Regional information meetings and virtual
+    workshops offered.'
+  scoring_rubric_url: null
+  state_deadline: '2026-06-01'
+  application_portal_url: https://www.sccommerce.com/opportunity-zone-submission
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 112 tracts to be nominated from 445 eligible.
+south-dakota:
+  name: South Dakota
+  fips: '46'
+  slug: south-dakota
+  total_eligible: 52
+  rural_eligible: 35
+  pct_rural: 67.3
+  max_designations: 13
+  top10_counties:
+  - fips: '46099'
+    name: Minnehaha County
+    eligible_count: 12
+  - fips: '46103'
+    name: Pennington County
+    eligible_count: 6
+  - fips: '46011'
+    name: Brookings County
+    eligible_count: 3
+  - fips: '46102'
+    name: Oglala Lakota County
+    eligible_count: 3
+  - fips: '46023'
+    name: Charles Mix County
+    eligible_count: 2
+  - fips: '46027'
+    name: Clay County
+    eligible_count: 2
+  - fips: '46031'
+    name: Corson County
+    eligible_count: 2
+  - fips: '46041'
+    name: Dewey County
+    eligible_count: 2
+  - fips: '46071'
+    name: Jackson County
+    eligible_count: 2
+  - fips: '46109'
+    name: Roberts County
+    eligible_count: 2
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: South Dakota Governor's Office of Economic Development (GOED)
+    url: null
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: GOED presumed lead. No confirmed URL or OZ 2.0 guidance found. Subject to
+    25-zone statutory minimum.
+tennessee:
+  name: Tennessee
+  fips: '47'
+  slug: tennessee
+  total_eligible: 507
+  rural_eligible: 222
+  pct_rural: 43.8
+  max_designations: 127
+  top10_counties:
+  - fips: '47157'
+    name: Shelby County
+    eligible_count: 124
+  - fips: '47037'
+    name: Davidson County
+    eligible_count: 55
+  - fips: '47093'
+    name: Knox County
+    eligible_count: 25
+  - fips: '47065'
+    name: Hamilton County
+    eligible_count: 20
+  - fips: '47149'
+    name: Rutherford County
+    eligible_count: 16
+  - fips: '47163'
+    name: Sullivan County
+    eligible_count: 12
+  - fips: '47113'
+    name: Madison County
+    eligible_count: 10
+  - fips: '47179'
+    name: Washington County
+    eligible_count: 10
+  - fips: '47013'
+    name: Campbell County
+    eligible_count: 9
+  - fips: '47125'
+    name: Montgomery County
+    eligible_count: 9
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Tennessee Dept. of Economic and Community Development (TNECD)
+    url: https://www.tn.gov/ecd/opportunity-zones.html
+    contact_email: ED.OpportunityZones@tn.gov
+    contact_phone: (615) 741-1888
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application
+    or deadline published as of 2026-05-05.
+texas:
+  name: Texas
+  fips: '48'
+  slug: texas
+  total_eligible: 2420
+  rural_eligible: 524
+  pct_rural: 21.7
+  max_designations: 605
+  top10_counties:
+  - fips: '48201'
+    name: Harris County
+    eligible_count: 499
+  - fips: '48113'
+    name: Dallas County
+    eligible_count: 279
+  - fips: '48439'
+    name: Tarrant County
+    eligible_count: 153
+  - fips: '48029'
+    name: Bexar County
+    eligible_count: 146
+  - fips: '48215'
+    name: Hidalgo County
+    eligible_count: 133
+  - fips: '48141'
+    name: El Paso County
+    eligible_count: 87
+  - fips: '48061'
+    name: Cameron County
+    eligible_count: 76
+  - fips: '48453'
+    name: Travis County
+    eligible_count: 71
+  - fips: '48303'
+    name: Lubbock County
+    eligible_count: 42
+  - fips: '48479'
+    name: Webb County
+    eligible_count: 41
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Texas Economic Development & Tourism Office (EDT), Office of the Governor
+    url: https://gov.texas.gov/business/page/opportunity-zones
+    contact_email: OppZone2.0@gov.texas.gov
+    contact_phone: null
+  process: 'Community submission deadline June 26, 2026. EDT submits to Treasury by
+    August 3, 2026. Downloadable Nomination Packet for EDOs and county judges. Four
+    scoring criteria: statutory compliance, local support, project viability (24–48
+    month deployment), geographic balance (rural/disaster area preference).'
+  scoring_rubric_url: https://gov.texas.gov/business/page/opportunity-zones
+  state_deadline: '2026-06-26'
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 605 tracts to be nominated from 2,420 eligible.
+utah:
+  name: Utah
+  fips: '49'
+  slug: utah
+  total_eligible: 147
+  rural_eligible: 30
+  pct_rural: 20.4
+  max_designations: 37
+  top10_counties:
+  - fips: '49035'
+    name: Salt Lake County
+    eligible_count: 49
+  - fips: '49049'
+    name: Utah County
+    eligible_count: 30
+  - fips: '49057'
+    name: Weber County
+    eligible_count: 16
+  - fips: '49005'
+    name: Cache County
+    eligible_count: 9
+  - fips: '49011'
+    name: Davis County
+    eligible_count: 8
+  - fips: '49021'
+    name: Iron County
+    eligible_count: 7
+  - fips: '49053'
+    name: Washington County
+    eligible_count: 6
+  - fips: '49039'
+    name: Sanpete County
+    eligible_count: 5
+  - fips: '49007'
+    name: Carbon County
+    eligible_count: 3
+  - fips: '49045'
+    name: Tooele County
+    eligible_count: 3
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Utah Governor's Office of Economic Opportunity (Go Utah)
+    url: https://business.utah.gov/news/opportunity-awaits-statewide-opportunity-zones-announced/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Governor's office stated it is 'already working on how best to proceed.'
+    No formal process published.
+vermont:
+  name: Vermont
+  fips: '50'
+  slug: vermont
+  total_eligible: 24
+  rural_eligible: 24
+  pct_rural: 100.0
+  max_designations: 6
+  top10_counties:
+  - fips: '50007'
+    name: Chittenden County
+    eligible_count: 4
+  - fips: '50021'
+    name: Rutland County
+    eligible_count: 4
+  - fips: '50025'
+    name: Windham County
+    eligible_count: 4
+  - fips: '50003'
+    name: Bennington County
+    eligible_count: 2
+  - fips: '50009'
+    name: Essex County
+    eligible_count: 2
+  - fips: '50011'
+    name: Franklin County
+    eligible_count: 2
+  - fips: '50019'
+    name: Orleans County
+    eligible_count: 2
+  - fips: '50005'
+    name: Caledonia County
+    eligible_count: 1
+  - fips: '50017'
+    name: Orange County
+    eligible_count: 1
+  - fips: '50023'
+    name: Washington County
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Vermont Agency of Commerce and Community Development (ACCD)
+    url: https://accd.vermont.gov/OpportunityZones
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: ACCD confirmed lead. All 24 eligible tracts can be nominated (statutory minimum
+    applies). No OZ 2.0 process published.
+virginia:
+  name: Virginia
+  fips: '51'
+  slug: virginia
+  total_eligible: 607
+  rural_eligible: 287
+  pct_rural: 47.3
+  max_designations: 152
+  top10_counties:
+  - fips: '51760'
+    name: Richmond city
+    eligible_count: 35
+  - fips: '51710'
+    name: Norfolk city
+    eligible_count: 29
+  - fips: '51059'
+    name: Fairfax County
+    eligible_count: 26
+  - fips: '51153'
+    name: Prince William County
+    eligible_count: 23
+  - fips: '51700'
+    name: Newport News city
+    eligible_count: 21
+  - fips: '51087'
+    name: Henrico County
+    eligible_count: 20
+  - fips: '51740'
+    name: Portsmouth city
+    eligible_count: 19
+  - fips: '51650'
+    name: Hampton city
+    eligible_count: 17
+  - fips: '51810'
+    name: Virginia Beach city
+    eligible_count: 17
+  - fips: '51143'
+    name: Pittsylvania County
+    eligible_count: 16
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Virginia Economic Development Partnership (VEDP) / DHCD
+    url: https://www.dhcd.virginia.gov/opportunity-zones-oz
+    contact_email: oz2026@vedp.org
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Dual-agency lead. Webinars held April 16 and 21, 2026; stakeholder survey
+    closed April 27. No formal application portal or scoring rubric. 152 tracts to
+    be nominated.
+washington:
+  name: Washington
+  fips: '53'
+  slug: washington
+  total_eligible: 394
+  rural_eligible: 147
+  pct_rural: 37.3
+  max_designations: 99
+  top10_counties:
+  - fips: '53033'
+    name: King County
+    eligible_count: 80
+  - fips: '53053'
+    name: Pierce County
+    eligible_count: 57
+  - fips: '53063'
+    name: Spokane County
+    eligible_count: 31
+  - fips: '53061'
+    name: Snohomish County
+    eligible_count: 27
+  - fips: '53077'
+    name: Yakima County
+    eligible_count: 19
+  - fips: '53011'
+    name: Clark County
+    eligible_count: 15
+  - fips: '53073'
+    name: Whatcom County
+    eligible_count: 12
+  - fips: '53021'
+    name: Franklin County
+    eligible_count: 11
+  - fips: '53025'
+    name: Grant County
+    eligible_count: 11
+  - fips: '53027'
+    name: Grays Harbor County
+    eligible_count: 10
+  status_tier: public_process
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Washington State Department of Commerce
+    url: https://www.commerce.wa.gov/opportunity-zones/
+    contact_email: Community.Engagement@Commerce.wa.gov
+    contact_phone: null
+  process: RFA portal opened April 28, 2026. Deadline May 28, 2026. Scoring criteria
+    PDF published. Q&A period closes May 21. Pre-proposal webinars May 7 (rural/non-rural
+    and tribal). Recommendations due to Governor by June 30.
+  scoring_rubric_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
+  state_deadline: '2026-05-28'
+  application_portal_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 99 tracts to be nominated.
+west-virginia:
+  name: West Virginia
+  fips: '54'
+  slug: west-virginia
+  total_eligible: 207
+  rural_eligible: 207
+  pct_rural: 100.0
+  max_designations: 52
+  top10_counties:
+  - fips: '54039'
+    name: Kanawha County
+    eligible_count: 20
+  - fips: '54011'
+    name: Cabell County
+    eligible_count: 16
+  - fips: '54061'
+    name: Monongalia County
+    eligible_count: 12
+  - fips: '54081'
+    name: Raleigh County
+    eligible_count: 11
+  - fips: '54047'
+    name: McDowell County
+    eligible_count: 8
+  - fips: '54025'
+    name: Greenbrier County
+    eligible_count: 7
+  - fips: '54059'
+    name: Mingo County
+    eligible_count: 7
+  - fips: '54069'
+    name: Ohio County
+    eligible_count: 7
+  - fips: '54107'
+    name: Wood County
+    eligible_count: 7
+  - fips: '54033'
+    name: Harrison County
+    eligible_count: 6
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: West Virginia Department of Economic Development
+    url: https://westvirginia.gov/category/wv-opportunity-zones/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: Confirmed lead. No OZ 2.0 guidance published.
+wisconsin:
+  name: Wisconsin
+  fips: '55'
+  slug: wisconsin
+  total_eligible: 306
+  rural_eligible: 67
+  pct_rural: 21.9
+  max_designations: 77
+  top10_counties:
+  - fips: '55079'
+    name: Milwaukee County
+    eligible_count: 153
+  - fips: '55025'
+    name: Dane County
+    eligible_count: 23
+  - fips: '55059'
+    name: Kenosha County
+    eligible_count: 11
+  - fips: '55009'
+    name: Brown County
+    eligible_count: 10
+  - fips: '55139'
+    name: Winnebago County
+    eligible_count: 10
+  - fips: '55101'
+    name: Racine County
+    eligible_count: 9
+  - fips: '55063'
+    name: La Crosse County
+    eligible_count: 8
+  - fips: '55105'
+    name: Rock County
+    eligible_count: 8
+  - fips: '55001'
+    name: Adams County
+    eligible_count: 5
+  - fips: '55039'
+    name: Fond du Lac County
+    eligible_count: 4
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Wisconsin Economic Development Corporation (WEDC)
+    url: null
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: WEDC presumed lead. No confirmed URL or OZ 2.0 guidance found.
+wyoming:
+  name: Wyoming
+  fips: '56'
+  slug: wyoming
+  total_eligible: 20
+  rural_eligible: 16
+  pct_rural: 80.0
+  max_designations: 5
+  top10_counties:
+  - fips: '56001'
+    name: Albany County
+    eligible_count: 6
+  - fips: '56013'
+    name: Fremont County
+    eligible_count: 3
+  - fips: '56037'
+    name: Sweetwater County
+    eligible_count: 3
+  - fips: '56021'
+    name: Laramie County
+    eligible_count: 2
+  - fips: '56025'
+    name: Natrona County
+    eligible_count: 2
+  - fips: '56005'
+    name: Campbell County
+    eligible_count: 1
+  - fips: '56009'
+    name: Converse County
+    eligible_count: 1
+  - fips: '56019'
+    name: Johnson County
+    eligible_count: 1
+  - fips: '56041'
+    name: Uinta County
+    eligible_count: 1
+  status_tier: contact_only
+  last_checked: '2026-05-05'
+  lead_agency:
+    name: Wyoming Business Council
+    url: https://wyomingbusiness.org/business/financing/financial-incentives/opportunity-zones/
+    contact_email: null
+    contact_phone: null
+  process: null
+  scoring_rubric_url: null
+  state_deadline: null
+  application_portal_url: null
+  tribal_consultation:
+    framework: null
+    citation: null
+  regional_edds: []
+  rural_partners:
+    usda_rd_url: null
+    rcap_regional: null
+    rural_lisc: null
+  state_cdfi_count: null
+  notes: 'Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.
+    No formal application or deadline. Explicitly states federal guidance still evolving.'
