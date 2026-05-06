@@ -702,7 +702,7 @@ idaho:
   total_eligible: 80
   rural_eligible: 32
   pct_rural: 40.0
-  max_designations: 20
+  max_designations: 25
   top10_counties:
   - fips: '16001'
     name: Ada County
@@ -741,12 +741,21 @@ idaho:
     url: https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/
     contact_email: OZ@commerce.idaho.gov
     contact_phone: null
-  process: Idaho Commerce published a nomination portal for cities, counties, and
-    tribal governments. Deadline not yet published. Idaho subject to statutory minimum
-    of 25 zones.
+  process: "Idaho Commerce administers the OZ 2.0 nomination process and has published
+    a nomination portal open to cities, counties, and tribal governments; submissions
+    go to OZ@commerce.idaho.gov. No scoring rubric or state-level application deadline
+    has been published as of 2026-05-06, though the federal nomination window under
+    Rev. Proc. 2026-14 opens July 1, 2026, and runs 90 days (extendable to October
+    28, 2026). Idaho has 80 eligible tracts and, under the statutory minimum for states
+    with fewer than 100 eligible tracts, may nominate up to 25 zones — the same count
+    as its OZ 1.0 round. In the 2018 round, Idaho Commerce received applications from
+    cities, counties, and tribes, which were reviewed by the Idaho Economic Advisory
+    Council (EAC) before the Governor forwarded nominations to Treasury; a similar
+    internal review is expected for OZ 2.0, though Idaho Commerce has not yet published
+    formal selection criteria."
   scoring_rubric_url: null
   state_deadline: null
-  application_portal_url: null
+  application_portal_url: https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/
   tribal_consultation:
     framework: null
     citation: null
@@ -756,7 +765,9 @@ idaho:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Portal live but deadline unknown as of 2026-05-05.
+  notes: "Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal\
+    \ window opens July 1, 2026. Max designations corrected to 25 (statutory minimum\
+    \ for states with fewer than 100 eligible tracts)."
 illinois:
   name: Illinois
   fips: '17'
@@ -1711,15 +1722,23 @@ nebraska:
     name: Burt County
     eligible_count: 1
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Nebraska Dept. of Economic Development (DED)
     url: https://opportunity.nebraska.gov/programs/business/opportunity-zones/
     contact_email: ded.opportunityzones@nebraska.gov
     contact_phone: (402) 471-3063
-  process: Application period ran March 2–May 1, 2026 (now closed). DED reviewing
-    submissions for gubernatorial recommendation. Final selections announced after
-    Treasury approval.
+  process: "The application period ran March 2–May 1, 2026 and is now closed. Applications
+    were required to be submitted by the chief elected official of the city or county
+    proposing a tract, or by an authorized representative; letters of support from
+    business leaders, chambers of commerce, and community organizations could be included
+    but did not substitute for the official application. DED evaluated submissions
+    on investment readiness, demonstrated economic need, and anticipated community
+    benefit — no weighted scoring rubric was published. DED is now reviewing applications
+    and will refer its recommendations to Governor Pillen for approval before July 1,
+    2026, when the federal 90-day nomination window opens; Treasury has up to 90 days
+    to act on each state's list. Nebraska may nominate up to 28 of its 112 eligible
+    tracts; new designations take effect January 1, 2027."
   scoring_rubric_url: null
   state_deadline: '2026-05-01'
   application_portal_url: null
@@ -2316,8 +2335,17 @@ oklahoma:
     url: https://www.okcommerce.gov/doing-business/business-relocation-expansion/incentives/federal-opportunity-zones/
     contact_email: jon.chiappe@okcommerce.gov
     contact_phone: (405) 815-5210
-  process: 'Nomination form published April 10, 2026. Contacts: Jon Chiappe (405-815-5210)
-    and Aldwyn Sappleton (405-815-5369). No formal deadline stated for community submissions.'
+  process: "Oklahoma Department of Commerce administers the OZ 2.0 nomination process
+    in two phases. An initial public survey (March 2–April 10, 2026) gathered community
+    input on which eligible tracts have strong economic development potential, covering
+    types of planned development, geographic context, tract characteristics, and
+    submitter contact information. Oklahoma Commerce then released its formal nomination
+    form on April 10, 2026, available at forms.okcommerce.gov/260495603721860; no
+    community submission deadline has been formally announced as of May 6, 2026.
+    Contacts are Jon Chiappe (jon.chiappe@okcommerce.gov, 405-815-5210) and Aldwyn
+    Sappleton (405-815-5369). Governor Stitt will submit Oklahoma's list of up to
+    104 nominated tracts — drawn from 413 eligible — when the federal 90-day window
+    opens July 1, 2026; no scoring rubric has been published."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: https://forms.okcommerce.gov/260495603721860
