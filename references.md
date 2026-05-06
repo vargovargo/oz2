@@ -255,7 +255,7 @@ purpose: |
 
 **DCA (Georgia OZ page).** https://dca.georgia.gov/financing-tools/incentives/federal-opportunity-zones — Contact: federalopportunityzones@dca.ga.gov, (404) 679-4840; no formal nomination portal. last_checked: 2026-05-05
 
-**DBEDT (Hawaii OZ page).** https://invest.hawaii.gov/business-programs/why-invest-in-hawaii/tax-incentives-and-credits/ — Lead agency; page reflects OZ 1.0 material; no OZ 2.0 guidance published. last_checked: 2026-05-06
+**DBEDT (Hawaii OZ page).** https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/ — Dedicated DBEDT OZ page; reflects OZ 1.0 content; no OZ 2.0 nomination guidance or community process published as of 2026-05-06. last_checked: 2026-05-06
 
 **Idaho Commerce — OZ nomination portal.** https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/ — Live nomination portal for local governments and tribes; contact OZ@commerce.idaho.gov. last_checked: 2026-05-05
 
@@ -289,7 +289,7 @@ purpose: |
 
 **NE DED (Nebraska OZ page).** https://opportunity.nebraska.gov/programs/business/opportunity-zones/ — Application period closed May 1, 2026; contact ded.opportunityzones@nebraska.gov. last_checked: 2026-05-05
 
-**GOED (Nevada OZ page).** https://goed.nv.gov/programs-incentives/opportunity-zones/ — Lead agency; page reflects OZ 1.0 content only; no OZ 2.0 nomination process or community input published as of 2026-05-06. Contact (800) 336-1600. last_checked: 2026-05-06
+**Nevada Dept. of Business &amp; Industry (OZ page).** https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/ — Only functional OZ page in Nevada; reflects OZ 1.0 content only. GOED (lead agency) OZ page redirects to general incentives with no OZ content. No OZ 2.0 guidance or community input process published as of 2026-05-06. Contact GOED: (800) 336-1600. last_checked: 2026-05-06
 
 **BEA (New Hampshire OZ page).** https://www.nheconomy.com/grow/opportunity-zones — Lead agency; no OZ 2.0 guidance published. last_checked: 2026-05-05
 

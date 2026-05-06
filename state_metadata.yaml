@@ -646,7 +646,7 @@ hawaii:
   last_checked: '2026-05-06'
   lead_agency:
     name: Hawaii Dept. of Business, Economic Development and Tourism (DBEDT)
-    url: https://invest.hawaii.gov/business-programs/why-invest-in-hawaii/tax-incentives-and-credits/
+    url: https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/
     contact_email: null
     contact_phone: null
   process: null
@@ -1682,7 +1682,7 @@ nevada:
   last_checked: '2026-05-06'
   lead_agency:
     name: Nevada Governor's Office of Economic Development (GOED)
-    url: https://goed.nv.gov/programs-incentives/opportunity-zones/
+    url: https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/
     contact_email: null
     contact_phone: (800) 336-1600
   process: null
@@ -1698,9 +1698,10 @@ nevada:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: GOED is the confirmed lead agency. No OZ 2.0 guidance, community input
-    process, or nomination portal published as of 2026-05-06. GOED page reflects
-    OZ 1.0 content. Contact GOED directly via (800) 336-1600.
+  notes: GOED is the confirmed lead agency but their OZ page (goed.nv.gov/programs-incentives/opportunity-zones/)
+    redirects to a general incentives page with no OZ content. Business &amp; Industry
+    dept page linked above has OZ 1.0 content only. No OZ 2.0 guidance or community
+    input published as of 2026-05-06. Best contact is GOED by phone (800) 336-1600.
 new-hampshire:
   name: New Hampshire
   fips: '33'
