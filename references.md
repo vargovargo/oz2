@@ -249,7 +249,9 @@ purpose: |
 
 **DECD (Connecticut OZ page).** https://portal.ct.gov/DECD/Services/Business-Development/Tax-Incentives/Opportunity-Zones — Contact info published: DECD.ozprojects@ct.gov, (860) 280-8710; no formal nomination process. last_checked: 2026-05-05
 
-**Delaware Division of Small Business — OZ nomination portal.** https://business.delaware.gov/opportunity-zones/ — Live Formstack nomination portal; deadline May 15, 2026. last_checked: 2026-05-05
+**Delaware Division of Small Business — OZ nomination portal.** https://business.delaware.gov/opportunity-zones/ — Live Formstack nomination portal; community deadline May 15, 2026; Governor submits up to 25 tracts to Treasury by September 30, 2026. last_checked: 2026-05-06
+
+**Delaware State News — DSB Launches Online Form to Nominate New OZ Census Tracts.** https://news.delaware.gov/2026/03/04/dsb-launches-online-form-to-nominate-new-opportunity-zone-census-tracts/ — Official press release (March 4, 2026) announcing Formstack portal, March 9 webinar, eligibility of developers/investors/local officials to submit, and Governor's 25-tract cap with September 30 submission deadline. last_checked: 2026-05-06
 
 **FloridaCommerce (Florida OZ program).** https://floridajobs.org/business-growth-and-partnerships/for-businesses-and-entrepreneurs/business-resource/opportunity-zones-program — Statewide tour and recommendation process held; public input closed approximately April 2026. last_checked: 2026-05-05
 

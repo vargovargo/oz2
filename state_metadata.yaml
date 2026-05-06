@@ -432,7 +432,7 @@ delaware:
   total_eligible: 61
   rural_eligible: 22
   pct_rural: 36.1
-  max_designations: 16
+  max_designations: 25
   top10_counties:
   - fips: '10003'
     name: New Castle County
@@ -450,8 +450,18 @@ delaware:
     url: https://business.delaware.gov/opportunity-zones/
     contact_email: business@delaware.gov
     contact_phone: (302) 739-4271
-  process: Formstack nomination portal launched March 2026. Community nomination deadline
-    May 15, 2026. Governor may nominate maximum 25 tracts.
+  process: "The Delaware Division of Small Business (DSB), in partnership with Governor\
+    \ Matt Meyer, runs the state's OZ 2.0 nomination process. Any investor, developer,\
+    \ financial institution, property owner, local official, or community leader may\
+    \ submit a community nomination via the DSB Formstack portal by May 15, 2026;\
+    \ DSB then advises the Governor, who has until September 30, 2026 to submit up\
+    \ to 25 tracts to Treasury for designation beginning July 1, 2026. DSB held an\
+    \ informational webinar on March 9, 2026 outlining what it and the Governor's\
+    \ office are looking for: census tracts with investible assets that can attract\
+    \ capital and deliver long-term positive impacts on underserved communities. No\
+    \ formal scoring rubric has been published; submitters are encouraged to build\
+    \ a strong business case and recruit additional stakeholders to support the same\
+    \ tract."
   scoring_rubric_url: null
   state_deadline: '2026-05-15'
   application_portal_url: https://degovforms.formstack.com/forms/opportunityzonenomination
@@ -464,7 +474,11 @@ delaware:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Nomination window closing or closed as of check date. No scoring rubric published.
+  notes: "Community nomination window closes May 15, 2026; Governor's submission deadline\
+    \ to Treasury is September 30, 2026. No scoring rubric published. Governor may\
+    \ nominate up to 25 tracts from 61 eligible. As of April 6, 2026 reporting, 23\
+    \ tracts had already been nominated. max_designations corrected from 16 to 25\
+    \ per DSB press release (March 2026)."
 district-of-columbia:
   name: District of Columbia
   fips: '11'
