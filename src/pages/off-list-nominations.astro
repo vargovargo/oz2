@@ -2,14 +2,127 @@
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="Off-List Nominations" description="How Section 5.04 allows nomination of census tracts not on the IRS eligible list.">
+<Layout title="Off-List Nominations" description="How Section 5.04 of Rev. Proc. 2026-14 allows nomination of census tracts not on the IRS eligible list.">
   <div class="max-w-3xl">
     <h1 class="text-3xl font-bold mb-4">Off-List Nominations</h1>
     <p class="text-oz-neutral-500 mb-8">
-      Section 5.04 of Rev. Proc. 2026-14 allows states to nominate a limited number of census tracts
-      not on the IRS eligible list. This page explains the mechanism, constraints, and how to make the case.
+      The IRS published 25,332 eligible census tracts in the appendix to Rev. Proc. 2026-14.
+      Section 5.04 of that guidance preserves a narrow pathway for states to nominate tracts
+      that do not appear on that list — if the state can demonstrate the tract qualifies.
     </p>
-    <!-- TODO: full content -->
-    <p class="text-sm italic text-oz-neutral-400">Content in development.</p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">What Section 5.04 says</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Section 5.04, titled "Data set limitations," reads:
+      </p>
+      <blockquote class="border-l-4 border-oz-blue pl-4 py-1 mb-4 text-sm text-oz-neutral-700 italic">
+        "While the Appendix to this revenue procedure and the Information Resource provide a list of
+        population census tracts that are eligible for nomination as a QOZ, there may be population
+        census tracts that could be eligible for nomination as a QOZ that do not appear on this list.
+        The Secretary will consider a State CEO's nomination of a population census tract not listed
+        in the Appendix or Information Resource to the extent that the nomination is accompanied by
+        a detailed analysis, including current data collected at the census tract level, demonstrating
+        the nominated population census tract satisfies the requirements under § 1400Z-1(c)(1)."
+      </blockquote>
+      <p class="text-sm text-oz-neutral-700">
+        Source: <a href="https://www.irs.gov/pub/irs-drop/rp-26-14.pdf" class="text-oz-blue underline" target="_blank" rel="noopener">IRS Rev. Proc. 2026-14</a>, Section 5.04 (April 6, 2026).
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">The LIC standard a tract must meet</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        An off-list tract must qualify as a low-income community (LIC) under § 1400Z-1(c)(1) —
+        the same standard applied to all 25,332 tracts on the published eligible list. The IRS
+        used 2020–2024 ACS 5-year estimates to generate that list; an off-list submission must
+        use "current data collected at the census tract level," though Rev. Proc. 2026-14 does
+        not mandate a specific dataset beyond that standard.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The LIC definition distinguishes metropolitan from non-metropolitan tracts. For
+        <strong class="text-oz-neutral-900">non-metropolitan tracts</strong>, a tract qualifies if its
+        median family income (MFI) does not exceed 70 percent of the statewide median family income,
+        or if its poverty rate is at least 20 percent and its MFI does not exceed 125 percent of
+        the statewide median family income. For <strong class="text-oz-neutral-900">metropolitan tracts</strong>,
+        the same two-prong test applies, but the income comparison uses the metropolitan area median
+        rather than the statewide median.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        The contiguous-tract pathway that existed in OZ 1.0 was eliminated by the One Big Beautiful
+        Bill Act. Every nominated tract — whether on-list or off-list — must qualify on its own merits.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">How off-list nominations count against the cap</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Section 5.04 creates no separate budget for off-list nominations. They count toward
+        the same 25-percent-of-LICs cap that governs all designations under § 1400Z-1(d)(1).
+        For states with fewer than 100 LICs, the cap is 25 total designations regardless.
+        Each off-list nomination is a direct trade-off against a slot that could otherwise go
+        to a tract already on the IRS eligible list.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        Rev. Proc. 2026-14 creates no special provision for off-list nominations involving
+        rural tracts or tribal lands. The rural designation carries investor tax benefits under
+        the qualified rural opportunity fund rules but does not create a separate off-list pathway.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">What to include in the analysis package</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Rev. Proc. 2026-14 requires a "detailed analysis" with current, tract-level data. At minimum,
+        that means documentation sufficient to establish the LIC thresholds above. In practice,
+        a complete package would include the census tract GEOID, the relevant ACS estimates
+        (poverty rate, median family income, comparison area median), the source and vintage of
+        those figures, and a narrative explaining why the tract does not appear on the IRS list —
+        for example, because the IRS data snapshot predates a revision or because a tract boundary
+        change affected the published list.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        The submission goes through the same Treasury Nomination Tool used for on-list tracts.
+        Treasury will send access instructions directly to each State CEO. The same window applies:
+        nominations open July 1, 2026 and close September 29, 2026, with a possible 30-day
+        extension to October 28, 2026 upon request.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Practical implications for local planners</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The off-list pathway exists to catch data-quality gaps in the IRS appendix — tracts
+        that meet the statutory criteria but were excluded due to the data vintage or methodology
+        used to generate the list. It is not a discretionary mechanism for nominating tracts
+        that simply fall short of the LIC thresholds.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        If you believe a tract in your jurisdiction should appear on the eligible list, the first
+        step is to verify against the published appendix using the
+        <a href="https://www.arcgis.com/apps/dashboards/c473c71f0704408f934fbdc342caf1f1" class="text-oz-blue underline" target="_blank" rel="noopener">EIG eligibility map</a> or the
+        <a href="https://www.novoco.com/resource-centers/opportunity-zones-resource-center/novogradac-opportunity-zones-20-mapping-tool" class="text-oz-blue underline" target="_blank" rel="noopener">Novogradac mapping tool</a>.
+        If the tract is absent, pull current ACS data from the
+        <a href="https://data.census.gov/" class="text-oz-blue underline" target="_blank" rel="noopener">Census Bureau</a> for the
+        tract and confirm it meets the income or poverty thresholds. Then bring that documentation
+        to your state lead agency — the governor's office will need to include the off-list nomination
+        in the state's submission to Treasury.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        Because off-list slots compete directly with on-list nominations, state agencies will
+        weigh them against other candidates. A strong case requires not only the LIC data but
+        also the community readiness and investment narrative that most states ask for in their
+        selection processes. See <a href="/how-to-advocate" class="text-oz-blue underline">How to Advocate</a>
+        for guidance on building that case.
+      </p>
+    </section>
+
+    <section class="mb-8 text-xs text-oz-neutral-400 border-t border-oz-neutral-100 pt-6">
+      <p>
+        Source: <a href="https://www.irs.gov/pub/irs-drop/rp-26-14.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">IRS Rev. Proc. 2026-14</a> (April 6, 2026), Sections 2.02(3) and 5.04;
+        IRC § 1400Z-1(c)(1) and (d)(1); One Big Beautiful Bill Act, P.L. 119-21.
+        Last reviewed: <time datetime="2026-05-06">May 6, 2026</time>.
+      </p>
+    </section>
   </div>
 </Layout>

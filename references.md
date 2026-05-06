@@ -62,6 +62,8 @@ purpose: |
 
 **EIG, "Opportunity Zones 2.0: Where Things Stand After OBBBA."** Aug 2025. https://eig.org/opportunity-zones-2-0-where-things-stand/
 
+**EIG, "Investments and Initiatives From Across the Country."** Last updated Sept 3, 2024. https://eig.org/opportunity-zones/investments-and-initiatives-from-across-the-country/ — Curated database of real-world OZ investment examples organized by category: affordable housing, small business, rural development, health, anchor institutions.
+
 **EIG Guide for Governors and Mayors.** https://eig.org/ozs-guidance
 
 **Frost Brown Todd / Gibbons, "Strategic Selection of OZ 2.0: A Governor's Guide."** Nov 2025. https://fbtgibbons.com/strategic-selection-of-opportunity-zones-2-0-a-governors-guide-to-best-practices/
@@ -86,6 +88,8 @@ purpose: |
 
 **Novogradac Opportunity Funds List.** https://www.novoco.com/resource-centers/opportunity-zones-resource-center/opportunity-funds-listing
 
+**Novogradac, "Residential Investment Remains Leading Focus for QOFs Tracked by Novogradac."** Feb 2, 2023. https://www.novoco.com/notes-from-novogradac/residential-investment-remains-leading-focus-qofs-tracked-novogradac — As of Dec 31, 2022: 374 residential-only QOFs, 719 with any residential focus; $27.80B cumulative equity raised; residential-only up 35% YoY to $6.67B.
+
 **CDFI Fund certified CDFI list.** https://www.cdfifund.gov/programs-training/certification/cdfi
 
 **Rural LISC.** https://www.lisc.org/rural/
@@ -96,7 +100,23 @@ purpose: |
 
 **OCC Community Developments Investments — banks and QOFs.** https://www.occ.gov/publications-and-resources/publications/community-affairs/community-developments-investments/jan-2021/cdi-jan-2021-article-2.html
 
+**USDA Rural Development — Business & Industry Guaranteed Loan Program.** https://www.rd.usda.gov/programs-services/business-programs/business-and-industry-guaranteed-loan — Up to 85% guarantee on loans for rural business development; eligible areas under 50,000 population; no credit-elsewhere test.
+
+**USDA Rural Development — Rural Business Development Grants (RBDG).** https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants — Opportunity and Enterprise grants for planning, TA, and capital acquisition for small rural businesses.
+
+**USDA Rural Development — Community Facilities Direct Loan & Grant Program.** https://www.rd.usda.gov/programs-services/community-facilities/community-facilities-direct-loan-grant-program — Essential community facilities in rural areas under 20,000 population; grant assistance scaled to income/size.
+
+**USDA Rural Development — Multifamily Housing Programs (Section 515, 538).** https://www.rd.usda.gov/programs-services/multi-family-housing-programs — Section 515 direct loans (preservation mode); Section 538 guaranteed loans for new affordable rural rental housing, commonly paired with LIHTC.
+
+**SBA HUBZone Program.** https://www.sba.gov/federal-contracting/contracting-assistance-programs/hubzone-program — Federal contracting preferences for certified small businesses in historically underutilized business zones; set-aside contracts, 10% price preference; 3% federal prime contract goal.
+
+**EDA Grant Resources and Opportunity Zones.** https://www.eda.gov/grant-resources — OZ designation recognized as favorable factor in EDA competitive grant scoring; Public Works and Economic Adjustment Assistance programs.
+
 ## 7. OZ 1.0 evidence base — academic and quasi-experimental
+
+**Kennedy, Patrick and Wheeler, Harrison. "Neighborhood-Level Investment from the U.S. Opportunity Zone Program: Early Evidence."** UNC Tax Center, Apr 12, 2021. https://tax.unc.edu/publication/neighborhood-level-investment-from-the-u-s-opportunity-zone-program-early-evidence/ — $18.9B in OZ investments in 2019; highly concentrated geographically; most designated zones received nothing; capital flowed to relatively advantaged LICs.
+
+**Corinth, Coyne, Feldman, Johnson. "The Targeting of Place-Based Policies: The New Markets Tax Credit Versus Opportunity Zones."** In *The Economics of Place-Based Policies*, U Chicago Press, 2025. https://www.nber.org/books-and-chapters/economics-place-based-policies/targeting-place-based-policies-new-markets-tax-credit-versus-opportunity-zones — OZs disproportionately attract investment to tracts with higher pre-existing private investment; most distressed tracts receive neither NMTC nor OZ capital.
 
 **Chen, Glaeser, Wessel. "JUE Insight: The (Non-)Effect of Opportunity Zones on Housing Prices."** *Journal of Urban Economics* 133 (2023). NBER WP 26587 (2019). https://www.sciencedirect.com/science/article/abs/pii/S0094119022000286 — Rules out price impacts >0.5pp at 95% confidence.
 
@@ -121,6 +141,8 @@ purpose: |
 **EIG, "Are Opportunity Zones Working? What the Literature Tells Us."** Jan 2024. https://eig.org/opportunity-zones-research-brief/
 
 ## 9. OZ 1.0 critique — community development and equity perspectives
+
+**Theodos, Brett and Meixell, Brady (Urban Institute). "Opportunity Zones Need to Be Retooled to Achieve Impact."** Urban Wire, May 12, 2025. https://www.urban.org/urban-wire/opportunity-zones-need-be-retooled-achieve-impact — Despite $100B+ flowing into OZs 2018–2024, evidence shows little community improvement; calls for structural reforms before any extension or expansion.
 
 **NCRC, "Opportunity Zones: A Taxpayer-Funded Program That Primarily Benefits Wealthy Investors."** Oct 2025. https://www.ncrc.org/opportunity-zones-a-taxpayer-funded-program-that-primarily-benefits-wealthy-investors/
 

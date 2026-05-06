@@ -6,11 +6,266 @@ import Layout from '@/layouts/Layout.astro';
   <div class="max-w-3xl">
     <h1 class="text-3xl font-bold mb-4">Federal Capital Stack</h1>
     <p class="text-oz-neutral-500 mb-8">
-      OZ 2.0 works best when layered with other federal programs. This page covers how
-      NMTC, CDFI grants, USDA RD programs, HUBZones, and rural-specific incentives
-      interact with OZ designation.
+      OZ designation reduces the cost of equity capital for investors with realized gains.
+      It does not provide grants, loans, or guarantees. For rural communities where a single
+      incentive rarely closes a financing gap, understanding how OZ equity stacks with other
+      federal programs is essential to structuring deals that can actually get built.
     </p>
-    <!-- TODO: full content -->
-    <p class="text-sm italic text-oz-neutral-400">Content in development.</p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">New Markets Tax Credits (NMTC)</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        NMTC, administered by the CDFI Fund under IRC § 45D, provides a 39% federal tax credit
+        over seven years to investors who place equity into Community Development Entities (CDEs),
+        which then deploy the capital as loans or equity into qualifying businesses and community
+        facilities in low-income census tracts. The One Big Beautiful Bill Act made NMTC permanent
+        at $5 billion in annual allocation. Both NMTC-eligible tracts and OZ-eligible tracts draw
+        from the same low-income community definition, so significant geographic overlap exists.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Combining NMTC and OZ equity in the same project is legally permissible — no statutory
+        prohibition exists in either § 45D or §§ 1400Z-1/1400Z-2. The standard approach in
+        practice is a parallel or "sidecar" structure: a QOF holds equity in the project entity
+        while a CDE provides NMTC-financed debt into the same project as a separate capital
+        tranche. The NMTC investor and the OZ investor are typically different parties.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The structural friction points are real, however. NMTC investors exit after seven years
+        when credit vesting is complete; OZ investors need a 10-year hold to claim the full
+        fair-market-value exclusion. A CDE deploying debt cannot itself be a QOF, since QOFs
+        must hold QOZ property, not debt instruments. For housing, mixed-use projects can be
+        split by condominium structure — commercial portion funded via NMTC, residential via LIHTC
+        — with the QOF owning the commercial element. This is legally complex and requires
+        deal-specific tax counsel, but it is documented in practitioner literature.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        IRS has not issued explicit guidance blessing or restricting NMTC+OZ combinations.
+        The practitioner consensus (Novogradac, NCSHA) is that combinations are permissible
+        in parallel structures but require careful documentation to satisfy both sets of
+        compliance requirements simultaneously. See the
+        <a href="https://www.ncsha.org/advocacy-issues/opportunity-zones/" class="text-oz-blue underline" target="_blank" rel="noopener">NCSHA/EIG affordable housing case studies</a>
+        for documented deal structures.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">CDFI financing</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Certified CDFIs are the most natural capital-stack partner for OZ equity in distressed
+        rural communities. CDFIs can originate loans to OZ businesses (QOZBs), serve as
+        subordinate lenders in deals where OZ equity is the senior investor, and provide
+        technical assistance that makes a community investable in the first place. There is no
+        statutory conflict between CDFI Fund awards (Financial Assistance grants, Technical
+        Assistance grants, NMTC allocations) and OZ equity flowing into the same project or tract.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        A CDFI cannot itself be a QOF unless it structures its investments as equity rather than
+        debt — CDFI Program FA awards build lending capacity, not equity pools. But a CDFI's
+        loan can sit alongside OZ equity in the same project capital stack without conflict.
+        In rural areas where no developer equity or QOF has yet arrived, CDFIs often provide
+        predevelopment financing and project structuring support that de-risks a tract enough
+        to attract OZ investors later.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        The <a href="https://www.cdfifund.gov/opportunity-zones" class="text-oz-blue underline" target="_blank" rel="noopener">CDFI Fund's OZ resources page</a>
+        and the
+        <a href="https://www.cdfifund.gov/programs-training/certification/cdfi" class="text-oz-blue underline" target="_blank" rel="noopener">certified CDFI list</a>
+        are the starting points for identifying CDFIs already operating in a target tract.
+        <a href="https://www.lisc.org/rural/" class="text-oz-blue underline" target="_blank" rel="noopener">Rural LISC</a>
+        and the six
+        <a href="https://www.rcap.org/" class="text-oz-blue underline" target="_blank" rel="noopener">RCAP regional partners</a>
+        are also worth contacting early — they have established relationships with rural CDFIs
+        and can help identify financing intermediaries in your region.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">USDA Rural Development programs</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        USDA Rural Development programs use population-based geographic eligibility (generally
+        communities under 50,000, with lower thresholds for some programs) that overlap substantially
+        with OZ-designated rural tracts. No USDA RD regulation prohibits combining USDA financing
+        with OZ equity in the same project; the programs address different parts of the capital stack.
+      </p>
+
+      <div class="space-y-4 mb-4">
+        <div class="border-t border-oz-neutral-100 pt-4">
+          <p class="text-sm font-medium text-oz-neutral-900 mb-1">
+            <a href="https://www.rd.usda.gov/programs-services/business-programs/business-and-industry-guaranteed-loan" class="text-oz-blue underline" target="_blank" rel="noopener">Business &amp; Industry (B&amp;I) Guaranteed Loans</a>
+          </p>
+          <p class="text-sm text-oz-neutral-700">
+            USDA guarantees up to 85% of B&amp;I loans under $5M (80% above that threshold) for
+            rural business development — real estate, equipment, working capital, and acquisition.
+            B&amp;I loans can be combined with other federal financing, including capital from a QOF
+            in the same transaction. No credit-elsewhere test applies (unlike SBA 7(a)). Eligible
+            areas: rural communities under 50,000 population.
+          </p>
+        </div>
+        <div class="border-t border-oz-neutral-100 pt-4">
+          <p class="text-sm font-medium text-oz-neutral-900 mb-1">
+            <a href="https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants" class="text-oz-blue underline" target="_blank" rel="noopener">Rural Business Development Grants (RBDG)</a>
+          </p>
+          <p class="text-sm text-oz-neutral-700">
+            RBDG funds planning, feasibility studies, and technical assistance for small rural
+            businesses — not capital investment. Opportunity Grants fund training and planning;
+            Enterprise Grants fund capital acquisition for small businesses. These are not capital
+            instruments; they can fund the predevelopment and feasibility work that precedes an
+            OZ equity raise without conflict.
+          </p>
+        </div>
+        <div class="border-t border-oz-neutral-100 pt-4">
+          <p class="text-sm font-medium text-oz-neutral-900 mb-1">
+            <a href="https://www.rd.usda.gov/programs-services/community-facilities/community-facilities-direct-loan-grant-program" class="text-oz-blue underline" target="_blank" rel="noopener">Community Facilities (CF) Direct Loans and Grants</a>
+          </p>
+          <p class="text-sm text-oz-neutral-700">
+            CF funds essential community facilities — healthcare, public safety, education, cultural
+            centers — in rural communities under 20,000 population. Grant assistance is highest for
+            the smallest, lowest-income communities. CF and OZ equity can flow into the same project
+            area, but CF's eligible use restriction (community facilities only, not commercial real
+            estate or business investment) limits direct deal overlap. The most likely combination
+            is a mixed-use development where CF funds a community facility component and OZ equity
+            funds an adjacent commercial element in a separately structured entity.
+          </p>
+        </div>
+        <div class="border-t border-oz-neutral-100 pt-4">
+          <p class="text-sm font-medium text-oz-neutral-900 mb-1">
+            <a href="https://www.rd.usda.gov/programs-services/multi-family-housing-programs" class="text-oz-blue underline" target="_blank" rel="noopener">Multifamily Housing — Section 515 and Section 538</a>
+          </p>
+          <p class="text-sm text-oz-neutral-700">
+            Section 515 (USDA direct loans at 1% interest) is largely in preservation mode for
+            existing affordable rural rental housing. Section 538 (USDA-guaranteed private loans)
+            is more active for new construction and pairs routinely with LIHTC in preservation
+            deals. Adding OZ equity to a 538 + LIHTC stack is structurally possible for new
+            construction but complex — the OZ investor needs a 10-year equity position while
+            LIHTC syndicators and USDA use restrictions operate on different timelines. There
+            is no IRS or USDA guidance specifically addressing 515/538 + QOF combinations;
+            deal-specific legal counsel is required.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">HUBZones</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        HUBZone (Historically Underutilized Business Zone) is an SBA program that provides
+        federal contracting preferences to certified small businesses whose principal offices
+        are in designated HUBZone areas and at least 35% of whose employees reside there.
+        Benefits include set-aside contracting, a 10% price evaluation preference in
+        full-and-open competitions, and sole-source award authority. The federal goal is 3%
+        of all prime contract dollars to HUBZone-certified firms.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        HUBZone and OZ are independently administered by different agencies and use overlapping
+        but non-identical geographic criteria. A census tract can be simultaneously HUBZone-eligible
+        and OZ-designated. The
+        <a href="https://www.bia.gov/service/community-planning/opportunity-zones-hubzones-and-foreign-trade-zones" class="text-oz-blue underline" target="_blank" rel="noopener">BIA notes</a>
+        that all American Indian/Alaska Native reservation lands automatically qualify as HUBZones,
+        and many of those same areas are OZ-designated.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        The two programs are not "stacked" in the traditional capital sense — they benefit
+        different actors. HUBZone benefits flow to a small business through contracting advantages;
+        OZ benefits flow to an investor through capital gains tax treatment. A HUBZone-certified
+        business operating in an OZ tract can simultaneously benefit from both programs without
+        conflict: the business pursues federal contracts via HUBZone certification while
+        accepting growth capital from a QOF investing in it as a QOZB.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Low-Income Housing Tax Credits (LIHTC) and affordable housing</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        LIHTC is the primary tool for affordable housing development. The OBBBA (P.L. 119-21)
+        permanently increased the 9% credit allocation by 12% and reduced the 4% credit
+        private activity bond financing threshold from 50% to 25%, making more rental housing
+        projects eligible for the 4% credit. Both changes expand LIHTC supply in rural markets.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        LIHTC equity and OZ equity can flow into the same project, but they serve different
+        investors with different timing requirements. For new affordable housing construction in
+        an OZ tract, a developer can seek state LIHTC allocation while also accepting OZ equity
+        as a development contribution or separate investment tranche. The most documented pathway
+        is a mixed-use condominium structure: a LIHTC syndicator owns the residential condominium
+        interest; a QOF owns the commercial interest. This separates the two investor relationships
+        legally while keeping the project physically integrated.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        No IRS revenue ruling explicitly blesses or restricts LIHTC+OZ combinations. The
+        practitioner consensus treats them as permissible with careful structuring. See the
+        <a href="https://www.ncsha.org/advocacy-issues/opportunity-zones/" class="text-oz-blue underline" target="_blank" rel="noopener">NCSHA/EIG affordable housing case studies</a>
+        for deal-level precedents.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Economic Development Administration (EDA)</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        EDA grants fund public infrastructure, planning, and business development capacity for
+        distressed areas. OZ designation is recognized in EDA grant scoring as a favorable
+        indicator of project location need. EDA investments typically fund the public
+        infrastructure (roads, utilities, broadband, business incubators) that precedes or
+        accompanies private investment — not the private investment itself.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        There is no statutory conflict between EDA grants and OZ equity. The most productive
+        sequencing is often EDA infrastructure investment first, OZ equity into private
+        development second — the infrastructure investment improves the tract's investment case
+        for QOF investors. Regional planning organizations, EDDs, and economic development
+        districts eligible for EDA awards can pursue both independently.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">OZ 2.0 investor reporting: what changed</h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Understanding what OZ 2.0 requires of investors matters for communities negotiating
+        with QOFs. Under OZ 1.0, QOFs self-certified on Form 8996 with no enforceable
+        penalty for non-filing and no obligation to report on community outcomes. OZ 2.0 added:
+      </p>
+      <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-2 mb-4">
+        <li>
+          <strong class="text-oz-neutral-900">IRC § 6039K</strong> — QOFs must file detailed annual information returns covering total assets,
+          QOZ property held, employment metrics, NAICS codes for underlying businesses, and
+          housing units created or preserved. Effective for tax years beginning after
+          December 31, 2026.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">IRC § 6039L</strong> — QOZBs must furnish corresponding data to the QOFs that hold interests
+          in them to enable QOF compliance.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">IRC § 6726</strong> — Enforceable penalties for failure to file: $500/day (standard),
+          $2,500/day (intentional disregard), capped by fund size.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Treasury public reports</strong> — Treasury must publish public aggregate data on QOF
+          activity at years 6 and 11 post-enactment.
+        </li>
+      </ul>
+      <p class="text-sm text-oz-neutral-700">
+        These reporting requirements give communities leverage they didn't have under OZ 1.0.
+        When negotiating with QOF investors interested in a local tract, the fact that
+        employment, housing, and business activity will be publicly reported creates a basis
+        for community benefit agreements tied to the metrics the investor must already track.
+      </p>
+    </section>
+
+    <section class="mb-8 text-xs text-oz-neutral-400 border-t border-oz-neutral-100 pt-6">
+      <p class="mb-1">
+        Federal program sources:
+        <a href="https://www.cdfifund.gov/opportunity-zones" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">CDFI Fund OZ resources</a>;
+        <a href="https://www.rd.usda.gov/programs-services/business-programs/business-and-industry-guaranteed-loan" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">USDA RD B&amp;I Guaranteed Loan</a>;
+        <a href="https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">USDA RD RBDG</a>;
+        <a href="https://www.rd.usda.gov/programs-services/community-facilities/community-facilities-direct-loan-grant-program" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">USDA CF</a>;
+        <a href="https://www.sba.gov/federal-contracting/contracting-assistance-programs/hubzone-program" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">SBA HUBZone</a>;
+        <a href="https://www.ncsha.org/advocacy-issues/opportunity-zones/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NCSHA/EIG affordable housing case studies</a>.
+      </p>
+      <p>
+        OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21.
+        NMTC made permanent: P.L. 119-21 § [NMTC provision]; LIHTC changes: P.L. 119-21.
+        Last reviewed: <time datetime="2026-05-06">May 6, 2026</time>.
+      </p>
+    </section>
   </div>
 </Layout>
