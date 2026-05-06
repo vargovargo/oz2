@@ -305,7 +305,7 @@ purpose: |
 
 **NC Commerce (North Carolina OZ page).** https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina — Public feedback form; deadline June 7, 2026; three scoring criteria published; contact OZ-Feedback@commerce.nc.gov. last_checked: 2026-05-05
 
-**ODOD via Greater Ohio Policy Center (Ohio OZ page).** https://www.greaterohio.org/opportunityzones — Nomination process confirmed; direct portal (opportunityzones.ohio.gov) returned 404 at check date. last_checked: 2026-05-05
+**ODOD (Ohio OZ 2.0 portal).** https://opportunityzones.ohio.gov — State nomination portal; returned 403 to automated fetchers on 2026-05-06 (likely WAF block, not dead link; URL confirmed via ohio.gov search index). ODOD opened a 30-day local submission window in late April 2026; deadline approximately May 31, 2026. No scoring rubric published. No ODOD OZ-specific contact email found. **Greater Ohio Policy Center (TA resource).** https://www.greaterohio.org/opportunityzones — Statewide TA provider for communities preparing nominations; confirms portal and process details. last_checked: 2026-05-06
 
 **OK Commerce — OZ nomination form.** https://www.okcommerce.gov/doing-business/business-relocation-expansion/incentives/federal-opportunity-zones/ — Live nomination form at https://forms.okcommerce.gov/260495603721860; contact jon.chiappe@okcommerce.gov. last_checked: 2026-05-05
 

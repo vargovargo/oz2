@@ -2167,15 +2167,30 @@ ohio:
   last_checked: '2026-05-06'
   lead_agency:
     name: Ohio Department of Development (ODOD)
-    url: https://www.greaterohio.org/opportunityzones
+    url: https://opportunityzones.ohio.gov
     contact_email: null
     contact_phone: null
-  process: ODOD opened a 30-day online portal to accept local nominations in April
-    2026. Greater Ohio Policy Center provides technical assistance. Current OZ 1.0
-    designations are not automatically renewed.
+  process: "The Ohio Department of Development (ODOD) is running the OZ 2.0 nomination
+    process and opened a 30-day online portal for local submissions in late April 2026;
+    the portal is available at opportunityzones.ohio.gov, with a submission deadline
+    of approximately May 31, 2026 (confirm directly with ODOD, as the exact close date
+    was not publicly posted at time of check). Local governments, regional planning
+    bodies, and economic development organizations may submit nominations through the
+    portal; no formal scoring rubric has been published, but ODOD has signaled that
+    nominations demonstrating regional collaboration, alignment with existing economic
+    development strategies, and connection to housing or revitalization plans will be
+    evaluated favorably. No current OZ 1.0 designations are automatically renewed —
+    all tracts must be renominated. Greater Ohio Policy Center (greaterohio.org/opportunityzones)
+    is serving as a statewide technical assistance resource and can help communities
+    prepare competitive submissions."
   scoring_rubric_url: null
   state_deadline: '2026-05-31'
-  application_portal_url: null
+  application_portal_url: https://opportunityzones.ohio.gov
+  notes: "Greater Ohio Policy Center TA resource: https://www.greaterohio.org/opportunityzones.
+    Portal URL opportunityzones.ohio.gov appeared in ohio.gov search index as of 2026-05-06
+    but returned 403 to automated fetchers — likely a WAF block rather than a dead
+    link. Deadline of May 31 is inferred from a 30-day window opened in late April;
+    verify directly. No ODOD OZ-specific contact email found as of last check."
   tribal_consultation:
     framework: null
     citation: null
