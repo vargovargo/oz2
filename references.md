@@ -315,7 +315,7 @@ purpose: |
 
 **Commerce RI (Rhode Island OZ page).** https://commerceri.com/site-selection/opportunity-zones/ — Lead agency; no OZ 2.0 guidance published. last_checked: 2026-05-05
 
-**SC Commerce — OZ submission portal.** https://www.sccommerce.com/opportunity-zone — Live submission portal at https://www.sccommerce.com/opportunity-zone-submission; deadline June 1, 2026; contact oz@sccommerce.com. last_checked: 2026-05-05
+**SC Commerce — OZ nomination process.** https://www.sccommerce.com/opportunity-zone — Online submission portal at https://www.sccommerce.com/opportunity-zone-submission; deadline June 1, 2026; open to local governments, EDOs, community leaders, and public; criteria include investment potential, alignment with state economic strategy, market-ready infrastructure (industrial sites, utilities, broadband), and housing activity; no scoring weights published; SC Commerce recommendation to Governor targeted ~July 1, 2026; SC may nominate up to 112 of 445 eligible tracts; contact oz@sccommerce.com. last_checked: 2026-05-06
 
 **TNECD (Tennessee OZ page).** https://www.tn.gov/ecd/opportunity-zones.html — Stakeholder discussion held February 2026; contact ED.OpportunityZones@tn.gov. last_checked: 2026-05-05
 
