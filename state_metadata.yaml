@@ -283,10 +283,10 @@ california:
     name: Contra Costa County
     eligible_count: 69
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Governor's Office of Business and Economic Development (GO-Biz)
-    url: https://business.ca.gov/resources/infrastructure-development/opportunity-zones-in-california/
+    url: https://economicdevelopment.business.ca.gov/place-based-strategies/opportunity-zones/
     contact_email: null
     contact_phone: null
   process: null
@@ -1682,7 +1682,7 @@ nevada:
   last_checked: '2026-05-06'
   lead_agency:
     name: Nevada Governor's Office of Economic Development (GOED)
-    url: https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/
+    url: https://goed.nv.gov/programs-incentives/opportunity-zones/
     contact_email: null
     contact_phone: (800) 336-1600
   process: null
@@ -1698,7 +1698,9 @@ nevada:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: GOED confirmed lead. No OZ 2.0 nomination guidance published.
+  notes: GOED is the confirmed lead agency. No OZ 2.0 guidance, community input
+    process, or nomination portal published as of 2026-05-06. GOED page reflects
+    OZ 1.0 content. Contact GOED directly via (800) 336-1600.
 new-hampshire:
   name: New Hampshire
   fips: '33'

@@ -243,7 +243,7 @@ purpose: |
 
 **AEDC (Arkansas OZ page).** https://www.arkansasedc.com/community-resources/opportunity-zones — OZ landing page; no OZ 2.0 nomination process published. last_checked: 2026-05-05
 
-**GO-Biz (California OZ page).** https://business.ca.gov/resources/infrastructure-development/opportunity-zones-in-california/ — Acknowledges OZ 2.0 timeline; no formal nomination process published. last_checked: 2026-05-05
+**GO-Biz (California OZ page).** https://economicdevelopment.business.ca.gov/place-based-strategies/opportunity-zones/ — Updated site references OZ 2.0 timeline and Novogradac mapping tool; no community nomination process or public input mechanism published as of 2026-05-06. last_checked: 2026-05-06
 
 **OEDIT (Colorado OZ program).** https://oedit.colorado.gov/colorado-opportunity-zone-program — Lead agency; multi-month engagement process underway; public GIS tool and nomination portal in development; no community submission deadline published as of 2026-05-06. last_checked: 2026-05-06
 
@@ -289,7 +289,7 @@ purpose: |
 
 **NE DED (Nebraska OZ page).** https://opportunity.nebraska.gov/programs/business/opportunity-zones/ — Application period closed May 1, 2026; contact ded.opportunityzones@nebraska.gov. last_checked: 2026-05-05
 
-**GOED (Nevada OZ page).** https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/ — Lead agency; no OZ 2.0 nomination process published. last_checked: 2026-05-06
+**GOED (Nevada OZ page).** https://goed.nv.gov/programs-incentives/opportunity-zones/ — Lead agency; page reflects OZ 1.0 content only; no OZ 2.0 nomination process or community input published as of 2026-05-06. Contact (800) 336-1600. last_checked: 2026-05-06
 
 **BEA (New Hampshire OZ page).** https://www.nheconomy.com/grow/opportunity-zones — Lead agency; no OZ 2.0 guidance published. last_checked: 2026-05-05
 
