@@ -11,16 +11,31 @@ in references.md. Read both before substantive edits.
 - `data/state_summaries.csv` — per-state totals, rural splits, top-10 counties
 - `scripts/ingest_irs_appendix.py` — fetches the IRS appendix XLSX, re-runnable
 
-**Site scaffold done:**
-- Astro + Tailwind, Node 22 (`.nvmrc`), Vercel target
-- `npm run dev` to start, `npm run build` to verify
-- All routes stubbed per SPEC; 3 state pages live (alabama, alaska, arizona)
+**State metadata done:**
+- `state_metadata.yaml` — all 51 states populated; 18 public_process, 32 contact_only, 1 no_public_process (DC)
+- `scripts/generate_state_metadata.py` — regenerates scaffold from CSV (re-runnable)
+- `scripts/patch_state_metadata.py` — applies researched status/agency data (re-runnable, idempotent)
+- `src/lib/states.ts` — typed loader; `getAllStates()`, `getState(slug)`, `getStateSlugs()`
+
+**Site live:**
+- Deployed at https://oz2-two.vercel.app (GitHub: vargovargo/oz2, branch: main)
+- All 51 state pages rendering from YAML — correct tier badges, lead agency contacts, deadlines, county tables
+- "Input closed" logic: states with past deadlines show grey badge + prose note (Nebraska, Florida)
+- References page: styled with entry separators, clickable URLs, last_checked badges
+- references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
 
 **Next priorities (in order):**
-1. `state_metadata.yaml` — drives all 51 state pages; schema in SPEC.md
+1. Fill stub cross-cutting pages: `how-to-advocate`, `capital-stack`, `oz1-retrospective`, `off-list-nominations`
 2. Data overlays: `data/dci.parquet` (EIG DCI), `data/persistent_poverty.parquet` (USDA ERS), `data/tribal_overlap.parquet` (BIA)
-3. Fill stub pages: how-to-advocate, capital-stack, oz1-retrospective, off-list-nominations
-4. Vercel deploy — connect repo, zero config for Astro static
+3. EIG ArcGIS embeds — replace placeholder grey boxes on state pages with real iframes scoped by FIPS
+4. State metadata upkeep — re-check tiers every two weeks; several states' windows close/open in May–June
+5. Custom domain: oz2.vargo.city → Vercel
+
+**Upcoming deadlines to watch (state nomination windows):**
+- Missouri: May 17 | Kentucky: May 29 | Oregon: May 22 | Washington: May 28
+- Mississippi: May 31 | Ohio: ~May 31 | Delaware: May 15
+- South Carolina: June 1 | Kansas: June 1 | North Carolina: June 7
+- Texas: June 26 | New Mexico: July 1 (via COGs)
 
 ## Audience and stance
 
