@@ -269,7 +269,7 @@ purpose: |
 
 **Kansas Commerce — OZ 2.0 process.** https://www.kansascommerce.gov/opportunity-zones-2-0/ — Published process with scoring matrix; deadline June 1, 2026; contact OZ@kansascommerce.gov. last_checked: 2026-05-05
 
-**Kentucky Cabinet for Economic Development — OZ application.** https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz — Application and criteria documents published; deadline May 29, 2026. last_checked: 2026-05-05
+**Kentucky Cabinet for Economic Development — OZ application.** https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz — XLSX application and DOCX criteria guidance downloadable from landing page; no direct file URLs publicly indexed. Deadline May 29, 2026; email completed applications to Kristina.Slattery@ky.gov. Webinar held March 3, 2026 ("Opportunity Zones 2.0 – How to Apply for Census Tract Designation"). last_checked: 2026-05-06
 
 **LED (Louisiana OZ page).** https://www.opportunitylouisiana.gov/incentive/federal-opportunity-zones — Lead agency; no OZ 2.0 nomination process published. last_checked: 2026-05-05
 

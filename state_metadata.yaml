@@ -1027,14 +1027,25 @@ kentucky:
   lead_agency:
     name: Kentucky Cabinet for Economic Development
     url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
-    contact_email: null
+    contact_email: Kristina.Slattery@ky.gov
     contact_phone: (502) 564-7670
-  process: Application (XLSX) and criteria guidance (DOCX) downloadable from state
-    page. Deadline May 29, 2026. No online portal — file download and email submission.
-    Webinar held March 3, 2026.
+  process: The Kentucky Cabinet for Economic Development runs the OZ 2.0 designation
+    process, led by Kristina Slattery, Commissioner of Business Development. Local
+    governments and economic development organizations download an XLSX application
+    and a companion DOCX criteria guidance document from the Cabinet's OZ page, then
+    email completed applications to Kristina.Slattery@ky.gov by May 29, 2026; there
+    is no online submission portal. The criteria guidance document describes scoring
+    factors — exact criterion names and weights are in the downloadable DOCX and were
+    reviewed at a March 3, 2026 webinar titled "Opportunity Zones 2.0 – How to Apply
+    for Census Tract Designation." Kentucky may designate up to 137 tracts from its
+    545 eligible, of which 381 (70 percent) carry the rural flag under Notice 2025-50.
   scoring_rubric_url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
   state_deadline: '2026-05-29'
   application_portal_url: null
+  notes: Direct file download URLs for the XLSX application and DOCX criteria guidance
+    are hosted on the Cabinet page but return 403 to automated fetches; use the landing
+    page URL to access them. Submission contact is Kristina Slattery (Commissioner
+    of Business Development) at Kristina.Slattery@ky.gov or (800) 626-2930.
   tribal_consultation:
     framework: null
     citation: null
