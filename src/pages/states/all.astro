@@ -1,0 +1,71 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// Placeholder state list — will be replaced by state_metadata.yaml
+const states = [
+  { slug: 'alabama', name: 'Alabama', fips: '01', totalEligible: 563, ruralEligible: 302, tier: 'no_public_process' },
+  { slug: 'alaska', name: 'Alaska', fips: '02', totalEligible: 32, ruralEligible: 21, tier: 'no_public_process' },
+  { slug: 'arizona', name: 'Arizona', fips: '04', totalEligible: 500, ruralEligible: 137, tier: 'no_public_process' },
+  // TODO: populate remaining states from state_metadata.yaml
+];
+
+const tierLabel: Record<string, string> = {
+  public_process: 'Public process',
+  contact_only:   'Contact only',
+  no_public_process: 'No public process yet',
+};
+
+const tierColor: Record<string, string> = {
+  public_process:    'text-oz-green bg-green-50 border-green-200',
+  contact_only:      'text-oz-amber bg-amber-50 border-amber-200',
+  no_public_process: 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200',
+};
+---
+
+<Layout title="All States" description="Browse all 51 state + DC Opportunity Zone 2.0 spotlight pages.">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold mb-3">States & DC</h1>
+    <p class="text-oz-neutral-500">
+      Select a state to see eligible tract counts, the nomination process, key contacts, and what to do next.
+      Status tiers reflect what's publicly known as of the last check date.
+    </p>
+  </div>
+
+  <!-- Legend -->
+  <div class="flex flex-wrap gap-3 mb-8 text-sm">
+    {Object.entries(tierLabel).map(([key, label]) => (
+      <span class={`px-3 py-1 rounded border font-medium ${tierColor[key]}`}>{label}</span>
+    ))}
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {states.map(s => (
+      <a
+        href={`/states/${s.slug}`}
+        class="bg-white border border-oz-neutral-200 rounded p-5 hover:border-oz-blue hover:shadow-sm transition-all group"
+      >
+        <div class="flex items-start justify-between mb-3">
+          <h2 class="font-semibold text-oz-neutral-900 group-hover:text-oz-blue transition-colors">{s.name}</h2>
+          <span class={`text-xs px-2 py-0.5 rounded border font-medium ${tierColor[s.tier]}`}>
+            {tierLabel[s.tier]}
+          </span>
+        </div>
+        <div class="flex gap-4 text-sm font-mono">
+          <div>
+            <p class="text-oz-neutral-900 font-semibold">{s.totalEligible.toLocaleString()}</p>
+            <p class="text-oz-neutral-500 text-xs">eligible</p>
+          </div>
+          <div>
+            <p class="text-oz-neutral-900 font-semibold">{s.ruralEligible.toLocaleString()}</p>
+            <p class="text-oz-neutral-500 text-xs">rural</p>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <p class="mt-8 text-sm text-oz-neutral-500">
+    Tract counts from IRS Rev. Proc. 2026-14 (April 6, 2026).
+    Status tiers last verified May 2026. <a href="/methodology" class="underline hover:text-oz-neutral-700">Methodology</a>.
+  </p>
+</Layout>

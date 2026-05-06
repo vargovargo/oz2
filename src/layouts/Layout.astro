@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'State-by-state resource for Opportunity Zone 2.0 nominations.' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <title>{title} — OZ 2.0 Resource</title>
+  </head>
+  <body class="h-full bg-oz-neutral-50 text-oz-neutral-900 flex flex-col">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-oz-blue text-white px-4 py-2 rounded">
+      Skip to main content
+    </a>
+
+    <header class="border-b border-oz-neutral-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 text-oz-neutral-900 hover:text-oz-blue transition-colors">
+          <span class="font-semibold text-lg leading-tight">OZ 2.0</span>
+          <span class="text-oz-neutral-300">|</span>
+          <span class="text-sm text-oz-neutral-500">State Resource</span>
+        </a>
+        <nav aria-label="Site navigation" class="hidden sm:flex items-center gap-6 text-sm">
+          <a href="/states/all" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
+          <a href="/how-to-advocate" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
+          <a href="/capital-stack" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
+          <a href="/methodology" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Methodology</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-10">
+      <slot />
+    </main>
+
+    <footer class="border-t border-oz-neutral-200 bg-white mt-auto">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-oz-neutral-500">
+        <p>
+          Data: <a href="/references" class="underline hover:text-oz-neutral-700">IRS Rev. Proc. 2026-14</a> and other sources.
+          Nomination window opens <strong class="text-oz-neutral-700">July 1, 2026</strong>.
+        </p>
+        <nav aria-label="Footer navigation" class="flex gap-4">
+          <a href="/methodology" class="hover:text-oz-neutral-700">Methodology</a>
+          <a href="/references" class="hover:text-oz-neutral-700">References</a>
+          <a href="/about" class="hover:text-oz-neutral-700">About</a>
+        </nav>
+      </div>
+    </footer>
+
+  </body>
+</html>

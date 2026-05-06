@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+// Read references.md at build time
+const refPath = resolve(process.cwd(), 'references.md');
+const referencesRaw = readFileSync(refPath, 'utf-8');
+---
+
+<Layout title="References" description="All sources cited in the OZ 2.0 resource, with last-checked dates.">
+  <div class="max-w-3xl">
+    <h1 class="text-3xl font-bold mb-4">References</h1>
+    <p class="text-oz-neutral-500 mb-8">
+      Every claim in this resource links to an entry below.
+      Each entry includes a <code class="text-xs bg-oz-neutral-100 px-1 py-0.5 rounded">last_checked</code> date.
+    </p>
+    <div class="prose prose-sm max-w-none text-oz-neutral-700">
+      <!-- Raw references.md rendered — will use @astrojs/markdown-remark in full build -->
+      <pre class="whitespace-pre-wrap text-xs">{referencesRaw}</pre>
+    </div>
+  </div>
+</Layout>

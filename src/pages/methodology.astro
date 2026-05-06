@@ -1,0 +1,71 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Methodology" description="Data sources, decisions, and last-updated dates for the OZ 2.0 resource.">
+  <div class="max-w-3xl">
+    <h1 class="text-3xl font-bold mb-4">Methodology</h1>
+    <p class="text-oz-neutral-500 mb-8">
+      How this resource was built, what data it relies on, and how to interpret it.
+    </p>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3">Eligible tract data</h2>
+      <p class="text-sm text-oz-neutral-700 mb-3">
+        Tract eligibility comes from the IRS Rev. Proc. 2026-14 appendix (April 6, 2026),
+        which identifies 25,332 census tracts that are low-income communities eligible for
+        nomination as Qualified Opportunity Zones. Rural designation follows Notice 2025-50,
+        Section 4.01. The appendix is the canonical source; we do not re-implement the eligibility test.
+      </p>
+      <dl class="text-sm">
+        <div class="flex gap-3 py-2 border-t border-oz-neutral-100">
+          <dt class="w-36 text-oz-neutral-500 shrink-0">Source</dt>
+          <dd><a href="https://www.irs.gov/pub/irs-drop/rp-26-14.pdf" class="text-oz-blue underline" target="_blank" rel="noopener">IRS Rev. Proc. 2026-14</a></dd>
+        </div>
+        <div class="flex gap-3 py-2 border-t border-oz-neutral-100">
+          <dt class="w-36 text-oz-neutral-500 shrink-0">Appendix data</dt>
+          <dd><a href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx" class="text-oz-blue underline">rp-26-14-appendix.xlsx</a></dd>
+        </div>
+        <div class="flex gap-3 py-2 border-t border-oz-neutral-100">
+          <dt class="w-36 text-oz-neutral-500 shrink-0">Ingest script</dt>
+          <dd><code class="text-xs bg-oz-neutral-100 px-1 py-0.5 rounded">scripts/ingest_irs_appendix.py</code></dd>
+        </div>
+        <div class="flex gap-3 py-2 border-t border-oz-neutral-100">
+          <dt class="w-36 text-oz-neutral-500 shrink-0">Last fetched</dt>
+          <dd>2026-05-05</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3">State status tiers</h2>
+      <p class="text-sm text-oz-neutral-700 mb-3">
+        Each state page declares a status tier based on what the governor's office or
+        lead state agency had published as of the last check date. Tiers are re-evaluated
+        at least every two weeks during the May–July nomination ramp.
+      </p>
+      <dl class="text-sm">
+        {[
+          ['Public process', 'State has published guidance, named contacts, set deadlines, defined scoring criteria.'],
+          ['Contact only', 'Lead agency identified, contact info available, no public process yet.'],
+          ['No public process yet', 'Universal information only; state has not engaged publicly.'],
+        ].map(([tier, desc]) => (
+          <div class="flex gap-3 py-2 border-t border-oz-neutral-100">
+            <dt class="w-40 text-oz-neutral-700 font-medium shrink-0">{tier}</dt>
+            <dd class="text-oz-neutral-500">{desc}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold mb-3">What this resource does not include</h2>
+      <ul class="text-sm text-oz-neutral-500 list-disc pl-5 space-y-1">
+        <li>Eligibility maps (embedded from EIG/IRS instead of reproduced)</li>
+        <li>The 5 U.S. territories (Phase 2)</li>
+        <li>Fund discovery or investor tooling (see Novogradac)</li>
+        <li>Editorial argument about OZ-financed LULUs (separate lab essay)</li>
+      </ul>
+    </section>
+  </div>
+</Layout>

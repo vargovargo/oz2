@@ -1,0 +1,161 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// Static paths — will be generated from state_metadata.yaml
+// Stub: only a few states until state_metadata.yaml is populated
+export function getStaticPaths() {
+  return [
+    { params: { state: 'alabama' }, props: { name: 'Alabama', fips: '01', totalEligible: 563, ruralEligible: 302, maxDesignations: 141, tier: 'no_public_process', lastChecked: '2026-05-05' } },
+    { params: { state: 'alaska'  }, props: { name: 'Alaska',  fips: '02', totalEligible: 32,  ruralEligible: 21,  maxDesignations: 8,   tier: 'no_public_process', lastChecked: '2026-05-05' } },
+    { params: { state: 'arizona' }, props: { name: 'Arizona', fips: '04', totalEligible: 500, ruralEligible: 137, maxDesignations: 125, tier: 'no_public_process', lastChecked: '2026-05-05' } },
+    // TODO: populate all 51 states from state_metadata.yaml
+  ];
+}
+
+interface Props {
+  name: string;
+  fips: string;
+  totalEligible: number;
+  ruralEligible: number;
+  maxDesignations: number;
+  tier: 'public_process' | 'contact_only' | 'no_public_process';
+  lastChecked: string;
+}
+
+const { name, fips, totalEligible, ruralEligible, maxDesignations, tier, lastChecked } = Astro.props;
+
+const tierLabel = {
+  public_process:    'Public process',
+  contact_only:      'Contact only',
+  no_public_process: 'No public process yet',
+};
+
+const tierColor = {
+  public_process:    'text-oz-green bg-green-50 border-green-200',
+  contact_only:      'text-oz-amber bg-amber-50 border-amber-200',
+  no_public_process: 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200',
+};
+
+const daysToWindow = Math.ceil((new Date('2026-07-01').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+---
+
+<Layout title={name} description={`OZ 2.0 eligible tracts, nomination process, and coalition guidance for ${name}.`}>
+
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-oz-neutral-500 mb-6" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-oz-blue">Home</a>
+    <span class="mx-2">›</span>
+    <a href="/states/all" class="hover:text-oz-blue">States</a>
+    <span class="mx-2">›</span>
+    <span class="text-oz-neutral-900">{name}</span>
+  </nav>
+
+  <!-- Header -->
+  <div class="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+    <h1 class="text-4xl font-bold">{name}</h1>
+    <div class="flex flex-col items-start sm:items-end gap-2">
+      <span class={`text-sm px-3 py-1 rounded border font-medium ${tierColor[tier]}`}>
+        {tierLabel[tier]}
+      </span>
+      <p class="text-xs text-oz-neutral-500">Last checked {lastChecked}</p>
+    </div>
+  </div>
+
+  <!-- 1. Headline numbers -->
+  <section class="mb-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+    {[
+      { label: 'Total eligible tracts', value: totalEligible.toLocaleString() },
+      { label: 'Rural eligible', value: ruralEligible.toLocaleString() },
+      { label: 'Max designations (25%)', value: maxDesignations.toLocaleString() },
+      { label: 'Days to nomination window', value: daysToWindow > 0 ? daysToWindow : 'Open' },
+    ].map(({ label, value }) => (
+      <div class="bg-white border border-oz-neutral-200 rounded p-5">
+        <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
+        <p class="text-xs text-oz-neutral-500">{label}</p>
+      </div>
+    ))}
+  </section>
+
+  <!-- 2. Status banner -->
+  {tier === 'no_public_process' && (
+    <section class="mb-10 border border-oz-neutral-200 bg-white rounded p-6">
+      <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
+      <p class="text-oz-neutral-500">
+        {name} has not yet published a public nomination process as of {lastChecked}.
+        This is common — only a minority of states had published guidance as of late April 2026.
+        See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how to advocate</a> for steps
+        you can take now to engage the governor's office.
+      </p>
+    </section>
+  )}
+
+  {tier === 'contact_only' && (
+    <section class="mb-10 border border-oz-neutral-200 bg-white rounded p-6">
+      <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
+      <p class="text-oz-neutral-500">
+        The lead agency has been identified, but no public process has been published yet.
+        Contact information is below. See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how to advocate</a>
+        for what to do while the process develops.
+      </p>
+      <!-- TODO: populate from state_metadata.yaml -->
+    </section>
+  )}
+
+  {tier === 'public_process' && (
+    <section class="mb-10 border border-green-200 bg-green-50 rounded p-6">
+      <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
+      <!-- TODO: populate from state_metadata.yaml -->
+      <p class="text-oz-neutral-500">Process details coming from state_metadata.yaml.</p>
+    </section>
+  )}
+
+  <!-- 3. Eligible tracts -->
+  <section class="mb-10">
+    <h2 class="text-lg font-semibold mb-4">Eligible tracts</h2>
+    <div class="bg-white border border-oz-neutral-200 rounded p-6">
+      <p class="text-sm text-oz-neutral-500 mb-4">
+        Map source: EIG ArcGIS dashboard. Tract list: IRS Rev. Proc. 2026-14 appendix.
+      </p>
+      <!-- EIG embed placeholder — swap for actual ArcGIS iframe scoped to state -->
+      <div class="bg-oz-neutral-100 rounded h-64 flex items-center justify-center text-oz-neutral-500 text-sm">
+        EIG ArcGIS embed — scope to {name} (FIPS {fips})
+      </div>
+      <div class="mt-4 flex gap-3 text-sm">
+        <a href={`https://eig.org/ozs-resources/`} target="_blank" rel="noopener" class="text-oz-blue underline">EIG eligibility map</a>
+        <a href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx" class="text-oz-blue underline">IRS appendix (XLSX)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How to influence the nomination -->
+  <section class="mb-10">
+    <h2 class="text-lg font-semibold mb-4">How to influence the nomination</h2>
+    <p class="text-oz-neutral-500 text-sm mb-4">
+      Detailed coalition checklist at <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">/how-to-advocate</a>.
+      Steps specific to {name} will appear here once the state process is documented.
+    </p>
+  </section>
+
+  <!-- 5. Who to contact -->
+  <section class="mb-10">
+    <h2 class="text-lg font-semibold mb-4">Who to contact</h2>
+    <div class="bg-white border border-oz-neutral-200 rounded p-6">
+      <!-- TODO: populate from state_metadata.yaml -->
+      <p class="text-sm text-oz-neutral-500 italic">
+        Contact information for {name}'s lead agency, regional EDDs, CDFI network,
+        and USDA Rural Development office will be populated from state_metadata.yaml.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. Sources -->
+  <section class="text-xs text-oz-neutral-500">
+    <p>
+      Eligible tract counts: IRS Rev. Proc. 2026-14 (April 6, 2026).
+      Rural designation: Notice 2025-50, Section 4.01.
+      Status tier last verified {lastChecked}.
+      <a href="/methodology" class="underline hover:text-oz-neutral-700">Full methodology</a>.
+    </p>
+  </section>
+
+</Layout>

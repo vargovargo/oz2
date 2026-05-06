@@ -34,9 +34,9 @@ in references.md. Read both before substantive edits.
 - Page review: invoke the three project skills (`oz2-local-planner`,
   `oz2-impact-investor`, `oz2-community-matchmaker`) as quality gates after
   major page edits.
-- Personal voice/aesthetic: invoke `jason-vargo-voice` for prose Jason
-  authors (introductions, methodology, lab essays). Invoke
-  `jason-vargo-design-aesthetic` for visual decisions.
+- Voice: neutral, evidence-based, direct. Not Jason's personal voice. Do
+  not invoke jason-vargo-voice or jason-vargo-design-aesthetic for this
+  project.
 
 ## Don't
 
@@ -53,11 +53,11 @@ in references.md. Read both before substantive edits.
 
 ## Tech stack assumptions
 
-- Static site, GitHub Pages hosting (consistent with vargo.city).
-- Markdown content with YAML frontmatter.
+- Static site, Astro framework, Vercel hosting.
+- Markdown content with YAML frontmatter; state data sourced from
+  `state_metadata.yaml`.
 - Python for data ingestion (`scripts/`).
-- Supabase if any dynamic features are needed (consistent with vargo.city
-  pattern); prefer static for MVP.
+- Supabase only if dynamic features are needed; prefer fully static for MVP.
 - Embed EIG ArcGIS dashboards via iframe rather than reproducing maps.
 
 ## Status tiers (every state page declares one)
