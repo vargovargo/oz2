@@ -638,10 +638,10 @@ hawaii:
     name: Kalawao County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Hawaii Dept. of Business, Economic Development and Tourism (DBEDT)
-    url: https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/
+    url: https://invest.hawaii.gov/business-programs/why-invest-in-hawaii/tax-incentives-and-credits/
     contact_email: null
     contact_phone: null
   process: null
@@ -882,10 +882,10 @@ iowa:
     name: Appanoose County
     eligible_count: 3
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Iowa Economic Development Authority (IEDA)
-    url: https://opportunityiowa.gov/community/revitalization/opportunity-zones
+    url: https://iowaeconomicdevelopment-site.azurewebsites.net/opportunity-zones/
     contact_email: null
     contact_phone: null
   process: null
@@ -1674,10 +1674,10 @@ nevada:
     name: Mineral County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Nevada Governor's Office of Economic Development (GOED)
-    url: https://goed.nv.gov/programs-incentives/opportunity-zones/
+    url: https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/
     contact_email: null
     contact_phone: (800) 336-1600
   process: null
@@ -1794,11 +1794,11 @@ new-jersey:
     name: Bergen County
     eligible_count: 20
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: NJ Dept. of Community Affairs (DCA) / NJ Economic Development Authority
       (NJEDA)
-    url: https://nj.gov/governor/njopportunityzones/
+    url: https://www.nj.gov/dca/dlps/home/opp_zones.shtml
     contact_email: null
     contact_phone: null
   process: null
