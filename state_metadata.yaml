@@ -1517,9 +1517,18 @@ missouri:
     url: https://ded.mo.gov/programs/business-community/opportunity-zones
     contact_email: OpportunityZones@ded.mo.gov
     contact_phone: null
-  process: Submittable portal open April 7–May 17, 2026. DED reviews May–June, releases
-    tentative recommendations for public comment in July, finalizes for governor in
-    August, submits August, effective January 2027.
+  process: Missouri DED is accepting tract nominations through a Submittable portal
+    (open April 7–May 17, 2026); any stakeholder — local government, community development
+    organization, or other entity — may submit, with one tract per form and no cap
+    on the number of tracts a single submitter may put forward. The intake form asks
+    submitters to document the tract's census data, existing and planned investments,
+    and the development rationale for designation. DED staff will review submissions
+    against program criteria — including the statutory low-income thresholds under
+    Notice 2025-50 — and weigh evidence of investment readiness and community need;
+    a formal scoring rubric has not been published as of the date noted. DED is expected
+    to release tentative recommendations for public comment in July and finalize selections
+    for the governor in August, with the official state nominations submitted to Treasury
+    that month and new designations taking effect January 1, 2027.
   scoring_rubric_url: null
   state_deadline: '2026-05-17'
   application_portal_url: https://modedfederalinitiatives.submittable.com/submit/e2490327-5b12-4d24-9c90-64092f51f7ad/missouri-opportunity-zones-2-0-program-intake-form
@@ -1532,7 +1541,9 @@ missouri:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 131 tracts to be nominated from 523 eligible.
+  notes: "131 tracts to be nominated from 523 eligible (25% statutory cap). One tract\
+    \ per Submittable form; multiple submissions per entity are permitted. No scoring\
+    \ rubric published as of 2026-05-06."
 montana:
   name: Montana
   fips: '30'
@@ -1883,12 +1894,20 @@ new-mexico:
     url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
     contact_email: info@edd.nm.gov
     contact_phone: (505) 827-0300
-  process: 'Multi-phase COG-based process: local governments and tribes submit nominations
-    to their Council of Governments by May 15, 2026; COGs compile and send to EDNM
-    by May 15; EDNM reports to Governor by June 15; 65 tracts finalized and submitted
-    to Treasury July 1. Scoring criteria published: development potential, local policies,
-    infrastructure proximity. Communities not served by a COG should contact EDNM
-    directly.'
+  process: 'New Mexico routes its nomination process through the state''s network of
+    regional Councils of Governments (COGs), which coordinate input from local governments,
+    tribal nations, utilities, and other regional partners within their areas. Communities
+    seeking nomination should contact their COG directly — COGs were required to submit
+    their proposed tract lists to EDNM by May 15, 2026, so the initial submission window
+    has closed; however, EDNM continues to refine the list through June 15, when it
+    delivers a recommended slate to the Governor''s Office for final review. The Governor''s
+    Office and EDNM then finalize the 65 nominated tracts for submission to Treasury
+    by July 1, 2026. EDNM''s published scoring considerations favor tracts that demonstrate
+    clear development potential, supportive local land-use policies, available land
+    or redevelopment opportunities, proximity to economic anchors, and alignment with
+    existing incentive programs or community development priorities; no numerical weights
+    have been published. Communities not served by a COG should contact EDNM directly
+    at info@edd.nm.gov or (505) 827-0300.'
   scoring_rubric_url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
   state_deadline: '2026-05-15'
   application_portal_url: null
@@ -1901,7 +1920,9 @@ new-mexico:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: No online portal — COG-based submission process.
+  notes: 'No online portal — COG-based submission process. COG deadline was May 15,
+    2026; EDNM still accepting input through June 15. No named OZ staff contact found
+    beyond general info@edd.nm.gov.'
 new-york:
   name: New York
   fips: '36'

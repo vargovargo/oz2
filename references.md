@@ -297,7 +297,7 @@ purpose: |
 
 **NJ DCA (New Jersey OZ page).** https://www.nj.gov/dca/dlps/home/opp_zones.shtml — Lead agency; no OZ 2.0 nomination process published. last_checked: 2026-05-06
 
-**EDNM (New Mexico OZ page).** https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/ — Multi-phase COG-based process; COG submission deadline May 15, 2026; EDNM reports to Governor June 15; final 65 tracts to Treasury July 1. Contact info@edd.nm.gov. last_checked: 2026-05-06
+**EDNM (New Mexico OZ page).** https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/ — Multi-phase COG-based process; local governments and tribal nations nominate through regional COGs; COG submission deadline May 15, 2026; EDNM delivers recommended list to Governor June 15; 65 tracts finalized and submitted to Treasury July 1, 2026. Scoring considerations: development potential, local land-use policies, available land/redevelopment opportunities, proximity to economic anchors, alignment with incentive programs — no weights published. No online portal; communities without a COG contact info@edd.nm.gov or (505) 827-0300. last_checked: 2026-05-06
 
 **ESD (New York OZ page).** https://esd.ny.gov/opportunity-zones — Lead agency; no OZ 2.0 nomination process published. last_checked: 2026-05-05
 
