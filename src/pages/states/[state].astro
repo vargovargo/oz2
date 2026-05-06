@@ -20,6 +20,69 @@ const {
   scoring_rubric_url, state_deadline, application_portal_url,
 } = state;
 
+// Approximate WGS84 bounding boxes [xmin, ymin, xmax, ymax] keyed by state FIPS string.
+// Used to zoom the EIG ArcGIS Dashboard iframe to the right state on load.
+const stateExtents: Record<string, [number, number, number, number]> = {
+  '01': [-88.47, 30.22, -84.89, 35.01], // AL
+  '02': [-179.15, 51.21, -129.97, 71.35], // AK
+  '04': [-114.82, 31.33, -109.05, 37.00], // AZ
+  '05': [-94.62, 33.00, -89.64, 36.50], // AR
+  '06': [-124.41, 32.53, -114.13, 42.01], // CA
+  '08': [-109.06, 36.99, -102.04, 41.00], // CO
+  '09': [-73.73, 40.99, -71.79, 42.05], // CT
+  '10': [-75.79, 38.45, -74.98, 39.84], // DE
+  '11': [-77.12, 38.79, -76.91, 38.99], // DC
+  '12': [-87.63, 24.52, -80.03, 31.00], // FL
+  '13': [-85.61, 30.36, -80.84, 35.00], // GA
+  '15': [-160.25, 18.91, -154.81, 22.24], // HI
+  '16': [-117.24, 41.99, -111.04, 49.00], // ID
+  '17': [-91.51, 36.97, -87.02, 42.51], // IL
+  '18': [-88.10, 37.77, -84.78, 41.76], // IN
+  '19': [-96.64, 40.37, -90.14, 43.50], // IA
+  '20': [-102.05, 36.99, -94.59, 40.00], // KS
+  '21': [-89.57, 36.50, -81.96, 39.15], // KY
+  '22': [-94.04, 28.93, -89.00, 33.02], // LA
+  '23': [-71.08, 43.06, -66.95, 47.46], // ME
+  '24': [-79.49, 37.91, -74.98, 39.72], // MD
+  '25': [-73.51, 41.23, -69.93, 42.89], // MA
+  '26': [-90.42, 41.70, -82.42, 48.19], // MI
+  '27': [-97.24, 43.50, -89.49, 49.38], // MN
+  '28': [-91.65, 30.17, -88.10, 34.99], // MS
+  '29': [-95.77, 35.99, -89.10, 40.61], // MO
+  '30': [-116.05, 44.36, -104.04, 49.00], // MT
+  '31': [-104.05, 40.00, -95.31, 43.00], // NE
+  '32': [-120.01, 35.00, -114.04, 42.00], // NV
+  '33': [-72.56, 42.70, -70.70, 45.31], // NH
+  '34': [-75.56, 38.93, -73.90, 41.36], // NJ
+  '35': [-109.05, 31.33, -103.00, 37.00], // NM
+  '36': [-79.76, 40.50, -71.86, 45.01], // NY
+  '37': [-84.32, 33.84, -75.46, 36.59], // NC
+  '38': [-104.05, 45.94, -96.55, 49.00], // ND
+  '39': [-84.82, 38.40, -80.52, 42.00], // OH
+  '40': [-103.00, 33.62, -94.43, 37.00], // OK
+  '41': [-124.57, 41.99, -116.46, 46.26], // OR
+  '42': [-80.52, 39.72, -74.69, 42.27], // PA
+  '44': [-71.91, 41.15, -71.12, 42.02], // RI
+  '45': [-83.36, 32.05, -78.55, 35.22], // SC
+  '46': [-104.06, 42.48, -96.44, 45.95], // SD
+  '47': [-90.31, 34.98, -81.65, 36.68], // TN
+  '48': [-106.65, 25.84, -93.51, 36.50], // TX
+  '49': [-114.05, 36.99, -109.04, 42.00], // UT
+  '50': [-73.44, 42.73, -71.50, 45.02], // VT
+  '51': [-83.68, 36.54, -75.24, 39.47], // VA
+  '53': [-124.73, 45.54, -116.92, 49.00], // WA
+  '54': [-82.64, 37.20, -77.72, 40.64], // WV
+  '55': [-92.89, 42.49, -86.25, 47.08], // WI
+  '56': [-111.06, 40.99, -104.05, 45.01], // WY
+  '60': [-171.09, -14.55, -169.41, -11.05], // AS
+  '66': [144.62, 13.23, 144.96, 13.66], // GU
+  '69': [144.90, 14.11, 146.06, 20.56], // CNMI
+  '72': [-67.97, 17.88, -65.23, 18.52], // PR
+  '78': [-65.09, 17.68, -64.57, 18.48], // VI
+};
+const extent = stateExtents[fips] ?? [-130, 23, -65, 50];
+const eigMapUrl = `https://www.arcgis.com/apps/dashboards/c473c71f0704408f934fbdc342caf1f1?extent=${extent.join(',')}`;
+
 const tierLabel: Record<string, string> = {
   public_process:    'Public process',
   contact_only:      'Contact only',
@@ -139,15 +202,18 @@ const daysToWindow = Math.ceil(
   <section class="mb-10">
     <h2 class="text-lg font-semibold mb-4">Eligible tracts</h2>
     <div class="bg-white border border-oz-neutral-200 rounded p-6">
-      <p class="text-sm text-oz-neutral-500 mb-4">
-        Map source: EIG ArcGIS dashboard. Tract list: IRS Rev. Proc. 2026-14 appendix.
-      </p>
-      <div class="bg-oz-neutral-100 rounded h-64 flex items-center justify-center text-oz-neutral-500 text-sm">
-        EIG ArcGIS embed — scope to {name} (FIPS {fips})
-      </div>
-      <div class="mt-4 flex gap-3 text-sm">
-        <a href="https://eig.org/ozs-resources/" target="_blank" rel="noopener" class="text-oz-blue underline">EIG eligibility map</a>
-        <a href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx" class="text-oz-blue underline">IRS appendix (XLSX)</a>
+      <iframe
+        src={eigMapUrl}
+        title={`EIG OZ 2.0 eligibility map — ${name}`}
+        class="w-full rounded border-0"
+        style="height: 480px;"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+      <div class="mt-3 flex gap-4 text-xs text-oz-neutral-400">
+        <a href="https://www.arcgis.com/apps/dashboards/c473c71f0704408f934fbdc342caf1f1" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">Open full map</a>
+        <a href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx" class="underline hover:text-oz-neutral-600">IRS appendix (XLSX)</a>
+        <span>Source: EIG / IRS Rev. Proc. 2026-14</span>
       </div>
     </div>
 
