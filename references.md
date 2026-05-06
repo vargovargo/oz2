@@ -309,7 +309,7 @@ purpose: |
 
 **OK Commerce — OZ nomination form.** https://www.okcommerce.gov/doing-business/business-relocation-expansion/incentives/federal-opportunity-zones/ — Live nomination form at https://forms.okcommerce.gov/260495603721860; contact jon.chiappe@okcommerce.gov. last_checked: 2026-05-05
 
-**Business Oregon — OZ 2.0 RFA.** https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx — RFA with scoring criteria published; deadline May 22, 2026; contact incentives.program@biz.oregon.gov. last_checked: 2026-05-05
+**Business Oregon — OZ 2.0 RFA.** https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx — Application window April 13–May 22, 2026 at 5 p.m. PT; scoring criteria names published (weights not disclosed); contact incentives.program@biz.oregon.gov; tribal liaison Brian Plinski (Brian.PLINSKI@biz.oregon.gov). Webinar slide deck (Feb 2026): https://www.oregon.gov/biz/Publications/Opportunity_Zones/250219-OZ%20Webinar%20-%20FINAL.pdf. last_checked: 2026-05-06
 
 **DCED (Pennsylvania OZ page).** https://dced.pa.gov/programs-funding/federal-funding-opportunities/qualified-opportunity-zones/ — Phased timeline published: stakeholder engagement now, portal expected summer 2026; contact oppzones@pa.gov. last_checked: 2026-05-05
 
