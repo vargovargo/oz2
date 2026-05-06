@@ -239,13 +239,13 @@ purpose: |
 
 **DCCED (Alaska lead agency).** https://www.commerce.alaska.gov/web/ — Lead agency for OZ 2.0; no OZ 2.0 guidance or nomination process published. last_checked: 2026-05-05
 
-**Arizona Commerce Authority — OZ 2.0 Recommendation Process.** https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/ — Published recommendation process; submit nominations via oz@azcommerce.com. last_checked: 2026-05-05
+**Arizona Commerce Authority — OZ 2.0 Recommendation Process.** https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/ — Interactive map-based recommendation tool; community deadline expected mid-May 2026 (not yet formally confirmed); submit via oz@azcommerce.com. last_checked: 2026-05-06
 
 **AEDC (Arkansas OZ page).** https://www.arkansasedc.com/community-resources/opportunity-zones — OZ landing page; no OZ 2.0 nomination process published. last_checked: 2026-05-05
 
 **GO-Biz (California OZ page).** https://business.ca.gov/resources/infrastructure-development/opportunity-zones-in-california/ — Acknowledges OZ 2.0 timeline; no formal nomination process published. last_checked: 2026-05-05
 
-**OEDIT (Colorado OZ program).** https://oedit.colorado.gov/colorado-opportunity-zone-program — Lead agency; stakeholder engagement underway; no formal nomination process published. last_checked: 2026-05-05
+**OEDIT (Colorado OZ program).** https://oedit.colorado.gov/colorado-opportunity-zone-program — Lead agency; multi-month engagement process underway; public GIS tool and nomination portal in development; no community submission deadline published as of 2026-05-06. last_checked: 2026-05-06
 
 **DECD (Connecticut OZ page).** https://portal.ct.gov/DECD/Services/Business-Development/Tax-Incentives/Opportunity-Zones — Contact info published: DECD.ozprojects@ct.gov, (860) 280-8710; no formal nomination process. last_checked: 2026-05-05
 
@@ -295,7 +295,7 @@ purpose: |
 
 **NJ DCA (New Jersey OZ page).** https://www.nj.gov/dca/dlps/home/opp_zones.shtml — Lead agency; no OZ 2.0 nomination process published. last_checked: 2026-05-06
 
-**EDNM (New Mexico OZ page).** https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/ — Multi-phase COG-based process with scoring criteria; deadline July 1, 2026; contact info@edd.nm.gov. last_checked: 2026-05-05
+**EDNM (New Mexico OZ page).** https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/ — Multi-phase COG-based process; COG submission deadline May 15, 2026; EDNM reports to Governor June 15; final 65 tracts to Treasury July 1. Contact info@edd.nm.gov. last_checked: 2026-05-06
 
 **ESD (New York OZ page).** https://esd.ny.gov/opportunity-zones — Lead agency; no OZ 2.0 nomination process published. last_checked: 2026-05-05
 

@@ -159,15 +159,17 @@ arizona:
     name: Yavapai County
     eligible_count: 13
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Arizona Commerce Authority (ACA)
     url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
     contact_email: oz@azcommerce.com
     contact_phone: null
   process: ACA published a recommendation process with criteria including investment-ready
-    sites, zoning, and infrastructure. Mapping tool in development. ACA intends to
-    submit to Treasury on or around July 1, 2026.
+    sites, zoning, and infrastructure. Interactive map-based recommendation tool launched
+    (recommenders select and rank tracts directly from a map with brief justification).
+    Community recommendation deadline expected mid-May 2026; not yet formally confirmed
+    as of 2026-05-06. ACA intends to submit to Treasury on or around July 1, 2026.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
@@ -342,13 +344,16 @@ colorado:
     name: Fremont County
     eligible_count: 9
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Colorado Office of Economic Development and International Trade (OEDIT)
     url: https://oedit.colorado.gov/colorado-opportunity-zone-program
     contact_email: null
     contact_phone: null
-  process: null
+  process: OEDIT conducting multi-month engagement process (local governments, EDOs,
+    public) to support Governor Polis in nominating up to 90 tracts. Public GIS tool
+    and nomination portal in development as of May 2026; no community submission
+    deadline published yet.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -439,7 +444,7 @@ delaware:
     name: Kent County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Delaware Division of Small Business
     url: https://business.delaware.gov/opportunity-zones/
@@ -698,7 +703,7 @@ idaho:
     name: Bingham County
     eligible_count: 2
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Idaho Commerce
     url: https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/
@@ -760,7 +765,7 @@ illinois:
     name: Macon County
     eligible_count: 17
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Illinois Dept. of Commerce and Economic Opportunity (DCEO)
     url: https://dceo.illinois.gov/oppzn.html
@@ -942,7 +947,7 @@ kansas:
     name: Geary County
     eligible_count: 5
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Kansas Department of Commerce
     url: https://www.kansascommerce.gov/opportunity-zones-2-0/
@@ -1004,7 +1009,7 @@ kentucky:
     name: Christian County
     eligible_count: 9
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Kentucky Cabinet for Economic Development
     url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
@@ -1430,7 +1435,7 @@ mississippi:
     name: Oktibbeha County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Mississippi Development Authority (MDA)
     url: https://mississippi.org/community-resources/opportunity-zones/
@@ -1492,7 +1497,7 @@ missouri:
     name: Dunklin County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Missouri Dept. of Economic Development (DED)
     url: https://ded.mo.gov/programs/business-community/opportunity-zones
@@ -1855,18 +1860,20 @@ new-mexico:
     name: San Miguel County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: New Mexico Economic Development Dept. (EDNM)
     url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
     contact_email: info@edd.nm.gov
     contact_phone: (505) 827-0300
-  process: 'Multi-phase COG-based process: Councils of Governments submit nominations
-    to EDNM by May 15, 2026; EDNM reports to Governor by June 15; 65 tracts submitted
+  process: 'Multi-phase COG-based process: local governments and tribes submit nominations
+    to their Council of Governments by May 15, 2026; COGs compile and send to EDNM
+    by May 15; EDNM reports to Governor by June 15; 65 tracts finalized and submitted
     to Treasury July 1. Scoring criteria published: development potential, local policies,
-    infrastructure proximity.'
+    infrastructure proximity. Communities not served by a COG should contact EDNM
+    directly.'
   scoring_rubric_url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
-  state_deadline: '2026-07-01'
+  state_deadline: '2026-05-15'
   application_portal_url: null
   tribal_consultation:
     framework: null
@@ -1979,7 +1986,7 @@ north-carolina:
     name: Pitt County
     eligible_count: 18
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: North Carolina Department of Commerce
     url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
@@ -2104,7 +2111,7 @@ ohio:
     name: Lorain County
     eligible_count: 22
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Ohio Department of Development (ODOD)
     url: https://www.greaterohio.org/opportunityzones
@@ -2167,7 +2174,7 @@ oklahoma:
     name: Creek County
     eligible_count: 6
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Oklahoma Department of Commerce
     url: https://www.okcommerce.gov/doing-business/business-relocation-expansion/incentives/federal-opportunity-zones/
@@ -2228,7 +2235,7 @@ oregon:
     name: Clackamas County
     eligible_count: 7
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Business Oregon
     url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
@@ -2399,7 +2406,7 @@ south-carolina:
     name: Florence County
     eligible_count: 15
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: South Carolina Department of Commerce (SC Commerce)
     url: https://www.sccommerce.com/opportunity-zone
@@ -2584,7 +2591,7 @@ texas:
     name: Webb County
     eligible_count: 41
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Texas Economic Development & Tourism Office (EDT), Office of the Governor
     url: https://gov.texas.gov/business/page/opportunity-zones
@@ -2769,7 +2776,7 @@ virginia:
     name: Pittsylvania County
     eligible_count: 16
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Virginia Economic Development Partnership (VEDP) / DHCD
     url: https://www.dhcd.virginia.gov/opportunity-zones-oz
@@ -2831,7 +2838,7 @@ washington:
     name: Grays Harbor County
     eligible_count: 10
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: Washington State Department of Commerce
     url: https://www.commerce.wa.gov/opportunity-zones/
