@@ -4,6 +4,24 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
+## Where things stand (as of 2026-05-05)
+
+**Data bootstrap done:**
+- `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
+- `data/state_summaries.csv` — per-state totals, rural splits, top-10 counties
+- `scripts/ingest_irs_appendix.py` — fetches the IRS appendix XLSX, re-runnable
+
+**Site scaffold done:**
+- Astro + Tailwind, Node 22 (`.nvmrc`), Vercel target
+- `npm run dev` to start, `npm run build` to verify
+- All routes stubbed per SPEC; 3 state pages live (alabama, alaska, arizona)
+
+**Next priorities (in order):**
+1. `state_metadata.yaml` — drives all 51 state pages; schema in SPEC.md
+2. Data overlays: `data/dci.parquet` (EIG DCI), `data/persistent_poverty.parquet` (USDA ERS), `data/tribal_overlap.parquet` (BIA)
+3. Fill stub pages: how-to-advocate, capital-stack, oz1-retrospective, off-list-nominations
+4. Vercel deploy — connect repo, zero config for Astro static
+
 ## Audience and stance
 
 - **Primary audience (MVP)**: local officials, EDD staff, community
