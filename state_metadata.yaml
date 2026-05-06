@@ -2684,13 +2684,24 @@ texas:
     url: https://gov.texas.gov/business/page/opportunity-zones
     contact_email: OppZone2.0@gov.texas.gov
     contact_phone: null
-  process: 'Community submission deadline June 26, 2026. EDT submits to Treasury by
-    August 3, 2026. Downloadable Nomination Packet for EDOs and county judges. Four
-    scoring criteria: statutory compliance, local support, project viability (24–48
-    month deployment), geographic balance (rural/disaster area preference).'
+  process: "The Texas Economic Development & Tourism Office (EDT) within the Office\
+    \ of the Governor is leading the OZ 2.0 nomination process, accepting submissions\
+    \ from local economic development organizations (EDOs) and, in counties where no\
+    \ EDO exists, from county judges. To participate, submitters download the Nomination\
+    \ Packet from the EDT Opportunity Zones page, complete it for each proposed tract,\
+    \ and email it to OppZone2.0@gov.texas.gov by June 26, 2026; EDT intends to\
+    \ finalize and submit Texas' designations to the U.S. Treasury no later than August\
+    \ 3, 2026. EDT evaluates nominations against four criteria: statutory compliance\
+    \ (only tracts that clearly meet federal eligibility under Rev. Proc. 2026-14 qualify);\
+    \ local support (documented commitments such as incentives, rebates, or formal\
+    \ agreements); project viability (private capital deployable within 24–48 months,\
+    \ with additional credit for inclusive growth measures including affordable housing\
+    \ commitments, anti-displacement tools, and workforce initiatives); and geographic\
+    \ balance (preference for rural tracts and areas with federally declared disasters).\
+    \ Point weights for each criterion had not been published as of 2026-05-06."
   scoring_rubric_url: https://gov.texas.gov/business/page/opportunity-zones
   state_deadline: '2026-06-26'
-  application_portal_url: null
+  application_portal_url: https://gov.texas.gov/business/page/opportunity-zones
   tribal_consultation:
     framework: null
     citation: null
@@ -2700,7 +2711,9 @@ texas:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 605 tracts to be nominated from 2,420 eligible.
+  notes: "605 tracts to be nominated from 2,420 eligible (21.7% rural). Nomination\
+    \ Packet downloadable from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.\
+    \ No phone number published for the OppZone2.0@gov.texas.gov contact as of 2026-05-06."
 utah:
   name: Utah
   fips: '49'
@@ -2963,7 +2976,7 @@ washington:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation    \ framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 —    \ 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
+  notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
 west-virginia:
   name: West Virginia
   fips: '54'

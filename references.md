@@ -327,7 +327,7 @@ purpose: |
 
 **VEDP + DHCD (Virginia OZ page).** https://www.dhcd.virginia.gov/opportunity-zones-oz — Webinars held April 2026; contact oz2026@vedp.org. last_checked: 2026-05-05
 
-**WA Commerce — OZ 2.0 RFA portal.** https://www.commerce.wa.gov/opportunity-zones/ — RFA portal open April 28, 2026; deadline May 28, 2026; scoring criteria published; contact Community.Engagement@Commerce.wa.gov. last_checked: 2026-05-05
+**WA Commerce — OZ 2.0 RFA portal.** https://www.commerce.wa.gov/opportunity-zones/ — RFA portal open April 28, 2026; deadline May 28, 2026; Q&A closes May 21; scoring criteria PDF and draft application template published; two pre-proposal webinars held May 7 (rural/non-rural 9–10 a.m.; tribal 11 a.m.–noon); Commerce recommendations due to Governor Ferguson by June 30, 2026; tribal consultation under EO 25-10, Centennial Accord, and RCW 43.376; RFA URL https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/; contact Community.Engagement@Commerce.wa.gov. last_checked: 2026-05-06
 
 **WV Economic Development (West Virginia OZ page).** https://westvirginia.gov/category/wv-opportunity-zones/ — Lead agency; no OZ 2.0 guidance published. last_checked: 2026-05-05
 
