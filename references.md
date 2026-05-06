@@ -319,7 +319,9 @@ purpose: |
 
 **TNECD (Tennessee OZ page).** https://www.tn.gov/ecd/opportunity-zones.html — Stakeholder discussion held February 2026; contact ED.OpportunityZones@tn.gov. last_checked: 2026-05-05
 
-**Texas Office of the Governor EDT — OZ nomination process.** https://gov.texas.gov/business/page/opportunity-zones — Detailed nomination process with scoring criteria; deadline June 26, 2026; contact OppZone2.0@gov.texas.gov. last_checked: 2026-05-05
+**Texas Office of the Governor EDT — OZ 2.0 nomination process.** https://gov.texas.gov/business/page/opportunity-zones — Downloadable Nomination Packet for EDOs and county judges; community submission deadline June 26, 2026; EDT submits to Treasury by August 3, 2026; four scoring criteria: statutory compliance, local support, project viability (24–48 months, inclusive growth measures), and geographic balance (rural/disaster preference); point weights not published; contact OppZone2.0@gov.texas.gov. last_checked: 2026-05-06
+
+**Texas EDT — OZ 2.0 FAQ.** https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf — Official FAQ PDF from the Office of the Governor covering eligibility, nomination process, and timeline for OZ 2.0 designations. last_checked: 2026-05-06
 
 **Go Utah (Utah OZ page).** https://business.utah.gov/news/opportunity-awaits-statewide-opportunity-zones-announced/ — Lead agency; no formal nomination process published. last_checked: 2026-05-05
 

@@ -967,9 +967,19 @@ kansas:
     url: https://www.kansascommerce.gov/opportunity-zones-2-0/
     contact_email: OZ@kansascommerce.gov
     contact_phone: null
-  process: Community nominations due June 1, 2026 via email to OZ@kansascommerce.gov.
-    Scoring matrix published. No online portal — email submission only. Workshops
-    offered.
+  process: "The Kansas Department of Commerce Business Development team administers
+    the OZ 2.0 nomination process for the state. Communities located within eligible
+    census tracts submit an investment case to Kansas Commerce by June 1, 2026 via
+    email to OZ@kansascommerce.gov; there is no online portal. Local governments,
+    economic development organizations, developers, and other community stakeholders
+    within eligible tracts may submit proposals — formal nominations to Treasury are
+    made by the Governor, so Kansas Commerce reviews and vets community submissions
+    before advancing recommendations. Kansas Commerce has published a scoring matrix
+    on its OZ 2.0 page, though specific criteria names and point weights are not
+    separately indexed; the Community Opportunity Zone Application form and full
+    scoring guidance were to be released in advance of the deadline. Kansas Commerce
+    Business Development staff offered workshops and information sessions to help
+    communities prepare proposals and identify investment opportunities."
   scoring_rubric_url: https://www.kansascommerce.gov/opportunity-zones-2-0/
   state_deadline: '2026-06-01'
   application_portal_url: null
@@ -982,7 +992,10 @@ kansas:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 53 tracts to be nominated.
+  notes: "Kansas may nominate up to 53 of its 210 eligible tracts (25% statutory cap).
+    Scoring matrix published on agency OZ 2.0 page; specific criterion weights not
+    publicly indexed as of 2026-05-06."
+
 kentucky:
   name: Kentucky
   fips: '21'
@@ -2056,13 +2069,27 @@ north-carolina:
     url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
     contact_email: OZ-Feedback@commerce.nc.gov
     contact_phone: (919) 814-4600
-  process: 'Public feedback deadline June 7, 2026 at 11:59 p.m. Submissions via Excel
-    form emailed to OZ-Feedback@commerce.nc.gov. Three published scoring criteria:
-    Business Development & Job Creation, Strategic Local Revitalization, Pathways
-    to Housing. ArcGIS mapping tool available.'
+  process: 'The North Carolina Department of Commerce is running a public feedback
+    process on behalf of Governor Josh Stein, who will make final tract nominations
+    to Treasury during the July–September 2026 designation window. Local officials,
+    community organizations, and other stakeholders download an Excel feedback form
+    from public.nccommerce.com/oz and email completed submissions to OZ-Feedback@commerce.nc.gov
+    by June 7, 2026 at 11:59 p.m. Respondents identify which eligible tracts they
+    support and explain alignment with one or more of NC Commerce''s three published
+    guidelines: Business Development (tracts with high-growth, high-wage sector potential
+    including advanced manufacturing, technology, life sciences, and clean energy;
+    Commerce- or EDPNC-certified industrial or mega sites; and projects with capital
+    investment already underway), Revitalization (tracts backed by documented local
+    plans or recent public investment for site redevelopment, mixed-use, or other
+    community-driven initiatives), and Housing Supply (tracts near major employment
+    centers or transit corridors where OZ designation can meaningfully expand housing
+    production, with documented regional housing need). No numerical weights have
+    been published for the three guidelines. After the feedback window closes, Commerce
+    reviews submissions and provides recommendations to the Governor; the state''s
+    202 nominations are due to Treasury beginning July 1, 2026.'
   scoring_rubric_url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
   state_deadline: '2026-06-07'
-  application_portal_url: null
+  application_portal_url: https://public.nccommerce.com/oz/
   tribal_consultation:
     framework: null
     citation: null
@@ -2072,8 +2099,11 @@ north-carolina:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning.
-    202 tracts to be nominated.'
+  notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning,
+    NC Commerce; OZ-Feedback@commerce.nc.gov; (919) 814-4600. This is a public feedback
+    process — Commerce solicits input then advises Governor Stein, who makes final
+    selections. ArcGIS map of all 807 eligible tracts available at public.nccommerce.com/oz.
+    Press release (Apr 29, 2026): commerce.nc.gov/news/press-releases/2026/04/29/nc-commerce-invites-public-feedback-help-identify-new-opportunity-zones-north-carolina.'
 north-dakota:
   name: North Dakota
   fips: '38'
@@ -2499,10 +2529,24 @@ south-carolina:
     url: https://www.sccommerce.com/opportunity-zone
     contact_email: oz@sccommerce.com
     contact_phone: null
-  process: 'Community nomination deadline June 1, 2026. SC Commerce provides recommendations
-    to Governor by July 15. Criteria: highest growth/economic impact potential, infrastructure,
-    alignment with state economic strategy. Regional information meetings and virtual
-    workshops offered.'
+  process: "SC Commerce is coordinating the nomination process on behalf of Governor
+    McMaster and accepts community input via an online submission portal at
+    sccommerce.com/opportunity-zone-submission through June 1, 2026; local governments,
+    economic development organizations, community leaders, and the general public may
+    all submit, and submitters are asked to rank eligible tracts in order of preference
+    and explain why each should be nominated. SC Commerce has stated it will evaluate
+    nominations against four published criteria: potential to attract private investment,
+    alignment with South Carolina's economic development strategy, presence of
+    market-ready infrastructure (industrial sites, utility and transportation networks,
+    and broadband availability), and housing development activity; no numerical weights
+    or formal rubric document have been published as of 2026-05-06. SC Commerce will
+    host regional information meetings and at least one virtual workshop to help
+    communities understand the process, though specific meeting dates had not been
+    announced as of that date. After the June 1 deadline SC Commerce will compile a
+    recommended list for the Governor, targeting completion by approximately July 1,
+    2026, when the federal window for governors to submit nominations to the U.S.
+    Treasury opens. South Carolina may nominate up to 112 of its 445 eligible tracts
+    (25% statutory cap); no per-applicant tract limit has been published."
   scoring_rubric_url: null
   state_deadline: '2026-06-01'
   application_portal_url: https://www.sccommerce.com/opportunity-zone-submission
@@ -2515,7 +2559,12 @@ south-carolina:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 112 tracts to be nominated from 445 eligible.
+  notes: "112 tracts to be nominated from 445 eligible (25% statutory cap). Submitters
+    rank tracts in preference order with supporting narrative. Regional meetings and
+    virtual workshop planned; dates unannounced as of 2026-05-06. Recommendation to
+    Governor targeted ~July 1, 2026, when federal submission window opens. July 15
+    in prior entry was unverified — corrected to July 1."
+
 south-dakota:
   name: South Dakota
   fips: '46'
