@@ -283,7 +283,7 @@ purpose: |
 
 **DEED (Minnesota OZ page).** https://mn.gov/deed/opportunityzones/ — States more information will be posted when available; no nomination process published. last_checked: 2026-05-05
 
-**MDA (Mississippi OZ page).** https://mississippi.org/community-resources/opportunity-zones/ — Live feedback form; deadline May 31, 2026; contact Tim Climer, tclimer@mississippi.org, (601) 359-9387. last_checked: 2026-05-05
+**MDA (Mississippi OZ page).** https://mississippi.org/community-resources/opportunity-zones/ — Public comment/feedback form open through May 31, 2026; at least three listening sessions held April 10–21 in Oxford, Pearl, and Hattiesburg-area; MDA uses stakeholder input to inform internal nomination decisions; up to 101 of 404 eligible tracts to be nominated; formal submission to Treasury opens July 1, 2026; contact Tim Climer, tclimer@mississippi.org, (601) 359-9387. No scoring rubric published as of this date. last_checked: 2026-05-06
 
 **DED (Missouri OZ page).** https://ded.mo.gov/programs/business-community/opportunity-zones — Open Submittable portal (April 7–May 17, 2026); any stakeholder may submit one form per tract; DED reviews May–June, tentative recommendations July, governor finalizes August; 131 of 523 eligible tracts to be nominated; contact OpportunityZones@ded.mo.gov. last_checked: 2026-05-06
 
