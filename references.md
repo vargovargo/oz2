@@ -261,7 +261,7 @@ purpose: |
 
 **Idaho Commerce — OZ nomination portal.** https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/ — Live nomination portal for local governments and tribes; contact OZ@commerce.idaho.gov. last_checked: 2026-05-05
 
-**DCEO (Illinois OZ page).** https://dceo.illinois.gov/oppzn.html — Live Smartsheet nomination form; contact opportunityzones@illinois.gov. last_checked: 2026-05-05
+**DCEO (Illinois OZ page).** https://dceo.illinois.gov/oppzn.html — DCEO administers the nomination process via a Smartsheet community input form open to local governments, economic development organizations, and community stakeholders in eligible tracts. Webinar recording and FAQ published on the agency page. No scoring rubric or state submission deadline published as of 2026-05-06; the federal nomination window opens July 1, 2026. Illinois may nominate up to 238 of 950 eligible tracts. Contact: opportunityzones@illinois.gov. last_checked: 2026-05-06
 
 **IEDC (Indiana OZ page).** https://iedc.in.gov/program/indiana-opportunity-zones/overview — Lead agency; references federal Sept 28, 2026 deadline; no nomination portal published. last_checked: 2026-05-05
 

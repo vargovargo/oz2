@@ -563,15 +563,23 @@ florida:
     name: Lee County
     eligible_count: 38
   status_tier: public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-06'
   lead_agency:
     name: FloridaCommerce
     url: https://floridajobs.org/business-growth-and-partnerships/for-businesses-and-entrepreneurs/business-resource/opportunity-zones-program
     contact_email: null
     contact_phone: null
-  process: FloridaCommerce ran a statewide OZ 2.0 Tour February–April 2026, soliciting
-    community recommendations. Public input window closed approximately April 30,
-    2026. State is now preparing gubernatorial recommendations.
+  process: "Public input is now closed. FloridaCommerce began briefing communities
+    in November 2025 and formally launched a statewide OZ 2.0 Tour in late February
+    2026, conducting workshops across Florida through April 2026 — including a documented
+    session in Tallahassee on April 9 — to solicit census tract recommendations via
+    an online form at floridajobs.org/OpportunityZones. The form was accompanied by
+    three eligibility maps helping communities identify and document candidate tracts.
+    The community input window closed in April 2026 (approximately April 30); FloridaCommerce
+    is now compiling submissions to prepare a recommendation package for the governor
+    prior to July 1, 2026, when the federal 90-day nomination window opens. Florida
+    may nominate up to 340 of its 1,360 eligible tracts; Treasury has up to 60 days
+    after submission to designate, with new zones effective January 1, 2027."
   scoring_rubric_url: null
   state_deadline: '2026-04-30'
   application_portal_url: https://www.floridajobs.org/OpportunityZones
@@ -795,8 +803,17 @@ illinois:
     url: https://dceo.illinois.gov/oppzn.html
     contact_email: opportunityzones@illinois.gov
     contact_phone: null
-  process: DCEO published a live Smartsheet nomination form. Webinar recording and
-    FAQ available. No deadline published as of 2026-05-05.
+  process: "The Illinois Department of Commerce and Economic Opportunity (DCEO) administers\
+    \ the OZ 2.0 nomination process and has opened a Smartsheet community input form\
+    \ through which local governments, economic development organizations, and community\
+    \ stakeholders in eligible tracts can submit information to help inform the state's\
+    \ final tract selections. DCEO published a webinar recording and FAQ on its OZ\
+    \ page to orient submitters; no scoring rubric has been posted publicly as of 2026-05-06.\
+    \ No state-level submission deadline has been announced; the federal nomination\
+    \ window opens July 1, 2026, giving the Governor 90 days (extendable by 30) to\
+    \ certify nominations to Treasury. Illinois may nominate up to 238 of its 950\
+    \ eligible tracts, making community input a meaningful factor in DCEO's prioritization\
+    \ before the Governor's list is finalized. Questions can be directed to opportunityzones@illinois.gov."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: https://app.smartsheet.com/b/form/047a54ef882c425694cfb626d9050041
