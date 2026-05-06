@@ -239,7 +239,7 @@ purpose: |
 
 **DCCED (Alaska lead agency).** https://www.commerce.alaska.gov/web/ — Lead agency for OZ 2.0; no OZ 2.0 guidance or nomination process published. last_checked: 2026-05-05
 
-**Arizona Commerce Authority — OZ 2.0 Recommendation Process.** https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/ — Interactive map-based recommendation tool; community deadline expected mid-May 2026 (not yet formally confirmed); submit via oz@azcommerce.com. last_checked: 2026-05-06
+**Arizona Commerce Authority — OZ 2.0 Recommendation Process.** https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/ — Interactive map-based GIS tool through which counties, tribal nations, and incorporated communities of 10,000+ (in Maricopa, Pima, and Pinal counties) submit tract nominations with written justifications. Criteria emphasize investment readiness: utilities, zoning/entitlement, road access, and investor viability. Community deadline described as mid-May 2026 (not formally confirmed as of 2026-05-06); ACA targets July 1, 2026 Treasury submission; OZs effective January 1, 2027. Contact: oz@azcommerce.com. last_checked: 2026-05-06
 
 **AEDC (Arkansas OZ page).** https://www.arkansasedc.com/community-resources/opportunity-zones — OZ landing page; no OZ 2.0 nomination process published. last_checked: 2026-05-05
 

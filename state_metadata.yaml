@@ -165,11 +165,19 @@ arizona:
     url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
     contact_email: oz@azcommerce.com
     contact_phone: null
-  process: ACA published a recommendation process with criteria including investment-ready
-    sites, zoning, and infrastructure. Interactive map-based recommendation tool launched
-    (recommenders select and rank tracts directly from a map with brief justification).
-    Community recommendation deadline expected mid-May 2026; not yet formally confirmed
-    as of 2026-05-06. ACA intends to submit to Treasury on or around July 1, 2026.
+  process: The Arizona Commerce Authority administers a map-based recommendation process
+    in which counties, tribal nations, and—in Maricopa, Pima, and Pinal counties—incorporated
+    communities of 10,000 or more submit tract nominations directly through an interactive
+    GIS tool, each providing a brief written justification per tract. Jurisdictions
+    are generally asked to recommend no more than one quarter of their eligible tracts;
+    tribal nations may weigh in on tribal territory statewide regardless of county
+    boundaries. ACA's published criteria emphasize investment readiness, including
+    available water, power, and sewer connections, zoning and entitlement status, proximity
+    to roads and population centers, open land or sites suitable for redevelopment, and
+    the capacity to support investor-profitable projects. A community submission deadline
+    in mid-May 2026 was described by ACA but had not been formally set as of 2026-05-06.
+    ACA intends to submit Arizona's nominations to Treasury on or around July 1, 2026,
+    with new designations taking effect January 1, 2027.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
@@ -182,7 +190,9 @@ arizona:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Deadline described as mid-May 2026 but not officially set as of 2026-05-05.
+  notes: Community deadline described as mid-May 2026 but not formally confirmed as
+    of 2026-05-06. Tribal nations have statewide input rights on tribal territory tracts.
+    ACA targets July 1, 2026 for Treasury submission.
 arkansas:
   name: Arkansas
   fips: '05'
