@@ -285,7 +285,9 @@ purpose: |
 
 **MDA (Mississippi OZ page).** https://mississippi.org/community-resources/opportunity-zones/ — Live feedback form; deadline May 31, 2026; contact Tim Climer, tclimer@mississippi.org, (601) 359-9387. last_checked: 2026-05-05
 
-**DED (Missouri OZ page).** https://ded.mo.gov/programs/business-community/opportunity-zones — Submittable nomination portal; deadline May 17, 2026; contact OpportunityZones@ded.mo.gov. last_checked: 2026-05-05
+**DED (Missouri OZ page).** https://ded.mo.gov/programs/business-community/opportunity-zones — Open Submittable portal (April 7–May 17, 2026); any stakeholder may submit one form per tract; DED reviews May–June, tentative recommendations July, governor finalizes August; 131 of 523 eligible tracts to be nominated; contact OpportunityZones@ded.mo.gov. last_checked: 2026-05-06
+
+**MO DED Submittable intake form.** https://modedfederalinitiatives.submittable.com/submit/e2490327-5b12-4d24-9c90-64092f51f7ad/missouri-opportunity-zones-2-0-program-intake-form — One tract per submission; form requests census tract number, existing and planned investment documentation, and development rationale; multiple submissions per entity permitted. last_checked: 2026-05-06
 
 **MT Commerce (Montana OZ page).** https://commerce.mt.gov/Infrastructure-Planning/Resources/Opportunity-Zones/ — Lead agency; no OZ 2.0 guidance published. last_checked: 2026-05-05
 
