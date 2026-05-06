@@ -35,7 +35,7 @@ in references.md. Read both before substantive edits.
 - Missouri: May 17 | Kentucky: May 29 | Oregon: May 22 | Washington: May 28
 - Mississippi: May 31 | Ohio: ~May 31 | Delaware: May 15
 - South Carolina: June 1 | Kansas: June 1 | North Carolina: June 7
-- Texas: June 26 | New Mexico: July 1 (via COGs)
+- Texas: June 26 | New Mexico: May 15 (COG submissions to EDNM) / July 1 (final state)
 
 ## Audience and stance
 
