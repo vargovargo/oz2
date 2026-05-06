@@ -2931,22 +2931,39 @@ washington:
     url: https://www.commerce.wa.gov/opportunity-zones/
     contact_email: Community.Engagement@Commerce.wa.gov
     contact_phone: null
-  process: RFA portal opened April 28, 2026. Deadline May 28, 2026. Scoring criteria
-    PDF published. Q&A period closes May 21. Pre-proposal webinars May 7 (rural/non-rural
-    and tribal). Recommendations due to Governor by June 30.
+  process: Washington State Department of Commerce is running a competitive Request
+    for Applications (RFA) process to develop census tract nomination recommendations
+    for Governor Ferguson; the application platform opened April 28, 2026, and submissions
+    close May 28, 2026. Local governments, federally recognized tribes, Associate Development
+    Organizations (ADOs), and other community entities may submit applications on behalf
+    of eligible tracts, and Commerce has published a scoring criteria document (PDF)
+    and a draft application template to help communities prepare. Questions must be
+    submitted by May 21, 2026 — just seven days before the application deadline —
+    so local planners should prioritize reviewing the scoring criteria and drafting
+    materials well in advance; two pre-proposal webinars were held May 7 (9–10 a.m.
+    for rural and non-rural communities; 11 a.m.–noon for tribal governments). Consistent
+    with Governor Ferguson's Executive Order 25-10, the Centennial Accord, and RCW
+    43.376, Commerce is conducting formal government-to-government tribal consultation
+    with Washington's 29 federally recognized tribes as a separate, parallel track
+    — not a substitute for tribes also submitting applications through the RFA portal.
+    Commerce's recommendations are due to the Governor by June 30, 2026, ahead of
+    the federal nomination window opening July 1, 2026; Washington will nominate 99
+    tracts from 394 eligible, down from 139 current OZs.
   scoring_rubric_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
   state_deadline: '2026-05-28'
   application_portal_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
   tribal_consultation:
-    framework: null
-    citation: null
+    framework: "Governor Ferguson's Executive Order 25-10, the Centennial Accord,
+      and RCW 43.376. Formal government-to-government consultation with 29 federally
+      recognized tribes, conducted as a separate track from the public RFA process."
+    citation: WA Commerce OZ 2.0 RFA portal (references.md §13)
   regional_edds: []
   rural_partners:
     usda_rd_url: null
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 99 tracts to be nominated.
+  notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation    \ framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 —    \ 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
 west-virginia:
   name: West Virginia
   fips: '54'
