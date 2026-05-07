@@ -38,13 +38,22 @@ alabama:
     name: Etowah County
     eligible_count: 13
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Alabama Department of Economic and Community Affairs (ADECA)
     url: https://adeca.alabama.gov/opportunityzones/
     contact_email: null
-    contact_phone: null
-  process: null
+    contact_phone: (334) 242-5100
+  process: ADECA's Community and Economic Development division is Alabama's confirmed
+    lead agency for OZ 2.0, but no formal nomination process, application portal,
+    or community input mechanism had been published as of May 7, 2026. Call ADECA's
+    main line at (334) 242-5100 today — ask for the Community and Economic Development
+    division and request to speak with whoever is coordinating the OZ 2.0 nomination;
+    express your jurisdiction's interest and offer tract-level data to support a
+    nomination. Watch ADECA's OZ page (adeca.alabama.gov/opportunityzones) and the
+    governor's press releases for any announcement of a submission window; the federal
+    nomination period opens July 1, 2026, so state guidance is likely to appear
+    in May or June.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -57,8 +66,9 @@ alabama:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: No OZ 2.0 process published as of 2026-05-05. ADECA is confirmed lead per
-    EIG map.
+  notes: No OZ 2.0 process published as of 2026-05-07. ADECA is confirmed lead per
+    EIG map. Main phone (334) 242-5100; Community and Economic Development division
+    administers OZ program.
 alaska:
   name: Alaska
   fips: '02'
@@ -99,13 +109,23 @@ alaska:
     name: Kusilvak Census Area
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
-    name: Alaska Dept. of Commerce, Community, and Economic Development
+    name: Alaska Dept. of Commerce, Community, and Economic Development (DCCED)
     url: https://www.commerce.alaska.gov/web/
     contact_email: dcced.commissioner@alaska.gov
     contact_phone: (907) 465-2500
-  process: null
+  process: DCCED is Alaska's confirmed lead agency for OZ 2.0, but no formal nomination
+    process, scoring criteria, or community input mechanism had been published as
+    of May 7, 2026. Email dcced.commissioner@alaska.gov today — that is the general
+    commissioner's inbox, so address your message to the economic development staff
+    and ask specifically who is coordinating OZ 2.0 nominations, when community
+    input will open, and whether DCCED intends to hold listening sessions; attach
+    a one-page summary of your eligible tracts and their development readiness. With
+    only 32 eligible tracts statewide and a minimum designation floor of 25, Alaska's
+    choices are unusually constrained; watch the governor's office for any executive
+    order or RFP that formalizes the selection process before the July 1, 2026
+    federal window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -118,7 +138,10 @@ alaska:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published.
+  notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published
+    as of 2026-05-07. Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500.
+    Alaska has only 32 eligible tracts; statutory minimum 25 designations means very
+    limited discretion.
 arizona:
   name: Arizona
   fips: '04'
@@ -233,13 +256,23 @@ arkansas:
     name: Miller County
     eligible_count: 8
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Arkansas Economic Development Commission (AEDC)
     url: https://www.arkansasedc.com/community-resources/opportunity-zones
-    contact_email: null
-    contact_phone: null
-  process: null
+    contact_email: info@arkansasedc.com
+    contact_phone: (501) 682-5996
+  process: AEDC is Arkansas's confirmed lead agency for OZ 2.0 designations, but
+    no formal nomination process, application portal, or community input period had
+    been published as of May 7, 2026; the commission's OZ page still reflects OZ 1.0
+    content. Email info@arkansasedc.com or call (501) 682-5996 today — ask which
+    staff member is coordinating OZ 2.0 nominations, when community input will open,
+    and whether AEDC plans to hold listening sessions; be prepared to share your
+    tract's census GEOID, rural-flag status per Rev. Proc. 2026-14, and any existing
+    development commitments. Watch the governor's press releases and AEDC's newsroom
+    for any solicitation of community recommendations; with the federal nomination
+    window opening July 1, 2026, state-level guidance is likely to appear in May
+    or June 2026.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -252,7 +285,8 @@ arkansas:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: AEDC page addresses OZ 1.0 only as of 2026-05-05. No OZ 2.0 guidance published.
+  notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published.
+    General contact info@arkansasedc.com / (501) 682-5996.
 california:
   name: California
   fips: '06'
@@ -293,13 +327,25 @@ california:
     name: Contra Costa County
     eligible_count: 69
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Governor's Office of Business and Economic Development (GO-Biz)
     url: https://economicdevelopment.business.ca.gov/place-based-strategies/opportunity-zones/
-    contact_email: null
+    contact_email: Zones@GOBIZ.CA.GOV
     contact_phone: null
-  process: null
+  process: GO-Biz is California's lead agency for OZ 2.0 but had not published a
+    community nomination portal, scoring criteria, or public input deadline as of
+    May 7, 2026; the agency's OZ page links to the Novogradac mapping tool and
+    acknowledges the July 1, 2026 federal nomination window. Email Zones@GOBIZ.CA.GOV
+    today — address it to the OZ team (Trelynd Bradley, Senior Business Development
+    Specialist, is named as a point of contact) and ask when a community input
+    process will open, whether GO-Biz plans statewide listening sessions, and how
+    local jurisdictions can register their priority tracts; attach a one-page summary
+    of your eligible tract(s) with the census GEOID, rural-flag status, and any
+    investor or project commitment. Watch GO-Biz's OZ page and the California
+    Opportunity Zone portal (opzones.ca.gov) for any solicitation; California may
+    nominate up to 618 of its 2,469 eligible tracts, so competitive pressure on
+    high-readiness tracts is likely to be significant.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -313,7 +359,9 @@ california:
     rural_lisc: null
   state_cdfi_count: null
   notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders
-    to Help Center. No formal application or deadline published.
+    to Help Center via gobiz.zendesk.com. No formal application or deadline published
+    as of 2026-05-07. Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley named as OZ
+    point of contact.
 colorado:
   name: Colorado
   fips: 08
@@ -354,16 +402,23 @@ colorado:
     name: Fremont County
     eligible_count: 9
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Colorado Office of Economic Development and International Trade (OEDIT)
     url: https://oedit.colorado.gov/colorado-opportunity-zone-program
-    contact_email: null
-    contact_phone: null
-  process: OEDIT conducting multi-month engagement process (local governments, EDOs,
-    public) to support Governor Polis in nominating up to 90 tracts. Public GIS tool
-    and nomination portal in development as of May 2026; no community submission
-    deadline published yet.
+    contact_email: oedit.info@state.co.us
+    contact_phone: (303) 892-3840
+  process: OEDIT has been conducting a multi-month stakeholder engagement process
+    since fall 2025 to inform Governor Polis's nomination of up to 90 of Colorado's
+    360 eligible tracts. The process included educational webinars through spring
+    2026 and regional convenings in April 2026; an in-person Western Slope event
+    is scheduled May 11, 2026 at Colorado Mesa University in Grand Junction. OEDIT
+    also published (or is publishing) a public GIS mapping tool and an online
+    feedback form through which any stakeholder can submit tract-level input; sign
+    up for OEDIT's OZ newsletter at the bottom of oedit.colorado.gov/colorado-opportunity-zone-program
+    to receive deadlines as they are set. Email oedit.info@state.co.us or call
+    (303) 892-3840 to ask about remaining engagement events, when the online feedback
+    form closes, and how rural-flagged tracts are weighted in OEDIT's review.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -376,8 +431,10 @@ colorado:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Multi-month stakeholder engagement underway. Public GIS mapping tool and
-    nomination feedback in development but not yet live as of 2026-05-05.
+  notes: Multi-month stakeholder engagement underway. Regional convenings April 2026;
+    Western Slope event May 11 at Colorado Mesa University. Public GIS tool and
+    feedback form published or forthcoming. No community submission deadline published
+    as of 2026-05-07. Contact oedit.info@state.co.us / (303) 892-3840.
 connecticut:
   name: Connecticut
   fips: 09
@@ -415,13 +472,22 @@ connecticut:
     name: Northeastern Connecticut Planning Region
     eligible_count: 4
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Connecticut Dept. of Economic and Community Development (DECD)
     url: https://portal.ct.gov/DECD/Services/Business-Development/Tax-Incentives/Opportunity-Zones
     contact_email: DECD.ozprojects@ct.gov
     contact_phone: (860) 280-8710
-  process: null
+  process: "As of May 7, 2026, DECD has not published a formal nomination process,
+    community application portal, or internal deadline for OZ 2.0; the agency's page
+    still primarily reflects OZ 1.0 information. If your jurisdiction contains one
+    of Connecticut's 243 eligible tracts, email DECD.ozprojects@ct.gov today to
+    introduce your project or tract and ask when community input will be solicited
+    — DECD Commissioner Matthew Pugliese's office has been identified as the
+    coordination point for OZ 2.0. Watch for a DECD announcement of a community
+    submission process as the federal nomination window (July 1–September 28,
+    2026, extendable to October 28) approaches; Connecticut may nominate up to 61
+    tracts from its pool of 243 eligible."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -434,7 +500,7 @@ connecticut:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Contact confirmed. No application portal or deadline published.
+  notes: Contact confirmed. No application portal or deadline published as of 2026-05-07.
 delaware:
   name: Delaware
   fips: '10'
@@ -502,13 +568,15 @@ district-of-columbia:
     name: District of Columbia
     eligible_count: 66
   status_tier: no_public_process
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: DC Office of the Deputy Mayor for Planning and Economic Development (DMPED)
-    url: null
+    url: https://dmped.dc.gov/page/opportunity-zones-washington-dc
     contact_email: null
     contact_phone: null
-  process: null
+  process: The District of Columbia has no public OZ 2.0 nomination process as of
+    May 7, 2026; visit /how-to-advocate for steps to engage DMPED directly and push
+    for a community input process before the July 1 federal nomination window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -521,8 +589,9 @@ district-of-columbia:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: DMPED presumed lead. No OZ 2.0 guidance published. DC eligible for statutory
-    minimum 25 zones.
+  notes: DMPED presumed lead. No OZ 2.0 guidance published as of 2026-05-07. DC eligible
+    for statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects
+    OZ 1.0 history only.
 florida:
   name: Florida
   fips: '12'
@@ -1148,13 +1217,23 @@ louisiana:
     name: Bossier Parish
     eligible_count: 13
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Louisiana Economic Development (LED)
     url: https://www.opportunitylouisiana.gov/incentive/federal-opportunity-zones
     contact_email: null
-    contact_phone: null
-  process: null
+    contact_phone: 800-450-8115
+  process: >-
+    As of May 7, 2026, Louisiana Economic Development (LED) has not published a
+    public nomination process, community application window, or scoring criteria
+    for OZ 2.0. If your parish or municipality has a tract you want considered,
+    call LED at 800-450-8115 and ask to speak with the staff member handling OZ
+    2.0 nominations; come prepared with the census tract number, any existing
+    investor interest, and whether the tract carries a rural flag under Rev.
+    Proc. 2026-14. Watch opportunitylouisiana.gov for a news release announcing
+    community input — LED ran a formal public comment period before its OZ 1.0
+    nominations in 2018, and a similar outreach window may precede the July 1,
+    2026 federal nomination opening.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1167,7 +1246,8 @@ louisiana:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: LED confirmed lead. No OZ 2.0 nomination process published.
+  notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
+    Main line 800-450-8115 / 225-342-3000.
 maine:
   name: Maine
   fips: '23'

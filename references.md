@@ -235,17 +235,17 @@ purpose: |
 
 ## 13. State agency OZ 2.0 nomination pages
 
-**ADECA (Alabama OZ page).** https://adeca.alabama.gov/opportunityzones/ — OZ landing page; no OZ 2.0 nomination process published as of check date. last_checked: 2026-05-05
+**ADECA (Alabama OZ page).** https://adeca.alabama.gov/opportunityzones/ — OZ landing page; no OZ 2.0 nomination process published. Community and Economic Development division is confirmed lead; contact (334) 242-5100. last_checked: 2026-05-07
 
-**DCCED (Alaska lead agency).** https://www.commerce.alaska.gov/web/ — Lead agency for OZ 2.0; no OZ 2.0 guidance or nomination process published. last_checked: 2026-05-05
+**DCCED (Alaska lead agency).** https://www.commerce.alaska.gov/web/ — Lead agency for OZ 2.0; no OZ 2.0 guidance or nomination process published. Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500. Alaska has only 32 eligible tracts; statutory minimum 25 designations. last_checked: 2026-05-07
 
 **Arizona Commerce Authority — OZ 2.0 Recommendation Process.** https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/ — Interactive map-based GIS tool through which counties, tribal nations, and incorporated communities of 10,000+ (in Maricopa, Pima, and Pinal counties) submit tract nominations with written justifications. Criteria emphasize investment readiness: utilities, zoning/entitlement, road access, and investor viability. Community deadline described as mid-May 2026 (not formally confirmed as of 2026-05-06); ACA targets July 1, 2026 Treasury submission; OZs effective January 1, 2027. Contact: oz@azcommerce.com. last_checked: 2026-05-06
 
-**AEDC (Arkansas OZ page).** https://www.arkansasedc.com/community-resources/opportunity-zones — OZ landing page; no OZ 2.0 nomination process published. last_checked: 2026-05-05
+**AEDC (Arkansas OZ page).** https://www.arkansasedc.com/community-resources/opportunity-zones — OZ landing page; reflects OZ 1.0 content only; no OZ 2.0 nomination process published. Contact info@arkansasedc.com / (501) 682-5996. last_checked: 2026-05-07
 
-**GO-Biz (California OZ page).** https://economicdevelopment.business.ca.gov/place-based-strategies/opportunity-zones/ — Updated site references OZ 2.0 timeline and Novogradac mapping tool; no community nomination process or public input mechanism published as of 2026-05-06. last_checked: 2026-05-06
+**GO-Biz (California OZ page).** https://economicdevelopment.business.ca.gov/place-based-strategies/opportunity-zones/ — Updated site references OZ 2.0 timeline and Novogradac mapping tool; no community nomination process or public input mechanism published. Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley (Senior Business Development Specialist) named as OZ point of contact. California Opportunity Zone portal: opzones.ca.gov. last_checked: 2026-05-07
 
-**OEDIT (Colorado OZ program).** https://oedit.colorado.gov/colorado-opportunity-zone-program — Lead agency; multi-month engagement process underway; public GIS tool and nomination portal in development; no community submission deadline published as of 2026-05-06. last_checked: 2026-05-06
+**OEDIT (Colorado OZ program).** https://oedit.colorado.gov/colorado-opportunity-zone-program — Lead agency; multi-month engagement process including fall 2025–spring 2026 webinars and April 2026 regional convenings; Western Slope event May 11, 2026 at Colorado Mesa University; public GIS tool and online feedback form published or forthcoming; email updates sign-up available. No community submission deadline published. Contact oedit.info@state.co.us / (303) 892-3840. last_checked: 2026-05-07
 
 **DECD (Connecticut OZ page).** https://portal.ct.gov/DECD/Services/Business-Development/Tax-Incentives/Opportunity-Zones — Contact info published: DECD.ozprojects@ct.gov, (860) 280-8710; no formal nomination process. last_checked: 2026-05-05
 
