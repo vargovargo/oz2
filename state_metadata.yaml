@@ -1530,13 +1530,22 @@ minnesota:
     name: Beltrami County
     eligible_count: 4
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Minnesota Dept. of Employment and Economic Development (DEED)
     url: https://mn.gov/deed/opportunityzones/
-    contact_email: null
-    contact_phone: null
-  process: null
+    contact_email: DEED.CustomerService@state.mn.us
+    contact_phone: (651) 259-7114
+  process: 'As of May 7, 2026, Minnesota DEED has not published a nomination
+    process, application, or scoring criteria for OZ 2.0; the agency website
+    states that more information will be posted when the July 1, 2026 federal
+    nomination window opens. Email DEED.CustomerService@state.mn.us or call (651)
+    259-7114 today and ask to be connected to the Opportunity Zones program lead
+    — introduce your jurisdiction, identify the eligible tracts you want considered,
+    and request notification when a community input mechanism is announced. Watch
+    mn.gov/deed/opportunityzones/ for a portal or process notice in May–June 2026,
+    as the Governor must submit to Treasury during the 90-day window beginning
+    July 1.'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1741,13 +1750,22 @@ montana:
     name: Blaine County
     eligible_count: 2
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Montana Dept. of Commerce, Community Development Division
     url: https://commerce.mt.gov/Infrastructure-Planning/Resources/Opportunity-Zones/
     contact_email: null
     contact_phone: (406) 841-2700
-  process: null
+  process: 'As of May 7, 2026, Montana’s Department of Commerce Community Development
+    Division has not published an OZ 2.0 nomination process, community input form,
+    or scoring criteria; the agency’s OZ page addresses OZ 1.0 only. Call (406)
+    841-2700 today, ask for the Community Development Division, and introduce your
+    jurisdiction’s eligible tracts under Rev. Proc. 2026-14 — request to be notified
+    when the division publishes OZ 2.0 guidance or opens a community nomination
+    process. Montana is subject to a 25-tract statutory minimum for designations
+    (the division has not confirmed its selection approach as of this date), so
+    monitor commerce.mt.gov and legislative interim committee agendas for any
+    announcement before the July 1, 2026 federal nomination window.'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1869,13 +1887,21 @@ nevada:
     name: Mineral County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Nevada Governor's Office of Economic Development (GOED)
     url: https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/
     contact_email: null
     contact_phone: (800) 336-1600
-  process: null
+  process: 'As of May 7, 2026, Nevada GOED has not published an OZ 2.0 nomination
+    process or community input mechanism; GOED’s dedicated OZ page redirects to
+    a general incentives page with no OZ-specific content, and the Department of
+    Business & Industry OZ page addresses OZ 1.0 only. Call GOED at (800) 336-1600
+    today, ask for the economic development team, introduce your jurisdiction’s
+    eligible tracts, and request to be added to any OZ 2.0 outreach list — also
+    ask whether a community input process is planned before the July 1, 2026
+    federal nomination window. Check GOED’s notices and agendas page
+    (goed.nv.gov/notices-agendas/) for any board agenda item referencing OZ 2.0.'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1932,13 +1958,22 @@ new-hampshire:
     name: Belknap County
     eligible_count: 2
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: New Hampshire Dept. of Business and Economic Affairs (BEA)
     url: https://www.nheconomy.com/grow/opportunity-zones
     contact_email: null
-    contact_phone: null
-  process: null
+    contact_phone: (603) 271-2341
+  process: 'As of May 7, 2026, New Hampshire BEA has not published an OZ 2.0
+    nomination process, application, or scoring criteria; the nheconomy.com OZ
+    page addresses OZ 1.0 only and no public process has been announced. Call BEA’s
+    Division of Economic Development at (603) 271-2341 today, ask for the business
+    or community development team, and alert them to your eligible tracts under
+    Rev. Proc. 2026-14 — request notification when the Governor’s nomination process
+    is announced and ask whether BEA will solicit community input before the July
+    1, 2026 federal window opens. The NH Municipal Association has urged communities
+    to prepare site summaries and developer relationships now; treat this outreach
+    call as an opportunity to put your tracts on BEA’s radar before nominations begin.'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1992,14 +2027,23 @@ new-jersey:
     name: Bergen County
     eligible_count: 20
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: NJ Dept. of Community Affairs (DCA) / NJ Economic Development Authority
       (NJEDA)
     url: https://www.nj.gov/dca/dlps/home/opp_zones.shtml
-    contact_email: null
+    contact_email: njopportunityzones@dca.nj.gov
     contact_phone: null
-  process: null
+  process: 'As of May 7, 2026, New Jersey DCA and NJEDA have not published a
+    formal OZ 2.0 nomination process, community input portal, or scoring criteria,
+    though the Governor’s OZ Resource Center (nj.gov/governor/njopportunityzones/)
+    remains active with general program information. Email njopportunityzones@dca.nj.gov
+    today to introduce your jurisdiction, identify eligible tracts, and request
+    notification when a community input or nomination process is announced — also
+    ask whether NJEDA’s OZ Challenge Program infrastructure will inform OZ 2.0
+    tract selection. Watch the DCA and Governor’s Resource Center pages for an
+    RFA, nomination portal, or public comment period before the July 1, 2026
+    federal nomination window; NJ may nominate up to 129 of 516 eligible tracts.'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2128,13 +2172,21 @@ new-york:
     name: Oneida County
     eligible_count: 25
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Empire State Development (ESD)
     url: https://esd.ny.gov/opportunity-zones
     contact_email: null
     contact_phone: null
-  process: null
+  process: As of May 7, 2026, Empire State Development has not published a public
+    nomination process, timeline, or scoring criteria for OZ 2.0; the agency's opportunity
+    zone page still addresses the 2018 round only. To get ahead of the July 1, 2026
+    federal nomination window, reach ESD directly through the contact form at esd.ny.gov
+    and ask ESD's Economic Development group to identify the OZ 2.0 point of contact
+    and confirm when community or local-government input will be accepted. Watch for
+    a press release or RFA from ESD in May or June 2026, when peer large states have
+    been publishing nomination guidance, and track the Governor's office for any executive
+    action directing ESD to begin the process.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2801,13 +2853,23 @@ tennessee:
     name: Montgomery County
     eligible_count: 9
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Tennessee Dept. of Economic and Community Development (TNECD)
     url: https://www.tn.gov/ecd/opportunity-zones.html
     contact_email: ED.OpportunityZones@tn.gov
     contact_phone: (615) 741-1888
-  process: null
+  process: "TNECD has not published a formal OZ 2.0 application or nomination deadline
+    as of May 7, 2026, but the department convened mayors and local stakeholders for
+    a working discussion on February 18, 2026 — a signal that TNECD is actively scoping
+    the process ahead of the federal nomination window that opens July 1, 2026. Local
+    planners should email ED.OpportunityZones@tn.gov today to introduce their community,
+    identify the specific eligible tracts they wish to champion, and ask when TNECD
+    will publish its internal submission timeline; calls to (615) 741-1888 are another
+    direct path to the OZ team. Watch for a formal Request for Nominations — or at
+    minimum a structured intake form — to appear on the TNECD OZ page in coming weeks,
+    given that comparable states are setting internal deadlines four to six weeks ahead
+    of July 1."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2821,7 +2883,7 @@ tennessee:
     rural_lisc: null
   state_cdfi_count: null
   notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application
-    or deadline published as of 2026-05-05.
+    or deadline published as of 2026-05-07.
 texas:
   name: Texas
   fips: '48'
@@ -2938,13 +3000,22 @@ utah:
     name: Tooele County
     eligible_count: 3
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Utah Governor's Office of Economic Opportunity (Go Utah)
-    url: https://business.utah.gov/news/opportunity-awaits-statewide-opportunity-zones-announced/
+    url: https://business.utah.gov/opportunity-zones/
     contact_email: null
     contact_phone: null
-  process: null
+  process: "The Utah Governor's Office of Economic Opportunity (Go Utah) has confirmed
+    it is the lead agency for OZ 2.0 nominations and has stated publicly that it is
+    'already working on how best to proceed,' but no formal application, scoring criteria,
+    or internal deadline has been published as of May 7, 2026. Local planners should
+    reach out through Go Utah's OZ page at business.utah.gov/opportunity-zones/ today
+    to register interest and ask when an intake process will open; in the OZ 1.0 round,
+    Go Utah routed nominations through regional Associations of Governments (AOGs),
+    so contacting your local AOG is a parallel step worth taking now. Watch the Go Utah
+    OZ hub at business.utah.gov/opportunity-zones/ and opportunityzones.utah.gov for
+    any formal guidance announcement ahead of the July 1 federal nomination window."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2958,7 +3029,7 @@ utah:
     rural_lisc: null
   state_cdfi_count: null
   notes: Governor's office stated it is 'already working on how best to proceed.'
-    No formal process published.
+    No formal process published as of 2026-05-07.
 vermont:
   name: Vermont
   fips: '50'
@@ -3261,13 +3332,20 @@ wisconsin:
     name: Fond du Lac County
     eligible_count: 4
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Wisconsin Economic Development Corporation (WEDC)
-    url: null
-    contact_email: null
-    contact_phone: null
-  process: null
+    url: https://wedc.org/programs-and-resources/opportunity-zones/
+    contact_email: lorena.garcia-cabrera@wedc.org
+    contact_phone: (608) 210-6700
+  process: "WEDC has not published a formal OZ 2.0 nomination process as of May 7,\
+    \ 2026; the agency’s opportunity zone page reflects OZ 1.0 material and no\
+    \ application portal or deadline has been announced. Contact WEDC today by emailing\
+    \ lorena.garcia-cabrera@wedc.org or calling (608) 210-6700 to ask whether WEDC\
+    \ plans a community input process before the July 1 federal nomination window opens\
+    \ and to register your tract for consideration. Watch for a WEDC announcement in\
+    \ May or June 2026 — several neighboring states have opened portals within\
+    \ weeks of that window."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3280,7 +3358,9 @@ wisconsin:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: WEDC presumed lead. No confirmed URL or OZ 2.0 guidance found.
+  notes: WEDC confirmed lead; OZ page URL confirmed via Google index (returned 403
+    to automated fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region
+    and OZ questions; no OZ 2.0 guidance published as of 2026-05-07.
 wyoming:
   name: Wyoming
   fips: '56'
