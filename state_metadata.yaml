@@ -1286,8 +1286,6 @@ kentucky:
       name: Rural LISC
       url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: 'Contacts: Deven Richardson (Director), Scott Moseley (Project Manager).
-    137 tracts to be nominated.'
 louisiana:
   name: Louisiana
   fips: '22'
@@ -2662,8 +2660,6 @@ ohio:
       name: Rural LISC
       url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: Portal URL (opportunityzones.ohio.gov) returned 404 at time of check. 258
-    tracts to be nominated from 1,032 eligible.
 oklahoma:
   name: Oklahoma
   fips: '40'
