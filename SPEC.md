@@ -124,9 +124,65 @@ Defined in `pages/_what-to-do-template.md` with Jinja2-style placeholders.
 
 **Overlays**:
 - `data/dci.parquet` — EIG Distressed Communities Index, joined on GEOID
-- `data/persistent_poverty.parquet` — USDA ERS PPC, joined on county_fips
-- `data/tribal_overlap.parquet` — BIA tribal census tracts ∩ eligible
-  tracts, with tribe name where unambiguous
+  via HUD ZIP-to-tract crosswalk. Columns: geoid, zip_code, dci_score,
+  dci_quintile (1=most distressed, 5=least). Script: scripts/ingest_dci.py.
+- `data/persistent_poverty.parquet` — USDA ERS County Typology Codes
+  persistent-poverty flag, joined on county_fips. Columns: county_fips,
+  county_name, state_fips, is_persistent_poverty. Script:
+  scripts/ingest_persistent_poverty.py.
+- `data/tribal_overlap.parquet` — Census ACS AIAN population share per
+  eligible tract, cross-referenced against TIGER/Line federally recognized
+  tribal statistical areas. Columns: geoid, aian_pop, aian_pct,
+  tribal_area_name (null if no overlap), is_tribal_overlap. Script:
+  scripts/ingest_tribal_overlap.py.
+- `data/anchor_proximity.parquet` — NOT YET IMPLEMENTED. Spec below.
+
+**Anchor proximity overlay spec** (Phase 2):
+
+Goal: flag eligible tracts that contain or are adjacent to a major anchor
+institution (hospital or college/university), as a forward-looking
+investment-readiness signal complementary to the distress-focused DCI.
+
+Data sources:
+- Hospitals: HIFLD Open Data "Hospitals" feature layer
+  (https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals)
+  — nationwide, geocoded, includes bed count, trauma level, status.
+  Filter: STATUS == "OPEN".
+- Colleges/universities: IPEDS Institutional Characteristics
+  (https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx)
+  — IPEDS HD file has lat/lon + enrollment for every Title IV institution.
+  Filter: ICLEVEL in (1,2) [4-year and 2-year], CLOSEDDATE == -2 (open).
+
+Join method:
+1. Download tract boundary centroids from Census TIGER/Line or use a
+   pre-built tract centroid CSV (Census publishes one).
+2. For each eligible tract centroid, compute distance to nearest hospital
+   and nearest college using a spatial index (scipy KDTree or geopandas
+   sjoin_nearest).
+3. Flag anchor_within_1mi (bool) and anchor_within_halfmi (bool).
+   Record nearest_anchor_name, nearest_anchor_type (hospital|college),
+   nearest_anchor_dist_miles.
+
+Output schema (anchor_proximity.parquet):
+  geoid                  str    11-digit tract GEOID
+  nearest_hospital_name  str    null if none within threshold
+  nearest_hospital_dist  float  miles, null if none
+  nearest_college_name   str    null if none within threshold
+  nearest_college_dist   float  miles, null if none
+  anchor_within_1mi      bool
+  anchor_within_halfmi   bool
+
+Limitations:
+- Proximity ≠ investment pipeline. A tract adjacent to a hospital is not
+  automatically investment-ready; it means demand infrastructure exists.
+- Does not capture private-sector anchors (manufacturing plants, retail
+  corridors, port terminals). Those are not in any standardized open dataset.
+- Comprehensive plan mentions and developer pipeline remain unresolvable
+  from public data alone — the anchor flag is a proxy, not a substitute.
+- Philadelphia Fed Anchor Economy Dashboard (BLS region level) is NOT
+  suitable for tract-level joins; use HIFLD/IPEDS instead.
+
+Script: scripts/ingest_anchor_proximity.py (not yet written).
 
 **State metadata**: `state_metadata.yaml`. One root key per state. Per-state
 fields:
