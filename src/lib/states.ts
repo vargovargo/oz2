@@ -20,10 +20,15 @@ export interface TribalConsultation {
   citation: string | null;
 }
 
+export interface PartnerOrg {
+  name: string;
+  url: string;
+}
+
 export interface RuralPartners {
   usda_rd_url: string | null;
-  rcap_regional: string | null;
-  rural_lisc: string | null;
+  rcap_regional: PartnerOrg | null;
+  rural_lisc: PartnerOrg | null;
 }
 
 export interface RegionalEdd {

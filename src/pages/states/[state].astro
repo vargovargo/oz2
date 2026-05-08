@@ -279,6 +279,20 @@ const daysToWindow = Math.ceil(
           <a href={rural_partners.usda_rd_url} target="_blank" rel="noopener" class="text-oz-blue underline">USDA RD {name} State Office →</a>
         </div>
       )}
+
+      {rural_partners.rcap_regional && (
+        <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
+          <p class="font-medium text-oz-neutral-900 mb-1">RCAP Regional Partner</p>
+          <a href={rural_partners.rcap_regional.url} target="_blank" rel="noopener" class="text-oz-blue underline">{rural_partners.rcap_regional.name} →</a>
+        </div>
+      )}
+
+      {rural_partners.rural_lisc && (
+        <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
+          <p class="font-medium text-oz-neutral-900 mb-1">Rural LISC</p>
+          <a href={rural_partners.rural_lisc.url} target="_blank" rel="noopener" class="text-oz-blue underline">{rural_partners.rural_lisc.name} →</a>
+        </div>
+      )}
     </div>
   </section>
 
