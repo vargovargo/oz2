@@ -94,6 +94,7 @@ ERS_2025_CSV_URL = (
 DATA_DIR = Path(__file__).parent.parent / "data"
 RAW_DIR = DATA_DIR / "raw"
 LOCAL_CACHE = RAW_DIR / "2015CountyTypologyCodes.xlsx"
+LOCAL_CACHE_CSV = RAW_DIR / "erscountytypology2015edition.csv"
 ELIGIBLE_PARQUET = DATA_DIR / "eligible_tracts.parquet"
 OUT_PARQUET = DATA_DIR / "persistent_poverty.parquet"
 
@@ -104,8 +105,9 @@ FIPS_COLS = ["FIPStxt", "FIPS", "fips", "FIPScode", "GEOID"]
 NAME_COLS = ["County_name", "County_Name", "county_name", "CountyName", "Name"]
 STATE_COLS = ["State", "state", "Stabr"]
 POVERTY_COLS = [
+    "Persistent_Poverty_2013",   # 2015 edition CSV (classic 1980-2010 definition)
     "Persis_Poverty", "Persistent_Poverty", "PersistentPoverty",
-    "Persistent_Poverty_1721",  # used in 2023/2025 edition
+    "Persistent_Poverty_1721",   # used in 2023/2025 edition
 ]
 
 
@@ -140,19 +142,24 @@ def _col(df: pd.DataFrame, candidates: list[str]) -> str | None:
     return None
 
 
-def fetch_ers_typology() -> bytes:
+def fetch_ers_typology() -> tuple[bytes, str]:
     """
-    Download ERS County Typology Codes Excel. Returns raw bytes.
+    Return (raw_bytes, fmt) where fmt is "csv" or "xlsx".
 
-    Tries live URLs first; falls back to local cache at data/raw/.
-    If all sources fail, raises RuntimeError with manual download instructions.
+    Priority:
+      1. Local CSV cache (erscountytypology2015edition.csv)
+      2. Local Excel cache (2015CountyTypologyCodes.xlsx)
+      3. Live ERS URLs (Excel)
     """
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Local cache takes precedence (allows offline re-runs)
+    if LOCAL_CACHE_CSV.exists():
+        print(f"Using cached CSV file: {LOCAL_CACHE_CSV}")
+        return LOCAL_CACHE_CSV.read_bytes(), "csv"
+
     if LOCAL_CACHE.exists():
-        print(f"Using cached file: {LOCAL_CACHE}")
-        return LOCAL_CACHE.read_bytes()
+        print(f"Using cached Excel file: {LOCAL_CACHE}")
+        return LOCAL_CACHE.read_bytes(), "xlsx"
 
     last_exc: Exception | None = None
     for url in ERS_URLS:
@@ -160,7 +167,7 @@ def fetch_ers_typology() -> bytes:
             raw = _fetch(url)
             LOCAL_CACHE.write_bytes(raw)
             print(f"  Cached → {LOCAL_CACHE}")
-            return raw
+            return raw, "xlsx"
         except Exception as exc:
             print(f"    Failed ({exc.__class__.__name__}: {exc})")
             last_exc = exc
@@ -178,36 +185,35 @@ def fetch_ers_typology() -> bytes:
     )
 
 
-def parse_typology(raw: bytes) -> pd.DataFrame:
+def parse_typology(raw: bytes, fmt: str = "xlsx") -> pd.DataFrame:
     """
-    Parse the ERS County Typology Codes Excel file.
-
-    Handles both:
-    - Wide format (2015 edition): one row per county, Persis_Poverty column
-    - Long format (potential future editions): Attribute/Value pivoted
+    Parse ERS County Typology Codes file (Excel or CSV).
 
     Returns DataFrame with columns:
         county_fips (str), county_name (str), is_persistent_poverty (bool)
     """
-    xl = pd.ExcelFile(io.BytesIO(raw))
-    print(f"  Sheets: {xl.sheet_names}")
-
-    # Try each sheet; use the first one that has enough county rows
-    df = None
-    for sheet in xl.sheet_names:
-        candidate = pd.read_excel(io.BytesIO(raw), sheet_name=sheet, dtype=str)
-        candidate.columns = [str(c).strip() for c in candidate.columns]
-        # Need at least a FIPS column and 500+ rows to be the data sheet
-        if _col(candidate, FIPS_COLS) is not None and len(candidate) >= 500:
-            df = candidate
-            print(f"  Using sheet: '{sheet}' ({len(df):,} rows × {len(df.columns)} cols)")
-            break
-
-    if df is None:
-        # Last resort: use first sheet regardless
-        df = pd.read_excel(io.BytesIO(raw), sheet_name=0, dtype=str)
+    if fmt == "csv":
+        df = pd.read_csv(io.BytesIO(raw), dtype=str)
         df.columns = [str(c).strip() for c in df.columns]
-        print(f"  Fallback to first sheet ({len(df):,} rows × {len(df.columns)} cols)")
+        print(f"  CSV: {len(df):,} rows × {len(df.columns)} cols")
+    else:
+        xl = pd.ExcelFile(io.BytesIO(raw))
+        print(f"  Sheets: {xl.sheet_names}")
+
+        # Try each sheet; use the first one that has enough county rows
+        df = None
+        for sheet in xl.sheet_names:
+            candidate = pd.read_excel(io.BytesIO(raw), sheet_name=sheet, dtype=str)
+            candidate.columns = [str(c).strip() for c in candidate.columns]
+            if _col(candidate, FIPS_COLS) is not None and len(candidate) >= 500:
+                df = candidate
+                print(f"  Using sheet: '{sheet}' ({len(df):,} rows × {len(df.columns)} cols)")
+                break
+
+        if df is None:
+            df = pd.read_excel(io.BytesIO(raw), sheet_name=0, dtype=str)
+            df.columns = [str(c).strip() for c in df.columns]
+            print(f"  Fallback to first sheet ({len(df):,} rows × {len(df.columns)} cols)")
 
     # --- Locate required columns ---
     fips_col = _col(df, FIPS_COLS)
@@ -291,14 +297,14 @@ def main():
     # ---- 2. Fetch ERS typology data ----
     print("\nFetching USDA ERS County Typology Codes …")
     try:
-        raw = fetch_ers_typology()
+        raw, fmt = fetch_ers_typology()
     except RuntimeError as exc:
         sys.exit(f"\nFATAL: {exc}")
 
     # ---- 3. Parse ----
     print("\nParsing …")
     try:
-        typology = parse_typology(raw)
+        typology = parse_typology(raw, fmt)
     except (ValueError, Exception) as exc:
         sys.exit(f"\nFATAL parsing typology file: {exc}")
 

@@ -101,8 +101,9 @@ EIG_URLS = [
     "https://eig.org/wp-content/uploads/2023/10/2023-DCI-Full-Dataset.xlsx",
     "https://eig.org/wp-content/uploads/2023/11/DCI-Full-Data-2023.xlsx",
 ]
-# Local cache path (if user downloaded manually)
+# Local cache paths to try (in order)
 EIG_LOCAL = RAW_DIR / "2023-DCI-Full-Data.xlsx"
+EIG_LOCAL_ALT = RAW_DIR / "DCI-2019-2023-Scores-Only-11.xlsx"
 
 # HUD crosswalk API
 HUD_API_URL = "https://www.huduser.gov/hudapi/public/usps?type=6&query=All"
@@ -115,8 +116,9 @@ HUD_FLAT_URLS = [
     "https://www.huduser.gov/portal/datasets/usps/ZIP_TRACT_062024.xlsx",
     "https://www.huduser.gov/portal/datasets/usps/ZIP_TRACT_032024.xlsx",
 ]
-# Local cache path
+# Local cache paths to try (in order)
 HUD_LOCAL = RAW_DIR / "ZIP_TRACT_crosswalk.xlsx"
+HUD_LOCAL_ALTS = sorted(RAW_DIR.glob("ZIP_TRACT_*.xlsx")) if RAW_DIR.exists() else []
 
 # Census 2020 ZCTA-to-Tract relationship file (area-based fallback)
 CENSUS_ZCTA_TRACT_URL = (
@@ -154,10 +156,11 @@ def fetch_eig_dci() -> pd.DataFrame:
     """
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Try local cache first
-    if EIG_LOCAL.exists():
-        print(f"Using cached EIG DCI file: {EIG_LOCAL}")
-        return _parse_eig_xlsx(EIG_LOCAL.read_bytes())
+    # Try local caches first
+    for local in (EIG_LOCAL, EIG_LOCAL_ALT):
+        if local.exists():
+            print(f"Using cached EIG DCI file: {local}")
+            return _parse_eig_xlsx(local.read_bytes())
 
     # Try live URLs
     last_exc = None
@@ -223,7 +226,8 @@ def _parse_eig_xlsx(raw: bytes) -> pd.DataFrame:
 
     # Find score column
     score_col = None
-    for candidate in ("score", "dci_score", "composite_score", "percentile", "index_score"):
+    for candidate in ("score", "dci_score", "2019-2023_distress_score", "distress_score",
+                      "composite_score", "percentile", "index_score"):
         if candidate in df.columns:
             score_col = candidate
             break
@@ -262,9 +266,11 @@ def fetch_hud_crosswalk() -> pd.DataFrame:
     """
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-    if HUD_LOCAL.exists():
-        print(f"Using cached HUD crosswalk file: {HUD_LOCAL}")
-        return _parse_hud_xlsx(HUD_LOCAL.read_bytes())
+    # Try local caches first — named file, then any ZIP_TRACT_*.xlsx glob match
+    for local in [HUD_LOCAL] + [p for p in HUD_LOCAL_ALTS if p != HUD_LOCAL]:
+        if local.exists():
+            print(f"Using cached HUD crosswalk file: {local}")
+            return _parse_hud_xlsx(local.read_bytes())
 
     # Try HUD API
     token = os.environ.get(HUD_TOKEN_ENV)
