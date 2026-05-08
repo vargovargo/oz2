@@ -18,6 +18,7 @@ const {
   status_tier, last_checked, lead_agency, process,
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
+  state_cdfi_count,
 } = state;
 
 // Approximate WGS84 bounding boxes [xmin, ymin, xmax, ymax] keyed by state FIPS string.
@@ -271,6 +272,21 @@ const daysToWindow = Math.ceil(
           <a href="https://www.hud.gov/opportunity-zones" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-700"> HUD OZ portal</a> or
           <a href="https://eig.org/ozs-resources/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-700"> EIG Designation Leads map</a>.
         </p>
+      )}
+
+      {state_cdfi_count != null && (
+        <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
+          <p class="font-medium text-oz-neutral-900 mb-1">Certified CDFIs</p>
+          <p class="text-oz-neutral-700">
+            {state_cdfi_count} certified CDFIs headquartered in {name} —{" "}
+            <a
+              href="https://www.cdfifund.gov/programs-training/certification/cdfi"
+              target="_blank"
+              rel="noopener"
+              class="text-oz-blue underline"
+            >CDFI Fund certified list →</a>
+          </p>
+        </div>
       )}
 
       {rural_partners.usda_rd_url && (
