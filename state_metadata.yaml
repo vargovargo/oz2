@@ -702,13 +702,21 @@ georgia:
     name: Dougherty County
     eligible_count: 20
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Georgia Department of Community Affairs (DCA)
     url: https://dca.georgia.gov/financing-tools/incentives/federal-opportunity-zones
     contact_email: federalopportunityzones@dca.ga.gov
     contact_phone: (404) 679-4840
-  process: null
+  process: "As of May 7, 2026, Georgia DCA has not published a formal OZ 2.0 nomination
+    process, community application, or internal deadline; the agency page covers the
+    federal program overview but provides no community submission pathway. Call or
+    email DCA’s OZ team today at (404) 679-4840 or federalopportunityzones@dca.ga.gov
+    to introduce your community’s eligible tracts and ask when DCA intends to open
+    a community input window — with 942 eligible tracts and a cap of 236 nominations,
+    early contact will help your jurisdiction get on DCA’s radar before any formal
+    process launches. Watch the DCA federal OZ page and the Governor’s office for a
+    nomination announcement ahead of the July 1, 2026 federal window."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -721,7 +729,7 @@ georgia:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: DCA confirmed lead. No OZ 2.0 application or deadline published.
+  notes: DCA confirmed lead. No OZ 2.0 application or deadline published as of 2026-05-07.
 hawaii:
   name: Hawaii
   fips: '15'
@@ -744,13 +752,23 @@ hawaii:
     name: Kalawao County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Hawaii Dept. of Business, Economic Development and Tourism (DBEDT)
     url: https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/
-    contact_email: null
-    contact_phone: null
-  process: null
+    contact_email: mark.j.ritchie@hawaii.gov
+    contact_phone: (808) 587-2785
+  process: "As of May 7, 2026, DBEDT’s Business Development and Support Division
+    (BDSD) has not published any OZ 2.0 nomination guidance, community application
+    process, or deadline; the invest.hawaii.gov/oz page reflects OZ 1.0 content
+    only. Contact Mark J. Ritchie, Branch Chief at BDSD, today at
+    mark.j.ritchie@hawaii.gov or (808) 587-2785 to ask whether DBEDT is accepting
+    community tract recommendations and what form that input should take. Note that
+    IRS Notice 2025-50 applies a special Community Development Plan (CDP) rule for
+    Hawaii that may affect how rural-flagged tracts are treated; confirm with Ritchie
+    whether DBEDT is accounting for that provision. Hawaii may nominate up to 22 of
+    its 88 eligible tracts; watch for any Governor’s office announcement before the
+    July 1, 2026 federal window opens."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -763,7 +781,9 @@ hawaii:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: DBEDT confirmed lead. No OZ 2.0 nomination guidance or deadline published.
+  notes: "DBEDT confirmed lead. OZ-specific contact identified: Mark J. Ritchie, Branch
+    Chief, BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination
+    guidance or deadline published as of 2026-05-07."
 idaho:
   name: Idaho
   fips: '16'
@@ -947,13 +967,22 @@ indiana:
     name: LaPorte County
     eligible_count: 12
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Indiana Economic Development Corporation (IEDC)
     url: https://iedc.in.gov/program/indiana-opportunity-zones/overview
-    contact_email: null
+    contact_email: opportunityzones@gov.in.gov
     contact_phone: (317) 232-8800
-  process: null
+  process: "As of May 7, 2026, IEDC has not published a formal community nomination
+    process, scoring rubric, or internal state deadline for OZ 2.0; the IEDC page
+    references the federal September 28, 2026 nomination window but provides no
+    community application pathway. Email opportunityzones@gov.in.gov today with your
+    jurisdiction’s eligible tract information and a brief case for designation —
+    in the OZ 1.0 round, Governor Holcomb solicited community recommendations before
+    making nominations, and a similar informal outreach period is likely before IEDC
+    formalizes criteria. Watch the IEDC OZ page and the Governor’s office for any
+    announcement of a public input process or community webinar; Indiana may nominate
+    up to 126 of its 501 eligible tracts."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -966,8 +995,9 @@ indiana:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: IEDC page references federal September 28, 2026 deadline. No internal state
-    application process published.
+  notes: "IEDC page references federal September 28, 2026 deadline. OZ-specific email
+    confirmed: opportunityzones@gov.in.gov. No internal state application process
+    published as of 2026-05-07."
 iowa:
   name: Iowa
   fips: '19'
@@ -1008,13 +1038,21 @@ iowa:
     name: Appanoose County
     eligible_count: 3
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Iowa Economic Development Authority (IEDA)
     url: https://iowaeconomicdevelopment-site.azurewebsites.net/opportunity-zones/
-    contact_email: null
+    contact_email: communications@iowaeda.com
     contact_phone: null
-  process: null
+  process: "As of May 7, 2026, IEDA has not published any OZ 2.0 nomination guidance,
+    community application process, or internal deadline; the IEDA opportunity zones
+    page reflects OZ 1.0 material only, with no mention of the 2026 redesignation
+    round. Email communications@iowaeda.com today to ask which IEDA program officer
+    is handling OZ 2.0 tract nominations and whether the authority will be accepting
+    community input before the federal window opens July 1, 2026; ask to be directed
+    to the appropriate staff contact. Iowa may nominate up to 44 of its 175 eligible
+    tracts; watch opportunityiowa.gov and IEDA’s press release page for any
+    announcement of an OZ 2.0 process."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1027,7 +1065,8 @@ iowa:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: IEDA confirmed lead. No OZ 2.0 nomination process published.
+  notes: "IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
+    General communications contact: communications@iowaeda.com."
 kansas:
   name: Kansas
   fips: '20'
@@ -1288,15 +1327,25 @@ maine:
     name: Washington County
     eligible_count: 3
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Maine Dept. of Economic and Community Development (DECD)
     url: https://www.maine.gov/decd/business-development/financial-incentives-resources/opportunity-zones
     contact_email: null
     contact_phone: null
-  process: null
+  process: >-
+    Maine DECD did not run a formal public nomination portal; municipalities
+    were expected to make their case to DECD ahead of an informal April 30,
+    2026 internal deadline (Portland Press Herald, April 30, 2026). As of May
+    7, 2026, Commissioner Michael Duguay's office is narrowing down the tract
+    list before Governor Mills makes nominations starting July 1, 2026. If your
+    community has not already engaged, contact DECD's Office of Business
+    Development through maine.gov/decd and ask directly whether late input will
+    be considered; Maine may nominate up to 20 of 78 eligible tracts and 74 of
+    those carry the rural flag under Rev. Proc. 2026-14. Watch maine.gov/decd
+    for a Governor's announcement once the July 1 federal window opens.
   scoring_rubric_url: null
-  state_deadline: null
+  state_deadline: '2026-04-30'
   application_portal_url: null
   tribal_consultation:
     framework: null
@@ -1307,7 +1356,9 @@ maine:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: DECD confirmed lead. No OZ 2.0 guidance published.
+  notes: 'DECD informal community deadline April 30, 2026 (now passed). Commissioner:
+    Michael Duguay. No formal portal published. Governor nominates starting July 1,
+    2026; 20 of 78 eligible tracts (74 rural-flagged).'
 maryland:
   name: Maryland
   fips: '24'
@@ -1348,13 +1399,25 @@ maryland:
     name: Washington County
     eligible_count: 7
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Maryland Dept. of Housing and Community Development (DHCD) / MD Commerce
     url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
     contact_email: null
     contact_phone: null
-  process: null
+  process: >-
+    As of May 7, 2026, neither Maryland DHCD nor MD Commerce has published an
+    OZ 2.0 nomination process, community application window, or scoring
+    criteria. Maryland has a dual-agency structure: DHCD leads community
+    development strategy while MD Commerce handles business investment; for OZ
+    2.0, contact both. Email DHCD communications at Allison.Foster@Maryland.gov
+    (443-257-5478) and ask to be directed to the OZ 2.0 program lead; separately
+    contact MD Commerce's Community Development Finance team through
+    commerce.maryland.gov. Frame your ask around investment-ready sites in
+    eligible tracts, noting the rural flag under Rev. Proc. 2026-14 if
+    applicable. Watch dhcd.maryland.gov for an announcement ahead of the July 1,
+    2026 federal nomination window; Maryland may nominate up to 113 of 451
+    eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1367,8 +1430,8 @@ maryland:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 'Dual-agency lead: DHCD + Commerce. Page addresses OZ 1.0 only. No OZ 2.0
-    guidance published.'
+  notes: 'Dual-agency lead: DHCD + MD Commerce. No OZ 2.0 nomination process published
+    as of 2026-05-07. DHCD comms: Allison.Foster@Maryland.gov, 443-257-5478.'
 massachusetts:
   name: Massachusetts
   fips: '25'
@@ -1409,13 +1472,24 @@ massachusetts:
     name: Franklin County
     eligible_count: 7
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Massachusetts Office of Business Development (MOBD)
     url: https://www.mass.gov/opportunity-zone-program
     contact_email: null
     contact_phone: null
-  process: null
+  process: >-
+    As of May 7, 2026, the Massachusetts Office of Business Development (MOBD)
+    has not published an OZ 2.0 community nomination process, scoring criteria,
+    or application portal. The Novogradac OZ 2.0 state tracker lists a state
+    contact for Massachusetts but does not publish their email. Reach MOBD
+    today through the contact form at mass.gov/opportunity-zone-program and ask
+    for the staff lead on OZ 2.0 nominations; a written request makes it easier
+    to be forwarded to the right person. If your municipality has an
+    investment-ready eligible tract — particularly one with the rural flag under
+    Rev. Proc. 2026-14 — document the case now so you are ready when MOBD
+    announces a process. Massachusetts may nominate up to 103 of 410 eligible
+    tracts before the July 1, 2026 federal window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1428,7 +1502,8 @@ massachusetts:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: MOBD confirmed lead. No OZ 2.0 application or deadline published.
+  notes: MOBD confirmed lead. No OZ 2.0 application, deadline, or contact email published
+    as of 2026-05-07. 103 of 410 eligible tracts to be nominated.
 michigan:
   name: Michigan
   fips: '26'
@@ -1469,13 +1544,25 @@ michigan:
     name: Calhoun County
     eligible_count: 15
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Michigan Economic Development Corporation (MEDC) / MSHDA
     url: https://www.michigan.gov/opportunityzones
-    contact_email: null
-    contact_phone: null
-  process: null
+    contact_email: MSHDA@michigan.gov
+    contact_phone: 517-335-9885
+  process: >-
+    As of May 7, 2026, MEDC and MSHDA have not published an OZ 2.0 community
+    nomination process, portal, or deadline. MSHDA holds the OZ 1.0 program
+    infrastructure and is the most likely point of entry: email
+    MSHDA@michigan.gov or call 517-335-9885 and ask for the staff lead on OZ
+    2.0 nominations. If your municipality or county has an investment-ready
+    eligible tract — Wayne, Genesee, and Saginaw counties have the highest
+    concentrations, but 251 of Michigan's 856 eligible tracts carry the rural
+    flag under Rev. Proc. 2026-14 — document existing investor interest and
+    project pipeline before contacting MSHDA. Watch michigan.gov/opportunityzones
+    for any announcement of a community input window ahead of the July 1, 2026
+    federal nomination opening; Michigan may nominate up to 214 of 856
+    eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1488,8 +1575,8 @@ michigan:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
-    published.
+  notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
+    published as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
 minnesota:
   name: Minnesota
   fips: '27'
