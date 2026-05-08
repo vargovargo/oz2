@@ -2409,13 +2409,24 @@ north-dakota:
     name: Barnes County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: North Dakota Department of Commerce, Economic Development & Finance Division
-    url: null
+    url: https://www.commerce.nd.gov/economic-development-finance
     contact_email: null
     contact_phone: (701) 328-5344
-  process: null
+  process: "The ND Department of Commerce Economic Development & Finance Division has\
+    \ not published a formal OZ 2.0 nomination process as of May 7, 2026; no application\
+    \ portal, scoring criteria, or community submission deadline has been announced.\
+    \ Contact Rich Garman, Director of Economic Development and Finance, at (701) 328-5344\
+    \ — use the EDF Team directory at commerce.nd.gov/economic-development-finance/edf-team\
+    \ to locate a direct email — and ask whether Commerce plans to solicit community\
+    \ input before it submits to the Governor ahead of the July 1, 2026 federal nomination\
+    \ window; offer to provide tract-level eligibility data and a letter of support.\
+    \ Watch the Commerce news feed at commerce.nd.gov for a nomination announcement\
+    \ in May or June 2026; North Dakota must nominate at least 25 tracts (statutory\
+    \ minimum) from its pool of 37 eligible tracts, so every eligible community has\
+    \ meaningful odds of inclusion."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2428,8 +2439,9 @@ north-dakota:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Contact Rich Garman (Director) confirmed. No URL or OZ 2.0 guidance found.
-    ND subject to 25-zone statutory minimum.
+  notes: "Contact Rich Garman (Director), (701) 328-5344. EDF Team page: commerce.nd.gov/economic-development-finance/edf-team.\
+    \ ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance\
+    \ published as of 2026-05-07."
 ohio:
   name: Ohio
   fips: '39'
@@ -2736,13 +2748,22 @@ rhode-island:
     name: Washington County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Rhode Island Commerce Corporation
     url: https://commerceri.com/site-selection/opportunity-zones/
-    contact_email: null
+    contact_email: giselle.mahoney.ctr@commerce.ri.gov
     contact_phone: (401) 278-9100
-  process: null
+  process: "Rhode Island Commerce Corporation has not published a formal OZ 2.0 nomination\
+    \ process as of May 7, 2026; the agency's OZ page reflects OZ 1.0 content only\
+    \ and no community input portal or deadline has been announced. Email Giselle Mahoney\
+    \ at giselle.mahoney.ctr@commerce.ri.gov or call Commerce RI at (401) 278-9100\
+    \ to introduce your jurisdiction, confirm that Commerce RI is administering the\
+    \ OZ 2.0 process, ask when community input will open, and offer tract-level eligibility\
+    \ data for any tracts you want considered. Watch for a Commerce RI announcement\
+    \ in May or June 2026; as a small-population state, Rhode Island must nominate\
+    \ at least 25 tracts regardless of the statutory 25% cap, so the pool is constrained\
+    \ and early engagement matters."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2755,8 +2776,8 @@ rhode-island:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Commerce RI confirmed lead. Website addresses OZ 1.0. Subject to 25-zone
-    statutory minimum. No OZ 2.0 guidance published.
+  notes: "Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626.\
+    \ Subject to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07."
 south-carolina:
   name: South Carolina
   fips: '45'
@@ -2879,13 +2900,22 @@ south-dakota:
     name: Roberts County
     eligible_count: 2
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: South Dakota Governor's Office of Economic Development (GOED)
-    url: null
+    url: https://sdgoed.com
     contact_email: null
     contact_phone: null
-  process: null
+  process: "South Dakota GOED has not published a formal OZ 2.0 nomination process\
+    \ as of May 7, 2026; no application portal, scoring criteria, or community submission\
+    \ deadline has been announced. Visit sdgoed.com and use the general contact form\
+    \ or call the main GOED line to ask whether GOED will solicit community input before\
+    \ submitting nominations to the Governor ahead of the July 1, 2026 federal nomination\
+    \ window; bring a list of eligible tract GEOID codes and a concise economic-need\
+    \ narrative for any tracts your jurisdiction wants considered. Watch for a GOED\
+    \ news release in May or June 2026 — South Dakota must nominate at least 25 tracts\
+    \ (statutory minimum) from its pool of 52 eligible tracts, and 35 of those 52\
+    \ are rural-designated, making early rural-community engagement particularly time-sensitive."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2898,7 +2928,7 @@ south-dakota:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: GOED presumed lead. No confirmed URL or OZ 2.0 guidance found. Subject to
+  notes: GOED presumed lead. No confirmed contact email found. Subject to
     25-zone statutory minimum.
 tennessee:
   name: Tennessee
@@ -3157,13 +3187,22 @@ vermont:
     name: Washington County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Vermont Agency of Commerce and Community Development (ACCD)
     url: https://accd.vermont.gov/OpportunityZones
     contact_email: null
     contact_phone: null
-  process: null
+  process: "Vermont ACCD has not published a formal OZ 2.0 nomination process as of\
+    \ May 7, 2026; the agency's OZ page reflects OZ 1.0 content and no community input\
+    \ portal or deadline has been announced. Contact ACCD today through accd.vermont.gov/about-us/contact-us\
+    \ — reach the Economic Development division — to ask when ACCD will open community\
+    \ input on OZ 2.0 nominations and offer to provide tract-level eligibility and\
+    \ rural-designation data for any tracts your jurisdiction wants prioritized. Vermont\
+    \ has only 24 eligible tracts statewide, all of them rural-designated under Notice\
+    \ 2025-50, and ACCD may nominate all 24 (the statutory minimum covers the entire\
+    \ eligible pool), so even communities that assume they are already in should confirm\
+    \ directly that their tract is on the nomination list."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3176,8 +3215,8 @@ vermont:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: ACCD confirmed lead. All 24 eligible tracts can be nominated (statutory minimum
-    applies). No OZ 2.0 process published.
+  notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory
+    minimum allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
 virginia:
   name: Virginia
   fips: '51'
@@ -3218,13 +3257,24 @@ virginia:
     name: Pittsylvania County
     eligible_count: 16
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Virginia Economic Development Partnership (VEDP) / DHCD
     url: https://www.dhcd.virginia.gov/opportunity-zones-oz
     contact_email: oz2026@vedp.org
     contact_phone: null
-  process: null
+  process: "VEDP and DHCD are jointly managing Virginia's OZ 2.0 process on behalf\
+    \ of Governor Youngkin but have not published a formal community application portal\
+    \ or scoring rubric as of May 7, 2026; the stakeholder survey that ran through\
+    \ April 27 and webinars held April 16 and 21 appear to have been the primary public\
+    \ input mechanism thus far. Email oz2026@vedp.org or oz@dhcd.virginia.gov today\
+    \ to ask whether a second input round or formal nomination form will be released\
+    \ before the July 1, 2026 federal submission window, and share a tract-specific\
+    \ narrative describing investment readiness, community need, and any pending development\
+    \ projects. Virginia will nominate 152 of 607 eligible tracts (25% statutory cap),\
+    \ and both agencies are evaluating stakeholder input to inform the Governor's final\
+    \ selections, so written submissions from local governments carry weight even outside\
+    \ a formal portal."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3237,9 +3287,10 @@ virginia:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Dual-agency lead. Webinars held April 16 and 21, 2026; stakeholder survey
-    closed April 27. No formal application portal or scoring rubric. 152 tracts to
-    be nominated.
+  notes: "Dual-agency lead (VEDP + DHCD). Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
+    \ Webinars held April 16 and 21, 2026; stakeholder survey closed April 27. No\
+    \ formal application portal or scoring rubric. 152 tracts to be nominated from\
+    \ 607 eligible (25% cap)."
 washington:
   name: Washington
   fips: '53'
@@ -3359,16 +3410,26 @@ west-virginia:
     name: Harrison County
     eligible_count: 6
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: West Virginia Department of Economic Development
-    url: https://westvirginia.gov/category/wv-opportunity-zones/
+    url: https://westvirginia.gov/oz
     contact_email: null
     contact_phone: null
-  process: null
+  process: "The West Virginia Division of Economic Development (WVDED), appointed by\
+    \ Governor Morrisey to manage OZ 2.0, is accepting tract nominations from local\
+    \ economic development authorities, county commissions, and regional planning councils\
+    \ through July 1, 2026 — all three entity types are explicitly eligible to submit.\
+    \ Visit westvirginia.gov/oz today for nomination instructions; if a direct contact\
+    \ email is listed there, use it to register your jurisdiction's interest and confirm\
+    \ the submission format before the deadline. West Virginia must nominate 52 of\
+    \ 207 eligible tracts (25% statutory cap), all of which carry a rural designation\
+    \ under Notice 2025-50, so prioritization among competing rural nominations will\
+    \ be the central challenge — documenting investment readiness, existing infrastructure,\
+    \ and development momentum will strengthen a county commission or EDA submission."
   scoring_rubric_url: null
-  state_deadline: null
-  application_portal_url: null
+  state_deadline: '2026-07-01'
+  application_portal_url: https://westvirginia.gov/oz
   tribal_consultation:
     framework: null
     citation: null
@@ -3378,7 +3439,10 @@ west-virginia:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: Confirmed lead. No OZ 2.0 guidance published.
+  notes: "WVDED confirmed lead; dedicated OZ 2.0 page at westvirginia.gov/oz. Eligible\
+    \ nominators: local EDAs, county commissions, regional planning councils. Deadline\
+    \ July 1, 2026. 52 tracts to be nominated from 207 eligible; all eligible tracts\
+    \ are rural-designated. No scoring rubric or contact email found as of 2026-05-07."
 wisconsin:
   name: Wisconsin
   fips: '55'
@@ -3485,13 +3549,23 @@ wyoming:
     name: Uinta County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Wyoming Business Council
     url: https://wyomingbusiness.org/business/financing/financial-incentives/opportunity-zones/
     contact_email: null
-    contact_phone: null
-  process: null
+    contact_phone: (307) 287-4709
+  process: "The Wyoming Business Council has not published a formal OZ 2.0 nomination\
+    \ process as of May 7, 2026; the agency's OZ page reflects prior-round content\
+    \ and no application portal or state deadline has been announced. Call Connor Christensen,\
+    \ Economic Policy & Research Advisor, at (307) 287-4709 — or reach the Business\
+    \ Council through wyomingbusiness.org/contact — to ask whether WBC will run a\
+    \ community input process before the July 1, 2026 federal nomination window, and\
+    \ register your tract for consideration; offer tract-level eligibility data and\
+    \ a brief development narrative. Wyoming will nominate 5 of 20 eligible tracts\
+    \ (25% statutory cap), 16 of which carry a rural designation, making the competition\
+    \ for limited slots especially acute — do not wait for a formal portal announcement\
+    \ before making contact."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3504,5 +3578,6 @@ wyoming:
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
-  notes: 'Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.
-    No formal application or deadline. Explicitly states federal guidance still evolving.'
+  notes: "Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.\
+    \ 5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are\
+    \ rural-designated. No formal application or deadline as of 2026-05-07."
