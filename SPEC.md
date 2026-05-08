@@ -124,9 +124,75 @@ Defined in `pages/_what-to-do-template.md` with Jinja2-style placeholders.
 
 **Overlays**:
 - `data/dci.parquet` — EIG Distressed Communities Index, joined on GEOID
-- `data/persistent_poverty.parquet` — USDA ERS PPC, joined on county_fips
-- `data/tribal_overlap.parquet` — BIA tribal census tracts ∩ eligible
-  tracts, with tribe name where unambiguous
+  via HUD ZIP-to-tract crosswalk. Columns: geoid, zip_code, dci_score,
+  dci_quintile (1=most distressed, 5=least). Script: scripts/ingest_dci.py.
+- `data/persistent_poverty.parquet` — USDA ERS County Typology Codes
+  persistent-poverty flag, joined on county_fips. Columns: county_fips,
+  county_name, state_fips, is_persistent_poverty. Script:
+  scripts/ingest_persistent_poverty.py.
+- `data/tribal_overlap.parquet` — Census ACS AIAN population share per
+  eligible tract, cross-referenced against TIGER/Line federally recognized
+  tribal statistical areas. Columns: geoid, aian_pop, aian_pct,
+  tribal_area_name (null if no overlap), is_tribal_overlap. Script:
+  scripts/ingest_tribal_overlap.py.
+- `data/anchor_proximity.parquet` — NOT YET IMPLEMENTED. Spec below.
+
+**Anchor proximity overlay spec** (Phase 2):
+
+Goal: flag eligible tracts that contain or are adjacent to a major anchor
+institution (hospital or college/university), as a forward-looking
+investment-readiness signal complementary to the distress-focused DCI.
+
+Data sources:
+- Hospitals: HIFLD Open Data "Hospitals" feature layer
+  (https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals)
+  — nationwide, geocoded, includes bed count, trauma level, status.
+  Filter: STATUS == "OPEN".
+- Colleges/universities: IPEDS Institutional Characteristics
+  (https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx)
+  — IPEDS HD file has lat/lon + enrollment for every Title IV institution.
+  Filter: ICLEVEL in (1,2) [4-year and 2-year], CLOSEDDATE == -2 (open).
+
+Join method:
+Use tract polygon boundaries (not centroids) for distance measurement.
+Centroid-based distance is misleading for rural tracts, which can exceed
+400 sq mi — the centroid may be miles from any settlement, and an anchor
+inside the tract near its edge would be missed.
+
+1. Download Census TIGER/Line tract polygons (not centroids).
+2. Use geopandas sjoin_nearest against anchor point layers to get the
+   distance from the nearest edge of each tract polygon to the nearest
+   anchor point. In geopandas: sjoin_nearest(tracts, anchors,
+   how="left", distance_col="dist_m").
+3. Apply rural-aware thresholds using is_rural from eligible_tracts.parquet:
+   - Urban tracts (is_rural=False): anchor_within_threshold = dist <= 1 mile
+   - Rural tracts (is_rural=True):  anchor_within_threshold = dist <= 25 miles
+   The 25-mile rural threshold reflects that a county-seat hospital 20 miles
+   from a rural tract is still a real demand generator for that community.
+4. Record the nearest anchor name, type, and actual distance in miles for
+   both hospital and college separately.
+
+Output schema (anchor_proximity.parquet):
+  geoid                    str    11-digit tract GEOID
+  is_rural                 bool   from eligible_tracts (join key for threshold)
+  nearest_hospital_name    str    null if none found
+  nearest_hospital_dist_mi float  distance from tract polygon edge, miles
+  nearest_college_name     str    null if none found
+  nearest_college_dist_mi  float  distance from tract polygon edge, miles
+  anchor_within_threshold  bool   True if either anchor within rural/urban threshold
+  threshold_miles_used     float  1.0 for urban, 25.0 for rural
+
+Limitations:
+- Proximity ≠ investment pipeline. A tract adjacent to a hospital is not
+  automatically investment-ready; it means demand infrastructure exists.
+- Does not capture private-sector anchors (manufacturing plants, retail
+  corridors, port terminals). Those are not in any standardized open dataset.
+- Comprehensive plan mentions and developer pipeline remain unresolvable
+  from public data alone — the anchor flag is a proxy, not a substitute.
+- Philadelphia Fed Anchor Economy Dashboard (BLS region level) is NOT
+  suitable for tract-level joins; use HIFLD/IPEDS instead.
+
+Script: scripts/ingest_anchor_proximity.py (not yet written).
 
 **State metadata**: `state_metadata.yaml`. One root key per state. Per-state
 fields:

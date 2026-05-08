@@ -62,9 +62,13 @@ alabama:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/al/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: No OZ 2.0 process published as of 2026-05-07. ADECA is confirmed lead per
     EIG map. Main phone (334) 242-5100; Community and Economic Development division
@@ -134,9 +138,13 @@ alaska:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ak/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published
     as of 2026-05-07. Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500.
@@ -209,9 +217,13 @@ arizona:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/az/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Community deadline described as mid-May 2026 but not formally confirmed as
     of 2026-05-06. Tribal nations have statewide input rights on tribal territory tracts.
@@ -281,9 +293,13 @@ arkansas:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ar/
+    rcap_regional:
+      name: Communities Unlimited
+      url: https://www.communitiesu.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published.
     General contact info@arkansasedc.com / (501) 682-5996.
@@ -354,9 +370,13 @@ california:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ca/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders
     to Help Center via gobiz.zendesk.com. No formal application or deadline published
@@ -427,9 +447,13 @@ colorado:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/co/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Multi-month stakeholder engagement underway. Regional convenings April 2026;
     Western Slope event May 11 at Colorado Mesa University. Public GIS tool and
@@ -496,9 +520,13 @@ connecticut:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ct/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Contact confirmed. No application portal or deadline published as of 2026-05-07.
 delaware:
@@ -546,9 +574,13 @@ delaware:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/de/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "Community nomination window closes May 15, 2026; Governor's submission deadline\
     \ to Treasury is September 30, 2026. No scoring rubric published. Governor may\
@@ -585,9 +617,13 @@ district-of-columbia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/md/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: DMPED presumed lead. No OZ 2.0 guidance published as of 2026-05-07. DC eligible
     for statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects
@@ -657,9 +693,13 @@ florida:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/fl/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Public input window closed. 340 tracts to be nominated from 1,360 eligible.
 georgia:
@@ -702,13 +742,21 @@ georgia:
     name: Dougherty County
     eligible_count: 20
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Georgia Department of Community Affairs (DCA)
     url: https://dca.georgia.gov/financing-tools/incentives/federal-opportunity-zones
     contact_email: federalopportunityzones@dca.ga.gov
     contact_phone: (404) 679-4840
-  process: null
+  process: "As of May 7, 2026, Georgia DCA has not published a formal OZ 2.0 nomination
+    process, community application, or internal deadline; the agency page covers the
+    federal program overview but provides no community submission pathway. Call or
+    email DCA’s OZ team today at (404) 679-4840 or federalopportunityzones@dca.ga.gov
+    to introduce your community’s eligible tracts and ask when DCA intends to open
+    a community input window — with 942 eligible tracts and a cap of 236 nominations,
+    early contact will help your jurisdiction get on DCA’s radar before any formal
+    process launches. Watch the DCA federal OZ page and the Governor’s office for a
+    nomination announcement ahead of the July 1, 2026 federal window."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -717,11 +765,15 @@ georgia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ga/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: DCA confirmed lead. No OZ 2.0 application or deadline published.
+  notes: DCA confirmed lead. No OZ 2.0 application or deadline published as of 2026-05-07.
 hawaii:
   name: Hawaii
   fips: '15'
@@ -744,13 +796,23 @@ hawaii:
     name: Kalawao County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Hawaii Dept. of Business, Economic Development and Tourism (DBEDT)
     url: https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/
-    contact_email: null
-    contact_phone: null
-  process: null
+    contact_email: mark.j.ritchie@hawaii.gov
+    contact_phone: (808) 587-2785
+  process: "As of May 7, 2026, DBEDT’s Business Development and Support Division
+    (BDSD) has not published any OZ 2.0 nomination guidance, community application
+    process, or deadline; the invest.hawaii.gov/oz page reflects OZ 1.0 content
+    only. Contact Mark J. Ritchie, Branch Chief at BDSD, today at
+    mark.j.ritchie@hawaii.gov or (808) 587-2785 to ask whether DBEDT is accepting
+    community tract recommendations and what form that input should take. Note that
+    IRS Notice 2025-50 applies a special Community Development Plan (CDP) rule for
+    Hawaii that may affect how rural-flagged tracts are treated; confirm with Ritchie
+    whether DBEDT is accounting for that provision. Hawaii may nominate up to 22 of
+    its 88 eligible tracts; watch for any Governor’s office announcement before the
+    July 1, 2026 federal window opens."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -759,11 +821,17 @@ hawaii:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/hi/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: DBEDT confirmed lead. No OZ 2.0 nomination guidance or deadline published.
+  notes: "DBEDT confirmed lead. OZ-specific contact identified: Mark J. Ritchie, Branch
+    Chief, BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination
+    guidance or deadline published as of 2026-05-07."
 idaho:
   name: Idaho
   fips: '16'
@@ -830,9 +898,13 @@ idaho:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/id/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal\
     \ window opens July 1, 2026. Max designations corrected to 25 (statutory minimum\
@@ -902,9 +974,13 @@ illinois:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/il/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 238 tracts to be nominated from 950 eligible.
 indiana:
@@ -947,13 +1023,22 @@ indiana:
     name: LaPorte County
     eligible_count: 12
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Indiana Economic Development Corporation (IEDC)
     url: https://iedc.in.gov/program/indiana-opportunity-zones/overview
-    contact_email: null
+    contact_email: opportunityzones@gov.in.gov
     contact_phone: (317) 232-8800
-  process: null
+  process: "As of May 7, 2026, IEDC has not published a formal community nomination
+    process, scoring rubric, or internal state deadline for OZ 2.0; the IEDC page
+    references the federal September 28, 2026 nomination window but provides no
+    community application pathway. Email opportunityzones@gov.in.gov today with your
+    jurisdiction’s eligible tract information and a brief case for designation —
+    in the OZ 1.0 round, Governor Holcomb solicited community recommendations before
+    making nominations, and a similar informal outreach period is likely before IEDC
+    formalizes criteria. Watch the IEDC OZ page and the Governor’s office for any
+    announcement of a public input process or community webinar; Indiana may nominate
+    up to 126 of its 501 eligible tracts."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -962,12 +1047,17 @@ indiana:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/in/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: IEDC page references federal September 28, 2026 deadline. No internal state
-    application process published.
+  notes: "IEDC page references federal September 28, 2026 deadline. OZ-specific email
+    confirmed: opportunityzones@gov.in.gov. No internal state application process
+    published as of 2026-05-07."
 iowa:
   name: Iowa
   fips: '19'
@@ -1008,13 +1098,21 @@ iowa:
     name: Appanoose County
     eligible_count: 3
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Iowa Economic Development Authority (IEDA)
     url: https://iowaeconomicdevelopment-site.azurewebsites.net/opportunity-zones/
-    contact_email: null
+    contact_email: communications@iowaeda.com
     contact_phone: null
-  process: null
+  process: "As of May 7, 2026, IEDA has not published any OZ 2.0 nomination guidance,
+    community application process, or internal deadline; the IEDA opportunity zones
+    page reflects OZ 1.0 material only, with no mention of the 2026 redesignation
+    round. Email communications@iowaeda.com today to ask which IEDA program officer
+    is handling OZ 2.0 tract nominations and whether the authority will be accepting
+    community input before the federal window opens July 1, 2026; ask to be directed
+    to the appropriate staff contact. Iowa may nominate up to 44 of its 175 eligible
+    tracts; watch opportunityiowa.gov and IEDA’s press release page for any
+    announcement of an OZ 2.0 process."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1023,11 +1121,16 @@ iowa:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ia/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: IEDA confirmed lead. No OZ 2.0 nomination process published.
+  notes: "IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
+    General communications contact: communications@iowaeda.com."
 kansas:
   name: Kansas
   fips: '20'
@@ -1095,9 +1198,13 @@ kansas:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ks/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "Kansas may nominate up to 53 of its 210 eligible tracts (25% statutory cap).
     Scoring matrix published on agency OZ 2.0 page; specific criterion weights not
@@ -1171,9 +1278,13 @@ kentucky:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ky/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 'Contacts: Deven Richardson (Director), Scott Moseley (Project Manager).
     137 tracts to be nominated.'
@@ -1242,9 +1353,13 @@ louisiana:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/la/
+    rcap_regional:
+      name: Communities Unlimited
+      url: https://www.communitiesu.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
     Main line 800-450-8115 / 225-342-3000.
@@ -1288,26 +1403,42 @@ maine:
     name: Washington County
     eligible_count: 3
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Maine Dept. of Economic and Community Development (DECD)
     url: https://www.maine.gov/decd/business-development/financial-incentives-resources/opportunity-zones
     contact_email: null
     contact_phone: null
-  process: null
+  process: >-
+    Maine DECD did not run a formal public nomination portal; municipalities
+    were expected to make their case to DECD ahead of an informal April 30,
+    2026 internal deadline (Portland Press Herald, April 30, 2026). As of May
+    7, 2026, Commissioner Michael Duguay's office is narrowing down the tract
+    list before Governor Mills makes nominations starting July 1, 2026. If your
+    community has not already engaged, contact DECD's Office of Business
+    Development through maine.gov/decd and ask directly whether late input will
+    be considered; Maine may nominate up to 20 of 78 eligible tracts and 74 of
+    those carry the rural flag under Rev. Proc. 2026-14. Watch maine.gov/decd
+    for a Governor's announcement once the July 1 federal window opens.
   scoring_rubric_url: null
-  state_deadline: null
+  state_deadline: '2026-04-30'
   application_portal_url: null
   tribal_consultation:
     framework: null
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/me/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: DECD confirmed lead. No OZ 2.0 guidance published.
+  notes: 'DECD informal community deadline April 30, 2026 (now passed). Commissioner:
+    Michael Duguay. No formal portal published. Governor nominates starting July 1,
+    2026; 20 of 78 eligible tracts (74 rural-flagged).'
 maryland:
   name: Maryland
   fips: '24'
@@ -1348,13 +1479,25 @@ maryland:
     name: Washington County
     eligible_count: 7
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Maryland Dept. of Housing and Community Development (DHCD) / MD Commerce
     url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
     contact_email: null
     contact_phone: null
-  process: null
+  process: >-
+    As of May 7, 2026, neither Maryland DHCD nor MD Commerce has published an
+    OZ 2.0 nomination process, community application window, or scoring
+    criteria. Maryland has a dual-agency structure: DHCD leads community
+    development strategy while MD Commerce handles business investment; for OZ
+    2.0, contact both. Email DHCD communications at Allison.Foster@Maryland.gov
+    (443-257-5478) and ask to be directed to the OZ 2.0 program lead; separately
+    contact MD Commerce's Community Development Finance team through
+    commerce.maryland.gov. Frame your ask around investment-ready sites in
+    eligible tracts, noting the rural flag under Rev. Proc. 2026-14 if
+    applicable. Watch dhcd.maryland.gov for an announcement ahead of the July 1,
+    2026 federal nomination window; Maryland may nominate up to 113 of 451
+    eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1363,12 +1506,16 @@ maryland:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/md/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: 'Dual-agency lead: DHCD + Commerce. Page addresses OZ 1.0 only. No OZ 2.0
-    guidance published.'
+  notes: 'Dual-agency lead: DHCD + MD Commerce. No OZ 2.0 nomination process published
+    as of 2026-05-07. DHCD comms: Allison.Foster@Maryland.gov, 443-257-5478.'
 massachusetts:
   name: Massachusetts
   fips: '25'
@@ -1409,13 +1556,24 @@ massachusetts:
     name: Franklin County
     eligible_count: 7
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Massachusetts Office of Business Development (MOBD)
     url: https://www.mass.gov/opportunity-zone-program
     contact_email: null
     contact_phone: null
-  process: null
+  process: >-
+    As of May 7, 2026, the Massachusetts Office of Business Development (MOBD)
+    has not published an OZ 2.0 community nomination process, scoring criteria,
+    or application portal. The Novogradac OZ 2.0 state tracker lists a state
+    contact for Massachusetts but does not publish their email. Reach MOBD
+    today through the contact form at mass.gov/opportunity-zone-program and ask
+    for the staff lead on OZ 2.0 nominations; a written request makes it easier
+    to be forwarded to the right person. If your municipality has an
+    investment-ready eligible tract — particularly one with the rural flag under
+    Rev. Proc. 2026-14 — document the case now so you are ready when MOBD
+    announces a process. Massachusetts may nominate up to 103 of 410 eligible
+    tracts before the July 1, 2026 federal window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1424,11 +1582,16 @@ massachusetts:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ma/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: MOBD confirmed lead. No OZ 2.0 application or deadline published.
+  notes: MOBD confirmed lead. No OZ 2.0 application, deadline, or contact email published
+    as of 2026-05-07. 103 of 410 eligible tracts to be nominated.
 michigan:
   name: Michigan
   fips: '26'
@@ -1469,13 +1632,25 @@ michigan:
     name: Calhoun County
     eligible_count: 15
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Michigan Economic Development Corporation (MEDC) / MSHDA
     url: https://www.michigan.gov/opportunityzones
-    contact_email: null
-    contact_phone: null
-  process: null
+    contact_email: MSHDA@michigan.gov
+    contact_phone: 517-335-9885
+  process: >-
+    As of May 7, 2026, MEDC and MSHDA have not published an OZ 2.0 community
+    nomination process, portal, or deadline. MSHDA holds the OZ 1.0 program
+    infrastructure and is the most likely point of entry: email
+    MSHDA@michigan.gov or call 517-335-9885 and ask for the staff lead on OZ
+    2.0 nominations. If your municipality or county has an investment-ready
+    eligible tract — Wayne, Genesee, and Saginaw counties have the highest
+    concentrations, but 251 of Michigan's 856 eligible tracts carry the rural
+    flag under Rev. Proc. 2026-14 — document existing investor interest and
+    project pipeline before contacting MSHDA. Watch michigan.gov/opportunityzones
+    for any announcement of a community input window ahead of the July 1, 2026
+    federal nomination opening; Michigan may nominate up to 214 of 856
+    eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1484,12 +1659,16 @@ michigan:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/mi/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
-    published.
+  notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
+    published as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
 minnesota:
   name: Minnesota
   fips: '27'
@@ -1554,9 +1733,13 @@ minnesota:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/mn/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: DEED page explicitly states more information will be posted when the July
     1, 2026 window opens. No application or deadline published.
@@ -1632,9 +1815,13 @@ mississippi:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ms/
+    rcap_regional:
+      name: Communities Unlimited
+      url: https://www.communitiesu.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 101 tracts to be nominated from 404 eligible. No formal scoring rubric published.
 missouri:
@@ -1703,9 +1890,13 @@ missouri:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/mo/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "131 tracts to be nominated from 523 eligible (25% statutory cap). One tract\
     \ per Submittable form; multiple submissions per entity are permitted. No scoring\
@@ -1774,9 +1965,13 @@ montana:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/mt/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum.
     No OZ 2.0 guidance published.
@@ -1845,9 +2040,13 @@ nebraska:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ne/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Application window closed. 28 tracts to be nominated from 112 eligible.
 nevada:
@@ -1910,9 +2109,13 @@ nevada:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/nv/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: GOED is the confirmed lead agency but their OZ page (goed.nv.gov/programs-incentives/opportunity-zones/)
     redirects to a general incentives page with no OZ content. Business &amp; Industry
@@ -1982,9 +2185,13 @@ new-hampshire:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/nh/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: BEA confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 process published.
 new-jersey:
@@ -2052,9 +2259,13 @@ new-jersey:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/nj/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Resource center confirmed. No OZ 2.0 nomination process or deadline published.
 new-mexico:
@@ -2125,9 +2336,13 @@ new-mexico:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/nm/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 'No online portal — COG-based submission process. COG deadline was May 15,
     2026; EDNM still accepting input through June 15. No named OZ staff contact found
@@ -2195,9 +2410,13 @@ new-york:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ny/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process
     published. 426 tracts to be nominated from 1,702 eligible.
@@ -2273,9 +2492,13 @@ north-carolina:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/nc/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning,
     NC Commerce; OZ-Feedback@commerce.nc.gov; (919) 814-4600. This is a public feedback
@@ -2322,13 +2545,24 @@ north-dakota:
     name: Barnes County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: North Dakota Department of Commerce, Economic Development & Finance Division
-    url: null
+    url: https://www.commerce.nd.gov/economic-development-finance
     contact_email: null
     contact_phone: (701) 328-5344
-  process: null
+  process: "The ND Department of Commerce Economic Development & Finance Division has\
+    \ not published a formal OZ 2.0 nomination process as of May 7, 2026; no application\
+    \ portal, scoring criteria, or community submission deadline has been announced.\
+    \ Contact Rich Garman, Director of Economic Development and Finance, at (701) 328-5344\
+    \ — use the EDF Team directory at commerce.nd.gov/economic-development-finance/edf-team\
+    \ to locate a direct email — and ask whether Commerce plans to solicit community\
+    \ input before it submits to the Governor ahead of the July 1, 2026 federal nomination\
+    \ window; offer to provide tract-level eligibility data and a letter of support.\
+    \ Watch the Commerce news feed at commerce.nd.gov for a nomination announcement\
+    \ in May or June 2026; North Dakota must nominate at least 25 tracts (statutory\
+    \ minimum) from its pool of 37 eligible tracts, so every eligible community has\
+    \ meaningful odds of inclusion."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2337,12 +2571,17 @@ north-dakota:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/nd/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: Contact Rich Garman (Director) confirmed. No URL or OZ 2.0 guidance found.
-    ND subject to 25-zone statutory minimum.
+  notes: "Contact Rich Garman (Director), (701) 328-5344. EDF Team page: commerce.nd.gov/economic-development-finance/edf-team.\
+    \ ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance\
+    \ published as of 2026-05-07."
 ohio:
   name: Ohio
   fips: '39'
@@ -2415,9 +2654,13 @@ ohio:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/oh/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Portal URL (opportunityzones.ohio.gov) returned 404 at time of check. 258
     tracts to be nominated from 1,032 eligible.
@@ -2486,9 +2729,13 @@ oklahoma:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ok/
+    rcap_regional:
+      name: Communities Unlimited
+      url: https://www.communitiesu.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 104 tracts to be nominated from 413 eligible; 188 qualify as rural.
 oregon:
@@ -2557,9 +2804,13 @@ oregon:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/or/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts
     to be nominated.'
@@ -2621,9 +2872,13 @@ pennsylvania:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/pa/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: No portal open yet. Classifying contact_only because no submission mechanism
     is live. 217 tracts to be nominated.
@@ -2649,13 +2904,22 @@ rhode-island:
     name: Washington County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Rhode Island Commerce Corporation
     url: https://commerceri.com/site-selection/opportunity-zones/
-    contact_email: null
+    contact_email: giselle.mahoney.ctr@commerce.ri.gov
     contact_phone: (401) 278-9100
-  process: null
+  process: "Rhode Island Commerce Corporation has not published a formal OZ 2.0 nomination\
+    \ process as of May 7, 2026; the agency's OZ page reflects OZ 1.0 content only\
+    \ and no community input portal or deadline has been announced. Email Giselle Mahoney\
+    \ at giselle.mahoney.ctr@commerce.ri.gov or call Commerce RI at (401) 278-9100\
+    \ to introduce your jurisdiction, confirm that Commerce RI is administering the\
+    \ OZ 2.0 process, ask when community input will open, and offer tract-level eligibility\
+    \ data for any tracts you want considered. Watch for a Commerce RI announcement\
+    \ in May or June 2026; as a small-population state, Rhode Island must nominate\
+    \ at least 25 tracts regardless of the statutory 25% cap, so the pool is constrained\
+    \ and early engagement matters."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2664,12 +2928,16 @@ rhode-island:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ri/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: Commerce RI confirmed lead. Website addresses OZ 1.0. Subject to 25-zone
-    statutory minimum. No OZ 2.0 guidance published.
+  notes: "Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626.\
+    \ Subject to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07."
 south-carolina:
   name: South Carolina
   fips: '45'
@@ -2742,9 +3010,13 @@ south-carolina:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/sc/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "112 tracts to be nominated from 445 eligible (25% statutory cap). Submitters
     rank tracts in preference order with supporting narrative. Regional meetings and
@@ -2792,13 +3064,22 @@ south-dakota:
     name: Roberts County
     eligible_count: 2
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: South Dakota Governor's Office of Economic Development (GOED)
-    url: null
+    url: https://sdgoed.com
     contact_email: null
     contact_phone: null
-  process: null
+  process: "South Dakota GOED has not published a formal OZ 2.0 nomination process\
+    \ as of May 7, 2026; no application portal, scoring criteria, or community submission\
+    \ deadline has been announced. Visit sdgoed.com and use the general contact form\
+    \ or call the main GOED line to ask whether GOED will solicit community input before\
+    \ submitting nominations to the Governor ahead of the July 1, 2026 federal nomination\
+    \ window; bring a list of eligible tract GEOID codes and a concise economic-need\
+    \ narrative for any tracts your jurisdiction wants considered. Watch for a GOED\
+    \ news release in May or June 2026 — South Dakota must nominate at least 25 tracts\
+    \ (statutory minimum) from its pool of 52 eligible tracts, and 35 of those 52\
+    \ are rural-designated, making early rural-community engagement particularly time-sensitive."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2807,11 +3088,15 @@ south-dakota:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/sd/
+    rcap_regional:
+      name: Midwest Assistance Program (MAP)
+      url: https://www.map-inc.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: GOED presumed lead. No confirmed URL or OZ 2.0 guidance found. Subject to
+  notes: GOED presumed lead. No confirmed contact email found. Subject to
     25-zone statutory minimum.
 tennessee:
   name: Tennessee
@@ -2878,9 +3163,13 @@ tennessee:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/tn/
+    rcap_regional:
+      name: Communities Unlimited
+      url: https://www.communitiesu.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application
     or deadline published as of 2026-05-07.
@@ -2953,9 +3242,13 @@ texas:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/tx/
+    rcap_regional:
+      name: Communities Unlimited
+      url: https://www.communitiesu.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "605 tracts to be nominated from 2,420 eligible (21.7% rural). Nomination\
     \ Packet downloadable from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.\
@@ -3024,9 +3317,13 @@ utah:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/ut/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: Governor's office stated it is 'already working on how best to proceed.'
     No formal process published as of 2026-05-07.
@@ -3070,13 +3367,22 @@ vermont:
     name: Washington County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Vermont Agency of Commerce and Community Development (ACCD)
     url: https://accd.vermont.gov/OpportunityZones
     contact_email: null
     contact_phone: null
-  process: null
+  process: "Vermont ACCD has not published a formal OZ 2.0 nomination process as of\
+    \ May 7, 2026; the agency's OZ page reflects OZ 1.0 content and no community input\
+    \ portal or deadline has been announced. Contact ACCD today through accd.vermont.gov/about-us/contact-us\
+    \ — reach the Economic Development division — to ask when ACCD will open community\
+    \ input on OZ 2.0 nominations and offer to provide tract-level eligibility and\
+    \ rural-designation data for any tracts your jurisdiction wants prioritized. Vermont\
+    \ has only 24 eligible tracts statewide, all of them rural-designated under Notice\
+    \ 2025-50, and ACCD may nominate all 24 (the statutory minimum covers the entire\
+    \ eligible pool), so even communities that assume they are already in should confirm\
+    \ directly that their tract is on the nomination list."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3085,12 +3391,16 @@ vermont:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/vt/
+    rcap_regional:
+      name: RCAP Solutions
+      url: https://www.rcapsolutions.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: ACCD confirmed lead. All 24 eligible tracts can be nominated (statutory minimum
-    applies). No OZ 2.0 process published.
+  notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory
+    minimum allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
 virginia:
   name: Virginia
   fips: '51'
@@ -3131,13 +3441,24 @@ virginia:
     name: Pittsylvania County
     eligible_count: 16
   status_tier: contact_only
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Virginia Economic Development Partnership (VEDP) / DHCD
     url: https://www.dhcd.virginia.gov/opportunity-zones-oz
     contact_email: oz2026@vedp.org
     contact_phone: null
-  process: null
+  process: "VEDP and DHCD are jointly managing Virginia's OZ 2.0 process on behalf\
+    \ of Governor Youngkin but have not published a formal community application portal\
+    \ or scoring rubric as of May 7, 2026; the stakeholder survey that ran through\
+    \ April 27 and webinars held April 16 and 21 appear to have been the primary public\
+    \ input mechanism thus far. Email oz2026@vedp.org or oz@dhcd.virginia.gov today\
+    \ to ask whether a second input round or formal nomination form will be released\
+    \ before the July 1, 2026 federal submission window, and share a tract-specific\
+    \ narrative describing investment readiness, community need, and any pending development\
+    \ projects. Virginia will nominate 152 of 607 eligible tracts (25% statutory cap),\
+    \ and both agencies are evaluating stakeholder input to inform the Governor's final\
+    \ selections, so written submissions from local governments carry weight even outside\
+    \ a formal portal."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3146,13 +3467,18 @@ virginia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/va/
+    rcap_regional:
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: Dual-agency lead. Webinars held April 16 and 21, 2026; stakeholder survey
-    closed April 27. No formal application portal or scoring rubric. 152 tracts to
-    be nominated.
+  notes: "Dual-agency lead (VEDP + DHCD). Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
+    \ Webinars held April 16 and 21, 2026; stakeholder survey closed April 27. No\
+    \ formal application portal or scoring rubric. 152 tracts to be nominated from\
+    \ 607 eligible (25% cap)."
 washington:
   name: Washington
   fips: '53'
@@ -3227,9 +3553,13 @@ washington:
     citation: WA Commerce OZ 2.0 RFA portal (references.md §13)
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/wa/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
 west-virginia:
@@ -3271,27 +3601,44 @@ west-virginia:
   - fips: '54033'
     name: Harrison County
     eligible_count: 6
-  status_tier: contact_only
-  last_checked: '2026-05-05'
+  status_tier: public_process
+  last_checked: '2026-05-07'
   lead_agency:
     name: West Virginia Department of Economic Development
-    url: https://westvirginia.gov/category/wv-opportunity-zones/
+    url: https://westvirginia.gov/oz
     contact_email: null
     contact_phone: null
-  process: null
+  process: "The West Virginia Division of Economic Development (WVDED), appointed by\
+    \ Governor Morrisey to manage OZ 2.0, is accepting tract nominations from local\
+    \ economic development authorities, county commissions, and regional planning councils\
+    \ through July 1, 2026 — all three entity types are explicitly eligible to submit.\
+    \ Visit westvirginia.gov/oz today for nomination instructions; if a direct contact\
+    \ email is listed there, use it to register your jurisdiction's interest and confirm\
+    \ the submission format before the deadline. West Virginia must nominate 52 of\
+    \ 207 eligible tracts (25% statutory cap), all of which carry a rural designation\
+    \ under Notice 2025-50, so prioritization among competing rural nominations will\
+    \ be the central challenge — documenting investment readiness, existing infrastructure,\
+    \ and development momentum will strengthen a county commission or EDA submission."
   scoring_rubric_url: null
-  state_deadline: null
-  application_portal_url: null
+  state_deadline: '2026-07-01'
+  application_portal_url: https://westvirginia.gov/oz
   tribal_consultation:
     framework: null
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/wv/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: Confirmed lead. No OZ 2.0 guidance published.
+  notes: "WVDED confirmed lead; dedicated OZ 2.0 page at westvirginia.gov/oz. Eligible\
+    \ nominators: local EDAs, county commissions, regional planning councils. Deadline\
+    \ July 1, 2026. 52 tracts to be nominated from 207 eligible; all eligible tracts\
+    \ are rural-designated. No scoring rubric or contact email found as of 2026-05-07."
 wisconsin:
   name: Wisconsin
   fips: '55'
@@ -3354,9 +3701,13 @@ wisconsin:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/wi/
+    rcap_regional:
+      name: Great Lakes Community Action Partnership
+      url: https://www.glcap.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
   notes: WEDC confirmed lead; OZ page URL confirmed via Google index (returned 403
     to automated fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region
@@ -3398,13 +3749,23 @@ wyoming:
     name: Uinta County
     eligible_count: 1
   status_tier: contact_only
-  last_checked: '2026-05-05'
+  last_checked: '2026-05-07'
   lead_agency:
     name: Wyoming Business Council
     url: https://wyomingbusiness.org/business/financing/financial-incentives/opportunity-zones/
     contact_email: null
-    contact_phone: null
-  process: null
+    contact_phone: (307) 287-4709
+  process: "The Wyoming Business Council has not published a formal OZ 2.0 nomination\
+    \ process as of May 7, 2026; the agency's OZ page reflects prior-round content\
+    \ and no application portal or state deadline has been announced. Call Connor Christensen,\
+    \ Economic Policy & Research Advisor, at (307) 287-4709 — or reach the Business\
+    \ Council through wyomingbusiness.org/contact — to ask whether WBC will run a\
+    \ community input process before the July 1, 2026 federal nomination window, and\
+    \ register your tract for consideration; offer tract-level eligibility data and\
+    \ a brief development narrative. Wyoming will nominate 5 of 20 eligible tracts\
+    \ (25% statutory cap), 16 of which carry a rural designation, making the competition\
+    \ for limited slots especially acute — do not wait for a formal portal announcement\
+    \ before making contact."
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3413,9 +3774,14 @@ wyoming:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
-    rcap_regional: null
-    rural_lisc: null
+    usda_rd_url: https://www.rd.usda.gov/wy/
+    rcap_regional:
+      name: Rural Community Assistance Corporation (RCAC)
+      url: https://www.rcac.org/
+    rural_lisc:
+      name: Rural LISC
+      url: https://www.lisc.org/rural/
   state_cdfi_count: null
-  notes: 'Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.
-    No formal application or deadline. Explicitly states federal guidance still evolving.'
+  notes: "Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.\
+    \ 5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are\
+    \ rural-designated. No formal application or deadline as of 2026-05-07."

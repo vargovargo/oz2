@@ -18,6 +18,7 @@ const {
   status_tier, last_checked, lead_agency, process,
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
+  state_cdfi_count,
 } = state;
 
 // Approximate WGS84 bounding boxes [xmin, ymin, xmax, ymax] keyed by state FIPS string.
@@ -273,10 +274,39 @@ const daysToWindow = Math.ceil(
         </p>
       )}
 
+      {state_cdfi_count != null && (
+        <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
+          <p class="font-medium text-oz-neutral-900 mb-1">Certified CDFIs</p>
+          <p class="text-oz-neutral-700">
+            {state_cdfi_count} certified CDFIs headquartered in {name} —{" "}
+            <a
+              href="https://www.cdfifund.gov/programs-training/certification/cdfi"
+              target="_blank"
+              rel="noopener"
+              class="text-oz-blue underline"
+            >CDFI Fund certified list →</a>
+          </p>
+        </div>
+      )}
+
       {rural_partners.usda_rd_url && (
         <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
           <p class="font-medium text-oz-neutral-900 mb-1">USDA Rural Development</p>
-          <a href={rural_partners.usda_rd_url} target="_blank" rel="noopener" class="text-oz-blue underline">{rural_partners.usda_rd_url}</a>
+          <a href={rural_partners.usda_rd_url} target="_blank" rel="noopener" class="text-oz-blue underline">USDA RD {name} State Office →</a>
+        </div>
+      )}
+
+      {rural_partners.rcap_regional && (
+        <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
+          <p class="font-medium text-oz-neutral-900 mb-1">RCAP Regional Partner</p>
+          <a href={rural_partners.rcap_regional.url} target="_blank" rel="noopener" class="text-oz-blue underline">{rural_partners.rcap_regional.name} →</a>
+        </div>
+      )}
+
+      {rural_partners.rural_lisc && (
+        <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
+          <p class="font-medium text-oz-neutral-900 mb-1">Rural LISC</p>
+          <a href={rural_partners.rural_lisc.url} target="_blank" rel="noopener" class="text-oz-blue underline">{rural_partners.rural_lisc.name} →</a>
         </div>
       )}
     </div>
