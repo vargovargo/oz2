@@ -1,42 +1,41 @@
 """
-Fetch CDFI Fund certified institution list → update state_cdfi_count in
-state_metadata.yaml.
+Process CDFI NMTC project data → data/cdfi_nmtc.parquet + state_cdfi_count in YAML.
 
-Source
-------
+Primary source (local file)
+----------------------------
+CDFI Fund — NMTC Public Data Release (2024)
+  File: data/raw/cdfi_nmtc2024.xlsx
+  Sheet: "Projects 2 - Data Set PUBLISH.P"
+  Columns used:
+    2020 Census Tract  — 10-digit GEOID (zero-pad to 11 for join)
+    State              — full state name (e.g., "Alaska")
+    Community Development Entity (CDE) Name — the financing CDFI
+    QLICI Amount       — total Qualified Low-Income Community Investment ($)
+    Origination Year   — year of investment
+
+Fallback source (original certified-institution list)
+-------------------------------------------------------
 CDFI Fund — Certified CDFI Institution List
-  Landing: https://www.cdfifund.gov/programs-training/certification/cdfi
-  Download (Excel, periodically updated):
-    https://www.cdfifund.gov/sites/cdfi/files/documents/cdfi-certified-institutions-list.xlsx
+  URL: https://www.cdfifund.gov/sites/cdfi/files/documents/cdfi-certified-institutions-list.xlsx
+  Local: data/raw/cdfi-certified-institutions-list.xlsx
+  In this mode: state_cdfi_count = # certified CDFIs with POBA in-state.
+  No cdfi_nmtc.parquet is produced.
 
-Note: CDFI Fund servers block requests from cloud/datacenter IP ranges.
-Running from a standard developer workstation or CI runner on a
-residential/business ISP will succeed. If this script fails in your
-environment, download the Excel manually and place it at:
-  data/raw/cdfi-certified-institutions-list.xlsx
-then re-run.
+What state_cdfi_count means (NMTC mode)
+-----------------------------------------
+Number of distinct CDEs (Community Development Entities) that have made
+at least one NMTC investment in a census tract that is eligible under IRS
+Rev. Proc. 2026-14. This indicates how many CDFIs have prior capital-
+deployment track record in OZ-eligible tracts in the state.
 
-What "state_cdfi_count" means
-------------------------------
-Count of CDFIs with a principal place of business (POBA_STATE column) in the
-state AND certification status of "Certified" (STATUS column). This is the
-number the CDFI Fund's own state-filtered search would return. It represents
-capital intermediaries headquartered in-state, not all CDFIs that could
-theoretically operate there.
+Output files
+------------
+  data/cdfi_nmtc.parquet  — one row per NMTC project in an eligible OZ tract:
+      geoid, state_fips, cde_name, qlici_amount, origination_year, fetched_at
 
-Output
-------
-Patches state_metadata.yaml in-place: sets state_cdfi_count for all 51
-entries. Also writes data/cdfi_counts.json as a standalone lookup file for
-use by scripts or frontend.
+  data/cdfi_counts.json   — {state_abbrev: cde_count} lookup
 
-Column mapping
---------------
-The CDFI Fund Excel has changed column names across versions. This script
-accepts all known variants:
-  CDFI name:   "CDFI Name", "Institution Name", "Org Name"
-  State:       "POBA State", "POBA_STATE", "State", "Inst State"
-  Status:      "CDFI Certification Status", "Status", "Certification Status"
+  state_metadata.yaml     — state_cdfi_count patched in-place for all 51 states
 """
 
 import io
@@ -53,27 +52,31 @@ import requests
 # Constants
 # ---------------------------------------------------------------------------
 
+DATA_DIR = Path(__file__).parent.parent / "data"
+RAW_DIR = DATA_DIR / "raw"
+
+# NMTC project data (preferred — tract-level join)
+LOCAL_NMTC = RAW_DIR / "cdfi_nmtc2024.xlsx"
+
+# Certified institution list (fallback — state-level only)
 CDFI_URLS = [
     "https://www.cdfifund.gov/sites/cdfi/files/documents/cdfi-certified-institutions-list.xlsx",
     "https://www.cdfifund.gov/sites/cdfi/files/2024-12/cdfi-certified-institutions-list.xlsx",
     "https://www.cdfifund.gov/sites/cdfi/files/2025-01/cdfi-certified-institutions-list.xlsx",
-    "https://www.cdfifund.gov/sites/cdfi/files/documents/cdfi_certification_list.xlsx",
 ]
+LOCAL_CERT = RAW_DIR / "cdfi-certified-institutions-list.xlsx"
 
-DATA_DIR = Path(__file__).parent.parent / "data"
-RAW_DIR = DATA_DIR / "raw"
-LOCAL_CACHE = RAW_DIR / "cdfi-certified-institutions-list.xlsx"
-YAML_PATH = Path(__file__).parent.parent / "state_metadata.yaml"
+ELIGIBLE_PARQUET = DATA_DIR / "eligible_tracts.parquet"
+OUT_PARQUET = DATA_DIR / "cdfi_nmtc.parquet"
 OUT_JSON = DATA_DIR / "cdfi_counts.json"
+YAML_PATH = Path(__file__).parent.parent / "state_metadata.yaml"
 
 TIMEOUT = 60
 
-# Known column name variants (matched case-insensitively)
-NAME_COLS   = ["CDFI Name", "Institution Name", "Org Name", "Organization Name"]
-STATE_COLS  = ["POBA State", "POBA_STATE", "State", "Inst State", "Institution State"]
-STATUS_COLS = ["CDFI Certification Status", "Status", "Certification Status"]
+# Column name variants for the certified-list fallback
+CERT_STATE_COLS  = ["POBA State", "POBA_STATE", "State", "Inst State", "Institution State"]
+CERT_STATUS_COLS = ["CDFI Certification Status", "Status", "Certification Status"]
 
-# State name → 2-letter abbreviation (for normalizing state column)
 STATE_NAME_TO_ABBREV = {
     "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
     "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
@@ -112,6 +115,115 @@ ABBREV_TO_SLUG = {
 # Helpers
 # ---------------------------------------------------------------------------
 
+def _col(df: pd.DataFrame, candidates: list[str]) -> str | None:
+    lower = {c.lower(): c for c in df.columns}
+    for c in candidates:
+        if c in df.columns:
+            return c
+        if c.lower() in lower:
+            return lower[c.lower()]
+    return None
+
+
+# ---------------------------------------------------------------------------
+# NMTC path (primary)
+# ---------------------------------------------------------------------------
+
+def parse_nmtc(path: Path, eligible_geoids: set[str]) -> tuple[pd.DataFrame, dict[str, int]]:
+    """
+    Parse NMTC project Excel. Join to eligible tracts. Return:
+      - tract_df: one row per project in an eligible OZ tract
+      - counts_by_abbrev: {state_abbrev: unique_cde_count}
+    """
+    xl = pd.ExcelFile(path)
+    print(f"  Sheets: {xl.sheet_names}")
+
+    # Find the projects sheet
+    sheet = xl.sheet_names[0]
+    for name in xl.sheet_names:
+        if "project" in name.lower():
+            sheet = name
+            break
+
+    df = xl.parse(sheet, dtype=str)
+    df.columns = [str(c).strip() for c in df.columns]
+    print(f"  Using sheet '{sheet}': {len(df):,} rows, {len(df.columns)} cols")
+
+    # Locate columns
+    tract_col = _col(df, ["2020 Census Tract", "Census Tract", "Tract GEOID", "GEOID"])
+    state_col = _col(df, ["State", "state"])
+    cde_col   = _col(df, ["Community Development Entity (CDE) Name", "CDE Name", "CDE"])
+    amt_col   = _col(df, ["Project QLICI Amount", "QLICI Amount", "Amount", "Investment Amount"])
+    year_col  = _col(df, ["Origination Year", "Year", "Fiscal Year"])
+
+    if tract_col is None or state_col is None:
+        raise ValueError(
+            f"Cannot find required columns. Available: {df.columns.tolist()}"
+        )
+
+    print(f"  tract='{tract_col}'  state='{state_col}'  cde='{cde_col}'  "
+          f"amount='{amt_col}'  year='{year_col}'")
+
+    # Normalize GEOID to 11 digits
+    df["geoid"] = (
+        df[tract_col]
+        .astype(str).str.strip()
+        .str.replace(r"\.0$", "", regex=True)
+        .str.zfill(11)
+    )
+
+    # Normalize state to 2-letter abbreviation
+    df["abbrev"] = df[state_col].astype(str).str.strip().apply(
+        lambda s: STATE_NAME_TO_ABBREV.get(s.title(), s.upper()[:2])
+    )
+
+    # Inner join to eligible OZ tracts
+    before = len(df)
+    df = df[df["geoid"].isin(eligible_geoids)].copy()
+    print(f"  Projects in eligible OZ tracts: {len(df):,} of {before:,} total")
+
+    # Build output parquet columns
+    out = pd.DataFrame()
+    out["geoid"] = df["geoid"].values
+
+    # state_fips from geoid (first 2 chars)
+    out["state_fips"] = df["geoid"].str[:2].values
+
+    out["cde_name"] = df[cde_col].astype(str).str.strip().values if cde_col else ""
+
+    if amt_col:
+        out["qlici_amount"] = pd.to_numeric(df[amt_col], errors="coerce")
+    else:
+        out["qlici_amount"] = float("nan")
+
+    if year_col:
+        out["origination_year"] = df[year_col].astype(str).str.strip().values
+    else:
+        out["origination_year"] = ""
+
+    out["fetched_at"] = date.today().isoformat()
+
+    # Counts: unique CDEs per state (among eligible-tract projects only)
+    cde_col_out = "cde_name"
+    counts_by_abbrev: dict[str, int] = {}
+    if cde_col:
+        for abbrev, grp in df.groupby("abbrev"):
+            if abbrev in ABBREV_TO_SLUG:
+                counts_by_abbrev[abbrev] = int(grp[cde_col].nunique())
+    else:
+        # Fall back to project count if CDE name unavailable
+        for abbrev, grp in df.groupby("abbrev"):
+            if abbrev in ABBREV_TO_SLUG:
+                counts_by_abbrev[abbrev] = len(grp)
+
+    print(f"  States with NMTC activity in eligible tracts: {len(counts_by_abbrev)}")
+    return out.reset_index(drop=True), counts_by_abbrev
+
+
+# ---------------------------------------------------------------------------
+# Certified-list path (fallback)
+# ---------------------------------------------------------------------------
+
 def _fetch(url: str) -> bytes:
     print(f"  Fetching {url} …")
     headers = {
@@ -127,105 +239,63 @@ def _fetch(url: str) -> bytes:
     return r.content
 
 
-def _col(df: pd.DataFrame, candidates: list[str]) -> str | None:
-    """First matching column name (case-insensitive)."""
-    lower = {c.lower(): c for c in df.columns}
-    for c in candidates:
-        if c in df.columns:
-            return c
-        if c.lower() in lower:
-            return lower[c.lower()]
-    return None
-
-
-def fetch_cdfi_list() -> bytes:
+def fetch_and_parse_cert_list() -> dict[str, int]:
+    """Fallback: download certified CDFI list and count CDFIs by state."""
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-    if LOCAL_CACHE.exists():
-        print(f"Using cached file: {LOCAL_CACHE}")
-        return LOCAL_CACHE.read_bytes()
+    if LOCAL_CERT.exists():
+        print(f"Using cached certified list: {LOCAL_CERT}")
+        raw = LOCAL_CERT.read_bytes()
+    else:
+        last_exc = None
+        raw = None
+        for url in CDFI_URLS:
+            try:
+                raw = _fetch(url)
+                LOCAL_CERT.write_bytes(raw)
+                break
+            except Exception as exc:
+                print(f"    Failed ({exc.__class__.__name__}: {exc})")
+                last_exc = exc
+        if raw is None:
+            raise RuntimeError(
+                f"Could not download CDFI certified list. Last error: {last_exc}\n\n"
+                "Manual download:\n"
+                "  1. Visit https://www.cdfifund.gov/programs-training/certification/cdfi\n"
+                "  2. Download the certified institution list (Excel).\n"
+                f"  3. Save to: {LOCAL_CERT}\n"
+                "  4. Re-run this script."
+            )
 
-    last_exc: Exception | None = None
-    for url in CDFI_URLS:
-        try:
-            raw = _fetch(url)
-            LOCAL_CACHE.write_bytes(raw)
-            print(f"  Cached → {LOCAL_CACHE}")
-            return raw
-        except Exception as exc:
-            print(f"    Failed ({exc.__class__.__name__}: {exc})")
-            last_exc = exc
-
-    raise RuntimeError(
-        f"Could not download CDFI certified list. Last error: {last_exc}\n\n"
-        "Manual download:\n"
-        "  1. Visit https://www.cdfifund.gov/programs-training/certification/cdfi\n"
-        "  2. Download the certified institution list (Excel).\n"
-        f"  3. Save to: {LOCAL_CACHE}\n"
-        "  4. Re-run this script."
-    )
-
-
-def parse_cdfi_list(raw: bytes) -> pd.DataFrame:
-    """Parse Excel; return DataFrame with columns: abbrev (2-letter), count (int)."""
     xl = pd.ExcelFile(io.BytesIO(raw))
-    print(f"  Sheets: {xl.sheet_names}")
-
     df = None
     for sheet in xl.sheet_names:
         candidate = pd.read_excel(io.BytesIO(raw), sheet_name=sheet, dtype=str)
         candidate.columns = [str(c).strip() for c in candidate.columns]
-        state_col = _col(candidate, STATE_COLS)
-        if state_col and len(candidate) >= 100:
+        if _col(candidate, CERT_STATE_COLS) and len(candidate) >= 100:
             df = candidate
-            print(f"  Using sheet '{sheet}' ({len(df):,} rows)")
             break
-
     if df is None:
         df = pd.read_excel(io.BytesIO(raw), sheet_name=0, dtype=str)
         df.columns = [str(c).strip() for c in df.columns]
 
-    state_col  = _col(df, STATE_COLS)
-    status_col = _col(df, STATUS_COLS)
+    state_col  = _col(df, CERT_STATE_COLS)
+    status_col = _col(df, CERT_STATUS_COLS)
 
-    if state_col is None:
-        raise ValueError(f"No state column found. Columns: {df.columns.tolist()}")
-
-    print(f"  State column:  '{state_col}'")
-    print(f"  Status column: '{status_col}' (None = no filter applied)")
-
-    # Filter to Certified only when status column exists
     if status_col:
-        before = len(df)
         df = df[df[status_col].str.strip().str.lower() == "certified"].copy()
-        print(f"  After certified filter: {len(df):,} of {before:,} rows")
-    else:
-        print(f"  No status column; counting all {len(df):,} rows")
 
-    # Normalize state values to 2-letter abbreviations
-    raw_states = df[state_col].str.strip().str.upper()
-
-    # If values look like full state names, map them
     sample = df[state_col].dropna().head(10).tolist()
     if any(len(str(s)) > 3 for s in sample):
-        # Likely full names — map via lookup (title-case the input)
-        reverse = {v: k for k, v in STATE_NAME_TO_ABBREV.items()}
-        normalized = []
-        for s in df[state_col]:
-            s = str(s).strip()
-            abbrev = s.upper() if len(s) == 2 else STATE_NAME_TO_ABBREV.get(s.title(), s.upper())
-            normalized.append(abbrev)
-        raw_states = pd.Series(normalized)
+        normalized = [
+            STATE_NAME_TO_ABBREV.get(str(s).strip().title(), str(s).strip().upper()[:2])
+            for s in df[state_col]
+        ]
+        states = pd.Series(normalized)
+    else:
+        states = df[state_col].str.strip().str.upper()
 
-    counts = (
-        raw_states
-        .value_counts()
-        .rename_axis("abbrev")
-        .reset_index(name="count")
-    )
-    # Keep only valid 2-letter state abbreviations in our target set
-    counts = counts[counts["abbrev"].isin(ABBREV_TO_SLUG)].copy()
-    print(f"  States with CDFIs: {len(counts)}")
-    return counts
+    counts = states.value_counts().to_dict()
+    return {k: int(v) for k, v in counts.items() if k in ABBREV_TO_SLUG}
 
 
 # ---------------------------------------------------------------------------
@@ -233,23 +303,15 @@ def parse_cdfi_list(raw: bytes) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 
 def patch_yaml(counts_by_abbrev: dict[str, int]) -> None:
-    """
-    Update state_cdfi_count in state_metadata.yaml in-place.
-    Replaces 'state_cdfi_count: null' or existing integer values.
-    Does not reformat any other YAML content.
-    """
     text = YAML_PATH.read_text()
     lines = text.splitlines(keepends=True)
 
+    slug_to_abbrev = {v: k for k, v in ABBREV_TO_SLUG.items()}
     current_slug: str | None = None
     updated = 0
 
-    # Build abbrev→slug reverse map using ABBREV_TO_SLUG
-    slug_to_abbrev = {v: k for k, v in ABBREV_TO_SLUG.items()}
-
     for i, line in enumerate(lines):
         stripped = line.rstrip()
-        # Top-level state key
         if stripped.endswith(":") and not line.startswith(" "):
             key = stripped[:-1]
             current_slug = key if key in slug_to_abbrev else None
@@ -271,36 +333,59 @@ def patch_yaml(counts_by_abbrev: dict[str, int]) -> None:
 
 def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("Fetching CDFI Fund certified institution list …")
-    try:
-        raw = fetch_cdfi_list()
-    except RuntimeError as exc:
-        sys.exit(f"\nFATAL: {exc}")
+    if not ELIGIBLE_PARQUET.exists():
+        sys.exit(f"ERROR: {ELIGIBLE_PARQUET} not found. Run ingest_irs_appendix.py first.")
 
-    print("\nParsing …")
-    counts_df = parse_cdfi_list(raw)
+    eligible = pd.read_parquet(ELIGIBLE_PARQUET, columns=["geoid"])
+    eligible_geoids = set(eligible["geoid"].tolist())
+    print(f"Eligible tracts loaded: {len(eligible_geoids):,}")
 
-    counts_by_abbrev = dict(zip(counts_df["abbrev"], counts_df["count"].astype(int)))
+    tract_df = None
+
+    if LOCAL_NMTC.exists():
+        print(f"\nNMTC project file found: {LOCAL_NMTC}")
+        tract_df, counts_by_abbrev = parse_nmtc(LOCAL_NMTC, eligible_geoids)
+        mode = "nmtc"
+    else:
+        print(f"\nNMTC file not found at {LOCAL_NMTC}; trying certified CDFI list …")
+        try:
+            counts_by_abbrev = fetch_and_parse_cert_list()
+        except RuntimeError as exc:
+            sys.exit(f"\nFATAL: {exc}")
+        mode = "cert"
 
     # Summary
-    print(f"\n--- CDFI Count Summary ---")
-    total = sum(counts_by_abbrev.values())
-    print(f"  Total certified CDFIs across 51 jurisdictions: {total:,}")
-    top10 = sorted(counts_by_abbrev.items(), key=lambda x: -x[1])[:10]
-    print("  Top 10 states by CDFI count:")
-    for abbrev, n in top10:
-        slug = ABBREV_TO_SLUG[abbrev]
-        print(f"    {abbrev}  {n:>4}  ({slug})")
+    total_cdfi = sum(counts_by_abbrev.values())
+    label = "CDEs in eligible OZ tracts" if mode == "nmtc" else "certified CDFIs (POBA)"
+    print(f"\n--- CDFI Summary ({label}) ---")
+    print(f"  Total across all states: {total_cdfi:,}")
+    if mode == "nmtc" and tract_df is not None:
+        print(f"  NMTC projects in eligible OZ tracts: {len(tract_df):,}")
+        print(f"  Unique tracts with NMTC investment: {tract_df['geoid'].nunique():,}")
+        amt = tract_df["qlici_amount"].sum()
+        print(f"  Total QLICI in eligible tracts: ${amt:,.0f}")
 
-    # Write JSON
-    out = {
+    top10 = sorted(counts_by_abbrev.items(), key=lambda x: -x[1])[:10]
+    print(f"\n  Top 10 states by {label}:")
+    for abbrev, n in top10:
+        print(f"    {abbrev}  {n:>4}")
+
+    # Save tract-level parquet
+    if tract_df is not None:
+        tract_df.to_parquet(OUT_PARQUET, index=False)
+        print(f"\nSaved → {OUT_PARQUET}  ({len(tract_df):,} rows)")
+
+    # Save JSON counts
+    out_json = {
         "fetched_at": date.today().isoformat(),
-        "source": "CDFI Fund certified institution list",
+        "mode": mode,
+        "source": str(LOCAL_NMTC if mode == "nmtc" else LOCAL_CERT),
         "counts": counts_by_abbrev,
     }
-    OUT_JSON.write_text(json.dumps(out, indent=2, sort_keys=True))
-    print(f"\nSaved → {OUT_JSON}")
+    OUT_JSON.write_text(json.dumps(out_json, indent=2, sort_keys=True))
+    print(f"Saved → {OUT_JSON}")
 
     # Patch YAML
     patch_yaml(counts_by_abbrev)

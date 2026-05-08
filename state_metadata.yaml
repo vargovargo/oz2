@@ -69,7 +69,7 @@ alabama:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 34
   notes: No OZ 2.0 process published as of 2026-05-07. ADECA is confirmed lead per
     EIG map. Main phone (334) 242-5100; Community and Economic Development division
     administers OZ program.
@@ -145,7 +145,7 @@ alaska:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 8
   notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published
     as of 2026-05-07. Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500.
     Alaska has only 32 eligible tracts; statutory minimum 25 designations means very
@@ -224,7 +224,7 @@ arizona:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 27
   notes: Community deadline described as mid-May 2026 but not formally confirmed as
     of 2026-05-06. Tribal nations have statewide input rights on tribal territory tracts.
     ACA targets July 1, 2026 for Treasury submission.
@@ -300,7 +300,7 @@ arkansas:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 14
   notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published.
     General contact info@arkansasedc.com / (501) 682-5996.
 california:
@@ -377,7 +377,7 @@ california:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 69
   notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders
     to Help Center via gobiz.zendesk.com. No formal application or deadline published
     as of 2026-05-07. Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley named as OZ
@@ -454,7 +454,7 @@ colorado:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 25
   notes: Multi-month stakeholder engagement underway. Regional convenings April 2026;
     Western Slope event May 11 at Colorado Mesa University. Public GIS tool and
     feedback form published or forthcoming. No community submission deadline published
@@ -527,7 +527,7 @@ connecticut:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 0
   notes: Contact confirmed. No application portal or deadline published as of 2026-05-07.
 delaware:
   name: Delaware
@@ -581,7 +581,7 @@ delaware:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 5
   notes: "Community nomination window closes May 15, 2026; Governor's submission deadline\
     \ to Treasury is September 30, 2026. No scoring rubric published. Governor may\
     \ nominate up to 25 tracts from 61 eligible. As of April 6, 2026 reporting, 23\
@@ -624,7 +624,7 @@ district-of-columbia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 0
   notes: DMPED presumed lead. No OZ 2.0 guidance published as of 2026-05-07. DC eligible
     for statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects
     OZ 1.0 history only.
@@ -700,7 +700,7 @@ florida:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 52
   notes: Public input window closed. 340 tracts to be nominated from 1,360 eligible.
 georgia:
   name: Georgia
@@ -772,7 +772,7 @@ georgia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 48
   notes: DCA confirmed lead. No OZ 2.0 application or deadline published as of 2026-05-07.
 hawaii:
   name: Hawaii
@@ -828,7 +828,7 @@ hawaii:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 7
   notes: "DBEDT confirmed lead. OZ-specific contact identified: Mark J. Ritchie, Branch
     Chief, BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination
     guidance or deadline published as of 2026-05-07."
@@ -905,7 +905,7 @@ idaho:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 7
   notes: "Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal\
     \ window opens July 1, 2026. Max designations corrected to 25 (statutory minimum\
     \ for states with fewer than 100 eligible tracts)."
@@ -981,7 +981,7 @@ illinois:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 60
   notes: 238 tracts to be nominated from 950 eligible.
 indiana:
   name: Indiana
@@ -1054,7 +1054,7 @@ indiana:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 38
   notes: "IEDC page references federal September 28, 2026 deadline. OZ-specific email
     confirmed: opportunityzones@gov.in.gov. No internal state application process
     published as of 2026-05-07."
@@ -1128,7 +1128,7 @@ iowa:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 15
   notes: "IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
     General communications contact: communications@iowaeda.com."
 kansas:
@@ -1205,7 +1205,7 @@ kansas:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 15
   notes: "Kansas may nominate up to 53 of its 210 eligible tracts (25% statutory cap).
     Scoring matrix published on agency OZ 2.0 page; specific criterion weights not
     publicly indexed as of 2026-05-06."
@@ -1285,7 +1285,7 @@ kentucky:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 40
 louisiana:
   name: Louisiana
   fips: '22'
@@ -1358,7 +1358,7 @@ louisiana:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 49
   notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
     Main line 800-450-8115 / 225-342-3000.
 maine:
@@ -1433,7 +1433,7 @@ maine:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 8
   notes: 'DECD informal community deadline April 30, 2026 (now passed). Commissioner:
     Michael Duguay. No formal portal published. Governor nominates starting July 1,
     2026; 20 of 78 eligible tracts (74 rural-flagged).'
@@ -1511,7 +1511,7 @@ maryland:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 28
   notes: 'Dual-agency lead: DHCD + MD Commerce. No OZ 2.0 nomination process published
     as of 2026-05-07. DHCD comms: Allison.Foster@Maryland.gov, 443-257-5478.'
 massachusetts:
@@ -1587,7 +1587,7 @@ massachusetts:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 44
   notes: MOBD confirmed lead. No OZ 2.0 application, deadline, or contact email published
     as of 2026-05-07. 103 of 410 eligible tracts to be nominated.
 michigan:
@@ -1664,7 +1664,7 @@ michigan:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 35
   notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
     published as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
 minnesota:
@@ -1738,7 +1738,7 @@ minnesota:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 23
   notes: DEED page explicitly states more information will be posted when the July
     1, 2026 window opens. No application or deadline published.
 mississippi:
@@ -1820,7 +1820,7 @@ mississippi:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 44
   notes: 101 tracts to be nominated from 404 eligible. No formal scoring rubric published.
 missouri:
   name: Missouri
@@ -1895,7 +1895,7 @@ missouri:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 50
   notes: "131 tracts to be nominated from 523 eligible (25% statutory cap). One tract\
     \ per Submittable form; multiple submissions per entity are permitted. No scoring\
     \ rubric published as of 2026-05-06."
@@ -1970,7 +1970,7 @@ montana:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 5
   notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum.
     No OZ 2.0 guidance published.
 nebraska:
@@ -2045,7 +2045,7 @@ nebraska:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 13
   notes: Application window closed. 28 tracts to be nominated from 112 eligible.
 nevada:
   name: Nevada
@@ -2114,7 +2114,7 @@ nevada:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 14
   notes: GOED is the confirmed lead agency but their OZ page (goed.nv.gov/programs-incentives/opportunity-zones/)
     redirects to a general incentives page with no OZ content. Business &amp; Industry
     dept page linked above has OZ 1.0 content only. No OZ 2.0 guidance or community
@@ -2190,7 +2190,7 @@ new-hampshire:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 5
   notes: BEA confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 process published.
 new-jersey:
   name: New Jersey
@@ -2264,7 +2264,7 @@ new-jersey:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 42
   notes: Resource center confirmed. No OZ 2.0 nomination process or deadline published.
 new-mexico:
   name: New Mexico
@@ -2341,7 +2341,7 @@ new-mexico:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 10
   notes: 'No online portal — COG-based submission process. COG deadline was May 15,
     2026; EDNM still accepting input through June 15. No named OZ staff contact found
     beyond general info@edd.nm.gov.'
@@ -2415,7 +2415,7 @@ new-york:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 61
   notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process
     published. 426 tracts to be nominated from 1,702 eligible.
 north-carolina:
@@ -2497,7 +2497,7 @@ north-carolina:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 36
   notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning,
     NC Commerce; OZ-Feedback@commerce.nc.gov; (919) 814-4600. This is a public feedback
     process — Commerce solicits input then advises Governor Stein, who makes final
@@ -2576,7 +2576,7 @@ north-dakota:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 5
   notes: "Contact Rich Garman (Director), (701) 328-5344. EDF Team page: commerce.nd.gov/economic-development-finance/edf-team.\
     \ ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance\
     \ published as of 2026-05-07."
@@ -2659,7 +2659,7 @@ ohio:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 55
 oklahoma:
   name: Oklahoma
   fips: '40'
@@ -2732,7 +2732,7 @@ oklahoma:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 20
   notes: 104 tracts to be nominated from 413 eligible; 188 qualify as rural.
 oregon:
   name: Oregon
@@ -2807,7 +2807,7 @@ oregon:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 32
   notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts
     to be nominated.'
 pennsylvania:
@@ -2875,7 +2875,7 @@ pennsylvania:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 41
   notes: No portal open yet. Classifying contact_only because no submission mechanism
     is live. 217 tracts to be nominated.
 rhode-island:
@@ -2931,7 +2931,7 @@ rhode-island:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 16
   notes: "Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626.\
     \ Subject to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07."
 south-carolina:
@@ -3013,7 +3013,7 @@ south-carolina:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 25
   notes: "112 tracts to be nominated from 445 eligible (25% statutory cap). Submitters
     rank tracts in preference order with supporting narrative. Regional meetings and
     virtual workshop planned; dates unannounced as of 2026-05-06. Recommendation to
@@ -3091,7 +3091,7 @@ south-dakota:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 6
   notes: GOED presumed lead. No confirmed contact email found. Subject to
     25-zone statutory minimum.
 tennessee:
@@ -3166,7 +3166,7 @@ tennessee:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 50
   notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application
     or deadline published as of 2026-05-07.
 texas:
@@ -3245,7 +3245,7 @@ texas:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 59
   notes: "605 tracts to be nominated from 2,420 eligible (21.7% rural). Nomination\
     \ Packet downloadable from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.\
     \ No phone number published for the OppZone2.0@gov.texas.gov contact as of 2026-05-06."
@@ -3320,7 +3320,7 @@ utah:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 16
   notes: Governor's office stated it is 'already working on how best to proceed.'
     No formal process published as of 2026-05-07.
 vermont:
@@ -3394,7 +3394,7 @@ vermont:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 5
   notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory
     minimum allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
 virginia:
@@ -3470,7 +3470,7 @@ virginia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 33
   notes: "Dual-agency lead (VEDP + DHCD). Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
     \ Webinars held April 16 and 21, 2026; stakeholder survey closed April 27. No\
     \ formal application portal or scoring rubric. 152 tracts to be nominated from\
@@ -3556,7 +3556,7 @@ washington:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 38
   notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
 west-virginia:
   name: West Virginia
@@ -3630,7 +3630,7 @@ west-virginia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 16
   notes: "WVDED confirmed lead; dedicated OZ 2.0 page at westvirginia.gov/oz. Eligible\
     \ nominators: local EDAs, county commissions, regional planning councils. Deadline\
     \ July 1, 2026. 52 tracts to be nominated from 207 eligible; all eligible tracts\
@@ -3704,7 +3704,7 @@ wisconsin:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 32
   notes: WEDC confirmed lead; OZ page URL confirmed via Google index (returned 403
     to automated fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region
     and OZ questions; no OZ 2.0 guidance published as of 2026-05-07.
@@ -3777,7 +3777,7 @@ wyoming:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: null
+  state_cdfi_count: 3
   notes: "Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.\
     \ 5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are\
     \ rural-designated. No formal application or deadline as of 2026-05-07."
