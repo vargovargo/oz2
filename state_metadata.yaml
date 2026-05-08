@@ -62,7 +62,7 @@ alabama:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/al/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -134,7 +134,7 @@ alaska:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ak/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -209,7 +209,7 @@ arizona:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/az/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -281,7 +281,7 @@ arkansas:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ar/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -354,7 +354,7 @@ california:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ca/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -427,7 +427,7 @@ colorado:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/co/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -496,7 +496,7 @@ connecticut:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ct/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -546,7 +546,7 @@ delaware:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/de/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -585,7 +585,7 @@ district-of-columbia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/md/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -657,7 +657,7 @@ florida:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/fl/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -725,7 +725,7 @@ georgia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ga/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -777,7 +777,7 @@ hawaii:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/hi/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -850,7 +850,7 @@ idaho:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/id/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -922,7 +922,7 @@ illinois:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/il/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -991,7 +991,7 @@ indiana:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/in/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1061,7 +1061,7 @@ iowa:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ia/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1134,7 +1134,7 @@ kansas:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ks/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1210,7 +1210,7 @@ kentucky:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ky/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1281,7 +1281,7 @@ louisiana:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/la/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1352,7 +1352,7 @@ maine:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/me/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1426,7 +1426,7 @@ maryland:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/md/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1498,7 +1498,7 @@ massachusetts:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ma/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1571,7 +1571,7 @@ michigan:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/mi/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1641,7 +1641,7 @@ minnesota:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/mn/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1719,7 +1719,7 @@ mississippi:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ms/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1790,7 +1790,7 @@ missouri:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/mo/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1861,7 +1861,7 @@ montana:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/mt/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1932,7 +1932,7 @@ nebraska:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ne/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -1997,7 +1997,7 @@ nevada:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/nv/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2069,7 +2069,7 @@ new-hampshire:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/nh/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2139,7 +2139,7 @@ new-jersey:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/nj/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2212,7 +2212,7 @@ new-mexico:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/nm/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2282,7 +2282,7 @@ new-york:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ny/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2360,7 +2360,7 @@ north-carolina:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/nc/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2435,7 +2435,7 @@ north-dakota:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/nd/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2514,7 +2514,7 @@ ohio:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/oh/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2585,7 +2585,7 @@ oklahoma:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ok/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2656,7 +2656,7 @@ oregon:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/or/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2720,7 +2720,7 @@ pennsylvania:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/pa/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2772,7 +2772,7 @@ rhode-island:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ri/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2850,7 +2850,7 @@ south-carolina:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/sc/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2924,7 +2924,7 @@ south-dakota:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/sd/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -2995,7 +2995,7 @@ tennessee:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/tn/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3070,7 +3070,7 @@ texas:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/tx/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3141,7 +3141,7 @@ utah:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/ut/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3211,7 +3211,7 @@ vermont:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/vt/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3283,7 +3283,7 @@ virginia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/va/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3365,7 +3365,7 @@ washington:
     citation: WA Commerce OZ 2.0 RFA portal (references.md §13)
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/wa/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3435,7 +3435,7 @@ west-virginia:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/wv/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3505,7 +3505,7 @@ wisconsin:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/wi/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
@@ -3574,7 +3574,7 @@ wyoming:
     citation: null
   regional_edds: []
   rural_partners:
-    usda_rd_url: null
+    usda_rd_url: https://www.rd.usda.gov/wy/
     rcap_regional: null
     rural_lisc: null
   state_cdfi_count: null
