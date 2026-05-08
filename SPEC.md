@@ -154,23 +154,33 @@ Data sources:
   Filter: ICLEVEL in (1,2) [4-year and 2-year], CLOSEDDATE == -2 (open).
 
 Join method:
-1. Download tract boundary centroids from Census TIGER/Line or use a
-   pre-built tract centroid CSV (Census publishes one).
-2. For each eligible tract centroid, compute distance to nearest hospital
-   and nearest college using a spatial index (scipy KDTree or geopandas
-   sjoin_nearest).
-3. Flag anchor_within_1mi (bool) and anchor_within_halfmi (bool).
-   Record nearest_anchor_name, nearest_anchor_type (hospital|college),
-   nearest_anchor_dist_miles.
+Use tract polygon boundaries (not centroids) for distance measurement.
+Centroid-based distance is misleading for rural tracts, which can exceed
+400 sq mi — the centroid may be miles from any settlement, and an anchor
+inside the tract near its edge would be missed.
+
+1. Download Census TIGER/Line tract polygons (not centroids).
+2. Use geopandas sjoin_nearest against anchor point layers to get the
+   distance from the nearest edge of each tract polygon to the nearest
+   anchor point. In geopandas: sjoin_nearest(tracts, anchors,
+   how="left", distance_col="dist_m").
+3. Apply rural-aware thresholds using is_rural from eligible_tracts.parquet:
+   - Urban tracts (is_rural=False): anchor_within_threshold = dist <= 1 mile
+   - Rural tracts (is_rural=True):  anchor_within_threshold = dist <= 25 miles
+   The 25-mile rural threshold reflects that a county-seat hospital 20 miles
+   from a rural tract is still a real demand generator for that community.
+4. Record the nearest anchor name, type, and actual distance in miles for
+   both hospital and college separately.
 
 Output schema (anchor_proximity.parquet):
-  geoid                  str    11-digit tract GEOID
-  nearest_hospital_name  str    null if none within threshold
-  nearest_hospital_dist  float  miles, null if none
-  nearest_college_name   str    null if none within threshold
-  nearest_college_dist   float  miles, null if none
-  anchor_within_1mi      bool
-  anchor_within_halfmi   bool
+  geoid                    str    11-digit tract GEOID
+  is_rural                 bool   from eligible_tracts (join key for threshold)
+  nearest_hospital_name    str    null if none found
+  nearest_hospital_dist_mi float  distance from tract polygon edge, miles
+  nearest_college_name     str    null if none found
+  nearest_college_dist_mi  float  distance from tract polygon edge, miles
+  anchor_within_threshold  bool   True if either anchor within rural/urban threshold
+  threshold_miles_used     float  1.0 for urban, 25.0 for rural
 
 Limitations:
 - Proximity ≠ investment pipeline. A tract adjacent to a hospital is not
