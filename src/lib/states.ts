@@ -59,6 +59,9 @@ export interface StateMetadata {
   regional_edds: RegionalEdd[];
   rural_partners: RuralPartners;
   state_cdfi_count: number | null;
+  dci_q1_tracts: number | null;
+  pp_county_count: number | null;
+  nmtc_projects: number | null;
   notes: string | null;
 }
 

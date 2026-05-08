@@ -18,7 +18,7 @@ const {
   status_tier, last_checked, lead_agency, process,
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
-  state_cdfi_count,
+  state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects,
 } = state;
 
 // Approximate WGS84 bounding boxes [xmin, ymin, xmax, ymax] keyed by state FIPS string.
@@ -240,7 +240,56 @@ const daysToWindow = Math.ceil(
     )}
   </section>
 
-  <!-- 4. How to influence the nomination -->
+  <!-- 4. Data context -->
+  {(dci_q1_tracts != null || pp_county_count != null || nmtc_projects != null || state_cdfi_count != null) && (
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold mb-4">Data context</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+        {dci_q1_tracts != null && (
+          <div class="bg-white border border-oz-neutral-200 rounded p-5">
+            <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{dci_q1_tracts.toLocaleString()}</p>
+            <p class="text-xs text-oz-neutral-500 mb-2">Eligible tracts in EIG DCI top distress quintile</p>
+            <p class="text-xs text-oz-neutral-400">
+              The EIG <a href="https://eig.org/distressed-communities/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">Distressed Communities Index</a> (2019–2023) is
+              referenced in many state scoring rubrics. Quintile 1 = most distressed.
+            </p>
+          </div>
+        )}
+
+        {pp_county_count != null && (
+          <div class="bg-white border border-oz-neutral-200 rounded p-5">
+            <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{pp_county_count.toLocaleString()}</p>
+            <p class="text-xs text-oz-neutral-500 mb-2">Counties with eligible tracts designated USDA persistent poverty</p>
+            <p class="text-xs text-oz-neutral-400">
+              Persistent poverty = 20%+ poverty rate in every census 1980–2010.
+              Source: <a href="https://www.ers.usda.gov/data-products/county-typology-codes/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">USDA ERS County Typology Codes</a> (2015 edition).
+              Relevant for USDA RD program eligibility and QROF rural bonus.
+            </p>
+          </div>
+        )}
+
+        {(nmtc_projects != null || state_cdfi_count != null) && (
+          <div class="bg-white border border-oz-neutral-200 rounded p-5">
+            <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">
+              {(nmtc_projects ?? 0).toLocaleString()}
+            </p>
+            <p class="text-xs text-oz-neutral-500 mb-2">Prior NMTC investments in eligible OZ tracts</p>
+            <p class="text-xs text-oz-neutral-400">
+              {state_cdfi_count != null && state_cdfi_count > 0
+                ? `From ${state_cdfi_count} distinct CDEs. `
+                : ''}
+              CDFI Fund <a href="https://www.cdfifund.gov/programs-training/tax-credits/nmtc" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">NMTC Public Data Release</a> (2024).
+              Indicates prior CDFI capital deployment track record in these tracts.
+            </p>
+          </div>
+        )}
+
+      </div>
+    </section>
+  )}
+
+  <!-- 5. How to influence the nomination (formerly 4) -->
   <section class="mb-10">
     <h2 class="text-lg font-semibold mb-4">How to influence the nomination</h2>
     <p class="text-oz-neutral-500 text-sm mb-4">
@@ -274,17 +323,12 @@ const daysToWindow = Math.ceil(
         </p>
       )}
 
-      {state_cdfi_count != null && (
+      {state_cdfi_count != null && state_cdfi_count > 0 && (
         <div class="mt-4 pt-4 border-t border-oz-neutral-100 text-sm">
-          <p class="font-medium text-oz-neutral-900 mb-1">Certified CDFIs</p>
+          <p class="font-medium text-oz-neutral-900 mb-1">CDFI / NMTC track record</p>
           <p class="text-oz-neutral-700">
-            {state_cdfi_count} certified CDFIs headquartered in {name} —{" "}
-            <a
-              href="https://www.cdfifund.gov/programs-training/certification/cdfi"
-              target="_blank"
-              rel="noopener"
-              class="text-oz-blue underline"
-            >CDFI Fund certified list →</a>
+            {state_cdfi_count} CDEs have prior NMTC investments in OZ-eligible tracts in {name}.
+            {" "}<a href="/capital-stack#nmtc" class="text-oz-blue underline">NMTC capital stack →</a>
           </p>
         </div>
       )}
