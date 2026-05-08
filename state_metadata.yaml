@@ -3409,7 +3409,7 @@ west-virginia:
   - fips: '54033'
     name: Harrison County
     eligible_count: 6
-  status_tier: contact_only
+  status_tier: public_process
   last_checked: '2026-05-07'
   lead_agency:
     name: West Virginia Department of Economic Development
