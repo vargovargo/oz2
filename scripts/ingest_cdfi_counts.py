@@ -55,16 +55,22 @@ import requests
 DATA_DIR = Path(__file__).parent.parent / "data"
 RAW_DIR = DATA_DIR / "raw"
 
-# NMTC project data (preferred — tract-level join)
+# NMTC project data — tract-level join for overlay parquet
 LOCAL_NMTC = RAW_DIR / "cdfi_nmtc2024.xlsx"
 
-# Certified institution list (fallback — state-level only)
+# Certified institution list — any matching filename in data/raw/
+# Detects manually downloaded files like CDFI_Cert_List_Manual_*.xlsx
+_CERT_GLOBS = ["CDFI_Cert_List*.xlsx", "cdfi-certified-institutions-list.xlsx",
+               "cdfi_certification_list.xlsx"]
+LOCAL_CERT = next(
+    (p for g in _CERT_GLOBS for p in sorted(RAW_DIR.glob(g)) if p.exists()),
+    RAW_DIR / "cdfi-certified-institutions-list.xlsx",  # fallback path (may not exist)
+)
 CDFI_URLS = [
     "https://www.cdfifund.gov/sites/cdfi/files/documents/cdfi-certified-institutions-list.xlsx",
     "https://www.cdfifund.gov/sites/cdfi/files/2024-12/cdfi-certified-institutions-list.xlsx",
     "https://www.cdfifund.gov/sites/cdfi/files/2025-01/cdfi-certified-institutions-list.xlsx",
 ]
-LOCAL_CERT = RAW_DIR / "cdfi-certified-institutions-list.xlsx"
 
 ELIGIBLE_PARQUET = DATA_DIR / "eligible_tracts.parquet"
 OUT_PARQUET = DATA_DIR / "cdfi_nmtc.parquet"
@@ -240,10 +246,10 @@ def _fetch(url: str) -> bytes:
 
 
 def fetch_and_parse_cert_list() -> dict[str, int]:
-    """Fallback: download certified CDFI list and count CDFIs by state."""
+    """Parse certified CDFI list; return {state_abbrev: count}."""
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     if LOCAL_CERT.exists():
-        print(f"Using cached certified list: {LOCAL_CERT}")
+        print(f"Using certified list: {LOCAL_CERT}")
         raw = LOCAL_CERT.read_bytes()
     else:
         last_exc = None
@@ -262,17 +268,41 @@ def fetch_and_parse_cert_list() -> dict[str, int]:
                 "Manual download:\n"
                 "  1. Visit https://www.cdfifund.gov/programs-training/certification/cdfi\n"
                 "  2. Download the certified institution list (Excel).\n"
-                f"  3. Save to: {LOCAL_CERT}\n"
-                "  4. Re-run this script."
+                f"  3. Save to data/raw/ and re-run this script."
             )
 
     xl = pd.ExcelFile(io.BytesIO(raw))
+    print(f"  Sheets: {xl.sheet_names}")
+
+    # Fast path: look for a pre-aggregated by-state summary sheet
+    for sheet in xl.sheet_names:
+        if "state" in sheet.lower():
+            candidate = pd.read_excel(io.BytesIO(raw), sheet_name=sheet, dtype=str)
+            candidate.columns = [str(c).strip() for c in candidate.columns]
+            state_col = _col(candidate, ["States and Territories with Certified CDFI Headquarters",
+                                         "State", "Abbrev", "Abbreviation"] + CERT_STATE_COLS)
+            count_col = _col(candidate, ["Number of Certified CDFIs", "Count", "Total"])
+            if state_col and count_col and len(candidate) >= 40:
+                print(f"  Using pre-aggregated sheet '{sheet}' ({len(candidate)} rows)")
+                result = {}
+                for _, row in candidate.iterrows():
+                    abbrev = str(row[state_col]).strip().upper()
+                    if abbrev in ABBREV_TO_SLUG:
+                        try:
+                            result[abbrev] = int(float(str(row[count_col]).strip()))
+                        except (ValueError, TypeError):
+                            pass
+                print(f"  Parsed {len(result)} state counts from summary sheet")
+                return result
+
+    # Slow path: count rows in the full institution list
     df = None
     for sheet in xl.sheet_names:
         candidate = pd.read_excel(io.BytesIO(raw), sheet_name=sheet, dtype=str)
         candidate.columns = [str(c).strip() for c in candidate.columns]
         if _col(candidate, CERT_STATE_COLS) and len(candidate) >= 100:
             df = candidate
+            print(f"  Using institution sheet '{sheet}' ({len(df):,} rows)")
             break
     if df is None:
         df = pd.read_excel(io.BytesIO(raw), sheet_name=0, dtype=str)
@@ -342,53 +372,44 @@ def main():
     eligible_geoids = set(eligible["geoid"].tolist())
     print(f"Eligible tracts loaded: {len(eligible_geoids):,}")
 
-    tract_df = None
+    # --- Step 1: Certified CDFI counts (state_cdfi_count in YAML) ---
+    print("\n--- Certified CDFI list ---")
+    try:
+        cert_counts = fetch_and_parse_cert_list()
+    except RuntimeError as exc:
+        sys.exit(f"\nFATAL: {exc}")
 
-    if LOCAL_NMTC.exists():
-        print(f"\nNMTC project file found: {LOCAL_NMTC}")
-        tract_df, counts_by_abbrev = parse_nmtc(LOCAL_NMTC, eligible_geoids)
-        mode = "nmtc"
-    else:
-        print(f"\nNMTC file not found at {LOCAL_NMTC}; trying certified CDFI list …")
-        try:
-            counts_by_abbrev = fetch_and_parse_cert_list()
-        except RuntimeError as exc:
-            sys.exit(f"\nFATAL: {exc}")
-        mode = "cert"
-
-    # Summary
-    total_cdfi = sum(counts_by_abbrev.values())
-    label = "CDEs in eligible OZ tracts" if mode == "nmtc" else "certified CDFIs (POBA)"
-    print(f"\n--- CDFI Summary ({label}) ---")
-    print(f"  Total across all states: {total_cdfi:,}")
-    if mode == "nmtc" and tract_df is not None:
-        print(f"  NMTC projects in eligible OZ tracts: {len(tract_df):,}")
-        print(f"  Unique tracts with NMTC investment: {tract_df['geoid'].nunique():,}")
-        amt = tract_df["qlici_amount"].sum()
-        print(f"  Total QLICI in eligible tracts: ${amt:,.0f}")
-
-    top10 = sorted(counts_by_abbrev.items(), key=lambda x: -x[1])[:10]
-    print(f"\n  Top 10 states by {label}:")
+    total_cert = sum(cert_counts.values())
+    print(f"  Total certified CDFIs: {total_cert:,} across {len(cert_counts)} jurisdictions")
+    top10 = sorted(cert_counts.items(), key=lambda x: -x[1])[:10]
+    print("  Top 10 by certified CDFI count:")
     for abbrev, n in top10:
         print(f"    {abbrev}  {n:>4}")
 
-    # Save tract-level parquet
-    if tract_df is not None:
+    # --- Step 2: NMTC tract parquet (if available) ---
+    tract_df = None
+    if LOCAL_NMTC.exists():
+        print(f"\n--- NMTC project data ---")
+        tract_df, _ = parse_nmtc(LOCAL_NMTC, eligible_geoids)
+        amt = tract_df["qlici_amount"].sum()
+        print(f"  Projects in eligible OZ tracts: {len(tract_df):,}")
+        print(f"  Unique tracts with NMTC investment: {tract_df['geoid'].nunique():,}")
+        print(f"  Total QLICI in eligible tracts: ${amt:,.0f}")
         tract_df.to_parquet(OUT_PARQUET, index=False)
-        print(f"\nSaved → {OUT_PARQUET}  ({len(tract_df):,} rows)")
+        print(f"  Saved → {OUT_PARQUET}")
+    else:
+        print(f"\nNMTC file not found at {LOCAL_NMTC}; skipping tract parquet.")
 
-    # Save JSON counts
+    # --- Step 3: Save JSON and patch YAML with certified counts ---
     out_json = {
         "fetched_at": date.today().isoformat(),
-        "mode": mode,
-        "source": str(LOCAL_NMTC if mode == "nmtc" else LOCAL_CERT),
-        "counts": counts_by_abbrev,
+        "source": str(LOCAL_CERT),
+        "counts": cert_counts,
     }
     OUT_JSON.write_text(json.dumps(out_json, indent=2, sort_keys=True))
-    print(f"Saved → {OUT_JSON}")
+    print(f"\nSaved → {OUT_JSON}")
 
-    # Patch YAML
-    patch_yaml(counts_by_abbrev)
+    patch_yaml(cert_counts)
     print("Done.")
 
 

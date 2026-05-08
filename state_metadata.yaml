@@ -69,7 +69,7 @@ alabama:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 34
+  state_cdfi_count: 44
   dci_q1_tracts: 237
   pp_county_count: 19
   nmtc_projects: 82
@@ -148,7 +148,7 @@ alaska:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 8
+  state_cdfi_count: 6
   dci_q1_tracts: 3
   pp_county_count: 1
   nmtc_projects: 24
@@ -230,7 +230,7 @@ arizona:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 27
+  state_cdfi_count: 17
   dci_q1_tracts: 53
   pp_county_count: 2
   nmtc_projects: 78
@@ -309,7 +309,7 @@ arkansas:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 14
+  state_cdfi_count: 43
   dci_q1_tracts: 81
   pp_county_count: 17
   nmtc_projects: 66
@@ -389,7 +389,7 @@ california:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 69
+  state_cdfi_count: 118
   dci_q1_tracts: 148
   pp_county_count: 0
   nmtc_projects: 405
@@ -469,7 +469,7 @@ colorado:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 25
+  state_cdfi_count: 18
   dci_q1_tracts: 17
   pp_county_count: 3
   nmtc_projects: 68
@@ -545,7 +545,7 @@ connecticut:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 0
+  state_cdfi_count: 12
   dci_q1_tracts: 87
   pp_county_count: 0
   nmtc_projects: 0
@@ -602,7 +602,7 @@ delaware:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 5
+  state_cdfi_count: 3
   dci_q1_tracts: 0
   pp_county_count: 0
   nmtc_projects: 6
@@ -648,7 +648,7 @@ district-of-columbia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 0
+  state_cdfi_count: 18
   dci_q1_tracts: 10
   pp_county_count: 0
   nmtc_projects: 44
@@ -727,7 +727,7 @@ florida:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 52
+  state_cdfi_count: 39
   dci_q1_tracts: 97
   pp_county_count: 4
   nmtc_projects: 158
@@ -802,7 +802,7 @@ georgia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 48
+  state_cdfi_count: 27
   dci_q1_tracts: 170
   pp_county_count: 46
   nmtc_projects: 107
@@ -861,7 +861,7 @@ hawaii:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 7
+  state_cdfi_count: 10
   dci_q1_tracts: 0
   pp_county_count: 0
   nmtc_projects: 8
@@ -1020,7 +1020,7 @@ illinois:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 60
+  state_cdfi_count: 30
   dci_q1_tracts: 257
   pp_county_count: 3
   nmtc_projects: 297
@@ -1096,7 +1096,7 @@ indiana:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 38
+  state_cdfi_count: 16
   dci_q1_tracts: 129
   pp_county_count: 0
   nmtc_projects: 86
@@ -1173,7 +1173,7 @@ iowa:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 15
+  state_cdfi_count: 9
   dci_q1_tracts: 13
   pp_county_count: 0
   nmtc_projects: 44
@@ -1253,7 +1253,7 @@ kansas:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 15
+  state_cdfi_count: 2
   dci_q1_tracts: 42
   pp_county_count: 0
   nmtc_projects: 26
@@ -1336,7 +1336,7 @@ kentucky:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 40
+  state_cdfi_count: 13
   dci_q1_tracts: 172
   pp_county_count: 40
   nmtc_projects: 166
@@ -1412,7 +1412,7 @@ louisiana:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 49
+  state_cdfi_count: 101
   dci_q1_tracts: 246
   pp_county_count: 24
   nmtc_projects: 189
@@ -1490,7 +1490,7 @@ maine:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 8
+  state_cdfi_count: 10
   dci_q1_tracts: 3
   pp_county_count: 0
   nmtc_projects: 22
@@ -1571,7 +1571,7 @@ maryland:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 28
+  state_cdfi_count: 13
   dci_q1_tracts: 69
   pp_county_count: 1
   nmtc_projects: 71
@@ -1650,7 +1650,7 @@ massachusetts:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 44
+  state_cdfi_count: 32
   dci_q1_tracts: 43
   pp_county_count: 0
   nmtc_projects: 250
@@ -1730,7 +1730,7 @@ michigan:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 35
+  state_cdfi_count: 44
   dci_q1_tracts: 312
   pp_county_count: 0
   nmtc_projects: 107
@@ -1807,7 +1807,7 @@ minnesota:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 23
+  state_cdfi_count: 32
   dci_q1_tracts: 19
   pp_county_count: 0
   nmtc_projects: 188
@@ -1892,7 +1892,7 @@ mississippi:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 44
+  state_cdfi_count: 97
   dci_q1_tracts: 193
   pp_county_count: 49
   nmtc_projects: 155
@@ -1970,7 +1970,7 @@ missouri:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 50
+  state_cdfi_count: 28
   dci_q1_tracts: 156
   pp_county_count: 14
   nmtc_projects: 503
@@ -2048,7 +2048,7 @@ montana:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 5
+  state_cdfi_count: 11
   dci_q1_tracts: 9
   pp_county_count: 3
   nmtc_projects: 20
@@ -2126,7 +2126,7 @@ nebraska:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 13
+  state_cdfi_count: 11
   dci_q1_tracts: 3
   pp_county_count: 1
   nmtc_projects: 26
@@ -2198,7 +2198,7 @@ nevada:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 14
+  state_cdfi_count: 2
   dci_q1_tracts: 30
   pp_county_count: 0
   nmtc_projects: 48
@@ -2277,7 +2277,7 @@ new-hampshire:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 5
+  state_cdfi_count: 4
   dci_q1_tracts: 3
   pp_county_count: 0
   nmtc_projects: 10
@@ -2354,7 +2354,7 @@ new-jersey:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 42
+  state_cdfi_count: 12
   dci_q1_tracts: 53
   pp_county_count: 0
   nmtc_projects: 93
@@ -2434,7 +2434,7 @@ new-mexico:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 10
+  state_cdfi_count: 17
   dci_q1_tracts: 76
   pp_county_count: 9
   nmtc_projects: 36
@@ -2511,7 +2511,7 @@ new-york:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 61
+  state_cdfi_count: 81
   dci_q1_tracts: 275
   pp_county_count: 2
   nmtc_projects: 210
@@ -2596,7 +2596,7 @@ north-carolina:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 36
+  state_cdfi_count: 25
   dci_q1_tracts: 104
   pp_county_count: 10
   nmtc_projects: 89
@@ -2678,7 +2678,7 @@ north-dakota:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 5
+  state_cdfi_count: 1
   dci_q1_tracts: 4
   pp_county_count: 3
   nmtc_projects: 6
@@ -2764,7 +2764,7 @@ ohio:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 55
+  state_cdfi_count: 38
   dci_q1_tracts: 341
   pp_county_count: 1
   nmtc_projects: 414
@@ -2840,7 +2840,7 @@ oklahoma:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 20
+  state_cdfi_count: 18
   dci_q1_tracts: 162
   pp_county_count: 12
   nmtc_projects: 93
@@ -2918,7 +2918,7 @@ oregon:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 32
+  state_cdfi_count: 21
   dci_q1_tracts: 9
   pp_county_count: 0
   nmtc_projects: 78
@@ -2989,7 +2989,7 @@ pennsylvania:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 41
+  state_cdfi_count: 33
   dci_q1_tracts: 174
   pp_county_count: 1
   nmtc_projects: 146
@@ -3048,7 +3048,7 @@ rhode-island:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 16
+  state_cdfi_count: 2
   dci_q1_tracts: 7
   pp_county_count: 0
   nmtc_projects: 60
@@ -3133,7 +3133,7 @@ south-carolina:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 25
+  state_cdfi_count: 21
   dci_q1_tracts: 84
   pp_county_count: 12
   nmtc_projects: 62
@@ -3214,7 +3214,7 @@ south-dakota:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 6
+  state_cdfi_count: 13
   dci_q1_tracts: 10
   pp_county_count: 10
   nmtc_projects: 10
@@ -3292,7 +3292,7 @@ tennessee:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 50
+  state_cdfi_count: 49
   dci_q1_tracts: 134
   pp_county_count: 9
   nmtc_projects: 94
@@ -3374,7 +3374,7 @@ texas:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 59
+  state_cdfi_count: 52
   dci_q1_tracts: 611
   pp_county_count: 34
   nmtc_projects: 214
@@ -3452,7 +3452,7 @@ utah:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 16
+  state_cdfi_count: 5
   dci_q1_tracts: 2
   pp_county_count: 1
   nmtc_projects: 62
@@ -3529,7 +3529,7 @@ vermont:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 5
+  state_cdfi_count: 4
   dci_q1_tracts: 0
   pp_county_count: 0
   nmtc_projects: 12
@@ -3608,7 +3608,7 @@ virginia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 33
+  state_cdfi_count: 23
   dci_q1_tracts: 125
   pp_county_count: 2
   nmtc_projects: 58
@@ -3697,7 +3697,7 @@ washington:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 38
+  state_cdfi_count: 30
   dci_q1_tracts: 9
   pp_county_count: 0
   nmtc_projects: 74
@@ -3774,7 +3774,7 @@ west-virginia:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 16
+  state_cdfi_count: 14
   dci_q1_tracts: 56
   pp_county_count: 8
   nmtc_projects: 34
@@ -3851,7 +3851,7 @@ wisconsin:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 32
+  state_cdfi_count: 20
   dci_q1_tracts: 45
   pp_county_count: 0
   nmtc_projects: 249
@@ -3927,7 +3927,7 @@ wyoming:
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
-  state_cdfi_count: 3
+  state_cdfi_count: 1
   dci_q1_tracts: 1
   pp_county_count: 0
   nmtc_projects: 4
