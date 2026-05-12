@@ -436,27 +436,26 @@ colorado:
   - fips: 08043
     name: Fremont County
     eligible_count: 9
-  status_tier: contact_only
-  last_checked: '2026-05-07'
+  status_tier: public_process
+  last_checked: '2026-05-12'
   lead_agency:
     name: Colorado Office of Economic Development and International Trade (OEDIT)
     url: https://oedit.colorado.gov/colorado-opportunity-zone-program
     contact_email: oedit.info@state.co.us
     contact_phone: (303) 892-3840
-  process: OEDIT has been conducting a multi-month stakeholder engagement process
-    since fall 2025 to inform Governor Polis's nomination of up to 90 of Colorado's
-    360 eligible tracts. The process included educational webinars through spring
-    2026 and regional convenings in April 2026; an in-person Western Slope event
-    is scheduled May 11, 2026 at Colorado Mesa University in Grand Junction. OEDIT
-    also published (or is publishing) a public GIS mapping tool and an online
-    feedback form through which any stakeholder can submit tract-level input; sign
-    up for OEDIT's OZ newsletter at the bottom of oedit.colorado.gov/colorado-opportunity-zone-program
-    to receive deadlines as they are set. Email oedit.info@state.co.us or call
-    (303) 892-3840 to ask about remaining engagement events, when the online feedback
-    form closes, and how rural-flagged tracts are weighted in OEDIT's review.
+  process: OEDIT has been running a multi-month public engagement process since fall
+    2025 to inform Governor Polis's nomination of up to 90 of Colorado's 360 eligible
+    tracts. Regional convenings ran through April 2026; an in-person Western Slope
+    event was held May 11 at Colorado Mesa University in Grand Junction. OEDIT has
+    published a public GIS mapping tool and an online feedback form through which
+    any stakeholder can submit tract-level input; visit oedit.colorado.gov/colorado-opportunity-zone-program
+    and sign up for the OZ newsletter to receive the community submission deadline
+    when it is set. Email oedit.info@state.co.us or call (303) 892-3840 to ask when
+    the feedback form closes and how rural-flagged tracts are weighted in OEDIT's
+    review.
   scoring_rubric_url: null
   state_deadline: null
-  application_portal_url: null
+  application_portal_url: https://oedit.colorado.gov/colorado-opportunity-zone-program
   tribal_consultation:
     framework: null
     citation: null
@@ -473,10 +472,10 @@ colorado:
   dci_q1_tracts: 17
   pp_county_count: 3
   nmtc_projects: 68
-  notes: Multi-month stakeholder engagement underway. Regional convenings April 2026;
-    Western Slope event May 11 at Colorado Mesa University. Public GIS tool and
-    feedback form published or forthcoming. No community submission deadline published
-    as of 2026-05-07. Contact oedit.info@state.co.us / (303) 892-3840.
+  notes: Public GIS tool and online feedback form live at oedit.colorado.gov/colorado-opportunity-zone-program.
+    No community submission deadline published as of 2026-05-12. Regional convenings
+    through April 2026; Western Slope event May 11. Contact oedit.info@state.co.us
+    / (303) 892-3840.
 connecticut:
   name: Connecticut
   fips: 09
@@ -1536,29 +1535,28 @@ maryland:
   - fips: '24043'
     name: Washington County
     eligible_count: 7
-  status_tier: contact_only
-  last_checked: '2026-05-07'
+  status_tier: public_process
+  last_checked: '2026-05-12'
   lead_agency:
-    name: Maryland Dept. of Housing and Community Development (DHCD) / MD Commerce
+    name: Maryland Dept. of Housing and Community Development (DHCD)
     url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
-    contact_email: null
-    contact_phone: null
+    contact_email: Allison.Foster@Maryland.gov
+    contact_phone: (443) 257-5478
   process: >-
-    As of May 7, 2026, neither Maryland DHCD nor MD Commerce has published an
-    OZ 2.0 nomination process, community application window, or scoring
-    criteria. Maryland has a dual-agency structure: DHCD leads community
-    development strategy while MD Commerce handles business investment; for OZ
-    2.0, contact both. Email DHCD communications at Allison.Foster@Maryland.gov
-    (443-257-5478) and ask to be directed to the OZ 2.0 program lead; separately
-    contact MD Commerce's Community Development Finance team through
-    commerce.maryland.gov. Frame your ask around investment-ready sites in
-    eligible tracts, noting the rural flag under Rev. Proc. 2026-14 if
-    applicable. Watch dhcd.maryland.gov for an announcement ahead of the July 1,
-    2026 federal nomination window; Maryland may nominate up to 113 of 451
-    eligible tracts.
+    Governor Moore has delegated the OZ 2.0 designation process to DHCD. DHCD
+    is asking counties to help identify and nominate census tracts that align
+    with local development and investment priorities; it has published an OZ 2.0
+    Eligibility Map to support local review. DHCD hosted a Local Stakeholders
+    Kickoff Webinar on May 20, 2026 (recorded and posted to the DHCD OZ page)
+    where EIG provided a program overview and DHCD outlined the county submission
+    process. Email Allison.Foster@Maryland.gov or visit dhcd.maryland.gov/pages/oz/opportunityzones.aspx
+    to ask for the OZ 2.0 program lead, the county nomination form, and any
+    submission deadline. Maryland may nominate up to 113 of 451 eligible tracts;
+    frame your submission around investment-ready sites and note the rural flag
+    under Rev. Proc. 2026-14 if applicable.
   scoring_rubric_url: null
   state_deadline: null
-  application_portal_url: null
+  application_portal_url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
   tribal_consultation:
     framework: null
     citation: null
@@ -1575,8 +1573,9 @@ maryland:
   dci_q1_tracts: 69
   pp_county_count: 1
   nmtc_projects: 71
-  notes: 'Dual-agency lead: DHCD + MD Commerce. No OZ 2.0 nomination process published
-    as of 2026-05-07. DHCD comms: Allison.Foster@Maryland.gov, 443-257-5478.'
+  notes: 'DHCD sole lead per Governor Moore delegation. County nomination process launched
+    May 2026; Local Stakeholders Kickoff Webinar May 20. DHCD comms: Allison.Foster@Maryland.gov,
+    (443) 257-5478. No community submission deadline published as of 2026-05-12.'
 massachusetts:
   name: Massachusetts
   fips: '25'
@@ -3574,27 +3573,24 @@ virginia:
   - fips: '51143'
     name: Pittsylvania County
     eligible_count: 16
-  status_tier: contact_only
-  last_checked: '2026-05-07'
+  status_tier: public_process
+  last_checked: '2026-05-12'
   lead_agency:
     name: Virginia Economic Development Partnership (VEDP) / DHCD
     url: https://www.dhcd.virginia.gov/opportunity-zones-oz
     contact_email: oz2026@vedp.org
     contact_phone: null
-  process: "VEDP and DHCD are jointly managing Virginia's OZ 2.0 process on behalf\
-    \ of Governor Youngkin but have not published a formal community application portal\
-    \ or scoring rubric as of May 7, 2026; the stakeholder survey that ran through\
-    \ April 27 and webinars held April 16 and 21 appear to have been the primary public\
-    \ input mechanism thus far. Email oz2026@vedp.org or oz@dhcd.virginia.gov today\
-    \ to ask whether a second input round or formal nomination form will be released\
-    \ before the July 1, 2026 federal submission window, and share a tract-specific\
-    \ narrative describing investment readiness, community need, and any pending development\
-    \ projects. Virginia will nominate 152 of 607 eligible tracts (25% statutory cap),\
-    \ and both agencies are evaluating stakeholder input to inform the Governor's final\
-    \ selections, so written submissions from local governments carry weight even outside\
-    \ a formal portal."
+  process: "VEDP and DHCD jointly ran Virginia's OZ 2.0 public engagement process\
+    \ on behalf of Governor Youngkin: county-level feedback was requested by March\
+    \ 2, 2026; webinars were held April 16 and 21; and a stakeholder survey was open\
+    \ through April 27, 2026. The formal input window has closed. Both agencies are\
+    \ now evaluating submissions to inform the Governor's final nominations, due to\
+    \ Treasury starting July 1, 2026. If your jurisdiction has not yet engaged, email\
+    \ oz2026@vedp.org or oz@dhcd.virginia.gov — written input from local governments\
+    \ may still carry weight before the Governor's office finalizes its list. Virginia\
+    \ will nominate 152 of 607 eligible tracts."
   scoring_rubric_url: null
-  state_deadline: null
+  state_deadline: '2026-04-27'
   application_portal_url: null
   tribal_consultation:
     framework: null
@@ -3612,10 +3608,9 @@ virginia:
   dci_q1_tracts: 125
   pp_county_count: 2
   nmtc_projects: 58
-  notes: "Dual-agency lead (VEDP + DHCD). Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
-    \ Webinars held April 16 and 21, 2026; stakeholder survey closed April 27. No\
-    \ formal application portal or scoring rubric. 152 tracts to be nominated from\
-    \ 607 eligible (25% cap)."
+  notes: "Public engagement closed. Webinars April 16/21; county feedback due March\
+    \ 2; stakeholder survey closed April 27, 2026. Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
+    \ 152 tracts to be nominated from 607 eligible (25% cap)."
 washington:
   name: Washington
   fips: '53'
