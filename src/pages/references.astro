@@ -18,6 +18,13 @@ html = html.replace(
 
 // Add entry class to every <p> so we can style borders + spacing
 html = html.replace(/<p>/g, '<p class="ref-entry">');
+
+// Add anchor IDs and link icons to h2 section headers
+const linkIcon = `<a href="#SLUG" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>`;
+html = html.replace(/<h2>(.*?)<\/h2>/g, (_, text) => {
+  const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return `<h2 id="${slug}">${text}${linkIcon.replace('SLUG', '#' + slug)}</h2>`;
+});
 ---
 
 <Layout title="References" description="All sources cited in the OZ 2.0 resource, with last-checked dates.">
@@ -119,4 +126,34 @@ html = html.replace(/<p>/g, '<p class="ref-entry">');
     padding: 1px 4px;
     border-radius: 3px;
   }
+
+  /* Section anchor links */
+  .ref-body :global(h2 .anchor-link) {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0;
+    margin-left: 0.4rem;
+    color: #9ca3af;
+    text-decoration: none;
+    vertical-align: middle;
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: normal;
+    transition: opacity 0.15s, color 0.15s;
+  }
+  .ref-body :global(h2:hover .anchor-link) { opacity: 1; }
+  .ref-body :global(.anchor-link:hover) { color: #6b7280; }
+  .ref-body :global(.anchor-link.copied) { color: #10b981; opacity: 1; }
 </style>
+
+<script>
+  document.querySelectorAll('.anchor-link').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      navigator.clipboard.writeText(location.origin + location.pathname + a.getAttribute('href')).then(() => {
+        a.classList.add('copied');
+        setTimeout(() => a.classList.remove('copied'), 1500);
+      });
+    });
+  });
+</script>
