@@ -568,29 +568,34 @@ delaware:
     name: Kent County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Delaware Division of Small Business
     url: https://business.delaware.gov/opportunity-zones/
     contact_email: business@delaware.gov
     contact_phone: (302) 739-4271
-  process: "The Delaware Division of Small Business (DSB), in partnership with Governor\
-    \ Matt Meyer, runs the state's OZ 2.0 nomination process. Any investor, developer,\
-    \ financial institution, property owner, local official, or community leader may\
-    \ submit a community nomination via the DSB Formstack portal by May 15, 2026;\
-    \ DSB then advises the Governor, who has until September 30, 2026 to submit up\
-    \ to 25 tracts to Treasury for designation beginning July 1, 2026. DSB held an\
-    \ informational webinar on March 9, 2026 outlining what it and the Governor's\
-    \ office are looking for: census tracts with investible assets that can attract\
-    \ capital and deliver long-term positive impacts on underserved communities. No\
-    \ formal scoring rubric has been published; submitters are encouraged to build\
-    \ a strong business case and recruit additional stakeholders to support the same\
-    \ tract."
+  process: "SCARCITY ALERT: As of early April 2026, 23 of Delaware's 25 available\
+    \ designation slots had already been claimed by community nominations — only 2\
+    \ remain. The submission portal closes May 15, 2026. If your tract has not yet\
+    \ been nominated, file immediately at the DSB Formstack portal. The Delaware Division\
+    \ of Small Business (DSB), in partnership with Governor Matt Meyer, runs the process:\
+    \ any investor, developer, financial institution, property owner, local official,\
+    \ or community leader may submit a nomination; DSB then advises the Governor,\
+    \ who has until September 30, 2026 to submit up to 25 tracts to Treasury for\
+    \ designation beginning July 1, 2026. No formal scoring rubric has been published;\
+    \ build a business case documenting investible assets, existing development momentum,\
+    \ and long-term community impact — and recruit additional stakeholders to co-endorse\
+    \ the same tract to strengthen its standing."
   scoring_rubric_url: null
   state_deadline: '2026-05-15'
   application_portal_url: https://degovforms.formstack.com/forms/opportunityzonenomination
   tribal_consultation:
-    framework: null
+    framework: "Delaware has no federally recognized tribes. Sussex County (14 eligible\
+      \ tracts) sits within the historic Nanticoke homeland; the Nanticoke Indian\
+      \ Association and the Lenape Indian Tribe of Delaware are both state-recognized\
+      \ organizations with cultural interests in Sussex County tracts. No formal tribal\
+      \ consultation protocol has been published by DSB. If nominating a Sussex County\
+      \ tract, consider reaching out to these groups before submitting."
     citation: null
   regional_edds: []
   rural_partners:
@@ -606,10 +611,9 @@ delaware:
   pp_county_count: 0
   nmtc_projects: 6
   notes: "Community nomination window closes May 15, 2026; Governor's submission deadline\
-    \ to Treasury is September 30, 2026. No scoring rubric published. Governor may\
-    \ nominate up to 25 tracts from 61 eligible. As of April 6, 2026 reporting, 23\
-    \ tracts had already been nominated. max_designations corrected from 16 to 25\
-    \ per DSB press release (March 2026)."
+    \ to Treasury is September 30, 2026. No scoring rubric published. Only 2 of 25\
+    \ designation slots remain as of early April 2026 reporting (23 already nominated).\
+    \ max_designations corrected from 16 to 25 per DSB press release (March 2026)."
 district-of-columbia:
   name: District of Columbia
   fips: '11'
@@ -1218,30 +1222,42 @@ kansas:
     name: Geary County
     eligible_count: 5
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Kansas Department of Commerce
     url: https://www.kansascommerce.gov/opportunity-zones-2-0/
     contact_email: OZ@kansascommerce.gov
     contact_phone: null
-  process: "The Kansas Department of Commerce Business Development team administers
-    the OZ 2.0 nomination process for the state. Communities located within eligible
-    census tracts submit an investment case to Kansas Commerce by June 1, 2026 via
-    email to OZ@kansascommerce.gov; there is no online portal. Local governments,
-    economic development organizations, developers, and other community stakeholders
-    within eligible tracts may submit proposals — formal nominations to Treasury are
-    made by the Governor, so Kansas Commerce reviews and vets community submissions
-    before advancing recommendations. Kansas Commerce has published a scoring matrix
-    on its OZ 2.0 page, though specific criteria names and point weights are not
-    separately indexed; the Community Opportunity Zone Application form and full
-    scoring guidance were to be released in advance of the deadline. Kansas Commerce
-    Business Development staff offered workshops and information sessions to help
-    communities prepare proposals and identify investment opportunities."
+  process: "The Kansas Department of Commerce Business Development team administers\
+    \ the OZ 2.0 nomination process. Communities within eligible census tracts submit\
+    \ an investment case by June 1, 2026 via email to OZ@kansascommerce.gov; there\
+    \ is no online portal. Local governments, economic development organizations,\
+    \ developers, and other community stakeholders may submit. Before drafting your\
+    \ submission, visit kansascommerce.gov/opportunity-zones-2-0/ to download the\
+    \ Community Opportunity Zone Application form and scoring matrix — if the official\
+    \ form has not yet been posted as of your visit, email OZ@kansascommerce.gov\
+    \ to request it directly; do not wait until near the June 1 deadline. Note that\
+    \ the scoring matrix is published on the agency OZ 2.0 page but specific criterion\
+    \ weights are not separately indexed — when you email for the form, ask for the\
+    \ weights as well. Formal nominations to Treasury are made by the Governor, so\
+    \ Kansas Commerce reviews and vets community submissions before advancing\
+    \ recommendations. With only 2 certified CDFIs headquartered in Kansas, communities\
+    \ seeking capital partners may need to engage regional CDFIs operating across\
+    \ state lines — contact Rural LISC or the Federal Home Loan Bank of Topeka\
+    \ for referrals."
   scoring_rubric_url: https://www.kansascommerce.gov/opportunity-zones-2-0/
   state_deadline: '2026-06-01'
   application_portal_url: null
   tribal_consultation:
-    framework: null
+    framework: "Kansas has two federally recognized tribes with active land in the\
+      \ state. The Kickapoo Tribe in Kansas has a reservation in Brown County\
+      \ (northeast Kansas). The Iowa Tribe of Kansas and Nebraska has a reservation\
+      \ in Brown and Doniphan counties. Both Brown and Doniphan counties may have\
+      \ eligible or adjacent census tracts. The Prairie Band Potawatomi Nation\
+      \ (Jackson County) also has federally recognized land in Kansas. Kansas Commerce\
+      \ has not published a tribal consultation protocol for the OZ 2.0 process;\
+      \ check with the Kansas Indian Affairs Commission (ksde.org/Default.aspx?tabid=1825)\
+      \ before submitting nominations in or adjacent to tribal lands."
     citation: null
   regional_edds: []
   rural_partners:
@@ -1300,38 +1316,47 @@ kentucky:
     name: Christian County
     eligible_count: 9
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Kentucky Cabinet for Economic Development
     url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
     contact_email: Kristina.Slattery@ky.gov
-    contact_phone: (502) 564-7670
-  process: The Kentucky Cabinet for Economic Development runs the OZ 2.0 designation
-    process, led by Kristina Slattery, Commissioner of Business Development. Local
-    governments and economic development organizations download an XLSX application
-    and a companion DOCX criteria guidance document from the Cabinet's OZ page, then
-    email completed applications to Kristina.Slattery@ky.gov by May 29, 2026; there
-    is no online submission portal. The criteria guidance document describes scoring
-    factors — exact criterion names and weights are in the downloadable DOCX and were
-    reviewed at a March 3, 2026 webinar titled "Opportunity Zones 2.0 – How to Apply
-    for Census Tract Designation." Kentucky may designate up to 137 tracts from its
-    545 eligible, of which 381 (70 percent) carry the rural flag under Notice 2025-50.
+    contact_phone: (800) 626-2930
+  process: "The Kentucky Cabinet for Economic Development runs the OZ 2.0 designation\
+    \ process, led by Kristina Slattery, Commissioner of Business Development. Local\
+    \ governments and economic development organizations download an XLSX application\
+    \ and a companion DOCX criteria guidance document from the Cabinet's OZ page\
+    \ (newkentuckyhome.ky.gov/Locating_Expanding/KYoz), then email completed applications\
+    \ to Kristina.Slattery@ky.gov by May 29, 2026; there is no online submission portal.\
+    \ Download the DOCX criteria guidance before submitting — it contains the specific\
+    \ scoring criterion names and weights reviewed at the March 3, 2026 webinar\
+    \ \"Opportunity Zones 2.0 – How to Apply for Census Tract Designation.\" Kentucky\
+    \ may designate up to 137 tracts from its 545 eligible, of which 381 (70 percent)\
+    \ carry the rural flag under Notice 2025-50 — meaning QROF rural bonus mechanics\
+    \ apply to the majority of the eligible universe."
   scoring_rubric_url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
   state_deadline: '2026-05-29'
   application_portal_url: null
-  notes: Direct file download URLs for the XLSX application and DOCX criteria guidance
-    are hosted on the Cabinet page but return 403 to automated fetches; use the landing
-    page URL to access them. Submission contact is Kristina Slattery (Commissioner
-    of Business Development) at Kristina.Slattery@ky.gov or (800) 626-2930.
+  notes: "Direct file download URLs for the XLSX application and DOCX criteria guidance\
+    \ are hosted on the Cabinet page but return 403 to automated fetches; use the\
+    \ landing page URL to access them. Phone (800) 626-2930 is the published direct\
+    \ submission contact for Kristina Slattery; (502) 564-7670 is the Cabinet main line."
   tribal_consultation:
-    framework: null
+    framework: "Kentucky has no federally recognized tribes in-state, but several\
+      \ Oklahoma-based tribes have historic ties to Kentucky territory. The Eastern\
+      \ Band of Cherokee Indians (EBCI, based in western NC) has geographic proximity\
+      \ to eastern Kentucky and an active THPO (ebci-nsn.gov/thpo). The Shawnee Tribe\
+      \ (OK) and Cherokee Nation (OK) also have historic Kentucky connections. If\
+      \ nominating tracts in eastern Kentucky counties (Pike, Floyd, Knox) near the\
+      \ Virginia or Tennessee state line, consider reaching out to the EBCI THPO.\
+      \ No formal consultation protocol has been published by the Cabinet."
     citation: null
   regional_edds: []
   rural_partners:
     usda_rd_url: https://www.rd.usda.gov/ky/
     rcap_regional:
-      name: Great Lakes Community Action Partnership
-      url: https://www.glcap.org/
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
@@ -1852,7 +1877,7 @@ mississippi:
     name: Oktibbeha County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Mississippi Development Authority (MDA)
     url: https://mississippi.org/community-resources/opportunity-zones/
@@ -1860,27 +1885,34 @@ mississippi:
     contact_phone: (601) 359-9387
   process: "The Mississippi Development Authority (MDA) is leading the state's OZ\
     \ 2.0 designation process under authority delegated by the governor, with Tim\
-    \ T. Climer, PCED (Community and Rural Development), serving as the point of contact\
-    \ at tclimer@mississippi.org or (601) 359-9387. MDA held at least three public\
-    \ listening sessions in April 2026 — at the Oxford-Lafayette County Chamber of\
-    \ Commerce (April 10), the Central Mississippi Planning and Development District\
-    \ in Pearl (April 14), and the Southern Mississippi Planning and Development District\
-    \ (April 21) — and a stakeholder feedback form on the MDA website remains open\
-    \ through May 31, 2026 for written input. This is a public comment process, not\
-    \ a direct nomination form: MDA solicits perspectives from local governments,\
-    \ economic development professionals, business leaders, and community partners,\
-    \ then makes its own internal assessment of which tracts show the strongest potential\
-    \ for economic growth and investment. No scoring rubric or weighted selection\
-    \ criteria have been published as of May 6, 2026. After the May 31 input deadline,\
-    \ MDA will prepare its nomination list, which the governor must formally submit\
-    \ to the U.S. Treasury during the 90-day state nomination window that opens July\
-    \ 1, 2026; up to 101 of Mississippi's 404 eligible tracts may be designated, with\
-    \ new OZs taking effect January 1, 2027."
+    \ T. Climer, PCED (Community and Rural Development), as the point of contact at\
+    \ tclimer@mississippi.org or (601) 359-9387. MDA held three public listening\
+    \ sessions in April 2026 (Oxford, Pearl, and the Southern Mississippi Planning\
+    \ District); that phase is now closed. The MDA stakeholder feedback form at\
+    \ mississippi.org/community-resources/opportunity-zones/ remains open through\
+    \ May 31, 2026 — it is the only remaining input window. Submit written comments\
+    \ before May 31 documenting your tract's economic growth potential, existing assets\
+    \ and infrastructure, and any partner or investor commitments. This is a public\
+    \ comment process, not a direct nomination form: MDA solicits perspectives from\
+    \ local governments, economic development professionals, business leaders, and\
+    \ community partners, then makes its own internal assessment. No scoring rubric\
+    \ or weighted criteria have been published; focus on concrete evidence of investment\
+    \ readiness and community need rather than advocacy framing. After May 31, MDA\
+    \ will prepare its nomination list for submission to U.S. Treasury during the\
+    \ 90-day state window opening July 1, 2026; up to 101 of Mississippi's 404\
+    \ eligible tracts may be designated, with new OZs taking effect January 1, 2027."
   scoring_rubric_url: null
   state_deadline: '2026-05-31'
   application_portal_url: null
   tribal_consultation:
-    framework: null
+    framework: "The Mississippi Band of Choctaw Indians is a federally recognized\
+      \ tribe with a reservation centered in Neshoba County, Mississippi. While Neshoba\
+      \ County does not appear in the top-10 eligible tract table, it is adjacent to\
+      \ Oktibbeha County (8 eligible tracts) and other counties in the eligible universe.\
+      \ MDA has not published a tribal consultation protocol for the OZ 2.0 process.\
+      \ If nominating tracts in central Mississippi counties near the Choctaw reservation,\
+      \ contact the Mississippi Band of Choctaw Indians tribal government or THPO\
+      \ directly before submitting comments to MDA."
     citation: null
   regional_edds: []
   rural_partners:
@@ -1936,29 +1968,45 @@ missouri:
     name: Dunklin County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Missouri Dept. of Economic Development (DED)
     url: https://ded.mo.gov/programs/business-community/opportunity-zones
     contact_email: OpportunityZones@ded.mo.gov
     contact_phone: null
-  process: Missouri DED is accepting tract nominations through a Submittable portal
-    (open April 7–May 17, 2026); any stakeholder — local government, community development
-    organization, or other entity — may submit, with one tract per form and no cap
-    on the number of tracts a single submitter may put forward. The intake form asks
-    submitters to document the tract's census data, existing and planned investments,
-    and the development rationale for designation. DED staff will review submissions
-    against program criteria — including the statutory low-income thresholds under
-    Notice 2025-50 — and weigh evidence of investment readiness and community need;
-    a formal scoring rubric has not been published as of the date noted. DED is expected
-    to release tentative recommendations for public comment in July and finalize selections
-    for the governor in August, with the official state nominations submitted to Treasury
-    that month and new designations taking effect January 1, 2027.
+  process: "Missouri DED is accepting tract nominations through a Submittable portal\
+    \ (open April 7–May 17, 2026); any stakeholder — local government, community\
+    \ development organization, or other entity — may submit, with one tract\
+    \ per form and no cap on the number of tracts a single submitter may put forward.\
+    \ The intake form asks submitters to document the tract’s census data, existing\
+    \ and planned investments, and the development rationale for designation. DED staff\
+    \ will review submissions against program criteria — including the statutory\
+    \ low-income thresholds under Notice 2025-50 — and weigh evidence of investment\
+    \ readiness and community need; a formal scoring rubric has not been published.\
+    \ In July, DED expects to release tentative tract recommendations for public comment;\
+    \ this is an advisory review of DED’s already-drafted slate, not a second\
+    \ nomination window. DED will finalize selections for the governor in August, with\
+    \ the official state nominations submitted to Treasury that month and new designations\
+    \ taking effect January 1, 2027. Jackson County (Kansas City) and St. Louis city\
+    \ together account for 167 of Missouri’s 523 eligible tracts; both cities\
+    \ saw OZ 1.0 capital concentrated in already-gentrifying neighborhoods. Community\
+    \ organizations in these markets should document anti-displacement strategies in\
+    \ their submissions — DED’s process allows for this even without a published\
+    \ community benefit criterion."
   scoring_rubric_url: null
   state_deadline: '2026-05-17'
   application_portal_url: https://modedfederalinitiatives.submittable.com/submit/e2490327-5b12-4d24-9c90-64092f51f7ad/missouri-opportunity-zones-2-0-program-intake-form
   tribal_consultation:
-    framework: null
+    framework: "Missouri sits largely within the historic ceded territory of the Osage\
+      \ Nation (headquartered in Pawhuska, OK), whose ancestral lands covered much\
+      \ of present-day Missouri. The Osage Nation has a federally recognized Tribal\
+      \ Historic Preservation Office (THPO) and an active cultural preservation program.\
+      \ While no formal OZ 2.0 tribal consultation protocol has been published by\
+      \ Missouri DED, submitters nominating tracts in areas with documented Osage or\
+      \ other tribal cultural resources should contact the Osage Nation THPO (osageculture.com)\
+      \ or the Missouri State Historic Preservation Office before submitting. The Miami\
+      \ Tribe of Oklahoma and the Delaware Tribe of Indians also have historic ties\
+      \ to Missouri territory."
     citation: null
   regional_edds: []
   rural_partners:
@@ -2398,7 +2446,7 @@ new-mexico:
     name: San Miguel County
     eligible_count: 8
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: New Mexico Economic Development Dept. (EDNM)
     url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
@@ -2407,22 +2455,32 @@ new-mexico:
   process: 'New Mexico routes its nomination process through the state''s network of
     regional Councils of Governments (COGs), which coordinate input from local governments,
     tribal nations, utilities, and other regional partners within their areas. Communities
-    seeking nomination should contact their COG directly — COGs were required to submit
-    their proposed tract lists to EDNM by May 15, 2026, so the initial submission window
-    has closed; however, EDNM continues to refine the list through June 15, when it
-    delivers a recommended slate to the Governor''s Office for final review. The Governor''s
-    Office and EDNM then finalize the 65 nominated tracts for submission to Treasury
-    by July 1, 2026. EDNM''s published scoring considerations favor tracts that demonstrate
-    clear development potential, supportive local land-use policies, available land
-    or redevelopment opportunities, proximity to economic anchors, and alignment with
-    existing incentive programs or community development priorities; no numerical weights
-    have been published. Communities not served by a COG should contact EDNM directly
-    at info@edd.nm.gov or (505) 827-0300.'
+    seeking nomination should contact their COG directly — the COG submission deadline
+    to EDNM is May 15, 2026. To find your COG, contact EDNM at info@edd.nm.gov or
+    (505) 827-0300; a directory of New Mexico''s regional COGs is maintained by the
+    New Mexico Council of Governments Association (nmcog.org). EDNM refines the submitted
+    list through June 15, then delivers a recommended slate to the Governor''s Office
+    for final review. The Governor''s Office and EDNM finalize the 65 nominated tracts
+    for submission to Treasury by July 1, 2026. EDNM''s published scoring considerations
+    favor tracts that demonstrate clear development potential, supportive local land-use
+    policies, available land or redevelopment opportunities, proximity to economic
+    anchors, and alignment with existing incentive programs or community development
+    priorities; no numerical weights have been published. Communities not served by
+    a COG should contact EDNM directly at info@edd.nm.gov or (505) 827-0300.'
   scoring_rubric_url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
   state_deadline: '2026-05-15'
   application_portal_url: null
   tribal_consultation:
-    framework: null
+    framework: "New Mexico has the largest concentration of federally recognized tribal
+      nations of any state. The Navajo Nation — the largest reservation in the US —
+      spans McKinley and San Juan counties, which together hold 45 eligible tracts.
+      New Mexico is also home to 19 Pueblo tribes (including Acoma, Laguna, Zuni,
+      Taos, and Santa Clara Pueblos), the Jicarilla Apache Nation (Rio Arriba County),
+      and the Mescalero Apache Tribe (Otero County). EDNM routes tribal input through
+      the COG process; however, tribal nations may engage EDNM directly at info@edd.nm.gov.
+      If nominating tracts in or adjacent to tribal land, consult with the relevant
+      tribal government or Tribal Historic Preservation Office (THPO) before submitting
+      to your COG."
     citation: null
   regional_edds: []
   rural_partners:
@@ -2556,7 +2614,7 @@ north-carolina:
     name: Pitt County
     eligible_count: 18
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: North Carolina Department of Commerce
     url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
@@ -2577,14 +2635,27 @@ north-carolina:
     community-driven initiatives), and Housing Supply (tracts near major employment
     centers or transit corridors where OZ designation can meaningfully expand housing
     production, with documented regional housing need). No numerical weights have
-    been published for the three guidelines. After the feedback window closes, Commerce
-    reviews submissions and provides recommendations to the Governor; the state''s
-    202 nominations are due to Treasury beginning July 1, 2026.'
+    been published for the three guidelines — document alignment with all three
+    categories if possible. After the feedback window closes, Commerce reviews
+    submissions and provides recommendations to the Governor; the state''s 202
+    nominations are due to Treasury beginning July 1, 2026.'
   scoring_rubric_url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
   state_deadline: '2026-06-07'
   application_portal_url: https://public.nccommerce.com/oz/
   tribal_consultation:
-    framework: null
+    framework: "North Carolina is home to two distinct tribal communities with eligible-tract
+      interests. The Eastern Band of Cherokee Indians (EBCI) is a federally recognized
+      tribe with a reservation in Jackson and Swain counties in western North Carolina;
+      EBCI has a Tribal Historic Preservation Office (ebci-nsn.gov/thpo) and should
+      be consulted for nominations in or adjacent to Jackson and Swain counties. The
+      Lumbee Tribe is the largest Native American tribe east of the Mississippi River
+      (approximately 55,000 members), is state-recognized, and is centered in Robeson
+      County — which has 31 eligible tracts and appears in the top-10 county table.
+      Robeson County is not federally recognized, so no formal THPO consultation is
+      legally required; however, the Lumbee Tribal Administration (lumbeetribe.com)
+      has active community development interests in Robeson County and should be engaged
+      directly for nominations in that county. NC Commerce has not published a tribal
+      consultation protocol for the OZ 2.0 process."
     citation: null
   regional_edds: []
   rural_partners:
@@ -2724,35 +2795,48 @@ ohio:
     name: Lorain County
     eligible_count: 22
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Ohio Department of Development (ODOD)
     url: https://opportunityzones.ohio.gov
     contact_email: null
     contact_phone: null
-  process: "The Ohio Department of Development (ODOD) is running the OZ 2.0 nomination
-    process and opened a 30-day online portal for local submissions in late April 2026;
-    the portal is available at opportunityzones.ohio.gov, with a submission deadline
-    of approximately May 31, 2026 (confirm directly with ODOD, as the exact close date
-    was not publicly posted at time of check). Local governments, regional planning
-    bodies, and economic development organizations may submit nominations through the
-    portal; no formal scoring rubric has been published, but ODOD has signaled that
-    nominations demonstrating regional collaboration, alignment with existing economic
-    development strategies, and connection to housing or revitalization plans will be
-    evaluated favorably. No current OZ 1.0 designations are automatically renewed —
-    all tracts must be renominated. Greater Ohio Policy Center (greaterohio.org/opportunityzones)
-    is serving as a statewide technical assistance resource and can help communities
-    prepare competitive submissions."
+  process: "The Ohio Department of Development (ODOD) is running the OZ 2.0 nomination\
+    \ process and opened a 30-day online portal for local submissions in late April\
+    \ 2026. The portal is at opportunityzones.ohio.gov; the submission deadline is\
+    \ approximately May 31, 2026, but that date was not publicly posted and should\
+    \ be confirmed at opportunityzones.ohio.gov before submitting — do not assume\
+    \ May 31 is firm. ODOD has not published a direct OZ team contact email or phone;\
+    \ for questions, use the portal or call the ODOD main line at (614) 466-2317\
+    \ and ask to be routed to the OZ 2.0 team. Local governments, regional planning\
+    \ bodies, and economic development organizations may submit nominations through\
+    \ the portal; no formal scoring rubric has been published, but ODOD has signaled\
+    \ that nominations demonstrating regional collaboration, alignment with existing\
+    \ economic development strategies, and connection to housing or revitalization\
+    \ plans will be weighted favorably. No current OZ 1.0 designations are automatically\
+    \ renewed — all tracts must be renominated. Greater Ohio Policy Center\
+    \ (greaterohio.org/opportunityzones) is serving as a statewide technical assistance\
+    \ resource; for Appalachian Ohio communities in southeastern counties, contact\
+    \ the Greater Ohio Policy Center before the deadline — they can help frame\
+    \ submissions in terms of ODOD's regional collaboration preference."
   scoring_rubric_url: null
   state_deadline: '2026-05-31'
   application_portal_url: https://opportunityzones.ohio.gov
-  notes: "Greater Ohio Policy Center TA resource: https://www.greaterohio.org/opportunityzones.
-    Portal URL opportunityzones.ohio.gov appeared in ohio.gov search index as of 2026-05-06
-    but returned 403 to automated fetchers — likely a WAF block rather than a dead
-    link. Deadline of May 31 is inferred from a 30-day window opened in late April;
-    verify directly. No ODOD OZ-specific contact email found as of last check."
+  notes: "Greater Ohio Policy Center TA resource: https://www.greaterohio.org/opportunityzones.\
+    \ Portal URL opportunityzones.ohio.gov appeared in ohio.gov search index as of\
+    \ 2026-05-06 but returned 403 to automated fetchers — likely a WAF block rather\
+    \ than a dead link. Deadline of May 31 is inferred from a 30-day window opened\
+    \ in late April; verify directly. No ODOD OZ-specific contact email found as\
+    \ of last check. ODOD main line: (614) 466-2317."
   tribal_consultation:
-    framework: null
+    framework: "Ohio has no federally recognized tribes with current in-state reservations.\
+      \ Multiple Oklahoma-based tribes have historic Ohio connections — including the\
+      \ Seneca-Cayuga Nation, Shawnee Tribe, and Eastern Shawnee Tribe of Oklahoma.\
+      \ ODOD has not published a tribal consultation protocol. No tribal consultation\
+      \ action is required for the standard submission process, but communities\
+      \ aware of specific archaeological or cultural sites in candidate tracts\
+      \ should consult the Ohio Historic Preservation Office (ohiohistory.org/ohpo)\
+      \ before submitting."
     citation: null
   regional_edds: []
   rural_partners:
@@ -2884,7 +2968,7 @@ oregon:
     name: Clackamas County
     eligible_count: 7
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Business Oregon
     url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
@@ -2906,8 +2990,19 @@ oregon:
   state_deadline: '2026-05-22'
   application_portal_url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
   tribal_consultation:
-    framework: null
-    citation: null
+    framework: "Oregon has nine federally recognized tribes. Business Oregon has designated
+      a dedicated tribal liaison, Brian Plinski (Brian.PLINSKI@biz.oregon.gov), who
+      manages tribal government applications separately from the general RFA track;
+      tribal governments may submit directly through the same application portal or
+      coordinate with Brian Plinski. Key tribal-county overlaps in the eligible tract
+      universe include: Confederated Tribes of Warm Springs (Jefferson and Wasco counties);
+      Confederated Tribes of the Umatilla Indian Reservation (Umatilla County); Burns
+      Paiute Tribe (Harney County); Klamath Tribes (Klamath County, 12 eligible tracts);
+      Coos, Lower Umpqua and Siuslaw Indians (Coos County, 10 eligible tracts); Confederated
+      Tribes of Grand Ronde and Siletz Indians (western valleys including Douglas and
+      Lane counties). Tribal governments submit applications through the same portal
+      but are encouraged to contact Brian Plinski first to coordinate."
+    citation: Business Oregon OZ 2.0 RFA page (references.md §13)
   regional_edds: []
   rural_partners:
     usda_rd_url: https://www.rd.usda.gov/or/
@@ -3093,35 +3188,42 @@ south-carolina:
     name: Florence County
     eligible_count: 15
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: South Carolina Department of Commerce (SC Commerce)
     url: https://www.sccommerce.com/opportunity-zone
     contact_email: oz@sccommerce.com
     contact_phone: null
-  process: "SC Commerce is coordinating the nomination process on behalf of Governor
-    McMaster and accepts community input via an online submission portal at
-    sccommerce.com/opportunity-zone-submission through June 1, 2026; local governments,
-    economic development organizations, community leaders, and the general public may
-    all submit, and submitters are asked to rank eligible tracts in order of preference
-    and explain why each should be nominated. SC Commerce has stated it will evaluate
-    nominations against four published criteria: potential to attract private investment,
-    alignment with South Carolina's economic development strategy, presence of
-    market-ready infrastructure (industrial sites, utility and transportation networks,
-    and broadband availability), and housing development activity; no numerical weights
-    or formal rubric document have been published as of 2026-05-06. SC Commerce will
-    host regional information meetings and at least one virtual workshop to help
-    communities understand the process, though specific meeting dates had not been
-    announced as of that date. After the June 1 deadline SC Commerce will compile a
-    recommended list for the Governor, targeting completion by approximately July 1,
-    2026, when the federal window for governors to submit nominations to the U.S.
-    Treasury opens. South Carolina may nominate up to 112 of its 445 eligible tracts
-    (25% statutory cap); no per-applicant tract limit has been published."
+  process: "SC Commerce is coordinating the nomination process on behalf of Governor\
+    \ McMaster and accepts community input via an online submission portal at\
+    \ sccommerce.com/opportunity-zone-submission through June 1, 2026. This is one\
+    \ of the most open processes in the country — local governments, economic\
+    \ development organizations, community leaders, and the general public may all\
+    \ submit directly; you do not need a government sponsor. Submitters rank eligible\
+    \ tracts in order of preference and explain why each should be nominated against\
+    \ SC Commerce's four published criteria: (1) potential to attract private\
+    \ investment, (2) alignment with South Carolina's economic development strategy,\
+    \ (3) presence of market-ready infrastructure (industrial sites, utility and\
+    \ transportation networks, and broadband availability), and (4) housing\
+    \ development activity. Note that the housing criterion does not specify\
+    \ affordable housing — if affordability matters to your submission, state it\
+    \ explicitly. No numerical weights or formal rubric document have been published.\
+    \ Regional information meetings were announced but dates had not been confirmed\
+    \ as of the last check; do not wait for a workshop before submitting, as the\
+    \ June 1 deadline is firm. After June 1, SC Commerce will compile a recommended\
+    \ list for the Governor, targeting completion by approximately July 1, 2026.\
+    \ South Carolina may nominate up to 112 of its 445 eligible tracts (25%\
+    \ statutory cap); no per-applicant tract limit has been published."
   scoring_rubric_url: null
   state_deadline: '2026-06-01'
   application_portal_url: https://www.sccommerce.com/opportunity-zone-submission
   tribal_consultation:
-    framework: null
+    framework: "The Catawba Indian Nation is a federally recognized tribe with a\
+      \ reservation in York County, South Carolina. York County is in the\
+      \ Greenville-Charlotte metro area; if eligible tracts exist in or near York\
+      \ County, contact the Catawba Nation tribal government (catawbaindian.com)\
+      \ before submitting a nomination. SC Commerce has not published a tribal\
+      \ consultation protocol for the OZ 2.0 process."
     citation: null
   regional_edds: []
   rural_partners:
@@ -3337,7 +3439,7 @@ texas:
     name: Webb County
     eligible_count: 41
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Texas Economic Development & Tourism Office (EDT), Office of the Governor
     url: https://gov.texas.gov/business/page/opportunity-zones
@@ -3346,23 +3448,40 @@ texas:
   process: "The Texas Economic Development & Tourism Office (EDT) within the Office\
     \ of the Governor is leading the OZ 2.0 nomination process, accepting submissions\
     \ from local economic development organizations (EDOs) and, in counties where no\
-    \ EDO exists, from county judges. To participate, submitters download the Nomination\
-    \ Packet from the EDT Opportunity Zones page, complete it for each proposed tract,\
-    \ and email it to OppZone2.0@gov.texas.gov by June 26, 2026; EDT intends to\
-    \ finalize and submit Texas' designations to the U.S. Treasury no later than August\
-    \ 3, 2026. EDT evaluates nominations against four criteria: statutory compliance\
-    \ (only tracts that clearly meet federal eligibility under Rev. Proc. 2026-14 qualify);\
-    \ local support (documented commitments such as incentives, rebates, or formal\
-    \ agreements); project viability (private capital deployable within 24–48 months,\
-    \ with additional credit for inclusive growth measures including affordable housing\
-    \ commitments, anti-displacement tools, and workforce initiatives); and geographic\
-    \ balance (preference for rural tracts and areas with federally declared disasters).\
-    \ Point weights for each criterion had not been published as of 2026-05-06."
+    \ EDO exists, from county judges. To participate, download the Nomination Packet\
+    \ from the EDT Opportunity Zones page (gov.texas.gov/business/page/opportunity-zones),\
+    \ complete it for each proposed tract, and email it to OppZone2.0@gov.texas.gov\
+    \ by June 26, 2026. An EDT FAQ document is also available at\
+    \ gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf — review it before\
+    \ submitting. EDT intends to finalize and submit Texas' designations to the U.S.\
+    \ Treasury no later than August 3, 2026. EDT evaluates nominations against four\
+    \ criteria: statutory compliance (only tracts that clearly meet federal eligibility\
+    \ under Rev. Proc. 2026-14 qualify); local support (documented commitments such\
+    \ as incentives, rebates, or formal agreements); project viability (private capital\
+    \ deployable within 24–48 months, with additional credit for inclusive growth\
+    \ measures including affordable housing commitments, anti-displacement tools, and\
+    \ workforce initiatives); and geographic balance (preference for rural tracts and\
+    \ areas with federally declared disasters — submitters in post-FEMA-declared-disaster\
+    \ counties should document that status explicitly). Point weights for each criterion\
+    \ have not been published. Note that OZ 1.0 investment in Texas — particularly in\
+    \ Harris County (Houston) — was heavily concentrated in already-appreciating urban\
+    \ tracts; communities with an anti-displacement case to make should include it\
+    \ explicitly in the project viability criterion, where it earns additional credit."
   scoring_rubric_url: https://gov.texas.gov/business/page/opportunity-zones
   state_deadline: '2026-06-26'
   application_portal_url: https://gov.texas.gov/business/page/opportunity-zones
   tribal_consultation:
-    framework: null
+    framework: "Texas has three federally recognized tribes with active land in the
+      state. The Alabama-Coushatta Tribe of Texas has a reservation in Polk County
+      (east Texas); the Kickapoo Traditional Tribe of Texas has a reservation in
+      Maverick County (southwest Texas, US-Mexico border); the Ysleta del Sur Pueblo
+      (Tigua) has a reservation in El Paso County (87 eligible tracts). All three
+      tribes have federally recognized status and Tribal Historic Preservation Offices
+      (THPOs) or equivalent contacts. EDT has not published a tribal consultation
+      protocol for the OZ 2.0 process. Submitters nominating tracts in Polk, Maverick,
+      or El Paso counties — or adjacent areas — should contact the relevant tribal
+      government before submitting. The Kickapoo Nation in Kansas (Brown County) is
+      separate from the Kickapoo Traditional Tribe of Texas."
     citation: null
   regional_edds: []
   rural_partners:
@@ -3651,30 +3770,36 @@ washington:
     name: Grays Harbor County
     eligible_count: 10
   status_tier: public_process
-  last_checked: '2026-05-06'
+  last_checked: '2026-05-12'
   lead_agency:
     name: Washington State Department of Commerce
     url: https://www.commerce.wa.gov/opportunity-zones/
     contact_email: Community.Engagement@Commerce.wa.gov
     contact_phone: null
-  process: Washington State Department of Commerce is running a competitive Request
-    for Applications (RFA) process to develop census tract nomination recommendations
-    for Governor Ferguson; the application platform opened April 28, 2026, and submissions
-    close May 28, 2026. Local governments, federally recognized tribes, Associate Development
-    Organizations (ADOs), and other community entities may submit applications on behalf
-    of eligible tracts, and Commerce has published a scoring criteria document (PDF)
-    and a draft application template to help communities prepare. Questions must be
-    submitted by May 21, 2026 — just seven days before the application deadline —
-    so local planners should prioritize reviewing the scoring criteria and drafting
-    materials well in advance; two pre-proposal webinars were held May 7 (9–10 a.m.
-    for rural and non-rural communities; 11 a.m.–noon for tribal governments). Consistent
-    with Governor Ferguson's Executive Order 25-10, the Centennial Accord, and RCW
-    43.376, Commerce is conducting formal government-to-government tribal consultation
-    with Washington's 29 federally recognized tribes as a separate, parallel track
-    — not a substitute for tribes also submitting applications through the RFA portal.
-    Commerce's recommendations are due to the Governor by June 30, 2026, ahead of
-    the federal nomination window opening July 1, 2026; Washington will nominate 99
-    tracts from 394 eligible, down from 139 current OZs.
+  process: "Washington State Department of Commerce is running a competitive Request\
+    \ for Applications (RFA) process to develop census tract nomination recommendations\
+    \ for Governor Ferguson; the application platform opened April 28, 2026, and\
+    \ submissions close May 28, 2026. Local governments, federally recognized tribes,\
+    \ Associate Development Organizations (ADOs), and other community entities may\
+    \ submit applications on behalf of eligible tracts. Commerce has published a\
+    \ scoring criteria PDF and a draft application template at the RFA page\
+    \ (commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/);\
+    \ download and review the scoring PDF before drafting your application. Washington's\
+    \ 39 Associate Development Organizations (ADOs) — one per county — are the primary\
+    \ regional partners for non-tribal submitters; if you are a local government\
+    \ without staff capacity, contact your county's ADO first, as they may be\
+    \ co-submitting or can help frame your application. Questions must be submitted\
+    \ by May 21, 2026 — seven days before the deadline — so do not wait to start\
+    \ drafting. Two pre-proposal webinars were held May 7 (9–10 a.m. for rural and\
+    \ non-rural communities; 11 a.m.–noon for tribal governments); recordings are\
+    \ available on the Commerce OZ 2.0 page. Consistent with Governor Ferguson's\
+    \ Executive Order 25-10, the Centennial Accord, and RCW 43.376, Commerce is\
+    \ conducting formal government-to-government tribal consultation with Washington's\
+    \ 29 federally recognized tribes as a separate, parallel track — not a substitute\
+    \ for tribes also submitting applications through the RFA portal. Commerce's\
+    \ recommendations are due to the Governor by June 30, 2026, ahead of the federal\
+    \ nomination window opening July 1, 2026; Washington will nominate 99 tracts\
+    \ from 394 eligible, down from 139 current OZs."
   scoring_rubric_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
   state_deadline: '2026-05-28'
   application_portal_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
@@ -3737,35 +3862,51 @@ west-virginia:
     name: Harrison County
     eligible_count: 6
   status_tier: public_process
-  last_checked: '2026-05-07'
+  last_checked: '2026-05-12'
   lead_agency:
     name: West Virginia Department of Economic Development
     url: https://westvirginia.gov/oz
     contact_email: null
-    contact_phone: null
-  process: "The West Virginia Division of Economic Development (WVDED), appointed by\
-    \ Governor Morrisey to manage OZ 2.0, is accepting tract nominations from local\
-    \ economic development authorities, county commissions, and regional planning councils\
-    \ through July 1, 2026 — all three entity types are explicitly eligible to submit.\
-    \ Visit westvirginia.gov/oz today for nomination instructions; if a direct contact\
-    \ email is listed there, use it to register your jurisdiction's interest and confirm\
-    \ the submission format before the deadline. West Virginia must nominate 52 of\
-    \ 207 eligible tracts (25% statutory cap), all of which carry a rural designation\
-    \ under Notice 2025-50, so prioritization among competing rural nominations will\
-    \ be the central challenge — documenting investment readiness, existing infrastructure,\
-    \ and development momentum will strengthen a county commission or EDA submission."
+    contact_phone: (304) 558-2234
+  process: "The West Virginia Department of Economic Development (WVDED), appointed\
+    \ by Governor Morrisey to manage OZ 2.0, is accepting tract nominations from local\
+    \ economic development authorities, county commissions, and regional planning\
+    \ councils through July 1, 2026 — all three entity types are explicitly eligible\
+    \ to submit. Visit westvirginia.gov/oz for nomination instructions; if no dedicated\
+    \ OZ contact email is listed, call the WVDED main line at (304) 558-2234 and ask\
+    \ to be routed to the OZ 2.0 team. West Virginia must nominate 52 of 207 eligible\
+    \ tracts (25% statutory cap), all of which carry a rural designation under Notice\
+    \ 2025-50. Since all 207 eligible tracts are rural-designated, WVDED has not published\
+    \ a formal scoring rubric; the factors listed here — investment readiness, existing\
+    \ infrastructure, and development momentum — reflect standard practice in similar\
+    \ state processes and are not official WVDED guidance. Verify the submission format\
+    \ at westvirginia.gov/oz before submitting. Two considerations specific to West Virginia:\
+    \ (1) The energy transition context is real — coal-to-solar and data-center conversions\
+    \ in McDowell, Mingo, and Raleigh counties represent the primary near-term investment\
+    \ pipeline, but communities in these counties have experienced extraction-driven\
+    \ disinvestment for decades and warrant anti-displacement protections in any project\
+    \ commitments; (2) Given that the July 1 state deadline coincides with the federal\
+    \ nomination window opening, planners should treat June 15 as an internal target\
+    \ date to confirm submission readiness."
   scoring_rubric_url: null
   state_deadline: '2026-07-01'
   application_portal_url: https://westvirginia.gov/oz
   tribal_consultation:
-    framework: null
+    framework: "West Virginia has no federally recognized tribes with current in-state\
+      \ reservations. The Appalachian region has significant Native American cultural\
+      \ and historical connections — the Cherokee Nation (OK) and Shawnee Tribe (OK)\
+      \ both have historic ties to West Virginia territory. For OZ 2.0 purposes, no\
+      \ formal tribal consultation protocol has been published by WVDED. If your\
+      \ jurisdiction has documented Native American archaeological or cultural sites,\
+      \ contact the West Virginia State Historic Preservation Office (WVSHPO) at\
+      \ wvculture.org/shpo before submitting a nomination."
     citation: null
   regional_edds: []
   rural_partners:
     usda_rd_url: https://www.rd.usda.gov/wv/
     rcap_regional:
-      name: Great Lakes Community Action Partnership
-      url: https://www.glcap.org/
+      name: Southeast Rural Community Assistance Project (SERCAP)
+      url: https://www.sercap.org/
     rural_lisc:
       name: Rural LISC
       url: https://www.lisc.org/rural/
