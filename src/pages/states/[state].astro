@@ -105,6 +105,10 @@ const deadlinePassed = state_deadline
 const daysToWindow = Math.ceil(
   (new Date('2026-07-01').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
 );
+
+const daysToStateDeadline = (state_deadline && !deadlinePassed)
+  ? Math.ceil((new Date(state_deadline + 'T00:00:00').getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
+  : null;
 ---
 
 <Layout title={name} description={`OZ 2.0 eligible tracts, nomination process, and coalition guidance for ${name}.`}>
@@ -135,7 +139,8 @@ const daysToWindow = Math.ceil(
       { label: 'Total eligible tracts', value: total_eligible.toLocaleString() },
       { label: 'Rural eligible',        value: rural_eligible.toLocaleString() },
       { label: 'Max designations (25%)', value: max_designations.toLocaleString() },
-      { label: 'Days to nomination window', value: daysToWindow > 0 ? daysToWindow : 'Open' },
+      { label: daysToStateDeadline != null ? 'Days to state deadline' : 'Days to federal window',
+        value: daysToStateDeadline != null ? daysToStateDeadline : (daysToWindow > 0 ? daysToWindow : 'Open') },
     ].map(({ label, value }) => (
       <div class="bg-white border border-oz-neutral-200 rounded p-5">
         <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
@@ -286,13 +291,36 @@ const daysToWindow = Math.ceil(
     </section>
   )}
 
-  <!-- 5. How to influence the nomination (formerly 4) -->
+  <!-- 5. How to influence the nomination -->
   <section class="mb-10">
     <h2 class="text-lg font-semibold mb-4">How to influence the nomination</h2>
-    <p class="text-oz-neutral-500 text-sm mb-4">
-      Detailed coalition checklist at <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">/how-to-advocate</a>.
-      Steps specific to {name} will appear here once the state process is documented.
-    </p>
+    {status_tier === 'public_process' && !deadlinePassed ? (
+      <div class="bg-green-50 border border-green-200 rounded p-5">
+        <p class="text-sm font-semibold text-green-800 mb-3">The submission window is open. Here's what to do:</p>
+        <ol class="text-sm text-oz-neutral-800 list-decimal list-inside space-y-2">
+          <li>Review the full process in the <strong>Nomination process</strong> section above.</li>
+          {application_portal_url && (
+            <li><a href={application_portal_url} target="_blank" rel="noopener" class="text-oz-blue underline">Open the submission portal →</a></li>
+          )}
+          {state_deadline && (
+            <li>File before the state deadline: <strong>{state_deadline}</strong>.</li>
+          )}
+          <li>Build your case: document census data, existing development assets, letters of support from partners, and community need.</li>
+          <li>For coalition-building tactics and sample language, see <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how-to-advocate</a>.</li>
+        </ol>
+      </div>
+    ) : status_tier === 'public_process' && deadlinePassed ? (
+      <p class="text-oz-neutral-500 text-sm">
+        The state submission window closed {state_deadline}. {name} is in internal review.
+        Monitor the lead agency's page for draft recommendations.
+      </p>
+    ) : (
+      <p class="text-oz-neutral-500 text-sm">
+        No public process has been announced for {name} yet.
+        See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how-to-advocate</a> for
+        steps to engage the governor's office and build a coalition now.
+      </p>
+    )}
   </section>
 
   <!-- 5. Who to contact -->
@@ -353,16 +381,24 @@ const daysToWindow = Math.ceil(
     </div>
   </section>
 
-  <!-- 6. Tribal callout (if applicable) -->
-  {tribal_consultation.framework && (
-    <section class="mb-10">
-      <h2 class="text-lg font-semibold mb-4">Native / tribal</h2>
-      <div class="bg-white border border-oz-neutral-200 rounded p-6 text-sm text-oz-neutral-700">
-        <p><strong>Consultation framework:</strong> {tribal_consultation.framework}</p>
-        {tribal_consultation.citation && <p class="mt-1 text-oz-neutral-500">{tribal_consultation.citation}</p>}
-      </div>
-    </section>
-  )}
+  <!-- 6. Tribal callout -->
+  <section class="mb-10">
+    <h2 class="text-lg font-semibold mb-4">Native / tribal</h2>
+    <div class="bg-white border border-oz-neutral-200 rounded p-6 text-sm text-oz-neutral-700">
+      {tribal_consultation.framework ? (
+        <>
+          <p>{tribal_consultation.framework}</p>
+          {tribal_consultation.citation && <p class="mt-1 text-oz-neutral-500">{tribal_consultation.citation}</p>}
+        </>
+      ) : (
+        <p class="text-oz-neutral-500">
+          No formal tribal consultation process has been published for {name}'s OZ 2.0 nomination.
+          If your jurisdiction contains or is adjacent to tribal land, contact the relevant
+          Tribal Historic Preservation Office (THPO) or tribal government directly before submitting a nomination.
+        </p>
+      )}
+    </div>
+  </section>
 
   <!-- 7. Sources -->
   <section class="text-xs text-oz-neutral-500">
