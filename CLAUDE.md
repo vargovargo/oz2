@@ -103,7 +103,7 @@ MS, OH, KS, SC, NC, TX, WV).
 
 Rural-designated tracts (IRS Rev. Proc. 2026-14 / Notice 2025-50 §4.01) qualify for
 Qualified Rural Opportunity Fund (QROF) treatment under P.L. 119-21 (OBBBA). Key mechanics:
-- **Rural bonus step-up**: QROF investors holding 10+ years get a 30% basis step-up on
+- **Rural bonus step-up**: QROF investors holding 5+ years get a 30% basis step-up on
   the original deferred gain (permanently excludes 30% of the original gain, beyond the
   standard 10-year appreciation exclusion).
 - **Reduced improvement threshold**: Rural QOZBs must improve existing property by 50%
