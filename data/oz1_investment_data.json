@@ -1,0 +1,181 @@
+{
+  "kennedy_wheeler": {
+    "citation": "Kennedy, P. & Wheeler, H. (2022). 'Neighborhood-Level Investment from the U.S. Opportunity Zone Program: Early Evidence.' UNC Tax Center / UC Berkeley. Form 8996 data via Joint Committee on Taxation; electronic filers only (approx. 75% of $ volume). Tax years 2019\u20132020.",
+    "url": "https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf",
+    "data_years": [
+      2019,
+      2020
+    ],
+    "total_2019_billion": 18.9,
+    "total_2019_note": "electronic filers only; est. $6B additional from paper filers",
+    "cumulative_2020_billion": 41.5,
+    "qofs_in_sample": 2756,
+    "qozbs_in_sample": 2490,
+    "oz_tracts_with_investment": 1362,
+    "concentration": {
+      "pct_tracts_zero_investment": 84,
+      "total_oz_tracts_in_sample": 8764,
+      "tracts_zero_investment": 7402,
+      "top_1pct_share": 42,
+      "top_5pct_share": 80,
+      "urban_share_of_investment": 95,
+      "urban_share_of_eligible_ozs": 86
+    },
+    "top_msas": [
+      {
+        "area": "New York City",
+        "investment_billion": 3.8,
+        "rank": 1
+      },
+      {
+        "area": "Los Angeles",
+        "investment_billion": 1.7,
+        "rank": 2
+      },
+      {
+        "area": "Phoenix",
+        "investment_billion": null,
+        "rank": null,
+        "note": "top 5 by $"
+      },
+      {
+        "area": "Denver",
+        "investment_billion": null,
+        "rank": null,
+        "note": "top 5 by $"
+      },
+      {
+        "area": "San Francisco",
+        "investment_billion": null,
+        "rank": null,
+        "note": "top 5 by $"
+      }
+    ],
+    "top_msa_per_capita": [
+      "Salt Lake City, UT",
+      "Nashville, TN",
+      "Tampa, FL",
+      "Huntsville, AL"
+    ],
+    "state_rankings": {
+      "highest_investor_share": [
+        "CA",
+        "CO",
+        "CT",
+        "NJ",
+        "NY",
+        "NV",
+        "UT"
+      ],
+      "highest_investment_share": [
+        "AZ",
+        "CO",
+        "DC",
+        "OR",
+        "UT"
+      ],
+      "lowest_investment": [
+        "AL",
+        "IA",
+        "IL",
+        "KS",
+        "NM"
+      ]
+    },
+    "investor_profile": {
+      "avg_household_income_floor": 1000000,
+      "note": "Average 2019 household income of OZ investors estimated >$1M"
+    }
+  },
+  "coyne_johnson": {
+    "citation": "Coyne, D. & Johnson, C.E. (2023). 'Use of the Opportunity Zone Tax Incentive: What the Tax Data Tell Us.' Treasury Office of Tax Analysis Working Paper 123, July 2023. Full Form 8996 universe (all filers). Tax years 2018\u20132020.",
+    "url": "https://home.treasury.gov/system/files/131/WP-123.pdf",
+    "data_years": [
+      2018,
+      2019,
+      2020
+    ],
+    "annual_flows_billion": {
+      "2018": 4,
+      "2019": 26,
+      "2020": 18
+    },
+    "cumulative_qoz_property_billion": 44,
+    "cumulative_qof_assets_billion": 48,
+    "coverage": {
+      "pct_designated_ozs_any_investment_2020": 48,
+      "communities_receiving_investment_2020": 3800,
+      "total_designated_communities": 8764
+    },
+    "sectors_2020": {
+      "real_estate_pct": 68,
+      "real_estate_construction_lodging_businesses_pct": 67,
+      "finance_insurance_pct": 5,
+      "construction_pct": 4
+    },
+    "sectors_2019": {
+      "real_estate_pct": 60
+    },
+    "investor_profile": {
+      "individual_investors_2020": 25000,
+      "median_agi_individual": 730000,
+      "median_deferred_gain_individual": 250000,
+      "avg_investment_entity": 4000000
+    },
+    "receiving_oz_need_profile": {
+      "poverty_rate_pctile": 87,
+      "median_hh_income_pctile": 81,
+      "unemployment_pctile": 80
+    },
+    "state_coverage_partial": [
+      {
+        "state": "District of Columbia",
+        "abbr": "DC",
+        "pct_ozs_with_investment": null,
+        "note": "highest"
+      },
+      {
+        "state": "Oregon",
+        "abbr": "OR",
+        "pct_ozs_with_investment": null,
+        "note": "highest"
+      },
+      {
+        "state": "Colorado",
+        "abbr": "CO",
+        "pct_ozs_with_investment": null,
+        "note": "highest"
+      },
+      {
+        "state": "Utah",
+        "abbr": "UT",
+        "pct_ozs_with_investment": null,
+        "note": "highest"
+      },
+      {
+        "state": "Arizona",
+        "abbr": "AZ",
+        "pct_ozs_with_investment": null,
+        "note": "highest"
+      },
+      {
+        "state": "Vermont",
+        "abbr": "VT",
+        "pct_ozs_with_investment": 60
+      },
+      {
+        "state": "Mississippi",
+        "abbr": "MS",
+        "pct_ozs_with_investment": 64
+      },
+      {
+        "state": "South Dakota",
+        "abbr": "SD",
+        "pct_ozs_with_investment": 68
+      }
+    ],
+    "state_coverage_note": "Full Table 9 (all 51 jurisdictions) is in WP-123. Partial values above are confirmed from published summaries. Amounts rounded to nearest $10M for state totals."
+  },
+  "fetched_at": "2026-05-14",
+  "notes": "Form 8996 microdata is restricted to Treasury OTA and JCT staff under statutory authority. Tract-level investment amounts are not publicly released by either paper. The finest publicly-available geographic grain is MSA-level (K&W) and state-level (C&J Table 9)."
+}

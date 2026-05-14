@@ -114,7 +114,7 @@ purpose: |
 
 ## 7. OZ 1.0 evidence base — academic and quasi-experimental
 
-**Kennedy, Patrick and Wheeler, Harrison. "Neighborhood-Level Investment from the U.S. Opportunity Zone Program: Early Evidence."** UNC Tax Center, Apr 12, 2021. https://tax.unc.edu/publication/neighborhood-level-investment-from-the-u-s-opportunity-zone-program-early-evidence/ — $18.9B in OZ investments in 2019; highly concentrated geographically; most designated zones received nothing; capital flowed to relatively advantaged LICs.
+**Kennedy, Patrick and Wheeler, Harrison. "Neighborhood-Level Investment from the U.S. Opportunity Zone Program: Early Evidence."** UNC Tax Center, Apr 12, 2021 (updated Apr 2022). https://tax.unc.edu/publication/neighborhood-level-investment-from-the-u-s-opportunity-zone-program-early-evidence/ PDF: https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf — $18.9B in OZ investments in 2019 (e-filers, ~75% of $ volume); $41.5B cumulative through 2020; 84% of OZ tracts received zero investment; top 1% of tracts = 42% of capital; top 5% ≈ 80%; NYC metro $3.8B; LA metro $1.7B; capital flowed to relatively advantaged LICs.
 
 **Corinth, Coyne, Feldman, Johnson. "The Targeting of Place-Based Policies: The New Markets Tax Credit Versus Opportunity Zones."** In *The Economics of Place-Based Policies*, U Chicago Press, 2025. https://www.nber.org/books-and-chapters/economics-place-based-policies/targeting-place-based-policies-new-markets-tax-credit-versus-opportunity-zones — OZs disproportionately attract investment to tracts with higher pre-existing private investment; most distressed tracts receive neither NMTC nor OZ capital.
 
@@ -133,6 +133,8 @@ purpose: |
 ## 8. OZ 1.0 evidence base — government and policy assessments
 
 **Trump White House CEA, "The Impact of Opportunity Zones: An Initial Assessment."** Aug 2020. https://trumpwhitehouse.archives.gov/wp-content/uploads/2020/08/The-Impact-of-Opportunity-Zones-An-Initial-Assessment.pdf
+
+**Coyne, David and Johnson, Craig E. "Use of the Opportunity Zone Tax Incentive: What the Tax Data Tell Us."** Treasury Office of Tax Analysis Working Paper 123, July 2023. https://home.treasury.gov/system/files/131/WP-123.pdf — Most comprehensive IRS-data analysis; full Form 8996 universe, 2018–2020; ~$48B in total QOF assets by end of 2020; 48% of designated communities received any investment; real estate = 68% of QOZ property in 2020; ~25,000 individual investors with median AGI ~$730K; state-level coverage in Table 9. last_checked: 2026-05-14.
 
 **Treasury/IRS QOF data filings (Form 8996).**
 
