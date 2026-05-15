@@ -12,8 +12,8 @@ import Layout from '@/layouts/Layout.astro';
       to those findings. This page summarizes the evidence honestly.
     </p>
 
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">What the investment data showed</h2>
+    <section id="investment-data" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">What the investment data showed<a href="#investment-data" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
         Significant private capital did flow into OZ-designated tracts. Qualified Opportunity Funds
         (QOFs) self-certified with the IRS via Form 8996, and Treasury's filings showed meaningful
@@ -22,14 +22,23 @@ import Layout from '@/layouts/Layout.astro';
         <a href="https://trumpwhitehouse.archives.gov/wp-content/uploads/2020/08/The-Impact-of-Opportunity-Zones-An-Initial-Assessment.pdf" class="text-oz-blue underline" target="_blank" rel="noopener">August 2020 initial assessment</a>,
         characterized the program as generating substantial investment and job creation in
         designated areas, drawing on early Form 8996 returns and survey data.
+        Treasury economists Coyne and Johnson, with access to the full Form 8996 universe,
+        documented approximately $48 billion in total QOF assets by end of 2020 — rising
+        from $4 billion in 2018 to $26 billion in 2019 before moderating to $18 billion in
+        new annual flow in 2020.
       </p>
       <p class="text-sm text-oz-neutral-700 mb-4">
-        The geographic distribution of that capital, however, was skewed. Investment concentrated
-        in tracts that were already showing signs of appreciation — often urban OZs in or near
-        gentrifying neighborhoods, not the high-distress rural and legacy industrial tracts the
-        program was originally conceived to help. Community development practitioners and
-        researchers consistently noted that rural and tribal OZs attracted little capital relative
-        to their share of designated tracts. EIG's own
+        The geographic distribution of that capital, however, was skewed. Kennedy and Wheeler,
+        using Form 8996 data accessed via the Joint Committee on Taxation, found that
+        <strong class="text-oz-neutral-900">84% of designated OZ tracts received zero
+        investment</strong> in 2019, with the top 1% of tracts absorbing 42% of all capital
+        and the top 5% taking roughly 80%. Investment concentrated in tracts that were already
+        showing signs of appreciation — often urban OZs in or near gentrifying neighborhoods,
+        not the high-distress rural and legacy industrial tracts the program was originally
+        conceived to help. By 2020, only
+        <strong class="text-oz-neutral-900">48% of designated communities had attracted any
+        capital at all</strong> (Coyne &amp; Johnson). Rural and tribal OZs attracted little
+        capital relative to their share of designated tracts. EIG's own
         <a href="https://eig.org/opportunity-zones-research-brief/" class="text-oz-blue underline" target="_blank" rel="noopener">January 2024 literature review</a>
         acknowledged this geographic divergence and argued for program reforms to address it.
       </p>
@@ -38,11 +47,234 @@ import Layout from '@/layouts/Layout.astro';
         assess aggregate outcomes with precision. QOFs filed Form 8996 but faced no meaningful
         penalty for non-filing or incomplete data, and no tract-level investment reporting was
         required. The data gaps are a recurring limitation in every study of OZ 1.0 outcomes.
+        Coyne and Johnson estimated roughly 25,000 individual OZ investors in 2020, with a
+        median adjusted gross income of approximately $730,000 — consistent with the program's
+        primary beneficiaries being high-income households with realized capital gains, not
+        community-based development organizations.
       </p>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">What the academic research found</h2>
+    <section id="by-the-numbers" class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">By the numbers<a href="#by-the-numbers" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
+
+      <!-- Source context -->
+      <div class="grid grid-cols-2 gap-3 mb-6 text-xs">
+        <div class="border border-oz-neutral-200 rounded p-3 bg-white">
+          <p class="font-semibold text-oz-neutral-900 mb-1">Kennedy &amp; Wheeler (2022)</p>
+          <p class="text-oz-neutral-500">Form 8996 e-filers via Joint Committee on Taxation · Tax years 2019–2020 · ~75% of total $ volume</p>
+        </div>
+        <div class="border border-oz-neutral-200 rounded p-3 bg-white">
+          <p class="font-semibold text-oz-neutral-900 mb-1">Coyne &amp; Johnson (Treasury OTA, 2023)</p>
+          <p class="text-oz-neutral-500">Full Form 8996 universe · Tax years 2018–2020 · Most comprehensive IRS-data analysis available</p>
+        </div>
+      </div>
+
+      <!-- Investment timeline -->
+      <div class="mb-7">
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Annual QOF investment flow — Coyne &amp; Johnson</p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-3 text-sm">
+            <span class="w-10 text-oz-neutral-500 shrink-0">2018</span>
+            <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
+              <div class="bg-[#1a4480] h-full rounded-full" style="width: 15%;"></div>
+            </div>
+            <span class="w-12 text-right font-semibold text-oz-neutral-900 shrink-0">$4B</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="w-10 text-oz-neutral-500 shrink-0">2019</span>
+            <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
+              <div class="bg-[#1a4480] h-full rounded-full" style="width: 100%;"></div>
+            </div>
+            <span class="w-12 text-right font-semibold text-oz-neutral-900 shrink-0">$26B</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="w-10 text-oz-neutral-500 shrink-0">2020</span>
+            <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
+              <div class="bg-[#1a4480] h-full rounded-full" style="width: 69%;"></div>
+            </div>
+            <span class="w-12 text-right font-semibold text-oz-neutral-900 shrink-0">$18B</span>
+          </div>
+        </div>
+        <p class="text-xs text-oz-neutral-400 mt-2">Cumulative: $48B in total QOF assets by end of 2020 ($44B in QOZ property). 2019 spike reflects the first major deferral deadline under TCJA.</p>
+      </div>
+
+      <!-- Concentration stats -->
+      <div class="mb-7">
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Geographic concentration — Kennedy &amp; Wheeler (2019 data, e-filers)</p>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
+            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">84%</div>
+            <div class="text-xs text-oz-neutral-500 leading-snug">of OZ tracts received<br>zero investment</div>
+          </div>
+          <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
+            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">42%</div>
+            <div class="text-xs text-oz-neutral-500 leading-snug">of all capital went to<br>the top 1% of tracts</div>
+          </div>
+          <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
+            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">80%</div>
+            <div class="text-xs text-oz-neutral-500 leading-snug">of all capital went to<br>the top 5% of tracts</div>
+          </div>
+        </div>
+        <p class="text-xs text-oz-neutral-400 mt-2">95% of investment went to urban OZs, which represent 86% of all eligible tracts — close to proportional. The rural gap is a concentration-within-urban story as much as an urban-vs-rural one.</p>
+      </div>
+
+      <!-- Top metros + sector -->
+      <div class="grid grid-cols-2 gap-5 mb-7">
+        <!-- Top metro areas -->
+        <div>
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Top metro areas by $ — Kennedy &amp; Wheeler (2019)</p>
+          <table class="w-full text-sm">
+            <tbody class="divide-y divide-oz-neutral-100">
+              <tr>
+                <td class="py-2 text-oz-neutral-700">New York City</td>
+                <td class="py-2 text-right font-semibold text-oz-neutral-900">$3.8B</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-oz-neutral-700">Los Angeles</td>
+                <td class="py-2 text-right font-semibold text-oz-neutral-900">$1.7B</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-oz-neutral-500 text-xs">Phoenix · Denver · San Francisco</td>
+                <td class="py-2 text-right text-oz-neutral-400 text-xs">top 5 by $</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-xs text-oz-neutral-400 mt-2">Per-capita leaders (smaller markets with high density of OZ deals): Salt Lake City, Nashville, Tampa, Huntsville.</p>
+        </div>
+
+        <!-- Sector breakdown -->
+        <div>
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOZ property by sector — Coyne &amp; Johnson (2020)</p>
+          <div class="space-y-2.5">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-700">Real estate</span>
+                <span class="font-semibold text-oz-neutral-900">68%</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 68%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-700">Finance &amp; insurance</span>
+                <span class="font-semibold text-oz-neutral-900">5%</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 5%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-700">Construction</span>
+                <span class="font-semibold text-oz-neutral-900">4%</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 4%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-500">All other</span>
+                <span class="font-semibold text-oz-neutral-400">23%</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-oz-neutral-300 rounded-full" style="width: 23%;"></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-oz-neutral-400 mt-2">~⅔ of all <em>investee businesses</em> were in real estate, construction, or lodging — consistent across fund sizes.</p>
+        </div>
+      </div>
+
+      <!-- Investor profile + coverage -->
+      <div class="grid grid-cols-2 gap-5">
+        <!-- Investor profile -->
+        <div class="border border-oz-neutral-200 rounded p-4 bg-white">
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Investor profile — Coyne &amp; Johnson (2020 individual filers)</p>
+          <dl class="divide-y divide-oz-neutral-100 text-sm">
+            <div class="flex justify-between py-2 first:pt-0">
+              <dt class="text-oz-neutral-500">Individual investors</dt>
+              <dd class="font-semibold text-oz-neutral-900">~25,000</dd>
+            </div>
+            <div class="flex justify-between py-2">
+              <dt class="text-oz-neutral-500">Median AGI</dt>
+              <dd class="font-semibold text-oz-neutral-900">$730K</dd>
+            </div>
+            <div class="flex justify-between py-2">
+              <dt class="text-oz-neutral-500">Median deferred gain</dt>
+              <dd class="font-semibold text-oz-neutral-900">$250K</dd>
+            </div>
+            <div class="flex justify-between py-2">
+              <dt class="text-oz-neutral-500">Avg entity investment</dt>
+              <dd class="font-semibold text-oz-neutral-900">$4M</dd>
+            </div>
+          </dl>
+          <p class="text-xs text-oz-neutral-400 mt-3">Kennedy &amp; Wheeler put average investor household income above $1M. Median AGI of $730K is roughly the top 1% of U.S. households.</p>
+        </div>
+
+        <!-- Coverage + need profile -->
+        <div class="border border-oz-neutral-200 rounded p-4 bg-white">
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Coverage by 2020 — Coyne &amp; Johnson</p>
+          <div class="text-center mb-4">
+            <div class="text-5xl font-bold text-oz-neutral-900">48%</div>
+            <div class="text-xs text-oz-neutral-500 mt-1">of designated communities received<br>any investment by end of 2020</div>
+            <div class="text-xs text-oz-neutral-400 mt-1">~3,800 of ~8,700 communities</div>
+          </div>
+          <p class="text-xs text-oz-neutral-500 font-semibold uppercase tracking-wide mb-2">Avg OZ that received investment</p>
+          <dl class="divide-y divide-oz-neutral-100 text-xs">
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">Poverty rate percentile</dt>
+              <dd class="font-semibold text-oz-neutral-700">87th</dd>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">Median HH income percentile</dt>
+              <dd class="font-semibold text-oz-neutral-700">81st</dd>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">Unemployment percentile</dt>
+              <dd class="font-semibold text-oz-neutral-700">80th</dd>
+            </div>
+          </dl>
+          <p class="text-xs text-oz-neutral-400 mt-2">OZs that attracted capital were genuinely distressed — the problem was the majority that received nothing.</p>
+        </div>
+      </div>
+
+      <!-- State coverage note -->
+      <div class="mt-5 border border-oz-neutral-200 rounded p-4 bg-white">
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-2">State-level coverage — Coyne &amp; Johnson Table 9 (2020, partial)</p>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-xs text-oz-neutral-700 mb-3">
+          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
+            <span>DC · OR · CO · UT · AZ</span>
+            <span class="text-oz-neutral-500">highest % OZs funded</span>
+          </div>
+          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
+            <span>South Dakota</span>
+            <span class="font-semibold">68% of OZs</span>
+          </div>
+          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
+            <span>Mississippi</span>
+            <span class="font-semibold">64% of OZs</span>
+          </div>
+          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
+            <span>Vermont</span>
+            <span class="font-semibold">60% of OZs</span>
+          </div>
+          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
+            <span>National average</span>
+            <span class="font-semibold">48% of OZs</span>
+          </div>
+          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
+            <span>AL · IA · IL · KS · NM</span>
+            <span class="text-oz-neutral-500">lowest $ share (K&amp;W)</span>
+          </div>
+        </div>
+        <p class="text-xs text-oz-neutral-400">Full Table 9 (all 51 jurisdictions: % of OZs with QOZ property, $ per OZ) is in <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">WP-123</a>. Coverage % alone doesn't indicate investment scale — a state with few OZs can show high coverage with modest total dollars.</p>
+      </div>
+    </section>
+
+    <section id="academic-research" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">What the academic research found<a href="#academic-research" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
         The academic literature on OZ 1.0 is largely null-to-modest in its findings, particularly
         on the outcomes that advocates most prominently claimed.
@@ -77,8 +309,8 @@ import Layout from '@/layouts/Layout.astro';
       </p>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">The community development critique</h2>
+    <section id="community-critique" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">The community development critique<a href="#community-critique" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
         Community development and housing organizations raised concerns about OZ 1.0 throughout
         its operation, many of which were borne out by the investment data. NCRC's
@@ -107,8 +339,8 @@ import Layout from '@/layouts/Layout.astro';
       </p>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">What OZ 2.0 changed in response</h2>
+    <section id="oz2-changes" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">What OZ 2.0 changed in response<a href="#oz2-changes" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
         The One Big Beautiful Bill Act (P.L. 119-21, signed July 4, 2025) made three categories
         of design changes that speak directly to the OZ 1.0 record.
@@ -145,8 +377,8 @@ import Layout from '@/layouts/Layout.astro';
       </p>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">Implications for OZ 2.0 advocates</h2>
+    <section id="implications" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Implications for OZ 2.0 advocates<a href="#implications" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
         The OZ 1.0 evidence base supports two conclusions that should shape how local planners
         approach OZ 2.0. First, designation is a necessary but not sufficient condition for
@@ -166,6 +398,12 @@ import Layout from '@/layouts/Layout.astro';
     </section>
 
     <section class="mb-8 text-xs text-oz-neutral-400 border-t border-oz-neutral-100 pt-6">
+      <p class="mb-1">Investment data (primary sources):
+        <a href="https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Kennedy &amp; Wheeler (UNC / UC Berkeley, 2022)</a> —
+        Form 8996 via JCT, tax years 2019–2020;
+        <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Coyne &amp; Johnson (Treasury OTA WP-123, 2023)</a> —
+        full Form 8996 universe, tax years 2018–2020.
+      </p>
       <p class="mb-1">Academic sources:
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0094119022000286" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Chen, Glaeser, Wessel (JUE 2023)</a>;
         <a href="https://www.brookings.edu/wp-content/uploads/2021/01/Arefeva-Davis-Ghent-Park-2020-Job-Growth-from-Opportunity-Zones.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Arefeva et al. (Brookings 2020)</a>;
@@ -173,15 +411,43 @@ import Layout from '@/layouts/Layout.astro';
       </p>
       <p class="mb-1">Government and policy:
         <a href="https://trumpwhitehouse.archives.gov/wp-content/uploads/2020/08/The-Impact-of-Opportunity-Zones-An-Initial-Assessment.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">White House CEA (Aug 2020)</a>;
-        <a href="https://eig.org/opportunity-zones-research-brief/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">EIG, "Are Opportunity Zones Working?" (Jan 2024)</a>;
-        Treasury/IRS Form 8996 data.
+        <a href="https://eig.org/opportunity-zones-research-brief/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">EIG, "Are Opportunity Zones Working?" (Jan 2024)</a>.
       </p>
       <p>Critique:
         <a href="https://www.ncrc.org/opportunity-zones-a-taxpayer-funded-program-that-primarily-benefits-wealthy-investors/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NCRC (Oct 2025)</a>;
         <a href="https://nlihc.org/sites/default/files/A_Critical_Explanation_of_Opportunity_Zones.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NLIHC (2021)</a>;
         <a href="https://www.congress.gov/bill/116th-congress/senate-bill/2787" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Wyden S. 2787 (2019)</a>.
         OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21.
+        Last reviewed: <time datetime="2026-05-14">May 14, 2026</time>.
       </p>
     </section>
   </div>
 </Layout>
+
+<style>
+  h2 .anchor-link {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0;
+    margin-left: 0.4rem;
+    color: #9ca3af;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: opacity 0.15s, color 0.15s;
+  }
+  h2:hover .anchor-link { opacity: 1; }
+  .anchor-link:hover { color: #6b7280; }
+  .anchor-link.copied { color: #10b981; opacity: 1; }
+</style>
+
+<script>
+  document.querySelectorAll('.anchor-link').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      navigator.clipboard.writeText(location.origin + location.pathname + a.getAttribute('href')).then(() => {
+        a.classList.add('copied');
+        setTimeout(() => a.classList.remove('copied'), 1500);
+      });
+    });
+  });
+</script>
