@@ -1,181 +1,223 @@
 {
+  "metadata": {
+    "fetched_at": "2026-05-15",
+    "notes": "All figures extracted directly from source PDFs. No interpolation. Form 8996 microdata is restricted to Treasury OTA / JCT staff; tract-level investment amounts not publicly released. Finest public geographic grain: commuting zones (K&W) and states (C&J)."
+  },
   "kennedy_wheeler": {
-    "citation": "Kennedy, P. & Wheeler, H. (2022). 'Neighborhood-Level Investment from the U.S. Opportunity Zone Program: Early Evidence.' UNC Tax Center / UC Berkeley. Form 8996 data via Joint Committee on Taxation; electronic filers only (approx. 75% of $ volume). Tax years 2019\u20132020.",
+    "citation": "Kennedy, P. & Wheeler, H. (2022). 'Neighborhood-Level Investment from the U.S. Opportunity Zone Program: Early Evidence.' UC Berkeley / Joint Committee on Taxation. Draft: April 13, 2022. Form 8996 (electronic filers), tax years 2019-2020.",
     "url": "https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf",
-    "data_years": [
-      2019,
-      2020
-    ],
-    "total_2019_billion": 18.9,
-    "total_2019_note": "electronic filers only; est. $6B additional from paper filers",
-    "cumulative_2020_billion": 41.5,
-    "qofs_in_sample": 2756,
-    "qozbs_in_sample": 2490,
-    "oz_tracts_with_investment": 1362,
-    "concentration": {
-      "pct_tracts_zero_investment": 84,
-      "total_oz_tracts_in_sample": 8764,
-      "tracts_zero_investment": 7402,
-      "top_1pct_share": 42,
-      "top_5pct_share": 80,
-      "urban_share_of_investment": 95,
-      "urban_share_of_eligible_ozs": 86
+    "headline": {
+      "cumulative_all_filers_2020_billion": 41.5,
+      "efiled_share_cumulative_2020": 0.78,
+      "efiled_cumulative_2020_billion": 32.5,
+      "tracts_zero_investment_of_8764": 5522,
+      "pct_tracts_zero_investment_efilers_2020": 63,
+      "pct_tracts_zero_investment_efilers_2019": 85,
+      "tracts_with_investment_efilers_2020": 3242,
+      "tracts_with_investment_efilers_2019": 1347,
+      "avg_investment_per_oz_resident_dollars": 3313,
+      "median_investment_per_oz_resident_dollars": 386,
+      "median_total_investment_tracts_over_5k_million": 1.6,
+      "mean_total_investment_tracts_over_5k_million": 9.1,
+      "top_5pct_tracts_share_pct": 78,
+      "top_1pct_tracts_share_pct": 42,
+      "qof_median_household_income_2019": 741000,
+      "qof_average_household_income_2019": 4852000,
+      "national_median_household_income_2019": 69000,
+      "national_average_household_income_2019": 117000,
+      "jct_annual_program_cost_foregone_revenue_billion": 1.6
     },
-    "top_msas": [
+    "table2_investment_over_time": [
       {
-        "area": "New York City",
-        "investment_billion": 3.8,
-        "rank": 1
+        "tax_year": 2019,
+        "total_annual_flows_million": 26670,
+        "cumulative_flows_million": 26670,
+        "cumulative_efiled_million": 18779,
+        "efiled_share": 0.70,
+        "oz_tracts_with_investment": 1347,
+        "num_qofs": 2526,
+        "num_qobs": 2224
       },
       {
-        "area": "Los Angeles",
-        "investment_billion": 1.7,
-        "rank": 2
-      },
-      {
-        "area": "Phoenix",
-        "investment_billion": null,
-        "rank": null,
-        "note": "top 5 by $"
-      },
-      {
-        "area": "Denver",
-        "investment_billion": null,
-        "rank": null,
-        "note": "top 5 by $"
-      },
-      {
-        "area": "San Francisco",
-        "investment_billion": null,
-        "rank": null,
-        "note": "top 5 by $"
+        "tax_year": 2020,
+        "total_annual_flows_million": 14789,
+        "cumulative_flows_million": 41459,
+        "cumulative_efiled_million": 32504,
+        "efiled_share": 0.78,
+        "oz_tracts_with_investment": 3242,
+        "num_qofs": 3514,
+        "num_qobs": 3281
       }
     ],
-    "top_msa_per_capita": [
-      "Salt Lake City, UT",
-      "Nashville, TN",
-      "Tampa, FL",
-      "Huntsville, AL"
+    "table4_industry_qob_firms": [
+      {"naics2": "53", "industry": "Real Estate, Renting, and Leasing", "num_targets": 2066, "amount_million": 16778, "share": 0.52},
+      {"naics2": "23", "industry": "Construction", "num_targets": 448, "amount_million": 3733, "share": 0.11},
+      {"naics2": "52", "industry": "Finance and Insurance", "num_targets": 326, "amount_million": 2985, "share": 0.09},
+      {"naics2": "55", "industry": "Management of Companies", "num_targets": 81, "amount_million": 888, "share": 0.03},
+      {"naics2": "72", "industry": "Lodging and Restaurants", "num_targets": 111, "amount_million": 842, "share": 0.03},
+      {"naics2": "54", "industry": "Professional Services", "num_targets": 73, "amount_million": 823, "share": 0.03},
+      {"naics2": "31", "industry": "Manufacturing", "num_targets": 54, "amount_million": 325, "share": 0.01},
+      {"naics2": "other", "industry": "Other", "num_targets": 214, "amount_million": 4220, "share": 0.13},
+      {"naics2": "unknown", "industry": "Unknown", "num_targets": 304, "amount_million": 1909, "share": 0.06}
     ],
-    "state_rankings": {
-      "highest_investor_share": [
-        "CA",
-        "CO",
-        "CT",
-        "NJ",
-        "NY",
-        "NV",
-        "UT"
-      ],
-      "highest_investment_share": [
-        "AZ",
-        "CO",
-        "DC",
-        "OR",
-        "UT"
-      ],
-      "lowest_investment": [
-        "AL",
-        "IA",
-        "IL",
-        "KS",
-        "NM"
-      ]
-    },
-    "investor_profile": {
-      "avg_household_income_floor": 1000000,
-      "note": "Average 2019 household income of OZ investors estimated >$1M"
-    }
+    "tableA3_top50_commuting_zones": [
+      {"area": "New York, NY-NJ-PA", "total_million": 3782, "per_oz_resident": 3358, "per_cz_resident": 181},
+      {"area": "Los Angeles, CA", "total_million": 1701, "per_oz_resident": 1916, "per_cz_resident": 92},
+      {"area": "Phoenix, AZ", "total_million": 1328, "per_oz_resident": 4274, "per_cz_resident": 275},
+      {"area": "Salt Lake City, UT", "total_million": 1325, "per_oz_resident": 15416, "per_cz_resident": 542},
+      {"area": "Denver, CO", "total_million": 889, "per_oz_resident": 6277, "per_cz_resident": 238},
+      {"area": "San Francisco, CA", "total_million": 816, "per_oz_resident": 4140, "per_cz_resident": 143},
+      {"area": "Detroit, MI", "total_million": 786, "per_oz_resident": 4666, "per_cz_resident": 158},
+      {"area": "Washington, DC-VA-MD-WV", "total_million": 759, "per_oz_resident": 3146, "per_cz_resident": 110},
+      {"area": "Philadelphia, PA-NJ-DE-MD", "total_million": 734, "per_oz_resident": 2142, "per_cz_resident": 111},
+      {"area": "Portland, OR-WA", "total_million": 703, "per_oz_resident": 6271, "per_cz_resident": 295},
+      {"area": "Huntsville, AL", "total_million": 666, "per_oz_resident": 18305, "per_cz_resident": 822},
+      {"area": "Nashville, TN", "total_million": 600, "per_oz_resident": 8141, "per_cz_resident": 302},
+      {"area": "Miami, FL", "total_million": 571, "per_oz_resident": 1748, "per_cz_resident": 86},
+      {"area": "Seattle, WA", "total_million": 570, "per_oz_resident": 2593, "per_cz_resident": 118},
+      {"area": "Houston, TX", "total_million": 563, "per_oz_resident": 1587, "per_cz_resident": 82},
+      {"area": "Austin, TX", "total_million": 537, "per_oz_resident": 3772, "per_cz_resident": 257},
+      {"area": "Tampa, FL", "total_million": 469, "per_oz_resident": 5815, "per_cz_resident": 158},
+      {"area": "Atlanta, GA", "total_million": 419, "per_oz_resident": 2817, "per_cz_resident": 73},
+      {"area": "Cleveland, OH", "total_million": 365, "per_oz_resident": 3083, "per_cz_resident": 127},
+      {"area": "Charleston, SC", "total_million": 360, "per_oz_resident": 5390, "per_cz_resident": 460},
+      {"area": "Sacramento, CA", "total_million": 355, "per_oz_resident": 2501, "per_cz_resident": 149},
+      {"area": "Baltimore, MD", "total_million": 343, "per_oz_resident": 2569, "per_cz_resident": 118},
+      {"area": "Indianapolis, IN", "total_million": 313, "per_oz_resident": 2979, "per_cz_resident": 155},
+      {"area": "St. Louis, MO-IL", "total_million": 311, "per_oz_resident": 5611, "per_cz_resident": 108},
+      {"area": "Minneapolis, MN-WI", "total_million": 300, "per_oz_resident": 2512, "per_cz_resident": 86},
+      {"area": "Stockton, CA", "total_million": 261, "per_oz_resident": 3729, "per_cz_resident": 164},
+      {"area": "Boston, MA-NH", "total_million": 256, "per_oz_resident": 1466, "per_cz_resident": 50},
+      {"area": "Cincinnati, OH-KY-IN", "total_million": 251, "per_oz_resident": 2864, "per_cz_resident": 110},
+      {"area": "Dallas, TX", "total_million": 230, "per_oz_resident": 1129, "per_cz_resident": 30},
+      {"area": "Richmond, VA", "total_million": 229, "per_oz_resident": 4967, "per_cz_resident": 183},
+      {"area": "San Jose, CA", "total_million": 218, "per_oz_resident": 2512, "per_cz_resident": 82},
+      {"area": "Charlotte, NC-SC", "total_million": 211, "per_oz_resident": 1969, "per_cz_resident": 82},
+      {"area": "Columbus, OH", "total_million": 194, "per_oz_resident": 2100, "per_cz_resident": 90},
+      {"area": "Bakersfield, CA", "total_million": 187, "per_oz_resident": 1063, "per_cz_resident": 126},
+      {"area": "Fresno, CA", "total_million": 183, "per_oz_resident": 906, "per_cz_resident": 92},
+      {"area": "Las Vegas, NV", "total_million": 181, "per_oz_resident": 2045, "per_cz_resident": 84},
+      {"area": "Chicago, IL-IN-WI", "total_million": 180, "per_oz_resident": 1611, "per_cz_resident": 18},
+      {"area": "Orlando, FL", "total_million": 172, "per_oz_resident": 1253, "per_cz_resident": 58},
+      {"area": "Bridgeport, CT", "total_million": 157, "per_oz_resident": 1291, "per_cz_resident": 44},
+      {"area": "Omaha, NE-IA", "total_million": 155, "per_oz_resident": 3599, "per_cz_resident": 161},
+      {"area": "Raleigh, NC", "total_million": 143, "per_oz_resident": 1143, "per_cz_resident": 67},
+      {"area": "San Antonio, TX", "total_million": 138, "per_oz_resident": 2054, "per_cz_resident": 58},
+      {"area": "Providence, RI-MA", "total_million": 136, "per_oz_resident": 2292, "per_cz_resident": 84},
+      {"area": "New Orleans, LA", "total_million": 131, "per_oz_resident": 3321, "per_cz_resident": 92},
+      {"area": "Memphis, TN-MS-AR", "total_million": 121, "per_oz_resident": 1389, "per_cz_resident": 83},
+      {"area": "Greenville, SC", "total_million": 121, "per_oz_resident": 1802, "per_cz_resident": 115},
+      {"area": "Louisville, KY-IN", "total_million": 114, "per_oz_resident": 2490, "per_cz_resident": 87},
+      {"area": "Tucson, AZ", "total_million": 111, "per_oz_resident": 1077, "per_cz_resident": 97},
+      {"area": "Kansas City, MO-KS", "total_million": 107, "per_oz_resident": 1152, "per_cz_resident": 50},
+      {"area": "Birmingham, AL", "total_million": 101, "per_oz_resident": 2388, "per_cz_resident": 94}
+    ]
   },
   "coyne_johnson": {
-    "citation": "Coyne, D. & Johnson, C.E. (2023). 'Use of the Opportunity Zone Tax Incentive: What the Tax Data Tell Us.' Treasury Office of Tax Analysis Working Paper 123, July 2023. Full Form 8996 universe (all filers). Tax years 2018\u20132020.",
+    "citation": "Coyne, D. & Johnson, C.E. (2023). 'Use of the Opportunity Zone Tax Incentive: What the Data Tell Us.' OTA Working Paper 123, U.S. Department of the Treasury. July 26, 2023 (update). Forms 8996 and 8997, tax years 2018-2020.",
     "url": "https://home.treasury.gov/system/files/131/WP-123.pdf",
-    "data_years": [
-      2018,
-      2019,
-      2020
+    "headline": {
+      "total_designated_ozs_excl_possessions": 7826,
+      "qoz_property_2018_billion": 4,
+      "qoz_property_2019_billion": 28,
+      "qoz_property_2020_billion": 44,
+      "total_qof_assets_2018_billion": 4,
+      "total_qof_assets_2019_billion": 30,
+      "total_qof_assets_2020_billion": 48,
+      "pct_ozs_receiving_investment_through_2019": 26,
+      "pct_ozs_receiving_investment_through_2020": 48,
+      "pct_receiving_ozs_with_single_qof": 54,
+      "pct_receiving_ozs_with_more_than_5_qofs": 9,
+      "pct_qoz_investment_in_top_20pct_of_receiving_ozs": 84,
+      "median_individual_investor_agi_2020": 730000,
+      "median_deferred_gain_individual_2020": 250000,
+      "avg_deferred_gain_entity_2020_million": 4,
+      "annual_flow_2018_billion": 4,
+      "annual_flow_2019_billion": 26,
+      "annual_flow_2020_billion": 18,
+      "share_form8997_filed_by_individuals": 0.85,
+      "share_deferred_gains_from_individuals": 0.67
+    },
+    "table6_qof_sector": [
+      {"sector": "Real estate, rental, and leasing", "share_2019_pct": 60, "share_2020_pct": 57},
+      {"sector": "Finance and insurance", "share_2019_pct": 22, "share_2020_pct": 23},
+      {"sector": "Management of companies (holding companies)", "share_2019_pct": 4, "share_2020_pct": 6},
+      {"sector": "All Other", "share_2019_pct": 14, "share_2020_pct": 14}
     ],
-    "annual_flows_billion": {
-      "2018": 4,
-      "2019": 26,
-      "2020": 18
-    },
-    "cumulative_qoz_property_billion": 44,
-    "cumulative_qof_assets_billion": 48,
-    "coverage": {
-      "pct_designated_ozs_any_investment_2020": 48,
-      "communities_receiving_investment_2020": 3800,
-      "total_designated_communities": 8764
-    },
-    "sectors_2020": {
-      "real_estate_pct": 68,
-      "real_estate_construction_lodging_businesses_pct": 67,
-      "finance_insurance_pct": 5,
-      "construction_pct": 4
-    },
-    "sectors_2019": {
-      "real_estate_pct": 60
-    },
-    "investor_profile": {
-      "individual_investors_2020": 25000,
-      "median_agi_individual": 730000,
-      "median_deferred_gain_individual": 250000,
-      "avg_investment_entity": 4000000
-    },
-    "receiving_oz_need_profile": {
-      "poverty_rate_pctile": 87,
-      "median_hh_income_pctile": 81,
-      "unemployment_pctile": 80
-    },
-    "state_coverage_partial": [
-      {
-        "state": "District of Columbia",
-        "abbr": "DC",
-        "pct_ozs_with_investment": null,
-        "note": "highest"
-      },
-      {
-        "state": "Oregon",
-        "abbr": "OR",
-        "pct_ozs_with_investment": null,
-        "note": "highest"
-      },
-      {
-        "state": "Colorado",
-        "abbr": "CO",
-        "pct_ozs_with_investment": null,
-        "note": "highest"
-      },
-      {
-        "state": "Utah",
-        "abbr": "UT",
-        "pct_ozs_with_investment": null,
-        "note": "highest"
-      },
-      {
-        "state": "Arizona",
-        "abbr": "AZ",
-        "pct_ozs_with_investment": null,
-        "note": "highest"
-      },
-      {
-        "state": "Vermont",
-        "abbr": "VT",
-        "pct_ozs_with_investment": 60
-      },
-      {
-        "state": "Mississippi",
-        "abbr": "MS",
-        "pct_ozs_with_investment": 64
-      },
-      {
-        "state": "South Dakota",
-        "abbr": "SD",
-        "pct_ozs_with_investment": 68
-      }
+    "table7_qozb_sector": [
+      {"sector": "Real estate, rental, and leasing", "share_2019_pct": 67, "share_2020_pct": 68},
+      {"sector": "Finance and insurance", "share_2019_pct": 5, "share_2020_pct": 5},
+      {"sector": "Construction", "share_2019_pct": null, "share_2020_pct": 4},
+      {"sector": "Professional, Scientific, and Technical Services", "share_2019_pct": 4, "share_2020_pct": null},
+      {"sector": "All Other", "share_2019_pct": 24, "share_2020_pct": 23}
     ],
-    "state_coverage_note": "Full Table 9 (all 51 jurisdictions) is in WP-123. Partial values above are confirmed from published summaries. Amounts rounded to nearest $10M for state totals."
-  },
-  "fetched_at": "2026-05-14",
-  "notes": "Form 8996 microdata is restricted to Treasury OTA and JCT staff under statutory authority. Tract-level investment amounts are not publicly released by either paper. The finest publicly-available geographic grain is MSA-level (K&W) and state-level (C&J Table 9)."
+    "table9_qoz_property_by_state_2020": [
+      {"state": "Alabama", "abbr": "AL", "qoz_property_million": 1110, "pct_ozs_with_investment": 30, "per_oz_million": 7.0, "per_oz_with_investment_million": 23.1},
+      {"state": "Alaska", "abbr": "AK", "qoz_property_million": null, "pct_ozs_with_investment": 56, "per_oz_million": null, "per_oz_with_investment_million": null},
+      {"state": "Arizona", "abbr": "AZ", "qoz_property_million": 1740, "pct_ozs_with_investment": 72, "per_oz_million": 10.4, "per_oz_with_investment_million": 14.4},
+      {"state": "Arkansas", "abbr": "AR", "qoz_property_million": 320, "pct_ozs_with_investment": 49, "per_oz_million": 3.8, "per_oz_with_investment_million": 7.6},
+      {"state": "California", "abbr": "CA", "qoz_property_million": 4800, "pct_ozs_with_investment": 52, "per_oz_million": 5.5, "per_oz_with_investment_million": 10.5},
+      {"state": "Colorado", "abbr": "CO", "qoz_property_million": 1450, "pct_ozs_with_investment": 75, "per_oz_million": 11.5, "per_oz_with_investment_million": 15.3},
+      {"state": "Connecticut", "abbr": "CT", "qoz_property_million": 340, "pct_ozs_with_investment": 50, "per_oz_million": 4.7, "per_oz_with_investment_million": 9.4},
+      {"state": "Delaware", "abbr": "DE", "qoz_property_million": 30, "pct_ozs_with_investment": 40, "per_oz_million": 1.2, "per_oz_with_investment_million": 3.0},
+      {"state": "District of Columbia", "abbr": "DC", "qoz_property_million": 440, "pct_ozs_with_investment": 80, "per_oz_million": 17.6, "per_oz_with_investment_million": 22.0},
+      {"state": "Florida", "abbr": "FL", "qoz_property_million": 2020, "pct_ozs_with_investment": 49, "per_oz_million": 4.7, "per_oz_with_investment_million": 9.7},
+      {"state": "Georgia", "abbr": "GA", "qoz_property_million": 910, "pct_ozs_with_investment": 53, "per_oz_million": 3.5, "per_oz_with_investment_million": 6.6},
+      {"state": "Hawaii", "abbr": "HI", "qoz_property_million": 110, "pct_ozs_with_investment": 60, "per_oz_million": 4.4, "per_oz_with_investment_million": 7.3},
+      {"state": "Idaho", "abbr": "ID", "qoz_property_million": 100, "pct_ozs_with_investment": 54, "per_oz_million": 3.6, "per_oz_with_investment_million": 6.7},
+      {"state": "Illinois", "abbr": "IL", "qoz_property_million": 320, "pct_ozs_with_investment": 20, "per_oz_million": 1.0, "per_oz_with_investment_million": 4.9},
+      {"state": "Indiana", "abbr": "IN", "qoz_property_million": 610, "pct_ozs_with_investment": 51, "per_oz_million": 3.9, "per_oz_with_investment_million": 7.7},
+      {"state": "Iowa", "abbr": "IA", "qoz_property_million": 30, "pct_ozs_with_investment": 27, "per_oz_million": 0.5, "per_oz_with_investment_million": 1.8},
+      {"state": "Kansas", "abbr": "KS", "qoz_property_million": 270, "pct_ozs_with_investment": 36, "per_oz_million": 3.6, "per_oz_with_investment_million": 10.0},
+      {"state": "Kentucky", "abbr": "KY", "qoz_property_million": 280, "pct_ozs_with_investment": 44, "per_oz_million": 1.9, "per_oz_with_investment_million": 4.4},
+      {"state": "Louisiana", "abbr": "LA", "qoz_property_million": 220, "pct_ozs_with_investment": 39, "per_oz_million": 1.5, "per_oz_with_investment_million": 3.7},
+      {"state": "Maine", "abbr": "ME", "qoz_property_million": 160, "pct_ozs_with_investment": 47, "per_oz_million": 5.0, "per_oz_with_investment_million": 10.7},
+      {"state": "Maryland", "abbr": "MD", "qoz_property_million": 870, "pct_ozs_with_investment": 49, "per_oz_million": 5.8, "per_oz_with_investment_million": 11.9},
+      {"state": "Massachusetts", "abbr": "MA", "qoz_property_million": 440, "pct_ozs_with_investment": 49, "per_oz_million": 3.2, "per_oz_with_investment_million": 6.6},
+      {"state": "Michigan", "abbr": "MI", "qoz_property_million": 1140, "pct_ozs_with_investment": 42, "per_oz_million": 4.0, "per_oz_with_investment_million": 9.4},
+      {"state": "Minnesota", "abbr": "MN", "qoz_property_million": 590, "pct_ozs_with_investment": 48, "per_oz_million": 4.6, "per_oz_with_investment_million": 9.5},
+      {"state": "Mississippi", "abbr": "MS", "qoz_property_million": 190, "pct_ozs_with_investment": 64, "per_oz_million": 1.9, "per_oz_with_investment_million": 3.0},
+      {"state": "Missouri", "abbr": "MO", "qoz_property_million": 650, "pct_ozs_with_investment": 44, "per_oz_million": 4.0, "per_oz_with_investment_million": 9.2},
+      {"state": "Montana", "abbr": "MT", "qoz_property_million": 120, "pct_ozs_with_investment": 68, "per_oz_million": 4.8, "per_oz_with_investment_million": 7.1},
+      {"state": "Nebraska", "abbr": "NE", "qoz_property_million": 330, "pct_ozs_with_investment": 55, "per_oz_million": 7.5, "per_oz_with_investment_million": 13.7},
+      {"state": "Nevada", "abbr": "NV", "qoz_property_million": 550, "pct_ozs_with_investment": 61, "per_oz_million": 9.0, "per_oz_with_investment_million": 14.9},
+      {"state": "New Hampshire", "abbr": "NH", "qoz_property_million": 40, "pct_ozs_with_investment": 59, "per_oz_million": 1.5, "per_oz_with_investment_million": 2.5},
+      {"state": "New Jersey", "abbr": "NJ", "qoz_property_million": 1070, "pct_ozs_with_investment": 51, "per_oz_million": 6.3, "per_oz_with_investment_million": 12.3},
+      {"state": "New Mexico", "abbr": "NM", "qoz_property_million": 100, "pct_ozs_with_investment": 33, "per_oz_million": 1.6, "per_oz_with_investment_million": 4.8},
+      {"state": "New York", "abbr": "NY", "qoz_property_million": 3930, "pct_ozs_with_investment": 47, "per_oz_million": 7.6, "per_oz_with_investment_million": 16.1},
+      {"state": "North Carolina", "abbr": "NC", "qoz_property_million": 1020, "pct_ozs_with_investment": 53, "per_oz_million": 4.0, "per_oz_with_investment_million": 7.7},
+      {"state": "North Dakota", "abbr": "ND", "qoz_property_million": 60, "pct_ozs_with_investment": 48, "per_oz_million": 2.4, "per_oz_with_investment_million": 5.0},
+      {"state": "Ohio", "abbr": "OH", "qoz_property_million": 1070, "pct_ozs_with_investment": 48, "per_oz_million": 3.3, "per_oz_with_investment_million": 7.0},
+      {"state": "Oklahoma", "abbr": "OK", "qoz_property_million": 170, "pct_ozs_with_investment": 38, "per_oz_million": 1.5, "per_oz_with_investment_million": 3.8},
+      {"state": "Oregon", "abbr": "OR", "qoz_property_million": 990, "pct_ozs_with_investment": 76, "per_oz_million": 11.5, "per_oz_with_investment_million": 15.2},
+      {"state": "Pennsylvania", "abbr": "PA", "qoz_property_million": 810, "pct_ozs_with_investment": 44, "per_oz_million": 2.7, "per_oz_with_investment_million": 6.1},
+      {"state": "Rhode Island", "abbr": "RI", "qoz_property_million": 110, "pct_ozs_with_investment": 64, "per_oz_million": 4.4, "per_oz_with_investment_million": 6.9},
+      {"state": "South Carolina", "abbr": "SC", "qoz_property_million": 910, "pct_ozs_with_investment": 63, "per_oz_million": 6.7, "per_oz_with_investment_million": 10.7},
+      {"state": "South Dakota", "abbr": "SD", "qoz_property_million": 60, "pct_ozs_with_investment": 68, "per_oz_million": 2.4, "per_oz_with_investment_million": 3.5},
+      {"state": "Tennessee", "abbr": "TN", "qoz_property_million": 1050, "pct_ozs_with_investment": 56, "per_oz_million": 6.0, "per_oz_with_investment_million": 10.7},
+      {"state": "Texas", "abbr": "TX", "qoz_property_million": 2580, "pct_ozs_with_investment": 41, "per_oz_million": 4.1, "per_oz_with_investment_million": 9.9},
+      {"state": "Utah", "abbr": "UT", "qoz_property_million": 1540, "pct_ozs_with_investment": 74, "per_oz_million": 33.5, "per_oz_with_investment_million": 45.3},
+      {"state": "Vermont", "abbr": "VT", "qoz_property_million": 140, "pct_ozs_with_investment": 60, "per_oz_million": 5.6, "per_oz_with_investment_million": 9.3},
+      {"state": "Virginia", "abbr": "VA", "qoz_property_million": 680, "pct_ozs_with_investment": 45, "per_oz_million": 3.2, "per_oz_with_investment_million": 7.2},
+      {"state": "Washington", "abbr": "WA", "qoz_property_million": 1090, "pct_ozs_with_investment": 66, "per_oz_million": 7.8, "per_oz_with_investment_million": 11.8},
+      {"state": "West Virginia", "abbr": "WV", "qoz_property_million": 20, "pct_ozs_with_investment": 40, "per_oz_million": 0.4, "per_oz_with_investment_million": 0.9},
+      {"state": "Wisconsin", "abbr": "WI", "qoz_property_million": 280, "pct_ozs_with_investment": 46, "per_oz_million": 2.3, "per_oz_with_investment_million": 5.1},
+      {"state": "Wyoming", "abbr": "WY", "qoz_property_million": 290, "pct_ozs_with_investment": 60, "per_oz_million": 11.6, "per_oz_with_investment_million": 19.3},
+      {"state": "National", "abbr": "US", "qoz_property_million": 38150, "pct_ozs_with_investment": 48, "per_oz_million": 4.9, "per_oz_with_investment_million": 10.1}
+    ],
+    "table16_form8997_deferred_gains": [
+      {"year": 2019, "individual_returns_thousands": 16, "individual_deferred_gains_billion": 18, "entity_returns_thousands": 3, "entity_deferred_gains_billion": 9, "total_returns_thousands": 19, "total_deferred_gains_billion": 27},
+      {"year": 2020, "individual_returns_thousands": 21, "individual_deferred_gains_billion": 24, "entity_returns_thousands": 4, "entity_deferred_gains_billion": 15, "total_returns_thousands": 25, "total_deferred_gains_billion": 39}
+    ],
+    "table13_percentile_rank_investment_weighted": {
+      "note": "Investment-weighted percentile rank among all census tracts. OZs with QOZ investment through TY2020.",
+      "pct_bachelor_pctile": 59,
+      "pct_homeowner_pctile": 12,
+      "median_hh_income_pctile": 30,
+      "poverty_rate_pctile": 85,
+      "unemployment_rate_pctile": 77,
+      "median_house_value_pctile": 67
+    },
+    "income_quintile_national_note": "Table 14: 34% of national QOZ investment went to highest-income quintile OZs (Q5) within each state. Q1 (lowest income) received 17%."
+  }
 }
