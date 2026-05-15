@@ -27,19 +27,49 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       Skip to main content
     </a>
 
-    <header class="border-b border-oz-neutral-200 bg-white">
+    <header class="border-b border-oz-neutral-200 bg-white relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 text-oz-neutral-900 hover:text-oz-blue transition-colors">
           <span class="font-semibold text-lg leading-tight">OZ 2.0</span>
           <span class="text-oz-neutral-300">|</span>
           <span class="text-sm text-oz-neutral-500">State Resource</span>
         </a>
+
+        <!-- Desktop nav -->
         <nav aria-label="Site navigation" class="hidden sm:flex items-center gap-6 text-sm">
           <a href="/states/all" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
           <a href="/how-to-advocate" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
           <a href="/capital-stack" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
           <a href="/oz1-retrospective" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">OZ 1.0</a>
           <a href="/methodology" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Methodology</a>
+        </nav>
+
+        <!-- Hamburger button (mobile only) -->
+        <button
+          id="menu-toggle"
+          class="sm:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded hover:bg-oz-neutral-100 transition-colors"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="block w-5 h-0.5 bg-oz-neutral-700 transition-all duration-200" id="bar1"></span>
+          <span class="block w-5 h-0.5 bg-oz-neutral-700 transition-all duration-200" id="bar2"></span>
+          <span class="block w-5 h-0.5 bg-oz-neutral-700 transition-all duration-200" id="bar3"></span>
+        </button>
+      </div>
+
+      <!-- Mobile menu dropdown -->
+      <div
+        id="mobile-menu"
+        class="sm:hidden hidden border-t border-oz-neutral-200 bg-white absolute w-full z-50 shadow-md"
+        aria-label="Mobile navigation"
+      >
+        <nav class="flex flex-col px-4 py-3 gap-0 text-sm">
+          <a href="/states/all" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
+          <a href="/how-to-advocate" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
+          <a href="/capital-stack" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
+          <a href="/oz1-retrospective" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">OZ 1.0</a>
+          <a href="/methodology" class="py-3 text-oz-neutral-700 hover:text-oz-blue transition-colors">Methodology</a>
         </nav>
       </div>
     </header>
@@ -61,6 +91,40 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </nav>
       </div>
     </footer>
+
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const bar1 = document.getElementById('bar1');
+      const bar2 = document.getElementById('bar2');
+      const bar3 = document.getElementById('bar3');
+
+      toggle?.addEventListener('click', () => {
+        const isOpen = menu?.classList.toggle('hidden') === false;
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        // Animate bars into X when open
+        if (isOpen) {
+          bar1?.classList.add('rotate-45', 'translate-y-2');
+          bar2?.classList.add('opacity-0');
+          bar3?.classList.add('-rotate-45', '-translate-y-2');
+        } else {
+          bar1?.classList.remove('rotate-45', 'translate-y-2');
+          bar2?.classList.remove('opacity-0');
+          bar3?.classList.remove('-rotate-45', '-translate-y-2');
+        }
+      });
+
+      // Close menu when a link is clicked
+      menu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          toggle?.setAttribute('aria-expanded', 'false');
+          bar1?.classList.remove('rotate-45', 'translate-y-2');
+          bar2?.classList.remove('opacity-0');
+          bar3?.classList.remove('-rotate-45', '-translate-y-2');
+        });
+      });
+    </script>
 
   </body>
 </html>
