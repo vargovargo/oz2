@@ -21,36 +21,29 @@ import Layout from '@/layouts/Layout.astro';
         in its
         <a href="https://trumpwhitehouse.archives.gov/wp-content/uploads/2020/08/The-Impact-of-Opportunity-Zones-An-Initial-Assessment.pdf" class="text-oz-blue underline" target="_blank" rel="noopener">August 2020 initial assessment</a>,
         characterized the program as generating substantial investment and job creation in
-        designated areas, drawing on early Form 8996 returns and survey data.
-        Treasury economists Coyne and Johnson, with access to the full Form 8996 universe,
-        documented approximately $48 billion in total QOF assets by end of 2020 — rising
-        from $4 billion in 2018 to $26 billion in 2019 before moderating to $18 billion in
-        new annual flow in 2020.
+        designated areas. Treasury economists Coyne and Johnson, with access to the full Form 8996
+        universe, documented approximately $48 billion in total QOF assets by end of 2020 — rising
+        from $4 billion in 2018 to $28 billion in 2019.
       </p>
       <p class="text-sm text-oz-neutral-700 mb-4">
         The geographic distribution of that capital, however, was skewed. Kennedy and Wheeler,
-        using Form 8996 data accessed via the Joint Committee on Taxation, found that
-        <strong class="text-oz-neutral-900">84% of designated OZ tracts received zero
-        investment</strong> in 2019, with the top 1% of tracts absorbing 42% of all capital
-        and the top 5% taking roughly 80%. Investment concentrated in tracts that were already
-        showing signs of appreciation — often urban OZs in or near gentrifying neighborhoods,
-        not the high-distress rural and legacy industrial tracts the program was originally
-        conceived to help. By 2020, only
-        <strong class="text-oz-neutral-900">48% of designated communities had attracted any
-        capital at all</strong> (Coyne &amp; Johnson). Rural and tribal OZs attracted little
-        capital relative to their share of designated tracts. EIG's own
-        <a href="https://eig.org/opportunity-zones-research-brief/" class="text-oz-blue underline" target="_blank" rel="noopener">January 2024 literature review</a>
-        acknowledged this geographic divergence and argued for program reforms to address it.
+        using Form 8996 data accessed via the Joint Committee on Taxation, found that only 1,347
+        of 8,764 designated OZ tracts received any investment in 2019 — and the top 1% of tracts
+        absorbed 42% of all capital, with the top 5% taking 78%. By 2020 coverage had broadened
+        (3,242 tracts funded), but 63% of OZ tracts still received zero investment from electronic
+        filers. Coyne and Johnson found that 84% of all QOZ investment was concentrated in the
+        top 20% of communities that received any investment at all. Investment concentrated in
+        already-appreciating urban tracts, not the high-distress rural and legacy industrial
+        communities the program was conceived to help.
       </p>
       <p class="text-sm text-oz-neutral-700">
         The absence of enforceable disclosure requirements under OZ 1.0 made it difficult to
-        assess aggregate outcomes with precision. QOFs filed Form 8996 but faced no meaningful
-        penalty for non-filing or incomplete data, and no tract-level investment reporting was
-        required. The data gaps are a recurring limitation in every study of OZ 1.0 outcomes.
-        Coyne and Johnson estimated roughly 25,000 individual OZ investors in 2020, with a
-        median adjusted gross income of approximately $730,000 — consistent with the program's
-        primary beneficiaries being high-income households with realized capital gains, not
-        community-based development organizations.
+        assess outcomes precisely. QOFs filed Form 8996 but faced no meaningful penalty for
+        non-filing or incomplete data. Coyne and Johnson's analysis — the most comprehensive
+        ever done using the full IRS data — estimated roughly 21,000 individual investors in
+        2020, with a median adjusted gross income of approximately $730,000, compared to a
+        national median household income of $69,000 (Kennedy &amp; Wheeler, using IRS records
+        for the same period).
       </p>
     </section>
 
@@ -61,95 +54,209 @@ import Layout from '@/layouts/Layout.astro';
       <div class="grid grid-cols-2 gap-3 mb-6 text-xs">
         <div class="border border-oz-neutral-200 rounded p-3 bg-white">
           <p class="font-semibold text-oz-neutral-900 mb-1">Kennedy &amp; Wheeler (2022)</p>
-          <p class="text-oz-neutral-500">Form 8996 e-filers via Joint Committee on Taxation · Tax years 2019–2020 · ~75% of total $ volume</p>
+          <p class="text-oz-neutral-500">Form 8996 e-filers via Joint Committee on Taxation · Tax years 2019–2020 · ~78% of total $ volume. Finest geographic scale: commuting zones.</p>
         </div>
         <div class="border border-oz-neutral-200 rounded p-3 bg-white">
           <p class="font-semibold text-oz-neutral-900 mb-1">Coyne &amp; Johnson (Treasury OTA, 2023)</p>
-          <p class="text-oz-neutral-500">Full Form 8996 universe · Tax years 2018–2020 · Most comprehensive IRS-data analysis available</p>
+          <p class="text-oz-neutral-500">Full Form 8996 universe + Form 8997 investor data · Tax years 2018–2020. Most comprehensive IRS analysis. Finest geographic scale: states.</p>
         </div>
       </div>
 
       <!-- Investment timeline -->
       <div class="mb-7">
-        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Annual QOF investment flow — Coyne &amp; Johnson</p>
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOF assets held (cumulative) — Coyne &amp; Johnson</p>
         <div class="space-y-2">
           <div class="flex items-center gap-3 text-sm">
             <span class="w-10 text-oz-neutral-500 shrink-0">2018</span>
             <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
-              <div class="bg-[#1a4480] h-full rounded-full" style="width: 15%;"></div>
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 8%;"></div>
             </div>
-            <span class="w-12 text-right font-semibold text-oz-neutral-900 shrink-0">$4B</span>
+            <span class="w-14 text-right font-semibold text-oz-neutral-900 shrink-0">$4B</span>
           </div>
           <div class="flex items-center gap-3 text-sm">
             <span class="w-10 text-oz-neutral-500 shrink-0">2019</span>
             <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
-              <div class="bg-[#1a4480] h-full rounded-full" style="width: 100%;"></div>
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 63%;"></div>
             </div>
-            <span class="w-12 text-right font-semibold text-oz-neutral-900 shrink-0">$26B</span>
+            <span class="w-14 text-right font-semibold text-oz-neutral-900 shrink-0">$30B</span>
           </div>
           <div class="flex items-center gap-3 text-sm">
             <span class="w-10 text-oz-neutral-500 shrink-0">2020</span>
             <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
-              <div class="bg-[#1a4480] h-full rounded-full" style="width: 69%;"></div>
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 100%;"></div>
             </div>
-            <span class="w-12 text-right font-semibold text-oz-neutral-900 shrink-0">$18B</span>
+            <span class="w-14 text-right font-semibold text-oz-neutral-900 shrink-0">$48B</span>
           </div>
         </div>
-        <p class="text-xs text-oz-neutral-400 mt-2">Cumulative: $48B in total QOF assets by end of 2020 ($44B in QOZ property). 2019 spike reflects the first major deferral deadline under TCJA.</p>
+        <p class="text-xs text-oz-neutral-400 mt-2">Annual new flow: $4B (2018), $26B (2019), $18B (2020). Of the $48B in total QOF assets, $44B was QOZ property. Kennedy &amp; Wheeler count $41.5B cumulative through 2020 (e-filers, 78% of total).</p>
       </div>
 
       <!-- Concentration stats -->
       <div class="mb-7">
-        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Geographic concentration — Kennedy &amp; Wheeler (2019 data, e-filers)</p>
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Geographic concentration</p>
         <div class="grid grid-cols-3 gap-3">
           <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
-            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">84%</div>
-            <div class="text-xs text-oz-neutral-500 leading-snug">of OZ tracts received<br>zero investment</div>
-          </div>
-          <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
             <div class="text-4xl font-bold text-oz-neutral-900 mb-1">42%</div>
-            <div class="text-xs text-oz-neutral-500 leading-snug">of all capital went to<br>the top 1% of tracts</div>
+            <div class="text-xs text-oz-neutral-500 leading-snug">of all capital went to<br>the top 1% of OZ tracts</div>
+            <div class="text-xs text-oz-neutral-400 mt-1">K&amp;W · 2020 e-filers</div>
           </div>
           <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
-            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">80%</div>
-            <div class="text-xs text-oz-neutral-500 leading-snug">of all capital went to<br>the top 5% of tracts</div>
+            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">78%</div>
+            <div class="text-xs text-oz-neutral-500 leading-snug">of all capital went to<br>the top 5% of OZ tracts</div>
+            <div class="text-xs text-oz-neutral-400 mt-1">K&amp;W · 2020 e-filers</div>
+          </div>
+          <div class="border border-oz-neutral-200 rounded p-4 text-center bg-white">
+            <div class="text-4xl font-bold text-oz-neutral-900 mb-1">84%</div>
+            <div class="text-xs text-oz-neutral-500 leading-snug">of QOZ investment in<br>the top 20% of funded OZs</div>
+            <div class="text-xs text-oz-neutral-400 mt-1">C&amp;J · full universe 2020</div>
           </div>
         </div>
-        <p class="text-xs text-oz-neutral-400 mt-2">95% of investment went to urban OZs, which represent 86% of all eligible tracts — close to proportional. The rural gap is a concentration-within-urban story as much as an urban-vs-rural one.</p>
+        <div class="mt-3 grid grid-cols-2 gap-3 text-xs">
+          <div class="border border-oz-neutral-100 rounded p-3 bg-oz-neutral-50">
+            <p class="font-semibold text-oz-neutral-700 mb-1">Tract coverage improved over time</p>
+            <p class="text-oz-neutral-500">In 2019: 1,347 of 8,764 OZ tracts received any investment (15%). By end of 2020: 3,242 tracts (37%). Even so, 63% of OZ tracts received zero investment from e-filers, and just 26% of all OZs had any investment through 2019 (C&amp;J full universe).</p>
+          </div>
+          <div class="border border-oz-neutral-100 rounded p-3 bg-oz-neutral-50">
+            <p class="font-semibold text-oz-neutral-700 mb-1">Within-state income skew</p>
+            <p class="text-oz-neutral-500">Nationally, 34% of QOZ investment went to the highest-income quintile of designated OZ tracts within each state — nearly double the 17% share that went to the lowest-income quintile (C&amp;J Table 14).</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Top metros + sector -->
-      <div class="grid grid-cols-2 gap-5 mb-7">
-        <!-- Top metro areas -->
-        <div>
-          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Top metro areas by $ — Kennedy &amp; Wheeler (2019)</p>
-          <table class="w-full text-sm">
+      <!-- Where the money went: commuting zones -->
+      <div class="mb-7">
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-1">Where the money went — top 50 commuting zones · Kennedy &amp; Wheeler (2020 e-filers)</p>
+        <p class="text-xs text-oz-neutral-400 mb-3">$ per OZ resident normalizes by population of tracts receiving &gt;0 investment. $ per CZ resident normalizes by total metro population.</p>
+        <div class="overflow-y-auto max-h-96 border border-oz-neutral-200 rounded">
+          <table class="w-full text-xs border-collapse">
+            <thead class="sticky top-0 bg-oz-neutral-50 border-b border-oz-neutral-200">
+              <tr>
+                <th class="text-left py-2 px-3 font-semibold text-oz-neutral-700">Commuting Zone</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">Total ($M)</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/OZ resident</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/CZ resident</th>
+              </tr>
+            </thead>
             <tbody class="divide-y divide-oz-neutral-100">
-              <tr>
-                <td class="py-2 text-oz-neutral-700">New York City</td>
-                <td class="py-2 text-right font-semibold text-oz-neutral-900">$3.8B</td>
-              </tr>
-              <tr>
-                <td class="py-2 text-oz-neutral-700">Los Angeles</td>
-                <td class="py-2 text-right font-semibold text-oz-neutral-900">$1.7B</td>
-              </tr>
-              <tr>
-                <td class="py-2 text-oz-neutral-500 text-xs">Phoenix · Denver · San Francisco</td>
-                <td class="py-2 text-right text-oz-neutral-400 text-xs">top 5 by $</td>
-              </tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New York, NY-NJ-PA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$3,782</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,358</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$181</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Los Angeles, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,701</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,916</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$92</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Phoenix, AZ</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,328</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4,274</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$275</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Salt Lake City, UT</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,325</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$15,416</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$542</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Denver, CO</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$889</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6,277</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$238</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">San Francisco, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$816</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4,140</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$143</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Detroit, MI</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$786</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4,666</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$158</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Washington, DC-VA-MD-WV</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$759</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,146</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$110</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Philadelphia, PA-NJ-DE-MD</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$734</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,142</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$111</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Portland, OR-WA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$703</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6,271</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$295</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Huntsville, AL</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$666</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$18,305</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$822</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Nashville, TN</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$600</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$8,141</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$302</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Miami, FL</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$571</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,748</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$86</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Seattle, WA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$570</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,593</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$118</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Houston, TX</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$563</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,587</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$82</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Austin, TX</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$537</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,772</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$257</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Tampa, FL</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$469</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5,815</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$158</td></tr>
+              <tr class="bg-oz-neutral-50"><td class="py-1.5 px-3 text-oz-neutral-700">Atlanta, GA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$419</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,817</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$73</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Cleveland, OH</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$365</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,083</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$127</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Charleston, SC</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$360</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5,390</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$460</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Sacramento, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$355</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,501</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$149</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Baltimore, MD</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$343</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,569</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$118</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Indianapolis, IN</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$313</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,979</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$155</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">St. Louis, MO-IL</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$311</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5,611</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$108</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Minneapolis, MN-WI</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$300</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,512</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$86</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Stockton, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$261</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,729</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$164</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Boston, MA-NH</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$256</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,466</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$50</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Cincinnati, OH-KY-IN</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$251</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,864</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$110</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Dallas, TX</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$230</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,129</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$30</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Richmond, VA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$229</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4,967</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$183</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">San Jose, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$218</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,512</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$82</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Charlotte, NC-SC</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$211</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,969</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$82</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Columbus, OH</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$194</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,100</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$90</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Bakersfield, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$187</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,063</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$126</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Fresno, CA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$183</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$906</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$92</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Las Vegas, NV</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$181</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,045</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$84</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Chicago, IL-IN-WI</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$180</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,611</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$18</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Orlando, FL</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$172</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,253</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$58</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Bridgeport, CT</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$157</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,291</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$44</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Omaha, NE-IA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$155</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,599</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$161</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Raleigh, NC</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$143</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,143</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$67</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">San Antonio, TX</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$138</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,054</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$58</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Providence, RI-MA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$136</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,292</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$84</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New Orleans, LA</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$131</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3,321</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$92</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Memphis, TN-MS-AR</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$121</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,389</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$83</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Greenville, SC</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$121</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,802</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$115</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Louisville, KY-IN</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$114</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,490</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$87</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Tucson, AZ</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$111</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,077</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$97</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Kansas City, MO-KS</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$107</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1,152</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$50</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Birmingham, AL</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$101</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2,388</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$94</td></tr>
             </tbody>
           </table>
-          <p class="text-xs text-oz-neutral-400 mt-2">Per-capita leaders (smaller markets with high density of OZ deals): Salt Lake City, Nashville, Tampa, Huntsville.</p>
         </div>
+        <p class="text-xs text-oz-neutral-400 mt-2">Top 10 commuting zones by total $ accounted for more than half of all e-filed OZ investment in 2020. Chicago ($180M) ranked 37th despite having the most designated OZs of any metro, illustrating the per-capita disparity. Salt Lake City ($1.33B, 4th by total) had the highest per-OZ-resident investment of any major metro at $15,416.</p>
+      </div>
 
+      <!-- State table and sector side by side -->
+      <div class="mb-7">
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-1">QOZ property by state (TY2020) — Coyne &amp; Johnson Table 9</p>
+        <p class="text-xs text-oz-neutral-400 mb-3">State total differs from $44B (Table 4) because some returns lacked location data; $38.15B is location-reported total. Amounts rounded to nearest $10M. * = not reported (insufficient observations).</p>
+        <div class="overflow-y-auto max-h-80 border border-oz-neutral-200 rounded">
+          <table class="w-full text-xs border-collapse">
+            <thead class="sticky top-0 bg-oz-neutral-50 border-b border-oz-neutral-200">
+              <tr>
+                <th class="text-left py-2 px-3 font-semibold text-oz-neutral-700">State</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">QOZ Prop. ($M)</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">% OZs funded</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/OZ ($M)</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/funded OZ ($M)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-oz-neutral-100">
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">California</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$4,800</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">52%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.5</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New York</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$3,930</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">47%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$16.1</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Florida</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$2,020</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">49%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.7</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Arizona</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,740</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">72%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$14.4</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Utah</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,540</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">74%</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$33.5</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$45.3</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Colorado</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,450</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">75%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$15.3</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Washington</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,090</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">66%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.8</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Alabama</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,110</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">30%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.0</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$23.1</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Michigan</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,140</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">42%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.4</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Tennessee</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,050</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">56%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.7</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Ohio</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,070</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">48%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.0</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New Jersey</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,070</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">51%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$12.3</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">North Carolina</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,020</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">53%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.7</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Oregon</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$990</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">76%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$15.2</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Georgia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$910</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">53%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.6</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">South Carolina</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$910</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">63%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.7</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Maryland</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$870</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">49%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.9</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Pennsylvania</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$810</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">44%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.1</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Virginia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$680</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">45%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.2</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Missouri</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$650</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">44%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.2</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Indiana</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$610</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">51%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.7</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Minnesota</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$590</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">48%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.5</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Nevada</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$550</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">61%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$14.9</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Massachusetts</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$440</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">49%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.6</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">District of Columbia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$440</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">80%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$17.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$22.0</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Texas</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$2,580</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">41%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.9</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Illinois</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$320</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">20%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.9</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Iowa</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$30</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">27%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$0.5</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$1.8</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">West Virginia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$20</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">40%</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$0.4</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$0.9</td></tr>
+              <tr class="bg-oz-neutral-50 border-t border-oz-neutral-200"><td class="py-1.5 px-3 font-semibold text-oz-neutral-700">All remaining states</td><td class="py-1.5 px-3 text-right text-oz-neutral-400 text-xs" colspan="4">See full table in C&amp;J WP-123 — all 51 state rows in data/oz1_investment_data.json</td></tr>
+              <tr class="bg-oz-neutral-100 border-t border-oz-neutral-200"><td class="py-1.5 px-3 font-semibold text-oz-neutral-900">National total</td><td class="py-1.5 px-3 text-right font-bold text-oz-neutral-900">$38,150</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">48%</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$4.9</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$10.1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-oz-neutral-400 mt-2"><span class="text-[#cd2026] font-semibold">Red</span> = notable outliers. Utah ($33.5M/OZ) is 7× the national average — driven by concentrated Salt Lake City deals. Illinois (20% coverage) and Iowa (27%) are the lowest-coverage non-suppressed states. Full 51-state data in <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline" target="_blank" rel="noopener">WP-123</a> and <code>data/oz1_investment_data.json</code>.</p>
+      </div>
+
+      <!-- Sector and investor -->
+      <div class="grid grid-cols-2 gap-5 mb-7">
         <!-- Sector breakdown -->
         <div>
-          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOZ property by sector — Coyne &amp; Johnson (2020)</p>
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOZB sector share — K&amp;W Table 4 (2020 e-filers) vs. C&amp;J Table 7</p>
           <div class="space-y-2.5">
             <div>
               <div class="flex justify-between text-xs mb-1">
                 <span class="text-oz-neutral-700">Real estate</span>
-                <span class="font-semibold text-oz-neutral-900">68%</span>
+                <span class="font-semibold text-oz-neutral-900">52% (K&amp;W) · 68% (C&amp;J)</span>
               </div>
               <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
                 <div class="h-full bg-[#1a4480] rounded-full" style="width: 68%;"></div>
@@ -157,119 +264,70 @@ import Layout from '@/layouts/Layout.astro';
             </div>
             <div>
               <div class="flex justify-between text-xs mb-1">
-                <span class="text-oz-neutral-700">Finance &amp; insurance</span>
-                <span class="font-semibold text-oz-neutral-900">5%</span>
-              </div>
-              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
-                <div class="h-full bg-[#1a4480] rounded-full" style="width: 5%;"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
                 <span class="text-oz-neutral-700">Construction</span>
-                <span class="font-semibold text-oz-neutral-900">4%</span>
+                <span class="font-semibold text-oz-neutral-900">11% (K&amp;W) · 4% (C&amp;J)</span>
               </div>
               <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
-                <div class="h-full bg-[#1a4480] rounded-full" style="width: 4%;"></div>
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 11%;"></div>
               </div>
             </div>
             <div>
               <div class="flex justify-between text-xs mb-1">
-                <span class="text-oz-neutral-500">All other</span>
-                <span class="font-semibold text-oz-neutral-400">23%</span>
+                <span class="text-oz-neutral-700">Finance &amp; insurance</span>
+                <span class="font-semibold text-oz-neutral-900">9% (K&amp;W) · 5% (C&amp;J)</span>
               </div>
               <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
-                <div class="h-full bg-oz-neutral-300 rounded-full" style="width: 23%;"></div>
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 9%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-700">Lodging &amp; restaurants</span>
+                <span class="font-semibold text-oz-neutral-900">3% (K&amp;W)</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 3%;"></div>
               </div>
             </div>
           </div>
-          <p class="text-xs text-oz-neutral-400 mt-2">~⅔ of all <em>investee businesses</em> were in real estate, construction, or lodging — consistent across fund sizes.</p>
+          <p class="text-xs text-oz-neutral-400 mt-2">Differences reflect e-filer scope (K&amp;W) vs. full universe (C&amp;J) and NAICS classification approach. Real estate dominance is consistent across both sources and both years.</p>
         </div>
-      </div>
 
-      <!-- Investor profile + coverage -->
-      <div class="grid grid-cols-2 gap-5">
         <!-- Investor profile -->
         <div class="border border-oz-neutral-200 rounded p-4 bg-white">
-          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Investor profile — Coyne &amp; Johnson (2020 individual filers)</p>
-          <dl class="divide-y divide-oz-neutral-100 text-sm">
-            <div class="flex justify-between py-2 first:pt-0">
-              <dt class="text-oz-neutral-500">Individual investors</dt>
-              <dd class="font-semibold text-oz-neutral-900">~25,000</dd>
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Who invested — household income comparison</p>
+          <dl class="divide-y divide-oz-neutral-100 text-xs mb-3">
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">OZ investor median HH income (K&amp;W, 2019)</dt>
+              <dd class="font-bold text-oz-neutral-900">$741,000</dd>
             </div>
-            <div class="flex justify-between py-2">
-              <dt class="text-oz-neutral-500">Median AGI</dt>
-              <dd class="font-semibold text-oz-neutral-900">$730K</dd>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">National median HH income (2019)</dt>
+              <dd class="font-semibold text-oz-neutral-500">$69,000</dd>
             </div>
-            <div class="flex justify-between py-2">
-              <dt class="text-oz-neutral-500">Median deferred gain</dt>
-              <dd class="font-semibold text-oz-neutral-900">$250K</dd>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">OZ investor average HH income (K&amp;W)</dt>
+              <dd class="font-bold text-oz-neutral-900">$4,852,000</dd>
             </div>
-            <div class="flex justify-between py-2">
-              <dt class="text-oz-neutral-500">Avg entity investment</dt>
-              <dd class="font-semibold text-oz-neutral-900">$4M</dd>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">Individual investors in QOFs (C&amp;J, 2020)</dt>
+              <dd class="font-semibold text-oz-neutral-900">~21,000</dd>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">Median individual deferred gain (C&amp;J, 2020)</dt>
+              <dd class="font-semibold text-oz-neutral-900">$250,000</dd>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">Avg deferred gain per entity (C&amp;J, 2020)</dt>
+              <dd class="font-semibold text-oz-neutral-900">$4,000,000</dd>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">JCT annual cost (foregone revenue)</dt>
+              <dd class="font-semibold text-oz-neutral-900">$1.6B/yr</dd>
             </div>
           </dl>
-          <p class="text-xs text-oz-neutral-400 mt-3">Kennedy &amp; Wheeler put average investor household income above $1M. Median AGI of $730K is roughly the top 1% of U.S. households.</p>
+          <p class="text-xs text-oz-neutral-400">The median OZ investor's household income was more than 10× the national median. Roughly ⅔ of deferred gains came from individual filers; entities (partnerships, corporations) averaged $4M per investment.</p>
         </div>
-
-        <!-- Coverage + need profile -->
-        <div class="border border-oz-neutral-200 rounded p-4 bg-white">
-          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Coverage by 2020 — Coyne &amp; Johnson</p>
-          <div class="text-center mb-4">
-            <div class="text-5xl font-bold text-oz-neutral-900">48%</div>
-            <div class="text-xs text-oz-neutral-500 mt-1">of designated communities received<br>any investment by end of 2020</div>
-            <div class="text-xs text-oz-neutral-400 mt-1">~3,800 of ~8,700 communities</div>
-          </div>
-          <p class="text-xs text-oz-neutral-500 font-semibold uppercase tracking-wide mb-2">Avg OZ that received investment</p>
-          <dl class="divide-y divide-oz-neutral-100 text-xs">
-            <div class="flex justify-between py-1.5">
-              <dt class="text-oz-neutral-500">Poverty rate percentile</dt>
-              <dd class="font-semibold text-oz-neutral-700">87th</dd>
-            </div>
-            <div class="flex justify-between py-1.5">
-              <dt class="text-oz-neutral-500">Median HH income percentile</dt>
-              <dd class="font-semibold text-oz-neutral-700">81st</dd>
-            </div>
-            <div class="flex justify-between py-1.5">
-              <dt class="text-oz-neutral-500">Unemployment percentile</dt>
-              <dd class="font-semibold text-oz-neutral-700">80th</dd>
-            </div>
-          </dl>
-          <p class="text-xs text-oz-neutral-400 mt-2">OZs that attracted capital were genuinely distressed — the problem was the majority that received nothing.</p>
-        </div>
-      </div>
-
-      <!-- State coverage note -->
-      <div class="mt-5 border border-oz-neutral-200 rounded p-4 bg-white">
-        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-2">State-level coverage — Coyne &amp; Johnson Table 9 (2020, partial)</p>
-        <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-xs text-oz-neutral-700 mb-3">
-          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
-            <span>DC · OR · CO · UT · AZ</span>
-            <span class="text-oz-neutral-500">highest % OZs funded</span>
-          </div>
-          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
-            <span>South Dakota</span>
-            <span class="font-semibold">68% of OZs</span>
-          </div>
-          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
-            <span>Mississippi</span>
-            <span class="font-semibold">64% of OZs</span>
-          </div>
-          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
-            <span>Vermont</span>
-            <span class="font-semibold">60% of OZs</span>
-          </div>
-          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
-            <span>National average</span>
-            <span class="font-semibold">48% of OZs</span>
-          </div>
-          <div class="flex justify-between border-b border-oz-neutral-100 py-1">
-            <span>AL · IA · IL · KS · NM</span>
-            <span class="text-oz-neutral-500">lowest $ share (K&amp;W)</span>
-          </div>
-        </div>
-        <p class="text-xs text-oz-neutral-400">Full Table 9 (all 51 jurisdictions: % of OZs with QOZ property, $ per OZ) is in <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">WP-123</a>. Coverage % alone doesn't indicate investment scale — a state with few OZs can show high coverage with modest total dollars.</p>
       </div>
     </section>
 
@@ -284,10 +342,7 @@ import Layout from '@/layouts/Layout.astro';
         published in the <em>Journal of Urban Economics</em> (2023, NBER Working Paper 26587)
         found no detectable price effects attributable to OZ designation. The study
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0094119022000286" class="text-oz-blue underline" target="_blank" rel="noopener">rules out price impacts larger than 0.5 percentage points at 95% confidence</a> —
-        a precise null, not just an absence of evidence. This is notable because rising tract
-        valuations were central to the theory of change: designation was supposed to signal
-        investment potential and attract capital, which would show up in prices. The evidence
-        suggests it largely did not.
+        a precise null, not just an absence of evidence.
       </p>
       <p class="text-sm text-oz-neutral-700 mb-4">
         On employment, Arefeva, Davis, Ghent, and Park's
@@ -295,17 +350,19 @@ import Layout from '@/layouts/Layout.astro';
         examined job postings in OZ tracts and found limited average effects. Freedman, Khanna,
         and Neumark (2021) examined effects on resident employment. Sage, Langen, and Van de
         Minne (2019) looked at early commercial property price dynamics. Wheeler (2022) raised
-        methodological concerns about the Chen-Glaeser-Wessel identification strategy. The
-        American Enterprise Institute's 2023 analysis examined capital flow patterns. Taken
-        together, the quasi-experimental literature does not support the strong positive effects
-        claimed by program advocates, though it also does not demonstrate uniform harm.
+        methodological concerns about the Chen-Glaeser-Wessel identification strategy. Taken
+        together, the quasi-experimental literature does not support strong positive effects
+        claimed by program advocates, though it does not demonstrate uniform harm.
       </p>
       <p class="text-sm text-oz-neutral-700">
         The honest read of this literature is that average effects were small or undetectable at
         the tract level — consistent with significant investment concentration in a subset of OZs
         (where individual deal economics favored investment regardless of designation) and limited
-        activity in the majority. Designation alone does not attract capital; it reduces its cost
-        for investors who were already likely to invest.
+        activity in the majority. Coyne and Johnson find that OZ tracts receiving investment had
+        meaningfully higher pre-designation growth in income (+12.6% vs +9.1%), college
+        attainment (+2.3pp vs +1.4pp), and house values (+9.6% vs +3.7%) compared to OZ tracts
+        receiving no investment — consistent with investors selecting already-improving tracts,
+        not creating the improvement.
       </p>
     </section>
 
@@ -328,9 +385,7 @@ import Layout from '@/layouts/Layout.astro';
         self-storage facilities, sports stadiums, luxury apartment towers, and private aviation
         hangars were among the eligible uses that drew OZ capital. Senator Ron Wyden introduced
         legislation (S. 2787, November 2019) that would have prohibited OZ tax benefits for
-        self-storage, sports stadiums, luxury rentals, and private planes. The bill failed, but
-        the categories it targeted illustrate where market incentives reliably pointed investment
-        absent community benefit restrictions.
+        self-storage, sports stadiums, luxury rentals, and private planes.
       </p>
       <p class="text-sm text-oz-neutral-700">
         None of these critiques are arguments against place-based investment incentives in
@@ -352,10 +407,8 @@ import Layout from '@/layouts/Layout.astro';
         total assets, QOZ property held, employment metrics, NAICS codes for underlying businesses,
         and housing units created or preserved. QOZBs must file corresponding returns under
         § 6039L. Penalties under new § 6726 reach $500 per day for standard failures and $2,500
-        per day for intentional disregard, with maximums scaled to fund size. Treasury is also
-        required to publish public aggregate reports on QOF activity at years 6 and 11 after
-        enactment. These provisions address directly the data opacity that made OZ 1.0 so difficult
-        to evaluate.
+        per day for intentional disregard. Treasury is also required to publish public aggregate
+        reports on QOF activity at years 6 and 11 after enactment.
       </p>
       <p class="text-sm text-oz-neutral-700 mb-4">
         <strong class="text-oz-neutral-900">The rural carve-out.</strong> Notice 2025-50 established the qualified rural opportunity fund
@@ -366,14 +419,10 @@ import Layout from '@/layouts/Layout.astro';
       </p>
       <p class="text-sm text-oz-neutral-700">
         <strong class="text-oz-neutral-900">More structured state designation processes.</strong> OZ 2.0 gave governors 90 days (July 1–
-        September 29, 2026) to select tracts from the IRS eligible list. Unlike OZ 1.0, where
-        state processes varied widely in transparency and community input, a significant number of
-        states in OZ 2.0 have published scoring criteria, formal nomination portals, and comment
-        periods before governors finalize selections. This shift toward structured state processes
-        is not a statutory requirement — it reflects cumulative pressure from researchers,
-        community organizations, and federal guidance recommending transparent selection — but
-        its effects on the composition of designated tracts will be the most important variable
-        to watch.
+        September 29, 2026) to select tracts from the IRS eligible list. A significant number of
+        states have published scoring criteria, formal nomination portals, and comment periods —
+        not a statutory requirement, but a response to cumulative pressure from researchers,
+        community organizations, and federal guidance.
       </p>
     </section>
 
@@ -399,26 +448,26 @@ import Layout from '@/layouts/Layout.astro';
 
     <section class="mb-8 text-xs text-oz-neutral-400 border-t border-oz-neutral-100 pt-6">
       <p class="mb-1">Investment data (primary sources):
-        <a href="https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Kennedy &amp; Wheeler (UNC / UC Berkeley, 2022)</a> —
-        Form 8996 via JCT, tax years 2019–2020;
+        <a href="https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Kennedy &amp; Wheeler (UC Berkeley / JCT, 2022)</a> —
+        Form 8996 e-filers, tax years 2019–2020;
         <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Coyne &amp; Johnson (Treasury OTA WP-123, 2023)</a> —
-        full Form 8996 universe, tax years 2018–2020.
+        full Form 8996 universe + Form 8997, tax years 2018–2020.
       </p>
       <p class="mb-1">Academic sources:
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0094119022000286" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Chen, Glaeser, Wessel (JUE 2023)</a>;
         <a href="https://www.brookings.edu/wp-content/uploads/2021/01/Arefeva-Davis-Ghent-Park-2020-Job-Growth-from-Opportunity-Zones.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Arefeva et al. (Brookings 2020)</a>;
-        Freedman, Khanna, Neumark (2021); Sage, Langen, Van de Minne (SSRN 2019); Wheeler (2022); AEI (2023).
+        Freedman, Khanna, Neumark (2021); Sage, Langen, Van de Minne (SSRN 2019); Wheeler (2022).
       </p>
       <p class="mb-1">Government and policy:
         <a href="https://trumpwhitehouse.archives.gov/wp-content/uploads/2020/08/The-Impact-of-Opportunity-Zones-An-Initial-Assessment.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">White House CEA (Aug 2020)</a>;
-        <a href="https://eig.org/opportunity-zones-research-brief/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">EIG, "Are Opportunity Zones Working?" (Jan 2024)</a>.
+        <a href="https://eig.org/opportunity-zones-research-brief/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">EIG literature review (Jan 2024)</a>.
       </p>
       <p>Critique:
         <a href="https://www.ncrc.org/opportunity-zones-a-taxpayer-funded-program-that-primarily-benefits-wealthy-investors/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NCRC (Oct 2025)</a>;
         <a href="https://nlihc.org/sites/default/files/A_Critical_Explanation_of_Opportunity_Zones.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NLIHC (2021)</a>;
         <a href="https://www.congress.gov/bill/116th-congress/senate-bill/2787" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Wyden S. 2787 (2019)</a>.
         OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21.
-        Last reviewed: <time datetime="2026-05-14">May 14, 2026</time>.
+        Last reviewed: <time datetime="2026-05-15">May 15, 2026</time>.
       </p>
     </section>
   </div>
