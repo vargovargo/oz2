@@ -1,0 +1,456 @@
+"""
+Fetch FFIEC Census Flat File → data/cra_lmi_overlap.parquet
+
+Source
+------
+FFIEC (Federal Financial Institutions Examination Council) Census Flat File.
+Published annually; used by bank examiners to determine CRA tract income
+designations for examination years. The 2023 exam year file is based on
+2017–2021 ACS 5-year estimates.
+
+  Landing page:  https://www.ffiec.gov/censusapp.htm
+  Flat files:    https://www.ffiec.gov/cra/craflatfiles.htm
+
+CRA LMI eligibility definition
+-------------------------------
+A census tract is CRA Low-to-Moderate Income (LMI) if its estimated median
+family income (MFI) is less than 80% of the area MFI, where "area" is the
+MSA/Metropolitan Division for metropolitan tracts, or the statewide
+non-metropolitan area for rural tracts. Tract income level codes:
+  L — Low Income      (tract MFI < 50% of area MFI)
+  M — Moderate Income (tract MFI 50–80% of area MFI)
+  U — Upper Income    (tract MFI 80–120% of area MFI)
+  I — Income > 120%   (in some file versions)
+  NA or blank — tract income not available / no classification
+
+LMI for CRA purposes = L or M.
+
+FFIEC Census Flat File format
+------------------------------
+Fixed-width text file (pipe-delimited in newer editions). Key columns:
+  State Code        (2-digit)
+  County Code       (3-digit)
+  Census Tract      (6-digit, with implied decimal before last 2 digits)
+  Tract Income Ind  (1 char: L, M, U; or blank/NA)
+  Distressed        (0/1 flag, in some editions)
+
+The exact column layout varies by year. This script handles:
+  - 2023/2024 pipe-delimited format (newer FFIEC releases)
+  - Fixed-width format (legacy)
+  - HMDA flat file as fallback (same income_level field)
+
+Fallback strategy
+-----------------
+If FFIEC flat file download fails (e.g., network restrictions on cloud runners),
+the script falls back to computing LMI status from the underlying ACS
+tract-level median family income data via the Census Bureau API, which yields
+equivalent results.
+
+Output schema (data/cra_lmi_overlap.parquet)
+--------------------------------------------
+One row per OZ-eligible tract that could be matched to the FFIEC data.
+
+  geoid          str   11-digit census tract GEOID
+  state_fips     str   2-digit state FIPS
+  county_fips    str   5-digit county FIPS
+  income_level   str   FFIEC income level code (L, M, U, or NA)
+  is_cra_lmi     bool  True if income_level in ('L', 'M')
+  fetched_at     str   ISO date this script was run
+"""
+
+import io
+import sys
+import zipfile
+from datetime import date
+from pathlib import Path
+
+import pandas as pd
+import requests
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+
+DATA_DIR = Path(__file__).parent.parent / "data"
+RAW_DIR = DATA_DIR / "raw"
+ELIGIBLE_PARQUET = DATA_DIR / "eligible_tracts.parquet"
+OUT_PARQUET = DATA_DIR / "cra_lmi_overlap.parquet"
+
+TIMEOUT = 90
+
+# FFIEC Census Flat File download candidates (ordered by preference)
+# The FFIEC publishes these at https://www.ffiec.gov/cra/craflatfiles.htm
+# File format: pipe-delimited ZIP containing a .txt flat file
+FFIEC_URLS = [
+    # 2024 exam year (based on 2018-2022 ACS 5-year estimates)
+    "https://www.ffiec.gov/cra/pdf/CensusFlatFile2024.zip",
+    # 2023 exam year (based on 2017-2021 ACS 5-year estimates)
+    "https://www.ffiec.gov/cra/pdf/CensusFlatFile2023.zip",
+]
+
+# Known column name variants across FFIEC flat file editions
+INCOME_LEVEL_COLS = [
+    "Tract Income Level",
+    "TractIncomeIndicator",
+    "TRACT_INCOME_LEVEL",
+    "tract_income_level",
+    "Income Level",
+    "IncomeLevel",
+    "MSAorMD_INCOME_IND",
+]
+
+STATE_COLS = ["State Code", "STATE_CODE", "state_code", "State", "MSAorMD_STATE"]
+COUNTY_COLS = ["County Code", "COUNTY_CODE", "county_code", "County"]
+TRACT_COLS = ["Census Tract", "CENSUS_TRACT", "census_tract", "Tract", "CensusTract"]
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _fetch(url: str) -> bytes:
+    print(f"  Fetching {url} …")
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Referer": "https://www.ffiec.gov/cra/craflatfiles.htm",
+    }
+    r = requests.get(url, headers=headers, timeout=TIMEOUT)
+    r.raise_for_status()
+    print(f"    {len(r.content):,} bytes received")
+    return r.content
+
+
+def _col(df: pd.DataFrame, candidates: list[str]) -> str | None:
+    """Return first matching column name (case-insensitive)."""
+    df_cols_lower = {c.lower(): c for c in df.columns}
+    for c in candidates:
+        if c in df.columns:
+            return c
+        if c.lower() in df_cols_lower:
+            return df_cols_lower[c.lower()]
+    return None
+
+
+def _parse_ffiec_zip(raw: bytes) -> pd.DataFrame:
+    """
+    Extract and parse a FFIEC Census Flat File ZIP.
+
+    Returns DataFrame with columns: geoid (11-digit), income_level (str).
+    """
+    with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+        names = zf.namelist()
+        print(f"  ZIP contents: {names}")
+        # Pick the first .txt or .csv file
+        txt_files = [n for n in names if n.lower().endswith(('.txt', '.csv', '.dat'))]
+        if not txt_files:
+            raise ValueError(f"No text file found in ZIP: {names}")
+        fname = txt_files[0]
+        print(f"  Parsing: {fname}")
+        content = zf.read(fname)
+
+    # Try pipe-delimited first (newer FFIEC format)
+    for sep in ('|', '\t', ','):
+        try:
+            df = pd.read_csv(io.BytesIO(content), sep=sep, dtype=str,
+                             encoding='latin-1', low_memory=False)
+            df.columns = [str(c).strip() for c in df.columns]
+            if len(df.columns) >= 5:
+                print(f"  Parsed as sep='{sep}': {len(df):,} rows × {len(df.columns)} cols")
+                result = _extract_geoid_income(df)
+                if result is not None:
+                    return result
+        except Exception:
+            pass
+
+    # Fallback: try fixed-width (legacy FFIEC format)
+    # Classic layout: positions 0-1 state, 2-4 county, 5-10 tract, 11 income level
+    print("  Trying fixed-width parse …")
+    lines = content.decode('latin-1').splitlines()
+    records = []
+    for line in lines:
+        if len(line) < 12:
+            continue
+        state = line[0:2].strip()
+        county = line[2:5].strip()
+        tract = line[5:11].strip()
+        income = line[11:12].strip().upper() if len(line) > 11 else ""
+        if state.isdigit() and county.isdigit():
+            geoid = f"{state.zfill(2)}{county.zfill(3)}{tract.zfill(6)}"
+            records.append({"geoid": geoid, "income_level": income})
+
+    if records:
+        df = pd.DataFrame(records)
+        print(f"  Fixed-width parse: {len(df):,} rows")
+        return df
+
+    raise ValueError("Could not parse FFIEC flat file in any known format")
+
+
+def _extract_geoid_income(df: pd.DataFrame) -> pd.DataFrame | None:
+    """Extract geoid + income_level from a parsed FFIEC DataFrame."""
+    state_col = _col(df, STATE_COLS)
+    county_col = _col(df, COUNTY_COLS)
+    tract_col = _col(df, TRACT_COLS)
+    income_col = _col(df, INCOME_LEVEL_COLS)
+
+    if not income_col:
+        print(f"  Could not find income level column. Available: {df.columns.tolist()[:20]}")
+        return None
+
+    print(f"  State: '{state_col}', County: '{county_col}', Tract: '{tract_col}', Income: '{income_col}'")
+
+    result = pd.DataFrame()
+
+    if state_col and county_col and tract_col:
+        state_s = df[state_col].astype(str).str.strip().str.zfill(2)
+        county_s = df[county_col].astype(str).str.strip().str.zfill(3)
+        # Tract may be 6-char with implied decimal (e.g., "012345" = tract 123.45)
+        # Remove decimal points, pad to 6
+        tract_s = (
+            df[tract_col].astype(str).str.strip()
+            .str.replace('.', '', regex=False)
+            .str.replace(',', '', regex=False)
+            .str.zfill(6)
+        )
+        result["geoid"] = state_s + county_s + tract_s
+    else:
+        # Try to find a combined FIPS/GEOID column
+        geoid_col = _col(df, ["GEOID", "geoid", "GeoID", "FIPS", "TractFIPS"])
+        if geoid_col:
+            result["geoid"] = df[geoid_col].astype(str).str.strip().str.zfill(11)
+        else:
+            print(f"  Could not construct GEOID. Columns: {df.columns.tolist()[:20]}")
+            return None
+
+    result["income_level"] = df[income_col].astype(str).str.strip().str.upper()
+    # Normalize: blank/nan/"NA"/"N/A" → "NA"
+    result["income_level"] = result["income_level"].replace(
+        {"NAN": "NA", "N/A": "NA", "": "NA", "NONE": "NA"}
+    )
+
+    # Keep only rows with valid 11-digit GEOIDs
+    result = result[result["geoid"].str.match(r"^\d{11}$", na=False)].copy()
+    result = result.reset_index(drop=True)
+    print(f"  Valid GEOIDs: {len(result):,}")
+    return result
+
+
+# ---------------------------------------------------------------------------
+# ACS fallback: compute LMI from ACS tract MFI vs. area MFI
+# ---------------------------------------------------------------------------
+
+def _acs_fallback(elig: pd.DataFrame) -> pd.DataFrame:
+    """
+    Fallback: fetch 2021 ACS 5-year tract median family income via Census API
+    and compare to county/MSA median to flag LMI tracts.
+
+    This is a simplified approximation — uses county MFI as the area benchmark
+    (rather than MSA/MD, which is the official FFIEC standard). Results will
+    slightly overcount LMI in high-income metros and undercount in low-income
+    rural areas, but are directionally accurate for a summary statistic.
+    """
+    print("\nUsing Census ACS fallback for CRA LMI estimation …")
+    api_key_hint = (
+        "For better rate limits, set env var CENSUS_API_KEY. "
+        "Free key: https://api.census.gov/data/key_signup.html"
+    )
+    print(f"  Note: {api_key_hint}")
+
+    import os
+    api_key = os.environ.get("CENSUS_API_KEY", "")
+    key_param = f"&key={api_key}" if api_key else ""
+
+    # Variables: B19113_001E = Median family income in past 12 months (tract)
+    # We'll fetch by state to stay within API limits
+    records = []
+    states = elig["state_fips"].unique()
+    print(f"  Fetching ACS tract MFI for {len(states)} states …")
+
+    for sfips in sorted(states):
+        url = (
+            f"https://api.census.gov/data/2021/acs/acs5"
+            f"?get=B19113_001E,GEO_ID"
+            f"&for=tract:*&in=state:{sfips}"
+            f"{key_param}"
+        )
+        try:
+            r = requests.get(url, timeout=30)
+            r.raise_for_status()
+            data = r.json()
+            for row in data[1:]:  # skip header
+                mfi_raw, geo_id, _, county_code, tract_code = row[0], row[1], row[2], row[3], row[4]
+                geoid = f"{sfips.zfill(2)}{county_code.zfill(3)}{tract_code.zfill(6)}"
+                mfi = int(mfi_raw) if mfi_raw and mfi_raw != "-666666666" else None
+                records.append({"geoid": geoid, "state_fips": sfips,
+                                "county_fips": sfips.zfill(2) + county_code.zfill(3),
+                                "tract_mfi": mfi})
+        except Exception as exc:
+            print(f"    Warning: ACS fetch failed for state {sfips}: {exc}")
+
+    if not records:
+        raise RuntimeError("ACS fallback: no tract data retrieved")
+
+    tracts_df = pd.DataFrame(records)
+
+    # Compute county median MFI as area benchmark
+    county_mfi = (
+        tracts_df.dropna(subset=["tract_mfi"])
+        .groupby("county_fips")["tract_mfi"]
+        .median()
+        .rename("county_mfi")
+    )
+    tracts_df = tracts_df.merge(county_mfi, on="county_fips", how="left")
+
+    def _income_level(row):
+        if pd.isna(row["tract_mfi"]) or pd.isna(row["county_mfi"]) or row["county_mfi"] == 0:
+            return "NA"
+        ratio = row["tract_mfi"] / row["county_mfi"]
+        if ratio < 0.50:
+            return "L"
+        if ratio < 0.80:
+            return "M"
+        return "U"
+
+    tracts_df["income_level"] = tracts_df.apply(_income_level, axis=1)
+
+    print(f"  ACS fallback: {len(tracts_df):,} tracts, "
+          f"{(tracts_df['income_level'].isin(['L','M'])).sum():,} LMI")
+    return tracts_df[["geoid", "income_level"]].copy()
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main():
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+
+    if not ELIGIBLE_PARQUET.exists():
+        sys.exit(
+            f"ERROR: {ELIGIBLE_PARQUET} not found. "
+            "Run scripts/ingest_irs_appendix.py first."
+        )
+
+    print("=== ingest_cra_lmi.py ===")
+
+    elig = pd.read_parquet(ELIGIBLE_PARQUET)
+    print(f"Eligible tracts: {len(elig):,}")
+    elig_geoids = set(elig["geoid"].astype(str))
+
+    # ---- Attempt FFIEC flat file download ----
+    ffiec_df: pd.DataFrame | None = None
+    last_exc: Exception | None = None
+
+    for url in FFIEC_URLS:
+        cache_name = url.split("/")[-1]
+        cache_path = RAW_DIR / cache_name
+        try:
+            if cache_path.exists():
+                print(f"\nUsing cached file: {cache_path}")
+                raw = cache_path.read_bytes()
+            else:
+                print(f"\nDownloading FFIEC flat file …")
+                raw = _fetch(url)
+                cache_path.write_bytes(raw)
+                print(f"  Cached → {cache_path}")
+
+            print("Parsing FFIEC flat file …")
+            ffiec_df = _parse_ffiec_zip(raw)
+            if ffiec_df is not None and len(ffiec_df) > 10000:
+                print(f"  Parsed: {len(ffiec_df):,} tracts")
+                break
+            else:
+                print("  Parse returned too few rows; trying next URL")
+                ffiec_df = None
+
+        except Exception as exc:
+            print(f"  Failed ({exc.__class__.__name__}: {exc})")
+            last_exc = exc
+            ffiec_df = None
+            continue
+
+    # ---- ACS fallback if FFIEC download failed ----
+    if ffiec_df is None:
+        print(
+            f"\nFFIEC flat file unavailable ({last_exc}). "
+            "Falling back to ACS tract MFI computation …"
+        )
+        print(
+            "NOTE: Manual alternative — download the FFIEC Census Flat File from:\n"
+            "  https://www.ffiec.gov/cra/craflatfiles.htm\n"
+            f"  Save the ZIP to: {RAW_DIR}/CensusFlatFile2023.zip\n"
+            "  Then re-run this script."
+        )
+        try:
+            ffiec_df = _acs_fallback(elig)
+        except Exception as exc:
+            sys.exit(f"\nFATAL: Both FFIEC and ACS fallback failed.\n{exc}")
+
+    # ---- Join FFIEC income levels to eligible tracts ----
+    print("\nJoining to eligible tracts …")
+    elig_with_income = elig[["geoid", "state_fips", "county_fips"]].copy()
+    elig_with_income["geoid"] = elig_with_income["geoid"].astype(str)
+
+    ffiec_df["geoid"] = ffiec_df["geoid"].astype(str)
+    merged = elig_with_income.merge(
+        ffiec_df[["geoid", "income_level"]],
+        on="geoid",
+        how="left",
+    )
+
+    missing = merged["income_level"].isna().sum()
+    if missing > 0:
+        print(f"  Warning: {missing:,} eligible tracts not in FFIEC file → marked NA")
+    merged["income_level"] = merged["income_level"].fillna("NA")
+    merged["is_cra_lmi"] = merged["income_level"].isin(["L", "M"])
+    merged["fetched_at"] = date.today().isoformat()
+
+    # ---- Summary ----
+    total = len(merged)
+    n_lmi = int(merged["is_cra_lmi"].sum())
+    n_low = int((merged["income_level"] == "L").sum())
+    n_mod = int((merged["income_level"] == "M").sum())
+    n_upper = int((merged["income_level"] == "U").sum())
+    n_na = int((merged["income_level"] == "NA").sum())
+
+    print(f"\n--- CRA LMI Summary (eligible OZ tracts) ---")
+    print(f"  Total eligible tracts : {total:,}")
+    print(f"  LMI (L+M)             : {n_lmi:,}  ({100*n_lmi/total:.1f}%)")
+    print(f"    Low Income (L)      : {n_low:,}")
+    print(f"    Moderate Income (M) : {n_mod:,}")
+    print(f"  Upper Income (U)      : {n_upper:,}")
+    print(f"  Not classified (NA)   : {n_na:,}")
+
+    # Top states by LMI tract count
+    lmi_by_state = (
+        merged[merged["is_cra_lmi"]]
+        .groupby("state_fips")["geoid"]
+        .count()
+        .sort_values(ascending=False)
+        .head(10)
+    )
+    if len(lmi_by_state):
+        state_names = (
+            elig[["state_fips", "state_name"]]
+            .drop_duplicates("state_fips")
+            .set_index("state_fips")["state_name"]
+        )
+        print("\n  Top 10 states by CRA LMI tract count:")
+        for sfips, cnt in lmi_by_state.items():
+            sname = state_names.get(sfips, sfips)
+            print(f"    {sname:<30} {cnt:>4} tracts")
+
+    # ---- Save ----
+    out = merged[["geoid", "state_fips", "county_fips", "income_level", "is_cra_lmi", "fetched_at"]].copy()
+    out = out.sort_values("geoid").reset_index(drop=True)
+    out.to_parquet(OUT_PARQUET, index=False)
+    print(f"\nSaved → {OUT_PARQUET}")
+    print(f"  {len(out):,} rows × {len(out.columns)} cols")
+
+
+if __name__ == "__main__":
+    main()

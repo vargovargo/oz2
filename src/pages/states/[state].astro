@@ -18,7 +18,7 @@ const {
   status_tier, last_checked, lead_agency, process,
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
-  state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects,
+  state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects, cra_lmi_tracts,
 } = state;
 
 // Approximate WGS84 bounding boxes [xmin, ymin, xmax, ymax] keyed by state FIPS string.
@@ -246,10 +246,10 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
   </section>
 
   <!-- 4. Data context -->
-  {(dci_q1_tracts != null || pp_county_count != null || nmtc_projects != null || state_cdfi_count != null) && (
+  {(dci_q1_tracts != null || pp_county_count != null || nmtc_projects != null || state_cdfi_count != null || cra_lmi_tracts != null) && (
     <section class="mb-10">
       <h2 class="text-lg font-semibold mb-4">Data context</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
         {dci_q1_tracts != null && (
           <div class="bg-white border border-oz-neutral-200 rounded p-5">
@@ -283,6 +283,20 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
             <p class="text-xs text-oz-neutral-400">
               CDFI Fund <a href="https://www.cdfifund.gov/programs-training/tax-credits/nmtc" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">NMTC Public Data Release</a> (2024).
               Indicates prior CDFI capital deployment track record in these tracts.
+            </p>
+          </div>
+        )}
+
+        {cra_lmi_tracts != null && (
+          <div class="bg-white border border-oz-neutral-200 rounded p-5">
+            <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">
+              {cra_lmi_tracts.toLocaleString()}
+            </p>
+            <p class="text-xs text-oz-neutral-500 mb-2">Eligible tracts also CRA low-to-moderate income (LMI)</p>
+            <p class="text-xs text-oz-neutral-400">
+              Banks subject to the Community Reinvestment Act earn credit for investing in LMI census tracts. When an OZ project sits in an LMI tract, bank capital — community development loans, equity-equivalent investments, CDFI-intermediated lending — can satisfy CRA obligations while also generating OZ tax benefits for investors. Dual eligibility broadens the pool of capital available to a project.
+              <a href="https://ffiec.cfpb.gov/tools/tract-search" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600 block mt-1">Look up tract CRA status (FFIEC) →</a>
+              Source: <a href="https://www.ffiec.gov/censusapp.htm" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">FFIEC Census Flat File</a>, joined to IRS Rev. Proc. 2026-14 eligible tracts.
             </p>
           </div>
         )}
