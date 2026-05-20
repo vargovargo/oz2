@@ -1,5 +1,25 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { getAllStates } from '@/lib/states';
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+function fmtDate(s: string): string {
+  const [y, m, d] = s.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+const statesWithDeadlines = getAllStates()
+  .filter(s => s.state_deadline != null && s.status_tier === 'public_process')
+  .sort((a, b) => a.state_deadline!.localeCompare(b.state_deadline!));
+
+const openDeadlines = statesWithDeadlines.filter(
+  s => new Date(s.state_deadline! + 'T00:00:00') >= today
+);
+const closedDeadlines = statesWithDeadlines.filter(
+  s => new Date(s.state_deadline! + 'T00:00:00') < today
+).reverse();
 ---
 
 <Layout title="How to Advocate" description="Coalition playbook for local planners seeking OZ 2.0 tract nominations.">
@@ -30,9 +50,10 @@ import Layout from '@/layouts/Layout.astro';
         also lists state leads but lags on process-specific updates.
       </p>
       <p class="text-sm text-oz-neutral-700">
-        States that have closed public input — Nebraska and Florida had done so by early May — are
-        not necessarily done. The governor still makes the final selection, and direct engagement
-        with the lead agency remains meaningful even after a formal comment period closes.
+        States that have closed public input — Florida, Nebraska, Virginia, Delaware, Missouri,
+        and New Mexico's COG submission phase all closed by mid-May — are not necessarily done.
+        The governor still makes the final selection, and direct engagement with the lead agency
+        remains meaningful even after a formal comment period closes.
       </p>
     </section>
 
@@ -44,81 +65,60 @@ import Layout from '@/layouts/Layout.astro';
         September 29, 2026 (extendable to October 28). State processes gather community
         nominations before the governor's office makes its federal submission.
       </p>
-      <div class="overflow-x-auto mb-4">
-        <table class="w-full text-sm border-collapse">
-          <thead>
-            <tr class="border-b border-oz-neutral-200">
-              <th class="text-left py-2 pr-4 font-medium text-oz-neutral-700">State</th>
-              <th class="text-left py-2 pr-4 font-medium text-oz-neutral-700">Deadline</th>
-              <th class="text-left py-2 font-medium text-oz-neutral-700">How to submit</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-oz-neutral-100">
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/delaware" class="text-oz-blue underline">Delaware</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">May 15, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Formstack portal</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/missouri" class="text-oz-blue underline">Missouri</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">May 17, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Submittable portal</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/oregon" class="text-oz-blue underline">Oregon</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">May 22, 2026</td>
-              <td class="py-2 text-oz-neutral-500">RFA submission</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/washington" class="text-oz-blue underline">Washington</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">May 28, 2026</td>
-              <td class="py-2 text-oz-neutral-500">RFA portal</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/kentucky" class="text-oz-blue underline">Kentucky</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">May 29, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Application portal</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/mississippi" class="text-oz-blue underline">Mississippi</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">May 31, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Online feedback form</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/ohio" class="text-oz-blue underline">Ohio</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">~May 31, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Via Greater Ohio Policy Center</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/south-carolina" class="text-oz-blue underline">South Carolina</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">June 1, 2026</td>
-              <td class="py-2 text-oz-neutral-500">SC Commerce portal</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/kansas" class="text-oz-blue underline">Kansas</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">June 1, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Direct email, scoring matrix</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/north-carolina" class="text-oz-blue underline">North Carolina</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">June 7, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Public feedback form</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/texas" class="text-oz-blue underline">Texas</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">June 26, 2026</td>
-              <td class="py-2 text-oz-neutral-500">Nomination submission</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 text-oz-neutral-900"><a href="/states/new-mexico" class="text-oz-blue underline">New Mexico</a></td>
-              <td class="py-2 pr-4 text-oz-neutral-500">July 1, 2026</td>
-              <td class="py-2 text-oz-neutral-500">COG-based submission</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      {openDeadlines.length > 0 ? (
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="border-b border-oz-neutral-200">
+                <th class="text-left py-2 pr-4 font-medium text-oz-neutral-700">State</th>
+                <th class="text-left py-2 pr-4 font-medium text-oz-neutral-700">Deadline</th>
+                <th class="text-left py-2 font-medium text-oz-neutral-700">Portal</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-oz-neutral-100">
+              {openDeadlines.map(s => (
+                <tr>
+                  <td class="py-2 pr-4 text-oz-neutral-900">
+                    <a href={`/states/${s.slug}`} class="text-oz-blue underline">{s.name}</a>
+                  </td>
+                  <td class="py-2 pr-4 text-oz-neutral-700">{fmtDate(s.state_deadline!)}</td>
+                  <td class="py-2 text-oz-neutral-500">
+                    {s.application_portal_url
+                      ? <a href={s.application_portal_url} target="_blank" rel="noopener" class="text-oz-blue underline">Submit →</a>
+                      : <span>See state page</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p class="text-sm text-oz-neutral-500 mb-4">No state submission windows are currently open. Check individual state pages for draft recommendations and monitor agency pages for any late-opening processes.</p>
+      )}
+      {closedDeadlines.length > 0 && (
+        <details class="mb-4">
+          <summary class="text-xs text-oz-neutral-400 cursor-pointer hover:text-oz-neutral-600 select-none">
+            {closedDeadlines.length} state{closedDeadlines.length > 1 ? 's' : ''} — input closed
+          </summary>
+          <div class="overflow-x-auto mt-2">
+            <table class="w-full text-sm border-collapse">
+              <tbody class="divide-y divide-oz-neutral-100">
+                {closedDeadlines.map(s => (
+                  <tr class="opacity-50">
+                    <td class="py-2 pr-4 text-oz-neutral-700">
+                      <a href={`/states/${s.slug}`} class="underline">{s.name}</a>
+                    </td>
+                    <td class="py-2 pr-4 text-oz-neutral-500">{fmtDate(s.state_deadline!)} — closed</td>
+                    <td class="py-2 text-oz-neutral-400 text-xs">In review</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      )}
       <p class="text-xs text-oz-neutral-400">
-        Source: state agency pages, verified May 5, 2026. Check your state's page for the current portal link.
+        Source: state agency pages. Deadlines update automatically from state records — check individual state pages for current portal links.
       </p>
     </section>
 
