@@ -1,0 +1,531 @@
+---
+interface Props {
+  stateFips: string;
+  stateName: string;
+  tractCount: number;
+  eigMapUrl: string;
+}
+
+const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
+---
+
+<!-- MapLibre CSS — loaded when this component is present on the page -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/maplibre-gl@5/dist/maplibre-gl.css"
+/>
+
+<div
+  id="tract-map-root"
+  class="relative w-full rounded overflow-hidden border border-oz-neutral-200 bg-oz-neutral-50"
+  style="height: 540px;"
+  data-fips={stateFips}
+  data-state={stateName}
+  data-eig={eigMapUrl}
+>
+  <!-- Loading indicator -->
+  <div
+    id="tract-map-loading"
+    class="absolute inset-0 flex flex-col items-center justify-center z-10 bg-oz-neutral-50"
+  >
+    <div class="w-6 h-6 border-2 border-oz-blue border-t-transparent rounded-full animate-spin mb-3"></div>
+    <p class="text-sm text-oz-neutral-500">Loading {tractCount.toLocaleString()} eligible tracts…</p>
+  </div>
+
+  <!-- Error / fallback state (hidden by default) -->
+  <div
+    id="tract-map-error"
+    class="absolute inset-0 hidden flex-col items-center justify-center z-10 bg-oz-neutral-50 p-6 text-center"
+  >
+    <p class="text-sm text-oz-neutral-500 mb-3">Interactive map unavailable — tract data not yet built.</p>
+    <iframe
+      id="tract-map-fallback-iframe"
+      src={eigMapUrl}
+      title={`EIG OZ 2.0 eligibility map — ${stateName}`}
+      class="w-full rounded border-0"
+      style="height: 380px;"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <!-- Map canvas -->
+  <div id="tract-map-canvas" class="w-full h-full"></div>
+
+  <!-- Filter panel (bottom-left overlay) -->
+  <div
+    id="tract-map-filters"
+    class="absolute bottom-3 left-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
+    style="max-width: 220px;"
+  >
+    <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">Highlight tracts</p>
+    <div class="space-y-1.5">
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
+        <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
+        <span class="text-oz-neutral-700">CRA LMI designation</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" data-filter="dci" class="accent-oz-blue" />
+        <span class="text-oz-neutral-700">DCI most distressed (Q1–Q2)</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" data-filter="pp" class="accent-oz-blue" />
+        <span class="text-oz-neutral-700">USDA persistent poverty</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" data-filter="nmtc" class="accent-oz-blue" />
+        <span class="text-oz-neutral-700">Prior NMTC investment</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" data-filter="tribal" class="accent-oz-blue" />
+        <span class="text-oz-neutral-700">Tribal / AIAN overlap</span>
+      </label>
+    </div>
+    <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
+  </div>
+
+  <!-- DCI legend (bottom-right overlay) -->
+  <div
+    id="tract-map-legend"
+    class="absolute bottom-3 right-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
+  >
+    <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">DCI Distress (EIG 2023)</p>
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#7f1d1d"></span>
+        <span class="text-oz-neutral-600">Q1 — most distressed</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#b45309"></span>
+        <span class="text-oz-neutral-600">Q2</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#ca8a04"></span>
+        <span class="text-oz-neutral-600">Q3</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#15803d"></span>
+        <span class="text-oz-neutral-600">Q4</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#166534"></span>
+        <span class="text-oz-neutral-600">Q5 — least distressed</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0 border border-oz-neutral-300" style="background:#9ca3af"></span>
+        <span class="text-oz-neutral-400">No DCI data</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Source attribution row (outside the map container) -->
+<div class="mt-3 flex flex-wrap gap-4 text-xs text-oz-neutral-400">
+  <a
+    href={eigMapUrl}
+    target="_blank"
+    rel="noopener"
+    class="underline hover:text-oz-neutral-600"
+  >View on EIG map →</a>
+  <a
+    href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx"
+    class="underline hover:text-oz-neutral-600"
+  >IRS appendix (XLSX)</a>
+  <span>Source: IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2023</span>
+</div>
+
+<style is:global>
+  /* MapLibre popup card — must be global since the popup is rendered outside this component */
+  .maplibregl-popup-content {
+    padding: 0 !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18) !important;
+  }
+  .maplibregl-popup {
+    max-width: 330px !important;
+  }
+  .maplibregl-popup-close-button {
+    color: #94a3b8;
+    font-size: 18px;
+    line-height: 1;
+    padding: 6px 8px;
+    z-index: 1;
+  }
+  .maplibregl-popup-close-button:hover {
+    color: #1e293b;
+    background: transparent;
+  }
+
+  /* Tract popup card */
+  .ozp { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; }
+  .ozp-head { background: #1e293b; color: white; padding: 12px 14px 10px; }
+  .ozp-geoid { font-family: monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.3px; }
+  .ozp-loc { font-size: 12px; color: #94a3b8; margin-top: 3px; }
+  .ozp-badge { background: #0f766e; color: white; font-size: 10.5px; font-weight: 600; padding: 4px 14px; letter-spacing: 0.3px; }
+  .ozp-rural { background: #fefce8; border-bottom: 1px solid #fde68a; padding: 8px 14px; font-size: 12px; }
+  .ozp-rural strong { color: #713f12; }
+  .ozp-rural p { color: #713f12; margin: 3px 0 0; font-size: 11.5px; opacity: 0.9; }
+  .ozp-section { padding: 9px 14px; border-bottom: 1px solid #e2e8f0; }
+  .ozp-section:last-of-type { border-bottom: none; }
+  .ozp-section-head { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #64748b; margin-bottom: 7px; }
+  .ozp-row { margin-bottom: 6px; }
+  .ozp-row:last-child { margin-bottom: 0; }
+  .ozp-key { font-size: 11px; font-weight: 600; color: #374151; display: block; margin-bottom: 1px; }
+  .ozp-val { font-size: 12px; color: #4b5563; display: block; line-height: 1.45; }
+  .ozp-footer { padding: 7px 14px; background: #f8fafc; font-size: 10px; color: #94a3b8; line-height: 1.5; border-top: 1px solid #e2e8f0; }
+</style>
+
+<script>
+  import maplibregl from 'maplibre-gl';
+
+  const root = document.getElementById('tract-map-root') as HTMLElement | null;
+  if (!root) throw new Error('tract-map-root not found');
+
+  const stateFips = root.dataset.fips!;
+  const stateName = root.dataset.state!;
+  const eigMapUrl = root.dataset.eig!;
+
+  const loadingEl = document.getElementById('tract-map-loading')!;
+  const errorEl   = document.getElementById('tract-map-error')!;
+  const filtersEl = document.getElementById('tract-map-filters')!;
+  const legendEl  = document.getElementById('tract-map-legend')!;
+
+  const geojsonUrl = `/geo/${stateFips}.geojson`;
+
+  // Check if the GeoJSON file exists before initializing the map
+  async function checkGeoJsonExists(): Promise<boolean> {
+    try {
+      const r = await fetch(geojsonUrl, { method: 'HEAD' });
+      return r.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  function showFallback() {
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'flex';
+  }
+
+  function buildPopupHTML(props: Record<string, unknown>): string {
+    const geoid       = String(props.geoid ?? '');
+    const county      = String(props.county_name ?? '');
+    const place       = props.place_name ? String(props.place_name) : null;
+    const stateAbbr   = String(props.state_abbr ?? '');
+    const stateFullName = String(props.state_name ?? stateName);
+    const isRural     = Boolean(props.is_rural);
+    const dciScore    = props.dci_score != null ? parseFloat(String(props.dci_score)) : null;
+    const dciQ        = props.dci_quintile != null ? parseInt(String(props.dci_quintile)) : null;
+    const isCraLmi    = Boolean(props.is_cra_lmi);
+    const incomeLevel = props.income_level ? String(props.income_level) : null;
+    const isPP        = Boolean(props.is_persistent_poverty);
+    const isTribal    = Boolean(props.is_tribal_overlap);
+    const tribalName  = props.tribal_area_name ? String(props.tribal_area_name) : null;
+    const aianPct     = props.aian_pct != null ? parseFloat(String(props.aian_pct)) : null;
+    const hasNmtc     = Boolean(props.has_nmtc);
+    const nmtcCount   = parseInt(String(props.nmtc_projects ?? 0));
+    const nmtcTotal   = parseFloat(String(props.nmtc_total_usd ?? 0));
+
+    // Location line
+    const locParts = [place, county, stateAbbr || stateFullName].filter(Boolean);
+    const location = locParts.join(' · ');
+
+    // DCI text
+    let dciText: string;
+    if (dciScore !== null && dciQ !== null) {
+      const qLabel = dciQ === 1 ? 'most distressed'
+                   : dciQ === 5 ? 'least distressed'
+                   : `quintile ${dciQ} of 5`;
+      dciText = `${dciScore.toFixed(1)}&thinsp;/&thinsp;100 — Quintile ${dciQ} of 5 (${qLabel} among OZ-eligible tracts nationally, EIG DCI 2023)`;
+    } else {
+      dciText = '— data not available for this tract (common for rural tracts with PO Box–only ZIP codes)';
+    }
+
+    // CRA text
+    let craText: string;
+    if (incomeLevel === 'L') {
+      craText = 'Low Income — tract median income &lt;50% of area median (FFIEC 2023)';
+    } else if (incomeLevel === 'M') {
+      craText = 'Moderate Income — tract median income 50–80% of area median (FFIEC 2023)';
+    } else if (isCraLmi) {
+      craText = 'CRA LMI designated (FFIEC 2023)';
+    } else {
+      craText = '— not designated CRA Low- or Moderate-Income';
+    }
+
+    // Persistent poverty text
+    const ppText = isPP
+      ? 'Yes — county had &ge;20% poverty rate in every decennial census 1980–2010 (USDA ERS 2015 County Typology Codes)'
+      : 'No — county does not meet USDA ERS persistent poverty threshold';
+
+    // NMTC text
+    let nmtcText: string;
+    if (hasNmtc && nmtcCount > 0) {
+      const millions = (nmtcTotal / 1e6).toFixed(1);
+      nmtcText = `${nmtcCount} prior investment${nmtcCount !== 1 ? 's' : ''} totaling $${millions}M (CDFI Fund NMTC Public Data Release 2024)`;
+    } else {
+      nmtcText = 'No prior NMTC investment on record in this tract (CDFI Fund 2024)';
+    }
+
+    // Rural section
+    const ruralSection = isRural ? `
+      <div class="ozp-rural">
+        <strong>🌾 Rural Tract — QROF Eligible</strong>
+        <p>Investors holding 5+ years receive a 30% basis step-up on deferred gain; qualifying businesses face a 50% (not 100%) improvement threshold — P.L. 119-21, IRC §1400Z-2.</p>
+      </div>` : '';
+
+    // Tribal section
+    let tribalSection = '';
+    if (isTribal) {
+      const nameStr  = tribalName || 'Tribal area or demographic overlap detected';
+      const pctStr   = aianPct && aianPct > 0.005 ? ` — ${(aianPct * 100).toFixed(0)}% AIAN population` : '';
+      tribalSection = `
+        <div class="ozp-section">
+          <div class="ozp-section-head">Tribal / Indigenous Context</div>
+          <div class="ozp-row">
+            <span class="ozp-val">${nameStr}${pctStr} (Census ACS 2022)</span>
+          </div>
+        </div>`;
+    }
+
+    return `<div class="ozp">
+      <div class="ozp-head">
+        <div class="ozp-geoid">Census Tract ${geoid}</div>
+        <div class="ozp-loc">${location}</div>
+      </div>
+      <div class="ozp-badge">OZ 2.0 Eligible Tract &mdash; IRS Rev. Proc. 2026-14</div>
+      ${ruralSection}
+      <div class="ozp-section">
+        <div class="ozp-section-head">Distress Profile</div>
+        <div class="ozp-row">
+          <span class="ozp-key">EIG Distressed Communities Index</span>
+          <span class="ozp-val">${dciText}</span>
+        </div>
+        <div class="ozp-row">
+          <span class="ozp-key">CRA Designation</span>
+          <span class="ozp-val">${craText}</span>
+        </div>
+        <div class="ozp-row">
+          <span class="ozp-key">USDA Persistent Poverty County</span>
+          <span class="ozp-val">${ppText}</span>
+        </div>
+      </div>
+      <div class="ozp-section">
+        <div class="ozp-section-head">Capital Track Record</div>
+        <div class="ozp-row">
+          <span class="ozp-key">New Markets Tax Credit (NMTC) History</span>
+          <span class="ozp-val">${nmtcText}</span>
+        </div>
+      </div>
+      ${tribalSection}
+      <div class="ozp-footer">
+        oz2.vargo.city &middot; Data sources: IRS Rev. Proc. 2026-14, EIG DCI 2023, FFIEC CRA 2023, USDA ERS County Typology 2015, CDFI Fund NMTC 2024
+      </div>
+    </div>`;
+  }
+
+  async function initMap() {
+    const exists = await checkGeoJsonExists();
+    if (!exists) {
+      showFallback();
+      return;
+    }
+
+    const map = new maplibregl.Map({
+      container: 'tract-map-canvas',
+      style: 'https://tiles.openfreemap.org/styles/positron',
+      center: [0, 0],
+      zoom: 2,
+      attributionControl: false,
+    });
+
+    map.addControl(
+      new maplibregl.AttributionControl({ compact: true }),
+      'bottom-right'
+    );
+    map.addControl(
+      new maplibregl.NavigationControl({ showCompass: false }),
+      'top-left'
+    );
+
+    map.on('load', async () => {
+      try {
+        const res = await fetch(geojsonUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json() as GeoJSON.FeatureCollection;
+
+        // Fit to data bounds
+        const bounds = new maplibregl.LngLatBounds();
+        for (const feature of data.features) {
+          if (!feature.geometry) continue;
+          const g = feature.geometry;
+          const rings = g.type === 'Polygon'
+            ? g.coordinates
+            : g.type === 'MultiPolygon'
+            ? g.coordinates.flat()
+            : [];
+          for (const ring of rings) {
+            for (const coord of ring as [number, number][]) {
+              bounds.extend(coord);
+            }
+          }
+        }
+        if (!bounds.isEmpty()) {
+          map.fitBounds(bounds, { padding: 24, duration: 0 });
+        }
+
+        // Add GeoJSON source
+        map.addSource('tracts', { type: 'geojson', data });
+
+        // Fill layer — choropleth by DCI quintile
+        map.addLayer({
+          id: 'tracts-fill',
+          type: 'fill',
+          source: 'tracts',
+          paint: {
+            'fill-color': [
+              'match',
+              ['coalesce', ['to-number', ['get', 'dci_quintile'], 0], 0],
+              1, '#7f1d1d',
+              2, '#b45309',
+              3, '#ca8a04',
+              4, '#15803d',
+              5, '#166534',
+              '#9ca3af',  // null / no DCI data
+            ],
+            'fill-opacity': 0.65,
+          },
+        });
+
+        // Outline layer
+        map.addLayer({
+          id: 'tracts-outline',
+          type: 'line',
+          source: 'tracts',
+          paint: {
+            'line-color': '#ffffff',
+            'line-width': 0.6,
+            'line-opacity': 0.55,
+          },
+        });
+
+        // Hover highlight layer
+        map.addLayer({
+          id: 'tracts-hover',
+          type: 'line',
+          source: 'tracts',
+          paint: {
+            'line-color': '#1d4ed8',
+            'line-width': 2,
+            'line-opacity': 0,
+          },
+        });
+
+        // Show UI panels
+        loadingEl.style.display = 'none';
+        filtersEl.classList.remove('hidden');
+        legendEl.classList.remove('hidden');
+
+        // Hover interaction
+        let hoveredGeoid: string | null = null;
+        map.on('mousemove', 'tracts-fill', (e) => {
+          const feat = e.features?.[0];
+          if (!feat) return;
+          map.getCanvas().style.cursor = 'pointer';
+          const geoid = feat.properties?.geoid;
+          if (geoid !== hoveredGeoid) {
+            hoveredGeoid = geoid;
+            map.setPaintProperty('tracts-hover', 'line-opacity', [
+              'case', ['==', ['get', 'geoid'], geoid], 1, 0,
+            ]);
+          }
+        });
+        map.on('mouseleave', 'tracts-fill', () => {
+          map.getCanvas().style.cursor = '';
+          hoveredGeoid = null;
+          map.setPaintProperty('tracts-hover', 'line-opacity', 0);
+        });
+
+        // Click popup
+        const popup = new maplibregl.Popup({
+          closeButton: true,
+          maxWidth: '330px',
+          offset: 8,
+        });
+
+        map.on('click', 'tracts-fill', (e) => {
+          const feat = e.features?.[0];
+          if (!feat?.properties) return;
+          popup
+            .setLngLat(e.lngLat)
+            .setHTML(buildPopupHTML(feat.properties as Record<string, unknown>))
+            .addTo(map);
+        });
+
+        // Filter logic
+        const activeFilters = new Set<string>();
+
+        function getFilterExpr(f: string): unknown[] | null {
+          switch (f) {
+            case 'rural':  return ['==', ['get', 'is_rural'], true];
+            case 'cra':    return ['==', ['get', 'is_cra_lmi'], true];
+            case 'dci':    return ['all',
+                             ['!=', ['coalesce', ['get', 'dci_quintile'], null], null],
+                             ['<=', ['to-number', ['get', 'dci_quintile'], 99], 2]];
+            case 'pp':     return ['==', ['get', 'is_persistent_poverty'], true];
+            case 'nmtc':   return ['==', ['get', 'has_nmtc'], true];
+            case 'tribal': return ['==', ['get', 'is_tribal_overlap'], true];
+            default:       return null;
+          }
+        }
+
+        function updateFilters() {
+          const filters = [...activeFilters];
+          if (filters.length === 0) {
+            map.setPaintProperty('tracts-fill', 'fill-opacity', 0.65);
+            map.setPaintProperty('tracts-outline', 'line-opacity', 0.55);
+            return;
+          }
+
+          const conditions = filters.map(getFilterExpr).filter(Boolean);
+          const matchExpr = conditions.length === 1
+            ? conditions[0]
+            : ['all', ...conditions];
+
+          map.setPaintProperty('tracts-fill', 'fill-opacity',
+            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.08]);
+          map.setPaintProperty('tracts-outline', 'line-opacity',
+            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.1]);
+        }
+
+        filtersEl.querySelectorAll<HTMLInputElement>('input[data-filter]')
+          .forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+              const f = checkbox.dataset.filter!;
+              if (checkbox.checked) activeFilters.add(f);
+              else activeFilters.delete(f);
+              updateFilters();
+            });
+          });
+
+      } catch (err) {
+        console.error('Tract map failed to load data:', err);
+        showFallback();
+      }
+    });
+
+    map.on('error', (e) => {
+      // MapLibre emits tile errors for missing tiles — only surface real failures
+      if (e.error?.message?.includes('/geo/')) {
+        showFallback();
+      }
+    });
+  }
+
+  initMap();
+</script>
