@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { getAllStates } from '@/lib/states';
 import type { StateMetadata } from '@/lib/states';
+import craPlaces from '../../../data/cra_lmi_places.json';
 
 export function getStaticPaths() {
   return getAllStates().map((s) => ({
@@ -20,6 +21,10 @@ const {
   scoring_rubric_url, state_deadline, application_portal_url,
   state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects, cra_lmi_tracts,
 } = state;
+
+const statePlaces = (craPlaces as Record<string, { cities: {name:string,tracts:number}[], zips: {zip:string,city:string,tracts:number}[] }>)[fips] ?? null;
+const topCities = statePlaces?.cities.slice(0, 5) ?? [];
+const topZips   = statePlaces?.zips.slice(0, 5) ?? [];
 
 // Approximate WGS84 bounding boxes [xmin, ymin, xmax, ymax] keyed by state FIPS string.
 // Used to zoom the EIG ArcGIS Dashboard iframe to the right state on load.
@@ -258,6 +263,7 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
             <p class="text-xs text-oz-neutral-400">
               The EIG <a href="https://eig.org/distressed-communities/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">Distressed Communities Index</a> (2019–2023) is
               referenced in many state scoring rubrics. Quintile 1 = most distressed.
+              See <a href="/oz1-retrospective#community-critique" class="underline hover:text-oz-neutral-600">whether OZ 1.0 reached the most distressed places →</a>
             </p>
           </div>
         )}
@@ -270,6 +276,7 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
               Persistent poverty = 20%+ poverty rate in every census 1980–2010.
               Source: <a href="https://www.ers.usda.gov/data-products/county-typology-codes/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">USDA ERS County Typology Codes</a> (2015 edition).
               Relevant for USDA RD program eligibility and QROF rural bonus.
+              See <a href="/capital-stack#qrof-mechanics" class="underline hover:text-oz-neutral-600">QROF rural bonus mechanics →</a>
             </p>
           </div>
         )}
@@ -283,6 +290,7 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
             <p class="text-xs text-oz-neutral-400">
               CDFI Fund <a href="https://www.cdfifund.gov/programs-training/tax-credits/nmtc" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">NMTC Public Data Release</a> (2024).
               Indicates prior CDFI capital deployment track record in these tracts.
+              See <a href="/capital-stack#nmtc" class="underline hover:text-oz-neutral-600">how NMTC and OZ stack →</a>
             </p>
           </div>
         )}
@@ -293,10 +301,44 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
               {cra_lmi_tracts.toLocaleString()}
             </p>
             <p class="text-xs text-oz-neutral-500 mb-2">Eligible tracts also CRA low-to-moderate income (LMI)</p>
-            <p class="text-xs text-oz-neutral-400">
-              Banks subject to the Community Reinvestment Act earn credit for investing in LMI census tracts. When an OZ project sits in an LMI tract, bank capital — community development loans, equity-equivalent investments, CDFI-intermediated lending — can satisfy CRA obligations while also generating OZ tax benefits for investors. Dual eligibility broadens the pool of capital available to a project.
-              <a href="https://ffiec.cfpb.gov/tools/tract-search" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600 block mt-1">Look up tract CRA status (FFIEC) →</a>
-              Source: <a href="https://www.ffiec.gov/censusapp.htm" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">FFIEC Census Flat File</a>, joined to IRS Rev. Proc. 2026-14 eligible tracts.
+            <p class="text-xs text-oz-neutral-400 mb-3">
+              Banks subject to the Community Reinvestment Act earn credit for investing in LMI census tracts. When an OZ project sits in an LMI tract, bank capital can satisfy CRA obligations while generating OZ tax benefits — broadening the pool of available capital.
+              <a href="/capital-stack#cra" class="underline hover:text-oz-neutral-600"> How CRA and OZ interact →</a>
+            </p>
+            {statePlaces && (
+              <div class="text-xs text-oz-neutral-500 space-y-2">
+                <p>
+                  <span class="font-medium text-oz-neutral-700">Cities: </span>
+                  {topCities.map((c, i) => c.name + (i < topCities.length - 1 ? ', ' : '')).join('')}
+                  {statePlaces.cities.length > 5 && <span class="text-oz-neutral-400"> and {statePlaces.cities.length - 5} more</span>}
+                </p>
+                <p>
+                  <span class="font-medium text-oz-neutral-700">ZIP codes: </span>
+                  <span class="font-mono">{topZips.map((z, i) => z.zip + (i < topZips.length - 1 ? ', ' : '')).join('')}</span>
+                  {statePlaces.zips.length > 5 && <span class="text-oz-neutral-400"> and {statePlaces.zips.length - 5} more</span>}
+                </p>
+                {(statePlaces.cities.length > 5 || statePlaces.zips.length > 5) && (
+                  <details class="mt-1">
+                    <summary class="cursor-pointer text-oz-blue hover:underline">
+                      See all {statePlaces.cities.length} cities and {statePlaces.zips.length} ZIP codes
+                    </summary>
+                    <div class="mt-2 space-y-2 text-oz-neutral-400">
+                      <p class="font-medium text-oz-neutral-600">All cities:</p>
+                      <p class="leading-relaxed">
+                        {statePlaces.cities.map((c, i) => c.name + (i < statePlaces.cities.length - 1 ? ', ' : '')).join('')}
+                      </p>
+                      <p class="font-medium text-oz-neutral-600 mt-2">All ZIP codes:</p>
+                      <p class="font-mono leading-relaxed">
+                        {statePlaces.zips.map((z, i) => z.zip + (i < statePlaces.zips.length - 1 ? ', ' : '')).join('')}
+                      </p>
+                    </div>
+                  </details>
+                )}
+              </div>
+            )}
+            <p class="text-xs text-oz-neutral-400 mt-3">
+              <a href="https://ffiec.cfpb.gov/tools/tract-search" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">Look up a specific tract (FFIEC) →</a>
+              {' '}Source: FFIEC Census Flat File 2026, joined to IRS Rev. Proc. 2026-14 eligible tracts.
             </p>
           </div>
         )}
@@ -331,8 +373,10 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
     ) : (
       <p class="text-oz-neutral-500 text-sm">
         No public process has been announced for {name} yet.
-        See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how-to-advocate</a> for
-        steps to engage the governor's office and build a coalition now.
+        See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how to advocate</a> for
+        steps to engage the governor's office and build a coalition now,
+        and <a href="/off-list-nominations" class="underline hover:text-oz-neutral-700">off-list nominations</a> for
+        strategies available when a state hasn't opened a formal process.
       </p>
     )}
   </section>

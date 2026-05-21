@@ -325,6 +325,72 @@ def _acs_fallback(elig: pd.DataFrame) -> pd.DataFrame:
 # Main
 # ---------------------------------------------------------------------------
 
+# Known XLSX filenames that FFIEC publishes (check raw/ for these first)
+FFIEC_XLSX_NAMES = [
+    "FFIEC_CensusTractList2026.xlsx",
+    "FFIEC_CensusTractList2025.xlsx",
+    "FFIEC_CensusTractList2024.xlsx",
+]
+
+# Map FFIEC word-form income levels → standard single-letter codes
+FFIEC_WORD_TO_CODE = {
+    "LOW": "L",
+    "MODERATE": "M",
+    "MIDDLE": "U",
+    "UPPER": "U",
+    "UNKNOWN": "NA",
+}
+
+
+def _parse_local_xlsx() -> pd.DataFrame | None:
+    """
+    Parse a locally downloaded FFIEC Census Tract List XLSX from data/raw/.
+
+    The XLSX format (2024–2026 and later) has a 'Notes' sheet and one or more
+    data sheets named like '2024-2026 tracts'. Relevant columns:
+      FIPS code            — 11-digit census tract GEOID
+      Tract income level   — word form: Low, Moderate, Middle, Upper, Unknown
+    """
+    for name in FFIEC_XLSX_NAMES:
+        path = RAW_DIR / name
+        if not path.exists():
+            continue
+        print(f"\nFound local FFIEC XLSX: {path}")
+        try:
+            xf = pd.ExcelFile(path)
+            # Find the first data sheet (skip Notes)
+            data_sheets = [s for s in xf.sheet_names if s.lower() != "notes"]
+            if not data_sheets:
+                print("  No data sheets found; skipping")
+                continue
+            sheet = data_sheets[0]
+            print(f"  Reading sheet: '{sheet}' …")
+            df = pd.read_excel(path, sheet_name=sheet, dtype=str)
+            df.columns = [str(c).strip() for c in df.columns]
+
+            fips_col = _col(df, ["FIPS code", "FIPS Code", "fips_code", "GEOID"])
+            income_col = _col(df, ["Tract income level", "Tract Income Level",
+                                   "tract_income_level"] + INCOME_LEVEL_COLS)
+            if not fips_col or not income_col:
+                print(f"  Could not find required columns. Available: {df.columns.tolist()}")
+                continue
+
+            result = pd.DataFrame()
+            result["geoid"] = df[fips_col].astype(str).str.strip().str.zfill(11)
+            raw_level = df[income_col].astype(str).str.strip().str.upper()
+            result["income_level"] = raw_level.map(
+                lambda v: FFIEC_WORD_TO_CODE.get(v, v if v in ("L", "M", "U") else "NA")
+            )
+            result = result[result["geoid"].str.match(r"^\d{11}$", na=False)].copy()
+            result = result.reset_index(drop=True)
+            print(f"  Parsed: {len(result):,} tracts  "
+                  f"LMI: {result['income_level'].isin(['L','M']).sum():,}")
+            return result
+        except Exception as exc:
+            print(f"  Failed to parse {name}: {exc}")
+    return None
+
+
 def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -339,41 +405,42 @@ def main():
 
     elig = pd.read_parquet(ELIGIBLE_PARQUET)
     print(f"Eligible tracts: {len(elig):,}")
-    elig_geoids = set(elig["geoid"].astype(str))
 
-    # ---- Attempt FFIEC flat file download ----
-    ffiec_df: pd.DataFrame | None = None
+    # ---- 1. Try local XLSX first (fastest, no network needed) ----
+    ffiec_df: pd.DataFrame | None = _parse_local_xlsx()
+
+    # ---- 2. Fall back to FFIEC ZIP download ----
     last_exc: Exception | None = None
+    if ffiec_df is None:
+        for url in FFIEC_URLS:
+            cache_name = url.split("/")[-1]
+            cache_path = RAW_DIR / cache_name
+            try:
+                if cache_path.exists():
+                    print(f"\nUsing cached file: {cache_path}")
+                    raw = cache_path.read_bytes()
+                else:
+                    print(f"\nDownloading FFIEC flat file …")
+                    raw = _fetch(url)
+                    cache_path.write_bytes(raw)
+                    print(f"  Cached → {cache_path}")
 
-    for url in FFIEC_URLS:
-        cache_name = url.split("/")[-1]
-        cache_path = RAW_DIR / cache_name
-        try:
-            if cache_path.exists():
-                print(f"\nUsing cached file: {cache_path}")
-                raw = cache_path.read_bytes()
-            else:
-                print(f"\nDownloading FFIEC flat file …")
-                raw = _fetch(url)
-                cache_path.write_bytes(raw)
-                print(f"  Cached → {cache_path}")
+                print("Parsing FFIEC flat file …")
+                ffiec_df = _parse_ffiec_zip(raw)
+                if ffiec_df is not None and len(ffiec_df) > 10000:
+                    print(f"  Parsed: {len(ffiec_df):,} tracts")
+                    break
+                else:
+                    print("  Parse returned too few rows; trying next URL")
+                    ffiec_df = None
 
-            print("Parsing FFIEC flat file …")
-            ffiec_df = _parse_ffiec_zip(raw)
-            if ffiec_df is not None and len(ffiec_df) > 10000:
-                print(f"  Parsed: {len(ffiec_df):,} tracts")
-                break
-            else:
-                print("  Parse returned too few rows; trying next URL")
+            except Exception as exc:
+                print(f"  Failed ({exc.__class__.__name__}: {exc})")
+                last_exc = exc
                 ffiec_df = None
+                continue
 
-        except Exception as exc:
-            print(f"  Failed ({exc.__class__.__name__}: {exc})")
-            last_exc = exc
-            ffiec_df = None
-            continue
-
-    # ---- ACS fallback if FFIEC download failed ----
+    # ---- 3. ACS fallback if both local file and download failed ----
     if ffiec_df is None:
         print(
             f"\nFFIEC flat file unavailable ({last_exc}). "
