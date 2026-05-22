@@ -86,6 +86,11 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       </label>
     </div>
     <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
+    <button
+      id="tract-map-download"
+      hidden
+      class="mt-2 w-full text-left text-xs text-oz-blue underline cursor-pointer bg-transparent border-0 p-0 leading-snug hover:opacity-75"
+    >↓ Export tracts as CSV</button>
   </div>
 
   <!-- DCI legend (bottom-right overlay) -->
@@ -143,22 +148,29 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
   .maplibregl-popup-content {
     padding: 0 !important;
     border-radius: 10px !important;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 440px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18) !important;
   }
   .maplibregl-popup {
     max-width: 330px !important;
   }
   .maplibregl-popup-close-button {
+    position: sticky !important;
+    top: 0 !important;
+    float: right;
+    background: rgba(255,255,255,0.92) !important;
+    border-radius: 0 10px 0 4px;
     color: #94a3b8;
     font-size: 18px;
     line-height: 1;
     padding: 6px 8px;
-    z-index: 1;
+    z-index: 10;
   }
   .maplibregl-popup-close-button:hover {
     color: #1e293b;
-    background: transparent;
+    background: rgba(255,255,255,1) !important;
   }
 
   /* Tract popup card */
@@ -469,6 +481,19 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 
         // Filter logic
         const activeFilters = new Set<string>();
+        const downloadBtn = document.getElementById('tract-map-download') as HTMLButtonElement | null;
+
+        function featureMatches(props: Record<string, unknown>, filters: string[]): boolean {
+          for (const f of filters) {
+            if (f === 'rural'  && !props.is_rural) return false;
+            if (f === 'cra'    && !props.is_cra_lmi) return false;
+            if (f === 'dci'    && !(props.dci_quintile != null && Number(props.dci_quintile) <= 2)) return false;
+            if (f === 'pp'     && !props.is_persistent_poverty) return false;
+            if (f === 'nmtc'   && !props.has_nmtc) return false;
+            if (f === 'tribal' && !props.is_tribal_overlap) return false;
+          }
+          return true;
+        }
 
         function getFilterExpr(f: string): unknown[] | null {
           switch (f) {
@@ -489,6 +514,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           if (filters.length === 0) {
             map.setPaintProperty('tracts-fill', 'fill-opacity', 0.65);
             map.setPaintProperty('tracts-outline', 'line-opacity', 0.55);
+            if (downloadBtn) downloadBtn.textContent = `↓ Export all ${data.features.length.toLocaleString()} tracts (CSV)`;
             return;
           }
 
@@ -498,9 +524,14 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
             : ['all', ...conditions];
 
           map.setPaintProperty('tracts-fill', 'fill-opacity',
-            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.08]);
+            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.18]);
           map.setPaintProperty('tracts-outline', 'line-opacity',
-            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.1]);
+            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.25]);
+
+          const matchCount = data.features.filter(
+            feat => feat.properties && featureMatches(feat.properties as Record<string, unknown>, filters)
+          ).length;
+          if (downloadBtn) downloadBtn.textContent = `↓ Export ${matchCount.toLocaleString()} filtered tracts (CSV)`;
         }
 
         filtersEl.querySelectorAll<HTMLInputElement>('input[data-filter]')
@@ -512,6 +543,41 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
               updateFilters();
             });
           });
+
+        // Download CSV — exports tracts matching current filter state
+        if (downloadBtn) {
+          downloadBtn.hidden = false;
+          downloadBtn.textContent = `↓ Export all ${data.features.length.toLocaleString()} tracts (CSV)`;
+          downloadBtn.addEventListener('click', () => {
+            const filters = [...activeFilters];
+            const features = data.features.filter(
+              feat => feat.properties && featureMatches(feat.properties as Record<string, unknown>, filters)
+            );
+            const cols = ['geoid', 'county_name', 'place_name', 'state_abbr', 'is_rural',
+                          'dci_score', 'dci_quintile', 'is_cra_lmi', 'income_level',
+                          'is_persistent_poverty', 'has_nmtc', 'nmtc_projects', 'nmtc_total_usd'];
+            const rows = [cols.join(',')];
+            for (const feat of features) {
+              const p = feat.properties as Record<string, unknown>;
+              rows.push(cols.map(c => {
+                const v = p[c];
+                if (v === null || v === undefined) return '';
+                const s = String(v);
+                return s.includes(',') || s.includes('"') ? `"${s.replace(/"/g, '""')}"` : s;
+              }).join(','));
+            }
+            const slug = stateName.toLowerCase().replace(/\s+/g, '-');
+            const filterTag = filters.length ? '-' + filters.join('+') : '-all';
+            const filename = `oz2-tracts-${slug}${filterTag}.csv`;
+            const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+          });
+        }
 
       } catch (err) {
         console.error('Tract map failed to load data:', err);
