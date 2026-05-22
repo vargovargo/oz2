@@ -67,6 +67,7 @@ Notes
 """
 
 import io
+import os
 import sys
 import zipfile
 import tempfile
@@ -81,9 +82,15 @@ import pandas as pd
 # Constants
 # ---------------------------------------------------------------------------
 
+_API_KEY = os.environ.get("CENSUS_API_KEY", "")
+_KEY_PARAM = f"&key={_API_KEY}" if _API_KEY else ""
+if not _API_KEY:
+    print("NOTE: CENSUS_API_KEY not set — ACS data will be skipped (spatial join still runs).")
+    print("      Set it with: export CENSUS_API_KEY=your_key_here\n")
+
 ACS_URL = (
     "https://api.census.gov/data/2022/acs/acs5"
-    "?get=B02001_001E,B02001_004E&for=tract:*&in=state:*"
+    f"?get=B02001_001E,B02001_004E&for=tract:*&in=state:*{_KEY_PARAM}"
 )
 AIANNH_URL = (
     "https://www2.census.gov/geo/tiger/TIGER2023/AIANNH/tl_2023_us_aiannh.zip"
@@ -130,12 +137,12 @@ def fetch_acs_aian(eligible_geoids: set) -> pd.DataFrame:
     try:
         r = requests.get(ACS_URL, timeout=120)
         r.raise_for_status()
-    except (requests.HTTPError, requests.ConnectionError, requests.Timeout) as exc:
+        raw = r.json()
+    except (requests.HTTPError, requests.ConnectionError, requests.Timeout,
+            requests.exceptions.JSONDecodeError, ValueError) as exc:
         print(f"  WARNING: Census ACS API unavailable ({exc})")
-        print("  Returning empty ACS frame — tribal overlap will be all null/zero")
+        print("  Returning empty ACS frame — spatial join will still run")
         return pd.DataFrame(columns=["geoid", "aian_pop", "aian_pct"])
-
-    raw = r.json()
     headers = raw[0]
     rows = raw[1:]
     df = pd.DataFrame(rows, columns=headers)
