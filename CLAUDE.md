@@ -4,7 +4,7 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-05-12)
+## Where things stand (as of 2026-05-22)
 
 **Data bootstrap done:**
 - `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
@@ -19,7 +19,7 @@ in references.md. Read both before substantive edits.
 
 **Site live:**
 - Deployed at https://oz2-two.vercel.app (GitHub: vargovargo/oz2, branch: main)
-- Working branch: `claude/add-anchor-links-jkfkF` — not yet merged to main
+- Anchor links, EIG audit, skills review, template fixes — merged (PRs #4–6)
 - All 51 state pages rendering from YAML — correct tier badges, lead agency contacts, deadlines, county tables
 - "Input closed" logic: states with past deadlines show grey badge + prose note
 - References page: styled with entry separators, clickable URLs, last_checked badges, section anchor links
@@ -72,12 +72,9 @@ MS, OH, KS, SC, NC, TX, WV).
   stale state count fixed (32→28); verified date updated to May 12, 2026.
 
 **Next priorities (in order):**
-1. Merge `claude/add-anchor-links-jkfkF` → main and verify Vercel deploy
-2. oz1-retrospective and off-list-nominations pages — still stubs, need real content
-3. Data overlays: `data/dci.parquet` (EIG DCI), `data/persistent_poverty.parquet` (USDA ERS), `data/tribal_overlap.parquet` (BIA)
-4. EIG ArcGIS embeds — replace placeholder grey boxes on state pages with real iframes scoped by FIPS
-5. State metadata upkeep — re-check tiers every two weeks; several windows close in June
-6. Custom domain: oz2.vargo.city → Vercel
+1. oz1-retrospective and off-list-nominations pages — still stubs, need real content
+2. State metadata upkeep — re-check tiers every two weeks; several windows close in June
+3. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
 
 **State deadlines remaining open (as of 2026-05-12):**
 - Delaware: May 15 (ONLY 2 SLOTS REMAIN — 23/25 already nominated)
@@ -202,11 +199,8 @@ nomination ramp.
 - references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
 
 **Next priorities (in order):**
-1. Fill stub cross-cutting pages: `how-to-advocate`, `capital-stack`, `oz1-retrospective`, `off-list-nominations`
-2. Data overlays: `data/dci.parquet` (EIG DCI), `data/persistent_poverty.parquet` (USDA ERS), `data/tribal_overlap.parquet` (BIA)
-3. EIG ArcGIS embeds — replace placeholder grey boxes on state pages with real iframes scoped by FIPS
-4. State metadata upkeep — re-check tiers every two weeks; several states' windows close/open in May–June
-5. Custom domain: oz2.vargo.city → Vercel
+1. oz1-retrospective and off-list-nominations pages — still stubs, need real content
+2. State metadata upkeep — re-check tiers every two weeks; several windows close in June
 
 **Upcoming deadlines to watch (state nomination windows):**
 - Missouri: May 17 | Kentucky: May 29 | Oregon: May 22 | Washington: May 28
