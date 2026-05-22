@@ -88,9 +88,9 @@ if not _API_KEY:
     print("NOTE: CENSUS_API_KEY not set — ACS data will be skipped (spatial join still runs).")
     print("      Set it with: export CENSUS_API_KEY=your_key_here\n")
 
-ACS_URL = (
+ACS_URL_TMPL = (
     "https://api.census.gov/data/2022/acs/acs5"
-    f"?get=B02001_001E,B02001_004E&for=tract:*&in=state:*{_KEY_PARAM}"
+    "?get=B02001_001E,B02001_004E&for=tract:*&in=state:{state_fips}{key_param}"
 )
 AIANNH_URL = (
     "https://www2.census.gov/geo/tiger/TIGER2023/AIANNH/tl_2023_us_aiannh.zip"
@@ -126,28 +126,43 @@ class NetworkUnavailable(RuntimeError):
 
 def fetch_acs_aian(eligible_geoids: set) -> pd.DataFrame:
     """
-    Fetch ACS B02001 AIAN population for all tracts; filter to eligible.
+    Fetch ACS B02001 AIAN population for all eligible tracts.
 
-    The Census API returns all tracts in a single call using wildcard syntax.
-    If the API is unreachable (e.g. network restrictions in CI/sandbox), returns
-    an empty DataFrame with the correct schema so the caller can fall back to
-    producing a stub output.
+    Census API with a key requires per-state calls (wildcard in=state:* only
+    works unauthenticated). Loops through each unique state FIPS in the
+    eligible set and concatenates results.
     """
-    print("Fetching ACS B02001 AIAN population …")
-    try:
-        r = requests.get(ACS_URL, timeout=120)
-        r.raise_for_status()
-        raw = r.json()
-    except (requests.HTTPError, requests.ConnectionError, requests.Timeout,
-            requests.exceptions.JSONDecodeError, ValueError) as exc:
-        print(f"  WARNING: Census ACS API unavailable ({exc})")
-        print("  Returning empty ACS frame — spatial join will still run")
+    if not _API_KEY:
+        print("  Skipping ACS fetch — no API key. Returning empty frame.")
         return pd.DataFrame(columns=["geoid", "aian_pop", "aian_pct"])
-    headers = raw[0]
-    rows = raw[1:]
-    df = pd.DataFrame(rows, columns=headers)
 
-    # Build 11-digit GEOID
+    state_fips_list = sorted({g[:2] for g in eligible_geoids})
+    print(f"Fetching ACS B02001 AIAN population for {len(state_fips_list)} states …")
+
+    frames = []
+    failed = []
+    for sf in state_fips_list:
+        url = ACS_URL_TMPL.format(state_fips=sf, key_param=_KEY_PARAM)
+        try:
+            r = requests.get(url, timeout=60)
+            r.raise_for_status()
+            raw = r.json()
+        except (requests.HTTPError, requests.ConnectionError, requests.Timeout,
+                requests.exceptions.JSONDecodeError, ValueError) as exc:
+            print(f"  WARNING: state {sf} failed ({exc})")
+            failed.append(sf)
+            continue
+        headers = raw[0]
+        frames.append(pd.DataFrame(raw[1:], columns=headers))
+
+    if not frames:
+        print("  WARNING: all ACS state calls failed — returning empty frame")
+        return pd.DataFrame(columns=["geoid", "aian_pop", "aian_pct"])
+
+    if failed:
+        print(f"  {len(failed)} states failed: {failed}")
+
+    df = pd.concat(frames, ignore_index=True)
     df["geoid"] = (
         df["state"].str.zfill(2)
         + df["county"].str.zfill(3)
@@ -159,9 +174,8 @@ def fetch_acs_aian(eligible_geoids: set) -> pd.DataFrame:
         lambda r: r["aian_pop"] / r["total_pop"] if r["total_pop"] > 0 else 0.0,
         axis=1,
     )
-
     df = df[df["geoid"].isin(eligible_geoids)][["geoid", "aian_pop", "aian_pct"]]
-    print(f"  {len(df):,} eligible tracts have ACS data")
+    print(f"  {len(df):,} eligible tracts with ACS data ({df['aian_pop'].gt(0).sum():,} have AIAN population)")
     return df.reset_index(drop=True)
 
 
