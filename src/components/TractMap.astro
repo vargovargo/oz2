@@ -52,6 +52,15 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
   <!-- Map canvas -->
   <div id="tract-map-canvas" class="w-full h-full"></div>
 
+  <!-- Detail panel — fixed top-right, populated on tract click -->
+  <div
+    id="tract-map-detail"
+    class="absolute top-3 right-3 z-20 rounded-lg shadow-xl hidden"
+    style="width: 306px;"
+  >
+    <div id="tract-map-detail-body" class="overflow-y-auto" style="max-height: 470px;"></div>
+  </div>
+
   <!-- Filter panel (bottom-left overlay) -->
   <div
     id="tract-map-filters"
@@ -144,38 +153,11 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 </div>
 
 <style is:global>
-  /* MapLibre popup card — must be global since the popup is rendered outside this component */
-  .maplibregl-popup-content {
-    padding: 0 !important;
-    border-radius: 10px !important;
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-height: 440px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18) !important;
-  }
-  .maplibregl-popup {
-    max-width: 330px !important;
-  }
-  .maplibregl-popup-close-button {
-    position: sticky !important;
-    top: 0 !important;
-    float: right;
-    background: rgba(255,255,255,0.92) !important;
-    border-radius: 0 10px 0 4px;
-    color: #94a3b8;
-    font-size: 18px;
-    line-height: 1;
-    padding: 6px 8px;
-    z-index: 10;
-  }
-  .maplibregl-popup-close-button:hover {
-    color: #1e293b;
-    background: rgba(255,255,255,1) !important;
-  }
-
-  /* Tract popup card */
-  .ozp { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; }
-  .ozp-head { background: #1e293b; color: white; padding: 12px 14px 10px; }
+  /* Tract detail card */
+  .ozp { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; border-radius: 10px; overflow: hidden; }
+  .ozp-head { background: #1e293b; color: white; padding: 12px 14px 10px; position: sticky; top: 0; z-index: 1; }
+  .ozp-close { float: right; background: none; border: none; color: #64748b; font-size: 20px; line-height: 1; cursor: pointer; padding: 0 0 4px 10px; margin-top: -2px; }
+  .ozp-close:hover { color: #e2e8f0; }
   .ozp-geoid { font-family: monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.3px; }
   .ozp-loc { font-size: 12px; color: #94a3b8; margin-top: 3px; }
   .ozp-badge { background: #0f766e; color: white; font-size: 10.5px; font-weight: 600; padding: 4px 14px; letter-spacing: 0.3px; }
@@ -307,6 +289,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 
     return `<div class="ozp">
       <div class="ozp-head">
+        <button class="ozp-close" aria-label="Close">×</button>
         <div class="ozp-geoid">Census Tract ${geoid}</div>
         <div class="ozp-loc">${location}</div>
       </div>
@@ -463,20 +446,22 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           map.setPaintProperty('tracts-hover', 'line-opacity', 0);
         });
 
-        // Click popup
-        const popup = new maplibregl.Popup({
-          closeButton: true,
-          maxWidth: '330px',
-          offset: 8,
+        // Click → fixed detail panel (top-right of map, consistent position)
+        const detailPanel = document.getElementById('tract-map-detail')!;
+        const detailBody  = document.getElementById('tract-map-detail-body')!;
+
+        detailBody.addEventListener('click', (e) => {
+          if ((e.target as Element).closest('.ozp-close')) {
+            detailPanel.classList.add('hidden');
+          }
         });
 
         map.on('click', 'tracts-fill', (e) => {
           const feat = e.features?.[0];
           if (!feat?.properties) return;
-          popup
-            .setLngLat(e.lngLat)
-            .setHTML(buildPopupHTML(feat.properties as Record<string, unknown>))
-            .addTo(map);
+          detailBody.innerHTML = buildPopupHTML(feat.properties as Record<string, unknown>);
+          detailBody.scrollTop = 0;
+          detailPanel.classList.remove('hidden');
         });
 
         // Filter logic
