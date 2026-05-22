@@ -1,6 +1,6 @@
-# OZ 2.0 State Maps — Handoff
+# OZ 2.0 State Maps — Completed
 
-**Branch**: `claude/state-maps-tract-filtering-NnJut`
+**Merged to main**: 2026-05-22
 
 ---
 
