@@ -52,49 +52,24 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
   <!-- Map canvas -->
   <div id="tract-map-canvas" class="w-full h-full"></div>
 
-  <!-- Filter panel (bottom-left overlay) -->
+  <!-- Detail panel — fixed top-right, populated on tract click -->
+  <div
+    id="tract-map-detail"
+    class="absolute top-3 right-3 z-20 bg-white rounded-lg shadow-xl hidden"
+    style="width: 306px;"
+  >
+    <div id="tract-map-detail-body" class="overflow-y-auto" style="max-height: 470px;"></div>
+  </div>
+
+  <!-- Left panel: DCI legend + filter checkboxes + export (bottom-left overlay) -->
   <div
     id="tract-map-filters"
     class="absolute bottom-3 left-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
     style="max-width: 220px;"
   >
-    <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">Highlight tracts</p>
-    <div class="space-y-1.5">
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">CRA LMI designation</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="dci" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">DCI most distressed (Q1–Q2)</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="pp" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">USDA persistent poverty</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="nmtc" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">Prior NMTC investment</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="tribal" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">Tribal / AIAN overlap</span>
-      </label>
-    </div>
-    <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
-  </div>
-
-  <!-- DCI legend (bottom-right overlay) -->
-  <div
-    id="tract-map-legend"
-    class="absolute bottom-3 right-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
-  >
+    <!-- DCI legend -->
     <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">DCI Distress (EIG 2023)</p>
-    <div class="space-y-1">
+    <div class="space-y-1 mb-3">
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#7f1d1d"></span>
         <span class="text-oz-neutral-600">Q1 — most distressed</span>
@@ -120,6 +95,43 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         <span class="text-oz-neutral-400">No DCI data</span>
       </div>
     </div>
+
+    <!-- Filter checkboxes -->
+    <div class="border-t border-oz-neutral-200 pt-3">
+      <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">Highlight tracts</p>
+      <div class="space-y-1.5">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">CRA LMI designation</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="dci" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">DCI most distressed (Q1–Q2)</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="pp" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">USDA persistent poverty</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="nmtc" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Prior NMTC investment</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="tribal" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Tribal / AIAN overlap</span>
+        </label>
+      </div>
+      <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
+      <button
+        id="tract-map-download"
+        hidden
+        class="mt-2 w-full text-left text-xs text-oz-blue underline cursor-pointer bg-transparent border-0 p-0 leading-snug hover:opacity-75"
+      >↓ Export tracts as CSV</button>
+    </div>
   </div>
 </div>
 
@@ -139,31 +151,11 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 </div>
 
 <style is:global>
-  /* MapLibre popup card — must be global since the popup is rendered outside this component */
-  .maplibregl-popup-content {
-    padding: 0 !important;
-    border-radius: 10px !important;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18) !important;
-  }
-  .maplibregl-popup {
-    max-width: 330px !important;
-  }
-  .maplibregl-popup-close-button {
-    color: #94a3b8;
-    font-size: 18px;
-    line-height: 1;
-    padding: 6px 8px;
-    z-index: 1;
-  }
-  .maplibregl-popup-close-button:hover {
-    color: #1e293b;
-    background: transparent;
-  }
-
-  /* Tract popup card */
-  .ozp { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; }
-  .ozp-head { background: #1e293b; color: white; padding: 12px 14px 10px; }
+  /* Tract detail card */
+  .ozp { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1.4; border-radius: 10px; overflow: hidden; }
+  .ozp-head { background: #1e293b; color: white; padding: 12px 14px 10px; position: sticky; top: 0; z-index: 1; }
+  .ozp-close { float: right; background: none; border: none; color: #64748b; font-size: 20px; line-height: 1; cursor: pointer; padding: 0 0 4px 10px; margin-top: -2px; }
+  .ozp-close:hover { color: #e2e8f0; }
   .ozp-geoid { font-family: monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.3px; }
   .ozp-loc { font-size: 12px; color: #94a3b8; margin-top: 3px; }
   .ozp-badge { background: #0f766e; color: white; font-size: 10.5px; font-weight: 600; padding: 4px 14px; letter-spacing: 0.3px; }
@@ -193,7 +185,6 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
   const loadingEl = document.getElementById('tract-map-loading')!;
   const errorEl   = document.getElementById('tract-map-error')!;
   const filtersEl = document.getElementById('tract-map-filters')!;
-  const legendEl  = document.getElementById('tract-map-legend')!;
 
   const geojsonUrl = `/geo/${stateFips}.geojson`;
 
@@ -295,6 +286,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 
     return `<div class="ozp">
       <div class="ozp-head">
+        <button class="ozp-close" aria-label="Close">×</button>
         <div class="ozp-geoid">Census Tract ${geoid}</div>
         <div class="ozp-loc">${location}</div>
       </div>
@@ -426,10 +418,21 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           },
         });
 
+        // Selected tract outline (persists until panel is closed)
+        map.addLayer({
+          id: 'tracts-selected',
+          type: 'line',
+          source: 'tracts',
+          paint: {
+            'line-color': '#f59e0b',
+            'line-width': 3,
+            'line-opacity': 0,
+          },
+        });
+
         // Show UI panels
         loadingEl.style.display = 'none';
         filtersEl.classList.remove('hidden');
-        legendEl.classList.remove('hidden');
 
         // Hover interaction
         let hoveredGeoid: string | null = null;
@@ -451,24 +454,48 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           map.setPaintProperty('tracts-hover', 'line-opacity', 0);
         });
 
-        // Click popup
-        const popup = new maplibregl.Popup({
-          closeButton: true,
-          maxWidth: '330px',
-          offset: 8,
+        // Click → fixed detail panel (top-right of map, consistent position)
+        const detailPanel = document.getElementById('tract-map-detail')!;
+        const detailBody  = document.getElementById('tract-map-detail-body')!;
+        let selectedGeoid: string | null = null;
+
+        function clearSelection() {
+          selectedGeoid = null;
+          map.setPaintProperty('tracts-selected', 'line-opacity', 0);
+          detailPanel.classList.add('hidden');
+        }
+
+        detailBody.addEventListener('click', (e) => {
+          if ((e.target as Element).closest('.ozp-close')) clearSelection();
         });
 
         map.on('click', 'tracts-fill', (e) => {
           const feat = e.features?.[0];
           if (!feat?.properties) return;
-          popup
-            .setLngLat(e.lngLat)
-            .setHTML(buildPopupHTML(feat.properties as Record<string, unknown>))
-            .addTo(map);
+          selectedGeoid = String(feat.properties.geoid);
+          map.setPaintProperty('tracts-selected', 'line-opacity', [
+            'case', ['==', ['get', 'geoid'], selectedGeoid], 1, 0,
+          ]);
+          detailBody.innerHTML = buildPopupHTML(feat.properties as Record<string, unknown>);
+          detailBody.scrollTop = 0;
+          detailPanel.classList.remove('hidden');
         });
 
         // Filter logic
         const activeFilters = new Set<string>();
+        const downloadBtn = document.getElementById('tract-map-download') as HTMLButtonElement | null;
+
+        function featureMatches(props: Record<string, unknown>, filters: string[]): boolean {
+          for (const f of filters) {
+            if (f === 'rural'  && !props.is_rural) return false;
+            if (f === 'cra'    && !props.is_cra_lmi) return false;
+            if (f === 'dci'    && !(props.dci_quintile != null && Number(props.dci_quintile) <= 2)) return false;
+            if (f === 'pp'     && !props.is_persistent_poverty) return false;
+            if (f === 'nmtc'   && !props.has_nmtc) return false;
+            if (f === 'tribal' && !props.is_tribal_overlap) return false;
+          }
+          return true;
+        }
 
         function getFilterExpr(f: string): unknown[] | null {
           switch (f) {
@@ -489,6 +516,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           if (filters.length === 0) {
             map.setPaintProperty('tracts-fill', 'fill-opacity', 0.65);
             map.setPaintProperty('tracts-outline', 'line-opacity', 0.55);
+            if (downloadBtn) downloadBtn.textContent = `↓ Export all ${data.features.length.toLocaleString()} tracts (CSV)`;
             return;
           }
 
@@ -498,9 +526,14 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
             : ['all', ...conditions];
 
           map.setPaintProperty('tracts-fill', 'fill-opacity',
-            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.08]);
+            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.18]);
           map.setPaintProperty('tracts-outline', 'line-opacity',
-            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.1]);
+            ['case', matchExpr as maplibregl.ExpressionSpecification, 0.75, 0.25]);
+
+          const matchCount = data.features.filter(
+            feat => feat.properties && featureMatches(feat.properties as Record<string, unknown>, filters)
+          ).length;
+          if (downloadBtn) downloadBtn.textContent = `↓ Export ${matchCount.toLocaleString()} filtered tracts (CSV)`;
         }
 
         filtersEl.querySelectorAll<HTMLInputElement>('input[data-filter]')
@@ -512,6 +545,41 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
               updateFilters();
             });
           });
+
+        // Download CSV — exports tracts matching current filter state
+        if (downloadBtn) {
+          downloadBtn.hidden = false;
+          downloadBtn.textContent = `↓ Export all ${data.features.length.toLocaleString()} tracts (CSV)`;
+          downloadBtn.addEventListener('click', () => {
+            const filters = [...activeFilters];
+            const features = data.features.filter(
+              feat => feat.properties && featureMatches(feat.properties as Record<string, unknown>, filters)
+            );
+            const cols = ['geoid', 'county_name', 'place_name', 'state_abbr', 'is_rural',
+                          'dci_score', 'dci_quintile', 'is_cra_lmi', 'income_level',
+                          'is_persistent_poverty', 'has_nmtc', 'nmtc_projects', 'nmtc_total_usd'];
+            const rows = [cols.join(',')];
+            for (const feat of features) {
+              const p = feat.properties as Record<string, unknown>;
+              rows.push(cols.map(c => {
+                const v = p[c];
+                if (v === null || v === undefined) return '';
+                const s = String(v);
+                return s.includes(',') || s.includes('"') ? `"${s.replace(/"/g, '""')}"` : s;
+              }).join(','));
+            }
+            const slug = stateName.toLowerCase().replace(/\s+/g, '-');
+            const filterTag = filters.length ? '-' + filters.join('+') : '-all';
+            const filename = `oz2-tracts-${slug}${filterTag}.csv`;
+            const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+          });
+        }
 
       } catch (err) {
         console.error('Tract map failed to load data:', err);
