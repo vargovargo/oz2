@@ -418,6 +418,18 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           },
         });
 
+        // Selected tract outline (persists until panel is closed)
+        map.addLayer({
+          id: 'tracts-selected',
+          type: 'line',
+          source: 'tracts',
+          paint: {
+            'line-color': '#f59e0b',
+            'line-width': 3,
+            'line-opacity': 0,
+          },
+        });
+
         // Show UI panels
         loadingEl.style.display = 'none';
         filtersEl.classList.remove('hidden');
@@ -445,16 +457,25 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         // Click → fixed detail panel (top-right of map, consistent position)
         const detailPanel = document.getElementById('tract-map-detail')!;
         const detailBody  = document.getElementById('tract-map-detail-body')!;
+        let selectedGeoid: string | null = null;
+
+        function clearSelection() {
+          selectedGeoid = null;
+          map.setPaintProperty('tracts-selected', 'line-opacity', 0);
+          detailPanel.classList.add('hidden');
+        }
 
         detailBody.addEventListener('click', (e) => {
-          if ((e.target as Element).closest('.ozp-close')) {
-            detailPanel.classList.add('hidden');
-          }
+          if ((e.target as Element).closest('.ozp-close')) clearSelection();
         });
 
         map.on('click', 'tracts-fill', (e) => {
           const feat = e.features?.[0];
           if (!feat?.properties) return;
+          selectedGeoid = String(feat.properties.geoid);
+          map.setPaintProperty('tracts-selected', 'line-opacity', [
+            'case', ['==', ['get', 'geoid'], selectedGeoid], 1, 0,
+          ]);
           detailBody.innerHTML = buildPopupHTML(feat.properties as Record<string, unknown>);
           detailBody.scrollTop = 0;
           detailPanel.classList.remove('hidden');
