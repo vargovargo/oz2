@@ -61,54 +61,15 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     <div id="tract-map-detail-body" class="overflow-y-auto" style="max-height: 470px;"></div>
   </div>
 
-  <!-- Filter panel (bottom-left overlay) -->
+  <!-- Left panel: DCI legend + filter checkboxes + export (bottom-left overlay) -->
   <div
     id="tract-map-filters"
     class="absolute bottom-3 left-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
     style="max-width: 220px;"
   >
-    <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">Highlight tracts</p>
-    <div class="space-y-1.5">
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">CRA LMI designation</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="dci" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">DCI most distressed (Q1–Q2)</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="pp" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">USDA persistent poverty</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="nmtc" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">Prior NMTC investment</span>
-      </label>
-      <label class="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" data-filter="tribal" class="accent-oz-blue" />
-        <span class="text-oz-neutral-700">Tribal / AIAN overlap</span>
-      </label>
-    </div>
-    <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
-    <button
-      id="tract-map-download"
-      hidden
-      class="mt-2 w-full text-left text-xs text-oz-blue underline cursor-pointer bg-transparent border-0 p-0 leading-snug hover:opacity-75"
-    >↓ Export tracts as CSV</button>
-  </div>
-
-  <!-- DCI legend (bottom-right overlay) -->
-  <div
-    id="tract-map-legend"
-    class="absolute bottom-3 right-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
-  >
+    <!-- DCI legend -->
     <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">DCI Distress (EIG 2023)</p>
-    <div class="space-y-1">
+    <div class="space-y-1 mb-3">
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#7f1d1d"></span>
         <span class="text-oz-neutral-600">Q1 — most distressed</span>
@@ -133,6 +94,43 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0 border border-oz-neutral-300" style="background:#9ca3af"></span>
         <span class="text-oz-neutral-400">No DCI data</span>
       </div>
+    </div>
+
+    <!-- Filter checkboxes -->
+    <div class="border-t border-oz-neutral-200 pt-3">
+      <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">Highlight tracts</p>
+      <div class="space-y-1.5">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">CRA LMI designation</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="dci" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">DCI most distressed (Q1–Q2)</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="pp" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">USDA persistent poverty</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="nmtc" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Prior NMTC investment</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="tribal" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Tribal / AIAN overlap</span>
+        </label>
+      </div>
+      <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
+      <button
+        id="tract-map-download"
+        hidden
+        class="mt-2 w-full text-left text-xs text-oz-blue underline cursor-pointer bg-transparent border-0 p-0 leading-snug hover:opacity-75"
+      >↓ Export tracts as CSV</button>
     </div>
   </div>
 </div>
@@ -187,7 +185,6 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
   const loadingEl = document.getElementById('tract-map-loading')!;
   const errorEl   = document.getElementById('tract-map-error')!;
   const filtersEl = document.getElementById('tract-map-filters')!;
-  const legendEl  = document.getElementById('tract-map-legend')!;
 
   const geojsonUrl = `/geo/${stateFips}.geojson`;
 
@@ -424,7 +421,6 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         // Show UI panels
         loadingEl.style.display = 'none';
         filtersEl.classList.remove('hidden');
-        legendEl.classList.remove('hidden');
 
         // Hover interaction
         let hoveredGeoid: string | null = null;
