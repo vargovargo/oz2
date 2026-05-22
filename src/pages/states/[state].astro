@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import { getAllStates } from '@/lib/states';
 import type { StateMetadata } from '@/lib/states';
 import craPlaces from '../../../data/cra_lmi_places.json';
+import TractMap from '@/components/TractMap.astro';
 
 export function getStaticPaths() {
   return getAllStates().map((s) => ({
@@ -212,21 +213,12 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
   <!-- 3. Eligible tracts -->
   <section class="mb-10">
     <h2 class="text-lg font-semibold mb-4">Eligible tracts</h2>
-    <div class="bg-white border border-oz-neutral-200 rounded p-6">
-      <iframe
-        src={eigMapUrl}
-        title={`EIG OZ 2.0 eligibility map — ${name}`}
-        class="w-full rounded border-0"
-        style="height: 480px;"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-      <div class="mt-3 flex gap-4 text-xs text-oz-neutral-400">
-        <a href="https://www.arcgis.com/apps/dashboards/c473c71f0704408f934fbdc342caf1f1" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">Open full map</a>
-        <a href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx" class="underline hover:text-oz-neutral-600">IRS appendix (XLSX)</a>
-        <span>Source: EIG / IRS Rev. Proc. 2026-14</span>
-      </div>
-    </div>
+    <TractMap
+      stateFips={fips}
+      stateName={name}
+      tractCount={total_eligible}
+      eigMapUrl={eigMapUrl}
+    />
 
     {top10_counties.length > 0 && (
       <div class="mt-4 bg-white border border-oz-neutral-200 rounded overflow-hidden">

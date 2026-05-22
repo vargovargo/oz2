@@ -1,0 +1,13 @@
+# Python dependencies for scripts/build_state_geo.py
+# Install: pip install -r requirements-geo.txt
+#
+# Note: geopandas requires GDAL.
+#   macOS:   brew install gdal
+#   Ubuntu:  sudo apt-get install gdal-bin libgdal-dev python3-gdal
+#   Conda:   conda install geopandas  (easiest — handles GDAL automatically)
+geopandas>=0.14
+shapely>=2.0
+fiona>=1.9
+pyproj>=3.6
+pandas>=2.0
+pyarrow>=14.0

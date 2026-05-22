@@ -20,6 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <title>{title} — OZ 2.0 Resource</title>
+    <slot name="head" />
   </head>
   <body class="h-full bg-oz-neutral-50 text-oz-neutral-900 flex flex-col">
 
