@@ -36,7 +36,7 @@ import Layout from '@/layouts/Layout.astro';
         already-appreciating urban tracts, not the high-distress rural and legacy industrial
         communities the program was conceived to help.
       </p>
-      <p class="text-sm text-oz-neutral-700">
+      <p class="text-sm text-oz-neutral-700 mb-4">
         The absence of enforceable disclosure requirements under OZ 1.0 made it difficult to
         assess outcomes precisely. QOFs filed Form 8996 but faced no meaningful penalty for
         non-filing or incomplete data. Coyne and Johnson's analysis — the most comprehensive
@@ -45,50 +45,77 @@ import Layout from '@/layouts/Layout.astro';
         national median household income of $69,000 (Kennedy &amp; Wheeler, using IRS records
         for the same period).
       </p>
+      <p class="text-sm text-oz-neutral-700">
+        The JCT staff's May 2024 analysis, drawing on electronically filed returns through tax
+        year 2022, documented $84.7 billion in cumulative QOF investment — of which $77.2 billion
+        could be matched to specific census tracts. Only 8.5 percent of that tract-matched
+        investment reached rural areas, and 94 percent of tracts in the top investment decile
+        were metropolitan. These figures confirm that OZ 1.0 capital formation continued steadily
+        through the program's TCJA-era lifespan while the metro concentration problem
+        documented in 2019–2020 persisted.
+      </p>
     </section>
 
     <section id="by-the-numbers" class="mb-10">
       <h2 class="text-xl font-semibold mb-4">By the numbers<a href="#by-the-numbers" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
 
       <!-- Source context -->
-      <div class="grid grid-cols-2 gap-3 mb-6 text-xs">
+      <div class="grid grid-cols-3 gap-3 mb-6 text-xs">
         <div class="border border-oz-neutral-200 rounded p-3 bg-white">
           <p class="font-semibold text-oz-neutral-900 mb-1">Kennedy &amp; Wheeler (2022)</p>
-          <p class="text-oz-neutral-500">Form 8996 e-filers via Joint Committee on Taxation · Tax years 2019–2020 · ~78% of total $ volume. Finest geographic scale: commuting zones.</p>
+          <p class="text-oz-neutral-500">Form 8996 e-filers via JCT · Tax years 2019–2020 · ~78% of total $ volume. Commuting zone geography. Best source for sub-state concentration.</p>
         </div>
         <div class="border border-oz-neutral-200 rounded p-3 bg-white">
           <p class="font-semibold text-oz-neutral-900 mb-1">Coyne &amp; Johnson (Treasury OTA, 2023)</p>
-          <p class="text-oz-neutral-500">Full Form 8996 universe + Form 8997 investor data · Tax years 2018–2020. Most comprehensive IRS analysis. Finest geographic scale: states.</p>
+          <p class="text-oz-neutral-500">Full Form 8996 universe + Form 8997 investor data · Tax years 2018–2020. Most comprehensive investor-level analysis. State geography.</p>
+        </div>
+        <div class="border border-oz-neutral-200 rounded p-3 bg-white">
+          <p class="font-semibold text-oz-neutral-900 mb-1">JCT Staff (May 2024)</p>
+          <p class="text-oz-neutral-500">E-filers · Tax years 2019–2022 · All 50 states, DC + territories. State investment, rural splits, sector breakdown (NAICS), investor income distribution.</p>
         </div>
       </div>
 
       <!-- Investment timeline -->
       <div class="mb-7">
-        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOF assets held (cumulative) — Coyne &amp; Johnson</p>
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOF cumulative investment — JCT Staff (May 2024); extended from Coyne &amp; Johnson 2018–2020</p>
         <div class="space-y-2">
           <div class="flex items-center gap-3 text-sm">
             <span class="w-10 text-oz-neutral-500 shrink-0">2018</span>
             <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
-              <div class="h-full rounded-full bg-[#1a4480]" style="width: 8%;"></div>
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 1%;"></div>
             </div>
-            <span class="w-14 text-right font-semibold text-oz-neutral-900 shrink-0">$4B</span>
+            <span class="w-16 text-right font-semibold text-oz-neutral-500 shrink-0 text-xs">$16M</span>
           </div>
           <div class="flex items-center gap-3 text-sm">
             <span class="w-10 text-oz-neutral-500 shrink-0">2019</span>
             <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
-              <div class="h-full rounded-full bg-[#1a4480]" style="width: 63%;"></div>
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 32%;"></div>
             </div>
-            <span class="w-14 text-right font-semibold text-oz-neutral-900 shrink-0">$30B</span>
+            <span class="w-16 text-right font-semibold text-oz-neutral-900 shrink-0">$26.7B</span>
           </div>
           <div class="flex items-center gap-3 text-sm">
             <span class="w-10 text-oz-neutral-500 shrink-0">2020</span>
             <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 51%;"></div>
+            </div>
+            <span class="w-16 text-right font-semibold text-oz-neutral-900 shrink-0">$43.0B</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="w-10 text-oz-neutral-500 shrink-0">2021</span>
+            <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
+              <div class="h-full rounded-full bg-[#1a4480]" style="width: 77%;"></div>
+            </div>
+            <span class="w-16 text-right font-semibold text-oz-neutral-900 shrink-0">$65.6B</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="w-10 text-oz-neutral-500 shrink-0">2022</span>
+            <div class="flex-1 bg-oz-neutral-100 rounded-full h-5 overflow-hidden">
               <div class="h-full rounded-full bg-[#1a4480]" style="width: 100%;"></div>
             </div>
-            <span class="w-14 text-right font-semibold text-oz-neutral-900 shrink-0">$48B</span>
+            <span class="w-16 text-right font-semibold text-oz-neutral-900 shrink-0">$84.7B</span>
           </div>
         </div>
-        <p class="text-xs text-oz-neutral-400 mt-2">Annual new flow: $4B (2018), $26B (2019), $18B (2020). Of the $48B in total QOF assets, $44B was QOZ property. Kennedy &amp; Wheeler count $41.5B cumulative through 2020 (e-filers, 78% of total).</p>
+        <p class="text-xs text-oz-neutral-400 mt-2">JCT figures are total reported by all QOFs (paper + electronic). Of the $84.7B in 2022, $82.5B was electronically filed and $77.2B was matched to specific census tracts (~$5.1B unmatched, likely data entry errors). C&amp;J's independent full-universe analysis shows $48B in total QOF <em>assets</em> at end of 2020 — slightly higher than JCT's $43B because C&amp;J includes unrealized appreciation and all fund assets, not just reported investment stock.</p>
       </div>
 
       <!-- Concentration stats -->
@@ -119,6 +146,16 @@ import Layout from '@/layouts/Layout.astro';
           <div class="border border-oz-neutral-100 rounded p-3 bg-oz-neutral-50">
             <p class="font-semibold text-oz-neutral-700 mb-1">Within-state income skew</p>
             <p class="text-oz-neutral-500">Nationally, 34% of QOZ investment went to the highest-income quintile of designated OZ tracts within each state — nearly double the 17% share that went to the lowest-income quintile (C&amp;J Table 14).</p>
+          </div>
+        </div>
+        <div class="mt-3 grid grid-cols-2 gap-3 text-xs">
+          <div class="border border-oz-neutral-100 rounded p-3 bg-oz-neutral-50">
+            <p class="font-semibold text-oz-neutral-700 mb-1">Rural share of investment: 8.5%</p>
+            <p class="text-oz-neutral-500">Of the $77.2B in tract-matched QOF investment through 2022, only 8.5% reached non-metropolitan tracts — even though rural tracts make up roughly one-quarter of all designated OZs. The OZ 2.0 rural carve-out (QROF) is a direct response to this gap. (JCT Table 2, 2024)</p>
+          </div>
+          <div class="border border-oz-neutral-100 rounded p-3 bg-oz-neutral-50">
+            <p class="font-semibold text-oz-neutral-700 mb-1">Metro dominance of top-funded tracts: 94%</p>
+            <p class="text-oz-neutral-500">94% of tracts in the top investment decile (by 2022 cumulative investment) are metropolitan — compared to 76.6% of all designated OZ tracts and 83.5% of all U.S. census tracts. The metro/rural gap in investment intensity was largest at the top of the distribution. (JCT Table 3, 2024)</p>
           </div>
         </div>
       </div>
@@ -194,87 +231,102 @@ import Layout from '@/layouts/Layout.astro';
         <p class="text-xs text-oz-neutral-400 mt-2">Top 10 commuting zones by total $ accounted for more than half of all e-filed OZ investment in 2020. Chicago ($180M) ranked 37th despite having the most designated OZs of any metro, illustrating the per-capita disparity. Salt Lake City ($1.33B, 4th by total) had the highest per-OZ-resident investment of any major metro at $15,416.</p>
       </div>
 
-      <!-- State table and sector side by side -->
+      <!-- State table (JCT 2024, through 2022) -->
       <div class="mb-7">
-        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-1">QOZ property by state (TY2020) — Coyne &amp; Johnson Table 9</p>
-        <p class="text-xs text-oz-neutral-400 mb-3">State total differs from $44B (Table 4) because some returns lacked location data; $38.15B is location-reported total. Amounts rounded to nearest $10M. * = not reported (insufficient observations).</p>
-        <div class="overflow-y-auto max-h-80 border border-oz-neutral-200 rounded">
+        <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-1">QOF investment by state (cumulative through 2022) — JCT Staff Table 2</p>
+        <p class="text-xs text-oz-neutral-400 mb-3">E-filers matched to census tract ($77.2B total). LIC = Low-Income Community; Non-LIC = contiguous non-LIC tract; Non-QOZ = investment outside any designated zone. Rural = not in an MSA. Per capita based on state population. <span class="text-[#1a4480] font-semibold">Blue</span> = per capita &gt;$600. <span class="text-[#cd2026] font-semibold">Red</span> = per capita &lt;$100. <span class="text-amber-600 font-semibold">Amber</span> = Non-LIC share &gt;30%.</p>
+        <div class="overflow-y-auto max-h-96 border border-oz-neutral-200 rounded">
           <table class="w-full text-xs border-collapse">
             <thead class="sticky top-0 bg-oz-neutral-50 border-b border-oz-neutral-200">
               <tr>
                 <th class="text-left py-2 px-3 font-semibold text-oz-neutral-700">State</th>
-                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">QOZ Prop. ($M)</th>
-                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">% OZs funded</th>
-                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/OZ ($M)</th>
-                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/funded OZ ($M)</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">Invest. ($M)</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">% LIC</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">% Non-LIC</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">% Non-QOZ</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">% Rural</th>
+                <th class="text-right py-2 px-3 font-semibold text-oz-neutral-700 whitespace-nowrap">$/capita</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-oz-neutral-100">
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">California</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$4,800</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">52%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.5</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New York</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$3,930</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">47%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$16.1</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Florida</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$2,020</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">49%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.7</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Arizona</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,740</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">72%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$14.4</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Utah</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,540</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">74%</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$33.5</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$45.3</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Colorado</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,450</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">75%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$15.3</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Washington</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,090</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">66%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.8</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Alabama</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,110</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">30%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.0</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$23.1</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Michigan</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,140</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">42%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.4</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Tennessee</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,050</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">56%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.7</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Ohio</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,070</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">48%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.0</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New Jersey</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,070</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">51%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$12.3</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">North Carolina</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$1,020</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">53%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.7</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Oregon</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$990</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">76%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$15.2</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Georgia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$910</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">53%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.6</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">South Carolina</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$910</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">63%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$10.7</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Maryland</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$870</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">49%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$5.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$11.9</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Pennsylvania</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$810</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">44%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$2.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.1</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Virginia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$680</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">45%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.2</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Missouri</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$650</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">44%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.2</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Indiana</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$610</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">51%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$7.7</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Minnesota</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$590</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">48%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.5</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Nevada</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$550</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">61%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$14.9</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Massachusetts</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$440</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">49%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$3.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$6.6</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">District of Columbia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$440</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">80%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$17.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$22.0</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Texas</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$2,580</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">41%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$9.9</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Illinois</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$320</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">20%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$1.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$4.9</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Iowa</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$30</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">27%</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">$0.5</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$1.8</td></tr>
-              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">West Virginia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$20</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">40%</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$0.4</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">$0.9</td></tr>
-              <tr class="bg-oz-neutral-50 border-t border-oz-neutral-200"><td class="py-1.5 px-3 font-semibold text-oz-neutral-700">All remaining states</td><td class="py-1.5 px-3 text-right text-oz-neutral-400 text-xs" colspan="4">See full table in C&amp;J WP-123 — all 51 state rows in data/oz1_investment_data.json</td></tr>
-              <tr class="bg-oz-neutral-100 border-t border-oz-neutral-200"><td class="py-1.5 px-3 font-semibold text-oz-neutral-900">National total</td><td class="py-1.5 px-3 text-right font-bold text-oz-neutral-900">$38,150</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">48%</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$4.9</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">$10.1</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Alabama</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,070</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.7</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">221</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Alaska</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">140</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">25.3</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">190</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Arizona</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">4,227</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">92.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">7.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.6</td><td class="py-1.5 px-3 text-right font-bold text-[#1a4480]">621</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Arkansas</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">538</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">17.3</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">181</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">California</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">9,467</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">94.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.8</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">243</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Colorado</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,681</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">15.2</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">493</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Connecticut</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">477</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.1</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">133</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Delaware</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">93</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">98</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">District of Columbia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,467</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-bold text-[#1a4480]">2,181</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Florida</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">6,085</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.8</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">300</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Georgia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,437</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">26.8</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">239</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Hawaii</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">282</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">60.6</td><td class="py-1.5 px-3 text-right font-semibold text-amber-600">39.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">64.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">199</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Idaho</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">130</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">22.7</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">78</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Illinois</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">465</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">91.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">8.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">6.1</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">36</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Indiana</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,012</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">5.7</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">153</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Iowa</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">85</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">89.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">10.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">18.2</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">27</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Kansas</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">214</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">15.4</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">74</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Kentucky</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">357</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">33.6</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">81</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Louisiana</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">493</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">75.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">12.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">12.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">12.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">106</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Maine</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">190</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">30.8</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">143</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Maryland</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,426</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">2.4</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">238</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Massachusetts</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">885</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">130</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Michigan</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">3,129</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">8.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">315</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Minnesota</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">726</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">92.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">7.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">18.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">132</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Mississippi</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">388</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">93.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">6.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">70.8</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">130</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Missouri</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,122</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">9.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">185</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Montana</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">304</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">93.2</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">295</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Nebraska</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">467</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">76.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">23.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">40.8</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">247</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Nevada</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,550</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">91.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">8.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">15.9</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">537</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New Hampshire</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">64</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">71.8</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">48</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New Jersey</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,336</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">94.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">3.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">2.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">261</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New Mexico</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">289</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">97.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">14.2</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">138</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">New York</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">5,892</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">78.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">17.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">3.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.5</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">298</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">North Carolina</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,370</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">97.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">11.1</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">236</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">North Dakota</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">113</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">10.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">152</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Ohio</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,275</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">6.5</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">196</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Oklahoma</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">336</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">87.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">12.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">52.1</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">86</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Oregon</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,600</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">93.3</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">6.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">9.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">398</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Pennsylvania</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,519</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">91.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">8.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.5</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">119</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Puerto Rico</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">415</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">56.3</td><td class="py-1.5 px-3 text-right font-semibold text-amber-600">43.7</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">6.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">120</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Rhode Island</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">199</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">1.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">3.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">189</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">South Carolina</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,392</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">9.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">284</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">South Dakota</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">123</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">65.0</td><td class="py-1.5 px-3 text-right font-semibold text-amber-600">35.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">22.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">144</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Tennessee</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,733</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.1</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">9.2</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">414</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Texas</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">5,222</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">98.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">2.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">5.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">190</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Utah</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,977</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">100.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">3.1</td><td class="py-1.5 px-3 text-right font-bold text-[#1a4480]">994</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Vermont</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">80</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.5</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">48.3</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">127</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Virginia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">1,321</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">95.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">2.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">2.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">6.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">158</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Washington</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">2,402</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">97.8</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">2.2</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">4.6</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">335</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">West Virginia</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">84</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">96.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">3.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">18.3</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">46</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Wisconsin</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">530</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">99.6</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.4</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">9.6</td><td class="py-1.5 px-3 text-right font-semibold text-[#cd2026]">92</td></tr>
+              <tr class="bg-white"><td class="py-1.5 px-3 text-oz-neutral-700">Wyoming</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">995</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">5.1</td><td class="py-1.5 px-3 text-right font-semibold text-amber-600">94.9</td><td class="py-1.5 px-3 text-right text-oz-neutral-500">0.0</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">97.7</td><td class="py-1.5 px-3 text-right font-bold text-[#1a4480]">1,706</td></tr>
+              <tr class="bg-oz-neutral-100 border-t-2 border-oz-neutral-300"><td class="py-1.5 px-3 font-bold text-oz-neutral-900">National total</td><td class="py-1.5 px-3 text-right font-bold text-oz-neutral-900">77,172</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">93.5</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">5.5</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">0.9</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">8.5</td><td class="py-1.5 px-3 text-right font-semibold text-oz-neutral-900">238</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="text-xs text-oz-neutral-400 mt-2"><span class="text-[#cd2026] font-semibold">Red</span> = notable outliers. Utah ($33.5M/OZ) is 7× the national average — driven by concentrated Salt Lake City deals. Illinois (20% coverage) and Iowa (27%) are the lowest-coverage non-suppressed states. Full 51-state data in <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline" target="_blank" rel="noopener">WP-123</a> and <code>data/oz1_investment_data.json</code>.</p>
+        <p class="text-xs text-oz-neutral-400 mt-2"><span class="text-[#1a4480] font-semibold">Blue</span> = per capita &gt;$600 (DC $2,181; Wyoming $1,706; Utah $994; Arizona $621). <span class="text-[#cd2026] font-semibold">Red</span> = per capita &lt;$100 (Iowa $27; Illinois $36; WV $46; NH $48; Kansas $74). <span class="text-amber-600 font-semibold">Amber Non-LIC</span> = investment disproportionately in contiguous non-LIC tracts (Wyoming 94.9% — almost entirely non-LIC; Puerto Rico 43.7%; Hawaii 39.4%; South Dakota 35.0%). Bold rural % = states where majority of OZ investment reached non-metro areas.</p>
       </div>
 
       <!-- Sector and investor -->
       <div class="grid grid-cols-2 gap-5 mb-7">
         <!-- Sector breakdown -->
         <div>
-          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOZB sector share — K&amp;W Table 4 (2020 e-filers) vs. C&amp;J Table 7</p>
+          <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">QOZB sector share — JCT Staff Table 4 (2022 cumulative, e-filers)</p>
           <div class="space-y-2.5">
             <div>
               <div class="flex justify-between text-xs mb-1">
-                <span class="text-oz-neutral-700">Real estate</span>
-                <span class="font-semibold text-oz-neutral-900">52% (K&amp;W) · 68% (C&amp;J)</span>
+                <span class="text-oz-neutral-700">Real estate &amp; rental</span>
+                <span class="font-semibold text-oz-neutral-900">62.7% · $51.8B</span>
               </div>
               <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
-                <div class="h-full bg-[#1a4480] rounded-full" style="width: 68%;"></div>
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 63%;"></div>
               </div>
             </div>
             <div>
               <div class="flex justify-between text-xs mb-1">
-                <span class="text-oz-neutral-700">Construction</span>
-                <span class="font-semibold text-oz-neutral-900">11% (K&amp;W) · 4% (C&amp;J)</span>
-              </div>
-              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
-                <div class="h-full bg-[#1a4480] rounded-full" style="width: 11%;"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-oz-neutral-700">Finance &amp; insurance</span>
-                <span class="font-semibold text-oz-neutral-900">9% (K&amp;W) · 5% (C&amp;J)</span>
+                <span class="text-oz-neutral-700">Information</span>
+                <span class="font-semibold text-oz-neutral-900">9.0% · $7.4B</span>
               </div>
               <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
                 <div class="h-full bg-[#1a4480] rounded-full" style="width: 9%;"></div>
@@ -282,15 +334,33 @@ import Layout from '@/layouts/Layout.astro';
             </div>
             <div>
               <div class="flex justify-between text-xs mb-1">
-                <span class="text-oz-neutral-700">Lodging &amp; restaurants</span>
-                <span class="font-semibold text-oz-neutral-900">3% (K&amp;W)</span>
+                <span class="text-oz-neutral-700">Construction</span>
+                <span class="font-semibold text-oz-neutral-900">8.5% · $7.1B</span>
               </div>
               <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
-                <div class="h-full bg-[#1a4480] rounded-full" style="width: 3%;"></div>
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 8.5%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-700">Finance &amp; insurance</span>
+                <span class="font-semibold text-oz-neutral-900">7.0% · $5.7B</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 7%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-oz-neutral-700">Accommodation &amp; food</span>
+                <span class="font-semibold text-oz-neutral-900">2.4% · $2.0B</span>
+              </div>
+              <div class="h-2 bg-oz-neutral-100 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1a4480] rounded-full" style="width: 2.4%;"></div>
               </div>
             </div>
           </div>
-          <p class="text-xs text-oz-neutral-400 mt-2">Differences reflect e-filer scope (K&amp;W) vs. full universe (C&amp;J) and NAICS classification approach. Real estate dominance is consistent across both sources and both years.</p>
+          <p class="text-xs text-oz-neutral-400 mt-2">Total $82.5B (includes $5.1B unmatched to tract; sector total differs from state total). Real estate dominance consistent with earlier 2020 data from K&amp;W (52%) and C&amp;J (68%); the Information sector's $7.4B share (9%) — largely data centers and tech campuses — was not prominent in earlier analyses.</p>
         </div>
 
         <!-- Investor profile -->
@@ -298,16 +368,20 @@ import Layout from '@/layouts/Layout.astro';
           <p class="text-xs font-semibold text-oz-neutral-500 uppercase tracking-wide mb-3">Who invested — household income comparison</p>
           <dl class="divide-y divide-oz-neutral-100 text-xs mb-3">
             <div class="flex justify-between py-1.5">
-              <dt class="text-oz-neutral-500">OZ investor median HH income (K&amp;W, 2019)</dt>
-              <dd class="font-bold text-oz-neutral-900">$741,000</dd>
+              <dt class="text-oz-neutral-500">OZ investor median HH income (JCT, 2019)</dt>
+              <dd class="font-bold text-oz-neutral-900">$269,000</dd>
             </div>
             <div class="flex justify-between py-1.5">
               <dt class="text-oz-neutral-500">National median HH income (2019)</dt>
-              <dd class="font-semibold text-oz-neutral-500">$69,000</dd>
+              <dd class="font-semibold text-oz-neutral-500">$68,000</dd>
             </div>
             <div class="flex justify-between py-1.5">
-              <dt class="text-oz-neutral-500">OZ investor average HH income (K&amp;W)</dt>
-              <dd class="font-bold text-oz-neutral-900">$4,852,000</dd>
+              <dt class="text-oz-neutral-500">OZ investor avg HH income (JCT, 2019)</dt>
+              <dd class="font-bold text-oz-neutral-900">$1,084,000</dd>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <dt class="text-oz-neutral-500">National average HH income (2019)</dt>
+              <dd class="font-semibold text-oz-neutral-500">$104,000</dd>
             </div>
             <div class="flex justify-between py-1.5">
               <dt class="text-oz-neutral-500">Individual investors in QOFs (C&amp;J, 2020)</dt>
@@ -318,15 +392,11 @@ import Layout from '@/layouts/Layout.astro';
               <dd class="font-semibold text-oz-neutral-900">$250,000</dd>
             </div>
             <div class="flex justify-between py-1.5">
-              <dt class="text-oz-neutral-500">Avg deferred gain per entity (C&amp;J, 2020)</dt>
-              <dd class="font-semibold text-oz-neutral-900">$4,000,000</dd>
-            </div>
-            <div class="flex justify-between py-1.5">
               <dt class="text-oz-neutral-500">JCT annual cost (foregone revenue)</dt>
               <dd class="font-semibold text-oz-neutral-900">$1.6B/yr</dd>
             </div>
           </dl>
-          <p class="text-xs text-oz-neutral-400">The median OZ investor's household income was more than 10× the national median. Roughly ⅔ of deferred gains came from individual filers; entities (partnerships, corporations) averaged $4M per investment.</p>
+          <p class="text-xs text-oz-neutral-400">JCT figures use the Larrimore-Mortenson-Splinter methodology (K-1 partnership income mapped to household). K&amp;W's earlier estimate (median $741K, average $4.85M) used individual AGI directly and covers a different investor universe; both confirm that OZ investors' household incomes ran multiples above the national median.</p>
         </div>
       </div>
     </section>
@@ -451,7 +521,8 @@ import Layout from '@/layouts/Layout.astro';
         <a href="https://patrick-kennedy.github.io/files/Kennedy_Wheeler_OZ_2022.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Kennedy &amp; Wheeler (UC Berkeley / JCT, 2022)</a> —
         Form 8996 e-filers, tax years 2019–2020;
         <a href="https://home.treasury.gov/system/files/131/WP-123.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Coyne &amp; Johnson (Treasury OTA WP-123, 2023)</a> —
-        full Form 8996 universe + Form 8997, tax years 2018–2020.
+        full Form 8996 universe + Form 8997, tax years 2018–2020;
+        JCT Staff, "Description of Qualified Opportunity Zone Tax Provisions and Analysis of 2019–2022 Tax Return Data" (May 2024) — e-filers, tax years 2019–2022, all states + DC + territories.
       </p>
       <p class="mb-1">Academic sources:
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0094119022000286" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Chen, Glaeser, Wessel (JUE 2023)</a>;
@@ -467,7 +538,7 @@ import Layout from '@/layouts/Layout.astro';
         <a href="https://nlihc.org/sites/default/files/A_Critical_Explanation_of_Opportunity_Zones.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NLIHC (2021)</a>;
         <a href="https://www.congress.gov/bill/116th-congress/senate-bill/2787" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Wyden S. 2787 (2019)</a>.
         OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21.
-        Last reviewed: <time datetime="2026-05-15">May 15, 2026</time>.
+        Last reviewed: <time datetime="2026-05-29">May 29, 2026</time>.
       </p>
     </section>
   </div>
