@@ -136,6 +136,8 @@ purpose: |
 
 **Coyne, David and Johnson, Craig E. "Use of the Opportunity Zone Tax Incentive: What the Tax Data Tell Us."** Treasury Office of Tax Analysis Working Paper 123, July 2023. https://home.treasury.gov/system/files/131/WP-123.pdf — Most comprehensive IRS-data analysis; full Form 8996 universe, 2018–2020; ~$48B in total QOF assets by end of 2020; 48% of designated communities received any investment; real estate = 68% of QOZ property in 2020; ~25,000 individual investors with median AGI ~$730K; state-level coverage in Table 9. last_checked: 2026-05-14.
 
+**JCT Staff, "Description of Qualified Opportunity Zone Tax Provisions and Analysis of 2019–2022 Tax Return Data Related to Investments in Qualified Opportunity Zones."** Joint Committee on Taxation, May 2024. — Congressional staff analysis extending OZ 1.0 data through tax year 2022. Cumulative QOF investment: $84.7B reported, $77.2B matched to census tracts. Key tables: Table 2 (state-level investment, rural splits, per capita — all 50 states + DC + territories), Table 3 (census tract characteristics; top-decile tracts 94% metropolitan), Table 4 (NAICS sector breakdown; real estate 62.7%, Information 9.0%, Construction 8.5%). Investor income distribution (2019): median household income $269K (~4× national median), average $1,084K (>10× national average), via Larrimore-Mortenson-Splinter methodology. Rural share of matched investment: 8.5%. last_checked: 2026-05-29.
+
 **Treasury/IRS QOF data filings (Form 8996).**
 
 **HUD PD&R OZ impact reports.**
