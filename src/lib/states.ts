@@ -63,6 +63,7 @@ export interface StateMetadata {
   pp_county_count: number | null;
   nmtc_projects: number | null;
   cra_lmi_tracts: number | null;
+  ui_invest_q1_tracts: number | null;
   notes: string | null;
 }
 

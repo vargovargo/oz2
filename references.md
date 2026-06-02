@@ -40,7 +40,7 @@ purpose: |
 
 **OpportunityZones.com state directory.** https://opportunityzones.com/location/
 
-**Urban Institute, "Data to Inform 2026 Opportunity Zone Selections."** https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections — "Goldilocks" tract classification.
+**Urban Institute, "Data to Inform 2026 Opportunity Zone Selections."** https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections — Project page: https://www.urban.org/projects/informing-2026-opportunity-zone-selections-state-and-local-decisionmakers/opportunity — Tract-level investability scores predicting likelihood of private capital attraction, modeled from OZ 1.0 investment patterns ("Goldilocks" framework: high-need but not so distressed as to deter private investment). Integrated as default map choropleth and state data context card on this site. Coverage limited to tracts with sufficient OZ 1.0 modeling history. last_checked: 2026-06-02
 
 **Census Bureau ACS 2020-2024 5-year estimates.** Released Jan 29, 2026.
 
@@ -69,6 +69,8 @@ purpose: |
 **Frost Brown Todd / Gibbons, "Strategic Selection of OZ 2.0: A Governor's Guide."** Nov 2025. https://fbtgibbons.com/strategic-selection-of-opportunity-zones-2-0-a-governors-guide-to-best-practices/
 
 **NADO OZ 2.0 Resource Guide.** https://www.nado.org/opportunity-zones-2-0-resource-guide/
+
+**Accelerator for America, "Opportunity Zone Designation Toolkit."** May 2026. https://www.acceleratorforamerica.org/oztoolkit/ — PDF: https://www.acceleratorforamerica.org/wp-content/uploads/2026/05/Opportunity-Zone-Designation-Toolkit_FINAL.pdf — Step-by-step guide for local planners on tract prioritization, community need documentation, and nomination package preparation. [Description to be updated after full PDF review.] last_checked: 2026-06-02
 
 **Sorenson Impact Center, "Rural Opportunity Zone and Recovery Playbook."** https://sorensonimpact.com/
 
