@@ -40,7 +40,7 @@ purpose: |
 
 **OpportunityZones.com state directory.** https://opportunityzones.com/location/
 
-**Urban Institute, "Data to Inform 2026 Opportunity Zone Selections."** https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections — "Goldilocks" tract classification.
+**Urban Institute, "Data to Inform 2026 Opportunity Zone Selections."** https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections — Project page: https://www.urban.org/projects/informing-2026-opportunity-zone-selections-state-and-local-decisionmakers/opportunity — Tract-level investability scores predicting likelihood of private capital attraction, modeled from OZ 1.0 investment patterns ("Goldilocks" framework: high-need but not so distressed as to deter private investment). Integrated as default map choropleth and state data context card on this site. Coverage limited to tracts with sufficient OZ 1.0 modeling history. last_checked: 2026-06-02
 
 **Census Bureau ACS 2020-2024 5-year estimates.** Released Jan 29, 2026.
 
@@ -69,6 +69,14 @@ purpose: |
 **Frost Brown Todd / Gibbons, "Strategic Selection of OZ 2.0: A Governor's Guide."** Nov 2025. https://fbtgibbons.com/strategic-selection-of-opportunity-zones-2-0-a-governors-guide-to-best-practices/
 
 **NADO OZ 2.0 Resource Guide.** https://www.nado.org/opportunity-zones-2-0-resource-guide/
+
+**Accelerator for America, "Opportunity Zone Designation Toolkit for Local Leaders."** May 2026. https://www.acceleratorforamerica.org/oztoolkit/ — PDF: https://www.acceleratorforamerica.org/wp-content/uploads/2026/05/Opportunity-Zone-Designation-Toolkit_FINAL.pdf — Practical guide for mayors and local leaders to prioritize OZ 2.0 eligible tracts; the five-step OZ Prioritization Framework covers market readiness (using Urban Institute classification, HPI trends, job growth), four community-need dimensions (housing supply, economic opportunity, industry growth, fiscal base), anti-displacement considerations, and guidance on communicating tract priorities to governors. Produced with Rvesta Consulting and New Localism Associates. last_checked: 2026-06-02
+
+**Accelerator for America, "OZ Prioritization Rubric."** May 2026. https://docs.google.com/spreadsheets/d/1pDh8K--DA9tmRt3Vsyt1EUFtIAGM212j/edit — Excel workbook companion to the Designation Toolkit; scores eligible tracts on market conditions (Urban Institute classification, HPI change, job growth, multifamily share) and four community-need dimensions, with step-by-step instructions and methodology notes. last_checked: 2026-06-02
+
+**Accelerator for America, "OZ Prioritization Dataset."** May 2026. https://www.acceleratorforamerica.org/wp-content/uploads/2026/05/OZ-Prioritization-Dataset.xlsx — National tract-level dataset underlying the OZ Prioritization Rubric; provides the federal data inputs (market conditions, community need metrics) for all OZ 2.0 eligible census tracts. last_checked: 2026-06-02
+
+**Accelerator for America / Rvesta Consulting, "Opportunity Zones Research Landscape Scan."** May 2026. https://www.acceleratorforamerica.org/wp-content/uploads/2026/05/Opportunity-Zones-Research-Landscape-Scan_DRAFT-FOR-RELEASE-MAY-2026.pdf — Literature review summarizing OZ 1.0 investment patterns, geographic and sectoral concentration, community impact evidence, and implications for OZ 2.0 designation strategy; prepared to inform the Designation Toolkit recommendations. last_checked: 2026-06-02
 
 **Sorenson Impact Center, "Rural Opportunity Zone and Recovery Playbook."** https://sorensonimpact.com/
 

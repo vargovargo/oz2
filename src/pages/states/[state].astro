@@ -21,6 +21,7 @@ const {
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
   state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects, cra_lmi_tracts,
+  ui_invest_q1_tracts,
 } = state;
 
 const statePlaces = (craPlaces as Record<string, { cities: {name:string,tracts:number}[], zips: {zip:string,city:string,tracts:number}[] }>)[fips] ?? null;
@@ -243,7 +244,7 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
   </section>
 
   <!-- 4. Data context -->
-  {(dci_q1_tracts != null || pp_county_count != null || nmtc_projects != null || state_cdfi_count != null || cra_lmi_tracts != null) && (
+  {(dci_q1_tracts != null || pp_county_count != null || nmtc_projects != null || state_cdfi_count != null || cra_lmi_tracts != null || ui_invest_q1_tracts != null) && (
     <section class="mb-10">
       <h2 class="text-lg font-semibold mb-4">Data context</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -335,6 +336,20 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
           </div>
         )}
 
+        {ui_invest_q1_tracts != null && (
+          <div class="bg-white border border-oz-neutral-200 rounded p-5">
+            <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{ui_invest_q1_tracts.toLocaleString()}</p>
+            <p class="text-xs text-oz-neutral-500 mb-2">Eligible tracts in top investability quintile (Urban Institute model)</p>
+            <p class="text-xs text-oz-neutral-400">
+              The <a href="https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections"
+                target="_blank" rel="noopener" class="underline hover:text-oz-neutral-600">Urban Institute investability model</a> scores
+              OZ-eligible tracts by predicted likelihood of attracting private capital, based on OZ 1.0
+              investment patterns. Quintile 1 = highest predicted investability among scored tracts.
+              Not all tracts are scored — coverage reflects tracts with sufficient OZ 1.0 data.
+            </p>
+          </div>
+        )}
+
       </div>
     </section>
   )}
@@ -355,12 +370,15 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
           )}
           <li>Build your case: document census data, existing development assets, letters of support from partners, and community need.</li>
           <li>For coalition-building tactics and sample language, see <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how-to-advocate</a>.</li>
+          <li>For step-by-step nomination documentation guidance, see the <a href="https://www.acceleratorforamerica.org/oztoolkit/" target="_blank" rel="noopener" class="text-oz-blue underline">Accelerator for America OZ Designation Toolkit →</a></li>
         </ol>
       </div>
     ) : status_tier === 'public_process' && deadlinePassed ? (
       <p class="text-oz-neutral-500 text-sm">
         The state submission window closed {state_deadline}. {name} is in internal review.
         Monitor the lead agency's page for draft recommendations.
+        The <a href="https://www.acceleratorforamerica.org/oztoolkit/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-700">Accelerator for America OZ Designation Toolkit</a> remains
+        useful for preparing documentation that may inform the state's internal review.
       </p>
     ) : (
       <p class="text-oz-neutral-500 text-sm">
@@ -369,6 +387,8 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
         steps to engage the governor's office and build a coalition now,
         and <a href="/off-list-nominations" class="underline hover:text-oz-neutral-700">off-list nominations</a> for
         strategies available when a state hasn't opened a formal process.
+        While waiting, the <a href="https://www.acceleratorforamerica.org/oztoolkit/" target="_blank" rel="noopener" class="underline hover:text-oz-neutral-700">Accelerator for America OZ Designation Toolkit</a> provides
+        frameworks you can prepare in advance.
       </p>
     )}
   </section>

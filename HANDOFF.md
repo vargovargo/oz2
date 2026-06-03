@@ -1,127 +1,170 @@
-# OZ 2.0 State Maps — Completed
+# OZ 2.0 Handoff — New Resources Integration
 
-**Merged to main**: 2026-05-22
-
----
-
-## What was done (remote cloud session, 2026-05-21)
-
-- `src/components/TractMap.astro` — MapLibre GL v5 interactive map component replacing the EIG ArcGIS iframe on every state page. Features: DCI quintile choropleth, 6-filter panel (rural/CRA/DCI/USDA/NMTC/tribal), rich click popup, graceful EIG fallback.
-- `src/pages/states/[state].astro` — imports TractMap; iframe block replaced; eigMapUrl preserved for fallback and "View on EIG map" link.
-- `src/layouts/Layout.astro` — added `<slot name="head" />` for future page-specific head injection.
-- `maplibre-gl@5` installed to package.json/node_modules.
-- `scripts/build_state_geo.py` — Python pipeline that builds the per-state GeoJSON files the map fetches.
-- `public/geo/` — directory exists with `.gitkeep`; **GeoJSON files not yet generated** (needs geopandas + network).
-
-The Astro build and TypeScript check pass. The map shows a loading spinner then gracefully falls back to the EIG iframe when `/geo/{fips}.geojson` is absent — so the site is fully functional right now, just without the custom maps until you run the build script.
+**Branch**: `claude/oz-new-resources-integration-dJ8aU`
+**Session date**: 2026-06-03
+**Status**: Frontend + pipeline wired; Urban Institute data ingestion needs to run locally.
 
 ---
 
-## What to do on the home machine
+## What was done (remote cloud session)
 
-### 1. Pull the branch
+Two new resources integrated:
+
+### 1. Accelerator for America OZ Designation Toolkit (complete — no local action needed)
+
+Links and callouts added to:
+- `src/pages/how-to-advocate.astro` — bordered callout in "Building the case" section; sentence at end of "Scoring criteria"; footer reference link
+- `src/pages/states/[state].astro` — toolkit link in all three "How to influence" branches (open window, closed window, no-process fallback)
+- `references.md` — new Section 4 entry (description is a placeholder — update after reading the PDF)
+
+**One remaining task**: read the PDF and update the placeholder descriptions. See [AFA content update](#afa-content-update) below.
+
+### 2. Urban Institute Investability Data (pipeline wired; data ingestion deferred)
+
+Frontend changes already live:
+- **Map default**: investability choropleth is now the default color scheme on all state maps (sequential blue Q1→Q5, grey for unscored); radio toggle switches to DCI Distress
+- **Filter**: "High investability (UI Q1–Q2)" checkbox added to filter panel
+- **Popup**: "Predicted Investability" section in tract detail popup (shows "not scored" gracefully until data is loaded)
+- **State data card**: `ui_invest_q1_tracts` card in the "Data context" section (hidden until data is loaded)
+- **CSV export**: `ui_invest_score` and `ui_invest_quintile` columns added
+
+Pipeline changes already in the scripts — they just need to run with the data file present.
+
+---
+
+## Local action required
+
+### Step 1: Pull the branch
 
 ```bash
-git pull origin claude/state-maps-tract-filtering-NnJut
-npm install   # picks up maplibre-gl@5
+cd /Users/lauren/oz2
+git fetch origin
+git checkout claude/oz-new-resources-integration-dJ8aU
+npm install
 ```
 
-### 2. Install Python geospatial dependencies
+### Step 2: Run the Urban Institute ingest script
+
+Your CSV is already in the right place at `data/raw/investability_urban.csv`. The script auto-detects it:
 
 ```bash
-pip install geopandas shapely fiona pyproj pandas pyarrow
-
-# If geopandas fails, install GDAL first:
-#   macOS:   brew install gdal
-#   Ubuntu:  sudo apt-get install gdal-bin libgdal-dev python3-gdal
-#   Conda:   conda install geopandas  (easiest — handles GDAL automatically)
+python3 scripts/ingest_urban_investability.py
 ```
 
-Verify: `python3 -c "import geopandas; print(geopandas.__version__)"` should print a version.
+**Watch the output carefully.** It will print:
+- The column it detected as the GEOID (verify it matches the 11-digit Census tract ID)
+- The column it detected as the investability score
+- Whether a quintile column was found or auto-computed
+- Coverage (how many of the 25,332 eligible tracts are scored)
+- Quintile distribution
 
-### 3. Run the build script
+**Critical check — quintile direction**: If the script auto-computes quintiles (no quintile column in the CSV), it assigns Q1 to the *highest* scores (most investable). Confirm this matches Urban Institute's documentation. If their Q1 is the *lowest* scores, open `scripts/ingest_urban_investability.py` and change the labels on line ~112 from `[5, 4, 3, 2, 1]` to `[1, 2, 3, 4, 5]`, then re-run.
+
+If the GEOID column or score column isn't auto-detected, the script will print all available column names and exit. Add the actual column name to the appropriate `*_CANDIDATES` list at the top of the script.
+
+### Step 3: Rebuild all state GeoJSON files
 
 ```bash
 python3 scripts/build_state_geo.py
 ```
 
-- Downloads Census TIGER 2022 tract + places shapefiles per state to `data/raw/tiger/` (cached — re-runs skip downloads)
-- Joins all overlay parquets (dci, cra_lmi, persistent_poverty, tribal_overlap, cdfi_nmtc)
-- Spatial-joins tract centroids with Census Places for municipality names
-- Outputs `public/geo/{state_fips}.geojson` — one per state/territory (56 total)
-- **Expected time**: 15–40 min first run (downloading ~112 ZIP files); subsequent runs ~2 min (cache hits)
-- **Expected output**: 56 files, 100–600 KB each; CA/TX/FL may reach 1–2 MB
+- Downloads Census TIGER shapefiles per state to `data/raw/tiger/` (cached — re-runs skip downloads)
+- Merges all overlays including the new `urban_investability.parquet`
+- Outputs `public/geo/{fips}.geojson` — 56 files
+- **First run**: ~15–40 min (downloading shapefiles). Subsequent runs: ~2 min (cache hits)
+- Use `--state 39` (Ohio) for a fast single-state test first
 
-Flags:
 ```bash
-python3 scripts/build_state_geo.py --state 01             # Alabama only (fast test)
-python3 scripts/build_state_geo.py --skip-existing        # resume interrupted run
+# Fast test — Ohio only
+python3 scripts/build_state_geo.py --state 39
+
+# Then full run
+python3 scripts/build_state_geo.py
 ```
 
-### 4. Verify output
-
+Verify the new columns landed:
 ```bash
-ls -lh public/geo/ | sort -k5 -rh | head -10             # largest files
 python3 -c "
 import json
-d = json.load(open('public/geo/01.geojson'))
-print(len(d['features']), 'features')
-print(d['features'][0]['properties'])
+d = json.load(open('public/geo/39.geojson'))
+p = d['features'][0]['properties']
+print('ui_invest_score:', p.get('ui_invest_score'))
+print('ui_invest_quintile:', p.get('ui_invest_quintile'))
 "
 ```
 
-Expected properties on each feature:
-`geoid, county_name, place_name, state_name, state_abbr, is_rural, dci_score, dci_quintile, is_cra_lmi, income_level, is_persistent_poverty, is_tribal_overlap, tribal_area_name, aian_pct, has_nmtc, nmtc_projects, nmtc_total_usd`
+### Step 4: Update state_metadata.yaml with per-state counts
 
-### 5. Test the map locally
+```bash
+python3 scripts/patch_overlay_stats.py
+```
+
+This reads `urban_investability.parquet`, counts Q1 tracts per state, and patches `ui_invest_q1_tracts` into every state block in `state_metadata.yaml`. The count will appear on the state data context card.
+
+### Step 5: Test locally
 
 ```bash
 npm run dev
-# Open http://localhost:4321/states/alabama
-# Open http://localhost:4321/states/california   (stress test: ~2,469 tracts)
 ```
 
-Verify:
-- Map renders with colored tracts (DCI quintile choropleth)
-- Filter checkboxes dim non-matching tracts
-- Clicking a tract opens a detailed popup with all overlay fields
-- Popup shows county + municipality name where available
-- Non-rural tracts: QROF section absent from popup
-- States without GeoJSON (e.g., territories): EIG iframe fallback appears
+Open `http://localhost:4321/states/ohio` (or any state). Verify:
+- [ ] Map defaults to Investability choropleth (blue palette)
+- [ ] Toggle to DCI Distress works and legend swaps
+- [ ] Clicking a scored tract shows investability score + quintile in popup
+- [ ] Clicking an unscored tract shows "not scored" message in grey
+- [ ] "High investability (UI Q1–Q2)" filter narrows map correctly
+- [ ] State data context card shows `ui_invest_q1_tracts` count
+- [ ] `how-to-advocate` page shows Accelerator for America callout box
+- [ ] Any state page shows toolkit link in "How to influence the nomination"
 
-### 6. Commit and push
+### Step 6: Commit and push
 
 ```bash
-git add public/geo/ package.json package-lock.json
-git commit -m "Add per-state OZ tract GeoJSON and MapLibre GL map component"
-git push -u origin claude/state-maps-tract-filtering-NnJut
+git add data/urban_investability.parquet public/geo/ state_metadata.yaml
+git commit -m "Add Urban Institute investability data — ingest, GeoJSON rebuild, state stats"
+git push
 ```
 
 ---
 
-## Key file locations
+## AFA content update
 
-| File | Purpose |
+The Accelerator for America references currently use placeholder descriptions. Once you've read the PDF (`data/raw/` — or wherever you have it), update two places:
+
+**`src/pages/how-to-advocate.astro`** (~line 160) — the `<p>` inside the callout box:
+```
+A step-by-step guide for local planners on how to prioritize and document tracts for
+nomination, including frameworks for community need documentation and investment readiness.
+```
+Replace with 1–2 sentences describing what the toolkit actually covers (chapters, key frameworks, what makes it distinctive from NADO/Sorenson guides).
+
+**`references.md`** — Section 4, Accelerator for America entry:
+```
+[Description to be updated after full PDF review.]
+```
+Replace with a proper annotation (1–2 sentences on scope, audience, key content).
+
+---
+
+## Key files changed in this session
+
+| File | What changed |
 |---|---|
-| `scripts/build_state_geo.py` | Data pipeline — run this first |
-| `src/components/TractMap.astro` | Map component (MapLibre GL, filters, popup) |
-| `src/pages/states/[state].astro` | State page — uses TractMap |
-| `public/geo/{fips}.geojson` | Generated GeoJSON (56 files, not committed yet) |
-| `data/raw/tiger/` | TIGER download cache (gitignored) |
+| `src/components/TractMap.astro` | Investability choropleth as default; radio toggle; filter checkbox; popup section; CSV export columns |
+| `src/pages/states/[state].astro` | Investability data card; toolkit links in all "How to influence" branches |
+| `src/pages/how-to-advocate.astro` | Accelerator for America callout + scoring criteria sentence + footer link |
+| `src/lib/states.ts` | Added `ui_invest_q1_tracts: number \| null` to StateMetadata |
+| `state_metadata.yaml` | `ui_invest_q1_tracts: null` stubs in all 51 state blocks (values populated by Step 4) |
+| `scripts/ingest_urban_investability.py` | **New** — reads CSV/xlsx, outputs parquet |
+| `scripts/build_state_geo.py` | Optional Urban Institute merge; `ui_invest_score/quintile` in output columns |
+| `scripts/patch_overlay_stats.py` | `ui_invest_q1_tracts` stats + YAML stub insertion |
+| `references.md` | Urban Institute entry expanded; Accelerator for America entry added |
 
 ---
 
-## Known caveats
+## Caveats
 
-- **Tribal data**: `tribal_overlap.parquet` was built when the Census ACS API was unreachable — `is_tribal_overlap` is False for all tracts. The "Tribal overlap" filter checkbox exists but has no effect until `scripts/ingest_tribal_overlap.py` is re-run with API access.
-- **DCI gaps**: ~900 tracts (~3.6%) have no DCI data (rural tracts with PO Box–only ZIPs). These render in gray and show "data not available" in the popup.
-- **Territories**: AS (60), GU (66), CNMI (69), USVI (78) use full TIGER/Line files (simplified with shapely). If their TIGER downloads fail, those 4 FIPS codes will be skipped; state pages fall back to EIG iframe.
-- **data/raw/tiger/**: not gitignored by default — you may want to add it if files are large.
-
----
-
-## Next priorities after maps
-
-1. Re-run `ingest_tribal_overlap.py` with Census API access → rebuild tribal GeoJSON properties
-2. Merge branch to main → verify Vercel deploy
-3. oz1-retrospective and off-list-nominations pages — still stubs
+- **Quintile direction**: must be verified against Urban Institute's methodology documentation before the map goes live. The legend says Q1 = most investable — confirm that's correct.
+- **Coverage**: The UI dataset scores tracts that had OZ 1.0 investment activity. Expect partial coverage (likely 40–70% of 25,332 tracts). Unscored tracts render grey on the map with an explanatory note.
+- **Accelerator PDF**: content descriptions are placeholders. Don't push to main without updating them.
+- **GeoJSON files** (`public/geo/`): not committed to git (gitignored). Vercel needs them to be built during deploy, or they need to be committed. Check how the existing GeoJSON files get onto Vercel — if they're committed, commit the rebuilt ones too; if they're built in CI, the CI environment needs the parquet files.

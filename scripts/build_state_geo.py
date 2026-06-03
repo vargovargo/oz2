@@ -158,6 +158,18 @@ def load_overlays() -> pd.DataFrame:
     master = master.merge(tribal, on="geoid",       how="left")
     master = master.merge(nmtc,   on="geoid",       how="left")
 
+    # Optional: Urban Institute investability scores (requires ingest_urban_investability.py)
+    ui_invest_path = DATA_DIR / "urban_investability.parquet"
+    if ui_invest_path.exists():
+        ui_invest = pd.read_parquet(ui_invest_path,
+                                    columns=["geoid", "ui_invest_score", "ui_invest_quintile"])
+        master = master.merge(ui_invest, on="geoid", how="left")
+        print(f"  Urban Institute investability: {ui_invest['geoid'].nunique():,} scored tracts merged")
+    else:
+        master["ui_invest_score"] = None
+        master["ui_invest_quintile"] = None
+        print("  Note: urban_investability.parquet not found — ui_invest columns will be null")
+
     # Fill nulls for boolean/count columns
     for col in ("is_cra_lmi", "is_persistent_poverty", "is_tribal_overlap", "has_nmtc"):
         master[col] = master[col].fillna(False).astype(bool)
@@ -257,6 +269,7 @@ def build_state(fips: str, state_rows: pd.DataFrame, tmpdir: Path) -> bool:
     # ------------------------------------------------------------------
     keep_cols = [
         "geoid", "county_name", "is_rural",
+        "ui_invest_score", "ui_invest_quintile",
         "dci_score", "dci_quintile",
         "is_cra_lmi", "income_level",
         "is_persistent_poverty",
@@ -272,6 +285,8 @@ def build_state(fips: str, state_rows: pd.DataFrame, tmpdir: Path) -> bool:
     gdf["state_name"] = state_name
 
     # Round numeric columns for smaller output
+    if "ui_invest_score" in gdf.columns:
+        gdf["ui_invest_score"] = gdf["ui_invest_score"].round(2)
     if "dci_score" in gdf.columns:
         gdf["dci_score"] = gdf["dci_score"].round(1)
     if "aian_pct" in gdf.columns:
@@ -282,7 +297,8 @@ def build_state(fips: str, state_rows: pd.DataFrame, tmpdir: Path) -> bool:
     # ------------------------------------------------------------------
     output_props = [
         "geometry", "geoid", "county_name", "place_name", "state_name", "state_abbr",
-        "is_rural", "dci_score", "dci_quintile",
+        "is_rural", "ui_invest_score", "ui_invest_quintile",
+        "dci_score", "dci_quintile",
         "is_cra_lmi", "income_level",
         "is_persistent_poverty",
         "is_tribal_overlap", "tribal_area_name", "aian_pct",

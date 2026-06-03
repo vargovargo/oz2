@@ -61,15 +61,48 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     <div id="tract-map-detail-body" class="overflow-y-auto" style="max-height: 470px;"></div>
   </div>
 
-  <!-- Left panel: DCI legend + filter checkboxes + export (bottom-left overlay) -->
+  <!-- Left panel: legend + filter checkboxes + export (bottom-left overlay) -->
   <div
     id="tract-map-filters"
     class="absolute bottom-3 left-3 bg-white rounded shadow-md p-3 z-10 text-xs hidden"
-    style="max-width: 220px;"
+    style="max-width: 228px;"
   >
-    <!-- DCI legend -->
-    <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">DCI Distress (EIG 2023)</p>
-    <div class="space-y-1 mb-3">
+    <!-- Choropleth mode toggle -->
+    <div class="flex gap-3 mb-2">
+      <label class="flex items-center gap-1 cursor-pointer text-xs font-medium">
+        <input type="radio" name="choropleth-mode" value="invest" id="mode-invest" class="accent-oz-blue" checked />
+        <span>Investability</span>
+      </label>
+      <label class="flex items-center gap-1 cursor-pointer text-xs font-medium">
+        <input type="radio" name="choropleth-mode" value="dci" id="mode-dci" class="accent-oz-blue" />
+        <span>DCI Distress</span>
+      </label>
+    </div>
+
+    <!-- Investability legend (shown by default) -->
+    <div id="legend-invest" class="space-y-1 mb-3">
+      <p class="font-semibold text-oz-neutral-700 mb-1 text-xs uppercase tracking-wide">Investability (Urban Institute)</p>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#1e3a5f"></span>
+        <span class="text-oz-neutral-600">More likely + larger impact</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#60a5fa"></span>
+        <span class="text-oz-neutral-600">Likely without OZ designation</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#bfdbfe; border: 1px solid #93c5fd"></span>
+        <span class="text-oz-neutral-600">Less likely to attract investment</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0 border border-oz-neutral-300" style="background:#d1d5db"></span>
+        <span class="text-oz-neutral-400">Not scored</span>
+      </div>
+    </div>
+
+    <!-- DCI legend (hidden by default) -->
+    <div id="legend-dci" class="space-y-1 mb-3 hidden">
+      <p class="font-semibold text-oz-neutral-700 mb-1 text-xs uppercase tracking-wide">DCI Distress (EIG 2023)</p>
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#7f1d1d"></span>
         <span class="text-oz-neutral-600">Q1 — most distressed</span>
@@ -103,6 +136,10 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
           <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="invest" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Sweet spot: more likely + larger impact (UI Tier 1)</span>
         </label>
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
@@ -147,7 +184,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx"
     class="underline hover:text-oz-neutral-600"
   >IRS appendix (XLSX)</a>
-  <span>Source: IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2023</span>
+  <span>Source: IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2023 · Urban Institute 2026</span>
 </div>
 
 <style is:global>
@@ -221,6 +258,8 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     const hasNmtc     = Boolean(props.has_nmtc);
     const nmtcCount   = parseInt(String(props.nmtc_projects ?? 0));
     const nmtcTotal   = parseFloat(String(props.nmtc_total_usd ?? 0));
+    const uiScore     = props.ui_invest_score != null ? parseFloat(String(props.ui_invest_score)) : null;
+    const uiQ         = props.ui_invest_quintile != null ? parseInt(String(props.ui_invest_quintile)) : null;
 
     // Location line
     const locParts = [place, county, stateAbbr || stateFullName].filter(Boolean);
@@ -261,6 +300,19 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       nmtcText = `${nmtcCount} prior investment${nmtcCount !== 1 ? 's' : ''} totaling $${millions}M (CDFI Fund NMTC Public Data Release 2024)`;
     } else {
       nmtcText = 'No prior NMTC investment on record in this tract (CDFI Fund 2024)';
+    }
+
+    // Investability text
+    const UI_TIER_LABELS: Record<number, string> = {
+      1: 'More likely to attract OZ investment, with larger impact',
+      2: 'Likely to attract capital even without OZ designation',
+      3: 'Less likely to attract OZ investment',
+    };
+    let investText: string;
+    if (uiQ !== null && UI_TIER_LABELS[uiQ]) {
+      investText = `Tier ${uiQ} of 3 &mdash; ${UI_TIER_LABELS[uiQ]} (Urban Institute 2026)`;
+    } else {
+      investText = '&mdash; not scored (Urban Institute 2026)';
     }
 
     // Rural section
@@ -314,9 +366,16 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           <span class="ozp-val">${nmtcText}</span>
         </div>
       </div>
+      <div class="ozp-section">
+        <div class="ozp-section-head">Predicted Investability</div>
+        <div class="ozp-row">
+          <span class="ozp-key">Urban Institute Investability Score</span>
+          <span class="ozp-val">${investText}</span>
+        </div>
+      </div>
       ${tribalSection}
       <div class="ozp-footer">
-        oz2.vargo.city &middot; Data sources: IRS Rev. Proc. 2026-14, EIG DCI 2023, FFIEC CRA 2023, USDA ERS County Typology 2015, CDFI Fund NMTC 2024
+        oz2.vargo.city &middot; Data sources: IRS Rev. Proc. 2026-14, EIG DCI 2023, FFIEC CRA 2023, USDA ERS 2015, CDFI Fund NMTC 2024, Urban Institute 2026
       </div>
     </div>`;
   }
@@ -374,22 +433,36 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         // Add GeoJSON source
         map.addSource('tracts', { type: 'geojson', data });
 
-        // Fill layer — choropleth by DCI quintile
+        // Choropleth color expressions
+        const DCI_COLOR_EXPR: maplibregl.ExpressionSpecification = [
+          'match',
+          ['coalesce', ['to-number', ['get', 'dci_quintile'], 0], 0],
+          1, '#7f1d1d',
+          2, '#b45309',
+          3, '#ca8a04',
+          4, '#15803d',
+          5, '#166534',
+          '#9ca3af',
+        ];
+
+        const INVEST_COLOR_EXPR: maplibregl.ExpressionSpecification = [
+          'match',
+          ['coalesce', ['to-number', ['get', 'ui_invest_quintile'], -1], -1],
+          1, '#1e3a5f',   // more likely + larger impact (sweet spot)
+          2, '#60a5fa',   // likely without OZ designation
+          3, '#bfdbfe',   // less likely to attract investment
+          '#d1d5db',      // null / not scored
+        ];
+
+        let choroplethMode: 'invest' | 'dci' = 'invest';
+
+        // Fill layer — default choropleth by investability quintile
         map.addLayer({
           id: 'tracts-fill',
           type: 'fill',
           source: 'tracts',
           paint: {
-            'fill-color': [
-              'match',
-              ['coalesce', ['to-number', ['get', 'dci_quintile'], 0], 0],
-              1, '#7f1d1d',
-              2, '#b45309',
-              3, '#ca8a04',
-              4, '#15803d',
-              5, '#166534',
-              '#9ca3af',  // null / no DCI data
-            ],
+            'fill-color': INVEST_COLOR_EXPR,
             'fill-opacity': 0.65,
           },
         });
@@ -488,6 +561,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         function featureMatches(props: Record<string, unknown>, filters: string[]): boolean {
           for (const f of filters) {
             if (f === 'rural'  && !props.is_rural) return false;
+            if (f === 'invest' && !(props.ui_invest_quintile != null && Number(props.ui_invest_quintile) === 1)) return false;
             if (f === 'cra'    && !props.is_cra_lmi) return false;
             if (f === 'dci'    && !(props.dci_quintile != null && Number(props.dci_quintile) <= 2)) return false;
             if (f === 'pp'     && !props.is_persistent_poverty) return false;
@@ -500,6 +574,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         function getFilterExpr(f: string): unknown[] | null {
           switch (f) {
             case 'rural':  return ['==', ['get', 'is_rural'], true];
+            case 'invest': return ['==', ['coalesce', ['to-number', ['get', 'ui_invest_quintile'], 0], 0], 1];
             case 'cra':    return ['==', ['get', 'is_cra_lmi'], true];
             case 'dci':    return ['all',
                              ['!=', ['coalesce', ['get', 'dci_quintile'], null], null],
@@ -536,6 +611,18 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           if (downloadBtn) downloadBtn.textContent = `↓ Export ${matchCount.toLocaleString()} filtered tracts (CSV)`;
         }
 
+        // Choropleth mode toggle
+        document.querySelectorAll<HTMLInputElement>('input[name="choropleth-mode"]')
+          .forEach(radio => {
+            radio.addEventListener('change', () => {
+              choroplethMode = radio.value as 'invest' | 'dci';
+              map.setPaintProperty('tracts-fill', 'fill-color',
+                choroplethMode === 'invest' ? INVEST_COLOR_EXPR : DCI_COLOR_EXPR);
+              document.getElementById('legend-invest')?.classList.toggle('hidden', choroplethMode !== 'invest');
+              document.getElementById('legend-dci')?.classList.toggle('hidden', choroplethMode !== 'dci');
+            });
+          });
+
         filtersEl.querySelectorAll<HTMLInputElement>('input[data-filter]')
           .forEach(checkbox => {
             checkbox.addEventListener('change', () => {
@@ -556,6 +643,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
               feat => feat.properties && featureMatches(feat.properties as Record<string, unknown>, filters)
             );
             const cols = ['geoid', 'county_name', 'place_name', 'state_abbr', 'is_rural',
+                          'ui_invest_score', 'ui_invest_quintile',
                           'dci_score', 'dci_quintile', 'is_cra_lmi', 'income_level',
                           'is_persistent_poverty', 'has_nmtc', 'nmtc_projects', 'nmtc_total_usd'];
             const rows = [cols.join(',')];

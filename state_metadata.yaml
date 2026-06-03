@@ -74,6 +74,7 @@ alabama:
   pp_county_count: 19
   nmtc_projects: 82
   cra_lmi_tracts: 315
+  ui_invest_q1_tracts: 71
   notes: No OZ 2.0 process published as of 2026-05-07. ADECA is confirmed lead per
     EIG map. Main phone (334) 242-5100; Community and Economic Development division
     administers OZ program.
@@ -154,6 +155,7 @@ alaska:
   pp_county_count: 1
   nmtc_projects: 24
   cra_lmi_tracts: 23
+  ui_invest_q1_tracts: null
   notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published
     as of 2026-05-07. Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500.
     Alaska has only 32 eligible tracts; statutory minimum 25 designations means very
@@ -237,6 +239,7 @@ arizona:
   pp_county_count: 2
   nmtc_projects: 78
   cra_lmi_tracts: 375
+  ui_invest_q1_tracts: 187
   notes: Community deadline described as mid-May 2026 but not formally confirmed as
     of 2026-05-06. Tribal nations have statewide input rights on tribal territory tracts.
     ACA targets July 1, 2026 for Treasury submission.
@@ -317,6 +320,7 @@ arkansas:
   pp_county_count: 17
   nmtc_projects: 66
   cra_lmi_tracts: 153
+  ui_invest_q1_tracts: 49
   notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published.
     General contact info@arkansasedc.com / (501) 682-5996.
 california:
@@ -398,6 +402,7 @@ california:
   pp_county_count: 0
   nmtc_projects: 405
   cra_lmi_tracts: 1920
+  ui_invest_q1_tracts: 754
   notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders
     to Help Center via gobiz.zendesk.com. No formal application or deadline published
     as of 2026-05-07. Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley named as OZ
@@ -478,6 +483,7 @@ colorado:
   pp_county_count: 3
   nmtc_projects: 68
   cra_lmi_tracts: 263
+  ui_invest_q1_tracts: 149
   notes: Public GIS tool and online feedback form live at oedit.colorado.gov/colorado-opportunity-zone-program.
     No community submission deadline published as of 2026-05-12. Regional convenings
     through April 2026; Western Slope event May 11. Contact oedit.info@state.co.us
@@ -555,6 +561,7 @@ connecticut:
   pp_county_count: 0
   nmtc_projects: 0
   cra_lmi_tracts: 209
+  ui_invest_q1_tracts: 40
   notes: Contact confirmed. No application portal or deadline published as of 2026-05-07.
 delaware:
   name: Delaware
@@ -618,6 +625,7 @@ delaware:
   pp_county_count: 0
   nmtc_projects: 6
   cra_lmi_tracts: 38
+  ui_invest_q1_tracts: 11
   notes: "Community nomination window closes May 15, 2026; Governor's submission deadline\
     \ to Treasury is September 30, 2026. No scoring rubric published. Only 2 of 25\
     \ designation slots remain as of early April 2026 reporting (23 already nominated).\
@@ -664,6 +672,7 @@ district-of-columbia:
   pp_county_count: 0
   nmtc_projects: 44
   cra_lmi_tracts: 55
+  ui_invest_q1_tracts: 22
   notes: DMPED presumed lead. No OZ 2.0 guidance published as of 2026-05-07. DC eligible
     for statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects
     OZ 1.0 history only.
@@ -744,6 +753,7 @@ florida:
   pp_county_count: 4
   nmtc_projects: 158
   cra_lmi_tracts: 972
+  ui_invest_q1_tracts: 504
   notes: Public input window closed. 340 tracts to be nominated from 1,360 eligible.
 georgia:
   name: Georgia
@@ -820,6 +830,7 @@ georgia:
   pp_county_count: 46
   nmtc_projects: 107
   cra_lmi_tracts: 606
+  ui_invest_q1_tracts: 194
   notes: DCA confirmed lead. No OZ 2.0 application or deadline published as of 2026-05-07.
 hawaii:
   name: Hawaii
@@ -880,6 +891,7 @@ hawaii:
   pp_county_count: 0
   nmtc_projects: 8
   cra_lmi_tracts: 66
+  ui_invest_q1_tracts: 12
   notes: "DBEDT confirmed lead. OZ-specific contact identified: Mark J. Ritchie, Branch
     Chief, BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination
     guidance or deadline published as of 2026-05-07."
@@ -961,6 +973,7 @@ idaho:
   pp_county_count: 1
   nmtc_projects: 32
   cra_lmi_tracts: 51
+  ui_invest_q1_tracts: 27
   notes: "Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal\
     \ window opens July 1, 2026. Max designations corrected to 25 (statutory minimum\
     \ for states with fewer than 100 eligible tracts)."
@@ -1041,6 +1054,7 @@ illinois:
   pp_county_count: 3
   nmtc_projects: 297
   cra_lmi_tracts: 741
+  ui_invest_q1_tracts: 170
   notes: 238 tracts to be nominated from 950 eligible.
 indiana:
   name: Indiana
@@ -1118,6 +1132,7 @@ indiana:
   pp_county_count: 0
   nmtc_projects: 86
   cra_lmi_tracts: 381
+  ui_invest_q1_tracts: 115
   notes: "IEDC page references federal September 28, 2026 deadline. OZ-specific email
     confirmed: opportunityzones@gov.in.gov. No internal state application process
     published as of 2026-05-07."
@@ -1196,6 +1211,7 @@ iowa:
   pp_county_count: 0
   nmtc_projects: 44
   cra_lmi_tracts: 118
+  ui_invest_q1_tracts: 25
   notes: "IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
     General communications contact: communications@iowaeda.com."
 kansas:
@@ -1289,6 +1305,7 @@ kansas:
   pp_county_count: 0
   nmtc_projects: 26
   cra_lmi_tracts: 144
+  ui_invest_q1_tracts: 38
   notes: "Kansas may nominate up to 53 of its 210 eligible tracts (25% statutory cap).
     Scoring matrix published on agency OZ 2.0 page; specific criterion weights not
     publicly indexed as of 2026-05-06."
@@ -1382,6 +1399,7 @@ kentucky:
   pp_county_count: 40
   nmtc_projects: 166
   cra_lmi_tracts: 301
+  ui_invest_q1_tracts: 82
 louisiana:
   name: Louisiana
   fips: '22'
@@ -1459,6 +1477,7 @@ louisiana:
   pp_county_count: 24
   nmtc_projects: 189
   cra_lmi_tracts: 371
+  ui_invest_q1_tracts: 93
   notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
     Main line 800-450-8115 / 225-342-3000.
 maine:
@@ -1538,6 +1557,7 @@ maine:
   pp_county_count: 0
   nmtc_projects: 22
   cra_lmi_tracts: 54
+  ui_invest_q1_tracts: 19
   notes: 'DECD informal community deadline April 30, 2026 (now passed). Commissioner:
     Michael Duguay. No formal portal published. Governor nominates starting July 1,
     2026; 20 of 78 eligible tracts (74 rural-flagged).'
@@ -1619,6 +1639,7 @@ maryland:
   pp_county_count: 1
   nmtc_projects: 71
   cra_lmi_tracts: 350
+  ui_invest_q1_tracts: 66
   notes: 'DHCD sole lead per Governor Moore delegation. County nomination process launched
     May 2026; Local Stakeholders Kickoff Webinar May 20. DHCD comms: Allison.Foster@Maryland.gov,
     (443) 257-5478. No community submission deadline published as of 2026-05-12.'
@@ -1700,6 +1721,7 @@ massachusetts:
   pp_county_count: 0
   nmtc_projects: 250
   cra_lmi_tracts: 338
+  ui_invest_q1_tracts: 150
   notes: MOBD confirmed lead. No OZ 2.0 application, deadline, or contact email published
     as of 2026-05-07. 103 of 410 eligible tracts to be nominated.
 michigan:
@@ -1781,6 +1803,7 @@ michigan:
   pp_county_count: 0
   nmtc_projects: 107
   cra_lmi_tracts: 603
+  ui_invest_q1_tracts: 173
   notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
     published as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
 minnesota:
@@ -1859,6 +1882,7 @@ minnesota:
   pp_county_count: 0
   nmtc_projects: 188
   cra_lmi_tracts: 208
+  ui_invest_q1_tracts: 92
   notes: DEED page explicitly states more information will be posted when the July
     1, 2026 window opens. No application or deadline published.
 mississippi:
@@ -1952,6 +1976,7 @@ mississippi:
   pp_county_count: 49
   nmtc_projects: 155
   cra_lmi_tracts: 211
+  ui_invest_q1_tracts: 46
   notes: 101 tracts to be nominated from 404 eligible. No formal scoring rubric published.
 missouri:
   name: Missouri
@@ -2047,6 +2072,7 @@ missouri:
   pp_county_count: 14
   nmtc_projects: 503
   cra_lmi_tracts: 339
+  ui_invest_q1_tracts: 78
   notes: "131 tracts to be nominated from 523 eligible (25% statutory cap). One tract\
     \ per Submittable form; multiple submissions per entity are permitted. No scoring\
     \ rubric published as of 2026-05-06."
@@ -2126,6 +2152,7 @@ montana:
   pp_county_count: 3
   nmtc_projects: 20
   cra_lmi_tracts: 29
+  ui_invest_q1_tracts: 8
   notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum.
     No OZ 2.0 guidance published.
 nebraska:
@@ -2205,6 +2232,7 @@ nebraska:
   pp_county_count: 1
   nmtc_projects: 26
   cra_lmi_tracts: 87
+  ui_invest_q1_tracts: 33
   notes: Application window closed. 28 tracts to be nominated from 112 eligible.
 nevada:
   name: Nevada
@@ -2278,6 +2306,7 @@ nevada:
   pp_county_count: 0
   nmtc_projects: 48
   cra_lmi_tracts: 159
+  ui_invest_q1_tracts: 75
   notes: GOED is the confirmed lead agency but their OZ page (goed.nv.gov/programs-incentives/opportunity-zones/)
     redirects to a general incentives page with no OZ content. Business &amp; Industry
     dept page linked above has OZ 1.0 content only. No OZ 2.0 guidance or community
@@ -2358,6 +2387,7 @@ new-hampshire:
   pp_county_count: 0
   nmtc_projects: 10
   cra_lmi_tracts: 39
+  ui_invest_q1_tracts: 13
   notes: BEA confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 process published.
 new-jersey:
   name: New Jersey
@@ -2436,6 +2466,7 @@ new-jersey:
   pp_county_count: 0
   nmtc_projects: 93
   cra_lmi_tracts: 428
+  ui_invest_q1_tracts: 146
   notes: Resource center confirmed. No OZ 2.0 nomination process or deadline published.
 new-mexico:
   name: New Mexico
@@ -2527,6 +2558,7 @@ new-mexico:
   pp_county_count: 9
   nmtc_projects: 36
   cra_lmi_tracts: 154
+  ui_invest_q1_tracts: 30
   notes: 'No online portal — COG-based submission process. COG deadline was May 15,
     2026; EDNM still accepting input through June 15. No named OZ staff contact found
     beyond general info@edd.nm.gov.'
@@ -2605,6 +2637,7 @@ new-york:
   pp_county_count: 2
   nmtc_projects: 210
   cra_lmi_tracts: 1169
+  ui_invest_q1_tracts: 194
   notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process
     published. 426 tracts to be nominated from 1,702 eligible.
 north-carolina:
@@ -2704,6 +2737,7 @@ north-carolina:
   pp_county_count: 10
   nmtc_projects: 89
   cra_lmi_tracts: 524
+  ui_invest_q1_tracts: 191
   notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning,
     NC Commerce; OZ-Feedback@commerce.nc.gov; (919) 814-4600. This is a public feedback
     process — Commerce solicits input then advises Governor Stein, who makes final
@@ -2787,6 +2821,7 @@ north-dakota:
   pp_county_count: 3
   nmtc_projects: 6
   cra_lmi_tracts: 25
+  ui_invest_q1_tracts: 3
   notes: "Contact Rich Garman (Director), (701) 328-5344. EDF Team page: commerce.nd.gov/economic-development-finance/edf-team.\
     \ ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance\
     \ published as of 2026-05-07."
@@ -2887,6 +2922,7 @@ ohio:
   pp_county_count: 1
   nmtc_projects: 414
   cra_lmi_tracts: 782
+  ui_invest_q1_tracts: 195
 oklahoma:
   name: Oklahoma
   fips: '40'
@@ -2964,6 +3000,7 @@ oklahoma:
   pp_county_count: 12
   nmtc_projects: 93
   cra_lmi_tracts: 268
+  ui_invest_q1_tracts: 45
   notes: 104 tracts to be nominated from 413 eligible; 188 qualify as rural.
 oregon:
   name: Oregon
@@ -3054,6 +3091,7 @@ oregon:
   pp_county_count: 0
   nmtc_projects: 78
   cra_lmi_tracts: 131
+  ui_invest_q1_tracts: 92
   notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts
     to be nominated.'
 pennsylvania:
@@ -3126,6 +3164,7 @@ pennsylvania:
   pp_county_count: 1
   nmtc_projects: 146
   cra_lmi_tracts: 609
+  ui_invest_q1_tracts: 177
   notes: No portal open yet. Classifying contact_only because no submission mechanism
     is live. 217 tracts to be nominated.
 rhode-island:
@@ -3186,6 +3225,7 @@ rhode-island:
   pp_county_count: 0
   nmtc_projects: 60
   cra_lmi_tracts: 46
+  ui_invest_q1_tracts: 23
   notes: "Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626.\
     \ Subject to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07."
 south-carolina:
@@ -3279,6 +3319,7 @@ south-carolina:
   pp_county_count: 12
   nmtc_projects: 62
   cra_lmi_tracts: 254
+  ui_invest_q1_tracts: 88
   notes: "112 tracts to be nominated from 445 eligible (25% statutory cap). Submitters
     rank tracts in preference order with supporting narrative. Regional meetings and
     virtual workshop planned; dates unannounced as of 2026-05-06. Recommendation to
@@ -3361,6 +3402,7 @@ south-dakota:
   pp_county_count: 10
   nmtc_projects: 10
   cra_lmi_tracts: 39
+  ui_invest_q1_tracts: 8
   notes: GOED presumed lead. No confirmed contact email found. Subject to
     25-zone statutory minimum.
 tennessee:
@@ -3440,6 +3482,7 @@ tennessee:
   pp_county_count: 9
   nmtc_projects: 94
   cra_lmi_tracts: 325
+  ui_invest_q1_tracts: 151
   notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application
     or deadline published as of 2026-05-07.
 texas:
@@ -3540,6 +3583,7 @@ texas:
   pp_county_count: 34
   nmtc_projects: 214
   cra_lmi_tracts: 1728
+  ui_invest_q1_tracts: 556
   notes: "605 tracts to be nominated from 2,420 eligible (21.7% rural). Nomination\
     \ Packet downloadable from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.\
     \ No phone number published for the OppZone2.0@gov.texas.gov contact as of 2026-05-06."
@@ -3619,6 +3663,7 @@ utah:
   pp_county_count: 1
   nmtc_projects: 62
   cra_lmi_tracts: 108
+  ui_invest_q1_tracts: 65
   notes: Governor's office stated it is 'already working on how best to proceed.'
     No formal process published as of 2026-05-07.
 vermont:
@@ -3697,6 +3742,7 @@ vermont:
   pp_county_count: 0
   nmtc_projects: 12
   cra_lmi_tracts: 13
+  ui_invest_q1_tracts: 2
   notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory
     minimum allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
 virginia:
@@ -3774,6 +3820,7 @@ virginia:
   pp_county_count: 2
   nmtc_projects: 58
   cra_lmi_tracts: 382
+  ui_invest_q1_tracts: 102
   notes: "Public engagement closed. Webinars April 16/21; county feedback due March\
     \ 2; stakeholder survey closed April 27, 2026. Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
     \ 152 tracts to be nominated from 607 eligible (25% cap)."
@@ -3869,6 +3916,7 @@ washington:
   pp_county_count: 0
   nmtc_projects: 74
   cra_lmi_tracts: 269
+  ui_invest_q1_tracts: 159
   notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
 west-virginia:
   name: West Virginia
@@ -3963,6 +4011,7 @@ west-virginia:
   pp_county_count: 8
   nmtc_projects: 34
   cra_lmi_tracts: 92
+  ui_invest_q1_tracts: 21
   notes: "WVDED confirmed lead; dedicated OZ 2.0 page at westvirginia.gov/oz. Eligible\
     \ nominators: local EDAs, county commissions, regional planning councils. Deadline\
     \ July 1, 2026. 52 tracts to be nominated from 207 eligible; all eligible tracts\
@@ -4041,6 +4090,7 @@ wisconsin:
   pp_county_count: 0
   nmtc_projects: 249
   cra_lmi_tracts: 224
+  ui_invest_q1_tracts: 51
   notes: WEDC confirmed lead; OZ page URL confirmed via Google index (returned 403
     to automated fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region
     and OZ questions; no OZ 2.0 guidance published as of 2026-05-07.
@@ -4118,6 +4168,7 @@ wyoming:
   pp_county_count: 0
   nmtc_projects: 4
   cra_lmi_tracts: 9
+  ui_invest_q1_tracts: 2
   notes: "Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.\
     \ 5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are\
     \ rural-designated. No formal application or deadline as of 2026-05-07."
