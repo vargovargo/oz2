@@ -70,7 +70,7 @@ purpose: |
 
 **NADO OZ 2.0 Resource Guide.** https://www.nado.org/opportunity-zones-2-0-resource-guide/
 
-**Accelerator for America, "Opportunity Zone Designation Toolkit."** May 2026. https://www.acceleratorforamerica.org/oztoolkit/ — PDF: https://www.acceleratorforamerica.org/wp-content/uploads/2026/05/Opportunity-Zone-Designation-Toolkit_FINAL.pdf — Step-by-step guide for local planners on tract prioritization, community need documentation, and nomination package preparation. [Description to be updated after full PDF review.] last_checked: 2026-06-02
+**Accelerator for America, "Opportunity Zone Designation Toolkit for Local Leaders."** May 2026. https://www.acceleratorforamerica.org/oztoolkit/ — PDF: https://www.acceleratorforamerica.org/wp-content/uploads/2026/05/Opportunity-Zone-Designation-Toolkit_FINAL.pdf — Practical guide for mayors and local leaders to prioritize OZ 2.0 eligible tracts; the five-step OZ Prioritization Framework covers market readiness (using Urban Institute classification, HPI trends, job growth), four community-need dimensions (housing supply, economic opportunity, industry growth, fiscal base), anti-displacement considerations, and guidance on communicating tract priorities to governors. Companion national tract-level dataset available for download. Produced with Rvesta Consulting and New Localism Associates. last_checked: 2026-06-02
 
 **Sorenson Impact Center, "Rural Opportunity Zone and Recovery Playbook."** https://sorensonimpact.com/
 
