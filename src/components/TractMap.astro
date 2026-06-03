@@ -83,15 +83,15 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     <div id="legend-invest" class="space-y-1 mb-3">
       <p class="font-semibold text-oz-neutral-700 mb-1 text-xs uppercase tracking-wide">Investability (Urban Institute)</p>
       <div class="flex items-center gap-2">
-        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#134e4a"></span>
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#1e3a5f"></span>
         <span class="text-oz-neutral-600">More likely + larger impact</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#2dd4bf"></span>
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#60a5fa"></span>
         <span class="text-oz-neutral-600">Likely without OZ designation</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#ccfbf1; border: 1px solid #99f6e4"></span>
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#bfdbfe; border: 1px solid #93c5fd"></span>
         <span class="text-oz-neutral-600">Less likely to attract investment</span>
       </div>
       <div class="flex items-center gap-2">
@@ -448,9 +448,9 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         const INVEST_COLOR_EXPR: maplibregl.ExpressionSpecification = [
           'match',
           ['coalesce', ['to-number', ['get', 'ui_invest_quintile'], -1], -1],
-          1, '#134e4a',   // more likely + larger impact (sweet spot)
-          2, '#2dd4bf',   // likely without OZ designation
-          3, '#ccfbf1',   // less likely to attract investment
+          1, '#1e3a5f',   // more likely + larger impact (sweet spot)
+          2, '#60a5fa',   // likely without OZ designation
+          3, '#bfdbfe',   // less likely to attract investment
           '#d1d5db',      // null / not scored
         ];
 
