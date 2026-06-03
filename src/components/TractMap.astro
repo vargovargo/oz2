@@ -84,23 +84,15 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       <p class="font-semibold text-oz-neutral-700 mb-1 text-xs uppercase tracking-wide">Investability (Urban Institute)</p>
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#1e3a5f"></span>
-        <span class="text-oz-neutral-600">Q1 — most investable</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#2563eb"></span>
-        <span class="text-oz-neutral-600">Q2</span>
+        <span class="text-oz-neutral-600">More likely + larger impact</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#60a5fa"></span>
-        <span class="text-oz-neutral-600">Q3</span>
+        <span class="text-oz-neutral-600">Likely without OZ designation</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#bfdbfe; border: 1px solid #93c5fd"></span>
-        <span class="text-oz-neutral-600">Q4</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#eff6ff; border: 1px solid #bfdbfe"></span>
-        <span class="text-oz-neutral-600">Q5 — least investable</span>
+        <span class="text-oz-neutral-600">Less likely to attract investment</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0 border border-oz-neutral-300" style="background:#d1d5db"></span>
@@ -147,7 +139,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         </label>
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="invest" class="accent-oz-blue" />
-          <span class="text-oz-neutral-700">High investability (UI Q1–Q2)</span>
+          <span class="text-oz-neutral-700">Sweet spot: more likely + larger impact (UI Tier 1)</span>
         </label>
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
@@ -311,14 +303,16 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     }
 
     // Investability text
+    const UI_TIER_LABELS: Record<number, string> = {
+      1: 'More likely to attract OZ investment, with larger impact',
+      2: 'Likely to attract capital even without OZ designation',
+      3: 'Less likely to attract OZ investment',
+    };
     let investText: string;
-    if (uiScore !== null && uiQ !== null) {
-      const qLabel = uiQ === 1 ? 'highest predicted investability'
-                   : uiQ === 5 ? 'lowest predicted investability'
-                   : `quintile ${uiQ} of 5`;
-      investText = `Score: ${uiScore.toFixed(2)} &mdash; Quintile ${uiQ} of 5 (${qLabel} among scored OZ-eligible tracts, Urban Institute 2026)`;
+    if (uiQ !== null && UI_TIER_LABELS[uiQ]) {
+      investText = `Tier ${uiQ} of 3 &mdash; ${UI_TIER_LABELS[uiQ]} (Urban Institute 2026)`;
     } else {
-      investText = '&mdash; not scored (tract lacks sufficient OZ 1.0 investment history for Urban Institute model)';
+      investText = '&mdash; not scored (Urban Institute 2026)';
     }
 
     // Rural section
@@ -454,12 +448,10 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         const INVEST_COLOR_EXPR: maplibregl.ExpressionSpecification = [
           'match',
           ['coalesce', ['to-number', ['get', 'ui_invest_quintile'], -1], -1],
-          1, '#1e3a5f',
-          2, '#2563eb',
-          3, '#60a5fa',
-          4, '#bfdbfe',
-          5, '#eff6ff',
-          '#d1d5db',  // null / not scored
+          1, '#1e3a5f',   // more likely + larger impact (sweet spot)
+          2, '#60a5fa',   // likely without OZ designation
+          3, '#bfdbfe',   // less likely to attract investment
+          '#d1d5db',      // null / not scored
         ];
 
         let choroplethMode: 'invest' | 'dci' = 'invest';
@@ -569,7 +561,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         function featureMatches(props: Record<string, unknown>, filters: string[]): boolean {
           for (const f of filters) {
             if (f === 'rural'  && !props.is_rural) return false;
-            if (f === 'invest' && !(props.ui_invest_quintile != null && Number(props.ui_invest_quintile) <= 2)) return false;
+            if (f === 'invest' && !(props.ui_invest_quintile != null && Number(props.ui_invest_quintile) === 1)) return false;
             if (f === 'cra'    && !props.is_cra_lmi) return false;
             if (f === 'dci'    && !(props.dci_quintile != null && Number(props.dci_quintile) <= 2)) return false;
             if (f === 'pp'     && !props.is_persistent_poverty) return false;
@@ -582,9 +574,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         function getFilterExpr(f: string): unknown[] | null {
           switch (f) {
             case 'rural':  return ['==', ['get', 'is_rural'], true];
-            case 'invest': return ['all',
-                             ['!=', ['coalesce', ['get', 'ui_invest_quintile'], null], null],
-                             ['<=', ['to-number', ['get', 'ui_invest_quintile'], 99], 2]];
+            case 'invest': return ['==', ['coalesce', ['to-number', ['get', 'ui_invest_quintile'], 0], 0], 1];
             case 'cra':    return ['==', ['get', 'is_cra_lmi'], true];
             case 'dci':    return ['all',
                              ['!=', ['coalesce', ['get', 'dci_quintile'], null], null],
