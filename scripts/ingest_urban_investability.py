@@ -6,11 +6,11 @@ Source
 Urban Institute, "Data to Inform 2026 Opportunity Zone Selections"
 https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections
 
-Manual download required
-------------------------
-1. Visit the data catalog URL above
-2. Download the tract-level Excel file
-3. Place it at: data/raw/urban_investability.xlsx
+File location
+-------------
+Place the downloaded file at ONE of:
+  data/raw/investability_urban.csv      ← CSV (preferred if that's what you have)
+  data/raw/urban_investability.xlsx     ← Excel fallback
 
 Output schema (data/urban_investability.parquet)
 ------------------------------------------------
@@ -32,13 +32,17 @@ from pathlib import Path
 import pandas as pd
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-RAW_FILE = DATA_DIR / "raw" / "urban_investability.xlsx"
-OUT_FILE = DATA_DIR / "urban_investability.parquet"
+OUT_FILE  = DATA_DIR / "urban_investability.parquet"
 ELIG_FILE = DATA_DIR / "eligible_tracts.parquet"
 
+# Candidate raw file locations, checked in order
+RAW_CANDIDATES = [
+    DATA_DIR / "raw" / "investability_urban.csv",
+    DATA_DIR / "raw" / "urban_investability.csv",
+    DATA_DIR / "raw" / "urban_investability.xlsx",
+    DATA_DIR / "raw" / "investability_urban.xlsx",
+]
 
-# Column name candidates for the GEOID and score fields.
-# Update these after inspecting the actual Excel file.
 GEOID_CANDIDATES = [
     "geoid", "GEOID", "tract_geoid", "TRACTFIPS", "tractfips",
     "census_tract", "Census Tract", "CensusTract", "tract_id",
@@ -67,31 +71,33 @@ def find_column(df: pd.DataFrame, candidates: list[str], label: str) -> str:
     sys.exit(1)
 
 
-def main():
-    if not RAW_FILE.exists():
-        print(f"""
-ERROR: Urban Institute Excel file not found at:
-  {RAW_FILE}
+def load_raw() -> pd.DataFrame:
+    for path in RAW_CANDIDATES:
+        if path.exists():
+            print(f"Reading {path.name} …")
+            if path.suffix == ".csv":
+                df = pd.read_csv(path, dtype=str, low_memory=False)
+            else:
+                xl = pd.ExcelFile(path)
+                print(f"  Sheets: {xl.sheet_names}")
+                df = xl.parse(xl.sheet_names[0])
+            print(f"  Shape: {df.shape[0]:,} rows × {df.shape[1]} columns")
+            print(f"  Columns: {list(df.columns)}")
+            return df
 
-Steps to fix:
-  1. Visit https://datacatalog.urban.org/dataset/data-inform-2026-opportunity-zone-selections
-  2. Download the tract-level data file (Excel format)
-  3. Save it to: {RAW_FILE}
-  4. Re-run this script
+    print(f"""
+ERROR: Urban Institute data file not found. Checked:
+{"".join(f"  {p}" + chr(10) for p in RAW_CANDIDATES)}
+Place the file at one of the paths above and re-run.
 """)
-        sys.exit(1)
+    sys.exit(1)
 
+
+def main():
     if not ELIG_FILE.exists():
         sys.exit(f"Missing eligible_tracts.parquet at {ELIG_FILE}. Run ingest_irs_appendix.py first.")
 
-    print(f"Reading {RAW_FILE.name} …")
-    xl = pd.ExcelFile(RAW_FILE)
-    print(f"  Sheets: {xl.sheet_names}")
-
-    # Use the first sheet by default; update if the data is on a different sheet
-    df = xl.parse(xl.sheet_names[0])
-    print(f"  Shape: {df.shape[0]:,} rows × {df.shape[1]} columns")
-    print(f"  Columns: {list(df.columns)}")
+    df = load_raw()
 
     # --- Detect and normalize GEOID ---
     geoid_col = find_column(df, GEOID_CANDIDATES, "GEOID")
@@ -116,10 +122,10 @@ Steps to fix:
         print(f"  Using '{quintile_col}' as quintile column (provided by Urban Institute)")
         df["ui_invest_quintile"] = pd.to_numeric(df[quintile_col], errors="coerce").astype("Int64")
     else:
-        print("  Quintile column not found — computing from score distribution (higher score = more investable)")
+        print("  Quintile column not found — computing from score distribution")
         valid = df["ui_invest_score"].dropna()
         print(f"  {len(valid):,} tracts with valid scores (range {valid.min():.2f}–{valid.max():.2f})")
-        # Q1 = most investable (highest scores) — use ascending=False so labels 1–5 map high→low
+        # Q1 = most investable (highest scores)
         df["ui_invest_quintile"] = pd.qcut(
             df["ui_invest_score"], q=5, labels=[5, 4, 3, 2, 1], duplicates="drop"
         ).astype("Int64")
@@ -153,8 +159,10 @@ Steps to fix:
     print(f"\n  Wrote {OUT_FILE}  ({OUT_FILE.stat().st_size // 1024} KB)")
     print("\nNext steps:")
     print("  1. Review quintile direction note above if quintiles were auto-computed")
-    print("  2. Run: python scripts/build_state_geo.py  (rebuilds all 56 state GeoJSON files)")
-    print("  3. Run: python scripts/patch_overlay_stats.py  (updates state_metadata.yaml)")
+    print("  2. python scripts/build_state_geo.py   (rebuilds all 56 state GeoJSON files — ~15–40 min first run)")
+    print("  3. python scripts/patch_overlay_stats.py   (updates state_metadata.yaml with Q1 counts)")
+    print("  4. git add -A && git commit -m 'Add Urban Institute investability data'")
+    print("  5. git push")
 
 
 if __name__ == "__main__":
