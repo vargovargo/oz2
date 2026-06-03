@@ -4,7 +4,7 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-05-22)
+## Where things stand (as of 2026-06-02)
 
 **Data bootstrap done:**
 - `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
@@ -24,6 +24,21 @@ in references.md. Read both before substantive edits.
 - "Input closed" logic: states with past deadlines show grey badge + prose note
 - References page: styled with entry separators, clickable URLs, last_checked badges, section anchor links
 - references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
+- Urban Institute investability layer + AFA toolkit resources — merged (PR #14, 2026-06-02)
+
+**Completed in the 2026-06-02 session (PR #14):**
+
+*Urban Institute investability layer:* Ingested Urban Institute "Data to Inform 2026 OZ Selections"
+dataset (25,259 tracts, 3-tier categorical classification). All 56 state GeoJSON files rebuilt with
+`ui_invest_score` and `ui_invest_quintile` columns. TractMap choropleth uses blue scale (Tier 1 =
+sweet spot = dark, Tier 3 = low probability = light). Sweet-spot filter highlights only Tier 1 tracts.
+Popups show full tier label. `ui_invest_q1_tracts` populated in `state_metadata.yaml` for all 50
+states (5,688 Tier 1 tracts nationally).
+
+*AFA toolkit resources:* Updated placeholder description on how-to-advocate page with accurate content
+(5-step framework, anti-displacement guidance, co-authors). Added direct links to AFA scoring rubric
+(Google Sheet) and tract dataset (xlsx) — URLs extracted from PDF. Added 3 new references.md entries
+(rubric, dataset, research landscape scan).
 
 **Completed in the 2026-05-12 session (branch: claude/add-anchor-links-jkfkF):**
 
