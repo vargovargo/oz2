@@ -221,6 +221,10 @@ def build_state(fips: str, state_rows: pd.DataFrame, tmpdir: Path) -> bool:
     gdf = gdf.rename(columns={geoid_col: "geoid"})
     gdf["geoid"] = gdf["geoid"].astype(str).str.zfill(11)
 
+    # Compute state outline from ALL tract boundaries (before filtering to eligible tracts)
+    # This gives the full state boundary, not just the union of eligible tracts.
+    state_union = gdf.geometry.unary_union
+
     # Filter to OZ-eligible tracts
     eligible_geoids = set(state_rows["geoid"])
     gdf = gdf[gdf["geoid"].isin(eligible_geoids)].copy()
@@ -312,6 +316,20 @@ def build_state(fips: str, state_rows: pd.DataFrame, tmpdir: Path) -> bool:
 
     size_kb = out_path.stat().st_size // 1024
     print(f"  → {out_path.name}  {size_kb} KB  ({len(gdf)} tracts)")
+
+    # Write lightweight state outline file (union of all tract boundaries, not just eligible)
+    try:
+        outline_gdf = gpd.GeoDataFrame(
+            [{"state_fips": fips, "state_abbr": abbr, "state_name": state_name}],
+            geometry=[state_union],
+            crs="EPSG:4326",
+        )
+        outline_path = OUT_DIR / f"state-{fips}-outline.geojson"
+        outline_gdf.to_file(outline_path, driver="GeoJSON")
+        print(f"  → {outline_path.name}  {outline_path.stat().st_size // 1024} KB  (state outline)")
+    except Exception as e:
+        print(f"  [{abbr}] State outline failed: {e}")
+
     return True
 
 

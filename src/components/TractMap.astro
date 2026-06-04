@@ -406,9 +406,13 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 
     map.on('load', async () => {
       try {
-        const res = await fetch(geojsonUrl);
+        const [res, outlineRes] = await Promise.all([
+          fetch(geojsonUrl),
+          fetch(`/geo/state-${stateFips}-outline.geojson`).catch(() => null),
+        ]);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json() as GeoJSON.FeatureCollection;
+        const outlineData = (outlineRes?.ok) ? await outlineRes.json() : null;
 
         // Fit to data bounds
         const bounds = new maplibregl.LngLatBounds();
@@ -430,8 +434,11 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           map.fitBounds(bounds, { padding: 24, duration: 0 });
         }
 
-        // Add GeoJSON source
+        // Add GeoJSON sources
         map.addSource('tracts', { type: 'geojson', data });
+        if (outlineData) {
+          map.addSource('state-outline', { type: 'geojson', data: outlineData });
+        }
 
         // Choropleth color expressions
         const DCI_COLOR_EXPR: maplibregl.ExpressionSpecification = [
@@ -478,6 +485,20 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
             'line-opacity': 0.55,
           },
         });
+
+        // State boundary (below hover/selected so tract interactions render on top)
+        if (outlineData) {
+          map.addLayer({
+            id: 'state-boundary',
+            type: 'line',
+            source: 'state-outline',
+            paint: {
+              'line-color': '#1e293b',
+              'line-width': 2,
+              'line-opacity': 0.75,
+            },
+          });
+        }
 
         // Hover highlight layer
         map.addLayer({
