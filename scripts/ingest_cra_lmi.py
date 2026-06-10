@@ -368,6 +368,15 @@ FFIEC_XLSX_NAMES = [
     "FFIEC_CensusTractList2024.xlsx",
 ]
 
+# Known flat CSV/TXT filenames (pipe-delimited or comma-delimited)
+FFIEC_CSV_NAMES = [
+    "CensusFlatFile2025.csv",
+    "CensusFlatFile2024.csv",
+    "CensusFlatFile2026.csv",
+    "CensusFlatFile2025.txt",
+    "CensusFlatFile2024.txt",
+]
+
 # Map FFIEC word-form income levels → standard single-letter codes
 FFIEC_WORD_TO_CODE = {
     "LOW": "L",
@@ -442,6 +451,38 @@ def _parse_local_xlsx() -> pd.DataFrame | None:
     return None
 
 
+def _parse_local_csv() -> "pd.DataFrame | None":
+    """
+    Parse a locally downloaded FFIEC Census Flat File CSV/TXT from data/raw/.
+
+    The pipe-delimited flat file (CensusFlatFile20XX) contains all census tracts
+    with income level and distressed/underserved designation.
+    """
+    for name in FFIEC_CSV_NAMES:
+        path = RAW_DIR / name
+        if not path.exists():
+            continue
+        print(f"\nFound local FFIEC CSV: {path}")
+        try:
+            for sep in ('|', '\t', ','):
+                try:
+                    df = pd.read_csv(path, sep=sep, dtype=str,
+                                     encoding='latin-1', low_memory=False)
+                    df.columns = [str(c).strip() for c in df.columns]
+                    if len(df.columns) >= 4:
+                        print(f"  Parsed as sep='{sep}': {len(df):,} rows × {len(df.columns)} cols")
+                        print(f"  Columns (first 20): {df.columns.tolist()[:20]}")
+                        result = _extract_geoid_income(df)
+                        if result is not None and len(result) > 10000:
+                            return result
+                except Exception:
+                    pass
+            print(f"  Could not parse {name} with any delimiter")
+        except Exception as exc:
+            print(f"  Failed to parse {name}: {exc}")
+    return None
+
+
 def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -459,6 +500,10 @@ def main():
 
     # ---- 1. Try local XLSX first (fastest, no network needed) ----
     ffiec_df: pd.DataFrame | None = _parse_local_xlsx()
+
+    # ---- 1b. Try local CSV/TXT flat file ----
+    if ffiec_df is None:
+        ffiec_df = _parse_local_csv()
 
     # ---- 2. Fall back to FFIEC ZIP download ----
     last_exc: Exception | None = None
