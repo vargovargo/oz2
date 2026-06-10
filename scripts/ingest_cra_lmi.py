@@ -11,51 +11,58 @@ designations for examination years. The 2023 exam year file is based on
   Landing page:  https://www.ffiec.gov/censusapp.htm
   Flat files:    https://www.ffiec.gov/cra/craflatfiles.htm
 
-CRA LMI eligibility definition
--------------------------------
-A census tract is CRA Low-to-Moderate Income (LMI) if its estimated median
-family income (MFI) is less than 80% of the area MFI, where "area" is the
-MSA/Metropolitan Division for metropolitan tracts, or the statewide
-non-metropolitan area for rural tracts. Tract income level codes:
+CRA eligibility — two tracks
+-----------------------------
+Track 1 — LMI: A census tract is CRA Low-to-Moderate Income (LMI) if its
+estimated median family income (MFI) is less than 80% of the area MFI,
+where "area" is the MSA/Metropolitan Division for metropolitan tracts, or
+the statewide non-metropolitan area for rural tracts. Tract income level:
   L — Low Income      (tract MFI < 50% of area MFI)
   M — Moderate Income (tract MFI 50–80% of area MFI)
   U — Upper Income    (tract MFI 80–120% of area MFI)
   I — Income > 120%   (in some file versions)
   NA or blank — tract income not available / no classification
 
-LMI for CRA purposes = L or M.
+Track 2 — Distressed/Underserved: Non-metropolitan census tracts that are
+middle-income (not LMI) but are designated "Distressed or Underserved" by
+FFIEC based on: unemployment ≥ 1.5× national average, poverty rate ≥ 20%,
+or population loss ≥ 10% / net migration loss ≥ 5%. These qualify for CRA
+Community Development credit even without LMI status.
+
+CRA-eligible = LMI (L or M) OR distressed/underserved designation.
 
 FFIEC Census Flat File format
 ------------------------------
 Fixed-width text file (pipe-delimited in newer editions). Key columns:
-  State Code        (2-digit)
-  County Code       (3-digit)
-  Census Tract      (6-digit, with implied decimal before last 2 digits)
-  Tract Income Ind  (1 char: L, M, U; or blank/NA)
-  Distressed        (0/1 flag, in some editions)
+  State Code                    (2-digit)
+  County Code                   (3-digit)
+  Census Tract                  (6-digit, with implied decimal before last 2)
+  Tract Income Ind              (1 char: L, M, U; or blank/NA)
+  Distressed or Underserved     (Yes/No or 0/1 flag)
 
 The exact column layout varies by year. This script handles:
   - 2023/2024 pipe-delimited format (newer FFIEC releases)
+  - FFIEC Census Tract List XLSX (2024+, preferred)
   - Fixed-width format (legacy)
-  - HMDA flat file as fallback (same income_level field)
+  - ACS Census API fallback (income level only — no distressed/underserved)
 
-Fallback strategy
------------------
-If FFIEC flat file download fails (e.g., network restrictions on cloud runners),
-the script falls back to computing LMI status from the underlying ACS
-tract-level median family income data via the Census Bureau API, which yields
-equivalent results.
+NOTE: The ACS fallback does NOT include distressed/underserved designation.
+Running it will undercount CRA-eligible tracts. To get the full picture,
+provide the FFIEC Census Tract List XLSX in data/raw/ and re-run.
 
 Output schema (data/cra_lmi_overlap.parquet)
 --------------------------------------------
 One row per OZ-eligible tract that could be matched to the FFIEC data.
 
-  geoid          str   11-digit census tract GEOID
-  state_fips     str   2-digit state FIPS
-  county_fips    str   5-digit county FIPS
-  income_level   str   FFIEC income level code (L, M, U, or NA)
-  is_cra_lmi     bool  True if income_level in ('L', 'M')
-  fetched_at     str   ISO date this script was run
+  geoid                    str   11-digit census tract GEOID
+  state_fips               str   2-digit state FIPS
+  county_fips              str   5-digit county FIPS
+  income_level             str   FFIEC income level code (L, M, U, or NA)
+  is_distressed_underserved bool  True if FFIEC distressed/underserved flag set
+                                  (always False when ACS fallback is used)
+  is_cra_lmi               bool  True if income_level in ('L','M') OR
+                                  is_distressed_underserved
+  fetched_at               str   ISO date this script was run
 """
 
 import io
@@ -91,12 +98,26 @@ FFIEC_URLS = [
 # Known column name variants across FFIEC flat file editions
 INCOME_LEVEL_COLS = [
     "Tract Income Level",
+    "Tract income level",
     "TractIncomeIndicator",
     "TRACT_INCOME_LEVEL",
     "tract_income_level",
     "Income Level",
     "IncomeLevel",
     "MSAorMD_INCOME_IND",
+]
+
+# Distressed or Underserved — CRA Track 2 designation
+DISTRESSED_COLS = [
+    "Distressed or Underserved Tract",
+    "Distressed or Underserved",
+    "distressed_or_underserved",
+    "DistressedOrUnderserved",
+    "Distressed",
+    "DistressedInd",
+    "DISTRESSED",
+    "D_U_IND",
+    "Underserved",
 ]
 
 STATE_COLS = ["State Code", "STATE_CODE", "state_code", "State", "MSAorMD_STATE"]
@@ -190,17 +211,19 @@ def _parse_ffiec_zip(raw: bytes) -> pd.DataFrame:
 
 
 def _extract_geoid_income(df: pd.DataFrame) -> pd.DataFrame | None:
-    """Extract geoid + income_level from a parsed FFIEC DataFrame."""
+    """Extract geoid + income_level + is_distressed_underserved from a parsed FFIEC DataFrame."""
     state_col = _col(df, STATE_COLS)
     county_col = _col(df, COUNTY_COLS)
     tract_col = _col(df, TRACT_COLS)
     income_col = _col(df, INCOME_LEVEL_COLS)
+    distressed_col = _col(df, DISTRESSED_COLS)
 
     if not income_col:
         print(f"  Could not find income level column. Available: {df.columns.tolist()[:20]}")
         return None
 
-    print(f"  State: '{state_col}', County: '{county_col}', Tract: '{tract_col}', Income: '{income_col}'")
+    print(f"  State: '{state_col}', County: '{county_col}', Tract: '{tract_col}', "
+          f"Income: '{income_col}', Distressed: '{distressed_col}'")
 
     result = pd.DataFrame()
 
@@ -230,6 +253,16 @@ def _extract_geoid_income(df: pd.DataFrame) -> pd.DataFrame | None:
     result["income_level"] = result["income_level"].replace(
         {"NAN": "NA", "N/A": "NA", "": "NA", "NONE": "NA"}
     )
+
+    # CRA Track 2: distressed or underserved non-metropolitan middle-income tracts
+    if distressed_col:
+        raw_d = df[distressed_col].astype(str).str.strip().str.upper()
+        result["is_distressed_underserved"] = raw_d.isin(["YES", "Y", "1", "TRUE"])
+        n_du = int(result["is_distressed_underserved"].sum())
+        print(f"  Distressed/Underserved tracts found: {n_du:,}")
+    else:
+        result["is_distressed_underserved"] = False
+        print("  No distressed/underserved column found — Track 2 will be missing")
 
     # Keep only rows with valid 11-digit GEOIDs
     result = result[result["geoid"].str.match(r"^\d{11}$", na=False)].copy()
@@ -315,10 +348,13 @@ def _acs_fallback(elig: pd.DataFrame) -> pd.DataFrame:
         return "U"
 
     tracts_df["income_level"] = tracts_df.apply(_income_level, axis=1)
+    # ACS fallback cannot determine distressed/underserved (Track 2) — always False here
+    tracts_df["is_distressed_underserved"] = False
 
     print(f"  ACS fallback: {len(tracts_df):,} tracts, "
           f"{(tracts_df['income_level'].isin(['L','M'])).sum():,} LMI")
-    return tracts_df[["geoid", "income_level"]].copy()
+    print("  WARNING: ACS fallback has no distressed/underserved data — CRA count is LMI-only")
+    return tracts_df[["geoid", "income_level", "is_distressed_underserved"]].copy()
 
 
 # ---------------------------------------------------------------------------
@@ -371,9 +407,12 @@ def _parse_local_xlsx() -> pd.DataFrame | None:
             fips_col = _col(df, ["FIPS code", "FIPS Code", "fips_code", "GEOID"])
             income_col = _col(df, ["Tract income level", "Tract Income Level",
                                    "tract_income_level"] + INCOME_LEVEL_COLS)
+            distressed_col = _col(df, DISTRESSED_COLS)
             if not fips_col or not income_col:
                 print(f"  Could not find required columns. Available: {df.columns.tolist()}")
                 continue
+
+            print(f"  FIPS: '{fips_col}', Income: '{income_col}', Distressed: '{distressed_col}'")
 
             result = pd.DataFrame()
             result["geoid"] = df[fips_col].astype(str).str.strip().str.zfill(11)
@@ -381,10 +420,22 @@ def _parse_local_xlsx() -> pd.DataFrame | None:
             result["income_level"] = raw_level.map(
                 lambda v: FFIEC_WORD_TO_CODE.get(v, v if v in ("L", "M", "U") else "NA")
             )
+
+            # CRA Track 2: distressed or underserved designation
+            if distressed_col:
+                raw_d = df[distressed_col].astype(str).str.strip().str.upper()
+                result["is_distressed_underserved"] = raw_d.isin(["YES", "Y", "1", "TRUE"])
+                n_du = int(result["is_distressed_underserved"].sum())
+                print(f"  Distressed/Underserved tracts: {n_du:,}")
+            else:
+                result["is_distressed_underserved"] = False
+                print("  No distressed/underserved column found — Track 2 will be missing")
+
             result = result[result["geoid"].str.match(r"^\d{11}$", na=False)].copy()
             result = result.reset_index(drop=True)
             print(f"  Parsed: {len(result):,} tracts  "
-                  f"LMI: {result['income_level'].isin(['L','M']).sum():,}")
+                  f"LMI: {result['income_level'].isin(['L','M']).sum():,}  "
+                  f"D/U: {result['is_distressed_underserved'].sum():,}")
             return result
         except Exception as exc:
             print(f"  Failed to parse {name}: {exc}")
@@ -463,8 +514,13 @@ def main():
     elig_with_income["geoid"] = elig_with_income["geoid"].astype(str)
 
     ffiec_df["geoid"] = ffiec_df["geoid"].astype(str)
+
+    # Ensure is_distressed_underserved column exists (older code paths may omit it)
+    if "is_distressed_underserved" not in ffiec_df.columns:
+        ffiec_df["is_distressed_underserved"] = False
+
     merged = elig_with_income.merge(
-        ffiec_df[["geoid", "income_level"]],
+        ffiec_df[["geoid", "income_level", "is_distressed_underserved"]],
         on="geoid",
         how="left",
     )
@@ -473,46 +529,57 @@ def main():
     if missing > 0:
         print(f"  Warning: {missing:,} eligible tracts not in FFIEC file → marked NA")
     merged["income_level"] = merged["income_level"].fillna("NA")
-    merged["is_cra_lmi"] = merged["income_level"].isin(["L", "M"])
+    merged["is_distressed_underserved"] = merged["is_distressed_underserved"].fillna(False)
+
+    # CRA-eligible = LMI (Track 1) OR distressed/underserved (Track 2)
+    merged["is_cra_lmi"] = merged["income_level"].isin(["L", "M"]) | merged["is_distressed_underserved"]
     merged["fetched_at"] = date.today().isoformat()
 
     # ---- Summary ----
     total = len(merged)
-    n_lmi = int(merged["is_cra_lmi"].sum())
+    n_cra = int(merged["is_cra_lmi"].sum())
     n_low = int((merged["income_level"] == "L").sum())
     n_mod = int((merged["income_level"] == "M").sum())
     n_upper = int((merged["income_level"] == "U").sum())
     n_na = int((merged["income_level"] == "NA").sum())
+    n_du = int(merged["is_distressed_underserved"].sum())
+    n_du_only = int((merged["is_distressed_underserved"] & ~merged["income_level"].isin(["L","M"])).sum())
 
-    print(f"\n--- CRA LMI Summary (eligible OZ tracts) ---")
-    print(f"  Total eligible tracts : {total:,}")
-    print(f"  LMI (L+M)             : {n_lmi:,}  ({100*n_lmi/total:.1f}%)")
-    print(f"    Low Income (L)      : {n_low:,}")
-    print(f"    Moderate Income (M) : {n_mod:,}")
-    print(f"  Upper Income (U)      : {n_upper:,}")
-    print(f"  Not classified (NA)   : {n_na:,}")
+    print(f"\n--- CRA Eligibility Summary (eligible OZ tracts) ---")
+    print(f"  Total eligible tracts    : {total:,}")
+    print(f"  CRA-eligible (any track) : {n_cra:,}  ({100*n_cra/total:.1f}%)")
+    print(f"  Track 1 — LMI (L+M)     : {(merged['income_level'].isin(['L','M'])).sum():,}")
+    print(f"    Low Income (L)         : {n_low:,}")
+    print(f"    Moderate Income (M)    : {n_mod:,}")
+    print(f"  Track 2 — Distressed/U  : {n_du:,}  ({n_du_only:,} non-LMI, Track 2 only)")
+    print(f"  Upper Income (U)         : {n_upper:,}")
+    print(f"  Not classified (NA)      : {n_na:,}")
+    if n_du == 0:
+        print("\n  NOTE: Distressed/underserved count is 0 — likely running on ACS fallback.")
+        print("  To include Track 2, place FFIEC Census Tract List XLSX in data/raw/ and re-run.")
 
-    # Top states by LMI tract count
-    lmi_by_state = (
+    # Top states by CRA-eligible tract count
+    cra_by_state = (
         merged[merged["is_cra_lmi"]]
         .groupby("state_fips")["geoid"]
         .count()
         .sort_values(ascending=False)
         .head(10)
     )
-    if len(lmi_by_state):
+    if len(cra_by_state):
         state_names = (
             elig[["state_fips", "state_name"]]
             .drop_duplicates("state_fips")
             .set_index("state_fips")["state_name"]
         )
-        print("\n  Top 10 states by CRA LMI tract count:")
-        for sfips, cnt in lmi_by_state.items():
+        print("\n  Top 10 states by CRA-eligible tract count:")
+        for sfips, cnt in cra_by_state.items():
             sname = state_names.get(sfips, sfips)
             print(f"    {sname:<30} {cnt:>4} tracts")
 
     # ---- Save ----
-    out = merged[["geoid", "state_fips", "county_fips", "income_level", "is_cra_lmi", "fetched_at"]].copy()
+    out = merged[["geoid", "state_fips", "county_fips", "income_level",
+                  "is_distressed_underserved", "is_cra_lmi", "fetched_at"]].copy()
     out = out.sort_values("geoid").reset_index(drop=True)
     out.to_parquet(OUT_PARQUET, index=False)
     print(f"\nSaved → {OUT_PARQUET}")
