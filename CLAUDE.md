@@ -4,7 +4,7 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-06-02)
+## Where things stand (as of 2026-06-10)
 
 **Data bootstrap done:**
 - `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
@@ -25,6 +25,30 @@ in references.md. Read both before substantive edits.
 - References page: styled with entry separators, clickable URLs, last_checked badges, section anchor links
 - references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
 - Urban Institute investability layer + AFA toolkit resources — merged (PR #14, 2026-06-02)
+
+**Completed in the 2026-06-10 session (branch: claude/cra-eligibility-overlap-2srcf8):**
+
+*CRA eligibility fix — two-track logic:* `ingest_cra_lmi.py` now uses the FFIEC Census
+Flat File (`CensusFlatFile2025.csv`, 87,276 rows, 1,212 cols, positional no-header format)
+instead of the Census Tract List XLSX, which had income levels but no distressed/underserved
+column. Key columns per `FFIEC_Census_File_Definitions_10JULY25.xlsx` (data dictionary):
+  - Col 14: income indicator (1=Low, 2=Moderate, 3=Middle, 4=Upper, 0=N/A)
+  - Col 21: meets current OR previous year's D/U criteria ('X' = yes, blank = no)
+
+**Updated overlap figures:**
+  - Track 1 (LMI only, L+M): 17,378 tracts — **68.6%** (unchanged)
+  - Track 2 (non-LMI distressed/underserved middle-income): +1,590 tracts
+  - Combined two-track CRA: 18,968 tracts — **74.9%**
+
+Note: The earlier estimate of 83–84% was a misattribution; 74.9% is the correct figure
+using the FFIEC's own definition (non-metropolitan middle-income tracts with D/U flag only).
+
+**Files updated and pushed in this session:**
+  - `scripts/ingest_cra_lmi.py` — CSV preferred over XLSX; new `_parse_local_csv()` handles
+    positional format; `is_cra_lmi` = Track 1 (L+M) OR Track 2 (col 21 = 'X')
+  - `data/cra_lmi_overlap.parquet` — regenerated with correct two-track logic
+  - `public/geo/*.geojson` — rebuilt with updated `is_cra_lmi` flags
+  - `state_metadata.yaml` — `cra_lmi_tracts` counts updated for all 51 states
 
 **Completed in the 2026-06-02 session (PR #14):**
 
