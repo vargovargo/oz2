@@ -26,34 +26,29 @@ in references.md. Read both before substantive edits.
 - references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
 - Urban Institute investability layer + AFA toolkit resources — merged (PR #14, 2026-06-02)
 
-**In progress (2026-06-10 session, branch: claude/cra-eligibility-overlap-2srcf8):**
+**Completed in the 2026-06-10 session (branch: claude/cra-eligibility-overlap-2srcf8):**
 
-*CRA eligibility fix — two-track logic:* The existing `ingest_cra_lmi.py` was only using
-Track 1 (LMI income: L + M codes), yielding **68.6%** OZ/CRA overlap. The correct definition
-also includes Track 2 — FFIEC-designated "Distressed or Underserved" non-metropolitan
-middle-income tracts, which is why another analysis returned **83.8%**.
+*CRA eligibility fix — two-track logic:* `ingest_cra_lmi.py` now uses the FFIEC Census
+Flat File (`CensusFlatFile2025.csv`, 87,276 rows, 1,212 cols, positional no-header format)
+instead of the Census Tract List XLSX, which had income levels but no distressed/underserved
+column. Key columns per `FFIEC_Census_File_Definitions_10JULY25.xlsx` (data dictionary):
+  - Col 14: income indicator (1=Low, 2=Moderate, 3=Middle, 4=Upper, 0=N/A)
+  - Col 21: meets current OR previous year's D/U criteria ('X' = yes, blank = no)
 
-**What was changed (script updated, data NOT yet regenerated):**
-- `scripts/ingest_cra_lmi.py` now extracts the distressed/underserved column from FFIEC data
-  (column name candidates: "Distressed or Underserved Tract", "DistressedInd", "D_U_IND", etc.)
-- Output schema gains `is_distressed_underserved` boolean column
-- `is_cra_lmi` now = `income_level in ('L','M') OR is_distressed_underserved`
-- ACS fallback warns that it cannot compute Track 2 (always returns False for that flag)
+**Updated overlap figures:**
+  - Track 1 (LMI only, L+M): 17,378 tracts — **68.6%** (unchanged)
+  - Track 2 (non-LMI distressed/underserved middle-income): +1,590 tracts
+  - Combined two-track CRA: 18,968 tracts — **74.9%**
 
-**Blocking: need the FFIEC flat file to regenerate data.**
-The FFIEC website blocks downloads from cloud environments (403). The current parquet was
-generated from the ACS fallback on 2026-05-20 — it has no distressed/underserved data.
+Note: The earlier estimate of 83–84% was a misattribution; 74.9% is the correct figure
+using the FFIEC's own definition (non-metropolitan middle-income tracts with D/U flag only).
 
-**Next steps to complete this (pick up at home):**
-1. Download `FFIEC_CensusTractList2026.xlsx` from https://www.ffiec.gov/cra/craflatfiles.htm
-2. Place it in `data/raw/FFIEC_CensusTractList2026.xlsx`
-3. Run: `python scripts/ingest_cra_lmi.py` — it will auto-detect the XLSX and use it
-4. Run: `python scripts/build_state_geo.py` to rebuild GeoJSON with updated CRA flags
-5. Run: `python scripts/patch_overlay_stats.py` to update `state_metadata.yaml` CRA counts
-6. Commit updated parquet + YAML + GeoJSON files and push to this branch
-
-**Expected result after FFIEC file is provided:** ~83–84% CRA overlap (matching the other
-agent's finding), with `is_distressed_underserved = True` on the additional ~3,850 tracts.
+**Files updated and pushed in this session:**
+  - `scripts/ingest_cra_lmi.py` — CSV preferred over XLSX; new `_parse_local_csv()` handles
+    positional format; `is_cra_lmi` = Track 1 (L+M) OR Track 2 (col 21 = 'X')
+  - `data/cra_lmi_overlap.parquet` — regenerated with correct two-track logic
+  - `public/geo/*.geojson` — rebuilt with updated `is_cra_lmi` flags
+  - `state_metadata.yaml` — `cra_lmi_tracts` counts updated for all 51 states
 
 **Completed in the 2026-06-02 session (PR #14):**
 

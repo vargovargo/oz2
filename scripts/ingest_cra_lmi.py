@@ -453,31 +453,74 @@ def _parse_local_xlsx() -> pd.DataFrame | None:
 
 def _parse_local_csv() -> "pd.DataFrame | None":
     """
-    Parse a locally downloaded FFIEC Census Flat File CSV/TXT from data/raw/.
+    Parse the FFIEC Census Flat File CSV from data/raw/ using its positional layout.
 
-    The pipe-delimited flat file (CensusFlatFile20XX) contains all census tracts
-    with income level and distressed/underserved designation.
+    This is the full FFIEC census file (one row per census tract, no header row,
+    comma-delimited, ~87k rows). Key columns per the FFIEC data dictionary:
+
+      Col  0  Activity year
+      Col  2  FIPS state code (2-digit)
+      Col  3  FIPS county code (3-digit)
+      Col  4  Census tract (6-digit, implied decimal)
+      Col  8  Demographic data flag (D=data present, X=zero pop/MFI, I=island)
+      Col 14  Income indicator: 1=Low, 2=Moderate, 3=Middle, 4=Upper, 0=N/A
+      Col 17  CRA distressed criteria ('X' = yes, blank = no)
+      Col 18  CRA remote rural (underserved) criteria ('X' = yes, blank = no)
+      Col 21  Meets current OR previous year's D/U criteria ('X' = yes, blank = no)
+
+    CRA Track 2 eligibility uses col 21 (includes the FFIEC's standard one-year
+    lag period for tracts that were distressed/underserved the prior exam year).
     """
+    INCOME_MAP = {"1": "L", "2": "M", "3": "Middle", "4": "U", "0": "NA"}
+
     for name in FFIEC_CSV_NAMES:
         path = RAW_DIR / name
         if not path.exists():
             continue
-        print(f"\nFound local FFIEC CSV: {path}")
+        print(f"\nFound local FFIEC Census Flat File CSV: {path}")
         try:
-            for sep in ('|', '\t', ','):
-                try:
-                    df = pd.read_csv(path, sep=sep, dtype=str,
-                                     encoding='latin-1', low_memory=False)
-                    df.columns = [str(c).strip() for c in df.columns]
-                    if len(df.columns) >= 4:
-                        print(f"  Parsed as sep='{sep}': {len(df):,} rows × {len(df.columns)} cols")
-                        print(f"  Columns (first 20): {df.columns.tolist()[:20]}")
-                        result = _extract_geoid_income(df)
-                        if result is not None and len(result) > 10000:
-                            return result
-                except Exception:
-                    pass
-            print(f"  Could not parse {name} with any delimiter")
+            df = pd.read_csv(path, header=None, dtype=str, encoding='latin-1',
+                             low_memory=False)
+            print(f"  {len(df):,} rows × {len(df.columns)} cols")
+            if len(df.columns) < 22:
+                print(f"  Too few columns ({len(df.columns)}) — not the positional flat file format; skipping")
+                continue
+
+            # Build 11-digit GEOID from state + county + tract
+            state_s = df[2].astype(str).str.strip().str.zfill(2)
+            county_s = df[3].astype(str).str.strip().str.zfill(3)
+            tract_s = (df[4].astype(str).str.strip()
+                       .str.replace('.', '', regex=False)
+                       .str.zfill(6))
+            geoid = state_s + county_s + tract_s
+
+            # Income level from col 14 (numeric indicator)
+            income_level = df[14].astype(str).str.strip().map(
+                lambda v: INCOME_MAP.get(v, "NA")
+            )
+
+            # CRA Track 2: col 21 = current OR previous year distressed/underserved
+            # ('X' = yes, blank/NaN = no). This includes the FFIEC one-year lag period.
+            du_flag = df[21].astype(str).str.strip().str.upper() == "X"
+            n_du = int(du_flag.sum())
+            print(f"  Income indicator col 14 — unique values: {sorted(df[14].dropna().unique()[:10])}")
+            print(f"  D/U col 21 — 'X' count: {n_du:,}")
+
+            result = pd.DataFrame({
+                "geoid": geoid,
+                "income_level": income_level,
+                "is_distressed_underserved": du_flag,
+            })
+
+            # Drop rows where geoid is not a valid 11-digit number (e.g., island areas
+            # with I demographic flag or rows with zero-population tracts)
+            result = result[result["geoid"].str.match(r"^\d{11}$", na=False)].copy()
+            result = result.reset_index(drop=True)
+            print(f"  Valid GEOIDs: {len(result):,}  "
+                  f"LMI (L+M): {result['income_level'].isin(['L','M']).sum():,}  "
+                  f"D/U: {result['is_distressed_underserved'].sum():,}")
+            return result
+
         except Exception as exc:
             print(f"  Failed to parse {name}: {exc}")
     return None
@@ -498,12 +541,12 @@ def main():
     elig = pd.read_parquet(ELIGIBLE_PARQUET)
     print(f"Eligible tracts: {len(elig):,}")
 
-    # ---- 1. Try local XLSX first (fastest, no network needed) ----
-    ffiec_df: pd.DataFrame | None = _parse_local_xlsx()
+    # ---- 1. Try local CSV flat file first — it has D/U designation (Track 2) ----
+    ffiec_df: pd.DataFrame | None = _parse_local_csv()
 
-    # ---- 1b. Try local CSV/TXT flat file ----
+    # ---- 1b. Fall back to XLSX (income levels only, no D/U) ----
     if ffiec_df is None:
-        ffiec_df = _parse_local_csv()
+        ffiec_df = _parse_local_xlsx()
 
     # ---- 2. Fall back to FFIEC ZIP download ----
     last_exc: Exception | None = None
