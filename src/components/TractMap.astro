@@ -143,7 +143,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         </label>
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="cra" class="accent-oz-blue" />
-          <span class="text-oz-neutral-700">CRA LMI designation</span>
+          <span class="text-oz-neutral-700">CRA-eligible (LMI or distressed/underserved)</span>
         </label>
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="dci" class="accent-oz-blue" />
@@ -184,7 +184,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx"
     class="underline hover:text-oz-neutral-600"
   >IRS appendix (XLSX)</a>
-  <span>Source: IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2023 · Urban Institute 2026</span>
+  <span>Source: IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2025 · Urban Institute 2026</span>
 </div>
 
 <style is:global>
@@ -279,13 +279,13 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     // CRA text
     let craText: string;
     if (incomeLevel === 'L') {
-      craText = 'Low Income — tract median income &lt;50% of area median (FFIEC 2023)';
+      craText = 'Low Income — tract median income &lt;50% of area median (FFIEC 2025)';
     } else if (incomeLevel === 'M') {
-      craText = 'Moderate Income — tract median income 50–80% of area median (FFIEC 2023)';
+      craText = 'Moderate Income — tract median income 50–80% of area median (FFIEC 2025)';
     } else if (isCraLmi) {
-      craText = 'CRA LMI designated (FFIEC 2023)';
+      craText = 'CRA eligible — FFIEC-designated distressed or underserved middle-income tract (Track 2, FFIEC 2025)';
     } else {
-      craText = '— not designated CRA Low- or Moderate-Income';
+      craText = '— not CRA-eligible (middle- or upper-income, no distressed/underserved designation)';
     }
 
     // Persistent poverty text
@@ -375,7 +375,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       </div>
       ${tribalSection}
       <div class="ozp-footer">
-        oz2.vargo.city &middot; Data sources: IRS Rev. Proc. 2026-14, EIG DCI 2023, FFIEC CRA 2023, USDA ERS 2015, CDFI Fund NMTC 2024, Urban Institute 2026
+        oz2.vargo.city &middot; Data sources: IRS Rev. Proc. 2026-14, EIG DCI 2023, FFIEC CRA 2025, USDA ERS 2015, CDFI Fund NMTC 2024, Urban Institute 2026
       </div>
     </div>`;
   }
