@@ -1,5 +1,9 @@
 # Claude Code Project Instructions — OZ 2.0 State-Specific Resource
 
+
+> Pipeline coordination for this project lives in ./HARNESS.md
+> (agents, handoffs, session state). This file covers project specifics.
+
 You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.

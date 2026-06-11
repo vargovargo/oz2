@@ -1,15 +1,12 @@
-# CLAUDE.md — [oz2]
-*Harness: data research post. Copied from vargo-research-ops/harnesses/data-post.md.*
-
-> Fill in everything in [brackets] at kickoff. The two lines under "Session state"
-> are the only things you update between sessions.
+# Harness — oz2
+*Harness: data research post. Template from vargo-research-ops/harnesses/data-post.md.*
 
 ## Project
 
-- **Slug:** [oz2]
-- **Question:** [one-line research question]
-- **Venue:** [vargo.city lab post]
-- **Repos:** [users/lauren/oz2] ↔ [users/lauren/oz2], JSON contract at [????]
+- **Slug:** oz2
+- **Question:** Which OZ 2.0 eligible tracts offer the strongest case for community-benefit-aligned nomination, and what conditions determine whether designation leads to investment that actually strengthens local economies?
+- **Venue:** oz2.vargo.city resource tool + companion vargo.city lab posts
+- **Repos:** /users/lauren/oz2, handoffs at ./handoffs/
 
 ## Agent Library
 
@@ -65,8 +62,8 @@ series reload the existing `./agents/oz2.md`.
 
 ## Session state  ← UPDATE THESE TWO LINES EACH SESSION
 
-- **Current pipeline phase:** SME (onboarding complete → SME Editor active)
-- **Last handoff:** ./agents/sme-shock-stress-shift.md (SME initialized 2026-06-09)
+- **Current pipeline phase:** SME Editor active (ready for first findings stress-test pass)
+- **Last handoff:** ./agents/sme-oz2.md (SME initialized 2026-06-10)
 
 ## Session opener (paste to Claude Code when resuming)
 
