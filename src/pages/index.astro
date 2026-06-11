@@ -1,84 +1,58 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-const totalEligible = 25332;
-const ruralEligible = 8334;
-const stateCount = 51;
-const daysToWindow = Math.ceil((new Date('2026-07-01').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+// Site is temporarily paused. To restore, revert this file to the previous version.
 ---
-
-<Layout title="Home" description="Which Opportunity Zone 2.0 tracts are in your jurisdiction, and how do you advocate for nomination before July 1, 2026?">
-
-  <!-- Hero -->
-  <section class="mb-12">
-    <div class="max-w-3xl">
-      <p class="text-sm font-mono text-oz-blue uppercase tracking-widest mb-3">OZ 2.0 Nomination Resource</p>
-      <h1 class="text-4xl sm:text-5xl font-bold text-oz-neutral-900 leading-tight mb-6">
-        Which tracts does your jurisdiction have,<br class="hidden sm:block" />
-        and how do you make the case?
-      </h1>
-      <p class="text-xl text-oz-neutral-500 mb-8">
-        The 2025 OBBBA reset the Opportunity Zone map. Treasury released {totalEligible.toLocaleString()} eligible tracts
-        on April 6, 2026. Governors nominate up to 25% before October 2026. This resource helps local planners
-        figure out what they have and how to move.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="/states/all" class="bg-oz-blue text-white px-5 py-3 rounded font-medium hover:bg-blue-800 transition-colors">
-          Find your state
-        </a>
-        <a href="/how-to-advocate" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
-          Coalition playbook
-        </a>
-      </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OZ 2.0 Resource — Coming Back Soon</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #f8f9fa;
+        color: #1a1a2e;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .card {
+        max-width: 480px;
+        background: white;
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        text-align: center;
+      }
+      .label {
+        font-size: 0.75rem;
+        font-family: monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #1d4ed8;
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+      p {
+        color: #555;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="label">OZ 2.0 Nomination Resource</p>
+      <h1>This site is temporarily unavailable.</h1>
+      <p>We'll be back soon. For questions, contact <a href="mailto:jvargo@gmail.com">jvargo@gmail.com</a>.</p>
     </div>
-  </section>
-
-  <!-- National numbers -->
-  <section class="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
-    {[
-      { label: 'Eligible tracts', value: totalEligible.toLocaleString() },
-      { label: 'Rural eligible', value: ruralEligible.toLocaleString() },
-      { label: 'States + DC', value: stateCount },
-      { label: 'Days to window', value: daysToWindow > 0 ? daysToWindow : 'Open' },
-    ].map(({ label, value }) => (
-      <div class="bg-white border border-oz-neutral-200 rounded p-5">
-        <p class="font-mono text-3xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
-        <p class="text-sm text-oz-neutral-500">{label}</p>
-      </div>
-    ))}
-  </section>
-
-  <!-- Who is this for -->
-  <section class="mb-12 bg-white border border-oz-neutral-200 rounded p-6 sm:p-8">
-    <h2 class="text-xl font-semibold mb-4">Who this is for</h2>
-    <div class="grid sm:grid-cols-3 gap-6 text-sm">
-      <div>
-        <p class="font-semibold text-oz-neutral-900 mb-1">Local planners &amp; EDD staff</p>
-        <p class="text-oz-neutral-500">Which tracts are eligible, what the state process looks like, and who to convene for a credible nomination.</p>
-      </div>
-      <div>
-        <p class="font-semibold text-oz-neutral-500 mb-1">Impact investors <span class="text-xs">(Phase 2)</span></p>
-        <p class="text-oz-neutral-300 italic">Coming after designations are set.</p>
-      </div>
-      <div>
-        <p class="font-semibold text-oz-neutral-500 mb-1">Community orgs &amp; matchmakers <span class="text-xs">(Phase 2)</span></p>
-        <p class="text-oz-neutral-300 italic">Coming after designations are set.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- State grid teaser -->
-  <section>
-    <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl font-semibold">States</h2>
-      <a href="/states/all" class="text-sm text-oz-blue hover:underline">View all →</a>
-    </div>
-    <p class="text-sm text-oz-neutral-500 mb-6">
-      As of May 2026, only a minority of states have published a public nomination process.
-      Select your state to see what's known and what to do next.
-    </p>
-    <a href="/states/all" class="inline-block border border-oz-neutral-200 bg-white rounded px-5 py-3 text-sm font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
-      Browse all 51 state pages →
-    </a>
-  </section>
-
-</Layout>
+  </body>
+</html>
