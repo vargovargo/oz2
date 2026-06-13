@@ -1,0 +1,146 @@
+# Opportunity Zone 2.0 and CRA Eligibility: A Practitioner's Guide to the Overlap
+
+**Data brief — June 2026**
+*Source data: IRS Rev. Proc. 2026-14 (OZ eligibility); FFIEC Census Flat File 2025 exam year (CRA eligibility); Census TIGER/ACS 2023 (tribal overlap); USDA Economic Research Service (persistent poverty).*
+
+---
+
+## The headline finding
+
+Nearly three in four OZ 2.0-eligible census tracts — 18,968 of 25,332, or **74.9%** — carry a CRA designation under the full two-track FFIEC definition. That means a bank investment in one of these tracts can simultaneously satisfy a Community Reinvestment Act obligation and support an Opportunity Zone fund or deal structure. For community development practitioners trying to assemble capital stacks, the overlap is a material fact: it creates a built-in rationale for bank participation that pure-play QOF investors without bank charters simply cannot offer.
+
+---
+
+## Two-track CRA eligibility
+
+CRA-eligible census tracts qualify on one of two independent tracks under the FFIEC's annual classification:
+
+**Track 1 — Low- or Moderate-Income (LMI).** A tract qualifies if its median family income (MFI) is below 80% of the area MFI, where "area" means the MSA or metropolitan division for metro tracts, or the statewide non-MSA figure for rural tracts. Within the OZ-eligible universe, 17,378 tracts (68.6%) qualify on this track: 5,260 as Low Income (below 50% of area MFI) and 12,118 as Moderate Income (50–80%). Bank examiners weight Low Income tracts most heavily in CRA examinations, making them especially attractive targets for community development loans and equity investments.
+
+**Track 2 — Distressed or Underserved (non-metropolitan middle-income tracts).** A non-metro tract with MFI of 80–120% of the statewide non-metro median qualifies if it meets at least one of: an unemployment rate ≥ 1.5× the national average; a poverty rate ≥ 20%; population loss ≥ 10% between 2010 and 2020 Census (or net migration loss ≥ 5%); or a USDA urban influence code of 7, 10, 11, or 12 (very remote geography). This track is explicitly designed for rural communities that are economically distressed or geographically isolated but don't clear the LMI income threshold. An additional 1,590 OZ-eligible tracts (6.3%) qualify on Track 2 alone.
+
+Together: **18,968 OZ-eligible tracts, 74.9%.**
+
+A previous analysis that reported 68.6% used only Track 1 and the 2023 exam-year file. The full FFIEC two-track definition applied to the 2025 exam-year flat file produces the 74.9% figure.
+
+---
+
+## What the overlap means in practice
+
+CRA credit flows through three main channels for OZ-eligible tracts: community development loans, equity-equivalent (EQ2) instruments, and direct equity investments in Qualified Opportunity Funds that deploy into qualifying geographies. In each case, the bank must document that the investment primarily benefits LMI geographies or populations — or, under Track 2, distressed/underserved communities. When the OZ tract carries either FFIEC flag, that documentation burden is substantially lower.
+
+The 2023 CRA Final Rule (currently under legal challenge) expanded credit for OZ investments in qualifying geographies. Regardless of how that litigation resolves, examiners have long recognized OZ-eligible LMI and D/U tracts as strong CRA candidates. Bringing a bank to the table early — as a co-investor via EQ2 or senior loan, not a later-stage bridge lender — is typically where this dual-flag status creates the most value.
+
+---
+
+## The rural picture: better than it looks, but not solved
+
+The overlap rate is not uniform across the OZ set, and the gap between rural and non-rural tracts has direct implications for communities banking on QROF-eligible designations to attract capital.
+
+Of the 16,998 non-rural OZ tracts, 77.4% are CRA-eligible. Of the 8,334 rural tracts designated for QROF treatment under IRS Rev. Proc. 2026-14, 69.7% qualify — somewhat lower, but a marked improvement over what a single-track analysis suggests. The improvement comes almost entirely from Track 2: rural non-metro tracts that are middle income relative to the statewide non-metro median but meet unemployment, poverty, or remoteness criteria.
+
+That said, **2,525 rural OZ tracts (30.3% of the rural set) carry neither CRA designation**. These are the most challenging contexts: they hold the QROF rural bonus — the 30% basis step-up and 50% improvement threshold under P.L. 119-21 — but no CRA hook for bank capital. The QROF incentive improvement is real, but it does not solve the rural financing gap for these tracts. The absence of CRA credit is not a deal-structuring technicality; it reflects the fundamental thinness of the capital market in communities where the LMI bar isn't met and distress criteria aren't severe enough to trip the FFIEC flag.
+
+For practitioners in rural jurisdictions, CRA is a useful tool but not a universal one. USDA Rural Development programs (RBCDS, Community Facilities, Rural Energy), state QROF marketing campaigns, and impact-first investors oriented toward the rural step-up incentive are better-suited partners for the tracts where CRA and QROF eligibility don't coincide. The first question for any rural OZ project should be: does this specific tract have a CRA designation? Don't assume.
+
+States where the gap is largest: **Arkansas** (26.8% of OZ tracts not CRA-eligible, mostly rural), **Puerto Rico** (57.6% not eligible), **Oregon** (40.6% not eligible), and **West Virginia** (34.8% not CRA-eligible — the entire state is rural, and 72 of 207 tracts fall outside both tracks despite being in one of the nation's most economically distressed states). The WV figure is a notable improvement from the Track-1-only rate of 44%, but still leaves a meaningful share of the state's OZ set without a CRA pathway.
+
+---
+
+## The tribal layer
+
+Across the 25,332 OZ tracts, 1,067 (4.2%) overlap with federally recognized tribal statistical areas or have AIAN population shares above 25%. Of those, a majority are CRA-eligible under the two-track definition. Tribal tracts with Track 2 D/U status — meeting unemployment, poverty, or remoteness criteria — are particularly well-positioned on paper, but the financing constraints in tribal communities go beyond FFIEC geography flags. BIA leasing requirements, trust land titling, and tribal sovereignty over economic development decisions all shape what deal structures are viable. Tribal CDFIs and CDFI Fund Native Initiatives awards remain the more direct capital channel, with CRA credit as a secondary layer for banks willing to engage with tribal-affiliated CDFIs as intermediaries.
+
+---
+
+## Where disadvantage stacks
+
+Across the eligible universe:
+
+- **3,122 tracts** (12.3%) are in USDA persistent poverty counties — counties that have maintained poverty rates above 20% for three consecutive census decades.
+- **5,809 tracts** are the "sweet spot" for bank capital: CRA-eligible (either track) and rural/QROF-eligible, where a bank EQ2 or community development loan can satisfy CRA requirements and pair with the QROF rural step-up incentive. This is up from 4,224 under a Track-1-only analysis — the Track 2 additions matter most here.
+- **2,525 rural tracts** carry the QROF designation but no CRA flag — the hardest-to-finance segment of the rural set.
+
+---
+
+## What practitioners can do with this
+
+**Before structuring any deal:** Confirm CRA eligibility using the FFIEC tract search tool (ffiec.cfpb.gov/tools/tract-search). Designations are updated annually and the 2025 exam-year file reflects conditions that examiners are actually using now. Both track status (LMI) and distressed/underserved flag appear in the tool output.
+
+**When both flags apply:** Bring a bank CRA officer into pre-development conversations, not at closing. Banks seeking CRA examination credit respond to advance notice of pipeline; a surprise ask at term sheet stage rarely closes.
+
+**When QROF-eligible but not CRA:** Pursue USDA Rural Development as anchor debt, with state QROF fund equity as the subordinate layer. The QROF 30% basis step-up makes projects viable at below-market equity returns that impact investors can accept; the absence of CRA credit is a deal-structuring constraint, not a disqualifier.
+
+**Track 2 tracts specifically:** These are rural middle-income communities that fail the LMI screen but meet distress criteria. When approaching banks, lead with the FFIEC D/U designation explicitly — many bank CRA officers are unfamiliar with Track 2 and will initially assume that a non-LMI tract is ineligible. The designation is in the flat file; showing the FFIEC lookup is the fastest way to move the conversation.
+
+**For tribal tracts:** Identify the relevant tribal CDFI (Native CDFI Network directory) and engage early. A tribal CDFI intermediary can accept CRA-eligible loans from a regulated bank and on-lend into the tribal OZ tract, resolving the jurisdictional complexity for the bank while keeping deal terms aligned with tribal priorities.
+
+---
+
+## State-level detail
+
+*Sorted by total OZ 2.0-eligible tracts. CRA eligibility uses FFIEC Census Flat File, 2025 exam year. "Track 2 only" = distressed/underserved non-LMI tracts qualifying solely via Track 2. "Sweet spot" = CRA-eligible (any track) + rural/QROF. FFIEC coverage of U.S. territories reflects territory-specific income benchmarks; treat territory rows as approximate.*
+
+| State / Territory | OZ tracts | CRA eligible | CRA % | Track 2 only | Rural/QROF | Sweet spot |
+|---|---:|---:|---:|---:|---:|---:|
+| California | 2,469 | 1,944 | 78.7% | 24 | 345 | 238 |
+| Texas | 2,420 | 1,836 | 75.9% | 108 | 524 | 358 |
+| New York | 1,702 | 1,186 | 69.7% | 17 | 303 | 172 |
+| Florida | 1,360 | 1,010 | 74.3% | 38 | 284 | 202 |
+| Ohio | 1,032 | 805 | 78.0% | 23 | 278 | 195 |
+| Illinois | 950 | 804 | 84.6% | 63 | 211 | 173 |
+| Georgia | 942 | 710 | 75.4% | 104 | 421 | 306 |
+| Pennsylvania | 866 | 617 | 71.2% | 8 | 274 | 172 |
+| Michigan | 856 | 645 | 75.4% | 42 | 251 | 191 |
+| North Carolina | 807 | 597 | 74.0% | 73 | 431 | 301 |
+| Puerto Rico | 712 | 302 | 42.4% | 39 | 243 | 119 |
+| Louisiana | 620 | 431 | 69.5% | 60 | 309 | 220 |
+| Virginia | 607 | 472 | 77.8% | 90 | 287 | 208 |
+| Alabama | 563 | 394 | 70.0% | 79 | 302 | 203 |
+| Kentucky | 545 | 402 | 73.8% | 101 | 381 | 276 |
+| Missouri | 523 | 402 | 76.9% | 63 | 220 | 154 |
+| New Jersey | 516 | 428 | 82.9% | 0 | 37 | 26 |
+| Tennessee | 507 | 374 | 73.8% | 49 | 222 | 148 |
+| Indiana | 501 | 393 | 78.4% | 12 | 120 | 83 |
+| Arizona | 500 | 388 | 77.6% | 13 | 137 | 89 |
+| Maryland | 451 | 353 | 78.3% | 3 | 77 | 47 |
+| South Carolina | 445 | 307 | 69.0% | 53 | 326 | 220 |
+| Oklahoma | 413 | 317 | 76.8% | 49 | 188 | 143 |
+| Massachusetts | 410 | 339 | 82.7% | 1 | 58 | 38 |
+| Mississippi | 404 | 295 | 73.0% | 84 | 320 | 236 |
+| Washington | 394 | 300 | 76.1% | 31 | 147 | 105 |
+| Colorado | 360 | 302 | 83.9% | 39 | 101 | 86 |
+| Arkansas | 310 | 227 | 73.2% | 74 | 216 | 155 |
+| Wisconsin | 306 | 236 | 77.1% | 12 | 67 | 47 |
+| Minnesota | 289 | 224 | 77.5% | 16 | 107 | 78 |
+| New Mexico | 257 | 179 | 69.6% | 25 | 163 | 112 |
+| Connecticut | 243 | 209 | 86.0% | 0 | 30 | 22 |
+| Oregon | 229 | 136 | 59.4% | 5 | 106 | 51 |
+| Kansas | 210 | 161 | 76.7% | 17 | 76 | 60 |
+| West Virginia | 207 | 135 | 65.2% | 43 | 207 | 135 |
+| Nevada | 195 | 160 | 82.1% | 1 | 25 | 20 |
+| Iowa | 175 | 134 | 76.6% | 16 | 58 | 46 |
+| Utah | 147 | 114 | 77.6% | 6 | 30 | 24 |
+| Nebraska | 112 | 95 | 84.8% | 8 | 28 | 23 |
+| Hawaii | 88 | 66 | 75.0% | 0 | 35 | 25 |
+| Idaho | 80 | 54 | 67.5% | 3 | 32 | 19 |
+| Maine | 78 | 66 | 84.6% | 12 | 74 | 63 |
+| District of Columbia | 66 | 55 | 83.3% | 0 | 0 | 0 |
+| Delaware | 61 | 38 | 62.3% | 0 | 22 | 11 |
+| Montana | 58 | 42 | 72.4% | 13 | 37 | 29 |
+| Rhode Island | 55 | 46 | 83.6% | 0 | 1 | 0 |
+| New Hampshire | 53 | 40 | 75.5% | 1 | 36 | 26 |
+| South Dakota | 52 | 44 | 84.6% | 5 | 35 | 28 |
+| North Dakota | 37 | 31 | 83.8% | 6 | 18 | 15 |
+| Alaska | 32 | 26 | 81.2% | 3 | 21 | 18 |
+| Vermont | 24 | 14 | 58.3% | 1 | 24 | 14 |
+| Guam | 20 | 20 | 100.0% | 15 | 20 | 20 |
+| Wyoming | 20 | 15 | 75.0% | 6 | 16 | 11 |
+| Commonwealth of the Northern Mariana Islands | 19 | 15 | 78.9% | 12 | 19 | 15 |
+| United States Virgin Islands | 18 | 18 | 100.0% | 9 | 18 | 18 |
+| American Samoa | 16 | 15 | 93.8% | 15 | 16 | 15 |
+| **Total** | **25,332** | **18,968** | **74.9%** | **1,590** | **8,334** | **5,809** |
+
+---
+
+*Analysis: OZ eligibility from IRS Rev. Proc. 2026-14 appendix. CRA eligibility from FFIEC Census Flat File, 2025 exam year (`CensusFlatFile2025.csv`, 87,276 rows, positional format; data dictionary: `FFIEC_Census_File_Definitions_10JULY25.xlsx`). Income indicator: column 14 (1=Low, 2=Moderate, 3=Middle, 4=Upper). Distressed/underserved flag: column 21 (`X` = meets current or prior-year criteria, includes FFIEC one-year lag). Tribal overlap: Census TIGER/Line 2023 AIANNH boundaries joined to ACS B02001 (AIAN population). Persistent poverty: USDA ERS county classification. Script: `scripts/ingest_cra_lmi.py`, output: `data/cra_lmi_overlap.parquet`.*
