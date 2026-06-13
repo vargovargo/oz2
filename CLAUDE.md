@@ -8,7 +8,7 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-06-10)
+## Where things stand (as of 2026-06-12)
 
 **Data bootstrap done:**
 - `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
@@ -29,6 +29,38 @@ in references.md. Read both before substantive edits.
 - References page: styled with entry separators, clickable URLs, last_checked badges, section anchor links
 - references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
 - Urban Institute investability layer + AFA toolkit resources — merged (PR #14, 2026-06-02)
+
+**Completed in the 2026-06-12 session (PRs #17, #18):**
+
+*CRA column verification:* Confirmed FFIEC data dictionary uses 1-based index — "index 15"
+= `df[14]` (income indicator), "index 22" = `df[21]` (D/U flag) in pandas. The two flags
+are mutually exclusive in the FFIEC file (no tract has both LMI and D/U set). OR logic is
+correct and confirmed: 18,968 tracts (74.9%).
+
+*Practitioner brief updated (PR #17):* `docs/cra-oz-overlap-brief.md` rewritten from
+single-track 68.6% to two-track 74.9%, FFIEC 2023 → 2025 throughout. Full 56-row state
+table regenerated from parquet. Rural figures corrected (69.7% rural, 77.4% non-rural;
+rural-without-CRA drops from 4,110 to 2,525 with Track 2). Track 2 practitioner guidance
+added. WV narrative corrected (44% → 65.2%).
+
+*Data artifacts rebuilt (PR #18):* All three outputs replaced with two-track data.
+  - `data/oz_cra_lmi_tracts.csv` — 18,968 rows (was 17,379 Track-1-only); adds `cra_track`
+    (1 or 2) and `cra_label` columns; `scripts/generate_oz_cra_lmi_csv.py` is the
+    reproducible generation script.
+  - `data/arizona_oz2_nomination_report.pdf` — rebuilt via self-contained
+    `scripts/build_az_report.py` (no `/tmp` dependency). Slate changes: Maricopa 56 (+5),
+    La Paz 3 (+1 Track 2 D/U tract), Pima 25 (−3), Yavapai 1 (−1), Yuma 1 (−2). Apache,
+    Santa Cruz, Navajo county narratives updated for Track 2 CRA tracts. FFIEC 2025 throughout.
+  - `data/shoshone_bannock_oz2_brief.pdf` — new 3-page brief on Fort Hall Reservation (4
+    tracts: 3 rural QROF, all 4 CRA-eligible, DCI Q5 data gap documented, 5 action
+    recommendations). Script: `scripts/build_shoshone_bannock_brief.py`.
+
+*SME initialized (2026-06-10):* `agents/sme-oz2.md` built via harness onboarding.
+Community development perspective, Fed-style neutral tone. See harness.md for pipeline state.
+
+*Branch cleanup:* All branches resolved. Deleted: `claude/cra-eligibility-overlap-2srcf8`,
+`claude/site-pause-reactivation-dx1ypq`, `claude/state-maps-tract-filtering-NnJut`. Only
+`main` remains.
 
 **Completed in the 2026-06-10 session (branch: claude/cra-eligibility-overlap-2srcf8):**
 
@@ -116,8 +148,9 @@ MS, OH, KS, SC, NC, TX, WV).
 
 **Next priorities (in order):**
 1. oz1-retrospective and off-list-nominations pages — still stubs, need real content
-2. State metadata upkeep — re-check tiers every two weeks; several windows close in June
-3. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
+2. State metadata upkeep — re-check tiers; most May/early-June windows have closed
+3. SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md
+4. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
 
 **State deadlines remaining open (as of 2026-05-12):**
 - Delaware: May 15 (ONLY 2 SLOTS REMAIN — 23/25 already nominated)
@@ -223,98 +256,3 @@ Source: IRC §§ 1400Z-1, 1400Z-2 as amended by P.L. 119-21.
 Re-evaluate every state's tier at least every two weeks during the May–July
 nomination ramp.
 
-**Data bootstrap done:**
-- `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
-- `data/state_summaries.csv` — per-state totals, rural splits, top-10 counties
-- `scripts/ingest_irs_appendix.py` — fetches the IRS appendix XLSX, re-runnable
-
-**State metadata done:**
-- `state_metadata.yaml` — all 51 states populated; 18 public_process, 32 contact_only, 1 no_public_process (DC)
-- `scripts/generate_state_metadata.py` — regenerates scaffold from CSV (re-runnable)
-- `scripts/patch_state_metadata.py` — applies researched status/agency data (re-runnable, idempotent)
-- `src/lib/states.ts` — typed loader; `getAllStates()`, `getState(slug)`, `getStateSlugs()`
-
-**Site live:**
-- Deployed at https://oz2-two.vercel.app (GitHub: vargovargo/oz2, branch: main)
-- All 51 state pages rendering from YAML — correct tier badges, lead agency contacts, deadlines, county tables
-- "Input closed" logic: states with past deadlines show grey badge + prose note (Nebraska, Florida)
-- References page: styled with entry separators, clickable URLs, last_checked badges
-- references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
-
-**Next priorities (in order):**
-1. oz1-retrospective and off-list-nominations pages — still stubs, need real content
-2. State metadata upkeep — re-check tiers every two weeks; several windows close in June
-
-**Upcoming deadlines to watch (state nomination windows):**
-- Missouri: May 17 | Kentucky: May 29 | Oregon: May 22 | Washington: May 28
-- Mississippi: May 31 | Ohio: ~May 31 | Delaware: May 15
-- South Carolina: June 1 | Kansas: June 1 | North Carolina: June 7
-- Texas: June 26 | New Mexico: May 15 (COG submissions to EDNM) / July 1 (final state)
-
-## Audience and stance
-
-- **Primary audience (MVP)**: local officials, EDD staff, community
-  development directors in rural-eligible jurisdictions.
-- **Phase 2 audiences**: impact investors, community organizations /
-  matchmakers, philanthropy. Skills exist for the first three; use them as
-  reviewers, not generators.
-- **Editorial stance**: neutral, evidence-based, useful regardless of
-  political stance. The critical/editorial argument about OZ-financed LULUs
-  lives in a companion lab essay on vargo.city, not here.
-
-## Ground truth
-
-- Eligibility and rural flag: **IRS Rev. Proc. 2026-14 appendix** (April 6,
-  2026). This is the canonical source. Do not reimplement the rural test;
-  Treasury already resolved it for every tract.
-- Rural definition: **Notice 2025-50, Section 4.01**.
-- State agency leads: HUD OZ portal + EIG OZ 2.0 Designation Leads map.
-- Always cite specific sources from references.md when stating facts. If a
-  claim isn't in references.md, search and add the source.
-
-## Workflow conventions
-
-- Bibliography: every citation in the site links to an entry in
-  references.md. Each entry has a `last_checked` date.
-- State metadata: `state_metadata.yaml` is the data contract. Schema
-  documented in SPEC.md.
-- Page review: invoke the three project skills (`oz2-local-planner`,
-  `oz2-impact-investor`, `oz2-community-matchmaker`) as quality gates after
-  major page edits.
-- Voice: neutral, evidence-based, direct. Not Jason's personal voice. Do
-  not invoke jason-vargo-voice or jason-vargo-design-aesthetic for this
-  project.
-
-## Don't
-
-- Don't reproduce eligibility maps. Embed or link EIG, IRS, or Novogradac
-  instead.
-- Don't introduce LULU framing or "designation as guardrail" arguments
-  here. That content belongs in the lab essay.
-- Don't rely on memory for OZ facts — always check Rev. Proc. 2026-14
-  appendix or references.md.
-- Don't assume a state has published a public process. As of April 24,
-  2026, only 17 of 56 jurisdictions had. Verify via state landing page.
-- Don't use bullet-point dense formatting for state page narrative
-  sections. Prose for selection-process and coalition-strategy writeups.
-
-## Tech stack assumptions
-
-- Static site, Astro framework, Vercel hosting.
-- Markdown content with YAML frontmatter; state data sourced from
-  `state_metadata.yaml`.
-- Python for data ingestion (`scripts/`).
-- Supabase only if dynamic features are needed; prefer fully static for MVP.
-- Embed EIG ArcGIS dashboards via iframe rather than reproducing maps.
-
-## Status tiers (every state page declares one)
-
-- **Public process** — state has published guidance, named contacts, set
-  deadlines, defined scoring criteria.
-- **Contact only** — lead agency identified, contact info available, no
-  public process yet.
-- **No public process yet** — universal information only; ask local
-  planners to push the governor's office for engagement.
-
-Re-evaluate every state's tier at least every two weeks during the May–July
-nomination ramp.
