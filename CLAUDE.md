@@ -8,7 +8,7 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-06-12)
+## Where things stand (as of 2026-06-16)
 
 **Data bootstrap done:**
 - `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14
@@ -29,6 +29,45 @@ in references.md. Read both before substantive edits.
 - References page: styled with entry separators, clickable URLs, last_checked badges, section anchor links
 - references.md section 13 added — per-state agency pages (49 entries, last_checked 2026-05-05)
 - Urban Institute investability layer + AFA toolkit resources — merged (PR #14, 2026-06-02)
+- OZ 1.0 case studies library at `/case-studies` — 12 verified projects, nav-linked (branch
+  `claude/oz-case-studies-library-rutjnp`, not yet merged — see 2026-06-16 session below)
+
+**Completed in the 2026-06-16 session (branch: claude/oz-case-studies-library-rutjnp, not yet merged):**
+
+*OZ 1.0 case studies library:* New `/case-studies` page, nav-linked (desktop + mobile) next
+to OZ 1.0 Retrospective. Distinct from `oz1-retrospective.astro`, which stays aggregate-stats-only.
+- `data/case_studies.yaml` — 12 hand-curated entries (id, title, state/state_slug, location,
+  sector_tags, size_tag, investment_amount_usd, year, rural, summary, source_name, source_url,
+  source_type, last_checked). Snowball-sampled from EIG's "Investments and Initiatives From
+  Across the Country" and NCSHA's OZ affordable-housing case study series, cross-referenced
+  against Novogradac's fund list (references.md section 6) for project-level detail.
+  Geographic spread: MD, FL, OH, CA, CO (×2), MN, PA, TX, ME, OR, GA. All 8 sector tags
+  represented (affordable_housing, small_business, broadband, healthcare, manufacturing,
+  mixed_use, anchor_institution, rural_development).
+- `src/lib/caseStudies.ts` — typed YAML loader mirroring `src/lib/states.ts`
+  (`getAllCaseStudies()`, `getAllSectorTags()`).
+- `src/pages/case-studies.astro` — card grid (same pattern as `states/all.astro`) with
+  client-side tag-chip filtering (vanilla JS, `data-tags` + `Set`, OR logic across selected
+  tags), state cross-links where `state_slug` is set, "Full details →" external link per card,
+  `verified {last_checked}` badge.
+- `references.md` section 15 — documents the EIG/NCSHA seed sources and sourcing methodology.
+
+**Handoff note — finish this from local CLI, not the remote sandbox:**
+The remote sandbox used for this session has WebFetch blocked (403 for every URL tested,
+including trivial control URLs) — all 12 entries were verified by cross-referencing multiple
+WebSearch result snippets per candidate instead of loading source pages directly. That's slower
+and lower-confidence than a direct fetch. Local Claude Code sessions don't have this restriction.
+
+User asked about adding ~10 more case studies; agreed sourcing isn't the bottleneck (EIG's
+"Investments and Initiatives" list and the Novogradac fund directory both have more named
+projects than were used), but verification is faster locally with working WebFetch. Pick up
+by reading `data/case_studies.yaml` for the schema/convention, then continue snowball-sampling
+from the same two seed sources (EIG, Novogradac) — the well-documented, NCSHA-profiled examples
+are mostly used up, so expect to lean more on aggregator writeups and local press for the next
+batch, and watch for repeat states since the easy geographic diversity wins are already claimed.
+Target was originally 12-15 total; "10 more" would bring it to ~22, comfortably past that, which
+is fine per the user's "doesn't have to be extensive" framing — just keep verifying each one
+before adding it, same bar as the first batch.
 
 **Completed in the 2026-06-12 session (PRs #17, #18):**
 
@@ -151,6 +190,9 @@ MS, OH, KS, SC, NC, TX, WV).
 2. State metadata upkeep — re-check tiers; most May/early-June windows have closed
 3. SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md
 4. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
+5. Case studies library — add ~10 more verified entries to `data/case_studies.yaml`
+   (branch `claude/oz-case-studies-library-rutjnp`); do this from local CLI where WebFetch
+   works, see 2026-06-16 session notes above for sourcing approach and handoff context
 
 **State deadlines remaining open (as of 2026-05-12):**
 - Delaware: May 15 (ONLY 2 SLOTS REMAIN — 23/25 already nominated)
