@@ -1,0 +1,261 @@
+# OZ 1.0 case studies — hand-curated, snowball-sampled from EIG's "Investments and
+# Initiatives From Across the Country" and NCSHA's affordable-housing case study series,
+# then verified against primary sources (press releases, developer sites, local press).
+# Schema: see SPEC.md. Re-verify source_url + summary accuracy periodically and bump
+# last_checked.
+
+- id: ox-fibre-apartments-md
+  title: "Ox Fibre Apartments"
+  state: "Maryland"
+  state_slug: maryland
+  location: "Frederick, MD"
+  sector_tags: [affordable_housing]
+  size_tag: medium
+  investment_amount_usd: 25000000
+  year: 2021
+  rural: false
+  summary: >
+    Adaptive reuse of a vacant historic paintbrush factory into 83 units of workforce
+    housing, priced roughly 20% below market. One of the first projects in the country
+    to combine Opportunity Zone equity (Broad Creek Capital) with Low-Income Housing Tax
+    Credits in a single capital stack, alongside subordinate financing from the State of
+    Maryland and Frederick County.
+  source_name: "NCSHA/EIG Opportunity Zone Development Profile: Ox Fibre Apartments"
+  source_url: "https://www.ncsha.org/wp-content/uploads/Case-Study-Ox-Fibre.pdf"
+  source_type: aggregator_writeup
+  last_checked: "2026-06-16"
+
+- id: parramore-oaks-fl
+  title: "Parramore Oaks"
+  state: "Florida"
+  state_slug: florida
+  location: "Orlando, FL"
+  sector_tags: [affordable_housing]
+  size_tag: medium
+  investment_amount_usd: null
+  year: 2019
+  rural: false
+  summary: >
+    120-unit apartment community in Orlando's Parramore neighborhood, with 96 units
+    affordable to households at or below 50-60% of area median income (5% reserved for
+    people transitioning out of homelessness) and 24 market-rate units. One of the first
+    affordable housing deals in the country to pair Opportunity Zone equity (SunTrust)
+    with Low-Income Housing Tax Credits, developed by INVICTUS Development as an Alliant
+    joint venture.
+  source_name: "NCSHA/EIG Opportunity Zone Development Profile: Parramore Oaks"
+  source_url: "https://www.ncsha.org/wp-content/uploads/Case-Study-Parramore.pdf"
+  source_type: aggregator_writeup
+  last_checked: "2026-06-16"
+
+- id: the-tappan-oh
+  title: "The Tappan"
+  state: "Ohio"
+  state_slug: ohio
+  location: "Cleveland, OH (Tremont / Scranton Corridor)"
+  sector_tags: [affordable_housing, mixed_use]
+  size_tag: medium
+  investment_amount_usd: null
+  year: 2020
+  rural: false
+  summary: >
+    95-unit mixed-income building along Cleveland's historic Scranton Corridor, with 59
+    units (60% of the building) set aside as workforce housing for households earning
+    80-120% of area median income. Financed with Opportunity Zone equity from local
+    investors and PNC Bank, plus city loans and tax incentives. The ground floor houses
+    Leavened Bakery, launched with a first-time local entrepreneur as part of the project.
+  source_name: "NCSHA/EIG Opportunity Zone Development Profile: The Tappan"
+  source_url: "https://www.ncsha.org/wp-content/uploads/Case-Study-The-Tappan.pdf"
+  source_type: aggregator_writeup
+  last_checked: "2026-06-16"
+
+- id: the-beehive-sola-impact-ca
+  title: "The Beehive (SoLa Impact)"
+  state: "California"
+  state_slug: california
+  location: "South Los Angeles, CA"
+  sector_tags: [small_business]
+  size_tag: medium
+  investment_amount_usd: null
+  year: 2019
+  rural: false
+  summary: >
+    Billed as the nation's first business campus built specifically for Opportunity Zone
+    businesses, The Beehive repurposed six red-brick warehouses in South LA's former
+    Goodyear Tract industrial district into roughly 92,000 square feet of coworking space,
+    creative offices, and shared amenities for minority- and women-owned startups and
+    social enterprises. Developed by SoLa Impact; toured by then-HUD Secretary Ben Carson
+    as an example of OZ-financed small business space.
+  source_name: "Bisnow: HUD Secretary Ben Carson Celebrates The Beehive"
+  source_url: "https://www.bisnow.com/los-angeles/news/office/us-hud-secretary-ben-carson-celebrates-the-beehive-a-south-la-business-campus-catering-to-qozbs-100889"
+  source_type: news
+  last_checked: "2026-06-16"
+
+- id: proximity-montrose-co
+  title: "Proximity"
+  state: "Colorado"
+  state_slug: colorado
+  location: "Montrose, CO"
+  sector_tags: [small_business, rural_development]
+  size_tag: small
+  investment_amount_usd: null
+  year: 2019
+  rural: true
+  summary: >
+    Proximity builds software that coworking operators use to manage member access,
+    bookings, and billing across a global network of spaces. In August 2019 it became one
+    of the first companies in the country to receive direct Opportunity Zone equity into
+    an operating business, rather than into real estate, through the Center on Rural
+    Innovation's CORI Innovation Fund — a rural-focused Qualified Opportunity Fund.
+  source_name: "Proximity: CORI Innovation Fund Opportunity Zone Investment"
+  source_url: "https://www.proximity.space/news/cori-innovation-fund-opportunity-zone-investment/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: agile-space-industries-co
+  title: "Agile Space Industries"
+  state: "Colorado"
+  state_slug: colorado
+  location: "Durango, CO"
+  sector_tags: [manufacturing, rural_development]
+  size_tag: small
+  investment_amount_usd: null
+  year: 2020
+  rural: true
+  summary: >
+    Agile Space Industries designs, additively manufactures, and tests integrated rocket
+    propulsion systems from a rural headquarters in Durango, combining the country's only
+    independent propulsion test facility with metal 3D printing. The Center on Rural
+    Innovation's CORI Innovation Fund made an Opportunity Zone equity investment to support
+    its growth and job creation in a small Colorado town.
+  source_name: "Center on Rural Innovation: CORI Innovation Fund Makes Opportunity Zone Investment in Agile Space Industries"
+  source_url: "https://ruralinnovation.us/press-releases/cori-innovation-fund-makes-opportunity-zone-investment-in-agile-space-industries/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: va-clinic-albert-lea-mn
+  title: "Albert Lea VA Outpatient Clinic"
+  state: "Minnesota"
+  state_slug: minnesota
+  location: "Albert Lea, MN"
+  sector_tags: [healthcare, anchor_institution, rural_development]
+  size_tag: small
+  investment_amount_usd: 6000000
+  year: 2020
+  rural: true
+  summary: >
+    A roughly $6 million, 10,070-square-foot U.S. Department of Veterans Affairs outpatient
+    clinic providing primary care, mental health services, and telemedicine to veterans in
+    rural southern Minnesota. Financed through Opportunity Zone Fund 1 - Government Series,
+    a partnership between 18 Squared and CapZone Impact Investments formed specifically to
+    fund VA and other government-leased facilities in Opportunity Zones nationwide.
+  source_name: "Institutional Real Estate, Inc.: 18 Squared and CapZone Announce Opportunity Zone Investment"
+  source_url: "https://irei.com/news/18-squared-capzone-announce-opportunity-zone-investment/"
+  source_type: news
+  last_checked: "2026-06-16"
+
+- id: flagship-city-food-hall-pa
+  title: "Flagship City Food Hall & Market"
+  state: "Pennsylvania"
+  state_slug: pennsylvania
+  location: "Erie, PA"
+  sector_tags: [small_business, mixed_use]
+  size_tag: medium
+  investment_amount_usd: 26900000
+  year: 2021
+  rural: false
+  summary: >
+    A $26.9 million redevelopment in downtown Erie — one of the poorest zip codes in the
+    country and a USDA-certified food desert — combining roughly 64,000 square feet of
+    commercial space (a full-service grocery co-op, an eight-vendor food hall, most
+    women- or minority-owned) with 28 residential units. Financed through Arctaris Impact
+    Investors' Opportunity Zone funds, with Erie Insurance and the Erie Community
+    Foundation as program partners.
+  source_name: "Arctaris Impact Fund: OZ Investment in Erie's City Center and Culinary Arts District"
+  source_url: "https://www.arctaris.com/arctaris-announces-opportunity-zone-investment-to-develop-a-vibrant-city-center-and-culinary-arts-district-in-erie-pa-one-of-the-poorest-zip-codes-in-america/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: brooks-self-storage-tx
+  title: "Brooks Self-Storage & Small Business Flex Space"
+  state: "Texas"
+  state_slug: texas
+  location: "San Antonio, TX (Brooks / City Base Landing)"
+  sector_tags: [small_business]
+  size_tag: medium
+  investment_amount_usd: 16000000
+  year: 2019
+  rural: false
+  summary: >
+    Texas' first Opportunity Zone investment: DPR Investments acquired 9.4 acres at the
+    former Brooks Air Force Base redevelopment site for a $16 million climate-controlled
+    self-storage facility paired with flex space for small businesses, breaking ground in
+    fall 2019 as part of the broader Brooks mixed-use redevelopment in San Antonio.
+  source_name: "Brooks: Texas' First Opportunity Zone Investment Breaks Ground"
+  source_url: "https://livebrooks.com/brooks-inks-texas-first-opportunity-zone-investment/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: arctaris-broadband-maine
+  title: "Arctaris/GWI Rural Fiber Broadband Network"
+  state: "Maine"
+  state_slug: maine
+  location: "South Portland, Belfast, Millinocket, East Millinocket & Medway, ME"
+  sector_tags: [broadband, rural_development]
+  size_tag: large
+  investment_amount_usd: 60000000
+  year: 2021
+  rural: true
+  summary: >
+    Arctaris Impact Investors committed roughly $60 million in Opportunity Zone equity,
+    backed by Finance Authority of Maine guaranty agreements, to build fiber-to-the-premises
+    broadband across five underserved Maine communities — about 12,000 residential and
+    business locations. Arctaris Broadband Company owns the network; Maine ISP GWI builds
+    and operates it, one of the few documented OZ-financed broadband infrastructure deals.
+  source_name: "Business Wire: Arctaris Funds Broadband Fiber in Opportunity Zones to Increase Digital Equity"
+  source_url: "https://www.businesswire.com/news/home/20210217005595/en/Arctaris-Funds-Broadband-Fiber-in-Opportunity-Zones-to-Increase-Digital-Equity"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: miller-springs-or
+  title: "Miller Springs"
+  state: "Oregon"
+  state_slug: oregon
+  location: "Burns, OR"
+  sector_tags: [rural_development, mixed_use]
+  size_tag: large
+  investment_amount_usd: 10000000
+  year: 2025
+  rural: true
+  summary: >
+    A 1,200-acre master-planned community in rural Harney County aiming to build "a city
+    within a city" — 160 approved homesites for workforce housing affordable at or below
+    130% of area median income. Phase one infrastructure (about $10 million) was funded
+    entirely by stacking federal, state, and local incentives, including the Opportunity
+    Zone designation, and is projected to generate over $3.1 million in new local tax
+    receipts over 20 years.
+  source_name: "Miller Springs (official project site)"
+  source_url: "https://millersprings.com/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: centennial-yards-ga
+  title: "Centennial Yards"
+  state: "Georgia"
+  state_slug: georgia
+  location: "Downtown Atlanta, GA"
+  sector_tags: [mixed_use, anchor_institution]
+  size_tag: large
+  investment_amount_usd: 4200000000
+  year: 2024
+  rural: false
+  summary: >
+    A 50-acre redevelopment of Atlanta's long-vacant downtown rail yard ("The Gulch") into
+    apartments, hotel rooms, retail, and a stadium district timed to host FIFA World Cup
+    2026 matches. Opportunity Zone equity is one layer of a financing stack that also
+    includes municipal bonds and bank debt; developer CIM Group lists the project in its
+    own Opportunity Zones portfolio alongside other CIM OZ investments in Oakland, Los
+    Angeles, and Dallas.
+  source_name: "CIM Group: Opportunity Zones Portfolio"
+  source_url: "https://www.cimgroup.com/our-platforms/real-estate/opportunity-zones"
+  source_type: press_release
+  last_checked: "2026-06-16"

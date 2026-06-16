@@ -362,3 +362,19 @@ purpose: |
 **Federal Reserve — Community Reinvestment Act.** https://www.federalreserve.gov/consumerscommunities/cra_about.htm — Overview of CRA requirements for state member banks. The Federal Reserve's 2023 CRA Final Rule (jointly issued with OCC and FDIC) updated community development investment test criteria and expanded the geographic scope beyond assessment areas in some cases. The rule is under legal challenge as of May 2026 but its LMI tract income designations remain aligned with the FFIEC census flat file methodology. last_checked: 2026-05-20
 
 **NCRC — "Opportunity Zones: A Taxpayer-Funded Program That Primarily Benefits Wealthy Investors" (2025).** https://www.ncrc.org/opportunity-zones-a-taxpayer-funded-program-that-primarily-benefits-wealthy-investors/ — Documents pattern of OZ 1.0 investment in already-appreciating urban areas with minimal evidence of benefit to LMI residents. Notes that despite significant geographic overlap between OZ and CRA LMI tracts, CRA credit was rarely claimed for OZ equity investments due to investor structure issues. Relevant context for communities evaluating bank capital as a source of OZ-related investment. last_checked: 2026-05-12
+
+## 15. OZ 1.0 case studies — sourcing
+
+The `/case-studies` page is a small, hand-curated library of named OZ 1.0 projects spanning
+affordable housing, small business, broadband, healthcare/anchor institutions, manufacturing,
+mixed-use, and rural development. Entries were snowball-sampled from the two seed databases
+below, then each verified individually against a primary or aggregator source (press release,
+developer site, or local/trade press). Per-project source URLs, dollar amounts, and
+`last_checked` dates live in `data/case_studies.yaml`, not here — this entry documents the
+sourcing method, not the individual projects.
+
+**EIG, "Investments and Initiatives From Across the Country."** https://eig.org/opportunity-zones/investments-and-initiatives-from-across-the-country/ — Primary seed; curated by category (affordable housing, small business, rural development, health, anchor institutions). last_checked: 2026-06-16
+
+**NCSHA, "Case Studies: Opportunity Zone Investment in Affordable Housing and Community Revitalization."** https://www.ncsha.org/resource/case-studies-opportunity-zone-investment-in-affordable-housing-and-community-revitalization/ — NCSHA/EIG joint series of detailed per-project "Opportunity Zone Development Profiles" (financing structure, community data, projected impact); seed for the affordable-housing entries (Ox Fibre, Parramore Oaks, The Tappan). last_checked: 2026-06-16
+
+**Novogradac Opportunity Funds List.** See section 6. Snowballed from named funds to their own project/portfolio pages when aggregator writeups lacked project-level detail (e.g., CIM Group's Opportunity Zones portfolio page for Centennial Yards).

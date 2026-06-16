@@ -1,0 +1,150 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getAllCaseStudies, getAllSectorTags, type SectorTag } from '@/lib/caseStudies';
+
+const caseStudies = getAllCaseStudies();
+const sectorTags = getAllSectorTags();
+
+const tagLabel: Record<SectorTag, string> = {
+  affordable_housing: 'Affordable Housing',
+  small_business: 'Small Business',
+  broadband: 'Broadband',
+  healthcare: 'Healthcare',
+  manufacturing: 'Manufacturing',
+  mixed_use: 'Mixed-Use',
+  anchor_institution: 'Anchor Institution',
+  rural_development: 'Rural Development',
+};
+
+const sizeLabel: Record<string, string> = {
+  small: 'Small',
+  medium: 'Medium',
+  large: 'Large',
+};
+
+function formatAmount(n: number | null): string | null {
+  if (n === null) return null;
+  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)}B`;
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  return `$${n.toLocaleString()}`;
+}
+---
+
+<Layout title="OZ 1.0 Case Studies" description="A verified, geographically diverse library of real projects financed under the original Opportunity Zone program — affordable housing, small business, broadband, and more.">
+  <div class="max-w-3xl mb-8">
+    <h1 class="text-3xl font-bold mb-4">OZ 1.0 Case Studies</h1>
+    <p class="text-oz-neutral-500">
+      Concrete examples of what actually got built with OZ 1.0 capital — snowball-sampled
+      from EIG's and NCSHA's curated investment databases and verified against primary
+      sources (press releases, developer sites, local press). This is a small, illustrative
+      set, not a comprehensive registry; it's meant to put real projects alongside the
+      aggregate investment statistics on the <a href="/oz1-retrospective" class="text-oz-blue underline">OZ 1.0 Retrospective</a> page.
+      Every entry links to a verified source and shows the date it was last checked.
+    </p>
+  </div>
+
+  <!-- Filter chips -->
+  <div class="flex flex-wrap gap-2 mb-6" id="filter-bar">
+    <button type="button" data-filter-chip="all" class="text-xs px-3 py-1.5 rounded-full border font-medium bg-oz-blue text-white border-oz-blue transition-colors">
+      All ({caseStudies.length})
+    </button>
+    {sectorTags.map(tag => (
+      <button type="button" data-filter-chip={tag} class="text-xs px-3 py-1.5 rounded-full border font-medium bg-white text-oz-neutral-700 border-oz-neutral-200 hover:border-oz-blue transition-colors">
+        {tagLabel[tag]}
+      </button>
+    ))}
+  </div>
+
+  <p id="empty-state" class="hidden text-sm text-oz-neutral-500 mb-6">No case studies match the selected tags.</p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="case-grid">
+    {caseStudies.map(c => (
+      <div
+        data-case-card
+        data-tags={c.sector_tags.join(',')}
+        class="bg-white border border-oz-neutral-200 rounded p-5 flex flex-col"
+      >
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <h2 class="font-semibold text-oz-neutral-900">{c.title}</h2>
+          <span class="text-xs px-2 py-0.5 rounded border font-medium text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200 whitespace-nowrap">
+            {sizeLabel[c.size_tag]}
+          </span>
+        </div>
+        <p class="text-xs text-oz-neutral-500 mb-3">
+          {c.state_slug ? (
+            <a href={`/states/${c.state_slug}`} class="underline hover:text-oz-neutral-700">{c.location}</a>
+          ) : c.location} · {c.year}
+          {formatAmount(c.investment_amount_usd) && <> · <span class="font-mono">{formatAmount(c.investment_amount_usd)}</span></>}
+        </p>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          {c.sector_tags.map(tag => (
+            <span class="text-xs px-2 py-0.5 rounded border font-medium text-oz-blue bg-blue-50 border-blue-200">
+              {tagLabel[tag]}
+            </span>
+          ))}
+          {c.rural && (
+            <span class="text-xs px-2 py-0.5 rounded border font-medium text-oz-green bg-green-50 border-green-200">
+              Rural
+            </span>
+          )}
+        </div>
+        <p class="text-sm text-oz-neutral-700 mb-4 flex-1">{c.summary}</p>
+        <div class="flex items-center justify-between text-xs">
+          <a href={c.source_url} target="_blank" rel="noopener" class="text-oz-blue underline hover:text-oz-blue/80">
+            Full details →
+          </a>
+          <span class="text-oz-neutral-400">verified {c.last_checked}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <p class="mt-8 text-sm text-oz-neutral-500">
+    Sourcing methodology and seed datasets in
+    <a href="/references#15-oz-1-0-case-studies-sourcing" class="underline hover:text-oz-neutral-700">References, section 15</a>.
+  </p>
+</Layout>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>('[data-filter-chip]');
+  const cards = document.querySelectorAll<HTMLElement>('[data-case-card]');
+  const emptyState = document.getElementById('empty-state');
+  const active = new Set<string>();
+
+  function applyFilter() {
+    let visible = 0;
+    cards.forEach(card => {
+      const tags = (card.dataset.tags ?? '').split(',');
+      const show = active.size === 0 || tags.some(t => active.has(t));
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    emptyState?.classList.toggle('hidden', visible !== 0);
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const tag = chip.dataset.filterChip!;
+      if (tag === 'all') {
+        active.clear();
+      } else if (active.has(tag)) {
+        active.delete(tag);
+      } else {
+        active.add(tag);
+      }
+
+      chips.forEach(c => {
+        const t = c.dataset.filterChip!;
+        const isActive = t === 'all' ? active.size === 0 : active.has(t);
+        c.classList.toggle('bg-oz-blue', isActive);
+        c.classList.toggle('text-white', isActive);
+        c.classList.toggle('border-oz-blue', isActive);
+        c.classList.toggle('bg-white', !isActive);
+        c.classList.toggle('text-oz-neutral-700', !isActive);
+        c.classList.toggle('border-oz-neutral-200', !isActive);
+      });
+
+      applyFilter();
+    });
+  });
+</script>
