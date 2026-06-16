@@ -16,7 +16,8 @@ in references.md. Read both before substantive edits.
 - `scripts/ingest_irs_appendix.py` — fetches the IRS appendix XLSX, re-runnable
 
 **State metadata done:**
-- `state_metadata.yaml` — all 51 states populated; ~22 public_process, ~28 contact_only, 1 no_public_process (DC)
+- `state_metadata.yaml` — all 51 states populated; 29 public_process, 21 contact_only, 1 no_public_process (DC)
+  as of the 2026-06-16 public-process review (see session note below)
 - `scripts/generate_state_metadata.py` — regenerates scaffold from CSV (re-runnable)
 - `scripts/patch_state_metadata.py` — applies researched status/agency data (re-runnable, idempotent)
 - `src/lib/states.ts` — typed loader; `getAllStates()`, `getState(slug)`, `getStateSlugs()`
@@ -68,6 +69,51 @@ batch, and watch for repeat states since the easy geographic diversity wins are 
 Target was originally 12-15 total; "10 more" would bring it to ~22, comfortably past that, which
 is fine per the user's "doesn't have to be extensive" framing — just keep verifying each one
 before adding it, same bar as the first batch.
+
+**Completed in the 2026-06-16 session, part 2 (branch: claude/oz-case-studies-library-rutjnp):**
+
+*Public-process review across all 51 states + DC:* User asked to review/update every state's
+nomination-process status, prioritizing the 28 states tagged `contact_only`. Dispatched 6
+parallel research agents (WebSearch only — WebFetch stayed blocked/403 in this sandbox) scoped
+to ~8-9 states each, each reporting recommended tier, new process info, contact changes,
+sourcing, and confidence level without editing files directly; findings were synthesized and
+applied centrally in `state_metadata.yaml`, then verified with `npm run build`.
+
+Tier changes (`contact_only` → `public_process`, 7 states): Alabama (ADECA portal live,
+deadline noon CDT 2026-07-31), Georgia (live portal at gaoznominations.powerappsportals.com,
+deadline 2026-07-15), Massachusetts (Community Feedback Form live, Treasury deadline
+2026-09-28), Pennsylvania (DCED webinar + live Microsoft Forms portal, deadline "early June
+2026" — imprecise, `state_deadline` left null), Wisconsin (WEDC/WHEDA joint window
+2026-06-12 to 2026-07-31), Minnesota (DEED/MN Housing input request, deadline 2026-06-30),
+Idaho confirmed at the prior `public_process` tier with a newly reported deadline added
+(4:00 p.m. MT, 2026-06-30, restricted to cities/counties/tribes — flagged for direct
+confirmation).
+
+Deadline corrections on existing `public_process` states: North Carolina (June 7 → June 21,
+per a June 4 NC Commerce extension announcement), South Carolina (June 1 → June 15), Maryland
+(added DocuSign portal detail, county packets, `state_deadline` 2026-08-07), Arizona (confirmed
+4:00 p.m. MT 2026-06-30, replacing "not yet set" language), Ohio (portal relaunched ~June 10,
+new deadline ~2026-07-10, superseding the earlier unconfirmed ~May 31 estimate), Oklahoma
+(added deadline 2026-06-19, hedged pending direct confirmation), Maine (added "input window
+has closed" framing matching Virginia's established convention).
+
+`contact_only` states enriched (process text updated, tier unchanged — info found didn't rise
+to a full public nomination process): California (GO-Biz REDI OZ 2.0 office hours through
+2026-06-30), Indiana (LISC/Fifth Third-backed portal "coming weeks," Bloomington example),
+Louisiana (parish-level intake, Bossier Parish Police Jury example), Michigan (MEDC summer 2026
+regional roundtables), Utah (Go Utah survey, named contact, 37/147 cap), Alaska (closed
+April 16-30 public-notice period), Iowa (consolidated to opportunityiowa.gov domain), Rhode
+Island (unconfirmed ~June 23 internal target noted but not promoted to `public_process` —
+primary source unconfirmed).
+
+Deliberately left unchanged (evidence too weak or conflicting to act on): Florida's "closed
+before May 2026" framing, Washington's deadline (site says May 28; an agent surfaced conflicting
+April 1–May 1 sourcing that couldn't be reconciled), Vermont's possible URL drift (low
+confidence), New Jersey and Connecticut (their existing entries already covered the agents'
+findings — no edit needed).
+
+All 51 `last_checked` dates bumped to `2026-06-16`. Validated with `python3 -c "import yaml;
+yaml.safe_load(...)"` and `npm run build` (61 pages, no errors) before commit.
 
 **Completed in the 2026-06-12 session (PRs #17, #18):**
 
@@ -187,7 +233,11 @@ MS, OH, KS, SC, NC, TX, WV).
 
 **Next priorities (in order):**
 1. oz1-retrospective and off-list-nominations pages — still stubs, need real content
-2. State metadata upkeep — re-check tiers; most May/early-June windows have closed
+2. State metadata upkeep — several 2026-06-16 deadline/process updates were flagged
+   "recommend confirming directly" (Idaho, Ohio, Oklahoma, Rhode Island's unconfirmed June 23
+   target) because WebFetch was unavailable in the sandbox that did the research — re-verify
+   these from local CLI when convenient. Also unresolved: Florida's true status (ambiguous)
+   and Washington's deadline (conflicting May 28 vs. April 1-May 1 evidence).
 3. SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md
 4. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
 5. Case studies library — add ~10 more verified entries to `data/case_studies.yaml`
