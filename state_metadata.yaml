@@ -461,14 +461,13 @@ colorado:
     2025 to inform Governor Polis's nomination of up to 90 of Colorado's 360 eligible
     tracts. Regional convenings ran through April 2026; an in-person Western Slope
     event was held May 11 at Colorado Mesa University in Grand Junction. OEDIT has
-    published a public GIS mapping tool and an online feedback form through which
-    any stakeholder can submit tract-level input; visit oedit.colorado.gov/colorado-opportunity-zone-program
-    and sign up for the OZ newsletter to receive the community submission deadline
-    when it is set. Email oedit.info@state.co.us or call (303) 892-3840 to ask when
-    the feedback form closes and how rural-flagged tracts are weighted in OEDIT's
-    review.
+    published a public GIS mapping tool and an online feedback form at
+    oedit.colorado.gov/colorado-opportunity-zone-program through which any stakeholder
+    can submit tract-level input; the community submission deadline is June 30, 2026.
+    Email oedit.info@state.co.us or call (303) 892-3840 for questions on how
+    rural-flagged tracts are weighted in OEDIT's review.
   scoring_rubric_url: null
-  state_deadline: null
+  state_deadline: '2026-06-30'
   application_portal_url: https://oedit.colorado.gov/colorado-opportunity-zone-program
   tribal_consultation:
     framework: null
@@ -489,8 +488,8 @@ colorado:
   cra_lmi_tracts: 302
   ui_invest_q1_tracts: 149
   notes: Public GIS tool and online feedback form live at oedit.colorado.gov/colorado-opportunity-zone-program.
-    No community submission deadline published as of 2026-05-12. Regional convenings
-    through April 2026; Western Slope event May 11. Contact oedit.info@state.co.us
+    Community submission deadline confirmed June 30, 2026 (verified 2026-06-16). Regional
+    convenings through April 2026; Western Slope event May 11. Contact oedit.info@state.co.us
     / (303) 892-3840.
 connecticut:
   name: Connecticut
@@ -946,10 +945,9 @@ idaho:
     contact_phone: null
   process: "Idaho Commerce administers the OZ 2.0 nomination process and has published
     a nomination portal open to cities, counties, and tribal governments; submissions
-    go to OZ@commerce.idaho.gov. Idaho Commerce has since set a state-level submission
+    go to OZ@commerce.idaho.gov. Idaho Commerce has set a state-level submission
     deadline of 4:00 p.m. MT on June 30, 2026, restricted to city, county, and tribal
-    government submitters (recommend confirming directly before treating this date as
-    final). The federal nomination window under Rev. Proc. 2026-14 opens July 1, 2026,
+    government submitters. The federal nomination window under Rev. Proc. 2026-14 opens July 1, 2026,
     and runs 90 days (extendable to October 28, 2026). Idaho has 80 eligible tracts and,
     under the statutory minimum for states with fewer than 100 eligible tracts, may
     nominate up to 25 zones — the same count as its OZ 1.0 round. In the 2018 round,
@@ -3157,12 +3155,14 @@ pennsylvania:
     DCED hosted a public webinar ("Opportunity Zones in Pennsylvania: What You
     Need To Know") on May 19, 2026 and opened a Stakeholder Engagement form
     (Microsoft Forms) for municipalities and stakeholders to nominate or comment
-    on census tracts, with submissions due in early June 2026. DCED's five
-    priority sectors remain housing, industrial sites, main street, rural, and
-    innovation. With 866 eligible tracts and a cap of 217, prioritize tracts with
-    the rural flag under Rev. Proc. 2026-14 and a clear investment pipeline.
+    on census tracts, with submissions due June 5, 2026 (county deadline now
+    passed — DCED is in internal review). DCED's five priority sectors are
+    housing, industrial sites, main street, rural, and innovation. With 866
+    eligible tracts and a cap of 217, rural-flagged tracts under Rev. Proc.
+    2026-14 with a clear investment pipeline were highest-priority submissions.
+    Contact DCED at oppzones@pa.gov for status updates.
   scoring_rubric_url: null
-  state_deadline: null
+  state_deadline: '2026-06-05'
   application_portal_url: https://forms.office.com/Pages/ResponsePage.aspx?id=QSiOQSgB1U2bbEf8Wpob3poP7QlziP1Hmi1R2shp3mlUNE41UE1KQjNaMFAwR1lSUk5IN0tPOTFGRS4u
   tribal_consultation:
     framework: null
@@ -3182,8 +3182,8 @@ pennsylvania:
   nmtc_projects: 146
   cra_lmi_tracts: 617
   ui_invest_q1_tracts: 177
-  notes: No portal open yet. Classifying contact_only because no submission mechanism
-    is live. 217 tracts to be nominated.
+  notes: County deadline was June 5, 2026 (confirmed 2026-06-16). DCED in internal review.
+    217 tracts to be nominated. Contact oppzones@pa.gov for status.
 rhode-island:
   name: Rhode Island
   fips: '44'
