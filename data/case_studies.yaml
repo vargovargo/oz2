@@ -259,3 +259,245 @@
   source_url: "https://www.cimgroup.com/our-platforms/real-estate/opportunity-zones"
   source_type: press_release
   last_checked: "2026-06-16"
+
+- id: koz-on-mlk-wa
+  title: "Kōz on MLK"
+  state: "Washington"
+  state_slug: washington
+  location: "Tacoma, WA (Hilltop)"
+  sector_tags: [affordable_housing]
+  size_tag: medium
+  investment_amount_usd: 8700000
+  year: 2022
+  rural: false
+  summary: >
+    161-unit affordable and workforce housing building in Tacoma's Hilltop neighborhood, a
+    historically Black community facing displacement pressure from Seattle's spillover housing
+    market. Developed by female-owned Kōz Development using $8.7 million in Opportunity Zone
+    equity from Catalyst Opportunity Funds; 85% of units priced below 60% of area median income
+    and 100% below 80% AMI, with rents starting under $1,000 per month including utilities. A
+    tenant survey found that 16% of residents would have faced homelessness without the project and
+    69% had no cheaper equivalent housing option available. Ground-floor space houses a Seattle
+    Credit Union branch providing banking and ITIN support to underserved residents.
+  source_name: "Catalyst Opportunity Funds: Kōz on MLK Portfolio Page"
+  source_url: "https://catalyst-invest.com/portfolio/koz-on-mlk/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: reserve-towpath-trail-ny
+  title: "The Reserve at Towpath Trail"
+  state: "New York"
+  state_slug: new-york
+  location: "Schenectady, NY"
+  sector_tags: [affordable_housing]
+  size_tag: medium
+  investment_amount_usd: null
+  year: 2023
+  rural: false
+  summary: >
+    88-unit workforce housing development on a long-vacant site in Schenectady's northside, built
+    as a collection of four freestanding residential buildings with a community center and fitness
+    facilities. More than half the units are reserved for residents earning 80% or less of area
+    median income. Developed by Hudson Partners Development with $4.5 million in Opportunity Zone
+    equity from Enterprise Community Partners — the first deal to use Enterprise's OZ Fund
+    Evaluation Framework for measuring community impact — and $9.35 million in construction and
+    permanent financing from the Community Preservation Corporation. Reached 98% occupancy well
+    ahead of projections.
+  source_name: "Community Preservation Corporation: Opening of The Reserve at Towpath Trail"
+  source_url: "https://communityp.com/news-cpc/hudson-partner-cpc-enterprise-and-partners-celebrate-opening-of-the-reserve-at-towpath-trail-in-schenectady/"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: newark-arts-commons-nj
+  title: "Newark Arts Commons"
+  state: "New Jersey"
+  state_slug: new-jersey
+  location: "Newark, NJ"
+  sector_tags: [affordable_housing, anchor_institution]
+  size_tag: medium
+  investment_amount_usd: null
+  year: 2020
+  rural: false
+  summary: >
+    Adaptive reuse of the historic St. Michael's Hospital complex — a landmark of Newark's
+    immigrant and working-class community since 1869 — into a mixed-use arts and residential
+    destination. The project creates 92 co-living apartments on upper floors managed by Common,
+    flexible creative space for approximately 100 artists annually, and discounted studio space
+    for three Newark arts nonprofits (GlassRoots, Newark Arts, and Project for Empty Space), with
+    programming that serves an estimated 500 low- and moderate-income youth each year. Financed
+    through the Ellavoz Shared Values Opportunity Fund (a social-impact QOF managed by Ellavoz
+    Impact Capital and New Jersey Community Capital) alongside New Markets Tax Credits and Historic
+    Tax Credits.
+  source_name: "Newswire: Ellavoz Shared Values Opportunity Fund Makes First Investment in Newark Arts Commons"
+  source_url: "https://www.newswire.com/news/ellavoz-shared-values-opportunity-fund-makes-first-investment-in-21166602"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: mlk-gateway-dc
+  title: "MLK Gateway"
+  state: "District of Columbia"
+  state_slug: district-of-columbia
+  location: "Washington, DC (Anacostia / Ward 8)"
+  sector_tags: [small_business, anchor_institution]
+  size_tag: large
+  investment_amount_usd: null
+  year: 2021
+  rural: false
+  summary: >
+    First new commercial construction in the historic Anacostia neighborhood in over three decades,
+    developed by Black-owned DC firm The Menkiti Group on the corner of Good Hope Road and Martin
+    Luther King Jr. Avenue SE. Phase one delivered roughly 34,000 square feet of retail and office
+    space anchored by Enlightened Inc., an award-winning Black-owned IT and cybersecurity firm that
+    relocated approximately 150 District employees to Anacostia, plus a Capital One Café and a
+    restaurant by The Gaston Group. The project is projected to generate 210 jobs through Enlightened
+    alone and $12 million in annual wages, with 53% of leased space going to local, minority,
+    veteran, or women-owned businesses — exceeding the 50% goal. Funded with Opportunity Zone
+    equity, New Markets Tax Credits, and Neighborhood Prosperity Fund proceeds.
+  source_name: "PR Newswire: The Menkiti Group Celebrates Major Milestones on MLK Gateway"
+  source_url: "https://www.prnewswire.com/news-releases/the-menkiti-group-celebrates-major-milestones-on-historic-mlk-gateway-project-in-anacostia-301424182.html"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: woodlawn-theatre-al
+  title: "Woodlawn Theatre"
+  state: "Alabama"
+  state_slug: alabama
+  location: "Birmingham, AL (Woodlawn)"
+  sector_tags: [small_business, anchor_institution]
+  size_tag: small
+  investment_amount_usd: 500000
+  year: 2023
+  rural: false
+  summary: >
+    Restoration of a 1929 movie house in Birmingham's Woodlawn commercial district into a 250-
+    capacity live music venue and event space, anchored by the Mason Music Foundation's arts
+    education programs. Roughly $500,000 in Opportunity Zone equity funded the renovation of the
+    long-vacant building. The project is part of a broader Woodlawn neighborhood revitalization
+    strategy and carries symbolic weight as a formerly segregated-era venue reopened as a welcoming
+    community space. Since opening in mid-2023, the theatre has hosted touring and local acts and
+    provides music education opportunities for children in the surrounding neighborhood.
+  source_name: "Center for Public Integrity: Birmingham Business and Community Leaders Question Opportunity Zones"
+  source_url: "https://publicintegrity.org/inequality-poverty-opportunity/taxes/trumps-tax-cuts/birmingham-opportunity-zones-trump-tax-cuts/"
+  source_type: news
+  last_checked: "2026-06-16"
+
+- id: valley-house-flats-in
+  title: "Valley House Flats"
+  state: "Indiana"
+  state_slug: indiana
+  location: "Brookville, IN"
+  sector_tags: [affordable_housing, mixed_use]
+  size_tag: medium
+  investment_amount_usd: 12000000
+  year: 2020
+  rural: true
+  summary: >
+    A $12 million mixed-use redevelopment of six historic downtown buildings in Brookville, Indiana
+    (population ~3,000) — including the 1852 Valley House Hotel — into 47 affordable and market-rate
+    apartments for active adults aged 55 and older, with ground-floor retail including a pharmacy,
+    restaurant, and primary care facility. Developed by Flaherty & Collins Properties, it was the
+    first completed Opportunity Zone project in the state of Indiana, combining OZ equity with
+    state Low-Income Housing Tax Credits and federal Historic Preservation Tax Credits. Brookville
+    had seen no new development in over 20 years before the project; it has since attracted more
+    than $20 million in total investment capital with additional projects underway.
+  source_name: "Inside INdiana Business: Brookville's Historic Valley House Flats Set to Open"
+  source_url: "https://www.insideindianabusiness.com/articles/brookvilles-historic-valley-house-flats-set-to-open"
+  source_type: news
+  last_checked: "2026-06-16"
+
+- id: 698-prospect-pembroke-nc
+  title: "698 Prospect Phase I"
+  state: "North Carolina"
+  state_slug: north-carolina
+  location: "Pembroke, NC"
+  sector_tags: [affordable_housing, anchor_institution]
+  size_tag: medium
+  investment_amount_usd: null
+  year: 2021
+  rural: true
+  summary: >
+    192-unit student housing, commercial, and retail development adjacent to the University of
+    North Carolina Pembroke, a Native American–founded university whose student body is primarily
+    low-income. Pembroke is the political, economic, and cultural center of the Lumbee Tribe, the
+    largest Native American tribe east of the Mississippi River, in a part of rural Robeson County
+    with few affordable housing options for students or local workers. Developed by Equity Plus LLC
+    and financed jointly by the Woodforest CEI-Boulos Opportunity Fund and Self-Help Credit Union.
+    The project is projected to create 54 full-time equivalent jobs, 32 construction jobs, and
+    $2.9 million in wages in Pembroke.
+  source_name: "EIG: Opportunity Zone Investments Fuel Community Revitalization and Support Affordable Student Housing"
+  source_url: "https://eig.org/opportunity-zone-investments-fuel-community-revitalization-and-support-affordable-student-housing/"
+  source_type: aggregator_writeup
+  last_checked: "2026-06-16"
+
+- id: risekit-chicago-il
+  title: "RiseKit"
+  state: "Illinois"
+  state_slug: illinois
+  location: "Chicago, IL"
+  sector_tags: [small_business]
+  size_tag: small
+  investment_amount_usd: null
+  year: 2020
+  rural: false
+  summary: >
+    Chicago-based workforce development startup that connects underrepresented job seekers —
+    including people with criminal records, veterans, and individuals experiencing poverty —
+    to a broad network of employment opportunities and career pathways using skills-based
+    matching. Received an Opportunity Zone equity investment in April 2020 from Verte Opportunity
+    Zone Fund, a QOF focused exclusively on high-growth operating businesses (rather than real
+    estate) in opportunity zones, as an example of how OZ capital can reach operating companies
+    in distressed communities rather than just real estate. By 2021 more than 1,000 people were
+    actively using the platform in Chicago.
+  source_name: "OpportunityZones.com: Venture Capital Investing in OZs, with Verte"
+  source_url: "https://opportunityzones.com/2023/07/verte/"
+  source_type: aggregator_writeup
+  last_checked: "2026-06-16"
+
+- id: micronic-technologies-va
+  title: "Micronic Technologies"
+  state: "Virginia"
+  state_slug: virginia
+  location: "Bristol, VA"
+  sector_tags: [manufacturing, small_business]
+  size_tag: small
+  investment_amount_usd: 3000000
+  year: 2020
+  rural: true
+  summary: >
+    Woman-led cleantech company in Bristol, Virginia — a small Appalachian border city — whose
+    patented Tornadic One-Pass™ technology purifies water from virtually any source in a single
+    treatment cycle without membranes, filters, or chemicals, reducing wastewater volume by 95%
+    and removing over 99% of contaminants. Applications span oil and gas, mining, agriculture,
+    food, beverage, and pharmaceutical industries. Received a $3 million seed round led by CIT GAP
+    Funds and The Pearl Fund as an Opportunity Zone investment, with additional participation from
+    CAV Angels — CIT GAP's 16th OZ investment. The company has partnered with UVa-Wise for student-
+    led water quality research and testing. Founded and led by CEO Karen Sorber.
+  source_name: "GlobeNewswire: CIT GAP Funds and The Pearl Fund Lead $3M Opportunity Zone Investment in Micronic Technologies"
+  source_url: "https://www.globenewswire.com/news-release/2020/10/21/2111991/0/en/CIT-GAP-Funds-and-The-Pearl-Fund-Lead-3M-Opportunity-Zone-Investment-in-Micronic-Technologies.html"
+  source_type: press_release
+  last_checked: "2026-06-16"
+
+- id: arsana-health-vt
+  title: "Arsana Health"
+  state: "Vermont"
+  state_slug: vermont
+  location: "Springfield, VT"
+  sector_tags: [healthcare, small_business]
+  size_tag: small
+  investment_amount_usd: null
+  year: 2020
+  rural: true
+  summary: >
+    Vermont health technology startup producing software and hardware for post-acute care
+    facilities — skilled nursing homes and assisted living communities — at the Black River
+    Innovation Campus in Springfield, Vermont, a designated Opportunity Zone. Its Arsana Health
+    Portal integrates medical records across facilities, doctor's offices, labs, and pharmacies
+    to reduce administrative burden and improve patient outcomes; its companion WashSense hardware
+    uses a patent-protected sensor to monitor proper handwashing technique and reduce infection
+    spread in care settings. The Center on Rural Innovation's CORI Innovation Fund — a QOF focused
+    on high-growth tech companies in rural OZs — led the investment round, backing Arsana's
+    expansion strategy and job creation in rural southwest Vermont.
+  source_name: "Center on Rural Innovation: CORI Innovation Fund Leads Investment Round in Arsana Health"
+  source_url: "https://ruralinnovation.us/press-releases/cori-innovation-fund-leads-investment-round-in-arsana-health/"
+  source_type: press_release
+  last_checked: "2026-06-16"
