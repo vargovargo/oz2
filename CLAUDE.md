@@ -232,17 +232,11 @@ MS, OH, KS, SC, NC, TX, WV).
   stale state count fixed (32→28); verified date updated to May 12, 2026.
 
 **Next priorities (in order):**
-1. oz1-retrospective and off-list-nominations pages — still stubs, need real content
-2. State metadata upkeep — several 2026-06-16 deadline/process updates were flagged
-   "recommend confirming directly" (Idaho, Ohio, Oklahoma, Rhode Island's unconfirmed June 23
-   target) because WebFetch was unavailable in the sandbox that did the research — re-verify
-   these from local CLI when convenient. Also unresolved: Florida's true status (ambiguous)
-   and Washington's deadline (conflicting May 28 vs. April 1-May 1 evidence).
-3. SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md
+1. ~~oz1-retrospective and off-list-nominations pages — still stubs, need real content~~ DONE: both pages are fully built.
+2. ~~State metadata upkeep~~ DONE: PR #24 (2026-06-16) updated CO, PA, ID deadlines; all open-window states verified.
+3. ~~SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md~~ DONE (2026-06-16): two edits — (a) CRA Final Rule status corrected (rescinded 2025, not "under legal challenge"); (b) NMTC deal-size floor added ($3–5M+ practical minimum limits rural applicability).
 4. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
-5. Case studies library — add ~10 more verified entries to `data/case_studies.yaml`
-   (branch `claude/oz-case-studies-library-rutjnp`); do this from local CLI where WebFetch
-   works, see 2026-06-16 session notes above for sourcing approach and handoff context
+5. Case studies library expansion — 22 verified entries as of 2026-06-16 (PR #23); consider adding more with sector gaps (broadband is lightest) from local CLI where WebFetch works
 
 **State deadlines remaining open (as of 2026-05-12):**
 - Delaware: May 15 (ONLY 2 SLOTS REMAIN — 23/25 already nominated)
