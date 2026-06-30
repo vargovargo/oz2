@@ -3,30 +3,30 @@ import Layout from '@/layouts/Layout.astro';
 const totalEligible = 25332;
 const ruralEligible = 8334;
 const stateCount = 51;
-const daysToWindow = Math.ceil((new Date('2026-07-01').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+const caseStudyCount = 22;
 ---
 
-<Layout title="Home" description="Which Opportunity Zone 2.0 tracts are in your jurisdiction, and how do you advocate for nomination before July 1, 2026?">
+<Layout title="Home" description="OZ 2.0 designations are underway. Find your state's eligible tracts, learn from OZ 1.0 case studies, and build the investment case for your community.">
 
   <!-- Hero -->
   <section class="mb-12">
     <div class="max-w-3xl">
-      <p class="text-sm font-mono text-oz-blue uppercase tracking-widest mb-3">OZ 2.0 Nomination Resource</p>
+      <p class="text-sm font-mono text-oz-blue uppercase tracking-widest mb-3">OZ 2.0 Investment Resource</p>
       <h1 class="text-4xl sm:text-5xl font-bold text-oz-neutral-900 leading-tight mb-6">
-        Which tracts does your jurisdiction have,<br class="hidden sm:block" />
-        and how do you make the case?
+        Designations begin July 1.<br class="hidden sm:block" />
+        Shape the investments that follow.
       </h1>
       <p class="text-xl text-oz-neutral-500 mb-8">
-        The 2025 OBBBA reset the Opportunity Zone map. Treasury released {totalEligible.toLocaleString()} eligible tracts
-        on April 6, 2026. Governors nominate up to 25% before October 2026. This resource helps local planners
-        figure out what they have and how to move.
+        The OZ 2.0 map is set. Governors begin nominating tracts July 1, 2026. This resource helps local planners,
+        community development organizations, and impact investors understand what's eligible, what worked in OZ 1.0,
+        and how to direct new capital toward community priorities.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="/states/all" class="bg-oz-blue text-white px-5 py-3 rounded font-medium hover:bg-blue-800 transition-colors">
           Find your state
         </a>
-        <a href="/how-to-advocate" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
-          Coalition playbook
+        <a href="/case-studies" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
+          OZ 1.0 case studies
         </a>
       </div>
     </div>
@@ -38,7 +38,7 @@ const daysToWindow = Math.ceil((new Date('2026-07-01').getTime() - new Date().ge
       { label: 'Eligible tracts', value: totalEligible.toLocaleString() },
       { label: 'Rural eligible', value: ruralEligible.toLocaleString() },
       { label: 'States + DC', value: stateCount },
-      { label: 'Days to window', value: daysToWindow > 0 ? daysToWindow : 'Open' },
+      { label: 'Verified case studies', value: caseStudyCount },
     ].map(({ label, value }) => (
       <div class="bg-white border border-oz-neutral-200 rounded p-5">
         <p class="font-mono text-3xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
@@ -53,15 +53,32 @@ const daysToWindow = Math.ceil((new Date('2026-07-01').getTime() - new Date().ge
     <div class="grid sm:grid-cols-3 gap-6 text-sm">
       <div>
         <p class="font-semibold text-oz-neutral-900 mb-1">Local planners &amp; EDD staff</p>
-        <p class="text-oz-neutral-500">Which tracts are eligible, what the state process looks like, and who to convene for a credible nomination.</p>
+        <p class="text-oz-neutral-500">Understand your eligible tracts, track your state's nomination process, and build the case for investment-ready projects.</p>
       </div>
       <div>
-        <p class="font-semibold text-oz-neutral-500 mb-1">Impact investors <span class="text-xs">(Phase 2)</span></p>
-        <p class="text-oz-neutral-300 italic">Coming after designations are set.</p>
+        <p class="font-semibold text-oz-neutral-900 mb-1">Impact investors</p>
+        <p class="text-oz-neutral-500">Explore OZ 1.0 case studies, understand QROF rural bonus mechanics, and identify high-investability tracts using Urban Institute data.</p>
       </div>
       <div>
-        <p class="font-semibold text-oz-neutral-500 mb-1">Community orgs &amp; matchmakers <span class="text-xs">(Phase 2)</span></p>
-        <p class="text-oz-neutral-300 italic">Coming after designations are set.</p>
+        <p class="font-semibold text-oz-neutral-900 mb-1">Community orgs &amp; matchmakers</p>
+        <p class="text-oz-neutral-500">Use the coalition playbook and case study library to connect projects with aligned capital and advocate for anti-displacement conditions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key resources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-semibold mb-4">Key resources</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-white border border-oz-neutral-200 rounded p-5">
+        <p class="font-semibold text-oz-neutral-900 mb-2">OZ 1.0 Case Studies</p>
+        <p class="text-sm text-oz-neutral-500 mb-4">22 verified projects across 8 sectors — affordable housing, small business, rural development, and more. Filter by sector to find models that match your community's priorities.</p>
+        <a href="/case-studies" class="text-sm text-oz-blue hover:underline">Browse case studies →</a>
+      </div>
+      <div class="bg-white border border-oz-neutral-200 rounded p-5">
+        <p class="font-semibold text-oz-neutral-900 mb-2">What OZ 1.0 Evidence Shows</p>
+        <p class="text-sm text-oz-neutral-500 mb-4">42% of capital went to the top 1% of tracts. Only 8.5% reached rural areas. What the data says about geographic concentration, investor profiles, and what to demand differently in OZ 2.0.</p>
+        <a href="/oz1-retrospective" class="text-sm text-oz-blue hover:underline">Read the retrospective →</a>
       </div>
     </div>
   </section>
@@ -73,8 +90,7 @@ const daysToWindow = Math.ceil((new Date('2026-07-01').getTime() - new Date().ge
       <a href="/states/all" class="text-sm text-oz-blue hover:underline">View all →</a>
     </div>
     <p class="text-sm text-oz-neutral-500 mb-6">
-      As of May 2026, only a minority of states have published a public nomination process.
-      Select your state to see what's known and what to do next.
+      Governors are nominating tracts now. Select your state to see eligible tracts, the nomination process, and local contacts.
     </p>
     <a href="/states/all" class="inline-block border border-oz-neutral-200 bg-white rounded px-5 py-3 text-sm font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
       Browse all 51 state pages →
