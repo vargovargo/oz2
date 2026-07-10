@@ -47,6 +47,30 @@ crawl + search spot-checks. Findings and fixes:
   Spot-checks (EIG guidance/resources, Urban data catalog, AFA toolkit, 6 state portals,
   IRS drop URLs) all resolved live via search.
 
+*Deep-dive on capital-stack CRA section (same session, follow-up):*
+- **CRA regulatory status corrected (again)**: the June 16 SME pass overshot — the 2023 CRA
+  Final Rule was NOT "rescinded in 2025." Verified record: enjoined N.D. Tex. March 29, 2024
+  (never took effect); agencies *proposed* rescission + 1995-framework reinstatement July 16,
+  2025 (comments closed 8/18/25); no finalized rescission found as of 2026-07-10. Wording on
+  capital-stack, references.md §14, and the practitioner brief now all say "enjoined 2024,
+  rescission proposed 2025, pre-2023 framework applies in practice" — they previously
+  contradicted each other ("rescinded" vs "under legal challenge").
+- **`ffiec.cfpb.gov/tools/tract-search` does not exist** (the CFPB-hosted FFIEC platform has
+  HMDA tools only — rate-spread, check-digit, LAR formatting). It was cited in 5 files incl.
+  references.md with a last_checked date. Replaced with the real FFIEC Geocoding/Mapping
+  System (ffiec.gov/geocode/) + D/U list (ffiec.gov/data/cra/distressed) in capital-stack,
+  [state].astro, references.md, and the brief (handoffs/ left as historical record).
+- FFIEC legacy URLs updated to the redesigned site: censusapp.htm → ffiec.gov/data/census;
+  cra/craflatfiles.htm → ffiec.gov/data/census/flat-files.
+- OCC "OZ resource directory" URL unverifiable post-reorg → swapped to the confirmed-live OCC
+  Community Developments OZ fact sheet.
+- [state].astro CRA footnote said "Flat File 2026" → corrected to 2025 (matches ingest).
+- Track 2 definition on capital-stack now includes the net-migration-loss (≥5%) alternative.
+- Verified clean: Track 1/Track 2 definitions vs FFIEC, 74.9%/17,378/1,590 vs data, rural
+  69.7% / non-rural 77.4% / 2,525 no-CRA rural / 5,809 sweet-spot (all reproduce from
+  parquet), state-page cities/ZIP claim (cra_lmi_places.json renders as described), EQ2 and
+  CD-loan mechanics, CRA enacted 1977.
+
 ## Where things stood (as of 2026-06-16)
 
 **Data bootstrap done:**

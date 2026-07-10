@@ -130,7 +130,7 @@ import Layout from '@/layouts/Layout.astro';
         The Community Reinvestment Act (CRA), enacted in 1977, requires federal banking regulators
         to assess whether banks are meeting the credit and investment needs of their deposit
         communities — with particular weight given to low- and moderate-income (LMI) geographies.
-        The <a href="https://www.ffiec.gov/censusapp.htm" class="text-oz-blue underline" target="_blank" rel="noopener">FFIEC</a>
+        The <a href="https://www.ffiec.gov/data/census" class="text-oz-blue underline" target="_blank" rel="noopener">FFIEC</a>
         (the interagency council of bank regulators) publishes tract-level CRA designations
         annually; examiners use those classifications when evaluating CRA performance. CRA
         eligibility runs on two tracks:
@@ -140,7 +140,7 @@ import Layout from '@/layouts/Layout.astro';
           <strong class="text-oz-neutral-900">Track 1 — LMI.</strong> A tract whose median family income is below 80% of the area median (the MSA median for metro tracts, the statewide non-metro median for rural tracts). Low Income (&lt;50%) and Moderate Income (50–80%) tracts qualify.
         </li>
         <li>
-          <strong class="text-oz-neutral-900">Track 2 — Distressed or Underserved.</strong> Non-metropolitan middle-income tracts (80–120% of area median) that meet at least one federal hardship threshold: unemployment rate ≥ 1.5× the national average, poverty rate ≥ 20%, population loss ≥ 10% since 2010, or a USDA urban influence code indicating very remote geography. These tracts generate CRA community-development credit even without LMI status.
+          <strong class="text-oz-neutral-900">Track 2 — Distressed or Underserved.</strong> Non-metropolitan middle-income tracts (80–120% of area median) that meet at least one federal hardship threshold: unemployment rate ≥ 1.5× the national average, poverty rate ≥ 20%, population loss ≥ 10% between the last two decennial censuses (or net migration loss ≥ 5%), or a USDA urban influence code indicating very remote geography. These tracts generate CRA community-development credit even without LMI status.
         </li>
       </ul>
       <p class="text-sm text-oz-neutral-700 mb-4">
@@ -175,10 +175,12 @@ import Layout from '@/layouts/Layout.astro';
           bank's regulators and its assessment area, a direct equity investment into a QOF
           deploying into LMI tracts may qualify as a community development investment for CRA
           purposes. Banks should confirm with their primary regulator (OCC, Federal Reserve, or
-          FDIC) before counting QOF investments toward CRA performance. The 2023 CRA Final Rule
-          that would have updated the investment test criteria was rescinded by the banking
-          agencies in 2025 following a court injunction; the pre-2023 CRA framework remains
-          in effect.
+          FDIC) before counting QOF investments toward CRA performance. Note the regulatory
+          backdrop: the 2023 CRA Final Rule that would have updated the investment test
+          criteria never took effect — a federal court enjoined it in March 2024, and in
+          July 2025 the banking agencies proposed rescinding it outright and reinstating the
+          1995-era framework. In practice, examiners continue to apply the pre-2023 CRA
+          regulations.
         </li>
       </ul>
       <p class="text-sm text-oz-neutral-700 mb-4">
@@ -192,11 +194,11 @@ import Layout from '@/layouts/Layout.astro';
         Each state page on this site shows the count of OZ-eligible tracts in that state that
         carry a CRA designation (either track), along with the cities and ZIP codes where those tracts are located,
         based on the
-        <a href="https://www.ffiec.gov/cra/craflatfiles.htm" class="text-oz-blue underline" target="_blank" rel="noopener">FFIEC Census Flat File</a> (2025 exam year).
+        <a href="https://www.ffiec.gov/data/census/flat-files" class="text-oz-blue underline" target="_blank" rel="noopener">FFIEC Census Flat File</a> (2025 exam year).
         To look up a specific tract's income designation, use the
-        <a href="https://ffiec.cfpb.gov/tools/tract-search" class="text-oz-blue underline" target="_blank" rel="noopener">FFIEC tract search tool</a>.
+        <a href="https://www.ffiec.gov/geocode/" class="text-oz-blue underline" target="_blank" rel="noopener">FFIEC Geocoding/Mapping System</a>.
         The OCC's
-        <a href="https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/opportunity-zones/index-opportunity-zones.html" class="text-oz-blue underline" target="_blank" rel="noopener">OZ resource directory</a>
+        <a href="https://www.occ.gov/publications-and-resources/publications/community-affairs/community-developments-fact-sheets/cd-fact-sheet-opportunity-zones.html" class="text-oz-blue underline" target="_blank" rel="noopener">OZ fact sheet for banks</a>
         and the
         <a href="https://www.federalreserve.gov/consumerscommunities/cra_about.htm" class="text-oz-blue underline" target="_blank" rel="noopener">Federal Reserve's CRA page</a>
         provide additional guidance on how banks can document OZ-related activities for CRA purposes.

@@ -29,7 +29,7 @@ A previous analysis that reported 68.6% used only Track 1 and the 2023 exam-year
 
 CRA credit flows through three main channels for OZ-eligible tracts: community development loans, equity-equivalent (EQ2) instruments, and direct equity investments in Qualified Opportunity Funds that deploy into qualifying geographies. In each case, the bank must document that the investment primarily benefits LMI geographies or populations — or, under Track 2, distressed/underserved communities. When the OZ tract carries either FFIEC flag, that documentation burden is substantially lower.
 
-The 2023 CRA Final Rule (currently under legal challenge) expanded credit for OZ investments in qualifying geographies. Regardless of how that litigation resolves, examiners have long recognized OZ-eligible LMI and D/U tracts as strong CRA candidates. Bringing a bank to the table early — as a co-investor via EQ2 or senior loan, not a later-stage bridge lender — is typically where this dual-flag status creates the most value.
+The 2023 CRA Final Rule would have expanded credit for OZ investments in qualifying geographies, but it never took effect — a federal court enjoined it in March 2024, and the agencies proposed rescinding it (reinstating the 1995-era framework) in July 2025. Under the pre-2023 framework that examiners continue to apply, OZ-eligible LMI and D/U tracts have long been recognized as strong CRA candidates. Bringing a bank to the table early — as a co-investor via EQ2 or senior loan, not a later-stage bridge lender — is typically where this dual-flag status creates the most value.
 
 ---
 
@@ -65,7 +65,7 @@ Across the eligible universe:
 
 ## What practitioners can do with this
 
-**Before structuring any deal:** Confirm CRA eligibility using the FFIEC tract search tool (ffiec.cfpb.gov/tools/tract-search). Designations are updated annually and the 2025 exam-year file reflects conditions that examiners are actually using now. Both track status (LMI) and distressed/underserved flag appear in the tool output.
+**Before structuring any deal:** Confirm CRA eligibility using the FFIEC Geocoding/Mapping System (ffiec.gov/geocode) for tract income level, and the annual distressed/underserved list (ffiec.gov/data/cra/distressed) for the D/U flag. Designations are updated annually and the 2025 exam-year file reflects conditions that examiners are actually using now.
 
 **When both flags apply:** Bring a bank CRA officer into pre-development conversations, not at closing. Banks seeking CRA examination credit respond to advance notice of pipeline; a surprise ask at term sheet stage rarely closes.
 
