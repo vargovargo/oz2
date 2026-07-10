@@ -8,7 +8,46 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-06-16)
+## Where things stand (as of 2026-07-10)
+
+**Completed in the 2026-07-10 session (branch: claude/site-fact-check-links-4stwsu):**
+
+*Full-site fact check (links + claims), post-July-1 refresh.* WebFetch/curl blocked in this
+sandbox (proxy 403s all external hosts); claims verified via WebSearch, links via built-HTML
+crawl + search spot-checks. Findings and fixes:
+- Federal window close date corrected to **September 28, 2026** (was "September 29" on
+  off-list-nominations and how-to-advocate; oz1-retrospective had it too). Confirmed via
+  Treasury press release sb0550 and CRS R48952 (90 days beginning July 1).
+- Sitewide "window opens July 1" tense fixed now that the window is open: index hero, footer
+  banner (now "open through September 28, 2026"), about, how-to-advocate, and six YAML
+  process texts (ID, DE-notes, IL, IA, OK, TN).
+- `[state].astro` 4th tile now shows "Days left in federal window" (counts down to 9/28,
+  then "Closed") instead of days-to-July-1, which had gone negative.
+- how-to-advocate tier counts updated 22/28 → 29/21 (mid-June review), "verified May 12" →
+  June 16.
+- **Massachusetts `state_deadline` nulled** — it held the *federal* 9/28 deadline, which the
+  UI presented as an open state input deadline; secondary reporting suggests the Community
+  Feedback Form window was ~June 30 (unconfirmed by mass.gov, so hedged in process text
+  rather than marked closed).
+- Open state deadlines re-verified 2026-07-10: OH 7/10 (4 p.m., confirmed), GA 7/15, AL 7/31
+  (noon), WI 7/31, MD 8/7 — all confirmed via agency pages/search. NY re-checked: still no
+  public process (contact_only stands). `last_checked` bumped to 2026-07-10 for those 7 states.
+- References page **anchor-link bug fixed**: `linkIcon.replace('SLUG', '#' + slug)` produced
+  `href="##..."` — all 15 section anchors were broken. Also added missing `public/favicon.svg`
+  (was 404 on every page).
+- capital-stack: deferral wording made precise (OZ 2.0 rolling deferral — earlier of sale or
+  5th anniversary, 10% step-up standard / 30% QROF; was "Treasury-specified deadline").
+  QROF 30%/50% mechanics, LIC thresholds (70% MFI or 20% poverty + 125% cap), and per-state
+  counts (NY 1,702/426, OH 258, MD 113, MA 103/410) all externally confirmed correct.
+- oz1-retrospective: K&W median investor AGI aligned to $741K (body said ~$730K, footnote
+  $741K). Data cross-checks all pass: 25,332/8,334 (parquet), 18,968 = 17,378 T1 + 1,590 T2
+  CRA (74.9%), 22 case studies, YAML sums 24,547/8,018 (territories excluded — documented on
+  methodology page).
+- Not done (needs local CLI with working fetch): HTTP status check of all 241 external URLs.
+  Spot-checks (EIG guidance/resources, Urban data catalog, AFA toolkit, 6 state portals,
+  IRS drop URLs) all resolved live via search.
+
+## Where things stood (as of 2026-06-16)
 
 **Data bootstrap done:**
 - `data/eligible_tracts.parquet` — 25,332 eligible tracts from IRS Rev. Proc. 2026-14

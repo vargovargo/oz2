@@ -38,7 +38,7 @@ alabama:
     name: Etowah County
     eligible_count: 13
   status_tier: public_process
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Alabama Department of Economic and Community Affairs (ADECA)
     url: https://adeca.alabama.gov/opportunityzones/
@@ -798,7 +798,7 @@ georgia:
     name: Dougherty County
     eligible_count: 20
   status_tier: public_process
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Georgia Department of Community Affairs (DCA)
     url: https://dca.georgia.gov/financing-tools/incentives/federal-opportunity-zones
@@ -947,7 +947,7 @@ idaho:
     a nomination portal open to cities, counties, and tribal governments; submissions
     go to OZ@commerce.idaho.gov. Idaho Commerce has set a state-level submission
     deadline of 4:00 p.m. MT on June 30, 2026, restricted to city, county, and tribal
-    government submitters. The federal nomination window under Rev. Proc. 2026-14 opens July 1, 2026,
+    government submitters. The federal nomination window under Rev. Proc. 2026-14 opened July 1, 2026,
     and runs 90 days (extendable to October 28, 2026). Idaho has 80 eligible tracts and,
     under the statutory minimum for states with fewer than 100 eligible tracts, may
     nominate up to 25 zones — the same count as its OZ 1.0 round. In the 2018 round,
@@ -977,7 +977,7 @@ idaho:
   cra_lmi_tracts: 54
   ui_invest_q1_tracts: 27
   notes: "Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal\
-    \ window opens July 1, 2026. Max designations corrected to 25 (statutory minimum\
+    \ window opened July 1, 2026. Max designations corrected to 25 (statutory minimum\
     \ for states with fewer than 100 eligible tracts)."
 illinois:
   name: Illinois
@@ -1032,7 +1032,7 @@ illinois:
     \ final tract selections. DCEO published a webinar recording and FAQ on its OZ\
     \ page to orient submitters; no scoring rubric has been posted publicly as of 2026-05-06.\
     \ No state-level submission deadline has been announced; the federal nomination\
-    \ window opens July 1, 2026, giving the Governor 90 days (extendable by 30) to\
+    \ window opened July 1, 2026, giving the Governor 90 days (extendable by 30) to\
     \ certify nominations to Treasury. Illinois may nominate up to 238 of its 950\
     \ eligible tracts, making community input a meaningful factor in DCEO's prioritization\
     \ before the Governor's list is finalized. Questions can be directed to opportunityzones@illinois.gov."
@@ -1189,8 +1189,8 @@ iowa:
     a joint IEDA/Iowa Finance Authority domain, opportunityiowa.gov — the older
     iowaeconomicdevelopment-site.azurewebsites.net URL may be stale. Email
     communications@iowaeda.com today to ask which IEDA program officer is handling OZ
-    2.0 tract nominations and whether the authority will be accepting community input
-    before the federal window opens July 1, 2026; ask to be directed to the
+    2.0 tract nominations and whether the authority is accepting community input
+    now that the federal window is open (through September 28, 2026); ask to be directed to the
     appropriate staff contact. Iowa may nominate up to 44 of its 175 eligible
     tracts; watch opportunityiowa.gov for any announcement of an OZ 2.0 process."
   scoring_rubric_url: null
@@ -1606,7 +1606,7 @@ maryland:
     name: Washington County
     eligible_count: 7
   status_tier: public_process
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Maryland Dept. of Housing and Community Development (DHCD)
     url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
@@ -1692,7 +1692,7 @@ massachusetts:
     name: Franklin County
     eligible_count: 7
   status_tier: public_process
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Massachusetts Office of Business Development (MOBD)
     url: https://www.mass.gov/info-details/2026-massachusetts-opportunity-zone-program
@@ -1703,12 +1703,15 @@ massachusetts:
     Massachusetts Opportunity Zone Program" page with a Community Feedback Form
     open to investors, developers, community organizations, and the public.
     MOBD is engaging municipalities with eligible tracts directly to identify
-    the strongest candidates. The Commonwealth must submit its nominations to
+    the strongest candidates. The Commonwealth has not published a firm state
+    deadline for community input; secondary reporting suggested feedback was
+    requested by end of June 2026, so submit as early as possible and confirm
+    current status with MOBD. The Commonwealth must submit its nominations to
     U.S. Treasury by September 28, 2026 and can designate up to 103 of 410
     eligible tracts. Use the feedback form to flag investment-ready tracts,
     especially those carrying the rural flag under Rev. Proc. 2026-14.
   scoring_rubric_url: null
-  state_deadline: '2026-09-28'
+  state_deadline: null
   application_portal_url: https://www.mass.gov/info-details/2026-massachusetts-opportunity-zone-program
   tribal_consultation:
     framework: null
@@ -2608,7 +2611,7 @@ new-york:
     name: Oneida County
     eligible_count: 25
   status_tier: contact_only
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Empire State Development (ESD)
     url: https://esd.ny.gov/opportunity-zones
@@ -2872,7 +2875,7 @@ ohio:
     name: Lorain County
     eligible_count: 22
   status_tier: public_process
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Ohio Department of Development (ODOD)
     url: https://opportunityzones.ohio.gov
@@ -2989,7 +2992,7 @@ oklahoma:
     Contacts are Jon Chiappe (jon.chiappe@okcommerce.gov, 405-815-5210) and Aldwyn
     Sappleton (405-815-5369). Governor Stitt will submit Oklahoma's list of up to
     104 nominated tracts — drawn from 413 eligible — when the federal 90-day window
-    opens July 1, 2026; no scoring rubric has been published."
+    opened July 1, 2026; no scoring rubric has been published."
   scoring_rubric_url: null
   state_deadline: '2026-06-19'
   application_portal_url: https://forms.okcommerce.gov/260495603721860
@@ -3472,7 +3475,7 @@ tennessee:
   process: "TNECD has not published a formal OZ 2.0 application or nomination deadline
     as of May 7, 2026, but the department convened mayors and local stakeholders for
     a working discussion on February 18, 2026 — a signal that TNECD is actively scoping
-    the process ahead of the federal nomination window that opens July 1, 2026. Local
+    the process ahead of the federal nomination window that opened July 1, 2026. Local
     planners should email ED.OpportunityZones@tn.gov today to introduce their community,
     identify the specific eligible tracts they wish to champion, and ask when TNECD
     will publish its internal submission timeline; calls to (615) 741-1888 are another
@@ -4074,7 +4077,7 @@ wisconsin:
     name: Fond du Lac County
     eligible_count: 4
   status_tier: public_process
-  last_checked: '2026-06-16'
+  last_checked: '2026-07-10'
   lead_agency:
     name: Wisconsin Economic Development Corporation (WEDC)
     url: https://wedc.org/opportunity-zone-designation/
