@@ -109,8 +109,9 @@ const deadlinePassed = state_deadline
   ? new Date(state_deadline + 'T00:00:00') < today
   : false;
 
-const daysToWindow = Math.ceil(
-  (new Date('2026-07-01').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
+// Federal nomination window: July 1 – September 28, 2026 (IRC § 1400Z-1 as amended; 90 days from July 1)
+const daysToWindowClose = Math.ceil(
+  (new Date('2026-09-28T23:59:59').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
 );
 
 const daysToStateDeadline = (state_deadline && !deadlinePassed)
@@ -146,8 +147,8 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
       { label: 'Total eligible tracts', value: total_eligible.toLocaleString() },
       { label: 'Rural eligible',        value: rural_eligible.toLocaleString() },
       { label: 'Max designations (25%)', value: max_designations.toLocaleString() },
-      { label: daysToStateDeadline != null ? 'Days to state deadline' : 'Days to federal window',
-        value: daysToStateDeadline != null ? daysToStateDeadline : (daysToWindow > 0 ? daysToWindow : 'Open') },
+      { label: daysToStateDeadline != null ? 'Days to state deadline' : 'Days left in federal window',
+        value: daysToStateDeadline != null ? daysToStateDeadline : (daysToWindowClose > 0 ? daysToWindowClose : 'Closed') },
     ].map(({ label, value }) => (
       <div class="bg-white border border-oz-neutral-200 rounded p-5">
         <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
