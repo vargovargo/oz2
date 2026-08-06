@@ -8,7 +8,53 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-07-10)
+## Where things stand (as of 2026-08-06)
+
+**Completed in the 2026-08-06 session (branch: claude/oz-study-guide-dxihub):**
+
+*OZ finance study guide + Claude Project pack.* User wanted to study the finance side —
+banks, capital stacks, CDFIs, how the tax incentive actually works — and correctly noted a
+static page can't respond to where their understanding actually is. Architecture settled on
+two pieces: the site carries the curriculum, a claude.ai Project carries the tutor. Live
+chat on the site was considered and rejected (a static Astro/Vercel build would need a
+serverless function plus an API key, rate limiting, and per-token cost on a public URL;
+published Artifacts can only declare `downloads` and `mcp`, so there is no
+no-infrastructure hosted-chat path either).
+
+- **`src/pages/learn.astro`** — new `/learn` page. Six modules: how the tax incentive works,
+  reading a capital stack, banks and CRA, CDFIs, deal economics, the evidence check. Each
+  has an explainer, a "Key mechanics" box, a "Where people get confused" list, and a link
+  into the prompt library. Plus two hand-built inline SVG diagrams (capital stack layers;
+  the OZ tax timeline, standard vs QROF), a 9-row program-stacking comparison table, a
+  32-term glossary, and a 30-prompt filterable library with copy buttons and
+  `claude.ai/new?q=` deep links.
+- **Deliberately not in the nav** (per user's call) — same posture as `/off-list-nominations`.
+  Reachable via one callout on `/capital-stack`.
+- **`data/glossary.yaml`, `data/study_prompts.yaml`, `src/lib/study.ts`** — YAML is the
+  single source of truth; the loader mirrors `src/lib/caseStudies.ts`. **Edit the YAML, not
+  the generated markdown.**
+- **`study/`** — the Claude Project pack. Hand-written: `README.md` (5-minute setup),
+  `project-instructions.md` (composed from `agents/sme-oz2.md` + `skills/oz2-impact-investor`
+  + this file's ground-truth rules, plus a new tutoring layer: diagnose before explaining,
+  teach with worked numbers, quiz back, never invent a figure), `knowledge/00-how-to-use.md`,
+  and `knowledge/04-key-figures.md` — the anti-hallucination sheet listing every verified
+  number with its source.
+- **`scripts/export_study_pack.py`** — regenerates the derived half of the pack
+  (`prompts.md`, `01-oz-finance-primer.md`, `02-capital-stack.md`,
+  `03-cra-oz-overlap-brief.md`, `05-references-finance.md`, `06-glossary.md`). The two page
+  exports read built HTML, so **`npm run build` must run first**. Idempotent.
+- **Two stale-fact corrections found while sourcing** (both were the same error, and both
+  would have shipped into the knowledge base): `docs/cra-oz-overlap-brief.md` and
+  `references.md` §14 each described the 2023 CRA Final Rule as "under legal challenge."
+  It was rescinded in 2025 following a court injunction — which `capital-stack.astro`
+  already had right since the 2026-06-16 SME pass. Both now match.
+- `references.md` §16 added, documenting that the study guide introduces no new primary
+  sources.
+- Not done: the `claude.ai/new?q=` prefill parameter could not be verified in this sandbox
+  (proxy 403s all external hosts). Copy buttons are the primary affordance and work
+  regardless; if the deep link turns out not to prefill, drop the second button.
+
+## Where things stood (as of 2026-07-10)
 
 **Completed in the 2026-07-10 session (branch: claude/site-fact-check-links-4stwsu):**
 
@@ -276,6 +322,18 @@ MS, OH, KS, SC, NC, TX, WV).
 3. ~~SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md~~ DONE (2026-06-16): two edits — (a) CRA Final Rule status corrected (rescinded 2025, not "under legal challenge"); (b) NMTC deal-size floor added ($3–5M+ practical minimum limits rural applicability).
 4. Census API key: store as Vercel env var so ingest_tribal_overlap.py can be re-run in CI
 5. Case studies library expansion — 22 verified entries as of 2026-06-16 (PR #23); consider adding more with sector gaps (broadband is lightest) from local CLI where WebFetch works
+6. Study guide: verify the `claude.ai/new?q=` prefill deep link from a real browser (couldn't be checked in the sandbox), and run the `/learn` page through `oz2-local-planner` and `oz2-impact-investor` as quality gates. Worth road-testing the Project pack against a few live conversations and tightening `study/project-instructions.md` where the tutor comes back vague.
+
+**Study guide maintenance (added 2026-08-06):**
+The `/learn` page and the `study/` Project pack share sources. Editing rules:
+- Prompts → `data/study_prompts.yaml`. Glossary → `data/glossary.yaml`. Never edit
+  `study/prompts.md` or `study/knowledge/06-glossary.md` — they are generated.
+- Curriculum prose → `src/pages/learn.astro`. Program detail → `src/pages/capital-stack.astro`.
+  These generate `study/knowledge/01-oz-finance-primer.md` and `02-capital-stack.md`.
+- After any of the above: `npm run build && python3 scripts/export_study_pack.py`. The
+  exporter reads `dist/`, so the build is not optional.
+- New verified figures belong in `study/knowledge/04-key-figures.md` (hand-written) with
+  their source. That sheet is what keeps the tutor from inventing numbers.
 
 **State deadlines remaining open (as of 2026-05-12):**
 - Delaware: May 15 (ONLY 2 SLOTS REMAIN — 23/25 already nominated)

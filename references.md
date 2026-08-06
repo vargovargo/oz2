@@ -26,6 +26,12 @@ purpose: |
 
 **IRS OZ FAQ.** https://www.irs.gov/credits-deductions/opportunity-zones-frequently-asked-questions
 
+**IRC § 1400Z-2(d)(1) — the QOF 90-percent asset test.** https://www.law.cornell.edu/uscode/text/26/1400Z-2 — A QOF must hold at least 90% of its assets in qualified opportunity zone property. Compliance is measured as the *average* of two testing dates: the last day of the first six-month period of the fund's taxable year and the last day of the taxable year. Regulations at 26 CFR § 1.1400Z2(d)-1 (https://www.law.cornell.edu/cfr/text/26/1.1400Z2(d)-1). last_checked: 2026-08-06
+
+**QROF asset requirement (P.L. 119-21, amending IRC § 1400Z-2).** A Qualified Rural Opportunity Fund is a QOF that satisfies the 90% asset test with QOZ business property used in a zone **comprised entirely of a rural area**, or with QOZ stock or partnership interests in a qualifying rural QOZ business. This is stricter than holding some rural property: a fund cannot access the 30% five-year basis step-up by mixing rural and non-rural assets. "Rural area" per Notice 2025-50 § 4.01 means any area other than a city or town over 50,000 population and any urbanized area contiguous and adjacent to it. IRS newsroom summary: https://www.irs.gov/newsroom/treasury-irs-provide-guidance-for-opportunity-zone-investments-in-rural-areas-under-the-one-big-beautiful-bill; vocabulary reference: https://www.novoco.com/resource-centers/opportunity-zones-resource-center/opportunity-zones-vocabulary. last_checked: 2026-08-06
+
+**IRS Form 8996 and instructions — Qualified Opportunity Fund self-certification.** https://www.irs.gov/forms-pubs/about-form-8996 (instructions: https://www.irs.gov/instructions/i8996) — The annual return by which a QOF self-certifies and reports compliance with the § 1400Z-2(d)(1) 90-percent asset test. Under OZ 1.0 this was the only reporting obligation and carried no meaningful penalty for non-filing; the § 6039K/6039L/6726 regime added by P.L. 119-21 supplements it. Also the data source underlying Coyne & Johnson (WP-128) and Kennedy & Wheeler. last_checked: 2026-08-06
+
 ## 2. Eligibility data and maps
 
 **Appendix to Rev. Proc. 2026-14.** Hosted on IRS.gov. **Ground truth** for eligibility and `is_rural` flag.
@@ -371,7 +377,7 @@ purpose: |
 
 **OCC — Community Reinvestment Act: Opportunity Zones.** https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/opportunity-zones/index-opportunity-zones.html — OCC resource directory explaining how banks subject to OCC supervision can document OZ-related activities for CRA credit. Notes that CRA-qualifying community development activities in OZ tracts include affordable housing, community services, economic development loans, and equity investments that benefit LMI persons or geographies. last_checked: 2026-05-20
 
-**Federal Reserve — Community Reinvestment Act.** https://www.federalreserve.gov/consumerscommunities/cra_about.htm — Overview of CRA requirements for state member banks. The Federal Reserve's 2023 CRA Final Rule (jointly issued with OCC and FDIC) updated community development investment test criteria and expanded the geographic scope beyond assessment areas in some cases. The rule is under legal challenge as of May 2026 but its LMI tract income designations remain aligned with the FFIEC census flat file methodology. last_checked: 2026-05-20
+**Federal Reserve — Community Reinvestment Act.** https://www.federalreserve.gov/consumerscommunities/cra_about.htm — Overview of CRA requirements for state member banks. The Federal Reserve's 2023 CRA Final Rule (jointly issued with OCC and FDIC) updated community development investment test criteria and expanded the geographic scope beyond assessment areas in some cases. The agencies rescinded that rule in 2025 following a court injunction, leaving the pre-2023 framework in effect; LMI tract income designations remain aligned with the FFIEC census flat file methodology either way. last_checked: 2026-08-06
 
 **NCRC — "Opportunity Zones: A Taxpayer-Funded Program That Primarily Benefits Wealthy Investors" (2025).** https://www.ncrc.org/opportunity-zones-a-taxpayer-funded-program-that-primarily-benefits-wealthy-investors/ — Documents pattern of OZ 1.0 investment in already-appreciating urban areas with minimal evidence of benefit to LMI residents. Notes that despite significant geographic overlap between OZ and CRA LMI tracts, CRA credit was rarely claimed for OZ equity investments due to investor structure issues. Relevant context for communities evaluating bank capital as a source of OZ-related investment. last_checked: 2026-05-12
 
@@ -390,3 +396,20 @@ sourcing method, not the individual projects.
 **NCSHA, "Case Studies: Opportunity Zone Investment in Affordable Housing and Community Revitalization."** https://www.ncsha.org/resource/case-studies-opportunity-zone-investment-in-affordable-housing-and-community-revitalization/ — NCSHA/EIG joint series of detailed per-project "Opportunity Zone Development Profiles" (financing structure, community data, projected impact); seed for the affordable-housing entries (Ox Fibre, Parramore Oaks, The Tappan). last_checked: 2026-06-16
 
 **Novogradac Opportunity Funds List.** See section 6. Snowballed from named funds to their own project/portfolio pages when aggregator writeups lacked project-level detail (e.g., CIM Group's Opportunity Zones portfolio page for Centennial Yards).
+## 16. Study guide — sourcing
+
+The `/learn` study guide is a curriculum, not a new body of research. Every factual claim on
+it is drawn from material already catalogued above: OZ and QROF mechanics from section 1
+(P.L. 119-21, IRS Rev. Proc. 2026-14, IRS Notice 2025-50 § 4.01); the program-stacking
+comparison from section 6; the CRA two-track figures from section 14 and the FFIEC Census
+Flat File analysis in `docs/cra-oz-overlap-brief.md`; and the OZ 1.0 outcome data from
+sections 7 and 8, principally Coyne & Johnson (Treasury OTA WP-128, June 2026) and Kennedy &
+Wheeler (2022). **No new primary sources were introduced.** Generic project-finance concepts
+on the page — seniority, sources and uses, loan-to-value, internal rate of return — are
+standard practice rather than citable findings, and are not sourced individually.
+
+The page's glossary and prompt library are generated from `data/glossary.yaml` and
+`data/study_prompts.yaml`. The companion Claude Project pack in `study/` is generated from
+the same sources plus the built `/learn` and `/capital-stack` pages; see
+`scripts/export_study_pack.py`. Verified figures are consolidated for that pack in
+`study/knowledge/04-key-figures.md`, each with its source. last_checked: 2026-08-06
