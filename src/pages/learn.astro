@@ -1,0 +1,1008 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getModules, getStudyPrompts, getGlossary } from '@/lib/study';
+
+const modules = getModules();
+const prompts = getStudyPrompts();
+const glossary = getGlossary();
+
+const anchorSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`;
+
+const moduleShort = Object.fromEntries(modules.map(m => [m.id, m.short]));
+
+function claudeUrl(prompt: string): string {
+  return `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+}
+
+/**
+ * Side-by-side view of the programs that stack with OZ equity. Every row is
+ * drawn from the prose on /capital-stack; the table exists because that page
+ * covers each program in isolation and never compares them.
+ */
+const stacking = [
+  {
+    program: 'OZ equity (QOF)',
+    what: 'Capital gains deferral, a 10% basis step-up at 5 years, and full exclusion of fund appreciation at 10 years',
+    benefit: 'The investor, who must have a realized capital gain',
+    form: 'Equity',
+    timeline: '10-year hold for the full benefit',
+    floor: 'No statutory floor, but fund formation and compliance costs price out very small deals',
+    position: 'Equity',
+    link: '/capital-stack#qrof-mechanics',
+  },
+  {
+    program: 'QROF (rural)',
+    what: 'Same structure with a 30% step-up at 5 years and a 50% substantial improvement threshold',
+    benefit: 'The investor; available only in Treasury-flagged rural tracts',
+    form: 'Equity',
+    timeline: '10-year hold for the full benefit',
+    floor: 'Same as above',
+    position: 'Equity',
+    link: '/capital-stack#qrof-mechanics',
+  },
+  {
+    program: 'NMTC',
+    what: 'A 39% federal credit claimed over seven years through a Community Development Entity',
+    benefit: 'The credit investor; the project gets below-market capital',
+    form: 'Equity into a CDE, deployed as debt or equity into the project',
+    timeline: '7-year compliance period, then the investor exits',
+    floor: 'About $3–5M — legal and structuring costs do not scale down',
+    position: 'Usually subordinate debt',
+    link: '/capital-stack#nmtc',
+  },
+  {
+    program: 'LIHTC',
+    what: 'Housing credits allocated by the state agency and sold to investors through syndication',
+    benefit: 'The credit investor; the project gets equity it does not repay',
+    form: 'Equity',
+    timeline: 'Multi-year compliance period set in statute and the state allocation plan',
+    floor: 'Set in practice by the state allocation plan, not by statute',
+    position: 'Equity',
+    link: '/capital-stack#lihtc',
+  },
+  {
+    program: 'CDFI lending',
+    what: 'Mission-driven loans, predevelopment financing, and technical assistance',
+    benefit: 'The borrower',
+    form: 'Debt',
+    timeline: 'Deal-specific',
+    floor: 'Low — CDFIs are among the few lenders that will write small rural loans',
+    position: 'Senior or subordinate, depending on the deal',
+    link: '/capital-stack#cdfi',
+  },
+  {
+    program: 'Bank capital via CRA',
+    what: 'Lending or investment that also earns the bank community development credit at exam',
+    benefit: 'The bank earns regulatory credit; the project gets capital',
+    form: 'Community development loan, EQ2 into a CDFI, or in some cases direct QOF equity',
+    timeline: 'Deal-specific; the bank’s exam cycle drives its urgency',
+    floor: 'Low',
+    position: 'Senior debt, or subordinate when routed through a CDFI',
+    link: '/capital-stack#cra',
+  },
+  {
+    program: 'USDA B&I',
+    what: 'A federal guarantee of up to 85% on loans under $5M for rural business development',
+    benefit: 'The lender takes less risk; the borrower gets a loan that would not otherwise exist',
+    form: 'Guaranteed debt',
+    timeline: 'Deal-specific',
+    floor: 'Low',
+    position: 'Senior',
+    link: '/capital-stack#usda-rural-development',
+  },
+  {
+    program: 'USDA Community Facilities',
+    what: 'Direct loans and grants for essential facilities in communities under 20,000',
+    benefit: 'The public or nonprofit facility owner',
+    form: 'Debt plus grant, weighted toward grant for the smallest and poorest places',
+    timeline: 'Deal-specific',
+    floor: 'Low',
+    position: 'Senior debt or gap',
+    link: '/capital-stack#usda-rural-development',
+  },
+  {
+    program: 'EDA',
+    what: 'Grants for public infrastructure, planning, and business development capacity',
+    benefit: 'The public entity, and the private investment the infrastructure later enables',
+    form: 'Grant',
+    timeline: 'Grant cycle; typically precedes the private deal',
+    floor: 'Low',
+    position: 'Gap, or ahead of the stack entirely',
+    link: '/capital-stack#eda',
+  },
+];
+
+const stackLayers = [
+  {
+    y: 24,
+    fill: '#1a4480',
+    text: '#ffffff',
+    name: 'Equity',
+    who: 'QOF / QROF equity · developer equity · foundation PRI',
+    note: 'Paid last · first loss · highest return',
+  },
+  {
+    y: 96,
+    fill: '#2e8540',
+    text: '#ffffff',
+    name: 'Gap financing',
+    who: 'Grants · EDA infrastructure · soft or deferred loans · credit proceeds',
+    note: 'Often never repaid',
+  },
+  {
+    y: 168,
+    fill: '#e5a000',
+    text: '#1b1b1b',
+    name: 'Subordinate debt',
+    who: 'CDFI note · EQ2-funded lending · seller financing',
+    note: 'Behind the senior lender, priced for it',
+  },
+  {
+    y: 240,
+    fill: '#dfe1e6',
+    text: '#1b1b1b',
+    name: 'Senior debt',
+    who: 'Bank loan · often carrying a USDA B&I guarantee',
+    note: 'Paid first · last loss · cheapest money',
+  },
+];
+---
+
+<Layout
+  title="Study Guide"
+  description="A self-study curriculum for the finance side of Opportunity Zones — the tax incentive, capital stacks, banks and CRA, CDFIs, deal economics, and what the OZ 1.0 evidence actually shows."
+>
+  <div class="max-w-3xl">
+    <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Study guide</p>
+    <h1 class="text-3xl font-bold mb-4">Learning the finance side of OZ</h1>
+    <p class="text-oz-neutral-500 mb-4">
+      The rest of this site is written as reference — look something up, cite it, move on.
+      This page is written as a curriculum. It covers the part of Opportunity Zones that
+      is hardest to pick up by reading policy summaries: how the tax incentive actually
+      moves money, how a capital stack is assembled, why a bank or a CDFI shows up at all,
+      and what the numbers have to look like for a deal to close.
+    </p>
+    <p class="text-oz-neutral-500 mb-8">
+      Each of the six modules below explains a mechanism, names the places people
+      reliably get it wrong, and hands you a set of prompts to take into a conversation.
+      Reading gets you the vocabulary; arguing with something that answers back is what
+      turns it into working knowledge.
+    </p>
+
+    <div class="border border-oz-neutral-200 bg-white rounded p-5 mb-10">
+      <h2 class="text-sm font-semibold text-oz-neutral-900 mb-2">How to use this</h2>
+      <ol class="text-sm text-oz-neutral-700 list-decimal pl-5 space-y-1.5">
+        <li>Read a module. They build on each other, but any one stands alone.</li>
+        <li>
+          Take its prompts into a chat. Every prompt in the
+          <a href="#prompts" class="text-oz-blue underline">library at the bottom</a>
+          has a copy button.
+        </li>
+        <li>
+          For a tutor that already knows this material, set up a Claude Project from
+          <a href="https://github.com/vargovargo/oz2/tree/main/study" class="text-oz-blue underline" target="_blank" rel="noopener">the pack in this repo</a>
+          — a prepared system prompt plus a knowledge base built from the sources on this
+          site. Takes about five minutes and means you stop having to re-explain the
+          program every time.
+        </li>
+      </ol>
+      <p class="text-xs text-oz-neutral-500 mt-3">
+        A note on trusting the answers: everything on this page traces to
+        <a href="/references" class="underline hover:text-oz-neutral-700">a source in the bibliography</a>.
+        A chat will not. Treat a tutor as something to think against, and check any number
+        it gives you against
+        <a href="/capital-stack" class="underline hover:text-oz-neutral-700">the capital stack page</a>
+        or the IRS guidance before you put it in a memo.
+      </p>
+    </div>
+
+    <!-- ------------------------------------------------ module index -->
+    <nav aria-label="Module index" class="mb-12">
+      <ol class="grid sm:grid-cols-2 gap-2">
+        {modules.map(m => (
+          <li>
+            <a
+              href={`#${m.id}`}
+              class="flex items-baseline gap-3 border border-oz-neutral-200 bg-white rounded px-4 py-3 hover:border-oz-blue transition-colors"
+            >
+              <span class="font-mono text-xs text-oz-neutral-400">{String(m.number).padStart(2, '0')}</span>
+              <span class="text-sm font-medium text-oz-neutral-900">{m.title}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <!-- ================================================ 1. tax incentive -->
+    <section id="tax-incentive" class="mb-14">
+      <p class="font-mono text-xs text-oz-neutral-400 mb-1">01</p>
+      <h2 class="text-xl font-semibold mb-3">
+        How the tax incentive actually works<a href="#tax-incentive" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Start from what the incentive is not. Opportunity Zones do not provide grants,
+        loans, or guarantees. Nothing is appropriated. The entire program is a change in
+        how one specific kind of income — a realized capital gain — is taxed if its owner
+        agrees to park it in a designated place for a long time. That single fact explains
+        most of what follows, including who invests, what they build, and why the money
+        has historically landed where it did.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The mechanism runs in three stages, and they are worth keeping separate because
+        they are constantly conflated. First, <strong>deferral</strong>: an investor who
+        realizes a gain has 180 days to roll it into a Qualified Opportunity Fund, and the
+        tax on that gain is postponed. Under OZ 2.0 the postponement runs to the earlier of
+        the sale of the fund interest or the investment's fifth anniversary — a rolling
+        deadline, not the single fixed date OZ 1.0 used. Second, a <strong>basis
+        step-up</strong> at the five-year mark permanently forgives part of the original
+        gain: 10% in a standard fund, 30% in a Qualified Rural Opportunity Fund. Third, and
+        by far the largest benefit in most deals, a <strong>ten-year hold</strong> excludes
+        all appreciation inside the fund from capital gains tax entirely. The investor pays
+        on the original deferred gain, reduced by the step-up, and on nothing the fund
+        earned after that.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        The rural provisions matter more than their size suggests. A QROF's businesses need
+        only improve acquired property by 50% of its adjusted basis rather than 100%, which
+        is frequently the difference between a rural rehabilitation penciling and not. Both
+        the rural flag and the improvement threshold are set by Treasury for every tract in
+        the Rev. Proc. 2026-14 appendix — a community cannot earn the flag through advocacy,
+        and cannot lose it either.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        One requirement is easy to miss and changes who can actually claim the rural bonus.
+        A QROF is not a fund that happens to hold some rural property — it has to satisfy the
+        90% asset test <em>with</em> property in zones comprised entirely of rural area. A
+        fund mixing rural and metro assets does not get the 30% step-up. That pushes rural
+        capital toward dedicated rural funds rather than diversified ones, and it is part of
+        why the project types that fit best are the ones a rural-focused fund would seek
+        anyway: agricultural processing, rural healthcare facilities, broadband
+        infrastructure, value-added manufacturing, and workforce housing.
+      </p>
+
+      <!-- timeline diagram -->
+      <figure class="mb-6">
+        <div class="overflow-x-auto border border-oz-neutral-200 bg-white rounded p-4">
+          <svg
+            viewBox="0 0 680 268"
+            width="100%"
+            height="auto"
+            style="min-width: 560px;"
+            role="img"
+            aria-label="Timeline of the OZ 2.0 tax incentive: gain realized at day zero, 180 days to invest in a fund, basis step-up and deferred gain recognized at year five, appreciation excluded at year ten. Standard funds receive a ten percent step-up; rural funds receive thirty percent."
+          >
+            <!-- axis -->
+            <line x1="52" y1="96" x2="628" y2="96" stroke="#a9aeb1" stroke-width="2" />
+
+            <!-- event markers -->
+            <g fill="#1b1b1b" font-family="Inter, system-ui, sans-serif" font-size="12">
+              <circle cx="70" cy="96" r="6" fill="#1a4480" />
+              <text x="70" y="72" text-anchor="middle" font-weight="600">Day 0</text>
+              <text x="70" y="46" text-anchor="middle" fill="#71767a" font-size="11">Gain realized</text>
+
+              <circle cx="190" cy="96" r="6" fill="#1a4480" />
+              <text x="190" y="72" text-anchor="middle" font-weight="600">Day 180</text>
+              <text x="190" y="46" text-anchor="middle" fill="#71767a" font-size="11">Deadline to invest</text>
+
+              <circle cx="400" cy="96" r="6" fill="#1a4480" />
+              <text x="400" y="72" text-anchor="middle" font-weight="600">Year 5</text>
+              <text x="400" y="46" text-anchor="middle" fill="#71767a" font-size="11">Step-up · deferred gain taxed</text>
+
+              <circle cx="596" cy="96" r="6" fill="#2e8540" />
+              <text x="596" y="72" text-anchor="middle" font-weight="600">Year 10</text>
+              <text x="596" y="46" text-anchor="middle" fill="#71767a" font-size="11">Appreciation excluded</text>
+            </g>
+
+            <!-- the two spans are stacked, not side by side, so their labels cannot collide -->
+            <rect x="70" y="114" width="330" height="22" rx="3" fill="#1a4480" opacity="0.12" />
+            <text x="235" y="129" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3d4551">
+              Original gain deferred — until sale or year 5
+            </text>
+
+            <rect x="400" y="144" width="196" height="22" rx="3" fill="#2e8540" opacity="0.14" />
+            <text x="498" y="159" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3d4551">
+              Appreciation accrues, untaxed
+            </text>
+
+            <!-- two fund lanes -->
+            <g font-family="Inter, system-ui, sans-serif" font-size="12">
+              <text x="52" y="207" fill="#71767a" font-size="11">Standard QOF</text>
+              <rect x="356" y="193" width="88" height="24" rx="12" fill="#dfe1e6" />
+              <text x="400" y="210" text-anchor="middle" font-weight="600" fill="#1b1b1b">+10% basis</text>
+
+              <text x="52" y="245" fill="#71767a" font-size="11">QROF (rural)</text>
+              <rect x="356" y="231" width="88" height="24" rx="12" fill="#2e8540" />
+              <text x="400" y="248" text-anchor="middle" font-weight="600" fill="#ffffff">+30% basis</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption class="text-xs text-oz-neutral-400 mt-2">
+          Not to scale — 180 days and five years are drawn at comparable widths for
+          legibility. The step-up applies to the original deferred gain only; the ten-year
+          exclusion applies to appreciation inside the fund.
+        </figcaption>
+      </figure>
+
+      <div class="border-l-2 border-oz-blue bg-white pl-4 py-3 mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Key mechanics</p>
+        <ul class="text-sm text-oz-neutral-700 space-y-1.5">
+          <li><strong>180 days</strong> from realizing the gain to getting it into a fund.</li>
+          <li><strong>90%</strong> of a QOF's assets must be qualified opportunity zone property — measured as the average of two testing dates a year, not continuously.</li>
+          <li><strong>10% / 30%</strong> basis step-up at five years — standard fund versus QROF.</li>
+          <li><strong>QROF qualification</strong> requires meeting the 90% test with entirely-rural-zone property — not a mix.</li>
+          <li><strong>100% / 50%</strong> substantial improvement threshold, within 30 months — standard versus rural.</li>
+          <li><strong>10 years</strong> to exclude fund appreciation entirely.</li>
+        </ul>
+      </div>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Where people get confused</p>
+        <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-1.5">
+          <li>
+            The step-up and the exclusion are different benefits applied to different money.
+            The step-up shrinks the <em>original</em> gain; the exclusion wipes out
+            <em>new</em> appreciation. An investor gets both.
+          </li>
+          <li>
+            The year-five recognition event creates a cash obligation on an illiquid
+            position. The investor owes tax on the deferred gain while the fund investment
+            still has five years to run — which shapes what kind of investor can play.
+          </li>
+          <li>
+            The fund and the business are different entities with different tests. The 90%
+            asset test binds the QOF; substantial improvement binds the QOZB.
+          </li>
+          <li>
+            Only realized capital gains get the benefit. Ordinary income, cash on hand, and
+            local savings do not — which is precisely why the investor pool is small,
+            wealthy, and geographically detached from most designated tracts.
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-sm text-oz-neutral-500">
+        Deeper: <a href="/capital-stack#qrof-mechanics" class="text-oz-blue underline">Capital Stack — QROF mechanics</a> ·
+        <a href="#prompts" data-jump-module="tax-incentive" class="text-oz-blue underline">5 prompts for this module ↓</a>
+      </p>
+    </section>
+
+    <!-- ================================================ 2. capital stacks -->
+    <section id="capital-stacks" class="mb-14">
+      <p class="font-mono text-xs text-oz-neutral-400 mb-1">02</p>
+      <h2 class="text-xl font-semibold mb-3">
+        Reading a capital stack<a href="#capital-stacks" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        A capital stack is just the answer to two questions: who put money in, and in what
+        order do they get it back. Everything else — the pricing, the covenants, the
+        negotiation — falls out of that ordering. The layer that gets repaid first takes the
+        least risk and therefore charges the least. The layer that gets repaid last takes
+        the first loss and demands the most. When you hear that a deal "needs more subordinate
+        debt," what is being described is a fight about who stands where in that line.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        The companion document is the sources-and-uses table: every dollar coming in on one
+        side, every dollar going out on the other, and they must balance. A project "has a
+        gap" when the uses column is real and the sources column is short. In rural markets
+        that gap is structural rather than incidental. Construction costs roughly what it
+        costs anywhere, but the completed building appraises lower, and a lower appraisal
+        supports a smaller loan. The stack has to make up the difference with something that
+        does not need a market return — grant money, patient equity, or a subsidy — and OZ
+        equity is a partial answer to exactly that problem.
+      </p>
+
+      <!-- stack diagram -->
+      <figure class="mb-6">
+        <div class="overflow-x-auto border border-oz-neutral-200 bg-white rounded p-4">
+          <svg
+            viewBox="0 0 680 330"
+            width="100%"
+            height="auto"
+            style="min-width: 520px;"
+            role="img"
+            aria-label="A capital stack drawn as four layers. From top to bottom: equity, gap financing, subordinate debt, senior debt. Repayment runs from the bottom up; losses are absorbed from the top down."
+          >
+            {stackLayers.map(l => (
+              <g>
+                <rect x="96" y={l.y} width="500" height="60" rx="4" fill={l.fill} />
+                <text x="116" y={l.y + 25} font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill={l.text}>
+                  {l.name}
+                </text>
+                <text x="116" y={l.y + 43} font-family="Inter, system-ui, sans-serif" font-size="11" fill={l.text} opacity="0.85">
+                  {l.who}
+                </text>
+                <text x="586" y={l.y + 25} text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill={l.text} opacity="0.85">
+                  {l.note}
+                </text>
+              </g>
+            ))}
+
+            <!-- direction arrows -->
+            <g font-family="Inter, system-ui, sans-serif" font-size="10" fill="#71767a">
+              <line x1="70" y1="290" x2="70" y2="34" stroke="#71767a" stroke-width="1.5" marker-end="url(#arrowup)" />
+              <text x="62" y="170" text-anchor="middle" transform="rotate(-90 62 170)">repaid in this order</text>
+
+              <line x1="622" y1="34" x2="622" y2="290" stroke="#cd2026" stroke-width="1.5" marker-end="url(#arrowdown)" />
+              <text x="638" y="170" text-anchor="middle" fill="#cd2026" transform="rotate(90 638 170)">losses land in this order</text>
+            </g>
+
+            <defs>
+              <marker id="arrowup" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
+                <path d="M3.5,0 L7,7 L0,7 Z" fill="#71767a" />
+              </marker>
+              <marker id="arrowdown" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
+                <path d="M3.5,7 L7,0 L0,0 Z" fill="#cd2026" />
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <figcaption class="text-xs text-oz-neutral-400 mt-2">
+          Layer heights show position, not proportion — the relative size of each tranche
+          varies enormously by deal.
+        </figcaption>
+      </figure>
+
+      <div class="border-l-2 border-oz-blue bg-white pl-4 py-3 mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Key mechanics</p>
+        <ul class="text-sm text-oz-neutral-700 space-y-1.5">
+          <li><strong>Sources must equal uses.</strong> If they do not, the deal is not financed, however good it is.</li>
+          <li><strong>Seniority sets price.</strong> Cost of capital rises monotonically as you move up the stack.</li>
+          <li><strong>Subordination is a product.</strong> A CDFI agreeing to stand behind a bank is what makes the bank's loan writable.</li>
+          <li><strong>Gap money is the scarce input.</strong> Debt and equity are available at a price; grants are not.</li>
+        </ul>
+      </div>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Where people get confused</p>
+        <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-1.5">
+          <li>
+            OZ equity is not a subsidy to the project. It is a subsidy to the investor,
+            which the sponsor may or may not succeed in converting into better terms. Whether
+            any of it reaches the community depends entirely on the negotiation.
+          </li>
+          <li>
+            "Stacking" rarely means two programs inside one entity. More often it means
+            parallel structures, separate entities, and a condominium regime keeping the
+            compliance regimes apart.
+          </li>
+          <li>
+            A bigger stack is not a better stack. Each additional layer adds legal cost,
+            another set of covenants, and another party who can hold up closing.
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-sm text-oz-neutral-500">
+        Deeper: <a href="/capital-stack" class="text-oz-blue underline">the full Capital Stack guide</a> ·
+        <a href="/case-studies" class="text-oz-blue underline">real OZ 1.0 deals</a> ·
+        <a href="#prompts" data-jump-module="capital-stacks" class="text-oz-blue underline">5 prompts for this module ↓</a>
+      </p>
+    </section>
+
+    <!-- ================================================ 3. banks and CRA -->
+    <section id="banks-and-cra" class="mb-14">
+      <p class="font-mono text-xs text-oz-neutral-400 mb-1">03</p>
+      <h2 class="text-xl font-semibold mb-3">
+        Banks and the Community Reinvestment Act<a href="#banks-and-cra" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The useful question is not what CRA says but what it makes a bank do. Enacted in
+        1977, it directs federal banking regulators to assess whether a bank is meeting
+        credit needs across the whole area it takes deposits from, weighted toward
+        low- and moderate-income geographies. That assessment produces a rating, and the
+        rating has consequences — it is a live consideration when a bank wants to merge,
+        acquire, or open branches. A bank with a weak record and an acquisition in mind is
+        looking for qualifying activity, and that search is the reason a commercial lender
+        will sometimes engage with a deal that does not clear its ordinary return threshold.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Eligibility runs on two tracks, and the second one is where most of the useful
+        knowledge sits. <strong>Track 1</strong> is income: a tract whose median family
+        income falls below 80% of the area figure — the MSA median for metro tracts, the
+        statewide non-metro median for rural ones. <strong>Track 2</strong> catches
+        non-metro middle-income tracts, at 80–120% of that statewide non-metro median, that
+        meet a distress test instead: unemployment at 1.5 times the national rate, poverty
+        at 20% or more, population loss of 10% or more since 2010, or a USDA urban influence
+        code marking very remote geography. Track 2 exists precisely for rural communities
+        that are struggling but do not clear the income bar.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        Applying both tracks to the 25,332 OZ-eligible tracts, 18,968 — <strong>74.9%</strong> —
+        carry a CRA designation: 17,378 on Track 1 and another 1,590 on Track 2 alone. That
+        overlap is the built-in argument for bank participation. But the averages hide the
+        hard cases. Rural tracts qualify at 69.7% against 77.4% for non-rural, which leaves
+        <strong>2,525 rural tracts holding the QROF bonus and no CRA hook at all</strong> —
+        the thinnest capital market in the eligible universe, and the one where the rural
+        incentive story is least able to carry a deal on its own.
+      </p>
+
+      <div class="border-l-2 border-oz-blue bg-white pl-4 py-3 mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Key mechanics</p>
+        <ul class="text-sm text-oz-neutral-700 space-y-1.5">
+          <li><strong>Community development loan</strong> — construction or permanent debt to a business in a qualifying tract. The simplest path.</li>
+          <li><strong>EQ2</strong> — long-maturity subordinated debt to a CDFI that behaves like equity on the CDFI's books. The bank gets clean credit and never touches OZ compliance.</li>
+          <li><strong>Direct QOF equity</strong> — possible, but the bank should confirm treatment with its primary regulator first.</li>
+          <li><strong>Regulatory state:</strong> the 2023 CRA Final Rule was rescinded by the agencies in 2025 following a court injunction. The pre-2023 framework governs.</li>
+        </ul>
+      </div>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Where people get confused</p>
+        <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-1.5">
+          <li>
+            CRA credit accrues to the <em>bank</em>, not the project. It changes the bank's
+            willingness to participate; it does not put a dollar into the deal by itself.
+          </li>
+          <li>
+            Many bank CRA officers do not know Track 2 exists and will assume a
+            middle-income tract is ineligible. Bring the FFIEC lookup to the meeting.
+          </li>
+          <li>
+            Assessment area is a real constraint. A bank only earns credit where it takes
+            deposits, so the relevant bank is often a small local one, not a national name.
+          </li>
+          <li>
+            OZ eligibility and CRA eligibility are correlated, not identical. Check the
+            specific tract — a quarter of them do not qualify.
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-sm text-oz-neutral-500">
+        Deeper: <a href="/capital-stack#cra" class="text-oz-blue underline">Capital Stack — CRA and bank capital</a> ·
+        per-state CRA tract counts on <a href="/states/all" class="text-oz-blue underline">any state page</a> ·
+        <a href="#prompts" data-jump-module="banks-and-cra" class="text-oz-blue underline">5 prompts for this module ↓</a>
+      </p>
+    </section>
+
+    <!-- ================================================ 4. CDFIs -->
+    <section id="cdfis" class="mb-14">
+      <p class="font-mono text-xs text-oz-neutral-400 mb-1">04</p>
+      <h2 class="text-xl font-semibold mb-3">
+        CDFIs<a href="#cdfis" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        A Community Development Financial Institution is a lender certified by the Treasury's
+        CDFI Fund to serve markets that conventional capital underserves. The category covers
+        loan funds, credit unions, banks, and venture funds, which behave quite differently
+        from one another. The thing worth understanding first is not what a CDFI lends but
+        where its own money comes from: Financial Assistance and Technical Assistance awards
+        from the CDFI Fund, New Markets allocations, philanthropic grants and
+        program-related investments, and EQ2s and deposits from banks buying CRA credit. A
+        CDFI's balance sheet determines what it can price, how long it can wait, and how much
+        risk it can hold — so reading its funding tells you what it can do for you.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        In an OZ context a CDFI usually plays one of three roles. It lends to the operating
+        business, often in the subordinate position that makes a senior bank loan possible.
+        It absorbs bank CRA capital and re-lends it, taking on the compliance complexity so
+        the bank does not have to. Or — most valuable in places with no pipeline at all — it
+        does the predevelopment work: feasibility, structuring, technical assistance, the
+        unglamorous effort that turns an idea into something a fund could actually invest in.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        One structural point trips people up constantly, and it is worth getting right. A
+        CDFI cannot simply declare itself a Qualified Opportunity Fund and solve the problem.
+        A QOF must hold qualified opportunity zone property — stock, partnership interests,
+        business property — and loans are not on that list. A CDFI whose business is lending
+        is holding the wrong asset class. It can sit alongside a QOF in the same stack
+        without conflict, and there is no bar on CDFI Fund awards and OZ equity reaching the
+        same project. It just cannot be both things at once.
+      </p>
+
+      <div class="border-l-2 border-oz-blue bg-white pl-4 py-3 mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Key mechanics</p>
+        <ul class="text-sm text-oz-neutral-700 space-y-1.5">
+          <li><strong>Certification</strong> is by the CDFI Fund; the certified list is public and searchable by state.</li>
+          <li><strong>Capitalized by</strong> FA/TA awards, NMTC allocations, philanthropy, and bank EQ2s and deposits.</li>
+          <li><strong>Cannot be a QOF</strong> while its assets are loans — QOZ property does not include debt instruments.</li>
+          <li><strong>Native CDFIs</strong> are the more direct channel in Indian Country, where BIA leasing and trust land titling shape what structures are viable at all.</li>
+        </ul>
+      </div>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Where people get confused</p>
+        <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-1.5">
+          <li>
+            Listing a state in a service area is not the same as lending there. Read a
+            CDFI's recent deals, not its map.
+          </li>
+          <li>
+            CDFIs are lenders, not grantmakers. Below-market is not free, and a CDFI still
+            has to be repaid.
+          </li>
+          <li>
+            Capacity is the binding constraint in most rural regions, not willingness. A
+            two-person loan fund covering forty counties can only close so many deals a year
+            — which is a large part of why rural OZ investment lagged.
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-sm text-oz-neutral-500">
+        Deeper: <a href="/capital-stack#cdfi" class="text-oz-blue underline">Capital Stack — CDFI financing</a> ·
+        <a href="/references#6-funds-and-investment-landscape" class="text-oz-blue underline">References §6</a> ·
+        <a href="#prompts" data-jump-module="cdfis" class="text-oz-blue underline">5 prompts for this module ↓</a>
+      </p>
+    </section>
+
+    <!-- ================================================ 5. deal economics -->
+    <section id="deal-economics" class="mb-14">
+      <p class="font-mono text-xs text-oz-neutral-400 mb-1">05</p>
+      <h2 class="text-xl font-semibold mb-3">
+        Deal economics<a href="#deal-economics" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        This is the module that converts policy into leverage. A tax provision only matters
+        to a deal insofar as it changes a number an investor is looking at, and the number
+        they are looking at is a return — usually an internal rate of return, compared
+        against a hurdle the fund has told its own investors it will clear. Anything that
+        raises the after-tax return lets the investor accept a lower pre-tax return and
+        still clear the hurdle. That difference is the space a community has to negotiate in.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Work the QROF bonus through as an example. The rural step-up permanently forgives
+        30% of the original deferred gain rather than 10%. On a $2 million gain, that is
+        $400,000 of additional gain never taxed — real money, arriving at the five-year
+        mark, entirely independent of how the project performs. An investor holding that
+        advantage can accept meaningfully less from the project itself and still land where
+        they need to. Whether that surplus turns into lower rents, local hiring, or simply a
+        better return for the fund is not decided by the tax code. It is decided in the
+        negotiation, which is why knowing the arithmetic matters.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        Two frictions come up in nearly every stacked deal. The first is timing: NMTC
+        investors exit at seven years when their credits finish vesting, while OZ investors
+        need ten years for the full exclusion, so the two cannot simply share an exit. The
+        second is scale. NMTC carries a practical floor around $3–5 million — not because
+        the statute says so, but because the legal and structuring costs are close to fixed
+        and stop making sense below that. The same logic applies more quietly to OZ itself:
+        forming or joining a fund has costs that small rural projects struggle to absorb.
+        Federal capital tools have minimum efficient deal sizes, and a great deal of rural
+        development lands underneath them.
+      </p>
+
+      <h3 class="text-sm font-semibold text-oz-neutral-900 mb-3">What stacks with what</h3>
+      <div class="overflow-x-auto border border-oz-neutral-200 rounded mb-2">
+        <table class="w-full text-xs text-left border-collapse bg-white">
+          <thead>
+            <tr class="bg-oz-neutral-100 text-oz-neutral-700">
+              <th scope="col" class="px-3 py-2 font-semibold whitespace-nowrap">Program</th>
+              <th scope="col" class="px-3 py-2 font-semibold">What it is</th>
+              <th scope="col" class="px-3 py-2 font-semibold">Who gets the benefit</th>
+              <th scope="col" class="px-3 py-2 font-semibold">Form</th>
+              <th scope="col" class="px-3 py-2 font-semibold">Timeline</th>
+              <th scope="col" class="px-3 py-2 font-semibold">Practical floor</th>
+              <th scope="col" class="px-3 py-2 font-semibold whitespace-nowrap">In the stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stacking.map(row => (
+              <tr class="border-t border-oz-neutral-200 align-top">
+                <th scope="row" class="px-3 py-2 font-medium text-oz-neutral-900 whitespace-nowrap">
+                  <a href={row.link} class="text-oz-blue underline">{row.program}</a>
+                </th>
+                <td class="px-3 py-2 text-oz-neutral-700">{row.what}</td>
+                <td class="px-3 py-2 text-oz-neutral-700">{row.benefit}</td>
+                <td class="px-3 py-2 text-oz-neutral-700">{row.form}</td>
+                <td class="px-3 py-2 text-oz-neutral-700">{row.timeline}</td>
+                <td class="px-3 py-2 text-oz-neutral-700">{row.floor}</td>
+                <td class="px-3 py-2 text-oz-neutral-700">{row.position}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-oz-neutral-400 mb-6">
+        Combinations are generally permissible — no statute bars them — but almost none have
+        explicit IRS guidance blessing them, and every one needs deal-specific tax counsel.
+        Details and citations on <a href="/capital-stack" class="underline hover:text-oz-neutral-600">the Capital Stack page</a>.
+      </p>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Where people get confused</p>
+        <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-1.5">
+          <li>
+            A tax benefit to the investor is not automatically a benefit to the project.
+            The transmission mechanism is negotiation, and it can fail completely.
+          </li>
+          <li>
+            IRR is sensitive to timing, not just totals. A ten-year hold with no interim
+            distributions looks worse on IRR than the same money returned sooner — one
+            reason OZ capital has favored projects that stabilize quickly.
+          </li>
+          <li>
+            "Legally permissible" and "practically financeable" are different tests. Most
+            OZ stacking questions pass the first and fail the second on cost.
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-sm text-oz-neutral-500">
+        Deeper: <a href="/capital-stack#nmtc" class="text-oz-blue underline">NMTC structuring</a> ·
+        <a href="/capital-stack#oz-reporting" class="text-oz-blue underline">what § 6039K gives you to negotiate with</a> ·
+        <a href="#prompts" data-jump-module="deal-economics" class="text-oz-blue underline">5 prompts for this module ↓</a>
+      </p>
+    </section>
+
+    <!-- ================================================ 6. evidence check -->
+    <section id="evidence-check" class="mb-14">
+      <p class="font-mono text-xs text-oz-neutral-400 mb-1">06</p>
+      <h2 class="text-xl font-semibold mb-3">
+        The evidence check<a href="#evidence-check" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Everything above describes how the machinery is supposed to work. This module is
+        the control: what the machinery actually did the first time. Treasury's Office of Tax
+        Analysis published the closing account of OZ 1.0 in June 2026 — cumulative qualified
+        investment of <strong>$112 billion</strong> through tax year 2024, across roughly
+        12,800 funds. By any measure of capital formation, the program worked.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Distribution is the harder story. By the end of 2024, 77% of designated zones had
+        received some qualified investment — a real improvement on the 48% recorded through
+        2020 — but 23% of tracts, just over 1,800 of them, had still received nothing, and
+        another 34% received under $1 million. The top 20% of funded tracts held about 90%
+        of all qualifying investment. Rural zones, 37.9% of all OZs under the OBBBA
+        definition, took <strong>16.1%</strong> of the money; a funded rural zone averaged
+        $7.3 million against $23.3 million for a funded non-rural one. Ranked on economic
+        distress, the most distressed deciles received well below an equal share while the
+        least distressed decile received more than double.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        The investor profile explains a good deal of that. Roughly 41,000 taxpayers reported
+        deferred gains in QOFs by 2024, and the typical individual filer had an adjusted
+        gross income of $738,000 against $54,000 for the typical Form 1040 filer. Individuals
+        rather than corporations dominate — about 85% of Forms 8997 — which is a sharp
+        contrast with NMTC, where nearly all qualifying investment is corporate. That
+        difference in who invests goes a long way toward explaining the difference in what
+        gets built. OZ 2.0's answer is disclosure: §§ 6039K and 6039L require annual
+        reporting on assets, employment, and housing units, and § 6726 attaches real
+        penalties for not filing. It is a genuine improvement on a regime with no
+        enforceable reporting at all. It is not, on its own, a guarantee of anything.
+      </p>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-oz-neutral-500 mb-2">Where people get confused</p>
+        <ul class="text-sm text-oz-neutral-700 list-disc pl-5 space-y-1.5">
+          <li>
+            "77% of zones got investment" and "the money was extraordinarily concentrated"
+            are both true. Coverage and distribution are different measurements, and the
+            optimistic reading of one is often used to answer a question about the other.
+          </li>
+          <li>
+            The rural gap is not solely an incentive problem, so a better incentive is not a
+            complete fix. Deal size, intermediary capacity, and the absence of an existing
+            pipeline all bind independently of the tax treatment.
+          </li>
+          <li>
+            Watch for "requires reporting" turning into "ensures benefit." § 6039K creates
+            data. What anyone does with it is a separate question.
+          </li>
+          <li>
+            Designation is a starting condition, not an outcome. The questions that decide
+            whether it was worth it are what gets built, for whom, and governed how.
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-sm text-oz-neutral-500">
+        Deeper: <a href="/oz1-retrospective" class="text-oz-blue underline">the full OZ 1.0 Retrospective</a> ·
+        <a href="/references#7-oz-1-0-evidence-base-academic-and-quasi-experimental" class="text-oz-blue underline">References §7–8</a> ·
+        <a href="#prompts" data-jump-module="evidence-check" class="text-oz-blue underline">5 prompts for this module ↓</a>
+      </p>
+    </section>
+
+    <!-- ================================================ prompts -->
+    <section id="prompts" class="mb-14 scroll-mt-4">
+      <h2 class="text-xl font-semibold mb-3">
+        Prompt library<a href="#prompts" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        Thirty prompts, five per module, written to make something teach you rather than
+        recite at you. Most ask for arithmetic, a worked example, or an argument you can be
+        wrong in front of. Copy one and paste it wherever you chat — or set up
+        <a href="https://github.com/vargovargo/oz2/tree/main/study" class="text-oz-blue underline" target="_blank" rel="noopener">the Project pack</a>
+        first so the answers come back grounded in the same sources this site uses.
+      </p>
+
+      <div class="flex flex-wrap gap-2 mb-6" id="filter-bar">
+        <button type="button" data-filter-chip="all" class="text-xs px-3 py-1.5 rounded-full border font-medium bg-oz-blue text-white border-oz-blue transition-colors">
+          All ({prompts.length})
+        </button>
+        {modules.map(m => (
+          <button type="button" data-filter-chip={m.id} class="text-xs px-3 py-1.5 rounded-full border font-medium bg-white text-oz-neutral-700 border-oz-neutral-200 hover:border-oz-blue transition-colors">
+            {m.short}
+          </button>
+        ))}
+      </div>
+
+      <p id="empty-state" class="hidden text-sm text-oz-neutral-500 mb-6">No prompts match the selected modules.</p>
+
+      <div class="grid gap-4" id="prompt-grid">
+        {prompts.map(p => (
+          <div data-prompt-card data-module={p.module} class="bg-white border border-oz-neutral-200 rounded p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="text-xs px-2 py-0.5 rounded border font-medium text-oz-blue bg-blue-50 border-blue-200 whitespace-nowrap">
+                {moduleShort[p.module]}
+              </span>
+              <div class="flex items-center gap-3 shrink-0">
+                <button
+                  type="button"
+                  data-copy={p.prompt}
+                  class="copy-btn text-xs font-medium text-oz-neutral-500 hover:text-oz-neutral-900 transition-colors"
+                >
+                  Copy
+                </button>
+                <a
+                  href={claudeUrl(p.prompt)}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-xs font-medium text-oz-blue hover:underline whitespace-nowrap"
+                >
+                  Open in Claude ↗
+                </a>
+              </div>
+            </div>
+            <p class="text-sm text-oz-neutral-900 mb-3">{p.prompt}</p>
+            <p class="text-xs text-oz-neutral-500">{p.why}</p>
+            {p.followups && p.followups.length > 0 && (
+              <details class="mt-3">
+                <summary class="text-xs text-oz-neutral-500 cursor-pointer hover:text-oz-neutral-700">
+                  Follow-ups
+                </summary>
+                <ul class="text-xs text-oz-neutral-700 list-disc pl-5 mt-2 space-y-1">
+                  {p.followups.map(f => <li>{f}</li>)}
+                </ul>
+              </details>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ================================================ glossary -->
+    <section id="glossary" class="mb-14">
+      <h2 class="text-xl font-semibold mb-3">
+        Glossary<a href="#glossary" class="anchor-link" aria-label="Copy link to section" set:html={anchorSvg}></a>
+      </h2>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        The acronyms, in one place. Most of the difficulty in reading OZ finance material is
+        that four different programs each have their own three-letter vocabulary and they
+        all appear in the same paragraph.
+      </p>
+      <dl class="border-t border-oz-neutral-200">
+        {glossary.map(g => (
+          <div class="border-b border-oz-neutral-200 py-4">
+            <dt class="mb-1">
+              <span class="font-semibold text-oz-neutral-900">{g.term}</span>
+              {g.expansion && <span class="text-sm text-oz-neutral-500"> — {g.expansion}</span>}
+            </dt>
+            <dd class="text-sm text-oz-neutral-700">
+              {g.definition}
+              {(g.site_link || (g.see_also && g.see_also.length > 0)) && (
+                <span class="block text-xs text-oz-neutral-400 mt-1.5">
+                  {g.see_also && g.see_also.length > 0 && <>See also: {g.see_also.join(', ')}. </>}
+                  {g.site_link && <a href={g.site_link} class="underline hover:text-oz-neutral-600">In context →</a>}
+                </span>
+              )}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="mb-8 text-xs text-oz-neutral-400 border-t border-oz-neutral-100 pt-6">
+      <p class="mb-1">
+        Every figure on this page is drawn from material already cited elsewhere on this
+        site: OZ and QROF mechanics from P.L. 119-21, IRS Rev. Proc. 2026-14, and Notice
+        2025-50 § 4.01; the CRA overlap from the FFIEC Census Flat File, 2025 exam year;
+        OZ 1.0 outcomes from Coyne &amp; Johnson, Treasury OTA Working Paper 128 (June 2026)
+        and Kennedy &amp; Wheeler (2022). Full citations in
+        <a href="/references" class="underline hover:text-oz-neutral-600">References</a>.
+      </p>
+      <p>
+        Prompts and glossary are generated from <code class="font-mono">data/study_prompts.yaml</code>
+        and <code class="font-mono">data/glossary.yaml</code>.
+        Last reviewed: <time datetime="2026-08-06">August 6, 2026</time>.
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  h2 .anchor-link {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0;
+    margin-left: 0.4rem;
+    color: #9ca3af;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: opacity 0.15s, color 0.15s;
+  }
+  h2:hover .anchor-link { opacity: 1; }
+  .anchor-link:hover { color: #6b7280; }
+  .anchor-link.copied { color: #10b981; opacity: 1; }
+  .copy-btn.copied { color: #10b981; }
+</style>
+
+<script>
+  // Section anchor links — copy the URL rather than navigating.
+  document.querySelectorAll('.anchor-link').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      navigator.clipboard.writeText(location.origin + location.pathname + a.getAttribute('href')).then(() => {
+        a.classList.add('copied');
+        setTimeout(() => a.classList.remove('copied'), 1500);
+      });
+    });
+  });
+
+  // Prompt copy buttons.
+  document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy;
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.classList.add('copied');
+        btn.textContent = 'Copied';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = original;
+        }, 1500);
+      });
+    });
+  });
+
+  // Module filtering for the prompt library — same pattern as case-studies.astro.
+  const chips = document.querySelectorAll<HTMLButtonElement>('[data-filter-chip]');
+  const cards = document.querySelectorAll<HTMLElement>('[data-prompt-card]');
+  const emptyState = document.getElementById('empty-state');
+  const active = new Set<string>();
+
+  function applyFilter() {
+    let visible = 0;
+    cards.forEach(card => {
+      const show = active.size === 0 || active.has(card.dataset.module ?? '');
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    emptyState?.classList.toggle('hidden', visible !== 0);
+
+    chips.forEach(chip => {
+      const key = chip.dataset.filterChip!;
+      const isActive = key === 'all' ? active.size === 0 : active.has(key);
+      chip.classList.toggle('bg-oz-blue', isActive);
+      chip.classList.toggle('text-white', isActive);
+      chip.classList.toggle('border-oz-blue', isActive);
+      chip.classList.toggle('bg-white', !isActive);
+      chip.classList.toggle('text-oz-neutral-700', !isActive);
+      chip.classList.toggle('border-oz-neutral-200', !isActive);
+    });
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.filterChip!;
+      if (key === 'all') {
+        active.clear();
+      } else if (active.has(key)) {
+        active.delete(key);
+      } else {
+        active.add(key);
+      }
+      applyFilter();
+    });
+  });
+
+  // "5 prompts for this module" links jump to the library with that filter applied.
+  document.querySelectorAll<HTMLAnchorElement>('[data-jump-module]').forEach(link => {
+    link.addEventListener('click', () => {
+      active.clear();
+      active.add(link.dataset.jumpModule!);
+      applyFilter();
+    });
+  });
+</script>
