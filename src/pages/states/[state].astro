@@ -4,6 +4,7 @@ import { getAllStates } from '@/lib/states';
 import type { StateMetadata } from '@/lib/states';
 import craPlaces from '../../../data/cra_lmi_places.json';
 import TractMap from '@/components/TractMap.astro';
+import { DATES, asOf, currentPhase, daysUntil, fmt } from '@/lib/timeline';
 
 export function getStaticPaths() {
   return getAllStates().map((s) => ({
@@ -21,7 +22,7 @@ const {
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
   state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects, cra_lmi_tracts,
-  ui_invest_q1_tracts,
+  ui_invest_q1_tracts, nomination,
 } = state;
 
 const statePlaces = (craPlaces as Record<string, { cities: {name:string,tracts:number}[], zips: {zip:string,city:string,tracts:number}[] }>)[fips] ?? null;
@@ -103,20 +104,43 @@ const tierColor: Record<string, string> = {
   no_public_process: 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200',
 };
 
-const today = new Date();
+const today = asOf();
 today.setHours(0, 0, 0, 0);
 const deadlinePassed = state_deadline
   ? new Date(state_deadline + 'T00:00:00') < today
   : false;
 
-// Federal nomination window: July 1 – September 28, 2026 (IRC § 1400Z-1 as amended; 90 days from July 1)
-const daysToWindowClose = Math.ceil(
-  (new Date('2026-09-28T23:59:59').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
-);
-
+// Program phase drives every date-dependent string on this page. See src/lib/timeline.ts.
+const phase = currentPhase();
+const windowOpen = phase === 'window_open';
 const daysToStateDeadline = (state_deadline && !deadlinePassed)
   ? Math.ceil((new Date(state_deadline + 'T00:00:00').getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
   : null;
+
+// Fourth headline tile: show the nearest live deadline that this reader can still act on,
+// and once nothing is actionable, count down to the date the designations bite.
+const headlineCounter: { label: string; value: number | string } =
+  daysToStateDeadline != null
+    ? { label: 'Days to state deadline', value: daysToStateDeadline }
+    : windowOpen
+      ? { label: 'Days left in federal window', value: Math.max(0, daysUntil(DATES.windowCloses)) }
+      : phase === 'awaiting_certification'
+        ? { label: 'Days until designations take effect', value: daysUntil(DATES.designationsEffective) }
+        : { label: 'Designation period ends', value: DATES.designationsExpire.slice(0, 4) };
+
+// Status badge: once the federal window shuts, every state is in the same posture —
+// filed and awaiting certification — regardless of what its own input process looked like.
+const awaitingCertification = phase === 'awaiting_certification';
+const badgeLabel = awaitingCertification
+  ? 'Awaiting certification'
+  : deadlinePassed
+    ? 'Input closed'
+    : tierLabel[status_tier];
+const badgeColor = awaitingCertification
+  ? 'text-oz-blue bg-blue-50 border-blue-200'
+  : deadlinePassed
+    ? 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200'
+    : tierColor[status_tier];
 ---
 
 <Layout title={name} description={`OZ 2.0 eligible tracts, nomination process, and coalition guidance for ${name}.`}>
@@ -134,8 +158,8 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
   <div class="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
     <h1 class="text-4xl font-bold">{name}</h1>
     <div class="flex flex-col items-start sm:items-end gap-2">
-      <span class={`text-sm px-3 py-1 rounded border font-medium ${deadlinePassed ? 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200' : tierColor[status_tier]}`}>
-        {deadlinePassed ? 'Input closed' : tierLabel[status_tier]}
+      <span class={`text-sm px-3 py-1 rounded border font-medium ${badgeColor}`}>
+        {badgeLabel}
       </span>
       <p class="text-xs text-oz-neutral-500">Last checked {last_checked}</p>
     </div>
@@ -147,8 +171,7 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
       { label: 'Total eligible tracts', value: total_eligible.toLocaleString() },
       { label: 'Rural eligible',        value: rural_eligible.toLocaleString() },
       { label: 'Max designations (25%)', value: max_designations.toLocaleString() },
-      { label: daysToStateDeadline != null ? 'Days to state deadline' : 'Days left in federal window',
-        value: daysToStateDeadline != null ? daysToStateDeadline : (daysToWindowClose > 0 ? daysToWindowClose : 'Closed') },
+      { label: headlineCounter.label, value: headlineCounter.value },
     ].map(({ label, value }) => (
       <div class="bg-white border border-oz-neutral-200 rounded p-5">
         <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
@@ -157,15 +180,26 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
     ))}
   </section>
 
+  {awaitingCertification && (
+    <div class="mb-10 border border-blue-200 bg-blue-50 rounded p-5">
+      <p class="text-sm text-oz-neutral-700">
+        <strong class="text-oz-neutral-900">The nomination window has closed.</strong>{' '}
+        {name}'s submission is with Treasury; certified designations take effect {fmt(DATES.designationsEffective)}.
+        The process detail below is kept as the record of how {name} gathered input — it is history now,
+        not a live channel. See <a href="/whats-next" class="text-oz-blue underline">what happens next</a>.
+      </p>
+    </div>
+  )}
+
   <!-- 2. Nomination process -->
   {status_tier === 'no_public_process' && (
     <section class="mb-10 border border-oz-neutral-200 bg-white rounded p-6">
       <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
       <p class="text-oz-neutral-500">
-        {name} has not yet published a public nomination process as of {last_checked}.
-        This is common — only a minority of states had published guidance as of late April 2026.
-        See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how to advocate</a> for steps
-        you can take now to engage the governor's office.
+        {name} never published a public nomination process; as of {last_checked} the selection was
+        made inside the governor's office without an open input channel. That was the case in a
+        handful of jurisdictions. The contacts below remain the route to finding out which tracts
+        were submitted.
       </p>
     </section>
   )}
@@ -174,21 +208,24 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
     <section class="mb-10 border border-oz-neutral-200 bg-white rounded p-6">
       <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
       <p class="text-oz-neutral-500 mb-4">
-        The lead agency has been identified, but no public process has been published yet.
-        Contact information is below. See <a href="/how-to-advocate" class="underline hover:text-oz-neutral-700">how to advocate</a>
-        for what to do while the process develops.
+        {awaitingCertification
+          ? `${name} identified a lead agency but never opened a public submission channel. What follows is what was published about its approach; the contacts below are how to ask what was submitted.`
+          : 'The lead agency has been identified, but no public process has been published yet. Contact information is below.'}
       </p>
       {process && <div class="prose prose-sm max-w-none text-oz-neutral-700" set:html={process} />}
     </section>
   )}
 
   {status_tier === 'public_process' && (
-    <section class={`mb-10 rounded p-6 border ${deadlinePassed ? 'border-oz-neutral-200 bg-white' : 'border-green-200 bg-green-50'}`}>
+    <section class={`mb-10 rounded p-6 border ${deadlinePassed || awaitingCertification ? 'border-oz-neutral-200 bg-white' : 'border-green-200 bg-green-50'}`}>
       <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
 
       {deadlinePassed && (
         <p class="text-sm font-medium text-oz-neutral-500 mb-3">
-          Community input window closed {state_deadline}. The state is now in internal review.
+          Community input window closed {state_deadline}.
+          {awaitingCertification
+            ? ' The state has since filed with Treasury.'
+            : ' The state is now in internal review.'}
         </p>
       )}
 
@@ -201,7 +238,7 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
           <a href={scoring_rubric_url} target="_blank" rel="noopener" class="text-oz-blue underline">Scoring rubric →</a>
         </p>
       )}
-      {application_portal_url && !deadlinePassed && (
+      {application_portal_url && !deadlinePassed && !awaitingCertification && (
         <p class="mt-2 text-sm">
           <a href={application_portal_url} target="_blank" rel="noopener" class="text-oz-blue underline">Application portal →</a>
         </p>
@@ -357,8 +394,72 @@ const daysToStateDeadline = (state_deadline && !deadlinePassed)
 
   <!-- 5. How to influence the nomination -->
   <section class="mb-10">
-    <h2 class="text-lg font-semibold mb-4">How to influence the nomination</h2>
-    {status_tier === 'public_process' && !deadlinePassed ? (
+    <h2 class="text-lg font-semibold mb-4">{awaitingCertification ? 'Where the nomination stands' : 'How to influence the nomination'}</h2>
+    {awaitingCertification ? (
+      <div class="bg-white border border-oz-neutral-200 rounded p-5">
+        <p class="text-sm text-oz-neutral-700 mb-3">
+          The federal determination period closed {fmt(DATES.windowCloses)}. {name}'s nominations are
+          with Treasury, which has 30 days from receipt to certify, extendable by another 30. Until
+          that certification lands, no list circulating publicly is final — states could revise a
+          filing right up to the moment their window shut, and Treasury does not act on early filings
+          early.
+        </p>
+
+        {nomination.status === 'filed_confirmed' ? (
+          <div class="mb-4 border-l-4 border-oz-blue bg-oz-neutral-50 pl-4 py-3 pr-4">
+            <p class="text-sm text-oz-neutral-700">
+              <strong class="text-oz-neutral-900">{name} has publicly confirmed its filing.</strong>{' '}
+              {[
+                nomination.tract_count != null ? `${nomination.tract_count.toLocaleString()} tracts nominated` : null,
+                nomination.submitted_date ? `submitted ${fmt(nomination.submitted_date)}` : null,
+                nomination.off_list_count != null ? `including ${nomination.off_list_count} off-list` : null,
+              ].filter(Boolean).join(', ')}. Treasury certification remains the authoritative record.
+              {nomination.list_published_url && (
+                <a href={nomination.list_published_url} target="_blank" rel="noopener" class="text-oz-blue underline"> See the published list →</a>
+              )}
+              {nomination.source_url && !nomination.list_published_url && (
+                <a href={nomination.source_url} target="_blank" rel="noopener" class="text-oz-blue underline"> Source →</a>
+              )}
+            </p>
+          </div>
+        ) : (
+          <div class="mb-4 border-l-4 border-oz-neutral-300 bg-oz-neutral-50 pl-4 py-3 pr-4">
+            <p class="text-sm text-oz-neutral-700">
+              {name} has not published the tract list it submitted, as of {nomination.last_checked}.
+              That is the norm — most states are waiting for Treasury to certify before releasing a
+              slate. The lead agency below is the place to ask.
+            </p>
+          </div>
+        )}
+        <p class="text-sm text-oz-neutral-700 mb-3">
+          Designations take effect {fmt(DATES.designationsEffective)} and run through {fmt(DATES.designationsExpire)}.
+          {name} could nominate up to {max_designations.toLocaleString()} of its {total_eligible.toLocaleString()} eligible
+          tracts, so most eligible tracts here will not be designated.
+        </p>
+        <p class="text-sm font-medium text-oz-neutral-900 mb-2">What is still worth doing:</p>
+        <ol class="text-sm text-oz-neutral-800 list-decimal list-inside space-y-2">
+          <li>
+            Ask the lead agency below, in writing, when it will publish the tract list it submitted.
+            Several states have committed to publishing after certification; asking moves that up.
+          </li>
+          <li>
+            Check whether any OZ 1.0 project in your jurisdiction is mid-stream. If the tract is not
+            renominated, the only route for post-2026 capital is a working capital safe harbor plan
+            adopted before {fmt(DATES.oz1GainInclusion)} — see <a href="/whats-next#transition" class="text-oz-blue underline">the transition rules</a>.
+          </li>
+          <li>
+            Shift from designation advocacy to deal readiness: site control, entitlements, a local
+            sponsor, and the community benefit terms you want attached. Designation does not finance
+            anything on its own.
+          </li>
+          <li>
+            Comment on the OZ reporting rule before {fmt(DATES.reportingCommentDeadline)}. It decides
+            how much tract-level detail about OZ 2.0 becomes public —
+            <a href="/whats-next#reporting" class="text-oz-blue underline">background here</a>.
+          </li>
+        </ol>
+      </div>
+    ) : status_tier === 'public_process' && !deadlinePassed ? (
       <div class="bg-green-50 border border-green-200 rounded p-5">
         <p class="text-sm font-semibold text-green-800 mb-3">The submission window is open. Here's what to do:</p>
         <ol class="text-sm text-oz-neutral-800 list-decimal list-inside space-y-2">

@@ -1,0 +1,293 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { DATES, MILESTONES, asOf, daysUntil, fmt, phaseCopy } from '@/lib/timeline';
+
+const copy = phaseCopy();
+const today = asOf();
+
+const anchor = (id: string) => `#${id}`;
+const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`;
+
+const milestonesWithState = MILESTONES.map((m) => ({
+  ...m,
+  past: new Date(m.date + 'T23:59:59') < today,
+  days: daysUntil(m.date),
+}));
+---
+
+<Layout
+  title="What Happens Next"
+  description="The OZ 2.0 timeline from the governors' filing deadline through certification, the January 1, 2027 effective date, and the 2027–2028 overlap with OZ 1.0."
+>
+  <div class="max-w-3xl">
+    <h1 class="text-3xl font-bold mb-4">What Happens Next</h1>
+    <p class="text-oz-neutral-500 mb-8">
+      {copy.banner} This page tracks the sequence from the governors' filing deadline through
+      Treasury certification and into the designation period — and what the transition rules
+      mean for anyone with a project already underway.
+    </p>
+
+    <!-- Status box -->
+    <div class="mb-10 border border-oz-blue/30 bg-blue-50 rounded p-6">
+      <p class="text-xs font-mono uppercase tracking-widest text-oz-blue mb-2">Where we are</p>
+      <p class="font-mono text-3xl font-semibold text-oz-neutral-900 mb-1">{copy.counter.value}</p>
+      <p class="text-sm text-oz-neutral-700 mb-4">{copy.counter.label}</p>
+      <p class="text-sm text-oz-neutral-700">{copy.callToAction}</p>
+    </div>
+
+    <section id="timeline" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The timeline<a href={anchor('timeline')} class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-6">
+        Dates below come from IRC § 1400Z-1 as amended by P.L. 119-21 (OBBBA) § 70421,
+        IRS Rev. Proc. 2026-14, and IRS Notice 2026-40. Where a date depends on whether a
+        state or Treasury takes an available extension, it is marked as the outer bound.
+      </p>
+
+      <ol class="relative border-l-2 border-oz-neutral-200 ml-2">
+        {milestonesWithState.map((m) => (
+          <li class="ml-6 pb-8 last:pb-0">
+            <span class={`absolute -left-[7px] w-3 h-3 rounded-full border-2 border-white ${m.past ? 'bg-oz-neutral-300' : 'bg-oz-blue'}`}></span>
+            <div class={`${m.past ? 'opacity-55' : ''}`}>
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <p class="font-mono text-sm text-oz-neutral-700">{fmt(m.date)}</p>
+                {m.contingent && (
+                  <span class="text-[10px] uppercase tracking-wide font-medium text-oz-amber bg-amber-50 border border-amber-200 rounded px-1.5 py-0.5">
+                    outer bound
+                  </span>
+                )}
+                {!m.past && m.days <= 120 && (
+                  <span class="text-[10px] uppercase tracking-wide font-medium text-oz-blue">
+                    in {m.days} {m.days === 1 ? 'day' : 'days'}
+                  </span>
+                )}
+              </div>
+              <p class="font-semibold text-oz-neutral-900 mb-1">{m.label}</p>
+              <p class="text-sm text-oz-neutral-700">{m.detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section id="certification" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">How certification actually works<a href={anchor('certification')} class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Three details about the filing process are worth knowing, because they change how much
+        weight to put on early state announcements.
+      </p>
+      <ul class="text-sm text-oz-neutral-700 space-y-3 mb-4">
+        <li>
+          <strong class="text-oz-neutral-900">A filing is not final until the window shuts.</strong>{' '}
+          States may submit and revise nominations multiple times during their determination
+          period. A state that announced a list in July can still change it.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Treasury does not process early filings early.</strong>{' '}
+          Nominations submitted at the start of the window are not acted on until the window
+          closes, so filing first confers no advantage and produces no earlier certification.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Extensions stack.</strong>{' '}
+          A governor may request one 30-day extension, moving that state's deadline to
+          {' '}{fmt(DATES.windowClosesExtended)}. Treasury then has 30 days to certify, extendable
+          by another 30. For a state that used every available extension, certification could
+          come as late as {fmt(DATES.certificationLatest)} — four days before the designations
+          take effect.
+        </li>
+      </ul>
+      <p class="text-sm text-oz-neutral-700">
+        The practical consequence: the authoritative OZ 2.0 map does not exist until Treasury
+        certifies. State announcements in the interim are useful signals, not designations.
+        Treat any list circulating before certification as provisional.
+      </p>
+    </section>
+
+    <section id="transition" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The 2027–2028 overlap<a href={anchor('transition')} class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        OZ 2.0 designations begin {fmt(DATES.designationsEffective)}, but OZ 1.0 designations do
+        not expire until {fmt(DATES.oz1Expires)} — {fmt(DATES.oz1ExpiresPuertoRico)} for Puerto
+        Rico tracts deemed designated under the original statute. Both maps are therefore live
+        during 2027 and 2028. IRS Notice 2026-40, issued in July 2026, is the transitional
+        guidance that governs the overlap.
+      </p>
+
+      <div class="bg-white border border-oz-neutral-200 rounded p-5 mb-4">
+        <p class="font-semibold text-oz-neutral-900 text-sm mb-3">What Notice 2026-40 establishes</p>
+        <ul class="text-sm text-oz-neutral-700 space-y-2">
+          <li>
+            Existing OZ 1.0 investors keep the 10-year tax-free appreciation benefit. Nothing
+            about the new program disturbs an investment already made.
+          </li>
+          <li>
+            New capital invested on or after {fmt(DATES.designationsEffective)} generally cannot
+            go into an OZ 1.0 tract that was not also designated under OZ 2.0. The narrow
+            exception is a project operating under a working capital safe harbor plan adopted on
+            or before {fmt(DATES.oz1GainInclusion)}, where at least 10 percent of the planned
+            working capital had been received and 5 percent expended by that date.
+          </li>
+          <li>
+            Existing OZ businesses may continue ordinary-course replacement and modernization of
+            property after 2026 without losing qualification.
+          </li>
+          <li>
+            The mandatory {fmt(DATES.oz1GainInclusion)} inclusion of gains deferred under OZ 1.0
+            cannot be deferred again by rolling into a new OZ investment.
+          </li>
+          <li>
+            Gains from an inclusion event remain eligible for reinvestment into OZ 2.0 and the
+            new rolling five-year deferral.
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded p-5 mb-4">
+        <p class="font-semibold text-oz-neutral-900 text-sm mb-2">Why this matters locally</p>
+        <p class="text-sm text-oz-neutral-700">
+          Every state is nominating from a smaller pool than it had in OZ 1.0, and the
+          contiguous-tract pathway is gone. Many tracts designated in 2018 will not be designated
+          again. If your community has a half-built OZ 1.0 project, the question is no longer
+          whether the tract stays eligible in the abstract — it is whether a working capital plan
+          was in place before the end of 2026, or whether that tract made your governor's OZ 2.0
+          list. Those are two different conversations with the lead agency, and the second one is
+          resolved at certification.
+        </p>
+      </div>
+
+      <p class="text-xs text-oz-neutral-500">
+        Notice 2026-40 is transitional guidance, not final regulations. Treasury has signaled that
+        provisions may be revised through the ongoing rulemaking. Confirm current treatment with
+        tax counsel before relying on any of the above for a transaction.
+      </p>
+    </section>
+
+    <section id="reporting" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The reporting rule — the thing to actually watch<a href={anchor('reporting')} class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The single largest documented failure of OZ 1.0 was that nobody could see where the money
+        went. The first tract-level investment data did not arrive until years in, and it showed
+        42 percent of capital landing in the top 1 percent of tracts and 8.5 percent reaching
+        rural areas — findings that arrived far too late to change program design.
+        See the <a href="/oz1-retrospective" class="text-oz-blue underline">OZ 1.0 retrospective</a>.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        OBBBA § 70421 addressed this directly by adding IRC §§ 6039K and 6039L, with penalties
+        under § 6726. On {fmt('2026-09-11')} Treasury and the IRS published
+        <strong class="text-oz-neutral-900"> REG-116506-25</strong>, the proposed regulations that
+        implement it. Under the proposal, a qualified opportunity fund must report annually:
+      </p>
+      <ul class="text-sm text-oz-neutral-700 space-y-1.5 mb-4 list-disc list-inside">
+        <li>total assets and the value of qualified OZ property held</li>
+        <li>the specific census tracts invested in, and the amount in each qualified OZ business</li>
+        <li>NAICS codes for the underlying businesses</li>
+        <li>approximate full-time employees</li>
+        <li>residential unit counts where the investment is a housing development</li>
+        <li>whether tangible and intangible property is owned or leased</li>
+      </ul>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Treasury is required to publish annual reports beginning in 2027, with expanded reports in
+        year six and year eleven. Non-compliance carries a penalty under new IRC § 6726 of $500 per
+        day, capped at $10,000 — or $50,000 for a large QOF, meaning one holding more than
+        $10 million in gross assets. Intentional disregard raises the daily rate to $2,500, capped
+        at $250,000 for a large QOF. OZ 1.0, by contrast, required only an annual self-certification
+        on Form 8996 with no meaningful penalty behind it.
+      </p>
+      <div class="bg-white border-l-4 border-oz-blue pl-4 py-3 pr-4 mb-4">
+        <p class="text-sm text-oz-neutral-700">
+          <strong class="text-oz-neutral-900">Comments close {fmt(DATES.reportingCommentDeadline)}</strong>,
+          with a telephonic public hearing on {fmt(DATES.reportingHearing)}. This is the rule that
+          decides how much the public will be able to see about OZ 2.0 — including whether the
+          tract-level detail is published in a form that communities can actually use, or only
+          filed with the IRS. For anyone who wants OZ 2.0 evaluated more honestly than OZ 1.0 was,
+          this comment period matters more than any remaining nomination advocacy.
+        </p>
+      </div>
+      <p class="text-xs text-oz-neutral-500">
+        REG-116506-25 (RIN 1545-BR82), <em>Information Reporting Regarding Qualified Opportunity
+        Zones and Updated Qualified Opportunity Fund Certification and Decertification
+        Procedures</em>. See <a href="/references" class="underline hover:text-oz-neutral-700">references §17</a>.
+      </p>
+    </section>
+
+    <section id="what-to-do" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">What to do in the meantime<a href={anchor('what-to-do')} class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+
+      <div class="space-y-4">
+        <div class="bg-white border border-oz-neutral-200 rounded p-5">
+          <p class="font-semibold text-oz-neutral-900 mb-2">Local planners and EDD staff</p>
+          <p class="text-sm text-oz-neutral-700">
+            Nomination advocacy is effectively over. The work that pays off now is readiness:
+            site control, entitlements, a defensible pro forma, and a named local partner for any
+            project you want financed in 2027. Ask your lead agency, in writing, when it will
+            publish the tracts it submitted — several states have committed to publishing after
+            certification and will do so faster if asked. If a tract you care about is not on the
+            list, the <a href="/capital-stack" class="text-oz-blue underline">capital stack</a> page
+            covers what still works without an OZ designation: NMTC, CDFI lending, and CRA-motivated
+            bank capital all run on their own eligibility tests.
+          </p>
+        </div>
+
+        <div class="bg-white border border-oz-neutral-200 rounded p-5">
+          <p class="font-semibold text-oz-neutral-900 mb-2">Community organizations</p>
+          <p class="text-sm text-oz-neutral-700">
+            The leverage moment shifts from which tracts get designated to what terms attach to
+            the projects inside them. Community benefits agreements are negotiated at the deal,
+            not at the designation, and the new § 6039K reporting gives those agreements something
+            OZ 1.0 lacked — a public record to check them against. The
+            <a href="/how-to-advocate" class="text-oz-blue underline"> coalition playbook</a> covers
+            how to organize for that, and the
+            <a href="/case-studies" class="text-oz-blue underline"> case studies</a> show what
+            community-aligned OZ deals looked like when they worked.
+          </p>
+        </div>
+
+        <div class="bg-white border border-oz-neutral-200 rounded p-5">
+          <p class="font-semibold text-oz-neutral-900 mb-2">Investors and fund sponsors</p>
+          <p class="text-sm text-oz-neutral-700">
+            Two deadlines are converging: the {fmt(DATES.oz1GainInclusion)} mandatory inclusion on
+            OZ 1.0 deferrals, which cannot be re-deferred, and the start of the QROF rural
+            provisions on {fmt(DATES.designationsEffective)} — a 30 percent basis step-up at five
+            years and a 50 percent substantial-improvement threshold instead of 100 percent.
+            The <a href="/capital-stack#qrof-mechanics" class="text-oz-blue underline">QROF mechanics</a>
+            section covers how that changes rural deal math, and
+            <a href="/learn" class="text-oz-blue underline"> the finance study guide</a> works
+            through the underlying arithmetic.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <p class="text-xs text-oz-neutral-500 border-t border-oz-neutral-200 pt-4">
+      Sources for this page are listed in <a href="/references" class="underline hover:text-oz-neutral-700">references §17</a>.
+      Last reviewed {fmt('2026-09-18')}.
+    </p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.anchor-link').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        navigator.clipboard.writeText(location.origin + location.pathname + a.getAttribute('href')).then(() => {
+          a.classList.add('copied');
+          setTimeout(() => a.classList.remove('copied'), 1500);
+        });
+      });
+    });
+  </script>
+
+  <style>
+    h2 .anchor-link {
+      display: inline-flex;
+      align-items: center;
+      opacity: 0;
+      margin-left: 0.4rem;
+      color: #9ca3af;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: opacity 0.15s, color 0.15s;
+    }
+    h2:hover .anchor-link { opacity: 1; }
+    .anchor-link:hover { color: #6b7280; }
+    .anchor-link.copied { color: #10b981; opacity: 1; }
+  </style>
+</Layout>

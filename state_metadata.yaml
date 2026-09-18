@@ -44,14 +44,12 @@ alabama:
     url: https://adeca.alabama.gov/opportunityzones/
     contact_email: OpportunityZones@adeca.alabama.gov
     contact_phone: (334) 242-5100
-  process: >-
-    ADECA has published a formal OZ 2.0 nomination process on its Opportunity
-    Zones page: a Nomination Guide, a Main Nomination Form, and a Tract Nomination
-    Schedule. ADECA is hosting a nomination workshop on June 30, 2026 to walk
-    jurisdictions through the form. Submit completed nominations to
-    OpportunityZones@adeca.alabama.gov by noon CDT on July 31, 2026. Alabama may
-    nominate up to 141 of 563 eligible tracts; lean on the rural flag under Rev.
-    Proc. 2026-14 and county-level investment readiness data to make your case.
+  process: 'ADECA has published a formal OZ 2.0 nomination process on its Opportunity Zones
+    page: a Nomination Guide, a Main Nomination Form, and a Tract Nomination Schedule. ADECA
+    is hosting a nomination workshop on June 30, 2026 to walk jurisdictions through the form.
+    Submit completed nominations to OpportunityZones@adeca.alabama.gov by noon CDT on July
+    31, 2026. Alabama may nominate up to 141 of 563 eligible tracts; lean on the rural flag
+    under Rev. Proc. 2026-14 and county-level investment readiness data to make your case.'
   scoring_rubric_url: null
   state_deadline: '2026-07-31'
   application_portal_url: https://adeca.alabama.gov/opportunityzones/
@@ -73,9 +71,18 @@ alabama:
   nmtc_projects: 82
   cra_lmi_tracts: 394
   ui_invest_q1_tracts: 71
-  notes: No OZ 2.0 process published as of 2026-05-07. ADECA is confirmed lead per
-    EIG map. Main phone (334) 242-5100; Community and Economic Development division
-    administers OZ program.
+  notes: No OZ 2.0 process published as of 2026-05-07. ADECA is confirmed lead per EIG map.
+    Main phone (334) 242-5100; Community and Economic Development division administers OZ
+    program.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 alaska:
   name: Alaska
   fips: '02'
@@ -122,19 +129,17 @@ alaska:
     url: https://www.commerce.alaska.gov/web/
     contact_email: dcced.commissioner@alaska.gov
     contact_phone: (907) 465-2500
-  process: DCCED is Alaska's confirmed lead agency for OZ 2.0. The state did run a
-    formal public notice and written-comment period — a "Proposed Statewide Economic
-    Development Opportunity Zones 2026 Map" — published around April 16, 2026 with
-    comments due April 30, 2026, but that window has closed and no successor
-    application or portal has appeared. Email dcced.commissioner@alaska.gov today —
-    that is the general commissioner's inbox, so address your message to the
-    economic development staff and ask specifically who is coordinating OZ 2.0
-    nominations and whether late input is still possible; attach a one-page summary
-    of your eligible tracts and their development readiness. With only 32 eligible
-    tracts statewide and a minimum designation floor of 25, Alaska's choices are
-    unusually constrained; watch the governor's office for any executive order or
-    RFP that formalizes the selection process before the July 1, 2026 federal
-    window opens.
+  process: DCCED is Alaska's confirmed lead agency for OZ 2.0. The state did run a formal
+    public notice and written-comment period — a "Proposed Statewide Economic Development
+    Opportunity Zones 2026 Map" — published around April 16, 2026 with comments due April
+    30, 2026, but that window has closed and no successor application or portal has appeared.
+    Email dcced.commissioner@alaska.gov today — that is the general commissioner's inbox,
+    so address your message to the economic development staff and ask specifically who is
+    coordinating OZ 2.0 nominations and whether late input is still possible; attach a one-page
+    summary of your eligible tracts and their development readiness. With only 32 eligible
+    tracts statewide and a minimum designation floor of 25, Alaska's choices are unusually
+    constrained; watch the governor's office for any executive order or RFP that formalizes
+    the selection process before the July 1, 2026 federal window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -156,10 +161,18 @@ alaska:
   nmtc_projects: 24
   cra_lmi_tracts: 26
   ui_invest_q1_tracts: null
-  notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published
-    as of 2026-05-07. Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500.
-    Alaska has only 32 eligible tracts; statutory minimum 25 designations means very
-    limited discretion.
+  notes: DCCED confirmed lead. No OZ 2.0 nomination process or deadline published as of 2026-05-07.
+    Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500. Alaska has only 32
+    eligible tracts; statutory minimum 25 designations means very limited discretion.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 arizona:
   name: Arizona
   fips: '04'
@@ -206,20 +219,18 @@ arizona:
     url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
     contact_email: oz@azcommerce.com
     contact_phone: null
-  process: The Arizona Commerce Authority administers a map-based recommendation process
-    in which counties, tribal nations, and—in Maricopa, Pima, and Pinal counties—incorporated
+  process: The Arizona Commerce Authority administers a map-based recommendation process in
+    which counties, tribal nations, and—in Maricopa, Pima, and Pinal counties—incorporated
     communities of 10,000 or more submit tract nominations directly through an interactive
-    GIS tool, each providing a brief written justification per tract. Jurisdictions
-    are generally asked to recommend no more than one quarter of their eligible tracts;
-    tribal nations may weigh in on tribal territory statewide regardless of county
-    boundaries. ACA's published criteria emphasize investment readiness, including
-    available water, power, and sewer connections, zoning and entitlement status, proximity
-    to roads and population centers, open land or sites suitable for redevelopment, and
-    the capacity to support investor-profitable projects. ACA has since set a firm
-    community submission deadline of 4:00 p.m. MT on June 30, 2026 via its
-    recommendation portal/map tool. ACA intends to submit Arizona's nominations to
-    Treasury on or around July 1, 2026, with new designations taking effect
-    January 1, 2027.
+    GIS tool, each providing a brief written justification per tract. Jurisdictions are generally
+    asked to recommend no more than one quarter of their eligible tracts; tribal nations may
+    weigh in on tribal territory statewide regardless of county boundaries. ACA's published
+    criteria emphasize investment readiness, including available water, power, and sewer connections,
+    zoning and entitlement status, proximity to roads and population centers, open land or
+    sites suitable for redevelopment, and the capacity to support investor-profitable projects.
+    ACA has since set a firm community submission deadline of 4:00 p.m. MT on June 30, 2026
+    via its recommendation portal/map tool. ACA intends to submit Arizona's nominations to
+    Treasury on or around July 1, 2026, with new designations taking effect January 1, 2027.
   scoring_rubric_url: null
   state_deadline: '2026-06-30'
   application_portal_url: https://www.azcommerce.com/arizona-opportunity-zones/oz-20-recommendation-process/
@@ -241,9 +252,19 @@ arizona:
   nmtc_projects: 78
   cra_lmi_tracts: 388
   ui_invest_q1_tracts: 187
-  notes: Community deadline described as mid-May 2026 but not formally confirmed as
-    of 2026-05-06. Tribal nations have statewide input rights on tribal territory tracts.
-    ACA targets July 1, 2026 for Treasury submission.
+  notes: Community deadline described as mid-May 2026 but not formally confirmed as of 2026-05-06.
+    Tribal nations have statewide input rights on tribal territory tracts. ACA targets July
+    1, 2026 for Treasury submission.
+  nomination:
+    status: filed_confirmed
+    submitted_date: '2026-07-09'
+    tract_count: 125
+    off_list_count: 3
+    list_published_url: null
+    source_url: https://opportunityzones.com/2026/08/oz-live-392/
+    source_note: 125 tracts is exactly Arizona's 25% cap on 500 eligible tracts, which corroborates
+      the reported figure. Off-list count is secondary-sourced; confirm against Treasury certification.
+    last_checked: '2026-09-18'
 arkansas:
   name: Arkansas
   fips: '05'
@@ -290,17 +311,15 @@ arkansas:
     url: https://www.arkansasedc.com/community-resources/opportunity-zones
     contact_email: info@arkansasedc.com
     contact_phone: (501) 682-5996
-  process: AEDC is Arkansas's confirmed lead agency for OZ 2.0 designations, but
-    no formal nomination process, application portal, or community input period had
-    been published as of May 7, 2026; the commission's OZ page still reflects OZ 1.0
-    content. Email info@arkansasedc.com or call (501) 682-5996 today — ask which
-    staff member is coordinating OZ 2.0 nominations, when community input will open,
-    and whether AEDC plans to hold listening sessions; be prepared to share your
-    tract's census GEOID, rural-flag status per Rev. Proc. 2026-14, and any existing
-    development commitments. Watch the governor's press releases and AEDC's newsroom
-    for any solicitation of community recommendations; with the federal nomination
-    window opening July 1, 2026, state-level guidance is likely to appear in May
-    or June 2026.
+  process: AEDC is Arkansas's confirmed lead agency for OZ 2.0 designations, but no formal
+    nomination process, application portal, or community input period had been published as
+    of May 7, 2026; the commission's OZ page still reflects OZ 1.0 content. Email info@arkansasedc.com
+    or call (501) 682-5996 today — ask which staff member is coordinating OZ 2.0 nominations,
+    when community input will open, and whether AEDC plans to hold listening sessions; be
+    prepared to share your tract's census GEOID, rural-flag status per Rev. Proc. 2026-14,
+    and any existing development commitments. Watch the governor's press releases and AEDC's
+    newsroom for any solicitation of community recommendations; with the federal nomination
+    window opening July 1, 2026, state-level guidance is likely to appear in May or June 2026.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -322,8 +341,17 @@ arkansas:
   nmtc_projects: 66
   cra_lmi_tracts: 227
   ui_invest_q1_tracts: 49
-  notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published.
-    General contact info@arkansasedc.com / (501) 682-5996.
+  notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published. General
+    contact info@arkansasedc.com / (501) 682-5996.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 california:
   name: California
   fips: '06'
@@ -370,22 +398,19 @@ california:
     url: https://economicdevelopment.business.ca.gov/place-based-strategies/opportunity-zones/
     contact_email: Zones@GOBIZ.CA.GOV
     contact_phone: null
-  process: GO-Biz still has not published a formal community nomination portal,
-    scoring criteria, or public input deadline, but its Regional Economic
-    Development Initiatives (REDI) team is running an "Opportunity Zones 2.0
-    Office Hours Series" (Tuesdays through June 30, 2026) and has circulated an
-    "Opportunity Zones 2.0 Local Authority Recommendation Form" for local
-    governments, economic development organizations, and BIDs to recommend
-    tracts — see opzones.ca.gov and the announcement at business.ca.gov. No
-    public deadline or scoring rubric has been attached to that form yet. Email
-    Zones@GOBIZ.CA.GOV — address it to the OZ team (Trelynd Bradley, Senior
-    Business Development Specialist, is named as a point of contact) — to join
-    an office-hours session and ask when (or whether) the recommendation form
-    will get a published deadline; attach a one-page summary of your eligible
-    tract(s) with the census GEOID, rural-flag status, and any investor or
-    project commitment. California may nominate up to 618 of its 2,469 eligible
-    tracts, so competitive pressure on high-readiness tracts is likely to be
-    significant.
+  process: GO-Biz still has not published a formal community nomination portal, scoring criteria,
+    or public input deadline, but its Regional Economic Development Initiatives (REDI) team
+    is running an "Opportunity Zones 2.0 Office Hours Series" (Tuesdays through June 30, 2026)
+    and has circulated an "Opportunity Zones 2.0 Local Authority Recommendation Form" for
+    local governments, economic development organizations, and BIDs to recommend tracts —
+    see opzones.ca.gov and the announcement at business.ca.gov. No public deadline or scoring
+    rubric has been attached to that form yet. Email Zones@GOBIZ.CA.GOV — address it to the
+    OZ team (Trelynd Bradley, Senior Business Development Specialist, is named as a point
+    of contact) — to join an office-hours session and ask when (or whether) the recommendation
+    form will get a published deadline; attach a one-page summary of your eligible tract(s)
+    with the census GEOID, rural-flag status, and any investor or project commitment. California
+    may nominate up to 618 of its 2,469 eligible tracts, so competitive pressure on high-readiness
+    tracts is likely to be significant.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -407,10 +432,18 @@ california:
   nmtc_projects: 405
   cra_lmi_tracts: 1944
   ui_invest_q1_tracts: 754
-  notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders
-    to Help Center via gobiz.zendesk.com. No formal application or deadline published
-    as of 2026-05-07. Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley named as OZ
-    point of contact.
+  notes: GO-Biz acknowledges July 1, 2026 federal window and directs stakeholders to Help
+    Center via gobiz.zendesk.com. No formal application or deadline published as of 2026-05-07.
+    Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley named as OZ point of contact.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 colorado:
   name: Colorado
   fips: 08
@@ -457,15 +490,14 @@ colorado:
     url: https://oedit.colorado.gov/colorado-opportunity-zone-program
     contact_email: oedit.info@state.co.us
     contact_phone: (303) 892-3840
-  process: OEDIT has been running a multi-month public engagement process since fall
-    2025 to inform Governor Polis's nomination of up to 90 of Colorado's 360 eligible
-    tracts. Regional convenings ran through April 2026; an in-person Western Slope
-    event was held May 11 at Colorado Mesa University in Grand Junction. OEDIT has
-    published a public GIS mapping tool and an online feedback form at
-    oedit.colorado.gov/colorado-opportunity-zone-program through which any stakeholder
-    can submit tract-level input; the community submission deadline is June 30, 2026.
-    Email oedit.info@state.co.us or call (303) 892-3840 for questions on how
-    rural-flagged tracts are weighted in OEDIT's review.
+  process: OEDIT has been running a multi-month public engagement process since fall 2025
+    to inform Governor Polis's nomination of up to 90 of Colorado's 360 eligible tracts. Regional
+    convenings ran through April 2026; an in-person Western Slope event was held May 11 at
+    Colorado Mesa University in Grand Junction. OEDIT has published a public GIS mapping tool
+    and an online feedback form at oedit.colorado.gov/colorado-opportunity-zone-program through
+    which any stakeholder can submit tract-level input; the community submission deadline
+    is June 30, 2026. Email oedit.info@state.co.us or call (303) 892-3840 for questions on
+    how rural-flagged tracts are weighted in OEDIT's review.
   scoring_rubric_url: null
   state_deadline: '2026-06-30'
   application_portal_url: https://oedit.colorado.gov/colorado-opportunity-zone-program
@@ -491,6 +523,15 @@ colorado:
     Community submission deadline confirmed June 30, 2026 (verified 2026-06-16). Regional
     convenings through April 2026; Western Slope event May 11. Contact oedit.info@state.co.us
     / (303) 892-3840.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 connecticut:
   name: Connecticut
   fips: 09
@@ -534,16 +575,15 @@ connecticut:
     url: https://portal.ct.gov/DECD/Services/Business-Development/Tax-Incentives/Opportunity-Zones
     contact_email: DECD.ozprojects@ct.gov
     contact_phone: (860) 280-8710
-  process: "As of May 7, 2026, DECD has not published a formal nomination process,
-    community application portal, or internal deadline for OZ 2.0; the agency's page
-    still primarily reflects OZ 1.0 information. If your jurisdiction contains one
-    of Connecticut's 243 eligible tracts, email DECD.ozprojects@ct.gov today to
-    introduce your project or tract and ask when community input will be solicited
-    — DECD Commissioner Matthew Pugliese's office has been identified as the
-    coordination point for OZ 2.0. Watch for a DECD announcement of a community
-    submission process as the federal nomination window (July 1–September 28,
-    2026, extendable to October 28) approaches; Connecticut may nominate up to 61
-    tracts from its pool of 243 eligible."
+  process: As of May 7, 2026, DECD has not published a formal nomination process, community
+    application portal, or internal deadline for OZ 2.0; the agency's page still primarily
+    reflects OZ 1.0 information. If your jurisdiction contains one of Connecticut's 243 eligible
+    tracts, email DECD.ozprojects@ct.gov today to introduce your project or tract and ask
+    when community input will be solicited — DECD Commissioner Matthew Pugliese's office has
+    been identified as the coordination point for OZ 2.0. Watch for a DECD announcement of
+    a community submission process as the federal nomination window (July 1–September 28,
+    2026, extendable to October 28) approaches; Connecticut may nominate up to 61 tracts from
+    its pool of 243 eligible.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -566,6 +606,15 @@ connecticut:
   cra_lmi_tracts: 209
   ui_invest_q1_tracts: 40
   notes: Contact confirmed. No application portal or deadline published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 delaware:
   name: Delaware
   fips: '10'
@@ -591,28 +640,27 @@ delaware:
     url: https://business.delaware.gov/opportunity-zones/
     contact_email: business@delaware.gov
     contact_phone: (302) 739-4271
-  process: "SCARCITY ALERT: As of early April 2026, 23 of Delaware's 25 available\
-    \ designation slots had already been claimed by community nominations — only 2\
-    \ remain. The submission portal closes May 15, 2026. If your tract has not yet\
-    \ been nominated, file immediately at the DSB Formstack portal. The Delaware Division\
-    \ of Small Business (DSB), in partnership with Governor Matt Meyer, runs the process:\
-    \ any investor, developer, financial institution, property owner, local official,\
-    \ or community leader may submit a nomination; DSB then advises the Governor,\
-    \ who has until September 30, 2026 to submit up to 25 tracts to Treasury for\
-    \ designation beginning July 1, 2026. No formal scoring rubric has been published;\
-    \ build a business case documenting investible assets, existing development momentum,\
-    \ and long-term community impact — and recruit additional stakeholders to co-endorse\
-    \ the same tract to strengthen its standing."
+  process: 'SCARCITY ALERT: As of early April 2026, 23 of Delaware''s 25 available designation
+    slots had already been claimed by community nominations — only 2 remain. The submission
+    portal closes May 15, 2026. If your tract has not yet been nominated, file immediately
+    at the DSB Formstack portal. The Delaware Division of Small Business (DSB), in partnership
+    with Governor Matt Meyer, runs the process: any investor, developer, financial institution,
+    property owner, local official, or community leader may submit a nomination; DSB then
+    advises the Governor, who has until September 30, 2026 to submit up to 25 tracts to Treasury
+    for designation beginning July 1, 2026. No formal scoring rubric has been published; build
+    a business case documenting investible assets, existing development momentum, and long-term
+    community impact — and recruit additional stakeholders to co-endorse the same tract to
+    strengthen its standing.'
   scoring_rubric_url: null
   state_deadline: '2026-05-15'
   application_portal_url: https://degovforms.formstack.com/forms/opportunityzonenomination
   tribal_consultation:
-    framework: "Delaware has no federally recognized tribes. Sussex County (14 eligible\
-      \ tracts) sits within the historic Nanticoke homeland; the Nanticoke Indian\
-      \ Association and the Lenape Indian Tribe of Delaware are both state-recognized\
-      \ organizations with cultural interests in Sussex County tracts. No formal tribal\
-      \ consultation protocol has been published by DSB. If nominating a Sussex County\
-      \ tract, consider reaching out to these groups before submitting."
+    framework: Delaware has no federally recognized tribes. Sussex County (14 eligible tracts)
+      sits within the historic Nanticoke homeland; the Nanticoke Indian Association and the
+      Lenape Indian Tribe of Delaware are both state-recognized organizations with cultural
+      interests in Sussex County tracts. No formal tribal consultation protocol has been published
+      by DSB. If nominating a Sussex County tract, consider reaching out to these groups before
+      submitting.
     citation: null
   regional_edds: []
   rural_partners:
@@ -629,10 +677,19 @@ delaware:
   nmtc_projects: 6
   cra_lmi_tracts: 38
   ui_invest_q1_tracts: 11
-  notes: "Community nomination window closes May 15, 2026; Governor's submission deadline\
-    \ to Treasury is September 30, 2026. No scoring rubric published. Only 2 of 25\
-    \ designation slots remain as of early April 2026 reporting (23 already nominated).\
-    \ max_designations corrected from 16 to 25 per DSB press release (March 2026)."
+  notes: Community nomination window closes May 15, 2026; Governor's submission deadline to
+    Treasury is September 30, 2026. No scoring rubric published. Only 2 of 25 designation
+    slots remain as of early April 2026 reporting (23 already nominated). max_designations
+    corrected from 16 to 25 per DSB press release (March 2026).
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 district-of-columbia:
   name: District of Columbia
   fips: '11'
@@ -652,9 +709,9 @@ district-of-columbia:
     url: https://dmped.dc.gov/page/opportunity-zones-washington-dc
     contact_email: null
     contact_phone: null
-  process: The District of Columbia has no public OZ 2.0 nomination process as of
-    May 7, 2026; visit /how-to-advocate for steps to engage DMPED directly and push
-    for a community input process before the July 1 federal nomination window opens.
+  process: The District of Columbia has no public OZ 2.0 nomination process as of May 7, 2026;
+    visit /how-to-advocate for steps to engage DMPED directly and push for a community input
+    process before the July 1 federal nomination window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -676,9 +733,18 @@ district-of-columbia:
   nmtc_projects: 44
   cra_lmi_tracts: 55
   ui_invest_q1_tracts: 22
-  notes: DMPED presumed lead. No OZ 2.0 guidance published as of 2026-05-07. DC eligible
-    for statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects
-    OZ 1.0 history only.
+  notes: DMPED presumed lead. No OZ 2.0 guidance published as of 2026-05-07. DC eligible for
+    statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects OZ 1.0 history
+    only.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 florida:
   name: Florida
   fips: '12'
@@ -725,17 +791,16 @@ florida:
     url: https://floridajobs.org/business-growth-and-partnerships/for-businesses-and-entrepreneurs/business-resource/opportunity-zones-program
     contact_email: null
     contact_phone: null
-  process: "Public input is now closed. FloridaCommerce began briefing communities
-    in November 2025 and formally launched a statewide OZ 2.0 Tour in late February
-    2026, conducting workshops across Florida through April 2026 — including a documented
-    session in Tallahassee on April 9 — to solicit census tract recommendations via
-    an online form at floridajobs.org/OpportunityZones. The form was accompanied by
-    three eligibility maps helping communities identify and document candidate tracts.
-    The community input window closed in April 2026 (approximately April 30); FloridaCommerce
-    is now compiling submissions to prepare a recommendation package for the governor
-    prior to July 1, 2026, when the federal 90-day nomination window opens. Florida
-    may nominate up to 340 of its 1,360 eligible tracts; Treasury has up to 60 days
-    after submission to designate, with new zones effective January 1, 2027."
+  process: Public input is now closed. FloridaCommerce began briefing communities in November
+    2025 and formally launched a statewide OZ 2.0 Tour in late February 2026, conducting workshops
+    across Florida through April 2026 — including a documented session in Tallahassee on April
+    9 — to solicit census tract recommendations via an online form at floridajobs.org/OpportunityZones.
+    The form was accompanied by three eligibility maps helping communities identify and document
+    candidate tracts. The community input window closed in April 2026 (approximately April
+    30); FloridaCommerce is now compiling submissions to prepare a recommendation package
+    for the governor prior to July 1, 2026, when the federal 90-day nomination window opens.
+    Florida may nominate up to 340 of its 1,360 eligible tracts; Treasury has up to 60 days
+    after submission to designate, with new zones effective January 1, 2027.
   scoring_rubric_url: null
   state_deadline: '2026-04-30'
   application_portal_url: https://www.floridajobs.org/OpportunityZones
@@ -758,6 +823,15 @@ florida:
   cra_lmi_tracts: 1010
   ui_invest_q1_tracts: 504
   notes: Public input window closed. 340 tracts to be nominated from 1,360 eligible.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 georgia:
   name: Georgia
   fips: '13'
@@ -804,14 +878,12 @@ georgia:
     url: https://dca.georgia.gov/financing-tools/incentives/federal-opportunity-zones
     contact_email: federalopportunityzones@dca.ga.gov
     contact_phone: (404) 679-4840
-  process: >-
-    DCA has launched a live Georgia Opportunity Zone Nomination Portal
-    (gaoznominations.powerappsportals.com) requiring one form submission per
-    nominated census tract, with applicants asked to justify why each tract
-    deserves priority consideration. Nominations are due July 15, 2026. With
-    942 eligible tracts and a cap of 236 nominations, build a clear case per
-    tract — investment readiness, community support, and the rural flag under
-    Rev. Proc. 2026-14 where applicable — before submitting through the portal.
+  process: DCA has launched a live Georgia Opportunity Zone Nomination Portal (gaoznominations.powerappsportals.com)
+    requiring one form submission per nominated census tract, with applicants asked to justify
+    why each tract deserves priority consideration. Nominations are due July 15, 2026. With
+    942 eligible tracts and a cap of 236 nominations, build a clear case per tract — investment
+    readiness, community support, and the rural flag under Rev. Proc. 2026-14 where applicable
+    — before submitting through the portal.
   scoring_rubric_url: null
   state_deadline: '2026-07-15'
   application_portal_url: https://gaoznominations.powerappsportals.com/
@@ -834,6 +906,15 @@ georgia:
   cra_lmi_tracts: 710
   ui_invest_q1_tracts: 194
   notes: DCA confirmed lead. No OZ 2.0 application or deadline published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 hawaii:
   name: Hawaii
   fips: '15'
@@ -862,17 +943,15 @@ hawaii:
     url: https://invest.hawaii.gov/business-programs/opportunity-zones/about-opportunity-zones/
     contact_email: mark.j.ritchie@hawaii.gov
     contact_phone: (808) 587-2785
-  process: "As of May 7, 2026, DBEDT’s Business Development and Support Division
-    (BDSD) has not published any OZ 2.0 nomination guidance, community application
-    process, or deadline; the invest.hawaii.gov/oz page reflects OZ 1.0 content
-    only. Contact Mark J. Ritchie, Branch Chief at BDSD, today at
-    mark.j.ritchie@hawaii.gov or (808) 587-2785 to ask whether DBEDT is accepting
-    community tract recommendations and what form that input should take. Note that
-    IRS Notice 2025-50 applies a special Community Development Plan (CDP) rule for
-    Hawaii that may affect how rural-flagged tracts are treated; confirm with Ritchie
-    whether DBEDT is accounting for that provision. Hawaii may nominate up to 22 of
-    its 88 eligible tracts; watch for any Governor’s office announcement before the
-    July 1, 2026 federal window opens."
+  process: As of May 7, 2026, DBEDT’s Business Development and Support Division (BDSD) has
+    not published any OZ 2.0 nomination guidance, community application process, or deadline;
+    the invest.hawaii.gov/oz page reflects OZ 1.0 content only. Contact Mark J. Ritchie, Branch
+    Chief at BDSD, today at mark.j.ritchie@hawaii.gov or (808) 587-2785 to ask whether DBEDT
+    is accepting community tract recommendations and what form that input should take. Note
+    that IRS Notice 2025-50 applies a special Community Development Plan (CDP) rule for Hawaii
+    that may affect how rural-flagged tracts are treated; confirm with Ritchie whether DBEDT
+    is accounting for that provision. Hawaii may nominate up to 22 of its 88 eligible tracts;
+    watch for any Governor’s office announcement before the July 1, 2026 federal window opens.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -894,9 +973,18 @@ hawaii:
   nmtc_projects: 8
   cra_lmi_tracts: 66
   ui_invest_q1_tracts: 12
-  notes: "DBEDT confirmed lead. OZ-specific contact identified: Mark J. Ritchie, Branch
-    Chief, BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination
-    guidance or deadline published as of 2026-05-07."
+  notes: 'DBEDT confirmed lead. OZ-specific contact identified: Mark J. Ritchie, Branch Chief,
+    BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination guidance or deadline
+    published as of 2026-05-07.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 idaho:
   name: Idaho
   fips: '16'
@@ -943,18 +1031,17 @@ idaho:
     url: https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/
     contact_email: OZ@commerce.idaho.gov
     contact_phone: null
-  process: "Idaho Commerce administers the OZ 2.0 nomination process and has published
-    a nomination portal open to cities, counties, and tribal governments; submissions
-    go to OZ@commerce.idaho.gov. Idaho Commerce has set a state-level submission
-    deadline of 4:00 p.m. MT on June 30, 2026, restricted to city, county, and tribal
-    government submitters. The federal nomination window under Rev. Proc. 2026-14 opened July 1, 2026,
-    and runs 90 days (extendable to October 28, 2026). Idaho has 80 eligible tracts and,
-    under the statutory minimum for states with fewer than 100 eligible tracts, may
-    nominate up to 25 zones — the same count as its OZ 1.0 round. In the 2018 round,
-    Idaho Commerce received applications from cities, counties, and tribes, which were
-    reviewed by the Idaho Economic Advisory Council (EAC) before the Governor forwarded
-    nominations to Treasury; a similar internal review is expected for OZ 2.0, though
-    Idaho Commerce has not yet published formal selection criteria."
+  process: Idaho Commerce administers the OZ 2.0 nomination process and has published a nomination
+    portal open to cities, counties, and tribal governments; submissions go to OZ@commerce.idaho.gov.
+    Idaho Commerce has set a state-level submission deadline of 4:00 p.m. MT on June 30, 2026,
+    restricted to city, county, and tribal government submitters. The federal nomination window
+    under Rev. Proc. 2026-14 opened July 1, 2026, and runs 90 days (extendable to October
+    28, 2026). Idaho has 80 eligible tracts and, under the statutory minimum for states with
+    fewer than 100 eligible tracts, may nominate up to 25 zones — the same count as its OZ
+    1.0 round. In the 2018 round, Idaho Commerce received applications from cities, counties,
+    and tribes, which were reviewed by the Idaho Economic Advisory Council (EAC) before the
+    Governor forwarded nominations to Treasury; a similar internal review is expected for
+    OZ 2.0, though Idaho Commerce has not yet published formal selection criteria.
   scoring_rubric_url: null
   state_deadline: '2026-06-30'
   application_portal_url: https://commerce.idaho.gov/incentives-and-financing/opportunity-zones/
@@ -976,9 +1063,18 @@ idaho:
   nmtc_projects: 32
   cra_lmi_tracts: 54
   ui_invest_q1_tracts: 27
-  notes: "Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal\
-    \ window opened July 1, 2026. Max designations corrected to 25 (statutory minimum\
-    \ for states with fewer than 100 eligible tracts)."
+  notes: Portal live; no scoring rubric or deadline published as of 2026-05-06. Federal window
+    opened July 1, 2026. Max designations corrected to 25 (statutory minimum for states with
+    fewer than 100 eligible tracts).
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 illinois:
   name: Illinois
   fips: '17'
@@ -1025,17 +1121,16 @@ illinois:
     url: https://dceo.illinois.gov/oppzn.html
     contact_email: opportunityzones@illinois.gov
     contact_phone: null
-  process: "The Illinois Department of Commerce and Economic Opportunity (DCEO) administers\
-    \ the OZ 2.0 nomination process and has opened a Smartsheet community input form\
-    \ through which local governments, economic development organizations, and community\
-    \ stakeholders in eligible tracts can submit information to help inform the state's\
-    \ final tract selections. DCEO published a webinar recording and FAQ on its OZ\
-    \ page to orient submitters; no scoring rubric has been posted publicly as of 2026-05-06.\
-    \ No state-level submission deadline has been announced; the federal nomination\
-    \ window opened July 1, 2026, giving the Governor 90 days (extendable by 30) to\
-    \ certify nominations to Treasury. Illinois may nominate up to 238 of its 950\
-    \ eligible tracts, making community input a meaningful factor in DCEO's prioritization\
-    \ before the Governor's list is finalized. Questions can be directed to opportunityzones@illinois.gov."
+  process: The Illinois Department of Commerce and Economic Opportunity (DCEO) administers
+    the OZ 2.0 nomination process and has opened a Smartsheet community input form through
+    which local governments, economic development organizations, and community stakeholders
+    in eligible tracts can submit information to help inform the state's final tract selections.
+    DCEO published a webinar recording and FAQ on its OZ page to orient submitters; no scoring
+    rubric has been posted publicly as of 2026-05-06. No state-level submission deadline has
+    been announced; the federal nomination window opened July 1, 2026, giving the Governor
+    90 days (extendable by 30) to certify nominations to Treasury. Illinois may nominate up
+    to 238 of its 950 eligible tracts, making community input a meaningful factor in DCEO's
+    prioritization before the Governor's list is finalized. Questions can be directed to opportunityzones@illinois.gov.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: https://app.smartsheet.com/b/form/047a54ef882c425694cfb626d9050041
@@ -1058,6 +1153,15 @@ illinois:
   cra_lmi_tracts: 804
   ui_invest_q1_tracts: 170
   notes: 238 tracts to be nominated from 950 eligible.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 indiana:
   name: Indiana
   fips: '18'
@@ -1104,16 +1208,15 @@ indiana:
     url: https://iedc.in.gov/program/indiana-opportunity-zones/overview
     contact_email: opportunityzones@gov.in.gov
     contact_phone: (317) 232-8800
-  process: "IEDC has not yet published a formal scoring rubric or internal state
-    deadline for OZ 2.0, but as of early June 2026 it has issued guidance that a
-    public input portal will open \"in the coming weeks\" for communities and the
-    public to submit tract recommendations; the Office of Community and Rural Affairs
-    (OCRA, in.gov/ocra) is supporting the process, and a LISC-hosted intake portal
-    (backed by Fifth Third Foundation funding) has also been reported. Local
-    governments are already acting on this guidance — Bloomington, for example,
-    is preparing a formal tract recommendation. Email opportunityzones@gov.in.gov
-    today with your jurisdiction's eligible tract information and ask to be notified
-    when the portal opens; Indiana may nominate up to 126 of its 501 eligible tracts."
+  process: IEDC has not yet published a formal scoring rubric or internal state deadline for
+    OZ 2.0, but as of early June 2026 it has issued guidance that a public input portal will
+    open "in the coming weeks" for communities and the public to submit tract recommendations;
+    the Office of Community and Rural Affairs (OCRA, in.gov/ocra) is supporting the process,
+    and a LISC-hosted intake portal (backed by Fifth Third Foundation funding) has also been
+    reported. Local governments are already acting on this guidance — Bloomington, for example,
+    is preparing a formal tract recommendation. Email opportunityzones@gov.in.gov today with
+    your jurisdiction's eligible tract information and ask to be notified when the portal
+    opens; Indiana may nominate up to 126 of its 501 eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1135,9 +1238,17 @@ indiana:
   nmtc_projects: 86
   cra_lmi_tracts: 393
   ui_invest_q1_tracts: 115
-  notes: "IEDC page references federal September 28, 2026 deadline. OZ-specific email
-    confirmed: opportunityzones@gov.in.gov. No internal state application process
-    published as of 2026-05-07."
+  notes: 'IEDC page references federal September 28, 2026 deadline. OZ-specific email confirmed:
+    opportunityzones@gov.in.gov. No internal state application process published as of 2026-05-07.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 iowa:
   name: Iowa
   fips: '19'
@@ -1184,15 +1295,14 @@ iowa:
     url: https://opportunityiowa.gov/community/revitalization/opportunity-zones
     contact_email: communications@iowaeda.com
     contact_phone: null
-  process: "IEDA has not published OZ 2.0 nomination guidance, a community application
-    process, or an internal deadline. Note IEDA's web presence has consolidated under
-    a joint IEDA/Iowa Finance Authority domain, opportunityiowa.gov — the older
-    iowaeconomicdevelopment-site.azurewebsites.net URL may be stale. Email
-    communications@iowaeda.com today to ask which IEDA program officer is handling OZ
-    2.0 tract nominations and whether the authority is accepting community input
-    now that the federal window is open (through September 28, 2026); ask to be directed to the
-    appropriate staff contact. Iowa may nominate up to 44 of its 175 eligible
-    tracts; watch opportunityiowa.gov for any announcement of an OZ 2.0 process."
+  process: IEDA has not published OZ 2.0 nomination guidance, a community application process,
+    or an internal deadline. Note IEDA's web presence has consolidated under a joint IEDA/Iowa
+    Finance Authority domain, opportunityiowa.gov — the older iowaeconomicdevelopment-site.azurewebsites.net
+    URL may be stale. Email communications@iowaeda.com today to ask which IEDA program officer
+    is handling OZ 2.0 tract nominations and whether the authority is accepting community
+    input now that the federal window is open (through September 28, 2026); ask to be directed
+    to the appropriate staff contact. Iowa may nominate up to 44 of its 175 eligible tracts;
+    watch opportunityiowa.gov for any announcement of an OZ 2.0 process.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1214,8 +1324,17 @@ iowa:
   nmtc_projects: 44
   cra_lmi_tracts: 134
   ui_invest_q1_tracts: 25
-  notes: "IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
-    General communications contact: communications@iowaeda.com."
+  notes: 'IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07. General
+    communications contact: communications@iowaeda.com.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 kansas:
   name: Kansas
   fips: '20'
@@ -1262,36 +1381,32 @@ kansas:
     url: https://www.kansascommerce.gov/opportunity-zones-2-0/
     contact_email: OZ@kansascommerce.gov
     contact_phone: null
-  process: "The Kansas Department of Commerce Business Development team administers\
-    \ the OZ 2.0 nomination process. Communities within eligible census tracts submit\
-    \ an investment case by June 1, 2026 via email to OZ@kansascommerce.gov; there\
-    \ is no online portal. Local governments, economic development organizations,\
-    \ developers, and other community stakeholders may submit. Before drafting your\
-    \ submission, visit kansascommerce.gov/opportunity-zones-2-0/ to download the\
-    \ Community Opportunity Zone Application form and scoring matrix — if the official\
-    \ form has not yet been posted as of your visit, email OZ@kansascommerce.gov\
-    \ to request it directly; do not wait until near the June 1 deadline. Note that\
-    \ the scoring matrix is published on the agency OZ 2.0 page but specific criterion\
-    \ weights are not separately indexed — when you email for the form, ask for the\
-    \ weights as well. Formal nominations to Treasury are made by the Governor, so\
-    \ Kansas Commerce reviews and vets community submissions before advancing\
-    \ recommendations. With only 2 certified CDFIs headquartered in Kansas, communities\
-    \ seeking capital partners may need to engage regional CDFIs operating across\
-    \ state lines — contact Rural LISC or the Federal Home Loan Bank of Topeka\
-    \ for referrals."
+  process: The Kansas Department of Commerce Business Development team administers the OZ
+    2.0 nomination process. Communities within eligible census tracts submit an investment
+    case by June 1, 2026 via email to OZ@kansascommerce.gov; there is no online portal. Local
+    governments, economic development organizations, developers, and other community stakeholders
+    may submit. Before drafting your submission, visit kansascommerce.gov/opportunity-zones-2-0/
+    to download the Community Opportunity Zone Application form and scoring matrix — if the
+    official form has not yet been posted as of your visit, email OZ@kansascommerce.gov to
+    request it directly; do not wait until near the June 1 deadline. Note that the scoring
+    matrix is published on the agency OZ 2.0 page but specific criterion weights are not separately
+    indexed — when you email for the form, ask for the weights as well. Formal nominations
+    to Treasury are made by the Governor, so Kansas Commerce reviews and vets community submissions
+    before advancing recommendations. With only 2 certified CDFIs headquartered in Kansas,
+    communities seeking capital partners may need to engage regional CDFIs operating across
+    state lines — contact Rural LISC or the Federal Home Loan Bank of Topeka for referrals.
   scoring_rubric_url: https://www.kansascommerce.gov/opportunity-zones-2-0/
   state_deadline: '2026-06-01'
   application_portal_url: null
   tribal_consultation:
-    framework: "Kansas has two federally recognized tribes with active land in the\
-      \ state. The Kickapoo Tribe in Kansas has a reservation in Brown County\
-      \ (northeast Kansas). The Iowa Tribe of Kansas and Nebraska has a reservation\
-      \ in Brown and Doniphan counties. Both Brown and Doniphan counties may have\
-      \ eligible or adjacent census tracts. The Prairie Band Potawatomi Nation\
-      \ (Jackson County) also has federally recognized land in Kansas. Kansas Commerce\
-      \ has not published a tribal consultation protocol for the OZ 2.0 process;\
-      \ check with the Kansas Indian Affairs Commission (ksde.org/Default.aspx?tabid=1825)\
-      \ before submitting nominations in or adjacent to tribal lands."
+    framework: Kansas has two federally recognized tribes with active land in the state. The
+      Kickapoo Tribe in Kansas has a reservation in Brown County (northeast Kansas). The Iowa
+      Tribe of Kansas and Nebraska has a reservation in Brown and Doniphan counties. Both
+      Brown and Doniphan counties may have eligible or adjacent census tracts. The Prairie
+      Band Potawatomi Nation (Jackson County) also has federally recognized land in Kansas.
+      Kansas Commerce has not published a tribal consultation protocol for the OZ 2.0 process;
+      check with the Kansas Indian Affairs Commission (ksde.org/Default.aspx?tabid=1825) before
+      submitting nominations in or adjacent to tribal lands.
     citation: null
   regional_edds: []
   rural_partners:
@@ -1308,10 +1423,18 @@ kansas:
   nmtc_projects: 26
   cra_lmi_tracts: 161
   ui_invest_q1_tracts: 38
-  notes: "Kansas may nominate up to 53 of its 210 eligible tracts (25% statutory cap).
-    Scoring matrix published on agency OZ 2.0 page; specific criterion weights not
-    publicly indexed as of 2026-05-06."
-
+  notes: Kansas may nominate up to 53 of its 210 eligible tracts (25% statutory cap). Scoring
+    matrix published on agency OZ 2.0 page; specific criterion weights not publicly indexed
+    as of 2026-05-06.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 kentucky:
   name: Kentucky
   fips: '21'
@@ -1358,34 +1481,32 @@ kentucky:
     url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
     contact_email: Kristina.Slattery@ky.gov
     contact_phone: (800) 626-2930
-  process: "The Kentucky Cabinet for Economic Development runs the OZ 2.0 designation\
-    \ process, led by Kristina Slattery, Commissioner of Business Development. Local\
-    \ governments and economic development organizations download an XLSX application\
-    \ and a companion DOCX criteria guidance document from the Cabinet's OZ page\
-    \ (newkentuckyhome.ky.gov/Locating_Expanding/KYoz), then email completed applications\
-    \ to Kristina.Slattery@ky.gov by May 29, 2026; there is no online submission portal.\
-    \ Download the DOCX criteria guidance before submitting — it contains the specific\
-    \ scoring criterion names and weights reviewed at the March 3, 2026 webinar\
-    \ \"Opportunity Zones 2.0 – How to Apply for Census Tract Designation.\" Kentucky\
-    \ may designate up to 137 tracts from its 545 eligible, of which 381 (70 percent)\
-    \ carry the rural flag under Notice 2025-50 — meaning QROF rural bonus mechanics\
-    \ apply to the majority of the eligible universe."
+  process: The Kentucky Cabinet for Economic Development runs the OZ 2.0 designation process,
+    led by Kristina Slattery, Commissioner of Business Development. Local governments and
+    economic development organizations download an XLSX application and a companion DOCX criteria
+    guidance document from the Cabinet's OZ page (newkentuckyhome.ky.gov/Locating_Expanding/KYoz),
+    then email completed applications to Kristina.Slattery@ky.gov by May 29, 2026; there is
+    no online submission portal. Download the DOCX criteria guidance before submitting — it
+    contains the specific scoring criterion names and weights reviewed at the March 3, 2026
+    webinar "Opportunity Zones 2.0 – How to Apply for Census Tract Designation." Kentucky
+    may designate up to 137 tracts from its 545 eligible, of which 381 (70 percent) carry
+    the rural flag under Notice 2025-50 — meaning QROF rural bonus mechanics apply to the
+    majority of the eligible universe.
   scoring_rubric_url: https://newkentuckyhome.ky.gov/Locating_Expanding/KYoz
   state_deadline: '2026-05-29'
   application_portal_url: null
-  notes: "Direct file download URLs for the XLSX application and DOCX criteria guidance\
-    \ are hosted on the Cabinet page but return 403 to automated fetches; use the\
-    \ landing page URL to access them. Phone (800) 626-2930 is the published direct\
-    \ submission contact for Kristina Slattery; (502) 564-7670 is the Cabinet main line."
+  notes: Direct file download URLs for the XLSX application and DOCX criteria guidance are
+    hosted on the Cabinet page but return 403 to automated fetches; use the landing page URL
+    to access them. Phone (800) 626-2930 is the published direct submission contact for Kristina
+    Slattery; (502) 564-7670 is the Cabinet main line.
   tribal_consultation:
-    framework: "Kentucky has no federally recognized tribes in-state, but several\
-      \ Oklahoma-based tribes have historic ties to Kentucky territory. The Eastern\
-      \ Band of Cherokee Indians (EBCI, based in western NC) has geographic proximity\
-      \ to eastern Kentucky and an active THPO (ebci-nsn.gov/thpo). The Shawnee Tribe\
-      \ (OK) and Cherokee Nation (OK) also have historic Kentucky connections. If\
-      \ nominating tracts in eastern Kentucky counties (Pike, Floyd, Knox) near the\
-      \ Virginia or Tennessee state line, consider reaching out to the EBCI THPO.\
-      \ No formal consultation protocol has been published by the Cabinet."
+    framework: Kentucky has no federally recognized tribes in-state, but several Oklahoma-based
+      tribes have historic ties to Kentucky territory. The Eastern Band of Cherokee Indians
+      (EBCI, based in western NC) has geographic proximity to eastern Kentucky and an active
+      THPO (ebci-nsn.gov/thpo). The Shawnee Tribe (OK) and Cherokee Nation (OK) also have
+      historic Kentucky connections. If nominating tracts in eastern Kentucky counties (Pike,
+      Floyd, Knox) near the Virginia or Tennessee state line, consider reaching out to the
+      EBCI THPO. No formal consultation protocol has been published by the Cabinet.
     citation: null
   regional_edds: []
   rural_partners:
@@ -1402,6 +1523,15 @@ kentucky:
   nmtc_projects: 166
   cra_lmi_tracts: 402
   ui_invest_q1_tracts: 82
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 louisiana:
   name: Louisiana
   fips: '22'
@@ -1448,19 +1578,17 @@ louisiana:
     url: https://www.opportunitylouisiana.gov/incentive/federal-opportunity-zones
     contact_email: null
     contact_phone: 800-450-8115
-  process: >-
-    LED has not published a single statewide nomination portal, application
-    window, or scoring rubric, but a decentralized intake process is visibly
-    underway at the parish level: in May 2026, for example, the Bossier Parish
-    Police Jury formally voted to approve and submit four tract recommendations
-    to LED for state-level review. If your parish hasn't already done this, ask
-    your parish police jury or council to pass a similar resolution forwarding
-    its priority tracts to LED — that appears to be the operative pathway right
-    now, alongside calling LED directly at 800-450-8115. Come prepared with the
-    census tract number, any existing investor interest, and whether the tract
-    carries a rural flag under Rev. Proc. 2026-14. (Note: opportunitylouisiana.gov
-    also references an "Opportunity Zones Web Portal," but that is a separate
-    investor-matching tool for existing OZ projects, not a nomination intake form.)
+  process: 'LED has not published a single statewide nomination portal, application window,
+    or scoring rubric, but a decentralized intake process is visibly underway at the parish
+    level: in May 2026, for example, the Bossier Parish Police Jury formally voted to approve
+    and submit four tract recommendations to LED for state-level review. If your parish hasn''t
+    already done this, ask your parish police jury or council to pass a similar resolution
+    forwarding its priority tracts to LED — that appears to be the operative pathway right
+    now, alongside calling LED directly at 800-450-8115. Come prepared with the census tract
+    number, any existing investor interest, and whether the tract carries a rural flag under
+    Rev. Proc. 2026-14. (Note: opportunitylouisiana.gov also references an "Opportunity Zones
+    Web Portal," but that is a separate investor-matching tool for existing OZ projects, not
+    a nomination intake form.)'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1482,8 +1610,17 @@ louisiana:
   nmtc_projects: 189
   cra_lmi_tracts: 431
   ui_invest_q1_tracts: 93
-  notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07.
-    Main line 800-450-8115 / 225-342-3000.
+  notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07. Main
+    line 800-450-8115 / 225-342-3000.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 maine:
   name: Maine
   fips: '23'
@@ -1530,18 +1667,15 @@ maine:
     url: https://www.maine.gov/decd/business-development/financial-incentives-resources/opportunity-zones
     contact_email: null
     contact_phone: null
-  process: >-
-    Maine DECD did not run a formal public nomination portal; municipalities
-    were expected to make their case to DECD ahead of an informal April 30,
-    2026 internal deadline (Portland Press Herald, April 30, 2026). The input
-    window has closed. Commissioner Michael Duguay's office is narrowing down
-    the tract list before Governor Mills makes nominations starting July 1,
-    2026; DECD has not made its selection criteria public. If your community
-    has not already engaged, contact DECD's Office of Business Development
-    through maine.gov/decd and ask directly whether late input will be
-    considered; Maine may nominate up to 20 of 78 eligible tracts and 74 of
-    those carry the rural flag under Rev. Proc. 2026-14. Watch maine.gov/decd
-    for a Governor's announcement once the July 1 federal window opens.
+  process: Maine DECD did not run a formal public nomination portal; municipalities were expected
+    to make their case to DECD ahead of an informal April 30, 2026 internal deadline (Portland
+    Press Herald, April 30, 2026). The input window has closed. Commissioner Michael Duguay's
+    office is narrowing down the tract list before Governor Mills makes nominations starting
+    July 1, 2026; DECD has not made its selection criteria public. If your community has not
+    already engaged, contact DECD's Office of Business Development through maine.gov/decd
+    and ask directly whether late input will be considered; Maine may nominate up to 20 of
+    78 eligible tracts and 74 of those carry the rural flag under Rev. Proc. 2026-14. Watch
+    maine.gov/decd for a Governor's announcement once the July 1 federal window opens.
   scoring_rubric_url: null
   state_deadline: '2026-04-30'
   application_portal_url: null
@@ -1563,9 +1697,18 @@ maine:
   nmtc_projects: 22
   cra_lmi_tracts: 66
   ui_invest_q1_tracts: 19
-  notes: 'DECD informal community deadline April 30, 2026 (now passed). Commissioner:
-    Michael Duguay. No formal portal published. Governor nominates starting July 1,
-    2026; 20 of 78 eligible tracts (74 rural-flagged).'
+  notes: 'DECD informal community deadline April 30, 2026 (now passed). Commissioner: Michael
+    Duguay. No formal portal published. Governor nominates starting July 1, 2026; 20 of 78
+    eligible tracts (74 rural-flagged).'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 maryland:
   name: Maryland
   fips: '24'
@@ -1612,22 +1755,19 @@ maryland:
     url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
     contact_email: Allison.Foster@Maryland.gov
     contact_phone: (443) 257-5478
-  process: >-
-    Governor Moore has delegated the OZ 2.0 designation process to DHCD. DHCD
-    is asking counties to help identify and nominate census tracts that align
-    with local development and investment priorities; it has published an OZ 2.0
-    Eligibility Map to support local review. DHCD hosted a Local Stakeholders
-    Kickoff Webinar on May 20, 2026 (recorded and posted to the DHCD OZ page)
-    where EIG provided a program overview and DHCD outlined the county submission
-    process. County packets went out May 7, 2026; counties submit local nominations
-    through a DocuSign portal by August 7, 2026, and DHCD is meeting with every
-    county through June–July, weighing project-pipeline readiness heavily, before
-    submitting Maryland's final list to Treasury by September 29, 2026. Email
-    Allison.Foster@Maryland.gov or visit dhcd.maryland.gov/pages/oz/opportunityzones.aspx
-    to ask for the OZ 2.0 program lead and the county nomination packet if your
-    county hasn't shared it yet. Maryland may nominate up to 113 of 451 eligible
-    tracts; frame your submission around investment-ready sites and note the rural
-    flag under Rev. Proc. 2026-14 if applicable.
+  process: Governor Moore has delegated the OZ 2.0 designation process to DHCD. DHCD is asking
+    counties to help identify and nominate census tracts that align with local development
+    and investment priorities; it has published an OZ 2.0 Eligibility Map to support local
+    review. DHCD hosted a Local Stakeholders Kickoff Webinar on May 20, 2026 (recorded and
+    posted to the DHCD OZ page) where EIG provided a program overview and DHCD outlined the
+    county submission process. County packets went out May 7, 2026; counties submit local
+    nominations through a DocuSign portal by August 7, 2026, and DHCD is meeting with every
+    county through June–July, weighing project-pipeline readiness heavily, before submitting
+    Maryland's final list to Treasury by September 29, 2026. Email Allison.Foster@Maryland.gov
+    or visit dhcd.maryland.gov/pages/oz/opportunityzones.aspx to ask for the OZ 2.0 program
+    lead and the county nomination packet if your county hasn't shared it yet. Maryland may
+    nominate up to 113 of 451 eligible tracts; frame your submission around investment-ready
+    sites and note the rural flag under Rev. Proc. 2026-14 if applicable.
   scoring_rubric_url: null
   state_deadline: '2026-08-07'
   application_portal_url: https://dhcd.maryland.gov/pages/oz/opportunityzones.aspx
@@ -1652,6 +1792,15 @@ maryland:
   notes: 'DHCD sole lead per Governor Moore delegation. County nomination process launched
     May 2026; Local Stakeholders Kickoff Webinar May 20. DHCD comms: Allison.Foster@Maryland.gov,
     (443) 257-5478. No community submission deadline published as of 2026-05-12.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 massachusetts:
   name: Massachusetts
   fips: '25'
@@ -1698,18 +1847,16 @@ massachusetts:
     url: https://www.mass.gov/info-details/2026-massachusetts-opportunity-zone-program
     contact_email: null
     contact_phone: null
-  process: >-
-    The Healey-Driscoll Administration has published a dedicated "2026
-    Massachusetts Opportunity Zone Program" page with a Community Feedback Form
-    open to investors, developers, community organizations, and the public.
-    MOBD is engaging municipalities with eligible tracts directly to identify
-    the strongest candidates. The Commonwealth has not published a firm state
-    deadline for community input; secondary reporting suggested feedback was
-    requested by end of June 2026, so submit as early as possible and confirm
-    current status with MOBD. The Commonwealth must submit its nominations to
-    U.S. Treasury by September 28, 2026 and can designate up to 103 of 410
-    eligible tracts. Use the feedback form to flag investment-ready tracts,
-    especially those carrying the rural flag under Rev. Proc. 2026-14.
+  process: The Healey-Driscoll Administration has published a dedicated "2026 Massachusetts
+    Opportunity Zone Program" page with a Community Feedback Form open to investors, developers,
+    community organizations, and the public. MOBD is engaging municipalities with eligible
+    tracts directly to identify the strongest candidates. The Commonwealth has not published
+    a firm state deadline for community input; secondary reporting suggested feedback was
+    requested by end of June 2026, so submit as early as possible and confirm current status
+    with MOBD. The Commonwealth must submit its nominations to U.S. Treasury by September
+    28, 2026 and can designate up to 103 of 410 eligible tracts. Use the feedback form to
+    flag investment-ready tracts, especially those carrying the rural flag under Rev. Proc.
+    2026-14.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: https://www.mass.gov/info-details/2026-massachusetts-opportunity-zone-program
@@ -1733,6 +1880,15 @@ massachusetts:
   ui_invest_q1_tracts: 150
   notes: MOBD confirmed lead. No OZ 2.0 application, deadline, or contact email published
     as of 2026-05-07. 103 of 410 eligible tracts to be nominated.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 michigan:
   name: Michigan
   fips: '26'
@@ -1779,23 +1935,19 @@ michigan:
     url: https://www.michigan.gov/opportunityzones
     contact_email: MSHDA@michigan.gov
     contact_phone: 517-335-9885
-  process: >-
-    MEDC and MSHDA have not published an OZ 2.0 community nomination portal or
-    deadline, but MEDC is collecting stakeholder input and recommendations ahead
-    of nomination, with a series of regional roundtables planned for summer 2026
-    across the state's "prosperity regions," coordinated with local housing and
-    economic development organizations. MSHDA holds the OZ 1.0 program
-    infrastructure and is the most likely point of entry: email
-    MSHDA@michigan.gov or call 517-335-9885, ask for the staff lead on OZ
-    2.0 nominations, and ask when your prosperity region's roundtable is
-    scheduled. If your municipality or county has an investment-ready
-    eligible tract — Wayne, Genesee, and Saginaw counties have the highest
-    concentrations, but 251 of Michigan's 856 eligible tracts carry the rural
-    flag under Rev. Proc. 2026-14 — document existing investor interest and
-    project pipeline before contacting MSHDA. Watch michigan.gov/opportunityzones
-    for any announcement of a community input window ahead of the July 1, 2026
-    federal nomination opening; Michigan may nominate up to 214 of 856
-    eligible tracts.
+  process: 'MEDC and MSHDA have not published an OZ 2.0 community nomination portal or deadline,
+    but MEDC is collecting stakeholder input and recommendations ahead of nomination, with
+    a series of regional roundtables planned for summer 2026 across the state''s "prosperity
+    regions," coordinated with local housing and economic development organizations. MSHDA
+    holds the OZ 1.0 program infrastructure and is the most likely point of entry: email MSHDA@michigan.gov
+    or call 517-335-9885, ask for the staff lead on OZ 2.0 nominations, and ask when your
+    prosperity region''s roundtable is scheduled. If your municipality or county has an investment-ready
+    eligible tract — Wayne, Genesee, and Saginaw counties have the highest concentrations,
+    but 251 of Michigan''s 856 eligible tracts carry the rural flag under Rev. Proc. 2026-14
+    — document existing investor interest and project pipeline before contacting MSHDA. Watch
+    michigan.gov/opportunityzones for any announcement of a community input window ahead of
+    the July 1, 2026 federal nomination opening; Michigan may nominate up to 214 of 856 eligible
+    tracts.'
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -1817,8 +1969,17 @@ michigan:
   nmtc_projects: 107
   cra_lmi_tracts: 645
   ui_invest_q1_tracts: 173
-  notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline
-    published as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
+  notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline published
+    as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 minnesota:
   name: Minnesota
   fips: '27'
@@ -1865,13 +2026,11 @@ minnesota:
     url: https://mn.gov/deed/opportunityzones/
     contact_email: economicanalysis.deed@state.mn.us
     contact_phone: (651) 259-7114
-  process: >-
-    DEED and Minnesota Housing are formally requesting input from counties,
-    first-class cities, and Tribal governments to help prioritize which of
-    Minnesota's 289 eligible tracts to nominate, with local input due June 30,
-    2026. Minnesota may nominate up to 73 tracts. Submit your jurisdiction's
-    recommendation — including any tract carrying the rural flag under Rev.
-    Proc. 2026-14 — to economicanalysis.deed@state.mn.us ahead of that deadline.
+  process: DEED and Minnesota Housing are formally requesting input from counties, first-class
+    cities, and Tribal governments to help prioritize which of Minnesota's 289 eligible tracts
+    to nominate, with local input due June 30, 2026. Minnesota may nominate up to 73 tracts.
+    Submit your jurisdiction's recommendation — including any tract carrying the rural flag
+    under Rev. Proc. 2026-14 — to economicanalysis.deed@state.mn.us ahead of that deadline.
   scoring_rubric_url: null
   state_deadline: '2026-06-30'
   application_portal_url: null
@@ -1893,8 +2052,17 @@ minnesota:
   nmtc_projects: 188
   cra_lmi_tracts: 224
   ui_invest_q1_tracts: 92
-  notes: DEED page explicitly states more information will be posted when the July
-    1, 2026 window opens. No application or deadline published.
+  notes: DEED page explicitly states more information will be posted when the July 1, 2026
+    window opens. No application or deadline published.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 mississippi:
   name: Mississippi
   fips: '28'
@@ -1941,36 +2109,33 @@ mississippi:
     url: https://mississippi.org/community-resources/opportunity-zones/
     contact_email: tclimer@mississippi.org
     contact_phone: (601) 359-9387
-  process: "The Mississippi Development Authority (MDA) is leading the state's OZ\
-    \ 2.0 designation process under authority delegated by the governor, with Tim\
-    \ T. Climer, PCED (Community and Rural Development), as the point of contact at\
-    \ tclimer@mississippi.org or (601) 359-9387. MDA held three public listening\
-    \ sessions in April 2026 (Oxford, Pearl, and the Southern Mississippi Planning\
-    \ District); that phase is now closed. The MDA stakeholder feedback form at\
-    \ mississippi.org/community-resources/opportunity-zones/ remains open through\
-    \ May 31, 2026 — it is the only remaining input window. Submit written comments\
-    \ before May 31 documenting your tract's economic growth potential, existing assets\
-    \ and infrastructure, and any partner or investor commitments. This is a public\
-    \ comment process, not a direct nomination form: MDA solicits perspectives from\
-    \ local governments, economic development professionals, business leaders, and\
-    \ community partners, then makes its own internal assessment. No scoring rubric\
-    \ or weighted criteria have been published; focus on concrete evidence of investment\
-    \ readiness and community need rather than advocacy framing. After May 31, MDA\
-    \ will prepare its nomination list for submission to U.S. Treasury during the\
-    \ 90-day state window opening July 1, 2026; up to 101 of Mississippi's 404\
-    \ eligible tracts may be designated, with new OZs taking effect January 1, 2027."
+  process: 'The Mississippi Development Authority (MDA) is leading the state''s OZ 2.0 designation
+    process under authority delegated by the governor, with Tim T. Climer, PCED (Community
+    and Rural Development), as the point of contact at tclimer@mississippi.org or (601) 359-9387.
+    MDA held three public listening sessions in April 2026 (Oxford, Pearl, and the Southern
+    Mississippi Planning District); that phase is now closed. The MDA stakeholder feedback
+    form at mississippi.org/community-resources/opportunity-zones/ remains open through May
+    31, 2026 — it is the only remaining input window. Submit written comments before May 31
+    documenting your tract''s economic growth potential, existing assets and infrastructure,
+    and any partner or investor commitments. This is a public comment process, not a direct
+    nomination form: MDA solicits perspectives from local governments, economic development
+    professionals, business leaders, and community partners, then makes its own internal assessment.
+    No scoring rubric or weighted criteria have been published; focus on concrete evidence
+    of investment readiness and community need rather than advocacy framing. After May 31,
+    MDA will prepare its nomination list for submission to U.S. Treasury during the 90-day
+    state window opening July 1, 2026; up to 101 of Mississippi''s 404 eligible tracts may
+    be designated, with new OZs taking effect January 1, 2027.'
   scoring_rubric_url: null
   state_deadline: '2026-05-31'
   application_portal_url: null
   tribal_consultation:
-    framework: "The Mississippi Band of Choctaw Indians is a federally recognized\
-      \ tribe with a reservation centered in Neshoba County, Mississippi. While Neshoba\
-      \ County does not appear in the top-10 eligible tract table, it is adjacent to\
-      \ Oktibbeha County (8 eligible tracts) and other counties in the eligible universe.\
-      \ MDA has not published a tribal consultation protocol for the OZ 2.0 process.\
-      \ If nominating tracts in central Mississippi counties near the Choctaw reservation,\
-      \ contact the Mississippi Band of Choctaw Indians tribal government or THPO\
-      \ directly before submitting comments to MDA."
+    framework: The Mississippi Band of Choctaw Indians is a federally recognized tribe with
+      a reservation centered in Neshoba County, Mississippi. While Neshoba County does not
+      appear in the top-10 eligible tract table, it is adjacent to Oktibbeha County (8 eligible
+      tracts) and other counties in the eligible universe. MDA has not published a tribal
+      consultation protocol for the OZ 2.0 process. If nominating tracts in central Mississippi
+      counties near the Choctaw reservation, contact the Mississippi Band of Choctaw Indians
+      tribal government or THPO directly before submitting comments to MDA.
     citation: null
   regional_edds: []
   rural_partners:
@@ -1988,6 +2153,15 @@ mississippi:
   cra_lmi_tracts: 295
   ui_invest_q1_tracts: 46
   notes: 101 tracts to be nominated from 404 eligible. No formal scoring rubric published.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 missouri:
   name: Missouri
   fips: '29'
@@ -2034,39 +2208,35 @@ missouri:
     url: https://ded.mo.gov/programs/business-community/opportunity-zones
     contact_email: OpportunityZones@ded.mo.gov
     contact_phone: null
-  process: "Missouri DED is accepting tract nominations through a Submittable portal\
-    \ (open April 7–May 17, 2026); any stakeholder — local government, community\
-    \ development organization, or other entity — may submit, with one tract\
-    \ per form and no cap on the number of tracts a single submitter may put forward.\
-    \ The intake form asks submitters to document the tract’s census data, existing\
-    \ and planned investments, and the development rationale for designation. DED staff\
-    \ will review submissions against program criteria — including the statutory\
-    \ low-income thresholds under Notice 2025-50 — and weigh evidence of investment\
-    \ readiness and community need; a formal scoring rubric has not been published.\
-    \ In July, DED expects to release tentative tract recommendations for public comment;\
-    \ this is an advisory review of DED’s already-drafted slate, not a second\
-    \ nomination window. DED will finalize selections for the governor in August, with\
-    \ the official state nominations submitted to Treasury that month and new designations\
-    \ taking effect January 1, 2027. Jackson County (Kansas City) and St. Louis city\
-    \ together account for 167 of Missouri’s 523 eligible tracts; both cities\
-    \ saw OZ 1.0 capital concentrated in already-gentrifying neighborhoods. Community\
-    \ organizations in these markets should document anti-displacement strategies in\
-    \ their submissions — DED’s process allows for this even without a published\
-    \ community benefit criterion."
+  process: Missouri DED is accepting tract nominations through a Submittable portal (open
+    April 7–May 17, 2026); any stakeholder — local government, community development organization,
+    or other entity — may submit, with one tract per form and no cap on the number of tracts
+    a single submitter may put forward. The intake form asks submitters to document the tract’s
+    census data, existing and planned investments, and the development rationale for designation.
+    DED staff will review submissions against program criteria — including the statutory low-income
+    thresholds under Notice 2025-50 — and weigh evidence of investment readiness and community
+    need; a formal scoring rubric has not been published. In July, DED expects to release
+    tentative tract recommendations for public comment; this is an advisory review of DED’s
+    already-drafted slate, not a second nomination window. DED will finalize selections for
+    the governor in August, with the official state nominations submitted to Treasury that
+    month and new designations taking effect January 1, 2027. Jackson County (Kansas City)
+    and St. Louis city together account for 167 of Missouri’s 523 eligible tracts; both cities
+    saw OZ 1.0 capital concentrated in already-gentrifying neighborhoods. Community organizations
+    in these markets should document anti-displacement strategies in their submissions — DED’s
+    process allows for this even without a published community benefit criterion.
   scoring_rubric_url: null
   state_deadline: '2026-05-17'
   application_portal_url: https://modedfederalinitiatives.submittable.com/submit/e2490327-5b12-4d24-9c90-64092f51f7ad/missouri-opportunity-zones-2-0-program-intake-form
   tribal_consultation:
-    framework: "Missouri sits largely within the historic ceded territory of the Osage\
-      \ Nation (headquartered in Pawhuska, OK), whose ancestral lands covered much\
-      \ of present-day Missouri. The Osage Nation has a federally recognized Tribal\
-      \ Historic Preservation Office (THPO) and an active cultural preservation program.\
-      \ While no formal OZ 2.0 tribal consultation protocol has been published by\
-      \ Missouri DED, submitters nominating tracts in areas with documented Osage or\
-      \ other tribal cultural resources should contact the Osage Nation THPO (osageculture.com)\
-      \ or the Missouri State Historic Preservation Office before submitting. The Miami\
-      \ Tribe of Oklahoma and the Delaware Tribe of Indians also have historic ties\
-      \ to Missouri territory."
+    framework: Missouri sits largely within the historic ceded territory of the Osage Nation
+      (headquartered in Pawhuska, OK), whose ancestral lands covered much of present-day Missouri.
+      The Osage Nation has a federally recognized Tribal Historic Preservation Office (THPO)
+      and an active cultural preservation program. While no formal OZ 2.0 tribal consultation
+      protocol has been published by Missouri DED, submitters nominating tracts in areas with
+      documented Osage or other tribal cultural resources should contact the Osage Nation
+      THPO (osageculture.com) or the Missouri State Historic Preservation Office before submitting.
+      The Miami Tribe of Oklahoma and the Delaware Tribe of Indians also have historic ties
+      to Missouri territory.
     citation: null
   regional_edds: []
   rural_partners:
@@ -2083,9 +2253,18 @@ missouri:
   nmtc_projects: 503
   cra_lmi_tracts: 402
   ui_invest_q1_tracts: 78
-  notes: "131 tracts to be nominated from 523 eligible (25% statutory cap). One tract\
-    \ per Submittable form; multiple submissions per entity are permitted. No scoring\
-    \ rubric published as of 2026-05-06."
+  notes: 131 tracts to be nominated from 523 eligible (25% statutory cap). One tract per Submittable
+    form; multiple submissions per entity are permitted. No scoring rubric published as of
+    2026-05-06.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 montana:
   name: Montana
   fips: '30'
@@ -2132,16 +2311,15 @@ montana:
     url: https://commerce.mt.gov/Infrastructure-Planning/Resources/Opportunity-Zones/
     contact_email: null
     contact_phone: (406) 841-2700
-  process: 'As of May 7, 2026, Montana’s Department of Commerce Community Development
-    Division has not published an OZ 2.0 nomination process, community input form,
-    or scoring criteria; the agency’s OZ page addresses OZ 1.0 only. Call (406)
-    841-2700 today, ask for the Community Development Division, and introduce your
-    jurisdiction’s eligible tracts under Rev. Proc. 2026-14 — request to be notified
-    when the division publishes OZ 2.0 guidance or opens a community nomination
-    process. Montana is subject to a 25-tract statutory minimum for designations
-    (the division has not confirmed its selection approach as of this date), so
-    monitor commerce.mt.gov and legislative interim committee agendas for any
-    announcement before the July 1, 2026 federal nomination window.'
+  process: As of May 7, 2026, Montana’s Department of Commerce Community Development Division
+    has not published an OZ 2.0 nomination process, community input form, or scoring criteria;
+    the agency’s OZ page addresses OZ 1.0 only. Call (406) 841-2700 today, ask for the Community
+    Development Division, and introduce your jurisdiction’s eligible tracts under Rev. Proc.
+    2026-14 — request to be notified when the division publishes OZ 2.0 guidance or opens
+    a community nomination process. Montana is subject to a 25-tract statutory minimum for
+    designations (the division has not confirmed its selection approach as of this date),
+    so monitor commerce.mt.gov and legislative interim committee agendas for any announcement
+    before the July 1, 2026 federal nomination window.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2163,8 +2341,17 @@ montana:
   nmtc_projects: 20
   cra_lmi_tracts: 42
   ui_invest_q1_tracts: 8
-  notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum.
-    No OZ 2.0 guidance published.
+  notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum. No
+    OZ 2.0 guidance published.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 nebraska:
   name: Nebraska
   fips: '31'
@@ -2211,17 +2398,16 @@ nebraska:
     url: https://opportunity.nebraska.gov/programs/business/opportunity-zones/
     contact_email: ded.opportunityzones@nebraska.gov
     contact_phone: (402) 471-3063
-  process: "The application period ran March 2–May 1, 2026 and is now closed. Applications
-    were required to be submitted by the chief elected official of the city or county
-    proposing a tract, or by an authorized representative; letters of support from
-    business leaders, chambers of commerce, and community organizations could be included
-    but did not substitute for the official application. DED evaluated submissions
-    on investment readiness, demonstrated economic need, and anticipated community
-    benefit — no weighted scoring rubric was published. DED is now reviewing applications
-    and will refer its recommendations to Governor Pillen for approval before July 1,
-    2026, when the federal 90-day nomination window opens; Treasury has up to 90 days
-    to act on each state's list. Nebraska may nominate up to 28 of its 112 eligible
-    tracts; new designations take effect January 1, 2027."
+  process: The application period ran March 2–May 1, 2026 and is now closed. Applications
+    were required to be submitted by the chief elected official of the city or county proposing
+    a tract, or by an authorized representative; letters of support from business leaders,
+    chambers of commerce, and community organizations could be included but did not substitute
+    for the official application. DED evaluated submissions on investment readiness, demonstrated
+    economic need, and anticipated community benefit — no weighted scoring rubric was published.
+    DED is now reviewing applications and will refer its recommendations to Governor Pillen
+    for approval before July 1, 2026, when the federal 90-day nomination window opens; Treasury
+    has up to 90 days to act on each state's list. Nebraska may nominate up to 28 of its 112
+    eligible tracts; new designations take effect January 1, 2027.
   scoring_rubric_url: null
   state_deadline: '2026-05-01'
   application_portal_url: null
@@ -2244,6 +2430,15 @@ nebraska:
   cra_lmi_tracts: 95
   ui_invest_q1_tracts: 33
   notes: Application window closed. 28 tracts to be nominated from 112 eligible.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 nevada:
   name: Nevada
   fips: '32'
@@ -2287,15 +2482,14 @@ nevada:
     url: https://www.business.nv.gov/business-resource-hub/access-to-capital/opportunity-zones/
     contact_email: null
     contact_phone: (800) 336-1600
-  process: 'As of May 7, 2026, Nevada GOED has not published an OZ 2.0 nomination
-    process or community input mechanism; GOED’s dedicated OZ page redirects to
-    a general incentives page with no OZ-specific content, and the Department of
-    Business & Industry OZ page addresses OZ 1.0 only. Call GOED at (800) 336-1600
-    today, ask for the economic development team, introduce your jurisdiction’s
-    eligible tracts, and request to be added to any OZ 2.0 outreach list — also
-    ask whether a community input process is planned before the July 1, 2026
-    federal nomination window. Check GOED’s notices and agendas page
-    (goed.nv.gov/notices-agendas/) for any board agenda item referencing OZ 2.0.'
+  process: As of May 7, 2026, Nevada GOED has not published an OZ 2.0 nomination process or
+    community input mechanism; GOED’s dedicated OZ page redirects to a general incentives
+    page with no OZ-specific content, and the Department of Business & Industry OZ page addresses
+    OZ 1.0 only. Call GOED at (800) 336-1600 today, ask for the economic development team,
+    introduce your jurisdiction’s eligible tracts, and request to be added to any OZ 2.0 outreach
+    list — also ask whether a community input process is planned before the July 1, 2026 federal
+    nomination window. Check GOED’s notices and agendas page (goed.nv.gov/notices-agendas/)
+    for any board agenda item referencing OZ 2.0.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2318,9 +2512,18 @@ nevada:
   cra_lmi_tracts: 160
   ui_invest_q1_tracts: 75
   notes: GOED is the confirmed lead agency but their OZ page (goed.nv.gov/programs-incentives/opportunity-zones/)
-    redirects to a general incentives page with no OZ content. Business &amp; Industry
-    dept page linked above has OZ 1.0 content only. No OZ 2.0 guidance or community
-    input published as of 2026-05-06. Best contact is GOED by phone (800) 336-1600.
+    redirects to a general incentives page with no OZ content. Business &amp; Industry dept
+    page linked above has OZ 1.0 content only. No OZ 2.0 guidance or community input published
+    as of 2026-05-06. Best contact is GOED by phone (800) 336-1600.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 new-hampshire:
   name: New Hampshire
   fips: '33'
@@ -2367,16 +2570,15 @@ new-hampshire:
     url: https://www.nheconomy.com/grow/opportunity-zones
     contact_email: null
     contact_phone: (603) 271-2341
-  process: 'As of May 7, 2026, New Hampshire BEA has not published an OZ 2.0
-    nomination process, application, or scoring criteria; the nheconomy.com OZ
-    page addresses OZ 1.0 only and no public process has been announced. Call BEA’s
-    Division of Economic Development at (603) 271-2341 today, ask for the business
-    or community development team, and alert them to your eligible tracts under
-    Rev. Proc. 2026-14 — request notification when the Governor’s nomination process
-    is announced and ask whether BEA will solicit community input before the July
-    1, 2026 federal window opens. The NH Municipal Association has urged communities
-    to prepare site summaries and developer relationships now; treat this outreach
-    call as an opportunity to put your tracts on BEA’s radar before nominations begin.'
+  process: As of May 7, 2026, New Hampshire BEA has not published an OZ 2.0 nomination process,
+    application, or scoring criteria; the nheconomy.com OZ page addresses OZ 1.0 only and
+    no public process has been announced. Call BEA’s Division of Economic Development at (603)
+    271-2341 today, ask for the business or community development team, and alert them to
+    your eligible tracts under Rev. Proc. 2026-14 — request notification when the Governor’s
+    nomination process is announced and ask whether BEA will solicit community input before
+    the July 1, 2026 federal window opens. The NH Municipal Association has urged communities
+    to prepare site summaries and developer relationships now; treat this outreach call as
+    an opportunity to put your tracts on BEA’s radar before nominations begin.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2399,6 +2601,15 @@ new-hampshire:
   cra_lmi_tracts: 40
   ui_invest_q1_tracts: 13
   notes: BEA confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 process published.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 new-jersey:
   name: New Jersey
   fips: '34'
@@ -2441,21 +2652,19 @@ new-jersey:
   status_tier: contact_only
   last_checked: '2026-06-16'
   lead_agency:
-    name: NJ Dept. of Community Affairs (DCA) / NJ Economic Development Authority
-      (NJEDA)
+    name: NJ Dept. of Community Affairs (DCA) / NJ Economic Development Authority (NJEDA)
     url: https://www.nj.gov/dca/dlps/home/opp_zones.shtml
     contact_email: njopportunityzones@dca.nj.gov
     contact_phone: null
-  process: 'As of May 7, 2026, New Jersey DCA and NJEDA have not published a
-    formal OZ 2.0 nomination process, community input portal, or scoring criteria,
-    though the Governor’s OZ Resource Center (nj.gov/governor/njopportunityzones/)
-    remains active with general program information. Email njopportunityzones@dca.nj.gov
-    today to introduce your jurisdiction, identify eligible tracts, and request
-    notification when a community input or nomination process is announced — also
-    ask whether NJEDA’s OZ Challenge Program infrastructure will inform OZ 2.0
-    tract selection. Watch the DCA and Governor’s Resource Center pages for an
-    RFA, nomination portal, or public comment period before the July 1, 2026
-    federal nomination window; NJ may nominate up to 129 of 516 eligible tracts.'
+  process: As of May 7, 2026, New Jersey DCA and NJEDA have not published a formal OZ 2.0
+    nomination process, community input portal, or scoring criteria, though the Governor’s
+    OZ Resource Center (nj.gov/governor/njopportunityzones/) remains active with general program
+    information. Email njopportunityzones@dca.nj.gov today to introduce your jurisdiction,
+    identify eligible tracts, and request notification when a community input or nomination
+    process is announced — also ask whether NJEDA’s OZ Challenge Program infrastructure will
+    inform OZ 2.0 tract selection. Watch the DCA and Governor’s Resource Center pages for
+    an RFA, nomination portal, or public comment period before the July 1, 2026 federal nomination
+    window; NJ may nominate up to 129 of 516 eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2478,6 +2687,15 @@ new-jersey:
   cra_lmi_tracts: 428
   ui_invest_q1_tracts: 146
   notes: Resource center confirmed. No OZ 2.0 nomination process or deadline published.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 new-mexico:
   name: New Mexico
   fips: '35'
@@ -2524,34 +2742,32 @@ new-mexico:
     url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
     contact_email: info@edd.nm.gov
     contact_phone: (505) 827-0300
-  process: 'New Mexico routes its nomination process through the state''s network of
-    regional Councils of Governments (COGs), which coordinate input from local governments,
-    tribal nations, utilities, and other regional partners within their areas. Communities
-    seeking nomination should contact their COG directly — the COG submission deadline
-    to EDNM is May 15, 2026. To find your COG, contact EDNM at info@edd.nm.gov or
-    (505) 827-0300. EDNM refines the submitted
-    list through June 15, then delivers a recommended slate to the Governor''s Office
-    for final review. The Governor''s Office and EDNM finalize the 65 nominated tracts
-    for submission to Treasury by July 1, 2026. EDNM''s published scoring considerations
-    favor tracts that demonstrate clear development potential, supportive local land-use
-    policies, available land or redevelopment opportunities, proximity to economic
-    anchors, and alignment with existing incentive programs or community development
-    priorities; no numerical weights have been published. Communities not served by
-    a COG should contact EDNM directly at info@edd.nm.gov or (505) 827-0300.'
+  process: New Mexico routes its nomination process through the state's network of regional
+    Councils of Governments (COGs), which coordinate input from local governments, tribal
+    nations, utilities, and other regional partners within their areas. Communities seeking
+    nomination should contact their COG directly — the COG submission deadline to EDNM is
+    May 15, 2026. To find your COG, contact EDNM at info@edd.nm.gov or (505) 827-0300. EDNM
+    refines the submitted list through June 15, then delivers a recommended slate to the Governor's
+    Office for final review. The Governor's Office and EDNM finalize the 65 nominated tracts
+    for submission to Treasury by July 1, 2026. EDNM's published scoring considerations favor
+    tracts that demonstrate clear development potential, supportive local land-use policies,
+    available land or redevelopment opportunities, proximity to economic anchors, and alignment
+    with existing incentive programs or community development priorities; no numerical weights
+    have been published. Communities not served by a COG should contact EDNM directly at info@edd.nm.gov
+    or (505) 827-0300.
   scoring_rubric_url: https://www.edd.newmexico.gov/programs-and-services/communities/opportunity-zones/
   state_deadline: '2026-05-15'
   application_portal_url: null
   tribal_consultation:
-    framework: "New Mexico has the largest concentration of federally recognized tribal
-      nations of any state. The Navajo Nation — the largest reservation in the US —
-      spans McKinley and San Juan counties, which together hold 45 eligible tracts.
-      New Mexico is also home to 19 Pueblo tribes (including Acoma, Laguna, Zuni,
-      Taos, and Santa Clara Pueblos), the Jicarilla Apache Nation (Rio Arriba County),
-      and the Mescalero Apache Tribe (Otero County). EDNM routes tribal input through
-      the COG process; however, tribal nations may engage EDNM directly at info@edd.nm.gov.
-      If nominating tracts in or adjacent to tribal land, consult with the relevant
-      tribal government or Tribal Historic Preservation Office (THPO) before submitting
-      to your COG."
+    framework: New Mexico has the largest concentration of federally recognized tribal nations
+      of any state. The Navajo Nation — the largest reservation in the US — spans McKinley
+      and San Juan counties, which together hold 45 eligible tracts. New Mexico is also home
+      to 19 Pueblo tribes (including Acoma, Laguna, Zuni, Taos, and Santa Clara Pueblos),
+      the Jicarilla Apache Nation (Rio Arriba County), and the Mescalero Apache Tribe (Otero
+      County). EDNM routes tribal input through the COG process; however, tribal nations may
+      engage EDNM directly at info@edd.nm.gov. If nominating tracts in or adjacent to tribal
+      land, consult with the relevant tribal government or Tribal Historic Preservation Office
+      (THPO) before submitting to your COG.
     citation: null
   regional_edds: []
   rural_partners:
@@ -2568,9 +2784,18 @@ new-mexico:
   nmtc_projects: 36
   cra_lmi_tracts: 179
   ui_invest_q1_tracts: 30
-  notes: 'No online portal — COG-based submission process. COG deadline was May 15,
-    2026; EDNM still accepting input through June 15. No named OZ staff contact found
-    beyond general info@edd.nm.gov.'
+  notes: No online portal — COG-based submission process. COG deadline was May 15, 2026; EDNM
+    still accepting input through June 15. No named OZ staff contact found beyond general
+    info@edd.nm.gov.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 new-york:
   name: New York
   fips: '36'
@@ -2617,15 +2842,14 @@ new-york:
     url: https://esd.ny.gov/opportunity-zones
     contact_email: null
     contact_phone: null
-  process: As of May 7, 2026, Empire State Development has not published a public
-    nomination process, timeline, or scoring criteria for OZ 2.0; the agency's opportunity
-    zone page still addresses the 2018 round only. To get ahead of the July 1, 2026
-    federal nomination window, reach ESD directly through the contact form at esd.ny.gov
-    and ask ESD's Economic Development group to identify the OZ 2.0 point of contact
-    and confirm when community or local-government input will be accepted. Watch for
-    a press release or RFA from ESD in May or June 2026, when peer large states have
-    been publishing nomination guidance, and track the Governor's office for any executive
-    action directing ESD to begin the process.
+  process: As of May 7, 2026, Empire State Development has not published a public nomination
+    process, timeline, or scoring criteria for OZ 2.0; the agency's opportunity zone page
+    still addresses the 2018 round only. To get ahead of the July 1, 2026 federal nomination
+    window, reach ESD directly through the contact form at esd.ny.gov and ask ESD's Economic
+    Development group to identify the OZ 2.0 point of contact and confirm when community or
+    local-government input will be accepted. Watch for a press release or RFA from ESD in
+    May or June 2026, when peer large states have been publishing nomination guidance, and
+    track the Governor's office for any executive action directing ESD to begin the process.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2647,8 +2871,17 @@ new-york:
   nmtc_projects: 210
   cra_lmi_tracts: 1186
   ui_invest_q1_tracts: 194
-  notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process
-    published. 426 tracts to be nominated from 1,702 eligible.
+  notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process published.
+    426 tracts to be nominated from 1,702 eligible.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 north-carolina:
   name: North Carolina
   fips: '37'
@@ -2695,43 +2928,40 @@ north-carolina:
     url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
     contact_email: OZ-Feedback@commerce.nc.gov
     contact_phone: (919) 814-4600
-  process: 'The North Carolina Department of Commerce is running a public feedback
-    process on behalf of Governor Josh Stein, who will make final tract nominations
-    to Treasury during the July–September 2026 designation window. Local officials,
-    community organizations, and other stakeholders download an Excel feedback form
-    from public.nccommerce.com/oz and email completed submissions to OZ-Feedback@commerce.nc.gov
-    by June 21, 2026 at 11:59 p.m. (extended from the original June 7 deadline
-    per a June 4, 2026 NC Commerce press release). Respondents identify which eligible tracts they
-    support and explain alignment with one or more of NC Commerce''s three published
-    guidelines: Business Development (tracts with high-growth, high-wage sector potential
-    including advanced manufacturing, technology, life sciences, and clean energy;
-    Commerce- or EDPNC-certified industrial or mega sites; and projects with capital
-    investment already underway), Revitalization (tracts backed by documented local
-    plans or recent public investment for site redevelopment, mixed-use, or other
-    community-driven initiatives), and Housing Supply (tracts near major employment
-    centers or transit corridors where OZ designation can meaningfully expand housing
-    production, with documented regional housing need). No numerical weights have
-    been published for the three guidelines — document alignment with all three
-    categories if possible. After the feedback window closes, Commerce reviews
-    submissions and provides recommendations to the Governor; the state''s 202
-    nominations are due to Treasury beginning July 1, 2026.'
+  process: 'The North Carolina Department of Commerce is running a public feedback process
+    on behalf of Governor Josh Stein, who will make final tract nominations to Treasury during
+    the July–September 2026 designation window. Local officials, community organizations,
+    and other stakeholders download an Excel feedback form from public.nccommerce.com/oz and
+    email completed submissions to OZ-Feedback@commerce.nc.gov by June 21, 2026 at 11:59 p.m.
+    (extended from the original June 7 deadline per a June 4, 2026 NC Commerce press release).
+    Respondents identify which eligible tracts they support and explain alignment with one
+    or more of NC Commerce''s three published guidelines: Business Development (tracts with
+    high-growth, high-wage sector potential including advanced manufacturing, technology,
+    life sciences, and clean energy; Commerce- or EDPNC-certified industrial or mega sites;
+    and projects with capital investment already underway), Revitalization (tracts backed
+    by documented local plans or recent public investment for site redevelopment, mixed-use,
+    or other community-driven initiatives), and Housing Supply (tracts near major employment
+    centers or transit corridors where OZ designation can meaningfully expand housing production,
+    with documented regional housing need). No numerical weights have been published for the
+    three guidelines — document alignment with all three categories if possible. After the
+    feedback window closes, Commerce reviews submissions and provides recommendations to the
+    Governor; the state''s 202 nominations are due to Treasury beginning July 1, 2026.'
   scoring_rubric_url: https://www.commerce.nc.gov/data-tools-reports/opportunity-zones-north-carolina
   state_deadline: '2026-06-21'
   application_portal_url: https://public.nccommerce.com/oz/
   tribal_consultation:
-    framework: "North Carolina is home to two distinct tribal communities with eligible-tract
-      interests. The Eastern Band of Cherokee Indians (EBCI) is a federally recognized
-      tribe with a reservation in Jackson and Swain counties in western North Carolina;
-      EBCI has a Tribal Historic Preservation Office (ebci-nsn.gov/thpo) and should
-      be consulted for nominations in or adjacent to Jackson and Swain counties. The
-      Lumbee Tribe is the largest Native American tribe east of the Mississippi River
-      (approximately 55,000 members), is state-recognized, and is centered in Robeson
-      County — which has 31 eligible tracts and appears in the top-10 county table.
-      Robeson County is not federally recognized, so no formal THPO consultation is
-      legally required; however, the Lumbee Tribal Administration (lumbeetribe.com)
-      has active community development interests in Robeson County and should be engaged
-      directly for nominations in that county. NC Commerce has not published a tribal
-      consultation protocol for the OZ 2.0 process."
+    framework: North Carolina is home to two distinct tribal communities with eligible-tract
+      interests. The Eastern Band of Cherokee Indians (EBCI) is a federally recognized tribe
+      with a reservation in Jackson and Swain counties in western North Carolina; EBCI has
+      a Tribal Historic Preservation Office (ebci-nsn.gov/thpo) and should be consulted for
+      nominations in or adjacent to Jackson and Swain counties. The Lumbee Tribe is the largest
+      Native American tribe east of the Mississippi River (approximately 55,000 members),
+      is state-recognized, and is centered in Robeson County — which has 31 eligible tracts
+      and appears in the top-10 county table. Robeson County is not federally recognized,
+      so no formal THPO consultation is legally required; however, the Lumbee Tribal Administration
+      (lumbeetribe.com) has active community development interests in Robeson County and should
+      be engaged directly for nominations in that county. NC Commerce has not published a
+      tribal consultation protocol for the OZ 2.0 process.
     citation: null
   regional_edds: []
   rural_partners:
@@ -2748,11 +2978,20 @@ north-carolina:
   nmtc_projects: 89
   cra_lmi_tracts: 597
   ui_invest_q1_tracts: 191
-  notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning,
-    NC Commerce; OZ-Feedback@commerce.nc.gov; (919) 814-4600. This is a public feedback
-    process — Commerce solicits input then advises Governor Stein, who makes final
-    selections. ArcGIS map of all 807 eligible tracts available at public.nccommerce.com/oz.
-    Press release (Apr 29, 2026): commerce.nc.gov/news/press-releases/2026/04/29/nc-commerce-invites-public-feedback-help-identify-new-opportunity-zones-north-carolina.'
+  notes: 'Contact: Emily Roach Pandich, Director of Policy and Strategic Planning, NC Commerce;
+    OZ-Feedback@commerce.nc.gov; (919) 814-4600. This is a public feedback process — Commerce
+    solicits input then advises Governor Stein, who makes final selections. ArcGIS map of
+    all 807 eligible tracts available at public.nccommerce.com/oz. Press release (Apr 29,
+    2026): commerce.nc.gov/news/press-releases/2026/04/29/nc-commerce-invites-public-feedback-help-identify-new-opportunity-zones-north-carolina.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 north-dakota:
   name: North Dakota
   fips: '38'
@@ -2799,18 +3038,16 @@ north-dakota:
     url: https://www.commerce.nd.gov/economic-development-finance
     contact_email: null
     contact_phone: (701) 328-5344
-  process: "The ND Department of Commerce Economic Development & Finance Division has\
-    \ not published a formal OZ 2.0 nomination process as of May 7, 2026; no application\
-    \ portal, scoring criteria, or community submission deadline has been announced.\
-    \ Contact Rich Garman, Director of Economic Development and Finance, at (701) 328-5344\
-    \ — use the EDF Team directory at commerce.nd.gov/economic-development-finance/edf-team\
-    \ to locate a direct email — and ask whether Commerce plans to solicit community\
-    \ input before it submits to the Governor ahead of the July 1, 2026 federal nomination\
-    \ window; offer to provide tract-level eligibility data and a letter of support.\
-    \ Watch the Commerce news feed at commerce.nd.gov for a nomination announcement\
-    \ in May or June 2026; North Dakota must nominate at least 25 tracts (statutory\
-    \ minimum) from its pool of 37 eligible tracts, so every eligible community has\
-    \ meaningful odds of inclusion."
+  process: The ND Department of Commerce Economic Development & Finance Division has not published
+    a formal OZ 2.0 nomination process as of May 7, 2026; no application portal, scoring criteria,
+    or community submission deadline has been announced. Contact Rich Garman, Director of
+    Economic Development and Finance, at (701) 328-5344 — use the EDF Team directory at commerce.nd.gov/economic-development-finance/edf-team
+    to locate a direct email — and ask whether Commerce plans to solicit community input before
+    it submits to the Governor ahead of the July 1, 2026 federal nomination window; offer
+    to provide tract-level eligibility data and a letter of support. Watch the Commerce news
+    feed at commerce.nd.gov for a nomination announcement in May or June 2026; North Dakota
+    must nominate at least 25 tracts (statutory minimum) from its pool of 37 eligible tracts,
+    so every eligible community has meaningful odds of inclusion.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -2832,9 +3069,18 @@ north-dakota:
   nmtc_projects: 6
   cra_lmi_tracts: 31
   ui_invest_q1_tracts: 3
-  notes: "Contact Rich Garman (Director), (701) 328-5344. EDF Team page: commerce.nd.gov/economic-development-finance/edf-team.\
-    \ ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance\
-    \ published as of 2026-05-07."
+  notes: 'Contact Rich Garman (Director), (701) 328-5344. EDF Team page: commerce.nd.gov/economic-development-finance/edf-team.
+    ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance published
+    as of 2026-05-07.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 ohio:
   name: Ohio
   fips: '39'
@@ -2881,44 +3127,39 @@ ohio:
     url: https://opportunityzones.ohio.gov
     contact_email: null
     contact_phone: null
-  process: "The Ohio Department of Development (ODOD) is running the OZ 2.0 nomination\
-    \ process through a 30-day online portal at opportunityzones.ohio.gov. Reporting\
-    \ from June 2026 indicates the portal reopened/relaunched around June 10, 2026,\
-    \ which would put the submission deadline at approximately July 10, 2026 — this\
-    \ supersedes the earlier unconfirmed ~May 31 estimate, but should still be\
-    \ confirmed directly at opportunityzones.ohio.gov before submitting, since the\
-    \ underlying date came from aggregated reporting rather than an ODOD-published\
-    \ notice. ODOD has not published a direct OZ team contact email or phone;\
-    \ for questions, use the portal or call the ODOD main line at (614) 466-2317\
-    \ and ask to be routed to the OZ 2.0 team. Local governments, regional planning\
-    \ bodies, and economic development organizations may submit nominations through\
-    \ the portal; no formal scoring rubric has been published, but ODOD has signaled\
-    \ that nominations demonstrating regional collaboration, alignment with existing\
-    \ economic development strategies, and connection to housing or revitalization\
-    \ plans will be weighted favorably. No current OZ 1.0 designations are automatically\
-    \ renewed — all tracts must be renominated. Greater Ohio Policy Center\
-    \ (greaterohio.org/opportunityzones) is serving as a statewide technical assistance\
-    \ resource; for Appalachian Ohio communities in southeastern counties, contact\
-    \ the Greater Ohio Policy Center before the deadline — they can help frame\
-    \ submissions in terms of ODOD's regional collaboration preference."
+  process: The Ohio Department of Development (ODOD) is running the OZ 2.0 nomination process
+    through a 30-day online portal at opportunityzones.ohio.gov. Reporting from June 2026
+    indicates the portal reopened/relaunched around June 10, 2026, which would put the submission
+    deadline at approximately July 10, 2026 — this supersedes the earlier unconfirmed ~May
+    31 estimate, but should still be confirmed directly at opportunityzones.ohio.gov before
+    submitting, since the underlying date came from aggregated reporting rather than an ODOD-published
+    notice. ODOD has not published a direct OZ team contact email or phone; for questions,
+    use the portal or call the ODOD main line at (614) 466-2317 and ask to be routed to the
+    OZ 2.0 team. Local governments, regional planning bodies, and economic development organizations
+    may submit nominations through the portal; no formal scoring rubric has been published,
+    but ODOD has signaled that nominations demonstrating regional collaboration, alignment
+    with existing economic development strategies, and connection to housing or revitalization
+    plans will be weighted favorably. No current OZ 1.0 designations are automatically renewed
+    — all tracts must be renominated. Greater Ohio Policy Center (greaterohio.org/opportunityzones)
+    is serving as a statewide technical assistance resource; for Appalachian Ohio communities
+    in southeastern counties, contact the Greater Ohio Policy Center before the deadline —
+    they can help frame submissions in terms of ODOD's regional collaboration preference.
   scoring_rubric_url: null
   state_deadline: '2026-07-10'
   application_portal_url: https://opportunityzones.ohio.gov
-  notes: "Greater Ohio Policy Center TA resource: https://www.greaterohio.org/opportunityzones.\
-    \ Portal URL opportunityzones.ohio.gov appeared in ohio.gov search index as of\
-    \ 2026-05-06 but returned 403 to automated fetchers — likely a WAF block rather\
-    \ than a dead link. Deadline of May 31 is inferred from a 30-day window opened\
-    \ in late April; verify directly. No ODOD OZ-specific contact email found as\
-    \ of last check. ODOD main line: (614) 466-2317."
+  notes: 'Greater Ohio Policy Center TA resource: https://www.greaterohio.org/opportunityzones.
+    Portal URL opportunityzones.ohio.gov appeared in ohio.gov search index as of 2026-05-06
+    but returned 403 to automated fetchers — likely a WAF block rather than a dead link. Deadline
+    of May 31 is inferred from a 30-day window opened in late April; verify directly. No ODOD
+    OZ-specific contact email found as of last check. ODOD main line: (614) 466-2317.'
   tribal_consultation:
-    framework: "Ohio has no federally recognized tribes with current in-state reservations.\
-      \ Multiple Oklahoma-based tribes have historic Ohio connections — including the\
-      \ Seneca-Cayuga Nation, Shawnee Tribe, and Eastern Shawnee Tribe of Oklahoma.\
-      \ ODOD has not published a tribal consultation protocol. No tribal consultation\
-      \ action is required for the standard submission process, but communities\
-      \ aware of specific archaeological or cultural sites in candidate tracts\
-      \ should consult the Ohio Historic Preservation Office (ohiohistory.org/ohpo)\
-      \ before submitting."
+    framework: Ohio has no federally recognized tribes with current in-state reservations.
+      Multiple Oklahoma-based tribes have historic Ohio connections — including the Seneca-Cayuga
+      Nation, Shawnee Tribe, and Eastern Shawnee Tribe of Oklahoma. ODOD has not published
+      a tribal consultation protocol. No tribal consultation action is required for the standard
+      submission process, but communities aware of specific archaeological or cultural sites
+      in candidate tracts should consult the Ohio Historic Preservation Office (ohiohistory.org/ohpo)
+      before submitting.
     citation: null
   regional_edds: []
   rural_partners:
@@ -2935,6 +3176,15 @@ ohio:
   nmtc_projects: 414
   cra_lmi_tracts: 805
   ui_invest_q1_tracts: 195
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 oklahoma:
   name: Oklahoma
   fips: '40'
@@ -2981,18 +3231,16 @@ oklahoma:
     url: https://www.okcommerce.gov/doing-business/business-relocation-expansion/incentives/federal-opportunity-zones/
     contact_email: jon.chiappe@okcommerce.gov
     contact_phone: (405) 815-5210
-  process: "Oklahoma Department of Commerce administers the OZ 2.0 nomination process
-    in two phases. An initial public survey (March 2–April 10, 2026) gathered community
-    input on which eligible tracts have strong economic development potential, covering
-    types of planned development, geographic context, tract characteristics, and
-    submitter contact information. Oklahoma Commerce then released its formal nomination
-    form on April 10, 2026, available at forms.okcommerce.gov/260495603721860, with
-    submissions due June 19, 2026 (per Commerce reporting; recommend confirming
-    directly before treating as final).
-    Contacts are Jon Chiappe (jon.chiappe@okcommerce.gov, 405-815-5210) and Aldwyn
-    Sappleton (405-815-5369). Governor Stitt will submit Oklahoma's list of up to
-    104 nominated tracts — drawn from 413 eligible — when the federal 90-day window
-    opened July 1, 2026; no scoring rubric has been published."
+  process: Oklahoma Department of Commerce administers the OZ 2.0 nomination process in two
+    phases. An initial public survey (March 2–April 10, 2026) gathered community input on
+    which eligible tracts have strong economic development potential, covering types of planned
+    development, geographic context, tract characteristics, and submitter contact information.
+    Oklahoma Commerce then released its formal nomination form on April 10, 2026, available
+    at forms.okcommerce.gov/260495603721860, with submissions due June 19, 2026 (per Commerce
+    reporting; recommend confirming directly before treating as final). Contacts are Jon Chiappe
+    (jon.chiappe@okcommerce.gov, 405-815-5210) and Aldwyn Sappleton (405-815-5369). Governor
+    Stitt will submit Oklahoma's list of up to 104 nominated tracts — drawn from 413 eligible
+    — when the federal 90-day window opened July 1, 2026; no scoring rubric has been published.
   scoring_rubric_url: null
   state_deadline: '2026-06-19'
   application_portal_url: https://forms.okcommerce.gov/260495603721860
@@ -3015,6 +3263,15 @@ oklahoma:
   cra_lmi_tracts: 317
   ui_invest_q1_tracts: 45
   notes: 104 tracts to be nominated from 413 eligible; 188 qualify as rural.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 oregon:
   name: Oregon
   fips: '41'
@@ -3061,34 +3318,31 @@ oregon:
     url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
     contact_email: incentives.program@biz.oregon.gov
     contact_phone: (503) 986-0123
-  process: 'Business Oregon is accepting nomination applications through May 22, 2026
-    at 5:00 p.m. PT via a Regional Collaboration Application process that opened April
-    13. Eligible applicants include cities, counties, ports, tribal governments, and
-    economic development organizations, but only one application is accepted per tract
-    — coordinate with any neighboring jurisdiction that shares a tract boundary before
-    submitting. Applications are evaluated on three criteria (weights not published):
-    Project Viability and Investment Readiness, Local Support and Capacity, and
-    Strategic Alignment with state economic priorities. Business Oregon hosted webinars
-    and weekly office hours during the application window; materials are available on
-    the Business Oregon OZ 2.0 page. Contact incentives.program@biz.oregon.gov or
-    (503) 986-0123; for tribal nominations contact tribal liaison Brian Plinski at
-    Brian.PLINSKI@biz.oregon.gov.'
+  process: 'Business Oregon is accepting nomination applications through May 22, 2026 at 5:00
+    p.m. PT via a Regional Collaboration Application process that opened April 13. Eligible
+    applicants include cities, counties, ports, tribal governments, and economic development
+    organizations, but only one application is accepted per tract — coordinate with any neighboring
+    jurisdiction that shares a tract boundary before submitting. Applications are evaluated
+    on three criteria (weights not published): Project Viability and Investment Readiness,
+    Local Support and Capacity, and Strategic Alignment with state economic priorities. Business
+    Oregon hosted webinars and weekly office hours during the application window; materials
+    are available on the Business Oregon OZ 2.0 page. Contact incentives.program@biz.oregon.gov
+    or (503) 986-0123; for tribal nominations contact tribal liaison Brian Plinski at Brian.PLINSKI@biz.oregon.gov.'
   scoring_rubric_url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
   state_deadline: '2026-05-22'
   application_portal_url: https://www.oregon.gov/biz/programs/opportunity_zones/pages/default.aspx
   tribal_consultation:
-    framework: "Oregon has nine federally recognized tribes. Business Oregon has designated
-      a dedicated tribal liaison, Brian Plinski (Brian.PLINSKI@biz.oregon.gov), who
-      manages tribal government applications separately from the general RFA track;
-      tribal governments may submit directly through the same application portal or
-      coordinate with Brian Plinski. Key tribal-county overlaps in the eligible tract
-      universe include: Confederated Tribes of Warm Springs (Jefferson and Wasco counties);
-      Confederated Tribes of the Umatilla Indian Reservation (Umatilla County); Burns
-      Paiute Tribe (Harney County); Klamath Tribes (Klamath County, 12 eligible tracts);
-      Coos, Lower Umpqua and Siuslaw Indians (Coos County, 10 eligible tracts); Confederated
-      Tribes of Grand Ronde and Siletz Indians (western valleys including Douglas and
-      Lane counties). Tribal governments submit applications through the same portal
-      but are encouraged to contact Brian Plinski first to coordinate."
+    framework: 'Oregon has nine federally recognized tribes. Business Oregon has designated
+      a dedicated tribal liaison, Brian Plinski (Brian.PLINSKI@biz.oregon.gov), who manages
+      tribal government applications separately from the general RFA track; tribal governments
+      may submit directly through the same application portal or coordinate with Brian Plinski.
+      Key tribal-county overlaps in the eligible tract universe include: Confederated Tribes
+      of Warm Springs (Jefferson and Wasco counties); Confederated Tribes of the Umatilla
+      Indian Reservation (Umatilla County); Burns Paiute Tribe (Harney County); Klamath Tribes
+      (Klamath County, 12 eligible tracts); Coos, Lower Umpqua and Siuslaw Indians (Coos County,
+      10 eligible tracts); Confederated Tribes of Grand Ronde and Siletz Indians (western
+      valleys including Douglas and Lane counties). Tribal governments submit applications
+      through the same portal but are encouraged to contact Brian Plinski first to coordinate.'
     citation: Business Oregon OZ 2.0 RFA page (references.md §13)
   regional_edds: []
   rural_partners:
@@ -3105,8 +3359,16 @@ oregon:
   nmtc_projects: 78
   cra_lmi_tracts: 136
   ui_invest_q1_tracts: 92
-  notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts
-    to be nominated.'
+  notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts to be nominated.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 pennsylvania:
   name: Pennsylvania
   fips: '42'
@@ -3153,16 +3415,14 @@ pennsylvania:
     url: https://dced.pa.gov/programs-funding/federal-funding-opportunities/qualified-opportunity-zones/
     contact_email: oppzones@pa.gov
     contact_phone: null
-  process: >-
-    DCED hosted a public webinar ("Opportunity Zones in Pennsylvania: What You
-    Need To Know") on May 19, 2026 and opened a Stakeholder Engagement form
-    (Microsoft Forms) for municipalities and stakeholders to nominate or comment
-    on census tracts, with submissions due June 5, 2026 (county deadline now
-    passed — DCED is in internal review). DCED's five priority sectors are
-    housing, industrial sites, main street, rural, and innovation. With 866
-    eligible tracts and a cap of 217, rural-flagged tracts under Rev. Proc.
-    2026-14 with a clear investment pipeline were highest-priority submissions.
-    Contact DCED at oppzones@pa.gov for status updates.
+  process: 'DCED hosted a public webinar ("Opportunity Zones in Pennsylvania: What You Need
+    To Know") on May 19, 2026 and opened a Stakeholder Engagement form (Microsoft Forms) for
+    municipalities and stakeholders to nominate or comment on census tracts, with submissions
+    due June 5, 2026 (county deadline now passed — DCED is in internal review). DCED''s five
+    priority sectors are housing, industrial sites, main street, rural, and innovation. With
+    866 eligible tracts and a cap of 217, rural-flagged tracts under Rev. Proc. 2026-14 with
+    a clear investment pipeline were highest-priority submissions. Contact DCED at oppzones@pa.gov
+    for status updates.'
   scoring_rubric_url: null
   state_deadline: '2026-06-05'
   application_portal_url: https://forms.office.com/Pages/ResponsePage.aspx?id=QSiOQSgB1U2bbEf8Wpob3poP7QlziP1Hmi1R2shp3mlUNE41UE1KQjNaMFAwR1lSUk5IN0tPOTFGRS4u
@@ -3186,6 +3446,15 @@ pennsylvania:
   ui_invest_q1_tracts: 177
   notes: County deadline was June 5, 2026 (confirmed 2026-06-16). DCED in internal review.
     217 tracts to be nominated. Contact oppzones@pa.gov for status.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 rhode-island:
   name: Rhode Island
   fips: '44'
@@ -3214,17 +3483,16 @@ rhode-island:
     url: https://commerceri.com/site-selection/opportunity-zones/
     contact_email: giselle.mahoney.ctr@commerce.ri.gov
     contact_phone: (401) 278-9100
-  process: "Rhode Island Commerce Corporation has not published a formal, confirmed\
-    \ OZ 2.0 nomination process as of this writing; the agency's OZ page still largely\
-    \ reflects OZ 1.0 content. There are unconfirmed indications Commerce RI may be\
-    \ working toward an internal submission target around June 23, 2026, but this has\
-    \ not been verified against a primary Commerce RI source and should be treated as\
-    \ provisional. Email Giselle Mahoney at giselle.mahoney.ctr@commerce.ri.gov or call\
-    \ Commerce RI at (401) 278-9100 to introduce your jurisdiction, confirm whether a\
-    \ June 23 (or other) target date is real, ask when community input will open, and\
-    \ offer tract-level eligibility data for any tracts you want considered. As a\
-    \ small-population state, Rhode Island must nominate at least 25 tracts regardless\
-    \ of the statutory 25% cap, so the pool is constrained and early engagement matters."
+  process: Rhode Island Commerce Corporation has not published a formal, confirmed OZ 2.0
+    nomination process as of this writing; the agency's OZ page still largely reflects OZ
+    1.0 content. There are unconfirmed indications Commerce RI may be working toward an internal
+    submission target around June 23, 2026, but this has not been verified against a primary
+    Commerce RI source and should be treated as provisional. Email Giselle Mahoney at giselle.mahoney.ctr@commerce.ri.gov
+    or call Commerce RI at (401) 278-9100 to introduce your jurisdiction, confirm whether
+    a June 23 (or other) target date is real, ask when community input will open, and offer
+    tract-level eligibility data for any tracts you want considered. As a small-population
+    state, Rhode Island must nominate at least 25 tracts regardless of the statutory 25% cap,
+    so the pool is constrained and early engagement matters.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3246,8 +3514,17 @@ rhode-island:
   nmtc_projects: 60
   cra_lmi_tracts: 46
   ui_invest_q1_tracts: 23
-  notes: "Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626.\
-    \ Subject to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07."
+  notes: Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626. Subject
+    to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 south-carolina:
   name: South Carolina
   fips: '45'
@@ -3294,37 +3571,33 @@ south-carolina:
     url: https://www.sccommerce.com/opportunity-zone
     contact_email: oz@sccommerce.com
     contact_phone: null
-  process: "SC Commerce is coordinating the nomination process on behalf of Governor\
-    \ McMaster and accepts community input via an online submission portal at\
-    \ sccommerce.com/opportunity-zone-submission through June 15, 2026 (extended\
-    \ from the original June 1 deadline). This is one\
-    \ of the most open processes in the country — local governments, economic\
-    \ development organizations, community leaders, and the general public may all\
-    \ submit directly; you do not need a government sponsor. Submitters rank eligible\
-    \ tracts in order of preference and explain why each should be nominated against\
-    \ SC Commerce's four published criteria: (1) potential to attract private\
-    \ investment, (2) alignment with South Carolina's economic development strategy,\
-    \ (3) presence of market-ready infrastructure (industrial sites, utility and\
-    \ transportation networks, and broadband availability), and (4) housing\
-    \ development activity. Note that the housing criterion does not specify\
-    \ affordable housing — if affordability matters to your submission, state it\
-    \ explicitly. No numerical weights or formal rubric document have been published.\
-    \ Regional information meetings were announced but dates had not been confirmed\
-    \ as of the last check; do not wait for a workshop before submitting, as the\
-    \ June 15 deadline is firm. After it closes, SC Commerce will compile a recommended\
-    \ list for the Governor, targeting completion by approximately July 1, 2026.\
-    \ South Carolina may nominate up to 112 of its 445 eligible tracts (25%\
-    \ statutory cap); no per-applicant tract limit has been published."
+  process: 'SC Commerce is coordinating the nomination process on behalf of Governor McMaster
+    and accepts community input via an online submission portal at sccommerce.com/opportunity-zone-submission
+    through June 15, 2026 (extended from the original June 1 deadline). This is one of the
+    most open processes in the country — local governments, economic development organizations,
+    community leaders, and the general public may all submit directly; you do not need a government
+    sponsor. Submitters rank eligible tracts in order of preference and explain why each should
+    be nominated against SC Commerce''s four published criteria: (1) potential to attract
+    private investment, (2) alignment with South Carolina''s economic development strategy,
+    (3) presence of market-ready infrastructure (industrial sites, utility and transportation
+    networks, and broadband availability), and (4) housing development activity. Note that
+    the housing criterion does not specify affordable housing — if affordability matters to
+    your submission, state it explicitly. No numerical weights or formal rubric document have
+    been published. Regional information meetings were announced but dates had not been confirmed
+    as of the last check; do not wait for a workshop before submitting, as the June 15 deadline
+    is firm. After it closes, SC Commerce will compile a recommended list for the Governor,
+    targeting completion by approximately July 1, 2026. South Carolina may nominate up to
+    112 of its 445 eligible tracts (25% statutory cap); no per-applicant tract limit has been
+    published.'
   scoring_rubric_url: null
   state_deadline: '2026-06-15'
   application_portal_url: https://www.sccommerce.com/opportunity-zone-submission
   tribal_consultation:
-    framework: "The Catawba Indian Nation is a federally recognized tribe with a\
-      \ reservation in York County, South Carolina. York County is in the\
-      \ Greenville-Charlotte metro area; if eligible tracts exist in or near York\
-      \ County, contact the Catawba Nation tribal government (catawbaindian.com)\
-      \ before submitting a nomination. SC Commerce has not published a tribal\
-      \ consultation protocol for the OZ 2.0 process."
+    framework: The Catawba Indian Nation is a federally recognized tribe with a reservation
+      in York County, South Carolina. York County is in the Greenville-Charlotte metro area;
+      if eligible tracts exist in or near York County, contact the Catawba Nation tribal government
+      (catawbaindian.com) before submitting a nomination. SC Commerce has not published a
+      tribal consultation protocol for the OZ 2.0 process.
     citation: null
   regional_edds: []
   rural_partners:
@@ -3341,12 +3614,20 @@ south-carolina:
   nmtc_projects: 62
   cra_lmi_tracts: 307
   ui_invest_q1_tracts: 88
-  notes: "112 tracts to be nominated from 445 eligible (25% statutory cap). Submitters
-    rank tracts in preference order with supporting narrative. Regional meetings and
-    virtual workshop planned; dates unannounced as of 2026-05-06. Recommendation to
-    Governor targeted ~July 1, 2026, when federal submission window opens. July 15
-    in prior entry was unverified — corrected to July 1."
-
+  notes: 112 tracts to be nominated from 445 eligible (25% statutory cap). Submitters rank
+    tracts in preference order with supporting narrative. Regional meetings and virtual workshop
+    planned; dates unannounced as of 2026-05-06. Recommendation to Governor targeted ~July
+    1, 2026, when federal submission window opens. July 15 in prior entry was unverified —
+    corrected to July 1.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 south-dakota:
   name: South Dakota
   fips: '46'
@@ -3393,16 +3674,16 @@ south-dakota:
     url: https://sdgoed.com
     contact_email: null
     contact_phone: null
-  process: "South Dakota GOED has not published a formal OZ 2.0 nomination process\
-    \ as of May 7, 2026; no application portal, scoring criteria, or community submission\
-    \ deadline has been announced. Visit sdgoed.com and use the general contact form\
-    \ or call the main GOED line to ask whether GOED will solicit community input before\
-    \ submitting nominations to the Governor ahead of the July 1, 2026 federal nomination\
-    \ window; bring a list of eligible tract GEOID codes and a concise economic-need\
-    \ narrative for any tracts your jurisdiction wants considered. Watch for a GOED\
-    \ news release in May or June 2026 — South Dakota must nominate at least 25 tracts\
-    \ (statutory minimum) from its pool of 52 eligible tracts, and 35 of those 52\
-    \ are rural-designated, making early rural-community engagement particularly time-sensitive."
+  process: South Dakota GOED has not published a formal OZ 2.0 nomination process as of May
+    7, 2026; no application portal, scoring criteria, or community submission deadline has
+    been announced. Visit sdgoed.com and use the general contact form or call the main GOED
+    line to ask whether GOED will solicit community input before submitting nominations to
+    the Governor ahead of the July 1, 2026 federal nomination window; bring a list of eligible
+    tract GEOID codes and a concise economic-need narrative for any tracts your jurisdiction
+    wants considered. Watch for a GOED news release in May or June 2026 — South Dakota must
+    nominate at least 25 tracts (statutory minimum) from its pool of 52 eligible tracts, and
+    35 of those 52 are rural-designated, making early rural-community engagement particularly
+    time-sensitive.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3424,8 +3705,17 @@ south-dakota:
   nmtc_projects: 10
   cra_lmi_tracts: 44
   ui_invest_q1_tracts: 8
-  notes: GOED presumed lead. No confirmed contact email found. Subject to
-    25-zone statutory minimum.
+  notes: GOED presumed lead. No confirmed contact email found. Subject to 25-zone statutory
+    minimum.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 tennessee:
   name: Tennessee
   fips: '47'
@@ -3472,17 +3762,16 @@ tennessee:
     url: https://www.tn.gov/ecd/opportunity-zones.html
     contact_email: ED.OpportunityZones@tn.gov
     contact_phone: (615) 741-1888
-  process: "TNECD has not published a formal OZ 2.0 application or nomination deadline
-    as of May 7, 2026, but the department convened mayors and local stakeholders for
-    a working discussion on February 18, 2026 — a signal that TNECD is actively scoping
-    the process ahead of the federal nomination window that opened July 1, 2026. Local
-    planners should email ED.OpportunityZones@tn.gov today to introduce their community,
-    identify the specific eligible tracts they wish to champion, and ask when TNECD
-    will publish its internal submission timeline; calls to (615) 741-1888 are another
-    direct path to the OZ team. Watch for a formal Request for Nominations — or at
-    minimum a structured intake form — to appear on the TNECD OZ page in coming weeks,
-    given that comparable states are setting internal deadlines four to six weeks ahead
-    of July 1."
+  process: TNECD has not published a formal OZ 2.0 application or nomination deadline as of
+    May 7, 2026, but the department convened mayors and local stakeholders for a working discussion
+    on February 18, 2026 — a signal that TNECD is actively scoping the process ahead of the
+    federal nomination window that opened July 1, 2026. Local planners should email ED.OpportunityZones@tn.gov
+    today to introduce their community, identify the specific eligible tracts they wish to
+    champion, and ask when TNECD will publish its internal submission timeline; calls to (615)
+    741-1888 are another direct path to the OZ team. Watch for a formal Request for Nominations
+    — or at minimum a structured intake form — to appear on the TNECD OZ page in coming weeks,
+    given that comparable states are setting internal deadlines four to six weeks ahead of
+    July 1.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3504,8 +3793,17 @@ tennessee:
   nmtc_projects: 94
   cra_lmi_tracts: 374
   ui_invest_q1_tracts: 151
-  notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application
-    or deadline published as of 2026-05-07.
+  notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application or deadline
+    published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 texas:
   name: Texas
   fips: '48'
@@ -3552,43 +3850,39 @@ texas:
     url: https://gov.texas.gov/business/page/opportunity-zones
     contact_email: OppZone2.0@gov.texas.gov
     contact_phone: null
-  process: "The Texas Economic Development & Tourism Office (EDT) within the Office\
-    \ of the Governor is leading the OZ 2.0 nomination process, accepting submissions\
-    \ from local economic development organizations (EDOs) and, in counties where no\
-    \ EDO exists, from county judges. To participate, download the Nomination Packet\
-    \ from the EDT Opportunity Zones page (gov.texas.gov/business/page/opportunity-zones),\
-    \ complete it for each proposed tract, and email it to OppZone2.0@gov.texas.gov\
-    \ by June 26, 2026. An EDT FAQ document is also available at\
-    \ gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf — review it before\
-    \ submitting. EDT intends to finalize and submit Texas' designations to the U.S.\
-    \ Treasury no later than August 3, 2026. EDT evaluates nominations against four\
-    \ criteria: statutory compliance (only tracts that clearly meet federal eligibility\
-    \ under Rev. Proc. 2026-14 qualify); local support (documented commitments such\
-    \ as incentives, rebates, or formal agreements); project viability (private capital\
-    \ deployable within 24–48 months, with additional credit for inclusive growth\
-    \ measures including affordable housing commitments, anti-displacement tools, and\
-    \ workforce initiatives); and geographic balance (preference for rural tracts and\
-    \ areas with federally declared disasters — submitters in post-FEMA-declared-disaster\
-    \ counties should document that status explicitly). Point weights for each criterion\
-    \ have not been published. Note that OZ 1.0 investment in Texas — particularly in\
-    \ Harris County (Houston) — was heavily concentrated in already-appreciating urban\
-    \ tracts; communities with an anti-displacement case to make should include it\
-    \ explicitly in the project viability criterion, where it earns additional credit."
+  process: 'The Texas Economic Development & Tourism Office (EDT) within the Office of the
+    Governor is leading the OZ 2.0 nomination process, accepting submissions from local economic
+    development organizations (EDOs) and, in counties where no EDO exists, from county judges.
+    To participate, download the Nomination Packet from the EDT Opportunity Zones page (gov.texas.gov/business/page/opportunity-zones),
+    complete it for each proposed tract, and email it to OppZone2.0@gov.texas.gov by June
+    26, 2026. An EDT FAQ document is also available at gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf
+    — review it before submitting. EDT intends to finalize and submit Texas'' designations
+    to the U.S. Treasury no later than August 3, 2026. EDT evaluates nominations against four
+    criteria: statutory compliance (only tracts that clearly meet federal eligibility under
+    Rev. Proc. 2026-14 qualify); local support (documented commitments such as incentives,
+    rebates, or formal agreements); project viability (private capital deployable within 24–48
+    months, with additional credit for inclusive growth measures including affordable housing
+    commitments, anti-displacement tools, and workforce initiatives); and geographic balance
+    (preference for rural tracts and areas with federally declared disasters — submitters
+    in post-FEMA-declared-disaster counties should document that status explicitly). Point
+    weights for each criterion have not been published. Note that OZ 1.0 investment in Texas
+    — particularly in Harris County (Houston) — was heavily concentrated in already-appreciating
+    urban tracts; communities with an anti-displacement case to make should include it explicitly
+    in the project viability criterion, where it earns additional credit.'
   scoring_rubric_url: https://gov.texas.gov/business/page/opportunity-zones
   state_deadline: '2026-06-26'
   application_portal_url: https://gov.texas.gov/business/page/opportunity-zones
   tribal_consultation:
-    framework: "Texas has three federally recognized tribes with active land in the
-      state. The Alabama-Coushatta Tribe of Texas has a reservation in Polk County
-      (east Texas); the Kickapoo Traditional Tribe of Texas has a reservation in
-      Maverick County (southwest Texas, US-Mexico border); the Ysleta del Sur Pueblo
-      (Tigua) has a reservation in El Paso County (87 eligible tracts). All three
-      tribes have federally recognized status and Tribal Historic Preservation Offices
-      (THPOs) or equivalent contacts. EDT has not published a tribal consultation
-      protocol for the OZ 2.0 process. Submitters nominating tracts in Polk, Maverick,
-      or El Paso counties — or adjacent areas — should contact the relevant tribal
-      government before submitting. The Kickapoo Nation in Kansas (Brown County) is
-      separate from the Kickapoo Traditional Tribe of Texas."
+    framework: Texas has three federally recognized tribes with active land in the state.
+      The Alabama-Coushatta Tribe of Texas has a reservation in Polk County (east Texas);
+      the Kickapoo Traditional Tribe of Texas has a reservation in Maverick County (southwest
+      Texas, US-Mexico border); the Ysleta del Sur Pueblo (Tigua) has a reservation in El
+      Paso County (87 eligible tracts). All three tribes have federally recognized status
+      and Tribal Historic Preservation Offices (THPOs) or equivalent contacts. EDT has not
+      published a tribal consultation protocol for the OZ 2.0 process. Submitters nominating
+      tracts in Polk, Maverick, or El Paso counties — or adjacent areas — should contact the
+      relevant tribal government before submitting. The Kickapoo Nation in Kansas (Brown County)
+      is separate from the Kickapoo Traditional Tribe of Texas.
     citation: null
   regional_edds: []
   rural_partners:
@@ -3605,9 +3899,19 @@ texas:
   nmtc_projects: 214
   cra_lmi_tracts: 1836
   ui_invest_q1_tracts: 556
-  notes: "605 tracts to be nominated from 2,420 eligible (21.7% rural). Nomination\
-    \ Packet downloadable from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.\
-    \ No phone number published for the OppZone2.0@gov.texas.gov contact as of 2026-05-06."
+  notes: 605 tracts to be nominated from 2,420 eligible (21.7% rural). Nomination Packet downloadable
+    from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.
+    No phone number published for the OppZone2.0@gov.texas.gov contact as of 2026-05-06.
+  nomination:
+    status: filed_confirmed
+    submitted_date: '2026-09-04'
+    tract_count: 605
+    off_list_count: null
+    list_published_url: null
+    source_url: https://www.jw.com/news/insights-texas-qualified-opportunity-zone-tracts/
+    source_note: Governor Abbott finalized nominations 2026-09-04. Reported by Jackson Walker
+      and corroborated by City of Arlington's announcement of five nominated tracts.
+    last_checked: '2026-09-18'
 utah:
   name: Utah
   fips: '49'
@@ -3654,16 +3958,15 @@ utah:
     url: https://business.utah.gov/opportunity-zones/
     contact_email: null
     contact_phone: null
-  process: "Go Utah is running an informational survey to gather input on which tracts
-    to nominate, with Data Manager Olivia Midgley named as the point of contact, but
-    no formal application, published scoring rubric, or public deadline exists yet.
-    Governor Cox is expected to make his recommendations around September 2026, ahead
-    of the federal window. Local planners should reach out through Go Utah's OZ page
-    at business.utah.gov/opportunity-zones/ today, ask to complete the informational
-    survey, and confirm whether your tract will be considered; in the OZ 1.0 round,
-    Go Utah routed nominations through regional Associations of Governments (AOGs),
-    so contacting your local AOG is a parallel step worth taking now. Utah may
-    nominate 37 of its 147 eligible tracts."
+  process: Go Utah is running an informational survey to gather input on which tracts to nominate,
+    with Data Manager Olivia Midgley named as the point of contact, but no formal application,
+    published scoring rubric, or public deadline exists yet. Governor Cox is expected to make
+    his recommendations around September 2026, ahead of the federal window. Local planners
+    should reach out through Go Utah's OZ page at business.utah.gov/opportunity-zones/ today,
+    ask to complete the informational survey, and confirm whether your tract will be considered;
+    in the OZ 1.0 round, Go Utah routed nominations through regional Associations of Governments
+    (AOGs), so contacting your local AOG is a parallel step worth taking now. Utah may nominate
+    37 of its 147 eligible tracts.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3685,8 +3988,17 @@ utah:
   nmtc_projects: 62
   cra_lmi_tracts: 114
   ui_invest_q1_tracts: 65
-  notes: Governor's office stated it is 'already working on how best to proceed.'
-    No formal process published as of 2026-05-07.
+  notes: Governor's office stated it is 'already working on how best to proceed.' No formal
+    process published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 vermont:
   name: Vermont
   fips: '50'
@@ -3733,16 +4045,16 @@ vermont:
     url: https://accd.vermont.gov/OpportunityZones
     contact_email: null
     contact_phone: null
-  process: "Vermont ACCD has not published a formal OZ 2.0 nomination process as of\
-    \ May 7, 2026; the agency's OZ page reflects OZ 1.0 content and no community input\
-    \ portal or deadline has been announced. Contact ACCD today through accd.vermont.gov/about-us/contact-us\
-    \ — reach the Economic Development division — to ask when ACCD will open community\
-    \ input on OZ 2.0 nominations and offer to provide tract-level eligibility and\
-    \ rural-designation data for any tracts your jurisdiction wants prioritized. Vermont\
-    \ has only 24 eligible tracts statewide, all of them rural-designated under Notice\
-    \ 2025-50, and ACCD may nominate all 24 (the statutory minimum covers the entire\
-    \ eligible pool), so even communities that assume they are already in should confirm\
-    \ directly that their tract is on the nomination list."
+  process: Vermont ACCD has not published a formal OZ 2.0 nomination process as of May 7,
+    2026; the agency's OZ page reflects OZ 1.0 content and no community input portal or deadline
+    has been announced. Contact ACCD today through accd.vermont.gov/about-us/contact-us —
+    reach the Economic Development division — to ask when ACCD will open community input on
+    OZ 2.0 nominations and offer to provide tract-level eligibility and rural-designation
+    data for any tracts your jurisdiction wants prioritized. Vermont has only 24 eligible
+    tracts statewide, all of them rural-designated under Notice 2025-50, and ACCD may nominate
+    all 24 (the statutory minimum covers the entire eligible pool), so even communities that
+    assume they are already in should confirm directly that their tract is on the nomination
+    list.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -3764,8 +4076,17 @@ vermont:
   nmtc_projects: 12
   cra_lmi_tracts: 14
   ui_invest_q1_tracts: 2
-  notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory
-    minimum allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
+  notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory minimum
+    allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 virginia:
   name: Virginia
   fips: '51'
@@ -3812,15 +4133,14 @@ virginia:
     url: https://www.dhcd.virginia.gov/opportunity-zones-oz
     contact_email: oz2026@vedp.org
     contact_phone: null
-  process: "VEDP and DHCD jointly ran Virginia's OZ 2.0 public engagement process\
-    \ on behalf of Governor Youngkin: county-level feedback was requested by March\
-    \ 2, 2026; webinars were held April 16 and 21; and a stakeholder survey was open\
-    \ through April 27, 2026. The formal input window has closed. Both agencies are\
-    \ now evaluating submissions to inform the Governor's final nominations, due to\
-    \ Treasury starting July 1, 2026. If your jurisdiction has not yet engaged, email\
-    \ oz2026@vedp.org or oz@dhcd.virginia.gov — written input from local governments\
-    \ may still carry weight before the Governor's office finalizes its list. Virginia\
-    \ will nominate 152 of 607 eligible tracts."
+  process: 'VEDP and DHCD jointly ran Virginia''s OZ 2.0 public engagement process on behalf
+    of Governor Youngkin: county-level feedback was requested by March 2, 2026; webinars were
+    held April 16 and 21; and a stakeholder survey was open through April 27, 2026. The formal
+    input window has closed. Both agencies are now evaluating submissions to inform the Governor''s
+    final nominations, due to Treasury starting July 1, 2026. If your jurisdiction has not
+    yet engaged, email oz2026@vedp.org or oz@dhcd.virginia.gov — written input from local
+    governments may still carry weight before the Governor''s office finalizes its list. Virginia
+    will nominate 152 of 607 eligible tracts.'
   scoring_rubric_url: null
   state_deadline: '2026-04-27'
   application_portal_url: null
@@ -3842,9 +4162,18 @@ virginia:
   nmtc_projects: 58
   cra_lmi_tracts: 472
   ui_invest_q1_tracts: 102
-  notes: "Public engagement closed. Webinars April 16/21; county feedback due March\
-    \ 2; stakeholder survey closed April 27, 2026. Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov.\
-    \ 152 tracts to be nominated from 607 eligible (25% cap)."
+  notes: 'Public engagement closed. Webinars April 16/21; county feedback due March 2; stakeholder
+    survey closed April 27, 2026. Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov. 152
+    tracts to be nominated from 607 eligible (25% cap).'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 washington:
   name: Washington
   fips: '53'
@@ -3891,37 +4220,34 @@ washington:
     url: https://www.commerce.wa.gov/opportunity-zones/
     contact_email: Community.Engagement@Commerce.wa.gov
     contact_phone: null
-  process: "Washington State Department of Commerce is running a competitive Request\
-    \ for Applications (RFA) process to develop census tract nomination recommendations\
-    \ for Governor Ferguson; the application platform opened April 28, 2026, and\
-    \ submissions close May 28, 2026. Local governments, federally recognized tribes,\
-    \ Associate Development Organizations (ADOs), and other community entities may\
-    \ submit applications on behalf of eligible tracts. Commerce has published a\
-    \ scoring criteria PDF and a draft application template at the RFA page\
-    \ (commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/);\
-    \ download and review the scoring PDF before drafting your application. Washington's\
-    \ 39 Associate Development Organizations (ADOs) — one per county — are the primary\
-    \ regional partners for non-tribal submitters; if you are a local government\
-    \ without staff capacity, contact your county's ADO first, as they may be\
-    \ co-submitting or can help frame your application. Questions must be submitted\
-    \ by May 21, 2026 — seven days before the deadline — so do not wait to start\
-    \ drafting. Two pre-proposal webinars were held May 7 (9–10 a.m. for rural and\
-    \ non-rural communities; 11 a.m.–noon for tribal governments); recordings are\
-    \ available on the Commerce OZ 2.0 page. Consistent with Governor Ferguson's\
-    \ Executive Order 25-10, the Centennial Accord, and RCW 43.376, Commerce is\
-    \ conducting formal government-to-government tribal consultation with Washington's\
-    \ 29 federally recognized tribes as a separate, parallel track — not a substitute\
-    \ for tribes also submitting applications through the RFA portal. Commerce's\
-    \ recommendations are due to the Governor by June 30, 2026, ahead of the federal\
-    \ nomination window opening July 1, 2026; Washington will nominate 99 tracts\
-    \ from 394 eligible, down from 139 current OZs."
+  process: Washington State Department of Commerce is running a competitive Request for Applications
+    (RFA) process to develop census tract nomination recommendations for Governor Ferguson;
+    the application platform opened April 28, 2026, and submissions close May 28, 2026. Local
+    governments, federally recognized tribes, Associate Development Organizations (ADOs),
+    and other community entities may submit applications on behalf of eligible tracts. Commerce
+    has published a scoring criteria PDF and a draft application template at the RFA page
+    (commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/);
+    download and review the scoring PDF before drafting your application. Washington's 39
+    Associate Development Organizations (ADOs) — one per county — are the primary regional
+    partners for non-tribal submitters; if you are a local government without staff capacity,
+    contact your county's ADO first, as they may be co-submitting or can help frame your application.
+    Questions must be submitted by May 21, 2026 — seven days before the deadline — so do not
+    wait to start drafting. Two pre-proposal webinars were held May 7 (9–10 a.m. for rural
+    and non-rural communities; 11 a.m.–noon for tribal governments); recordings are available
+    on the Commerce OZ 2.0 page. Consistent with Governor Ferguson's Executive Order 25-10,
+    the Centennial Accord, and RCW 43.376, Commerce is conducting formal government-to-government
+    tribal consultation with Washington's 29 federally recognized tribes as a separate, parallel
+    track — not a substitute for tribes also submitting applications through the RFA portal.
+    Commerce's recommendations are due to the Governor by June 30, 2026, ahead of the federal
+    nomination window opening July 1, 2026; Washington will nominate 99 tracts from 394 eligible,
+    down from 139 current OZs.
   scoring_rubric_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
   state_deadline: '2026-05-28'
   application_portal_url: https://www.commerce.wa.gov/funding/opportunity-zones-2-0-census-tract-designation-request-for-applications/
   tribal_consultation:
-    framework: "Governor Ferguson's Executive Order 25-10, the Centennial Accord,
-      and RCW 43.376. Formal government-to-government consultation with 29 federally
-      recognized tribes, conducted as a separate track from the public RFA process."
+    framework: Governor Ferguson's Executive Order 25-10, the Centennial Accord, and RCW 43.376.
+      Formal government-to-government consultation with 29 federally recognized tribes, conducted
+      as a separate track from the public RFA process.
     citation: WA Commerce OZ 2.0 RFA portal (references.md §13)
   regional_edds: []
   rural_partners:
@@ -3938,7 +4264,18 @@ washington:
   nmtc_projects: 74
   cra_lmi_tracts: 300
   ui_invest_q1_tracts: 159
-  notes: "Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation framework: EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application deadline. Contact: Community.Engagement@Commerce.wa.gov."
+  notes: 'Going from 139 to 99 OZs (25% of 394 eligible tracts). Tribal consultation framework:
+    EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application
+    deadline. Contact: Community.Engagement@Commerce.wa.gov.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 west-virginia:
   name: West Virginia
   fips: '54'
@@ -3985,38 +4322,35 @@ west-virginia:
     url: https://westvirginia.gov/oz
     contact_email: null
     contact_phone: (304) 558-2234
-  process: "The West Virginia Department of Economic Development (WVDED), appointed\
-    \ by Governor Morrisey to manage OZ 2.0, is accepting tract nominations from local\
-    \ economic development authorities, county commissions, and regional planning\
-    \ councils through July 1, 2026 — all three entity types are explicitly eligible\
-    \ to submit. Visit westvirginia.gov/oz for nomination instructions; if no dedicated\
-    \ OZ contact email is listed, call the WVDED main line at (304) 558-2234 and ask\
-    \ to be routed to the OZ 2.0 team. West Virginia must nominate 52 of 207 eligible\
-    \ tracts (25% statutory cap), all of which carry a rural designation under Notice\
-    \ 2025-50. Since all 207 eligible tracts are rural-designated, WVDED has not published\
-    \ a formal scoring rubric; the factors listed here — investment readiness, existing\
-    \ infrastructure, and development momentum — reflect standard practice in similar\
-    \ state processes and are not official WVDED guidance. Verify the submission format\
-    \ at westvirginia.gov/oz before submitting. Two considerations specific to West Virginia:\
-    \ (1) The energy transition context is real — coal-to-solar and data-center conversions\
-    \ in McDowell, Mingo, and Raleigh counties represent the primary near-term investment\
-    \ pipeline, but communities in these counties have experienced extraction-driven\
-    \ disinvestment for decades and warrant anti-displacement protections in any project\
-    \ commitments; (2) Given that the July 1 state deadline coincides with the federal\
-    \ nomination window opening, planners should treat June 15 as an internal target\
-    \ date to confirm submission readiness."
+  process: 'The West Virginia Department of Economic Development (WVDED), appointed by Governor
+    Morrisey to manage OZ 2.0, is accepting tract nominations from local economic development
+    authorities, county commissions, and regional planning councils through July 1, 2026 —
+    all three entity types are explicitly eligible to submit. Visit westvirginia.gov/oz for
+    nomination instructions; if no dedicated OZ contact email is listed, call the WVDED main
+    line at (304) 558-2234 and ask to be routed to the OZ 2.0 team. West Virginia must nominate
+    52 of 207 eligible tracts (25% statutory cap), all of which carry a rural designation
+    under Notice 2025-50. Since all 207 eligible tracts are rural-designated, WVDED has not
+    published a formal scoring rubric; the factors listed here — investment readiness, existing
+    infrastructure, and development momentum — reflect standard practice in similar state
+    processes and are not official WVDED guidance. Verify the submission format at westvirginia.gov/oz
+    before submitting. Two considerations specific to West Virginia: (1) The energy transition
+    context is real — coal-to-solar and data-center conversions in McDowell, Mingo, and Raleigh
+    counties represent the primary near-term investment pipeline, but communities in these
+    counties have experienced extraction-driven disinvestment for decades and warrant anti-displacement
+    protections in any project commitments; (2) Given that the July 1 state deadline coincides
+    with the federal nomination window opening, planners should treat June 15 as an internal
+    target date to confirm submission readiness.'
   scoring_rubric_url: null
   state_deadline: '2026-07-01'
   application_portal_url: https://westvirginia.gov/oz
   tribal_consultation:
-    framework: "West Virginia has no federally recognized tribes with current in-state\
-      \ reservations. The Appalachian region has significant Native American cultural\
-      \ and historical connections — the Cherokee Nation (OK) and Shawnee Tribe (OK)\
-      \ both have historic ties to West Virginia territory. For OZ 2.0 purposes, no\
-      \ formal tribal consultation protocol has been published by WVDED. If your\
-      \ jurisdiction has documented Native American archaeological or cultural sites,\
-      \ contact the West Virginia State Historic Preservation Office (WVSHPO) at\
-      \ wvculture.org/shpo before submitting a nomination."
+    framework: West Virginia has no federally recognized tribes with current in-state reservations.
+      The Appalachian region has significant Native American cultural and historical connections
+      — the Cherokee Nation (OK) and Shawnee Tribe (OK) both have historic ties to West Virginia
+      territory. For OZ 2.0 purposes, no formal tribal consultation protocol has been published
+      by WVDED. If your jurisdiction has documented Native American archaeological or cultural
+      sites, contact the West Virginia State Historic Preservation Office (WVSHPO) at wvculture.org/shpo
+      before submitting a nomination.
     citation: null
   regional_edds: []
   rural_partners:
@@ -4033,10 +4367,19 @@ west-virginia:
   nmtc_projects: 34
   cra_lmi_tracts: 135
   ui_invest_q1_tracts: 21
-  notes: "WVDED confirmed lead; dedicated OZ 2.0 page at westvirginia.gov/oz. Eligible\
-    \ nominators: local EDAs, county commissions, regional planning councils. Deadline\
-    \ July 1, 2026. 52 tracts to be nominated from 207 eligible; all eligible tracts\
-    \ are rural-designated. No scoring rubric or contact email found as of 2026-05-07."
+  notes: 'WVDED confirmed lead; dedicated OZ 2.0 page at westvirginia.gov/oz. Eligible nominators:
+    local EDAs, county commissions, regional planning councils. Deadline July 1, 2026. 52
+    tracts to be nominated from 207 eligible; all eligible tracts are rural-designated. No
+    scoring rubric or contact email found as of 2026-05-07.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 wisconsin:
   name: Wisconsin
   fips: '55'
@@ -4083,16 +4426,14 @@ wisconsin:
     url: https://wedc.org/opportunity-zone-designation/
     contact_email: chris.brooks@wedc.org
     contact_phone: (608) 210-6700
-  process: >-
-    WEDC announced on June 12, 2026 that it is accepting OZ 2.0 designation
-    applications from municipalities, counties, Tribal governments, and other
-    public entities through July 31, 2026. WEDC and the Wisconsin Housing and
-    Economic Development Authority (WHEDA) will jointly evaluate applications
-    using socio-economic/housing data and applicant responses, prioritizing
-    plans that leverage designation for workforce housing investment. Governor
-    Evers must submit Wisconsin's final nominations to Treasury by September 28,
-    2026. Wisconsin may nominate up to 77 of 306 eligible tracts; flag tracts
-    carrying the rural flag under Rev. Proc. 2026-14 in your application.
+  process: WEDC announced on June 12, 2026 that it is accepting OZ 2.0 designation applications
+    from municipalities, counties, Tribal governments, and other public entities through July
+    31, 2026. WEDC and the Wisconsin Housing and Economic Development Authority (WHEDA) will
+    jointly evaluate applications using socio-economic/housing data and applicant responses,
+    prioritizing plans that leverage designation for workforce housing investment. Governor
+    Evers must submit Wisconsin's final nominations to Treasury by September 28, 2026. Wisconsin
+    may nominate up to 77 of 306 eligible tracts; flag tracts carrying the rural flag under
+    Rev. Proc. 2026-14 in your application.
   scoring_rubric_url: null
   state_deadline: '2026-07-31'
   application_portal_url: https://wedc.org/opportunity-zone-designation/
@@ -4114,9 +4455,18 @@ wisconsin:
   nmtc_projects: 249
   cra_lmi_tracts: 236
   ui_invest_q1_tracts: 51
-  notes: WEDC confirmed lead; OZ page URL confirmed via Google index (returned 403
-    to automated fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region
-    and OZ questions; no OZ 2.0 guidance published as of 2026-05-07.
+  notes: WEDC confirmed lead; OZ page URL confirmed via Google index (returned 403 to automated
+    fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region and OZ questions; no
+    OZ 2.0 guidance published as of 2026-05-07.
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'
 wyoming:
   name: Wyoming
   fips: '56'
@@ -4160,17 +4510,16 @@ wyoming:
     url: https://wyomingbusiness.org/business/financing/financial-incentives/opportunity-zones/
     contact_email: null
     contact_phone: (307) 287-4709
-  process: "The Wyoming Business Council has not published a formal OZ 2.0 nomination\
-    \ process as of May 7, 2026; the agency's OZ page reflects prior-round content\
-    \ and no application portal or state deadline has been announced. Call Connor Christensen,\
-    \ Economic Policy & Research Advisor, at (307) 287-4709 — or reach the Business\
-    \ Council through wyomingbusiness.org/contact — to ask whether WBC will run a\
-    \ community input process before the July 1, 2026 federal nomination window, and\
-    \ register your tract for consideration; offer tract-level eligibility data and\
-    \ a brief development narrative. Wyoming will nominate 5 of 20 eligible tracts\
-    \ (25% statutory cap), 16 of which carry a rural designation, making the competition\
-    \ for limited slots especially acute — do not wait for a formal portal announcement\
-    \ before making contact."
+  process: The Wyoming Business Council has not published a formal OZ 2.0 nomination process
+    as of May 7, 2026; the agency's OZ page reflects prior-round content and no application
+    portal or state deadline has been announced. Call Connor Christensen, Economic Policy
+    & Research Advisor, at (307) 287-4709 — or reach the Business Council through wyomingbusiness.org/contact
+    — to ask whether WBC will run a community input process before the July 1, 2026 federal
+    nomination window, and register your tract for consideration; offer tract-level eligibility
+    data and a brief development narrative. Wyoming will nominate 5 of 20 eligible tracts
+    (25% statutory cap), 16 of which carry a rural designation, making the competition for
+    limited slots especially acute — do not wait for a formal portal announcement before making
+    contact.
   scoring_rubric_url: null
   state_deadline: null
   application_portal_url: null
@@ -4192,6 +4541,15 @@ wyoming:
   nmtc_projects: 4
   cra_lmi_tracts: 15
   ui_invest_q1_tracts: 2
-  notes: "Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.\
-    \ 5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are\
-    \ rural-designated. No formal application or deadline as of 2026-05-07."
+  notes: 'Contact: Connor Christensen, Economic Policy & Research Advisor, (307) 287-4709.
+    5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are rural-designated.
+    No formal application or deadline as of 2026-05-07.'
+  nomination:
+    status: unknown
+    submitted_date: null
+    tract_count: null
+    off_list_count: null
+    list_published_url: null
+    source_url: null
+    source_note: null
+    last_checked: '2026-09-18'

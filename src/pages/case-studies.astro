@@ -1,6 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getAllCaseStudies, getAllSectorTags, type SectorTag } from '@/lib/caseStudies';
+import { DATES, currentPhase, fmt } from '@/lib/timeline';
+
+const phase = currentPhase();
+const windowShut = phase !== 'pre_window' && phase !== 'window_open';
 
 const caseStudies = getAllCaseStudies();
 const sectorTags = getAllSectorTags();
@@ -41,6 +45,19 @@ function formatAmount(n: number | null): string | null {
       aggregate investment statistics on the <a href="/oz1-retrospective" class="text-oz-blue underline">OZ 1.0 Retrospective</a> page.
       Every entry links to a verified source and shows the date it was last checked.
     </p>
+    {windowShut && (
+      <div class="mt-5 border-l-4 border-oz-blue bg-white pl-4 py-3 pr-4">
+        <p class="text-sm text-oz-neutral-700">
+          <strong class="text-oz-neutral-900">Reading these during the transition.</strong>{' '}
+          Every project below sits in an OZ 1.0 tract. Those designations run until
+          {' '}{fmt(DATES.oz1Expires)}, but each state could nominate only a quarter of its
+          eligible tracts for OZ 2.0, so many of these tracts will not be designated again —
+          and new capital generally cannot follow into an undesignated one after
+          {' '}{fmt(DATES.oz1GainInclusion)}. What carries forward is the deal structure, not the
+          address. <a href="/whats-next#transition" class="text-oz-blue underline">The transition rules →</a>
+        </p>
+      </div>
+    )}
   </div>
 
   <!-- Filter chips -->

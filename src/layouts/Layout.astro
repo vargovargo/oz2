@@ -1,11 +1,16 @@
 ---
+import { phaseCopy } from '@/lib/timeline';
+
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'State-by-state resource for Opportunity Zone 2.0 nominations.' } = Astro.props;
+const { title, description = 'State-by-state resource for Opportunity Zone 2.0 designations and the investment that follows.' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Footer status line is derived from the shared timeline so it never goes stale.
+const { banner } = phaseCopy();
 ---
 
 <!doctype html>
@@ -39,6 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <!-- Desktop nav -->
         <nav aria-label="Site navigation" class="hidden sm:flex items-center gap-6 text-sm">
           <a href="/states/all" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
+          <a href="/whats-next" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">What's Next</a>
           <a href="/how-to-advocate" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
           <a href="/capital-stack" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
           <a href="/oz1-retrospective" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">OZ 1.0</a>
@@ -68,6 +74,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       >
         <nav class="flex flex-col px-4 py-3 gap-0 text-sm">
           <a href="/states/all" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
+          <a href="/whats-next" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">What's Next</a>
           <a href="/how-to-advocate" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
           <a href="/capital-stack" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
           <a href="/oz1-retrospective" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">OZ 1.0</a>
@@ -85,7 +92,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-oz-neutral-500">
         <p>
           Data: <a href="/references" class="underline hover:text-oz-neutral-700">IRS Rev. Proc. 2026-14</a> and other sources.
-          Nomination window open through <strong class="text-oz-neutral-700">September 28, 2026</strong>.
+          <a href="/whats-next" class="underline hover:text-oz-neutral-700">{banner}</a>
         </p>
         <nav aria-label="Footer navigation" class="flex gap-4">
           <a href="/methodology" class="hover:text-oz-neutral-700">Methodology</a>
