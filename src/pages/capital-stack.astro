@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { DATES, fmt } from '@/lib/timeline';
 ---
 
 <Layout title="Capital Stack" description="How OZ 2.0 stacks with other federal rural development capital programs.">
@@ -55,6 +56,18 @@ import Layout from '@/layouts/Layout.astro';
           facilities, broadband infrastructure, workforce housing) structurally more viable.
         </li>
       </ul>
+      <div class="my-5 border border-oz-blue/30 bg-blue-50 rounded p-4">
+        <p class="text-sm font-semibold text-oz-neutral-900 mb-2">Timing: the QROF provisions start with the new map</p>
+        <p class="text-sm text-oz-neutral-700">
+          The rural step-up and the 50% improvement threshold apply to OZ 2.0 designations, which
+          take effect {fmt(DATES.designationsEffective)}. Two dates sit immediately before that and
+          change the arithmetic on any deal being structured now: the mandatory
+          {' '}{fmt(DATES.oz1GainInclusion)} inclusion of gains deferred under OZ 1.0 — which
+          IRS Notice 2026-40 confirms cannot itself be re-deferred into a new OZ investment — and
+          the end of the window in which new capital can flow into an OZ 1.0 tract that was not
+          renominated. See <a href="/whats-next#transition" class="text-oz-blue underline">the transition rules</a>.
+        </p>
+      </div>
       <p class="text-sm text-oz-neutral-700">
         For rural planners: every tract flagged as "rural eligible" in IRS Rev. Proc. 2026-14
         is QROF-eligible. That flag is not something a community can earn through advocacy —
@@ -409,7 +422,7 @@ import Layout from '@/layouts/Layout.astro';
         OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21.
         QROF rural provisions: P.L. 119-21, amending IRC §§ 1400Z-1, 1400Z-2.
         NMTC made permanent: P.L. 119-21 (One Big Beautiful Bill Act); LIHTC changes: P.L. 119-21.
-        Last reviewed: <time datetime="2026-07-10">July 10, 2026</time>.
+        Last reviewed: <time datetime="2026-09-18">September 18, 2026</time>.
       </p>
     </section>
   </div>

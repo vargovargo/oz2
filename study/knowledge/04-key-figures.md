@@ -21,6 +21,49 @@ Last verified against the repository: 2026-08-06.
 The rural flag is assigned by Treasury per Notice 2025-50 § 4.01. A community cannot earn
 or lose it through advocacy.
 
+## Program timeline — use these dates, do not infer others
+
+| Date | Event |
+|---|---|
+| **2026-09-28** | Close of the 90-day determination period. One 30-day extension available on a governor's request, to **2026-10-28**. |
+| **2026-10-26** | Comments close on REG-116506-25 (OZ information reporting). Public hearing **2026-11-05**. |
+| **2026-12-27** | Outer bound for Treasury certification (30 days from receipt + one 30-day extension). Most states will certify earlier. |
+| **2026-12-31** | Mandatory inclusion of gains deferred under OZ 1.0. **Cannot itself be re-deferred** into a new OZ investment (Notice 2026-40). |
+| **2027-01-01** | OZ 2.0 designations take effect. QROF provisions apply from here. |
+| **2027-12-31** | Puerto Rico OZ 1.0 designations expire. |
+| **2028-12-31** | All other OZ 1.0 designations expire. OZ 1.0 and OZ 2.0 overlap during 2027–2028. |
+| **2036-12-31** | First OZ 2.0 designation period ends. Designation is decennial under OBBBA. |
+
+Two facts about the filing process that are easy to get wrong: states could **submit and
+revise** nominations multiple times within their window, and Treasury does **not** process
+early filings early. No list is authoritative before certification.
+
+## Transition rules (IRS Notice 2026-40, July 2026)
+
+| Rule | Detail |
+|---|---|
+| Existing investments | OZ 1.0 investors keep the 10-year appreciation exclusion. Unaffected. |
+| New capital after 2026 | Gains invested on or after 2027-01-01 generally cannot go into an OZ 1.0 tract not also designated under OZ 2.0. |
+| The narrow exception | A working capital safe harbor plan adopted on or before 2026-12-31, with ≥10% of planned working capital received and ≥5% expended by that date. |
+| Ongoing operations | Existing OZ businesses may continue ordinary-course replacement and modernization of property after 2026. |
+| Inclusion-event gains | Remain eligible for OZ 2.0 reinvestment and the new rolling five-year deferral. |
+| Compliance safe harbors | Many QOF/QOZB eligibility and testing safe harbors extend through 2047-12-31. |
+
+Notice 2026-40 is **transitional guidance, not final regulations**. Say so when it comes up.
+
+## Proposed reporting regulations (REG-116506-25, published 2026-09-11)
+
+Implements IRC §§ 6039K / 6039L. Would convert Form 8996 into an independent annual
+information return. Reportable: total assets; value of qualified OZ property; **the specific
+census tracts invested in** and amount per QOZB; NAICS codes; approximate full-time employees;
+residential unit counts for housing developments; owned vs. leased property.
+
+§ 6726 penalties: **$500/day capped at $10,000** — **$50,000** for a large QOF (gross assets
+over $10 million). Intentional disregard: **$2,500/day**, capped at **$250,000** for a large
+QOF. Treasury must publish annual reports beginning 2027, expanded in years 6 and 11.
+
+This is **proposed**, not final. Do not describe it as in effect.
+
 ## The tax incentive (P.L. 119-21, amending IRC §§ 1400Z-1, 1400Z-2)
 
 | Mechanic | Standard QOF | QROF (rural) |
@@ -123,7 +166,7 @@ tracts in the top investment decile were metropolitan.
 |---|---|
 | **IRC § 6039K** | QOFs file annual information returns — total assets, QOZ property, employment, NAICS codes, housing units. Effective for tax years beginning after December 31, 2026. |
 | **IRC § 6039L** | QOZBs furnish corresponding data to the QOFs holding them. |
-| **IRC § 6726** | Penalties: $500/day standard, $2,500/day for intentional disregard, capped by fund size. |
+| **IRC § 6726** | Penalties: $500/day standard (cap $10,000; $50,000 large QOF), $2,500/day for intentional disregard (cap $250,000 large QOF). |
 | Treasury public reports | Aggregate QOF activity published at years 6 and 11 post-enactment. |
 
 Under OZ 1.0, QOFs self-certified on Form 8996 with no enforceable penalty for non-filing
@@ -139,8 +182,11 @@ and no obligation to report community outcomes.
 - FFIEC Census Flat File, 2025 exam year — income indicator col. 14, distressed/underserved flag col. 21
 - Coyne & Johnson, "Use of the Opportunity Zone Tax Incentive through 2024: An Update," Treasury OTA Working Paper 128, June 2026
 - Kennedy & Wheeler (UC Berkeley / JCT, 2022); Joint Committee on Taxation, May 2024
+- IRS Notice 2026-40 (July 2026), transitional guidance OZ 1.0 → OZ 2.0
+- REG-116506-25 / RIN 1545-BR82 (proposed, September 11, 2026), OZ information reporting
+- CRS Report R48952, extension and certification mechanics
 
 In-repo carriers for each of the above: `docs/cra-oz-overlap-brief.md`,
 `handoffs/cra-eligibility-analysis.md`, `src/pages/capital-stack.astro`,
 `src/pages/oz1-retrospective.astro`, `data/oz1_investment_data.json`, `references.md`
-§§ 1, 6, 7, 8, 14.
+§§ 1, 6, 7, 8, 14, 17. Program dates are maintained in `src/lib/timeline.ts`.

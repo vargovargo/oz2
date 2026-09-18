@@ -1,0 +1,35 @@
+# The site is statically built, so every date-derived string (the footer banner,
+# the phase-dependent hero, the countdown tiles in src/lib/timeline.ts) is frozen
+# at build time. Without a periodic rebuild the site would still claim the
+# nomination window is open the morning after it closes.
+#
+# One-time setup: create a Deploy Hook in the Vercel project
+# (Settings -> Git -> Deploy Hooks), then store its URL as the repository secret
+# VERCEL_DEPLOY_HOOK_URL. Until that secret exists this workflow no-ops loudly
+# rather than failing the Actions tab.
+name: Scheduled rebuild
+
+on:
+  schedule:
+    # 09:10 UTC daily — a little after midnight US Pacific, so a phase boundary
+    # is reflected on the same calendar day everywhere in the US.
+    - cron: '10 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::VERCEL_DEPLOY_HOOK_URL is not set — skipping rebuild."
+            echo "Create a Deploy Hook in the Vercel project and save it as that repo secret."
+            exit 0
+          fi
+          code=$(curl -sS -X POST -o /tmp/hook.out -w '%{http_code}' "$HOOK")
+          echo "Deploy hook responded $code"
+          cat /tmp/hook.out
+          [ "$code" -lt 400 ]

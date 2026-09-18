@@ -1,5 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { DATES, currentPhase, fmt } from '@/lib/timeline';
+
+const phase = currentPhase();
+const windowShut = phase !== 'pre_window' && phase !== 'window_open';
 ---
 
 <Layout title="Off-List Nominations" description="How Section 5.04 of Rev. Proc. 2026-14 allows nomination of census tracts not on the IRS eligible list.">
@@ -10,6 +14,19 @@ import Layout from '@/layouts/Layout.astro';
       Section 5.04 of that guidance preserves a narrow pathway for states to nominate tracts
       that do not appear on that list — if the state can demonstrate the tract qualifies.
     </p>
+
+    {windowShut && (
+      <div class="mb-8 border border-amber-200 bg-amber-50 rounded p-5">
+        <p class="text-sm text-oz-neutral-700">
+          <strong class="text-oz-neutral-900">The 2026 nomination window closed {fmt(DATES.windowCloses)}.</strong>{' '}
+          Off-list nominations are no longer available this cycle. Arizona is reported to have
+          used the pathway for three of its 125 nominated tracts — the only documented use so far,
+          though Treasury's certification will be the first authoritative account. This page stands
+          as the explainer for how § 5.04 works, which matters both for reading what Treasury
+          certifies and for the next decennial round.
+        </p>
+      </div>
+    )}
 
     <section class="mb-10">
       <h2 class="text-xl font-semibold mb-3">What Section 5.04 says</h2>
@@ -83,9 +100,9 @@ import Layout from '@/layouts/Layout.astro';
       </p>
       <p class="text-sm text-oz-neutral-700">
         The submission goes through the same Treasury Nomination Tool used for on-list tracts.
-        Treasury will send access instructions directly to each State CEO. The same window applies:
-        nominations opened July 1, 2026 and close September 28, 2026, with a possible 30-day
-        extension to October 28, 2026 upon request.
+        Treasury sends access instructions directly to each State CEO. The same window applies:
+        nominations opened {fmt(DATES.windowOpens)} and closed {fmt(DATES.windowCloses)}, with a
+        30-day extension to {fmt(DATES.windowClosesExtended)} available on a governor's request.
       </p>
     </section>
 

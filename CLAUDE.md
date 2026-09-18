@@ -1,6 +1,8 @@
 # Claude Code Project Instructions — OZ 2.0 State-Specific Resource
 
 
+> Site direction after the nomination round: ./docs/site-direction-2026-09.md
+>
 > Pipeline coordination for this project lives in ./HARNESS.md
 > (agents, handoffs, session state). This file covers project specifics.
 
@@ -8,7 +10,69 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-08-06)
+## Where things stand (as of 2026-09-18)
+
+**Completed in the 2026-09-18 session (branch: claude/oz-2-site-revision-wnu0vk):**
+
+*Post-nomination reframe.* The federal window closes September 28, 2026; designations take
+effect January 1, 2027 and run through December 31, 2036. The site was built to answer "how do
+I get my tract nominated," a question that is now closed. Three prior sessions had to sweep for
+stale tense because dates were hardcoded across page copy. Both problems addressed structurally.
+
+- **`src/lib/timeline.ts`** — NEW, and the important one. Single source of truth for program
+  dates and the five-phase model (`pre_window` → `window_open` → `awaiting_certification` →
+  `designated` → `post_period`). `phaseCopy()` returns the banner, countdown and call-to-action
+  for the current phase; `MILESTONES` drives the /whats-next timeline. **Never hardcode a
+  program date in page copy again — import from here.** Deadline dates resolve end-of-day,
+  start dates open-of-day (`dEnd`/`dStart`); getting that wrong put the site one day off at
+  every boundary. Set `OZ2_AS_OF=YYYY-MM-DD` to build the site as a future date and check
+  phase copy before the boundary arrives.
+- **`.github/workflows/scheduled-rebuild.yml`** — NEW. A static build freezes `new Date()`, so
+  the phase model only works with a periodic rebuild. Daily cron pings a Vercel deploy hook.
+  **One-time setup still needed: create a Deploy Hook in the Vercel project and save the URL as
+  the repo secret `VERCEL_DEPLOY_HOOK_URL`.** Until then the workflow warns and no-ops.
+- **`src/pages/whats-next.astro`** — NEW page, in the nav. Certification mechanics, the
+  Notice 2026-40 transition rules, the REG-116506-25 reporting rule, and per-audience guidance.
+- **`nomination` block added to all 51 states** in `state_metadata.yaml` via
+  `scripts/patch_nomination_status.py` (re-runnable, idempotent). Records the *federal filing*
+  — `status`, `submitted_date`, `tract_count`, `off_list_count`, `list_published_url`,
+  `source_url` — which is a different question from `status_tier`, which describes a state's own
+  input process and is now history. Populated for Arizona (125 tracts filed 2026-07-09, 3
+  off-list) and Texas (605 tracts, 2026-09-04); the other 49 are `unknown`.
+- Reframed for the phase: `index` (hero now phase-driven), `Layout` (footer banner derives from
+  `phaseCopy()`), `about`, `how-to-advocate` and `off-list-nominations` (both now carry a
+  historical-record banner), `capital-stack` (transition-timing callout in QROF mechanics),
+  `case-studies` (note that many of these tracts will not be renominated), `[state].astro`
+  (new "Awaiting certification" badge, filing-status block, post-window guidance replacing
+  "how to influence the nomination").
+- `oz1-retrospective`: § 6726 penalty caps added, and a new paragraph on REG-116506-25 — the
+  proposed rule is the direct answer to the page's central critique.
+- `study/knowledge/04-key-figures.md`: program timeline, Notice 2026-40 transition rules and the
+  reporting proposal added to the tutor's anti-hallucination sheet.
+- `references.md` §17 — all new sources, with `[confirm]` flags on the ones that need a fetch.
+- **`docs/site-direction-2026-09.md`** — NEW. What the site is for now that nomination is over,
+  and the next steps in priority order. Read this before planning the next session.
+
+**Key new facts (verified 2026-09-18, WebSearch cross-reference; WebFetch still 403 in sandbox):**
+- Governors may take one 30-day extension → October 28, 2026. Treasury then has 30 days to
+  certify, extendable by 30 → **December 27, 2026 is the outer bound** for certification.
+- States could **submit and revise** nominations within their window; Treasury does **not**
+  process early filings early. No list is authoritative before certification.
+- **IRS Notice 2026-40** (July 2026): OZ 1.0 designations expire **December 31, 2028** (Puerto
+  Rico **December 31, 2027**) — a 2027–2028 overlap. New capital after 2026 generally cannot
+  enter an OZ 1.0 tract not renominated, except under a working capital safe harbor plan adopted
+  by 2026-12-31 with ≥10% received and ≥5% expended. The mandatory 2026-12-31 inclusion of OZ 1.0
+  deferred gains **cannot be re-deferred**. Transitional guidance, not final regs.
+- **REG-116506-25** (published 2026-09-11): proposed §§ 6039K/6039L reporting regs. Comments
+  close **October 26, 2026**, hearing November 5. Would require tract-level reporting. § 6726
+  penalties: $500/day capped at $10,000 ($50,000 large QOF); intentional disregard $2,500/day,
+  capped $250,000 large QOF.
+
+**Not done:** per-state confirmation of filings beyond AZ and TX — most states have not published
+their slates and are waiting on certification. The `[confirm]` entries in references.md §17 need
+a local CLI with working fetch.
+
+## Where things stood (as of 2026-08-06)
 
 **Completed in the 2026-08-06 session (branch: claude/oz-study-guide-dxihub):**
 
@@ -316,7 +380,20 @@ MS, OH, KS, SC, NC, TX, WV).
   residents and tenants named as coalition stakeholders; CBA/§6039K leverage;
   stale state count fixed (32→28); verified date updated to May 12, 2026.
 
-**Next priorities (in order):**
+**Next priorities (in order) — see `docs/site-direction-2026-09.md` for the reasoning:**
+0. **Comment on REG-116506-25 before October 26, 2026.** Highest-leverage item and it expires.
+   The rule decides whether OZ 2.0 tract-level data becomes usefully public or merely filed.
+1. **Write `scripts/ingest_designated_tracts.py` before Treasury certifies** (late Nov–Dec 27),
+   so the certified list is a same-day update rather than a two-week project. Design the state
+   page to answer: which of my tracts were designated, which were not, what does that mean for
+   projects in motion.
+2. Set the `VERCEL_DEPLOY_HOOK_URL` repo secret so the scheduled rebuild actually fires.
+3. Plan the OZ 2.0 scorecard — the retrospective's sequel, filling as § 6039K data arrives from
+   2027. Benchmarks to beat: 42% of capital in the top 1% of tracts, 8.5% rural.
+4. Case studies: add transition-affected projects (OZ 1.0 deals in tracts not renominated —
+   nobody is documenting this) and the first OZ 2.0 deals from 2027. Broadband still lightest.
+
+**Older priorities (pre-reframe):**
 1. ~~oz1-retrospective and off-list-nominations pages — still stubs, need real content~~ DONE: both pages are fully built.
 2. ~~State metadata upkeep~~ DONE: PR #24 (2026-06-16) updated CO, PA, ID deadlines; all open-window states verified.
 3. ~~SME Editor Mode B — stress-test pass on capital-stack CRA/NMTC sections using sme-oz2.md~~ DONE (2026-06-16): two edits — (a) CRA Final Rule status corrected (rescinded 2025, not "under legal challenge"); (b) NMTC deal-size floor added ($3–5M+ practical minimum limits rural applicability).
@@ -402,6 +479,10 @@ Source: IRC §§ 1400Z-1, 1400Z-2 as amended by P.L. 119-21.
 - Voice: neutral, evidence-based, direct. Not Jason's personal voice. Do
   not invoke jason-vargo-voice or jason-vargo-design-aesthetic for this
   project.
+- **Program dates live in `src/lib/timeline.ts`, nowhere else.** Any page string that depends on
+  where we are in the program cycle derives from `phaseCopy()` / `DATES` / `currentPhase()`.
+  Hardcoding a date in page copy is what made three prior sessions into stale-tense sweeps.
+  Verify phase copy across a boundary with `OZ2_AS_OF=YYYY-MM-DD npm run build`.
 
 ## Don't
 
@@ -436,6 +517,10 @@ Source: IRC §§ 1400Z-1, 1400Z-2 as amended by P.L. 119-21.
 - **No public process yet** — universal information only; ask local
   planners to push the governor's office for engagement.
 
-Re-evaluate every state's tier at least every two weeks during the May–July
-nomination ramp.
+~~Re-evaluate every state's tier at least every two weeks during the May–July
+nomination ramp.~~ **Superseded 2026-09-18.** The nomination ramp is over and `status_tier`
+now describes a process that no longer exists. Instead: update `nomination.status` when a state
+publishes its slate, and do a full pass when Treasury certifies. Once the certified list lands,
+the state-page badge should switch to designation counts and `status_tier` should move into a
+`history` block.
 

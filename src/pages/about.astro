@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { DATES, fmt } from '@/lib/timeline';
 ---
 
 <Layout title="About" description="About the OZ 2.0 State-Specific Resource.">
@@ -17,15 +18,25 @@ import Layout from '@/layouts/Layout.astro';
       regardless of political stance. It does not advocate for or against designation —
       it helps planners understand their options and engage the process.
     </p>
+    <p class="text-oz-neutral-700 mb-4">
+      Phase 1 covered the nomination round: all 50 states and DC were live by mid-June 2026,
+      before the federal window opened {fmt(DATES.windowOpens)}. With that window closed and
+      designations taking effect {fmt(DATES.designationsEffective)}, the work shifts from helping
+      communities get tracts nominated to helping them understand what was designated, what the
+      capital actually does once it arrives, and whether OZ 2.0 performs any better than OZ 1.0 did.
+      The new § 6039K reporting regime will, for the first time, make that last question
+      answerable — see <a href="/whats-next#reporting" class="text-oz-blue underline">what happens next</a>.
+    </p>
     <p class="text-oz-neutral-700 mb-8">
       Maintained by <a href="https://vargo.city" class="text-oz-blue underline" target="_blank" rel="noopener">Jason Vargo</a>.
-      Phase 1 target: all 50 states + DC by mid-June 2026, before the nomination window opened July 1 — met.
     </p>
 
     <h2 class="text-xl font-semibold mb-3">Scope</h2>
     <ul class="text-sm text-oz-neutral-500 list-disc pl-5 space-y-1 mb-8">
       <li>50 states + DC spotlight pages</li>
       <li>Coalition playbook, capital stack guide, OZ 1.0 evidence summary</li>
+      <li>OZ 1.0 case study library and the finance study guide</li>
+      <li>Program timeline, Notice 2026-40 transition rules, and the OZ reporting rule</li>
       <li>Off-list nomination (Section 5.04) explainer</li>
       <li>Native/tribal callout on every applicable state page</li>
     </ul>

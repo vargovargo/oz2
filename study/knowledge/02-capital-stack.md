@@ -16,6 +16,10 @@ OZ 2.0 (P.L. 119-21, the One Big Beautiful Bill Act) introduced **Qualified Rura
 
 - **Reduced substantial improvement threshold.** Standard QOZBs must substantially improve property by investing at least 100% of its existing basis within 30 months. Rural QOZBs need only improve by 50% of the existing basis — making value-add rural projects (agricultural processing, rural healthcare facilities, broadband infrastructure, workforce housing) structurally more viable.
 
+Timing: the QROF provisions start with the new map
+
+The rural step-up and the 50% improvement threshold apply to OZ 2.0 designations, which take effect January 1, 2027. Two dates sit immediately before that and change the arithmetic on any deal being structured now: the mandatory December 31, 2026 inclusion of gains deferred under OZ 1.0 — which IRS Notice 2026-40 confirms cannot itself be re-deferred into a new OZ investment — and the end of the window in which new capital can flow into an OZ 1.0 tract that was not renominated. See [the transition rules](https://oz2.vargo.city/whats-next#transition).
+
 For rural planners: every tract flagged as "rural eligible" in IRS Rev. Proc. 2026-14 is QROF-eligible. That flag is not something a community can earn through advocacy — Treasury resolved it for every tract. The practical implication is that rural communities competing for nominations have a tax argument unavailable to urban tracts: designation unlocks a richer incentive structure that should attract a different class of patient, long-hold capital.
 
 ## New Markets Tax Credits (NMTC)
@@ -118,4 +122,4 @@ A well-structured CBA for an OZ-financed project can include: hiring preferences
 
 Federal program sources: [CDFI Fund OZ resources](https://www.cdfifund.gov/opportunity-zones); [USDA RD B&I Guaranteed Loan](https://www.rd.usda.gov/programs-services/business-programs/business-and-industry-guaranteed-loan); [USDA RD RBDG](https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants); [USDA CF](https://www.rd.usda.gov/programs-services/community-facilities/community-facilities-direct-loan-grant-program); [SBA HUBZone](https://www.sba.gov/federal-contracting/contracting-assistance-programs/hubzone-program); [NCSHA/EIG affordable housing case studies](https://www.ncsha.org/advocacy-issues/opportunity-zones/).
 
-OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21. QROF rural provisions: P.L. 119-21, amending IRC §§ 1400Z-1, 1400Z-2. NMTC made permanent: P.L. 119-21 (One Big Beautiful Bill Act); LIHTC changes: P.L. 119-21. Last reviewed: July 10, 2026.
+OZ 2.0 reporting rules: IRC §§ 6039K, 6039L, 6726; P.L. 119-21. QROF rural provisions: P.L. 119-21, amending IRC §§ 1400Z-1, 1400Z-2. NMTC made permanent: P.L. 119-21 (One Big Beautiful Bill Act); LIHTC changes: P.L. 119-21. Last reviewed: September 18, 2026.

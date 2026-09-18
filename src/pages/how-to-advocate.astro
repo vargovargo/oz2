@@ -1,8 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getAllStates } from '@/lib/states';
+import { DATES, asOf, currentPhase, fmt } from '@/lib/timeline';
 
-const today = new Date();
+const phase = currentPhase();
+const windowShut = phase !== 'pre_window' && phase !== 'window_open';
+
+const today = asOf();
 today.setHours(0, 0, 0, 0);
 
 function fmtDate(s: string): string {
@@ -29,17 +33,32 @@ const closedDeadlines = statesWithDeadlines.filter(
       Opportunity Zone designation runs through governors, not local governments. A city council,
       county commission, or EDD cannot directly nominate a tract — but local planners and
       community organizations are the ones who can make a tract nomination credible to a state
-      agency. This page lays out how to do that work effectively before your state's window closes.
+      agency. This page lays out how to do that work effectively.
     </p>
+
+    {windowShut && (
+      <div class="mb-8 border border-amber-200 bg-amber-50 rounded p-5">
+        <p class="text-sm text-oz-neutral-700">
+          <strong class="text-oz-neutral-900">This cycle's nomination window closed {fmt(DATES.windowCloses)}.</strong>{' '}
+          The playbook below is kept as a record of how the 2026 round worked — it is the reference
+          for the next decennial cycle, and parts of it still apply to any state process that
+          reopens. For what is actionable now, see
+          {' '}<a href="/whats-next" class="text-oz-blue underline">what happens next</a>: the
+          certification timeline, the Notice 2026-40 transition rules, and the reporting rule
+          whose comment period closes {fmt(DATES.reportingCommentDeadline)}.
+        </p>
+      </div>
+    )}
 
     <section id="find-your-state" class="mb-10">
       <h2 class="text-xl font-semibold mb-3">Step one: find your state's process<a href="#find-your-state" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
-        As of mid-June 2026, twenty-nine states have published a formal nomination process;
-        twenty-one have identified a lead agency and contact but not opened a public submission
-        channel. Most state input windows set deadlines in May and June 2026 — before the
-        federal window opened July 1 — and have now closed, though a handful remain open
-        into July and August.
+        Across the 2026 round, twenty-nine states published a formal nomination process and
+        twenty-one identified a lead agency without opening a public submission channel. Most
+        state input windows set deadlines in May and June 2026, before the federal window opened
+        July 1; a second cluster ran into July and August, and a few states — Pennsylvania among
+        them — briefly reopened input in mid-August. By the close of the federal window on
+        {' '}{fmt(DATES.windowCloses)}, all of them had shut.
       </p>
       <p class="text-sm text-oz-neutral-700 mb-4">
         Your first step is to confirm which tier your state is in, then go directly to the
@@ -51,20 +70,21 @@ const closedDeadlines = statesWithDeadlines.filter(
         also lists state leads but lags on process-specific updates.
       </p>
       <p class="text-sm text-oz-neutral-700">
-        States that have closed public input — Florida, Nebraska, Virginia, Delaware, Missouri,
-        and New Mexico's COG submission phase all closed by mid-May — are not necessarily done.
-        The governor still makes the final selection, and direct engagement with the lead agency
-        remains meaningful even after a formal comment period closes.
+        A closed input window never meant a state was done. The governor makes the final
+        selection, states could revise a filing until their federal window shut, and direct
+        engagement with the lead agency stayed meaningful throughout. That lesson generalizes:
+        the formal comment period is the least important of the several channels into a state
+        selection process.
       </p>
     </section>
 
     <section id="state-deadlines" class="mb-10">
       <h2 class="text-xl font-semibold mb-3">Upcoming state deadlines<a href="#state-deadlines" class="anchor-link" aria-label="Copy link to section"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>
       <p class="text-sm text-oz-neutral-700 mb-4">
-        Several state nomination windows close in the coming weeks. These deadlines are for
-        state-level input — the federal nomination tool opened July 1, 2026, and closes
-        September 28, 2026 (extendable to October 28). State processes gather community
-        nominations before the governor's office makes its federal submission.
+        These deadlines are for state-level input. The federal nomination tool opened
+        {' '}{fmt(DATES.windowOpens)} and closed {fmt(DATES.windowCloses)}, extendable on a
+        governor's request to {fmt(DATES.windowClosesExtended)}. State processes gathered
+        community nominations ahead of the governor's federal submission.
       </p>
       {openDeadlines.length > 0 ? (
         <div class="overflow-x-auto mb-4">
@@ -282,10 +302,11 @@ const closedDeadlines = statesWithDeadlines.filter(
         track state-by-state developments as they happen.
       </p>
       <p class="text-sm text-oz-neutral-700">
-        If your state has no identified process and no clear agency engagement, the most
-        direct path is to work through your state legislators to push the governor's office
-        for a public designation process. The federal window doesn't close until late September —
-        states that move deliberately still have time.
+        If your state ran no identifiable process, the most direct path was — and for the next
+        cycle remains — working through state legislators to push the governor's office for a
+        public designation process. Where that did not happen in 2026, the same legislators are
+        the route to finding out what was submitted, and the argument for a public process lands
+        better with a decade of designations already locked in.
       </p>
     </section>
 
@@ -297,7 +318,7 @@ const closedDeadlines = statesWithDeadlines.filter(
         <a href="https://www.nado.org/opportunity-zones-2-0-resource-guide/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">NADO OZ 2.0 Resource Guide</a>;
         <a href="https://www.acceleratorforamerica.org/oztoolkit/" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">Accelerator for America OZ Designation Toolkit</a>;
         <a href="https://www.irs.gov/pub/irs-drop/rp-26-14.pdf" class="underline hover:text-oz-neutral-600" target="_blank" rel="noopener">IRS Rev. Proc. 2026-14</a>.
-        State deadline data verified June 16, 2026 — check state pages for current status.
+        State deadline data verified July 10, 2026; page reviewed September 18, 2026 — check state pages for current status.
       </p>
     </section>
   </div>

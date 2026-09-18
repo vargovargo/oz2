@@ -1,9 +1,30 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { DATES, currentPhase, fmt, phaseCopy } from '@/lib/timeline';
+
 const totalEligible = 25332;
 const ruralEligible = 8334;
-const stateCount = 51;
 const caseStudyCount = 22;
+
+const phase = currentPhase();
+const copy = phaseCopy();
+
+// The hero headline tracks the program phase rather than a hardcoded date, so
+// the front page stops going stale every time a deadline passes.
+const heroHeadline: Record<string, string> = {
+  pre_window:             'The eligible map is out.',
+  window_open:            'The nomination window is open.',
+  awaiting_certification: 'Nominations are in. The map lands next.',
+  designated:             'The OZ 2.0 map is live.',
+  post_period:            'The first OZ 2.0 designation period has ended.',
+};
+const heroSub: Record<string, string> = {
+  pre_window:             'Shape the nominations that follow.',
+  window_open:            'Shape the investments that follow.',
+  awaiting_certification: 'Get ready for the investment that follows.',
+  designated:             'Now the question is what gets built.',
+  post_period:            'What the decade produced, and what comes next.',
+};
 ---
 
 <Layout title="Home" description="OZ 2.0 designations are underway. Find your state's eligible tracts, learn from OZ 1.0 case studies, and build the investment case for your community.">
@@ -13,13 +34,14 @@ const caseStudyCount = 22;
     <div class="max-w-3xl">
       <p class="text-sm font-mono text-oz-blue uppercase tracking-widest mb-3">OZ 2.0 Investment Resource</p>
       <h1 class="text-4xl sm:text-5xl font-bold text-oz-neutral-900 leading-tight mb-6">
-        The nomination window is open.<br class="hidden sm:block" />
-        Shape the investments that follow.
+        {heroHeadline[phase]}<br class="hidden sm:block" />
+        {heroSub[phase]}
       </h1>
       <p class="text-xl text-oz-neutral-500 mb-8">
-        The OZ 2.0 map is set. Governors are nominating tracts now — the federal window runs through September 28, 2026. This resource helps local planners,
-        community development organizations, and impact investors understand what's eligible, what worked in OZ 1.0,
-        and how to direct new capital toward community priorities.
+        {copy.banner} Certified designations run {fmt(DATES.designationsEffective)} through {fmt(DATES.designationsExpire)}.
+        This resource helps local planners, community development organizations, and impact investors
+        understand what's eligible, what OZ 1.0 actually delivered, and how to direct new capital
+        toward community priorities.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="/states/all" class="bg-oz-blue text-white px-5 py-3 rounded font-medium hover:bg-blue-800 transition-colors">
@@ -27,6 +49,9 @@ const caseStudyCount = 22;
         </a>
         <a href="/case-studies" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
           OZ 1.0 case studies
+        </a>
+        <a href="/whats-next" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
+          What happens next
         </a>
       </div>
     </div>
@@ -37,8 +62,8 @@ const caseStudyCount = 22;
     {[
       { label: 'Eligible tracts', value: totalEligible.toLocaleString() },
       { label: 'Rural eligible', value: ruralEligible.toLocaleString() },
-      { label: 'States + DC', value: stateCount },
       { label: 'Verified case studies', value: caseStudyCount },
+      { label: copy.counter.label, value: copy.counter.value },
     ].map(({ label, value }) => (
       <div class="bg-white border border-oz-neutral-200 rounded p-5">
         <p class="font-mono text-3xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
@@ -81,6 +106,15 @@ const caseStudyCount = 22;
         <a href="/oz1-retrospective" class="text-sm text-oz-blue hover:underline">Read the retrospective →</a>
       </div>
     </div>
+    <div class="mt-4 bg-white border border-oz-blue/30 rounded p-5">
+      <p class="font-semibold text-oz-neutral-900 mb-2">What Happens Next</p>
+      <p class="text-sm text-oz-neutral-500 mb-4">
+        The full sequence from the governors' filing deadline to the {fmt(DATES.designationsEffective)} effective
+        date — plus the Notice 2026-40 transition rules covering the 2027–2028 overlap with OZ 1.0,
+        and the proposed reporting regulations that decide how much of OZ 2.0 the public will get to see.
+      </p>
+      <a href="/whats-next" class="text-sm text-oz-blue hover:underline">See the timeline →</a>
+    </div>
   </section>
 
   <!-- State grid teaser -->
@@ -90,7 +124,8 @@ const caseStudyCount = 22;
       <a href="/states/all" class="text-sm text-oz-blue hover:underline">View all →</a>
     </div>
     <p class="text-sm text-oz-neutral-500 mb-6">
-      Governors are nominating tracts now. Select your state to see eligible tracts, the nomination process, and local contacts.
+      {copy.callToAction} Select your state to see eligible tracts, where its nomination process
+      landed, and the local contacts who will know first when the certified list arrives.
     </p>
     <a href="/states/all" class="inline-block border border-oz-neutral-200 bg-white rounded px-5 py-3 text-sm font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
       Browse all 51 state pages →

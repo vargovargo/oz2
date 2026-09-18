@@ -39,6 +39,27 @@ export interface RegionalEdd {
 
 export type StatusTier = 'public_process' | 'contact_only' | 'no_public_process';
 
+/**
+ * How the state's *federal* filing stands — a different question from
+ * `status_tier`, which describes its own public input process.
+ *
+ *   filed_confirmed — the state publicly confirmed what it sent Treasury
+ *   filed_assumed   — window closed, presumed filed, nothing published
+ *   unknown         — no information either way
+ */
+export type NominationStatus = 'filed_confirmed' | 'filed_assumed' | 'unknown';
+
+export interface Nomination {
+  status: NominationStatus;
+  submitted_date: string | null;
+  tract_count: number | null;
+  off_list_count: number | null;
+  list_published_url: string | null;
+  source_url: string | null;
+  source_note: string | null;
+  last_checked: string;
+}
+
 export interface StateMetadata {
   name: string;
   fips: string;
@@ -64,6 +85,7 @@ export interface StateMetadata {
   nmtc_projects: number | null;
   cra_lmi_tracts: number | null;
   ui_invest_q1_tracts: number | null;
+  nomination: Nomination;
   notes: string | null;
 }
 
