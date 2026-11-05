@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getAllStates } from '@/lib/states';
-import type { StateMetadata } from '@/lib/states';
+import { getAllStates, getDesignationDetail, getDesignationAnalysis, TAG_LABELS } from '@/lib/states';
+import type { StateMetadata, TractTag } from '@/lib/states';
 import craPlaces from '../../../data/cra_lmi_places.json';
 import TractMap from '@/components/TractMap.astro';
 import { DATES, asOf, currentPhase, daysUntil, fmt } from '@/lib/timeline';
@@ -22,8 +22,25 @@ const {
   top10_counties, tribal_consultation, rural_partners,
   scoring_rubric_url, state_deadline, application_portal_url,
   state_cdfi_count, dci_q1_tracts, pp_county_count, nmtc_projects, cra_lmi_tracts,
-  ui_invest_q1_tracts, nomination,
+  ui_invest_q1_tracts, nomination, designation,
 } = state;
+
+// Final designations (Treasury, Oct 30 2026). See scripts/analyze_designations.py.
+const detail = getDesignationDetail(fips);
+const profile = getDesignationAnalysis().states.find((p: any) => p.fips === fips);
+const tagRules: Record<string, string> = getDesignationAnalysis().meta.tag_rules;
+const tagOrder: TractTag[] = ['qrof', 'oz1', 'nmtc', 'cra', 'housing', 'vacancy', 'sweetspot', 'tribal', 'ppov', 'added'];
+const tagCounts = Object.fromEntries(tagOrder.map((t) => [t, detail.tracts.filter((x) => x.tags.includes(t)).length]));
+const presentTags = tagOrder.filter((t) => tagCounts[t] > 0);
+// "favored A, B and C" rather than "favored A, favored B and favored C".
+const leaningSentence = (profile?.leaning ?? []).map((l: any, i: number, arr: any[]) => {
+  const prev = arr[i - 1]?.text ?? '';
+  const t = i > 0 && l.text.startsWith('favored ') && prev.startsWith('favored ') ? l.text.slice(8) : l.text;
+  return t + (i < arr.length - 2 ? ', ' : i === arr.length - 2 ? ' and ' : '');
+}).join('');
+const cdeCount = new Set(detail.tracts.flatMap((t) => t.cdes)).size;
+const pct = (n: number, d: number) => (d ? Math.round((n / d) * 100) : 0);
+const fmtNum = (v: number | null | undefined, suffix = '') => (v == null ? '—' : `${v.toLocaleString()}${suffix}`);
 
 const statePlaces = (craPlaces as Record<string, { cities: {name:string,tracts:number}[], zips: {zip:string,city:string,tracts:number}[] }>)[fips] ?? null;
 const topCities = statePlaces?.cities.slice(0, 5) ?? [];
@@ -124,26 +141,33 @@ const headlineCounter: { label: string; value: number | string } =
     ? { label: 'Days to state deadline', value: daysToStateDeadline }
     : windowOpen
       ? { label: 'Days left in federal window', value: Math.max(0, daysUntil(DATES.windowCloses)) }
-      : phase === 'awaiting_certification'
-        ? { label: 'Days until designations take effect', value: daysUntil(DATES.designationsEffective) }
+      : phase === 'awaiting_certification' || phase === 'certified'
+        ? { label: 'Days until designations take effect', value: daysUntil(DATES.designationsEffective, undefined, 'start') }
         : { label: 'Designation period ends', value: DATES.designationsExpire.slice(0, 4) };
 
 // Status badge: once the federal window shuts, every state is in the same posture —
 // filed and awaiting certification — regardless of what its own input process looked like.
 const awaitingCertification = phase === 'awaiting_certification';
-const badgeLabel = awaitingCertification
+const certified = phase === 'certified' || phase === 'designated' || phase === 'post_period';
+const badgeLabel = certified
+  ? `Designated · ${designation.designated.toLocaleString()} tracts`
+  : awaitingCertification
   ? 'Awaiting certification'
   : deadlinePassed
     ? 'Input closed'
     : tierLabel[status_tier];
-const badgeColor = awaitingCertification
+const badgeColor = certified
+  ? 'text-oz-green bg-green-50 border-green-200'
+  : awaitingCertification
   ? 'text-oz-blue bg-blue-50 border-blue-200'
   : deadlinePassed
     ? 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200'
     : tierColor[status_tier];
 ---
 
-<Layout title={name} description={`OZ 2.0 eligible tracts, nomination process, and coalition guidance for ${name}.`}>
+<Layout title={name} description={certified
+  ? `${name}'s ${designation.designated} designated 2027 Opportunity Zones: which tracts were chosen, how they compare to those passed over, and who is already active in them.`
+  : `OZ 2.0 eligible tracts, nomination process, and coalition guidance for ${name}.`}>
 
   <!-- Breadcrumb -->
   <nav class="text-sm text-oz-neutral-500 mb-6" aria-label="Breadcrumb">
@@ -166,19 +190,110 @@ const badgeColor = awaitingCertification
   </div>
 
   <!-- 1. Headline numbers -->
-  <section class="mb-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
-    {[
-      { label: 'Total eligible tracts', value: total_eligible.toLocaleString() },
-      { label: 'Rural eligible',        value: rural_eligible.toLocaleString() },
-      { label: 'Max designations (25%)', value: max_designations.toLocaleString() },
-      { label: headlineCounter.label, value: headlineCounter.value },
-    ].map(({ label, value }) => (
-      <div class="bg-white border border-oz-neutral-200 rounded p-5">
-        <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
-        <p class="text-xs text-oz-neutral-500">{label}</p>
-      </div>
-    ))}
-  </section>
+  {certified ? (
+    <section class="mb-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {[
+        { label: `Designated tracts (of ${designation.eligible_final.toLocaleString()} eligible)`, value: designation.designated.toLocaleString() },
+        { label: 'Rural designated — QROF treatment', value: designation.designated_rural.toLocaleString() },
+        { label: 'Former OZ 1.0 tracts redesignated', value: designation.oz1_redesignated.toLocaleString() },
+        { label: headlineCounter.label, value: headlineCounter.value },
+      ].map(({ label, value }) => (
+        <div class="bg-white border border-oz-neutral-200 rounded p-5">
+          <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
+          <p class="text-xs text-oz-neutral-500">{label}</p>
+        </div>
+      ))}
+    </section>
+  ) : (
+    <section class="mb-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {[
+        { label: 'Total eligible tracts', value: total_eligible.toLocaleString() },
+        { label: 'Rural eligible',        value: rural_eligible.toLocaleString() },
+        { label: 'Max designations (25%)', value: max_designations.toLocaleString() },
+        { label: headlineCounter.label, value: headlineCounter.value },
+      ].map(({ label, value }) => (
+        <div class="bg-white border border-oz-neutral-200 rounded p-5">
+          <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{value}</p>
+          <p class="text-xs text-oz-neutral-500">{label}</p>
+        </div>
+      ))}
+    </section>
+  )}
+
+  {certified && (
+    <>
+      <!-- 1a. The designations -->
+      <section class="mb-10" id="designations">
+        <h2 class="text-lg font-semibold mb-3">How {name} chose</h2>
+        <p class="text-sm text-oz-neutral-700 mb-4">
+          Treasury published the final list on {fmt(designation.published)}. {name} designated{' '}
+          {designation.designated.toLocaleString()} of {designation.eligible_final.toLocaleString()} eligible
+          tracts{designation.designated === designation.eligible_final
+            ? ' — every eligible tract, because the 25-tract minimum exceeded its eligible count. No selection took place.'
+            : `, its full allocation, in ${designation.counties_designated} of ${profile.counties_eligible} counties with eligible tracts.`}
+          {' '}Designations take effect {fmt(DATES.designationsEffective)} and run through {fmt(DATES.designationsExpire)}.
+          {designation.eligible_final !== total_eligible && (
+            <> Treasury's October list has {designation.eligible_final - total_eligible} more eligible tract{designation.eligible_final - total_eligible === 1 ? '' : 's'} here
+            than the April appendix, qualified under its missing-data rules; {`${profile.added_oct_designated} ${profile.added_oct_designated === 1 ? 'was' : 'were'} designated.`}</>
+          )}
+        </p>
+
+        {!profile.full_designation && (
+          <>
+            {profile.leaning.length > 0 && (
+              <p class="text-sm text-oz-neutral-700 mb-4">
+                Compared with the eligible tracts it passed over, {name}{' '}
+                {leaningSentence}.
+              </p>
+            )}
+            <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto mb-3">
+              <table class="w-full text-sm">
+                <thead class="bg-oz-neutral-100 text-oz-neutral-500 text-xs uppercase tracking-wide">
+                  <tr>
+                    <th class="px-4 py-2 text-left">Trait</th>
+                    <th class="px-4 py-2 text-right">Designated</th>
+                    <th class="px-4 py-2 text-right">Passed over</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Former OZ 1.0 tract', fmtNum(profile.oz1_share_designated, '%'), fmtNum(profile.oz1_share_not, '%')],
+                    ['Rural (QROF)', fmtNum(profile.rural_share_designated, '%'), fmtNum(profile.rural_share_not, '%')],
+                    ['Urban Institute Tier 1', fmtNum(profile.tier1_share_designated, '%'), fmtNum(profile.tier1_share_not, '%')],
+                    ['Median poverty rate', fmtNum(profile.poverty_median_designated, '%'), fmtNum(profile.poverty_median_not, '%')],
+                    ['Median family income, % of area', fmtNum(profile.mfi_ratio_median_designated, '%'), fmtNum(profile.mfi_ratio_median_not, '%')],
+                    ['Residents of color (mean)', fmtNum(profile.nonwhite_designated, '%'), fmtNum(profile.nonwhite_not, '%')],
+                    ['Median density, people / sq mi', fmtNum(profile.density_median_designated), fmtNum(profile.density_median_not)],
+                  ].map(([k, a, b], i) => (
+                    <tr class={i % 2 ? 'bg-oz-neutral-50' : ''}>
+                      <td class="px-4 py-2">{k}</td>
+                      <td class="px-4 py-2 text-right font-mono">{a}</td>
+                      <td class="px-4 py-2 text-right font-mono">{b}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="text-xs text-oz-neutral-500 mb-4">
+              Poverty and income: Treasury's own eligibility figures (ACS 2020–2024). Demographics: ACS 2020–2024.
+              Former OZ 1.0 = at least half the tract's land area was in a 2018 QOZ.
+              <a href="/designations" class="underline hover:text-oz-neutral-700">How every state compares →</a>
+            </p>
+          </>
+        )}
+
+        {detail.oz1_lost > 0 && (
+          <div class="border-l-4 border-oz-amber bg-amber-50 pl-4 py-3 pr-4 text-sm text-oz-neutral-700">
+            <strong class="text-oz-neutral-900">{detail.oz1_lost.toLocaleString()} OZ 1.0 tract{detail.oz1_lost === 1 ? '' : 's'} in {name} {detail.oz1_lost === 1 ? 'was' : 'were'} not redesignated.</strong>{' '}
+            They stay OZ 1.0 zones through {fmt(name === 'Puerto Rico' ? DATES.oz1ExpiresPuertoRico : DATES.oz1Expires)}, but under Notice 2026-40 new
+            capital after 2026 generally cannot enter them except under a working capital safe harbor plan adopted by{' '}
+            {fmt(DATES.oz1GainInclusion)}. If a project in one of these tracts is mid-stream, that deadline is the one that matters.
+            The county table below shows where they are. <a href="/whats-next#transition" class="text-oz-blue underline">Transition rules →</a>
+          </div>
+        )}
+      </section>
+    </>
+  )}
 
   {awaitingCertification && (
     <div class="mb-10 border border-blue-200 bg-blue-50 rounded p-5">
@@ -191,7 +306,11 @@ const badgeColor = awaitingCertification
     </div>
   )}
 
-  <!-- 2. Nomination process -->
+  <!-- 2. Nomination process (history once designations are certified) -->
+  <details class="mb-10 group" open={!certified}>
+    <summary class={certified ? 'cursor-pointer text-sm text-oz-neutral-500 hover:text-oz-blue mb-4' : 'hidden'}>
+      Record: how {name} ran its nomination input process
+    </summary>
   {status_tier === 'no_public_process' && (
     <section class="mb-10 border border-oz-neutral-200 bg-white rounded p-6">
       <h2 class="text-lg font-semibold mb-2">Nomination process</h2>
@@ -249,17 +368,19 @@ const badgeColor = awaitingCertification
     </section>
   )}
 
+  </details>
+
   <!-- 3. Eligible tracts -->
   <section class="mb-10">
-    <h2 class="text-lg font-semibold mb-4">Eligible tracts</h2>
+    <h2 class="text-lg font-semibold mb-4">{certified ? 'Map: designated and eligible tracts' : 'Eligible tracts'}</h2>
     <TractMap
       stateFips={fips}
       stateName={name}
-      tractCount={total_eligible}
+      tractCount={certified ? designation.eligible_final : total_eligible}
       eigMapUrl={eigMapUrl}
     />
 
-    {top10_counties.length > 0 && (
+    {!certified && top10_counties.length > 0 && (
       <div class="mt-4 bg-white border border-oz-neutral-200 rounded overflow-hidden">
         <table class="w-full text-sm">
           <thead class="bg-oz-neutral-100 text-oz-neutral-500 text-xs uppercase tracking-wide">
@@ -280,6 +401,146 @@ const badgeColor = awaitingCertification
       </div>
     )}
   </section>
+
+  {certified && detail.tracts.length > 0 && (
+    <>
+      <!-- 3a. Counties -->
+      <section class="mb-10" id="counties">
+        <h2 class="text-lg font-semibold mb-2">Designated tracts by county</h2>
+        <p class="text-sm text-oz-neutral-700 mb-4">
+          The county is usually the first local partner on an OZ deal — zoning, infrastructure, incentives.
+          CDEs listed are New Markets Tax Credit allocatees that have already financed deals inside this county's
+          designated tracts: the organizations with a working track record of underwriting there.
+        </p>
+        <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-oz-neutral-100 text-oz-neutral-500 text-xs uppercase tracking-wide">
+              <tr>
+                <th class="px-3 py-2 text-left">County</th>
+                <th class="px-3 py-2 text-right">Designated / eligible</th>
+                <th class="px-3 py-2 text-right">Rural</th>
+                <th class="px-3 py-2 text-right" title="Former OZ 1.0 tracts redesignated / not redesignated">OZ 1.0 kept / lost</th>
+                <th class="px-3 py-2 text-right">Residents</th>
+                <th class="px-3 py-2 text-left">NMTC CDEs active in designated tracts</th>
+              </tr>
+            </thead>
+            <tbody>
+              {detail.counties.filter((c) => c.designated > 0 || c.oz1_lost > 0).map((c, i) => (
+                <tr class={`${i % 2 ? 'bg-oz-neutral-50' : ''} align-top`}>
+                  <td class="px-3 py-2 whitespace-nowrap">{c.name}</td>
+                  <td class="px-3 py-2 text-right font-mono whitespace-nowrap">{c.designated} / {c.eligible}</td>
+                  <td class="px-3 py-2 text-right font-mono">{c.rural || '—'}</td>
+                  <td class="px-3 py-2 text-right font-mono whitespace-nowrap">{c.oz1_kept} / {c.oz1_lost}</td>
+                  <td class="px-3 py-2 text-right font-mono">{c.pop ? c.pop.toLocaleString() : '—'}</td>
+                  <td class="px-3 py-2 text-xs text-oz-neutral-600">{c.cdes.length ? c.cdes.join('; ') : '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-oz-neutral-500 mt-2">
+          Counties with no designated tracts are listed only if they lost OZ 1.0 tracts.
+          NMTC: CDFI Fund NMTC public data release. {cdeCount > 0 && `${cdeCount} distinct CDEs across ${name}'s designated tracts.`}
+        </p>
+      </section>
+
+      <!-- 3b. Tract finder -->
+      <section class="mb-10" id="tract-finder">
+        <h2 class="text-lg font-semibold mb-2">Find projects and partners in the designated tracts</h2>
+        <p class="text-sm text-oz-neutral-700 mb-4">
+          Every designated tract in {name}, tagged by the signals that point to a project type or a partner.
+          Pick tags to narrow the list — a tract must carry every tag selected. Tags are simple published rules,
+          not a score; hover a tag for its definition.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-3" id="tag-chips">
+          {presentTags.map((t) => (
+            <button type="button" data-tag={t} title={tagRules[t]}
+              class="tag-chip text-xs px-2.5 py-1 rounded-full border border-oz-neutral-300 bg-white text-oz-neutral-700 hover:border-oz-blue">
+              {TAG_LABELS[t]} <span class="text-oz-neutral-400 font-mono">{tagCounts[t]}</span>
+            </button>
+          ))}
+        </div>
+        <div class="flex flex-wrap items-center gap-3 mb-3 text-sm">
+          <label class="flex items-center gap-2">
+            <span class="text-oz-neutral-500 text-xs">County</span>
+            <select id="county-filter" class="border border-oz-neutral-300 rounded px-2 py-1 text-sm bg-white">
+              <option value="">All counties</option>
+              {detail.counties.filter((c) => c.designated > 0).map((c) => <option value={c.name}>{c.name} ({c.designated})</option>)}
+            </select>
+          </label>
+          <p class="text-xs text-oz-neutral-500"><span id="tract-count" class="font-mono">{detail.tracts.length}</span> of {detail.tracts.length} tracts shown</p>
+          <a href="/data/oz2-designations-2027.csv" download class="text-xs text-oz-blue underline ml-auto">Download all eligible tracts, national (CSV) →</a>
+        </div>
+
+        <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto" style="max-height: 640px; overflow-y: auto;">
+          <table class="w-full text-sm">
+            <thead class="bg-oz-neutral-100 text-oz-neutral-500 text-xs uppercase tracking-wide sticky top-0">
+              <tr>
+                <th class="px-3 py-2 text-left">Tract</th>
+                <th class="px-3 py-2 text-left">County</th>
+                <th class="px-3 py-2 text-right" title="Poverty rate">Pov.</th>
+                <th class="px-3 py-2 text-right" title="Median family income as % of area median">MFI</th>
+                <th class="px-3 py-2 text-right">Pop.</th>
+                <th class="px-3 py-2 text-right" title="Renter-occupied share">Rent.</th>
+                <th class="px-3 py-2 text-right" title="Housing vacancy rate">Vac.</th>
+                <th class="px-3 py-2 text-left">Signals</th>
+                <th class="px-3 py-2 text-left">Prior NMTC CDEs</th>
+              </tr>
+            </thead>
+            <tbody id="tract-rows">
+              {detail.tracts.map((t) => (
+                <tr class="tract-row border-t border-oz-neutral-100 align-top" data-tags={t.tags.join(' ')} data-county={t.county}>
+                  <td class="px-3 py-2 whitespace-nowrap">
+                    <span class="font-mono text-xs">{t.geoid}</span>
+                    {(t.place || t.tribal) && <span class="block text-xs text-oz-neutral-500">{t.place ?? t.tribal}</span>}
+                  </td>
+                  <td class="px-3 py-2 text-xs whitespace-nowrap">{t.county}</td>
+                  <td class="px-3 py-2 text-right font-mono text-xs">{fmtNum(t.pov, '%')}</td>
+                  <td class="px-3 py-2 text-right font-mono text-xs">{fmtNum(t.mfi, '%')}</td>
+                  <td class="px-3 py-2 text-right font-mono text-xs">{fmtNum(t.pop)}</td>
+                  <td class="px-3 py-2 text-right font-mono text-xs">{fmtNum(t.renter, '%')}</td>
+                  <td class="px-3 py-2 text-right font-mono text-xs">{fmtNum(t.vac, '%')}</td>
+                  <td class="px-3 py-2">
+                    <div class="flex flex-wrap gap-1">
+                      {t.tags.map((g) => (
+                        <span title={tagRules[g]} class={`text-[10px] px-1.5 py-0.5 rounded border whitespace-nowrap ${g === 'qrof' ? 'bg-amber-50 border-amber-200 text-amber-800' : g === 'oz1' ? 'bg-blue-50 border-blue-200 text-oz-blue' : 'bg-oz-neutral-50 border-oz-neutral-200 text-oz-neutral-600'}`}>{TAG_LABELS[g]}</span>
+                      ))}
+                    </div>
+                  </td>
+                  <td class="px-3 py-2 text-xs text-oz-neutral-600">
+                    {t.cdes.length ? t.cdes.join('; ') : '—'}
+                    {t.nmtc_usd > 0 && <span class="block text-oz-neutral-400 font-mono">${(t.nmtc_usd / 1e6).toFixed(1)}M · {t.nmtc_n} deal{t.nmtc_n === 1 ? '' : 's'}</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-4 grid sm:grid-cols-2 gap-4 text-sm">
+          <div class="bg-white border border-oz-neutral-200 rounded p-4">
+            <p class="font-semibold text-oz-neutral-900 mb-2">Reading the signals for projects</p>
+            <ul class="space-y-1.5 text-oz-neutral-700 text-xs">
+              <li><strong>Rural / QROF</strong> — a rural QOF investment gets a 30% basis step-up at five years, and existing buildings need only 50% improvement. Rehab of existing stock pencils here in ways it does not elsewhere. <a href="/capital-stack#qrof-mechanics" class="text-oz-blue underline">Mechanics →</a></li>
+              <li><strong>Housing pressure</strong> — mostly renters, most of them cost-burdened. Housing deals here have demand; they also carry displacement risk, which is where community benefit terms matter.</li>
+              <li><strong>High vacancy</strong> — vacant structures to bring back. Pair with the 50% rural improvement threshold where both apply.</li>
+              <li><strong>UI Tier 1</strong> — the Urban Institute's read that private capital is likely to come <em>and</em> the impact would be larger.</li>
+            </ul>
+          </div>
+          <div class="bg-white border border-oz-neutral-200 rounded p-4">
+            <p class="font-semibold text-oz-neutral-900 mb-2">Reading the signals for partners</p>
+            <ul class="space-y-1.5 text-oz-neutral-700 text-xs">
+              <li><strong>NMTC track record</strong> — the listed CDEs have underwritten deals in this exact tract. They know the market and can layer NMTC with OZ equity. <a href="/capital-stack#nmtc" class="text-oz-blue underline">How they stack →</a></li>
+              <li><strong>CRA-eligible</strong> — bank investment here earns CRA credit. Start with community development officers at banks with branches in the county.</li>
+              <li><strong>Former OZ 1.0</strong> — QOFs and sponsors may already hold assets here. They are the most likely early OZ 2.0 investors and know the local approvals path.</li>
+              <li><strong>Tribal</strong> — the tribal government is a principal, not a stakeholder to consult. Persistent poverty — USDA Rural Development programs can fill gaps.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </>
+  )}
 
   <!-- 4. Data context -->
   {(dci_q1_tracts != null || pp_county_count != null || nmtc_projects != null || state_cdfi_count != null || cra_lmi_tracts != null || ui_invest_q1_tracts != null) && (
@@ -392,7 +653,8 @@ const badgeColor = awaitingCertification
     </section>
   )}
 
-  <!-- 5. How to influence the nomination -->
+  <!-- 5. How to influence the nomination (pre-certification only) -->
+  {!certified && (
   <section class="mb-10">
     <h2 class="text-lg font-semibold mb-4">{awaitingCertification ? 'Where the nomination stands' : 'How to influence the nomination'}</h2>
     {awaitingCertification ? (
@@ -494,6 +756,7 @@ const badgeColor = awaitingCertification
       </p>
     )}
   </section>
+  )}
 
   <!-- 5. Who to contact -->
   <section class="mb-10">
@@ -575,11 +838,43 @@ const badgeColor = awaitingCertification
   <!-- 7. Sources -->
   <section class="text-xs text-oz-neutral-500">
     <p>
+      {certified && <>Designations: Treasury, 2027 QOZ designations and revised eligible-tract file ({fmt(designation.published)}). Demographics: ACS 2020–2024 5-year. OZ 1.0: IRS Notice 2018-48, crosswalked to 2020 tracts. </>}
       Eligible tract counts: IRS Rev. Proc. 2026-14 (April 6, 2026).
       Rural designation: Notice 2025-50, Section 4.01.
       Status tier last verified {last_checked}.
       <a href="/methodology" class="underline hover:text-oz-neutral-700">Full methodology</a>.
     </p>
   </section>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>('.tag-chip');
+  const rows = document.querySelectorAll<HTMLTableRowElement>('.tract-row');
+  const countySel = document.getElementById('county-filter') as HTMLSelectElement | null;
+  const countEl = document.getElementById('tract-count');
+  const active = new Set<string>();
+
+  function apply() {
+    const county = countySel?.value ?? '';
+    let shown = 0;
+    rows.forEach((r) => {
+      const tags = new Set((r.dataset.tags ?? '').split(' '));
+      const ok = [...active].every((t) => tags.has(t)) && (!county || r.dataset.county === county);
+      r.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    if (countEl) countEl.textContent = String(shown);
+  }
+
+  chips.forEach((c) => c.addEventListener('click', () => {
+    const t = c.dataset.tag!;
+    if (active.has(t)) active.delete(t); else active.add(t);
+    c.classList.toggle('bg-oz-blue', active.has(t));
+    c.classList.toggle('text-white', active.has(t));
+    c.classList.toggle('border-oz-blue', active.has(t));
+    c.classList.toggle('bg-white', !active.has(t));
+    apply();
+  }));
+  countySel?.addEventListener('change', apply);
+</script>
 
 </Layout>

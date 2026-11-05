@@ -19,9 +19,17 @@ const windowShut = phase !== 'pre_window' && phase !== 'window_open';
       <div class="mb-8 border border-amber-200 bg-amber-50 rounded p-5">
         <p class="text-sm text-oz-neutral-700">
           <strong class="text-oz-neutral-900">The 2026 nomination window closed {fmt(DATES.windowCloses)}.</strong>{' '}
-          Off-list nominations are no longer available this cycle. Arizona is reported to have
-          used the pathway for three of its 125 nominated tracts — the only documented use so far,
-          though Treasury's certification will be the first authoritative account. This page stands
+          Off-list nominations are no longer available this cycle.{' '}
+          {phase === 'certified' || phase === 'designated' || phase === 'post_period' ? (
+            <>Treasury's final record shows how the pathway landed: its revised eligible list of
+            {' '}{fmt(DATES.designationsPublished)} added 130 tracts that qualified only under the
+            missing-data rules, and 15 of them were designated — including one of Arizona's (it had
+            reported three off-list submissions). No tract outside Treasury's eligible list was designated.
+            {' '}<a href="/designations#off-list" class="text-oz-blue underline">Detail →</a> This page stands</>
+          ) : (
+            <>Arizona is reported to have used the pathway for three of its 125 nominated tracts — the only
+            documented use so far, though Treasury's certification will be the first authoritative account. This page stands</>
+          )}
           as the explainer for how § 5.04 works, which matters both for reading what Treasury
           certifies and for the next decennial round.
         </p>

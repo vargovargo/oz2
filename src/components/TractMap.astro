@@ -68,9 +68,13 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     style="max-width: 228px;"
   >
     <!-- Choropleth mode toggle -->
-    <div class="flex gap-3 mb-2">
+    <div class="flex flex-wrap gap-x-3 gap-y-1 mb-2">
       <label class="flex items-center gap-1 cursor-pointer text-xs font-medium">
-        <input type="radio" name="choropleth-mode" value="invest" id="mode-invest" class="accent-oz-blue" checked />
+        <input type="radio" name="choropleth-mode" value="desig" id="mode-desig" class="accent-oz-blue" checked />
+        <span>Designation</span>
+      </label>
+      <label class="flex items-center gap-1 cursor-pointer text-xs font-medium">
+        <input type="radio" name="choropleth-mode" value="invest" id="mode-invest" class="accent-oz-blue" />
         <span>Investability</span>
       </label>
       <label class="flex items-center gap-1 cursor-pointer text-xs font-medium">
@@ -79,8 +83,25 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       </label>
     </div>
 
-    <!-- Investability legend (shown by default) -->
-    <div id="legend-invest" class="space-y-1 mb-3">
+    <!-- Designation legend (shown by default) -->
+    <div id="legend-desig" class="space-y-1 mb-3">
+      <p class="font-semibold text-oz-neutral-700 mb-1 text-xs uppercase tracking-wide">2027 designations (Treasury)</p>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#0f766e"></span>
+        <span class="text-oz-neutral-600">Designated</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#b45309"></span>
+        <span class="text-oz-neutral-600">Designated, rural (QROF)</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0 border border-oz-neutral-300" style="background:#e5e7eb"></span>
+        <span class="text-oz-neutral-500">Eligible, not designated</span>
+      </div>
+    </div>
+
+    <!-- Investability legend -->
+    <div id="legend-invest" class="space-y-1 mb-3 hidden">
       <p class="font-semibold text-oz-neutral-700 mb-1 text-xs uppercase tracking-wide">Investability (Urban Institute)</p>
       <div class="flex items-center gap-2">
         <span class="inline-block w-4 h-3 rounded-sm flex-shrink-0" style="background:#1e3a5f"></span>
@@ -134,6 +155,14 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       <p class="font-semibold text-oz-neutral-700 mb-2 text-xs uppercase tracking-wide">Highlight tracts</p>
       <div class="space-y-1.5">
         <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="designated" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Designated 2027 QOZ</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" data-filter="oz1" class="accent-oz-blue" />
+          <span class="text-oz-neutral-700">Former OZ 1.0 tract</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="rural" class="accent-oz-blue" />
           <span class="text-oz-neutral-700">🌾 Rural (QROF eligible)</span>
         </label>
@@ -181,10 +210,12 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     class="underline hover:text-oz-neutral-600"
   >View on EIG map →</a>
   <a
-    href="https://www.irs.gov/pub/irs-drop/rp-26-14-appendix.xlsx"
+    href="https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones"
+    target="_blank"
+    rel="noopener"
     class="underline hover:text-oz-neutral-600"
-  >IRS appendix (XLSX)</a>
-  <span>Source: IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2025 · Urban Institute 2026</span>
+  >Treasury designation files (XLSX)</a>
+  <span>Source: Treasury 2027 QOZ designations (Oct. 30, 2026) · IRS Rev. Proc. 2026-14 · EIG DCI 2023 · FFIEC CRA 2025 · Urban Institute 2026</span>
 </div>
 
 <style is:global>
@@ -260,6 +291,10 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     const nmtcTotal   = parseFloat(String(props.nmtc_total_usd ?? 0));
     const uiScore     = props.ui_invest_score != null ? parseFloat(String(props.ui_invest_score)) : null;
     const uiQ         = props.ui_invest_quintile != null ? parseInt(String(props.ui_invest_quintile)) : null;
+    const isDesig     = Boolean(props.is_designated);
+    const qozid       = props.qozid ? String(props.qozid) : null;
+    const isOz1       = Boolean(props.is_oz1);
+    const addedOct    = Boolean(props.added_oct2026);
 
     // Location line
     const locParts = [place, county, stateAbbr || stateFullName].filter(Boolean);
@@ -342,7 +377,15 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         <div class="ozp-geoid">Census Tract ${geoid}</div>
         <div class="ozp-loc">${location}</div>
       </div>
-      <div class="ozp-badge">OZ 2.0 Eligible Tract &mdash; IRS Rev. Proc. 2026-14</div>
+      ${isDesig
+        ? `<div class="ozp-badge">Designated 2027 QOZ${qozid ? ` &mdash; ${qozid}` : ''}</div>`
+        : `<div class="ozp-badge" style="background:#64748b">Eligible &mdash; not designated</div>`}
+      <div class="ozp-section">
+        <div class="ozp-section-head">Designation history</div>
+        <div class="ozp-row"><span class="ozp-val">${isOz1
+          ? (isDesig ? 'Was an OZ 1.0 tract (2018) &mdash; redesignated.' : 'Was an OZ 1.0 tract (2018) &mdash; <strong>not redesignated</strong>. OZ 1.0 status runs through 2028; see the transition rules for new capital after 2026.')
+          : 'Not an OZ 1.0 tract.'}${addedOct ? ' Added to the eligible list in October 2026 under Treasury&rsquo;s missing-data rules.' : ''}</span></div>
+      </div>
       ${ruralSection}
       <div class="ozp-section">
         <div class="ozp-section-head">Distress Profile</div>
@@ -461,15 +504,23 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
           '#d1d5db',      // null / not scored
         ];
 
-        let choroplethMode: 'invest' | 'dci' = 'invest';
+        const DESIG_COLOR_EXPR: maplibregl.ExpressionSpecification = [
+          'case',
+          ['==', ['get', 'is_designated'], true],
+          ['case', ['==', ['get', 'is_rural'], true], '#b45309', '#0f766e'],
+          '#e5e7eb',
+        ];
 
-        // Fill layer — default choropleth by investability quintile
+        let choroplethMode: 'desig' | 'invest' | 'dci' = 'desig';
+        const MODE_EXPR = { desig: DESIG_COLOR_EXPR, invest: INVEST_COLOR_EXPR, dci: DCI_COLOR_EXPR };
+
+        // Fill layer — default choropleth by 2027 designation status
         map.addLayer({
           id: 'tracts-fill',
           type: 'fill',
           source: 'tracts',
           paint: {
-            'fill-color': INVEST_COLOR_EXPR,
+            'fill-color': DESIG_COLOR_EXPR,
             'fill-opacity': 0.65,
           },
         });
@@ -581,6 +632,8 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 
         function featureMatches(props: Record<string, unknown>, filters: string[]): boolean {
           for (const f of filters) {
+            if (f === 'designated' && !props.is_designated) return false;
+            if (f === 'oz1'    && !props.is_oz1) return false;
             if (f === 'rural'  && !props.is_rural) return false;
             if (f === 'invest' && !(props.ui_invest_quintile != null && Number(props.ui_invest_quintile) === 1)) return false;
             if (f === 'cra'    && !props.is_cra_lmi) return false;
@@ -594,6 +647,8 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
 
         function getFilterExpr(f: string): unknown[] | null {
           switch (f) {
+            case 'designated': return ['==', ['get', 'is_designated'], true];
+            case 'oz1':    return ['==', ['get', 'is_oz1'], true];
             case 'rural':  return ['==', ['get', 'is_rural'], true];
             case 'invest': return ['==', ['coalesce', ['to-number', ['get', 'ui_invest_quintile'], 0], 0], 1];
             case 'cra':    return ['==', ['get', 'is_cra_lmi'], true];
@@ -636,9 +691,9 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         document.querySelectorAll<HTMLInputElement>('input[name="choropleth-mode"]')
           .forEach(radio => {
             radio.addEventListener('change', () => {
-              choroplethMode = radio.value as 'invest' | 'dci';
-              map.setPaintProperty('tracts-fill', 'fill-color',
-                choroplethMode === 'invest' ? INVEST_COLOR_EXPR : DCI_COLOR_EXPR);
+              choroplethMode = radio.value as 'desig' | 'invest' | 'dci';
+              map.setPaintProperty('tracts-fill', 'fill-color', MODE_EXPR[choroplethMode]);
+              document.getElementById('legend-desig')?.classList.toggle('hidden', choroplethMode !== 'desig');
               document.getElementById('legend-invest')?.classList.toggle('hidden', choroplethMode !== 'invest');
               document.getElementById('legend-dci')?.classList.toggle('hidden', choroplethMode !== 'dci');
             });
@@ -663,7 +718,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
             const features = data.features.filter(
               feat => feat.properties && featureMatches(feat.properties as Record<string, unknown>, filters)
             );
-            const cols = ['geoid', 'county_name', 'place_name', 'state_abbr', 'is_rural',
+            const cols = ['geoid', 'qozid', 'is_designated', 'is_oz1', 'county_name', 'place_name', 'state_abbr', 'is_rural',
                           'ui_invest_score', 'ui_invest_quintile',
                           'dci_score', 'dci_quintile', 'is_cra_lmi', 'income_level',
                           'is_persistent_poverty', 'has_nmtc', 'nmtc_projects', 'nmtc_total_usd'];

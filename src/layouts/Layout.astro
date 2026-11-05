@@ -44,6 +44,7 @@ const { banner } = phaseCopy();
         <!-- Desktop nav -->
         <nav aria-label="Site navigation" class="hidden sm:flex items-center gap-6 text-sm">
           <a href="/states/all" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
+          <a href="/designations" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Designations</a>
           <a href="/whats-next" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">What's Next</a>
           <a href="/how-to-advocate" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
           <a href="/capital-stack" class="text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
@@ -74,6 +75,7 @@ const { banner } = phaseCopy();
       >
         <nav class="flex flex-col px-4 py-3 gap-0 text-sm">
           <a href="/states/all" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">States</a>
+          <a href="/designations" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">Designations</a>
           <a href="/whats-next" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">What's Next</a>
           <a href="/how-to-advocate" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">How to Advocate</a>
           <a href="/capital-stack" class="py-3 border-b border-oz-neutral-100 text-oz-neutral-700 hover:text-oz-blue transition-colors">Capital Stack</a>
@@ -91,14 +93,15 @@ const { banner } = phaseCopy();
     <footer class="border-t border-oz-neutral-200 bg-white mt-auto">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-oz-neutral-500">
         <p>
-          Data: <a href="/references" class="underline hover:text-oz-neutral-700">IRS Rev. Proc. 2026-14</a> and other sources.
+          Data: <a href="/references" class="underline hover:text-oz-neutral-700">Treasury 2027 QOZ designations, IRS Rev. Proc. 2026-14</a> and other sources.
           <a href="/whats-next" class="underline hover:text-oz-neutral-700">{banner}</a>
         </p>
-        <nav aria-label="Footer navigation" class="flex gap-4">
+        <nav aria-label="Footer navigation" class="flex flex-wrap gap-x-4 gap-y-1">
           <a href="/methodology" class="hover:text-oz-neutral-700">Methodology</a>
           <a href="/references" class="hover:text-oz-neutral-700">References</a>
           <a href="/about" class="hover:text-oz-neutral-700">About</a>
           <a href="/downloads/eligible_tracts.parquet" download class="hover:text-oz-neutral-700">Eligible Tracts (parquet)</a>
+          <a href="/data/oz2-designations-2027.csv" download class="hover:text-oz-neutral-700">2027 Designations (CSV)</a>
         </nav>
       </div>
     </footer>

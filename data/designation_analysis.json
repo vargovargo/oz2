@@ -1,0 +1,3004 @@
+{
+ "meta": {
+  "generated": "2026-11-05",
+  "sources": {
+   "designations": "Treasury OTP, OZ2-Designations-2027-Data-Transparency-10302026.xlsx",
+   "eligible": "Treasury OTP, OZ2-Eligible-Tracts-Data-Transparency-10302026.xlsx",
+   "acs": "ACS 2020\u20132024 5-year, table-based Summary File",
+   "oz1": "IRS Notice 2018-48 / 2019-42, Census 2020\u21942010 tract relationship file"
+  },
+  "tag_rules": {
+   "qrof": "Rural QOZ \u2014 QROF treatment (30% step-up at 5 years, 50% improvement threshold)",
+   "oz1": "Was an OZ 1.0 tract (\u226550% of land area in a 2018 QOZ)",
+   "nmtc": "Prior New Markets Tax Credit investment in the tract",
+   "cra": "CRA-eligible (LMI or distressed/underserved middle-income)",
+   "tribal": "Overlaps tribal land or has a significant AIAN population",
+   "housing": "Housing pressure: \u226550% renters and \u226550% of renters cost-burdened",
+   "vacancy": "High vacancy: \u226515% of housing units vacant",
+   "sweetspot": "Urban Institute Tier 1 \u2014 likely to attract investment, with larger impact",
+   "ppov": "In a USDA persistent-poverty county",
+   "added": "Added to the eligible list in October 2026 under Treasury's missing-data rules"
+  }
+ },
+ "national": {
+  "eligible": 25462,
+  "designated": 6576,
+  "designated_rural": 2594,
+  "eligible_rural": 8362,
+  "added_oct": 130,
+  "added_oct_designated": 15,
+  "jurisdictions": 56,
+  "full_designation_jurisdictions": [
+   "VT",
+   "WY",
+   "AS",
+   "GU",
+   "MP",
+   "VI"
+  ],
+  "pop_designated": 23579966,
+  "pop_eligible": 90433494,
+  "oz1": {
+   "oz1_2020_tracts": 9950,
+   "still_eligible": 6882,
+   "redesignated": 2974,
+   "designated_that_were_oz1": 2974,
+   "note": "OZ 1.0 used 2010 tracts; counts here are 2020 tracts with \u226550% of land area in a 2018 QOZ."
+  }
+ },
+ "binary": [
+  {
+   "key": "is_oz1",
+   "label": "Was an OZ 1.0 tract",
+   "n_eligible": 6808,
+   "n_designated": 2900,
+   "rate_with": 42.6,
+   "rate_without": 19.2,
+   "lift": 1.67
+  },
+  {
+   "key": "has_nmtc",
+   "label": "Prior NMTC investment",
+   "n_eligible": 3187,
+   "n_designated": 1335,
+   "rate_with": 41.9,
+   "rate_without": 23.1,
+   "lift": 1.62
+  },
+  {
+   "key": "is_rural",
+   "label": "Rural (QROF)",
+   "n_eligible": 8249,
+   "n_designated": 2481,
+   "rate_with": 30.1,
+   "rate_without": 23.3,
+   "lift": 1.17
+  },
+  {
+   "key": "ui_tier1",
+   "label": "Urban Institute Tier 1",
+   "n_eligible": 5684,
+   "n_designated": 1845,
+   "rate_with": 32.5,
+   "rate_without": 23.5,
+   "lift": 1.28
+  },
+  {
+   "key": "ui_tier3",
+   "label": "Urban Institute Tier 3 (low probability)",
+   "n_eligible": 14825,
+   "n_designated": 3262,
+   "rate_with": 22.0,
+   "rate_without": 30.4,
+   "lift": 0.86
+  },
+  {
+   "key": "is_cra_lmi",
+   "label": "CRA-eligible",
+   "n_eligible": 18871,
+   "n_designated": 4860,
+   "rate_with": 25.8,
+   "rate_without": 24.7,
+   "lift": 1.01
+  },
+  {
+   "key": "is_persistent_poverty",
+   "label": "Persistent-poverty county",
+   "n_eligible": 3136,
+   "n_designated": 722,
+   "rate_with": 23.0,
+   "rate_without": 25.8,
+   "lift": 0.91
+  },
+  {
+   "key": "is_tribal_overlap",
+   "label": "Tribal overlap",
+   "n_eligible": 1064,
+   "n_designated": 296,
+   "rate_with": 27.8,
+   "rate_without": 25.4,
+   "lift": 1.01
+  },
+  {
+   "key": "added_oct",
+   "label": "Added in October (missing-data rule)",
+   "n_eligible": 130,
+   "n_designated": 15,
+   "rate_with": 11.5,
+   "rate_without": 25.6,
+   "lift": 0.45
+  }
+ ],
+ "continuous": [
+  {
+   "key": "poverty_rate",
+   "label": "Poverty rate",
+   "designated_percentile": 54.0,
+   "median_designated": 25.052,
+   "median_not": 23.462,
+   "deciles": [
+    18.8,
+    22.1,
+    21.8,
+    24.8,
+    25.9,
+    26.0,
+    26.9,
+    28.3,
+    30.3,
+    29.8
+   ]
+  },
+  {
+   "key": "mfi_ratio",
+   "label": "Median family income, % of area",
+   "designated_percentile": 48.7,
+   "median_designated": 60.897,
+   "median_not": 61.871,
+   "deciles": [
+    30.5,
+    27.5,
+    26.8,
+    23.8,
+    24.8,
+    22.6,
+    25.1,
+    21.6,
+    25.1,
+    27.0
+   ]
+  },
+  {
+   "key": "pop",
+   "label": "Population",
+   "designated_percentile": 51.2,
+   "median_designated": 3425.0,
+   "median_not": 3378.5,
+   "deciles": [
+    24.9,
+    23.7,
+    25.5,
+    25.2,
+    24.1,
+    24.4,
+    25.4,
+    26.8,
+    25.5,
+    29.1
+   ]
+  },
+  {
+   "key": "pop_density",
+   "label": "Population density",
+   "designated_percentile": 44.8,
+   "median_designated": 2527.6,
+   "median_not": 3876.1,
+   "deciles": [
+    26.8,
+    33.4,
+    31.8,
+    29.7,
+    28.5,
+    24.6,
+    23.9,
+    20.6,
+    18.3,
+    17.2
+   ]
+  },
+  {
+   "key": "unemp_rate",
+   "label": "Unemployment rate",
+   "designated_percentile": 50.5,
+   "median_designated": 0.07,
+   "median_not": 0.068,
+   "deciles": [
+    24.8,
+    25.0,
+    25.2,
+    25.8,
+    24.5,
+    26.6,
+    26.3,
+    24.8,
+    25.8,
+    26.2
+   ]
+  },
+  {
+   "key": "pct_ba_plus",
+   "label": "Adults with a BA or more",
+   "designated_percentile": 50.4,
+   "median_designated": 0.179,
+   "median_not": 0.178,
+   "deciles": [
+    25.4,
+    26.3,
+    24.7,
+    25.0,
+    25.3,
+    25.6,
+    24.3,
+    24.9,
+    25.6,
+    27.6
+   ]
+  },
+  {
+   "key": "pct_renter",
+   "label": "Renter-occupied share",
+   "designated_percentile": 54.6,
+   "median_designated": 0.544,
+   "median_not": 0.493,
+   "deciles": [
+    18.4,
+    21.7,
+    23.6,
+    23.8,
+    23.5,
+    25.7,
+    26.5,
+    27.8,
+    31.0,
+    33.0
+   ]
+  },
+  {
+   "key": "vacancy_rate",
+   "label": "Housing vacancy rate",
+   "designated_percentile": 52.3,
+   "median_designated": 0.113,
+   "median_not": 0.103,
+   "deciles": [
+    22.9,
+    22.6,
+    23.3,
+    23.5,
+    26.6,
+    26.2,
+    26.4,
+    29.4,
+    28.2,
+    26.1
+   ]
+  },
+  {
+   "key": "pct_rent_burdened",
+   "label": "Renters cost-burdened",
+   "designated_percentile": 49.1,
+   "median_designated": 0.554,
+   "median_not": 0.563,
+   "deciles": [
+    24.3,
+    26.7,
+    26.9,
+    26.3,
+    26.5,
+    26.3,
+    26.7,
+    25.2,
+    25.2,
+    20.9
+   ]
+  },
+  {
+   "key": "median_home_value",
+   "label": "Median home value",
+   "designated_percentile": 49.6,
+   "median_designated": 185500.0,
+   "median_not": 186200.0,
+   "deciles": [
+    26.3,
+    24.3,
+    26.7,
+    26.4,
+    25.4,
+    26.6,
+    23.6,
+    24.1,
+    23.3,
+    26.1
+   ]
+  },
+  {
+   "key": "pct_nonwhite",
+   "label": "Residents of color",
+   "designated_percentile": 48.1,
+   "median_designated": 0.624,
+   "median_not": 0.675,
+   "deciles": [
+    24.9,
+    28.4,
+    28.0,
+    28.1,
+    26.5,
+    25.8,
+    25.3,
+    24.3,
+    22.1,
+    21.5
+   ]
+  },
+  {
+   "key": "pct_black_nh",
+   "label": "Black residents",
+   "designated_percentile": 50.5,
+   "median_designated": 0.114,
+   "median_not": 0.11,
+   "deciles": [
+    21.7,
+    24.0,
+    27.2,
+    25.4,
+    26.0,
+    29.0,
+    26.3,
+    28.4,
+    23.7,
+    23.1
+   ]
+  },
+  {
+   "key": "pct_hispanic",
+   "label": "Hispanic residents",
+   "designated_percentile": 49.8,
+   "median_designated": 0.147,
+   "median_not": 0.163,
+   "deciles": [
+    24.2,
+    25.9,
+    27.0,
+    25.2,
+    26.7,
+    25.8,
+    25.8,
+    25.2,
+    25.4,
+    23.7
+   ]
+  },
+  {
+   "key": "dci_score",
+   "label": "EIG distress score (higher = more distressed)",
+   "designated_percentile": 50.3,
+   "median_designated": 75.224,
+   "median_not": 75.324,
+   "deciles": [
+    25.2,
+    25.5,
+    25.0,
+    24.9,
+    26.1,
+    25.9,
+    24.9,
+    27.0,
+    25.9,
+    25.1
+   ]
+  }
+ ],
+ "logit": {
+  "n": 22904,
+  "pseudo_r2": 0.089,
+  "terms": [
+   {
+    "term": "poverty_rate_z",
+    "odds_ratio": 1.07,
+    "ame_pp": 1.2,
+    "p": 0.006
+   },
+   {
+    "term": "mfi_ratio_z",
+    "odds_ratio": 1.02,
+    "ame_pp": 0.4,
+    "p": 0.35
+   },
+   {
+    "term": "pop_z",
+    "odds_ratio": 1.14,
+    "ame_pp": 2.1,
+    "p": 4.5e-10
+   },
+   {
+    "term": "log_density_z",
+    "odds_ratio": 0.72,
+    "ame_pp": -5.4,
+    "p": 3.7e-19
+   },
+   {
+    "term": "unemp_rate_z",
+    "odds_ratio": 0.96,
+    "ame_pp": -0.7,
+    "p": 0.04
+   },
+   {
+    "term": "pct_ba_plus_z",
+    "odds_ratio": 1.02,
+    "ame_pp": 0.3,
+    "p": 0.48
+   },
+   {
+    "term": "pct_renter_z",
+    "odds_ratio": 1.47,
+    "ame_pp": 6.5,
+    "p": 1.5e-44
+   },
+   {
+    "term": "vacancy_rate_z",
+    "odds_ratio": 0.95,
+    "ame_pp": -0.9,
+    "p": 0.023
+   },
+   {
+    "term": "median_home_value_z",
+    "odds_ratio": 0.91,
+    "ame_pp": -1.6,
+    "p": 0.03
+   },
+   {
+    "term": "pct_nonwhite_z",
+    "odds_ratio": 0.85,
+    "ame_pp": -2.7,
+    "p": 1.2e-06
+   },
+   {
+    "term": "is_oz1",
+    "odds_ratio": 2.72,
+    "ame_pp": 16.9,
+    "p": 4.4e-48
+   },
+   {
+    "term": "has_nmtc",
+    "odds_ratio": 1.79,
+    "ame_pp": 9.8,
+    "p": 1e-29
+   },
+   {
+    "term": "is_rural",
+    "odds_ratio": 1.36,
+    "ame_pp": 5.2,
+    "p": 1.5e-06
+   },
+   {
+    "term": "is_cra_lmi",
+    "odds_ratio": 0.96,
+    "ame_pp": -0.7,
+    "p": 0.36
+   },
+   {
+    "term": "ui_tier1",
+    "odds_ratio": 1.27,
+    "ame_pp": 4.1,
+    "p": 0.023
+   },
+   {
+    "term": "ui_tier3",
+    "odds_ratio": 0.79,
+    "ame_pp": -4.0,
+    "p": 0.0011
+   }
+  ],
+  "note": "Logit with state fixed effects, county-clustered SEs. Continuous terms are per 1 SD; ame_pp = average marginal effect in percentage points of designation probability."
+ },
+ "selection_states": 50,
+ "states": [
+  {
+   "fips": "01",
+   "abbr": "AL",
+   "name": "Alabama",
+   "eligible": 563,
+   "designated": 141,
+   "designated_rural": 65,
+   "rural_share_eligible": 53.6,
+   "rural_share_designated": 46.1,
+   "oz1_share_eligible": 24.0,
+   "oz1_share_designated": 51.1,
+   "oz1_share_not": 14.9,
+   "rural_share_not": 56.2,
+   "tier1_share_not": 10.7,
+   "tier1_share_eligible": 12.6,
+   "tier1_share_designated": 18.4,
+   "nmtc_share_designated": 14.2,
+   "poverty_median_designated": 28.4,
+   "poverty_median_not": 25.8,
+   "mfi_ratio_median_designated": 64.7,
+   "mfi_ratio_median_not": 65.8,
+   "nonwhite_designated": 61.4,
+   "nonwhite_not": 56.7,
+   "density_median_designated": 768.0,
+   "density_median_not": 562.0,
+   "counties_eligible": 66,
+   "counties_designated": 66,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 428052,
+   "leaning": [
+    {
+     "smd": 0.85,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.42,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.23,
+     "text": "favored Urban Institute Tier 1 tracts"
+    }
+   ]
+  },
+  {
+   "fips": "02",
+   "abbr": "AK",
+   "name": "Alaska",
+   "eligible": 33,
+   "designated": 25,
+   "designated_rural": 17,
+   "rural_share_eligible": 63.6,
+   "rural_share_designated": 68.0,
+   "oz1_share_eligible": 39.4,
+   "oz1_share_designated": 44.0,
+   "oz1_share_not": 25.0,
+   "rural_share_not": 50.0,
+   "tier1_share_not": 0.0,
+   "tier1_share_eligible": 0.0,
+   "tier1_share_designated": 0.0,
+   "nmtc_share_designated": 36.0,
+   "poverty_median_designated": 17.3,
+   "poverty_median_not": 13.6,
+   "mfi_ratio_median_designated": 56.0,
+   "mfi_ratio_median_not": 62.3,
+   "nonwhite_designated": 62.5,
+   "nonwhite_not": 71.4,
+   "density_median_designated": 1.0,
+   "density_median_not": 3968.0,
+   "counties_eligible": 16,
+   "counties_designated": 14,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 1,
+   "pop_designated": 72553,
+   "leaning": [
+    {
+     "smd": -1.08,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": -0.76,
+     "text": "favored less populous tracts"
+    },
+    {
+     "smd": -0.53,
+     "text": "passed over tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "04",
+   "abbr": "AZ",
+   "name": "Arizona",
+   "eligible": 506,
+   "designated": 127,
+   "designated_rural": 40,
+   "rural_share_eligible": 27.7,
+   "rural_share_designated": 31.5,
+   "oz1_share_eligible": 24.1,
+   "oz1_share_designated": 52.0,
+   "oz1_share_not": 14.8,
+   "rural_share_not": 26.4,
+   "tier1_share_not": 36.4,
+   "tier1_share_eligible": 37.0,
+   "tier1_share_designated": 38.6,
+   "nmtc_share_designated": 20.5,
+   "poverty_median_designated": 25.2,
+   "poverty_median_not": 23.0,
+   "mfi_ratio_median_designated": 61.1,
+   "mfi_ratio_median_not": 61.3,
+   "nonwhite_designated": 68.6,
+   "nonwhite_not": 64.9,
+   "density_median_designated": 2142.0,
+   "density_median_not": 4831.0,
+   "counties_eligible": 14,
+   "counties_designated": 14,
+   "full_designation": false,
+   "added_oct": 6,
+   "added_oct_designated": 1,
+   "pop_designated": 482575,
+   "leaning": [
+    {
+     "smd": 0.87,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.44,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.32,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "05",
+   "abbr": "AR",
+   "name": "Arkansas",
+   "eligible": 310,
+   "designated": 78,
+   "designated_rural": 49,
+   "rural_share_eligible": 69.7,
+   "rural_share_designated": 62.8,
+   "oz1_share_eligible": 24.5,
+   "oz1_share_designated": 48.7,
+   "oz1_share_not": 16.4,
+   "rural_share_not": 72.0,
+   "tier1_share_not": 13.4,
+   "tier1_share_eligible": 15.8,
+   "tier1_share_designated": 23.1,
+   "nmtc_share_designated": 28.2,
+   "poverty_median_designated": 25.4,
+   "poverty_median_not": 25.4,
+   "mfi_ratio_median_designated": 66.6,
+   "mfi_ratio_median_not": 68.0,
+   "nonwhite_designated": 48.1,
+   "nonwhite_not": 45.0,
+   "density_median_designated": 548.0,
+   "density_median_not": 269.0,
+   "counties_eligible": 68,
+   "counties_designated": 44,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 271397,
+   "leaning": [
+    {
+     "smd": 0.75,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.52,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.47,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "06",
+   "abbr": "CA",
+   "name": "California",
+   "eligible": 2479,
+   "designated": 620,
+   "designated_rural": 106,
+   "rural_share_eligible": 14.0,
+   "rural_share_designated": 17.1,
+   "oz1_share_eligible": 30.6,
+   "oz1_share_designated": 37.4,
+   "oz1_share_not": 28.3,
+   "rural_share_not": 12.9,
+   "tier1_share_not": 26.9,
+   "tier1_share_eligible": 30.4,
+   "tier1_share_designated": 40.8,
+   "nmtc_share_designated": 17.7,
+   "poverty_median_designated": 23.3,
+   "poverty_median_not": 21.0,
+   "mfi_ratio_median_designated": 58.7,
+   "mfi_ratio_median_not": 61.6,
+   "nonwhite_designated": 79.7,
+   "nonwhite_not": 79.2,
+   "density_median_designated": 8063.0,
+   "density_median_not": 10377.0,
+   "counties_eligible": 55,
+   "counties_designated": 55,
+   "full_designation": false,
+   "added_oct": 10,
+   "added_oct_designated": 0,
+   "pop_designated": 2647006,
+   "leaning": [
+    {
+     "smd": 0.3,
+     "text": "favored Urban Institute Tier 1 tracts"
+    },
+    {
+     "smd": 0.28,
+     "text": "favored higher-poverty tracts"
+    },
+    {
+     "smd": 0.24,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "08",
+   "abbr": "CO",
+   "name": "Colorado",
+   "eligible": 362,
+   "designated": 91,
+   "designated_rural": 28,
+   "rural_share_eligible": 28.2,
+   "rural_share_designated": 30.8,
+   "oz1_share_eligible": 23.2,
+   "oz1_share_designated": 50.5,
+   "oz1_share_not": 14.0,
+   "rural_share_not": 27.3,
+   "tier1_share_not": 40.2,
+   "tier1_share_eligible": 41.2,
+   "tier1_share_designated": 44.0,
+   "nmtc_share_designated": 23.1,
+   "poverty_median_designated": 20.7,
+   "poverty_median_not": 16.6,
+   "mfi_ratio_median_designated": 58.5,
+   "mfi_ratio_median_not": 62.0,
+   "nonwhite_designated": 50.8,
+   "nonwhite_not": 47.7,
+   "density_median_designated": 2112.0,
+   "density_median_not": 4819.0,
+   "counties_eligible": 51,
+   "counties_designated": 32,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 322560,
+   "leaning": [
+    {
+     "smd": 0.86,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.44,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.42,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "09",
+   "abbr": "CT",
+   "name": "Connecticut",
+   "eligible": 243,
+   "designated": 61,
+   "designated_rural": 13,
+   "rural_share_eligible": 12.3,
+   "rural_share_designated": 21.3,
+   "oz1_share_eligible": 25.1,
+   "oz1_share_designated": 60.7,
+   "oz1_share_not": 13.2,
+   "rural_share_not": 9.3,
+   "tier1_share_not": 12.6,
+   "tier1_share_eligible": 16.5,
+   "tier1_share_designated": 27.9,
+   "nmtc_share_designated": 0.0,
+   "poverty_median_designated": 24.3,
+   "poverty_median_not": 21.0,
+   "mfi_ratio_median_designated": 47.0,
+   "mfi_ratio_median_not": 53.3,
+   "nonwhite_designated": 70.0,
+   "nonwhite_not": 69.5,
+   "density_median_designated": 6757.0,
+   "density_median_not": 7243.0,
+   "counties_eligible": 9,
+   "counties_designated": 9,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 217923,
+   "leaning": [
+    {
+     "smd": 1.09,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.5,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored Urban Institute Tier 1 tracts"
+    }
+   ]
+  },
+  {
+   "fips": "10",
+   "abbr": "DE",
+   "name": "Delaware",
+   "eligible": 61,
+   "designated": 25,
+   "designated_rural": 12,
+   "rural_share_eligible": 36.1,
+   "rural_share_designated": 48.0,
+   "oz1_share_eligible": 31.1,
+   "oz1_share_designated": 72.0,
+   "oz1_share_not": 2.8,
+   "rural_share_not": 27.8,
+   "tier1_share_not": 8.3,
+   "tier1_share_eligible": 18.0,
+   "tier1_share_designated": 32.0,
+   "nmtc_share_designated": 16.0,
+   "poverty_median_designated": 23.5,
+   "poverty_median_not": 20.0,
+   "mfi_ratio_median_designated": 59.8,
+   "mfi_ratio_median_not": 65.1,
+   "nonwhite_designated": 62.7,
+   "nonwhite_not": 58.0,
+   "density_median_designated": 1612.0,
+   "density_median_not": 4849.0,
+   "counties_eligible": 3,
+   "counties_designated": 3,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 98375,
+   "leaning": [
+    {
+     "smd": 1.48,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.65,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.64,
+     "text": "favored higher-poverty tracts"
+    }
+   ]
+  },
+  {
+   "fips": "11",
+   "abbr": "DC",
+   "name": "District of Columbia",
+   "eligible": 69,
+   "designated": 25,
+   "designated_rural": 0,
+   "rural_share_eligible": 0.0,
+   "rural_share_designated": 0.0,
+   "oz1_share_eligible": 29.0,
+   "oz1_share_designated": 68.0,
+   "oz1_share_not": 6.8,
+   "rural_share_not": 0.0,
+   "tier1_share_not": 22.7,
+   "tier1_share_eligible": 31.9,
+   "tier1_share_designated": 48.0,
+   "nmtc_share_designated": 68.0,
+   "poverty_median_designated": 28.3,
+   "poverty_median_not": 29.5,
+   "mfi_ratio_median_designated": 39.5,
+   "mfi_ratio_median_not": 45.8,
+   "nonwhite_designated": 90.8,
+   "nonwhite_not": 87.9,
+   "density_median_designated": 11268.0,
+   "density_median_not": 15939.0,
+   "counties_eligible": 1,
+   "counties_designated": 1,
+   "full_designation": false,
+   "added_oct": 3,
+   "added_oct_designated": 0,
+   "pop_designated": 96481,
+   "leaning": [
+    {
+     "smd": 1.34,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.77,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": -0.54,
+     "text": "favored less dense tracts"
+    }
+   ]
+  },
+  {
+   "fips": "12",
+   "abbr": "FL",
+   "name": "Florida",
+   "eligible": 1367,
+   "designated": 342,
+   "designated_rural": 98,
+   "rural_share_eligible": 20.8,
+   "rural_share_designated": 28.7,
+   "oz1_share_eligible": 26.0,
+   "oz1_share_designated": 36.3,
+   "oz1_share_not": 22.5,
+   "rural_share_not": 18.1,
+   "tier1_share_not": 35.9,
+   "tier1_share_eligible": 36.9,
+   "tier1_share_designated": 39.8,
+   "nmtc_share_designated": 14.9,
+   "poverty_median_designated": 23.4,
+   "poverty_median_not": 22.3,
+   "mfi_ratio_median_designated": 62.5,
+   "mfi_ratio_median_not": 63.2,
+   "nonwhite_designated": 61.4,
+   "nonwhite_not": 64.5,
+   "density_median_designated": 3008.0,
+   "density_median_not": 4322.0,
+   "counties_eligible": 65,
+   "counties_designated": 63,
+   "full_designation": false,
+   "added_oct": 7,
+   "added_oct_designated": 2,
+   "pop_designated": 1369041,
+   "leaning": [
+    {
+     "smd": 0.31,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.3,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": -0.28,
+     "text": "favored less dense tracts"
+    }
+   ]
+  },
+  {
+   "fips": "13",
+   "abbr": "GA",
+   "name": "Georgia",
+   "eligible": 949,
+   "designated": 238,
+   "designated_rural": 118,
+   "rural_share_eligible": 44.4,
+   "rural_share_designated": 49.6,
+   "oz1_share_eligible": 27.7,
+   "oz1_share_designated": 32.8,
+   "oz1_share_not": 26.0,
+   "rural_share_not": 42.6,
+   "tier1_share_not": 18.8,
+   "tier1_share_eligible": 20.4,
+   "tier1_share_designated": 25.2,
+   "nmtc_share_designated": 11.3,
+   "poverty_median_designated": 23.7,
+   "poverty_median_not": 23.8,
+   "mfi_ratio_median_designated": 59.6,
+   "mfi_ratio_median_not": 61.9,
+   "nonwhite_designated": 65.9,
+   "nonwhite_not": 65.6,
+   "density_median_designated": 1202.0,
+   "density_median_not": 1586.0,
+   "counties_eligible": 143,
+   "counties_designated": 91,
+   "full_designation": false,
+   "added_oct": 7,
+   "added_oct_designated": 0,
+   "pop_designated": 847955,
+   "leaning": [
+    {
+     "smd": 0.21,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.16,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.16,
+     "text": "favored Urban Institute Tier 1 tracts"
+    }
+   ]
+  },
+  {
+   "fips": "15",
+   "abbr": "HI",
+   "name": "Hawaii",
+   "eligible": 89,
+   "designated": 25,
+   "designated_rural": 8,
+   "rural_share_eligible": 40.4,
+   "rural_share_designated": 32.0,
+   "oz1_share_eligible": 16.9,
+   "oz1_share_designated": 48.0,
+   "oz1_share_not": 4.7,
+   "rural_share_not": 43.8,
+   "tier1_share_not": 10.9,
+   "tier1_share_eligible": 13.5,
+   "tier1_share_designated": 20.0,
+   "nmtc_share_designated": 12.0,
+   "poverty_median_designated": 20.2,
+   "poverty_median_not": 18.9,
+   "mfi_ratio_median_designated": 56.7,
+   "mfi_ratio_median_not": 62.0,
+   "nonwhite_designated": 79.4,
+   "nonwhite_not": 74.7,
+   "density_median_designated": 12114.0,
+   "density_median_not": 5686.0,
+   "counties_eligible": 4,
+   "counties_designated": 3,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 1,
+   "pop_designated": 75924,
+   "leaning": [
+    {
+     "smd": 1.15,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.49,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.39,
+     "text": "favored higher-poverty tracts"
+    }
+   ]
+  },
+  {
+   "fips": "16",
+   "abbr": "ID",
+   "name": "Idaho",
+   "eligible": 81,
+   "designated": 25,
+   "designated_rural": 9,
+   "rural_share_eligible": 40.7,
+   "rural_share_designated": 36.0,
+   "oz1_share_eligible": 12.3,
+   "oz1_share_designated": 20.0,
+   "oz1_share_not": 8.9,
+   "rural_share_not": 42.9,
+   "tier1_share_not": 25.0,
+   "tier1_share_eligible": 33.3,
+   "tier1_share_designated": 52.0,
+   "nmtc_share_designated": 28.0,
+   "poverty_median_designated": 20.9,
+   "poverty_median_not": 20.4,
+   "mfi_ratio_median_designated": 66.1,
+   "mfi_ratio_median_not": 66.5,
+   "nonwhite_designated": 27.0,
+   "nonwhite_not": 27.5,
+   "density_median_designated": 2689.0,
+   "density_median_not": 2540.0,
+   "counties_eligible": 24,
+   "counties_designated": 14,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 100727,
+   "leaning": [
+    {
+     "smd": 0.57,
+     "text": "favored Urban Institute Tier 1 tracts"
+    },
+    {
+     "smd": 0.46,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.33,
+     "text": "favored former OZ 1.0 tracts"
+    }
+   ]
+  },
+  {
+   "fips": "17",
+   "abbr": "IL",
+   "name": "Illinois",
+   "eligible": 957,
+   "designated": 240,
+   "designated_rural": 78,
+   "rural_share_eligible": 22.2,
+   "rural_share_designated": 32.5,
+   "oz1_share_eligible": 29.0,
+   "oz1_share_designated": 31.7,
+   "oz1_share_not": 28.2,
+   "rural_share_not": 18.7,
+   "tier1_share_not": 15.8,
+   "tier1_share_eligible": 17.8,
+   "tier1_share_designated": 23.8,
+   "nmtc_share_designated": 33.3,
+   "poverty_median_designated": 24.4,
+   "poverty_median_not": 23.2,
+   "mfi_ratio_median_designated": 58.1,
+   "mfi_ratio_median_not": 58.9,
+   "nonwhite_designated": 58.5,
+   "nonwhite_not": 68.3,
+   "density_median_designated": 2268.0,
+   "density_median_not": 6666.0,
+   "counties_eligible": 81,
+   "counties_designated": 58,
+   "full_designation": false,
+   "added_oct": 7,
+   "added_oct_designated": 0,
+   "pop_designated": 769562,
+   "leaning": [
+    {
+     "smd": 0.53,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": -0.44,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.33,
+     "text": "favored rural tracts"
+    }
+   ]
+  },
+  {
+   "fips": "18",
+   "abbr": "IN",
+   "name": "Indiana",
+   "eligible": 503,
+   "designated": 126,
+   "designated_rural": 42,
+   "rural_share_eligible": 23.9,
+   "rural_share_designated": 33.3,
+   "oz1_share_eligible": 22.3,
+   "oz1_share_designated": 53.2,
+   "oz1_share_not": 11.9,
+   "rural_share_not": 20.7,
+   "tier1_share_not": 19.9,
+   "tier1_share_eligible": 22.9,
+   "tier1_share_designated": 31.7,
+   "nmtc_share_designated": 27.0,
+   "poverty_median_designated": 25.2,
+   "poverty_median_not": 24.3,
+   "mfi_ratio_median_designated": 63.3,
+   "mfi_ratio_median_not": 61.4,
+   "nonwhite_designated": 41.7,
+   "nonwhite_not": 45.8,
+   "density_median_designated": 2608.0,
+   "density_median_not": 3008.0,
+   "counties_eligible": 65,
+   "counties_designated": 47,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 393108,
+   "leaning": [
+    {
+     "smd": 0.99,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.57,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.3,
+     "text": "favored rural tracts"
+    }
+   ]
+  },
+  {
+   "fips": "19",
+   "abbr": "IA",
+   "name": "Iowa",
+   "eligible": 175,
+   "designated": 44,
+   "designated_rural": 21,
+   "rural_share_eligible": 33.1,
+   "rural_share_designated": 47.7,
+   "oz1_share_eligible": 21.1,
+   "oz1_share_designated": 45.5,
+   "oz1_share_not": 13.0,
+   "rural_share_not": 28.2,
+   "tier1_share_not": 12.2,
+   "tier1_share_eligible": 14.3,
+   "tier1_share_designated": 20.5,
+   "nmtc_share_designated": 36.4,
+   "poverty_median_designated": 23.0,
+   "poverty_median_not": 22.3,
+   "mfi_ratio_median_designated": 61.9,
+   "mfi_ratio_median_not": 64.7,
+   "nonwhite_designated": 28.5,
+   "nonwhite_not": 33.7,
+   "density_median_designated": 1268.0,
+   "density_median_not": 3824.0,
+   "counties_eligible": 41,
+   "counties_designated": 28,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 145759,
+   "leaning": [
+    {
+     "smd": 0.79,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.71,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": -0.51,
+     "text": "favored less dense tracts"
+    }
+   ]
+  },
+  {
+   "fips": "20",
+   "abbr": "KS",
+   "name": "Kansas",
+   "eligible": 211,
+   "designated": 53,
+   "designated_rural": 27,
+   "rural_share_eligible": 36.0,
+   "rural_share_designated": 50.9,
+   "oz1_share_eligible": 18.5,
+   "oz1_share_designated": 35.8,
+   "oz1_share_not": 12.7,
+   "rural_share_not": 31.0,
+   "tier1_share_not": 15.8,
+   "tier1_share_eligible": 18.0,
+   "tier1_share_designated": 24.5,
+   "nmtc_share_designated": 13.2,
+   "poverty_median_designated": 23.5,
+   "poverty_median_not": 22.2,
+   "mfi_ratio_median_designated": 64.3,
+   "mfi_ratio_median_not": 62.5,
+   "nonwhite_designated": 37.7,
+   "nonwhite_not": 47.4,
+   "density_median_designated": 2048.0,
+   "density_median_not": 2772.0,
+   "counties_eligible": 36,
+   "counties_designated": 24,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 167803,
+   "leaning": [
+    {
+     "smd": 0.6,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored rural tracts"
+    },
+    {
+     "smd": -0.4,
+     "text": "favored tracts with fewer residents of color"
+    }
+   ]
+  },
+  {
+   "fips": "21",
+   "abbr": "KY",
+   "name": "Kentucky",
+   "eligible": 546,
+   "designated": 137,
+   "designated_rural": 90,
+   "rural_share_eligible": 70.0,
+   "rural_share_designated": 65.7,
+   "oz1_share_eligible": 24.9,
+   "oz1_share_designated": 38.7,
+   "oz1_share_not": 20.3,
+   "rural_share_not": 71.4,
+   "tier1_share_not": 13.0,
+   "tier1_share_eligible": 15.0,
+   "tier1_share_designated": 21.2,
+   "nmtc_share_designated": 22.6,
+   "poverty_median_designated": 25.3,
+   "poverty_median_not": 25.5,
+   "mfi_ratio_median_designated": 66.3,
+   "mfi_ratio_median_not": 66.1,
+   "nonwhite_designated": 20.6,
+   "nonwhite_not": 22.5,
+   "density_median_designated": 238.0,
+   "density_median_not": 206.0,
+   "counties_eligible": 109,
+   "counties_designated": 76,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 468360,
+   "leaning": [
+    {
+     "smd": 0.48,
+     "text": "favored more populous tracts"
+    },
+    {
+     "smd": 0.42,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.31,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "22",
+   "abbr": "LA",
+   "name": "Louisiana",
+   "eligible": 621,
+   "designated": 156,
+   "designated_rural": 82,
+   "rural_share_eligible": 49.9,
+   "rural_share_designated": 52.6,
+   "oz1_share_eligible": 20.9,
+   "oz1_share_designated": 39.7,
+   "oz1_share_not": 14.6,
+   "rural_share_not": 49.0,
+   "tier1_share_not": 13.1,
+   "tier1_share_eligible": 15.0,
+   "tier1_share_designated": 20.5,
+   "nmtc_share_designated": 23.7,
+   "poverty_median_designated": 30.3,
+   "poverty_median_not": 28.8,
+   "mfi_ratio_median_designated": 61.4,
+   "mfi_ratio_median_not": 64.2,
+   "nonwhite_designated": 60.9,
+   "nonwhite_not": 63.2,
+   "density_median_designated": 776.0,
+   "density_median_not": 1462.0,
+   "counties_eligible": 62,
+   "counties_designated": 56,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 471616,
+   "leaning": [
+    {
+     "smd": 0.62,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.33,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.26,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "23",
+   "abbr": "ME",
+   "name": "Maine",
+   "eligible": 78,
+   "designated": 25,
+   "designated_rural": 22,
+   "rural_share_eligible": 94.9,
+   "rural_share_designated": 88.0,
+   "oz1_share_eligible": 17.9,
+   "oz1_share_designated": 32.0,
+   "oz1_share_not": 11.3,
+   "rural_share_not": 98.1,
+   "tier1_share_not": 17.0,
+   "tier1_share_eligible": 24.4,
+   "tier1_share_designated": 40.0,
+   "nmtc_share_designated": 28.0,
+   "poverty_median_designated": 23.2,
+   "poverty_median_not": 20.2,
+   "mfi_ratio_median_designated": 64.5,
+   "mfi_ratio_median_not": 66.0,
+   "nonwhite_designated": 14.5,
+   "nonwhite_not": 10.9,
+   "density_median_designated": 891.0,
+   "density_median_not": 78.0,
+   "counties_eligible": 12,
+   "counties_designated": 10,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 84112,
+   "leaning": [
+    {
+     "smd": 0.83,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.79,
+     "text": "favored higher-poverty tracts"
+    },
+    {
+     "smd": -0.72,
+     "text": "favored lower-vacancy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "24",
+   "abbr": "MD",
+   "name": "Maryland",
+   "eligible": 454,
+   "designated": 114,
+   "designated_rural": 29,
+   "rural_share_eligible": 17.0,
+   "rural_share_designated": 25.4,
+   "oz1_share_eligible": 24.4,
+   "oz1_share_designated": 50.9,
+   "oz1_share_not": 15.6,
+   "rural_share_not": 14.1,
+   "tier1_share_not": 10.9,
+   "tier1_share_eligible": 14.5,
+   "tier1_share_designated": 25.4,
+   "nmtc_share_designated": 16.7,
+   "poverty_median_designated": 21.1,
+   "poverty_median_not": 16.8,
+   "mfi_ratio_median_designated": 54.7,
+   "mfi_ratio_median_not": 54.6,
+   "nonwhite_designated": 70.2,
+   "nonwhite_not": 73.3,
+   "density_median_designated": 4706.0,
+   "density_median_not": 7350.0,
+   "counties_eligible": 22,
+   "counties_designated": 20,
+   "full_designation": false,
+   "added_oct": 3,
+   "added_oct_designated": 0,
+   "pop_designated": 429945,
+   "leaning": [
+    {
+     "smd": 0.82,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored Urban Institute Tier 1 tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored higher-poverty tracts"
+    }
+   ]
+  },
+  {
+   "fips": "25",
+   "abbr": "MA",
+   "name": "Massachusetts",
+   "eligible": 414,
+   "designated": 104,
+   "designated_rural": 22,
+   "rural_share_eligible": 14.3,
+   "rural_share_designated": 21.2,
+   "oz1_share_eligible": 24.4,
+   "oz1_share_designated": 56.7,
+   "oz1_share_not": 13.5,
+   "rural_share_not": 11.9,
+   "tier1_share_not": 35.2,
+   "tier1_share_eligible": 36.2,
+   "tier1_share_designated": 39.4,
+   "nmtc_share_designated": 45.2,
+   "poverty_median_designated": 24.3,
+   "poverty_median_not": 20.5,
+   "mfi_ratio_median_designated": 50.5,
+   "mfi_ratio_median_not": 55.4,
+   "nonwhite_designated": 56.3,
+   "nonwhite_not": 59.1,
+   "density_median_designated": 7763.0,
+   "density_median_not": 13289.0,
+   "counties_eligible": 13,
+   "counties_designated": 12,
+   "full_designation": false,
+   "added_oct": 4,
+   "added_oct_designated": 1,
+   "pop_designated": 409986,
+   "leaning": [
+    {
+     "smd": 1.0,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.46,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.44,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "26",
+   "abbr": "MI",
+   "name": "Michigan",
+   "eligible": 860,
+   "designated": 215,
+   "designated_rural": 60,
+   "rural_share_eligible": 29.2,
+   "rural_share_designated": 27.9,
+   "oz1_share_eligible": 22.8,
+   "oz1_share_designated": 47.0,
+   "oz1_share_not": 14.7,
+   "rural_share_not": 29.6,
+   "tier1_share_not": 14.7,
+   "tier1_share_eligible": 20.1,
+   "tier1_share_designated": 36.3,
+   "nmtc_share_designated": 20.5,
+   "poverty_median_designated": 27.6,
+   "poverty_median_not": 26.8,
+   "mfi_ratio_median_designated": 57.7,
+   "mfi_ratio_median_not": 59.8,
+   "nonwhite_designated": 51.1,
+   "nonwhite_not": 54.8,
+   "density_median_designated": 3311.0,
+   "density_median_not": 3733.0,
+   "counties_eligible": 69,
+   "counties_designated": 41,
+   "full_designation": false,
+   "added_oct": 4,
+   "added_oct_designated": 1,
+   "pop_designated": 640084,
+   "leaning": [
+    {
+     "smd": 0.77,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.64,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.56,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "27",
+   "abbr": "MN",
+   "name": "Minnesota",
+   "eligible": 291,
+   "designated": 73,
+   "designated_rural": 29,
+   "rural_share_eligible": 36.8,
+   "rural_share_designated": 39.7,
+   "oz1_share_eligible": 29.9,
+   "oz1_share_designated": 58.9,
+   "oz1_share_not": 20.2,
+   "rural_share_not": 35.8,
+   "tier1_share_not": 30.3,
+   "tier1_share_eligible": 31.6,
+   "tier1_share_designated": 35.6,
+   "nmtc_share_designated": 41.1,
+   "poverty_median_designated": 20.2,
+   "poverty_median_not": 17.2,
+   "mfi_ratio_median_designated": 61.3,
+   "mfi_ratio_median_not": 63.6,
+   "nonwhite_designated": 41.3,
+   "nonwhite_not": 40.3,
+   "density_median_designated": 3075.0,
+   "density_median_not": 3929.0,
+   "counties_eligible": 59,
+   "counties_designated": 35,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 256836,
+   "leaning": [
+    {
+     "smd": 0.84,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.38,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.34,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "28",
+   "abbr": "MS",
+   "name": "Mississippi",
+   "eligible": 406,
+   "designated": 102,
+   "designated_rural": 78,
+   "rural_share_eligible": 79.3,
+   "rural_share_designated": 76.5,
+   "oz1_share_eligible": 20.7,
+   "oz1_share_designated": 53.9,
+   "oz1_share_not": 9.5,
+   "rural_share_not": 80.3,
+   "tier1_share_not": 10.5,
+   "tier1_share_eligible": 11.3,
+   "tier1_share_designated": 13.7,
+   "nmtc_share_designated": 36.3,
+   "poverty_median_designated": 29.3,
+   "poverty_median_not": 28.0,
+   "mfi_ratio_median_designated": 67.1,
+   "mfi_ratio_median_not": 64.1,
+   "nonwhite_designated": 60.1,
+   "nonwhite_not": 64.0,
+   "density_median_designated": 519.0,
+   "density_median_not": 406.0,
+   "counties_eligible": 81,
+   "counties_designated": 50,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 314093,
+   "leaning": [
+    {
+     "smd": 1.09,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.25,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "29",
+   "abbr": "MO",
+   "name": "Missouri",
+   "eligible": 523,
+   "designated": 131,
+   "designated_rural": 68,
+   "rural_share_eligible": 42.1,
+   "rural_share_designated": 51.9,
+   "oz1_share_eligible": 25.4,
+   "oz1_share_designated": 40.5,
+   "oz1_share_not": 20.4,
+   "rural_share_not": 38.8,
+   "tier1_share_not": 13.0,
+   "tier1_share_eligible": 14.9,
+   "tier1_share_designated": 20.6,
+   "nmtc_share_designated": 35.1,
+   "poverty_median_designated": 25.4,
+   "poverty_median_not": 22.4,
+   "mfi_ratio_median_designated": 64.6,
+   "mfi_ratio_median_not": 61.7,
+   "nonwhite_designated": 33.8,
+   "nonwhite_not": 43.1,
+   "density_median_designated": 1353.0,
+   "density_median_not": 2028.0,
+   "counties_eligible": 93,
+   "counties_designated": 49,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 429852,
+   "leaning": [
+    {
+     "smd": 0.46,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": -0.3,
+     "text": "favored tracts with fewer residents of color"
+    }
+   ]
+  },
+  {
+   "fips": "30",
+   "abbr": "MT",
+   "name": "Montana",
+   "eligible": 58,
+   "designated": 25,
+   "designated_rural": 15,
+   "rural_share_eligible": 63.8,
+   "rural_share_designated": 60.0,
+   "oz1_share_eligible": 29.3,
+   "oz1_share_designated": 40.0,
+   "oz1_share_not": 21.2,
+   "rural_share_not": 66.7,
+   "tier1_share_not": 3.0,
+   "tier1_share_eligible": 13.8,
+   "tier1_share_designated": 28.0,
+   "nmtc_share_designated": 44.0,
+   "poverty_median_designated": 23.8,
+   "poverty_median_not": 24.2,
+   "mfi_ratio_median_designated": 65.8,
+   "mfi_ratio_median_not": 66.9,
+   "nonwhite_designated": 31.9,
+   "nonwhite_not": 36.3,
+   "density_median_designated": 1297.0,
+   "density_median_not": 16.0,
+   "counties_eligible": 22,
+   "counties_designated": 16,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 80644,
+   "leaning": [
+    {
+     "smd": 0.72,
+     "text": "favored Urban Institute Tier 1 tracts"
+    },
+    {
+     "smd": 0.64,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.6,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "31",
+   "abbr": "NE",
+   "name": "Nebraska",
+   "eligible": 112,
+   "designated": 28,
+   "designated_rural": 12,
+   "rural_share_eligible": 25.0,
+   "rural_share_designated": 42.9,
+   "oz1_share_eligible": 23.2,
+   "oz1_share_designated": 46.4,
+   "oz1_share_not": 15.5,
+   "rural_share_not": 19.0,
+   "tier1_share_not": 33.3,
+   "tier1_share_eligible": 29.5,
+   "tier1_share_designated": 17.9,
+   "nmtc_share_designated": 21.4,
+   "poverty_median_designated": 22.1,
+   "poverty_median_not": 21.0,
+   "mfi_ratio_median_designated": 57.4,
+   "mfi_ratio_median_not": 61.9,
+   "nonwhite_designated": 43.3,
+   "nonwhite_not": 46.3,
+   "density_median_designated": 3604.0,
+   "density_median_not": 4150.0,
+   "counties_eligible": 29,
+   "counties_designated": 15,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 104240,
+   "leaning": [
+    {
+     "smd": 0.73,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.55,
+     "text": "favored rural tracts"
+    },
+    {
+     "smd": 0.46,
+     "text": "favored more populous tracts"
+    }
+   ]
+  },
+  {
+   "fips": "32",
+   "abbr": "NV",
+   "name": "Nevada",
+   "eligible": 195,
+   "designated": 49,
+   "designated_rural": 14,
+   "rural_share_eligible": 12.8,
+   "rural_share_designated": 28.6,
+   "oz1_share_eligible": 21.5,
+   "oz1_share_designated": 38.8,
+   "oz1_share_not": 15.8,
+   "rural_share_not": 7.5,
+   "tier1_share_not": 37.7,
+   "tier1_share_eligible": 38.5,
+   "tier1_share_designated": 40.8,
+   "nmtc_share_designated": 26.5,
+   "poverty_median_designated": 25.2,
+   "poverty_median_not": 22.6,
+   "mfi_ratio_median_designated": 60.7,
+   "mfi_ratio_median_not": 61.5,
+   "nonwhite_designated": 60.6,
+   "nonwhite_not": 71.7,
+   "density_median_designated": 5149.0,
+   "density_median_not": 8082.0,
+   "counties_eligible": 9,
+   "counties_designated": 9,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 167643,
+   "leaning": [
+    {
+     "smd": -0.77,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.63,
+     "text": "favored rural tracts"
+    },
+    {
+     "smd": 0.56,
+     "text": "favored former OZ 1.0 tracts"
+    }
+   ]
+  },
+  {
+   "fips": "33",
+   "abbr": "NH",
+   "name": "New Hampshire",
+   "eligible": 53,
+   "designated": 25,
+   "designated_rural": 17,
+   "rural_share_eligible": 67.9,
+   "rural_share_designated": 68.0,
+   "oz1_share_eligible": 35.8,
+   "oz1_share_designated": 56.0,
+   "oz1_share_not": 17.9,
+   "rural_share_not": 67.9,
+   "tier1_share_not": 25.0,
+   "tier1_share_eligible": 24.5,
+   "tier1_share_designated": 24.0,
+   "nmtc_share_designated": 24.0,
+   "poverty_median_designated": 21.1,
+   "poverty_median_not": 12.5,
+   "mfi_ratio_median_designated": 61.7,
+   "mfi_ratio_median_not": 62.3,
+   "nonwhite_designated": 21.8,
+   "nonwhite_not": 16.5,
+   "density_median_designated": 1295.0,
+   "density_median_not": 383.0,
+   "counties_eligible": 10,
+   "counties_designated": 10,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 88086,
+   "leaning": [
+    {
+     "smd": 1.01,
+     "text": "favored higher-poverty tracts"
+    },
+    {
+     "smd": 0.79,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.64,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "34",
+   "abbr": "NJ",
+   "name": "New Jersey",
+   "eligible": 518,
+   "designated": 130,
+   "designated_rural": 13,
+   "rural_share_eligible": 7.1,
+   "rural_share_designated": 10.0,
+   "oz1_share_eligible": 25.7,
+   "oz1_share_designated": 53.8,
+   "oz1_share_not": 16.2,
+   "rural_share_not": 6.2,
+   "tier1_share_not": 26.3,
+   "tier1_share_eligible": 28.2,
+   "tier1_share_designated": 33.8,
+   "nmtc_share_designated": 20.0,
+   "poverty_median_designated": 22.6,
+   "poverty_median_not": 20.7,
+   "mfi_ratio_median_designated": 58.1,
+   "mfi_ratio_median_not": 56.5,
+   "nonwhite_designated": 78.6,
+   "nonwhite_not": 79.0,
+   "density_median_designated": 11851.0,
+   "density_median_not": 17982.0,
+   "counties_eligible": 20,
+   "counties_designated": 20,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 508970,
+   "leaning": [
+    {
+     "smd": 0.86,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.37,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.32,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "35",
+   "abbr": "NM",
+   "name": "New Mexico",
+   "eligible": 258,
+   "designated": 65,
+   "designated_rural": 36,
+   "rural_share_eligible": 63.6,
+   "rural_share_designated": 55.4,
+   "oz1_share_eligible": 20.5,
+   "oz1_share_designated": 24.6,
+   "oz1_share_not": 19.2,
+   "rural_share_not": 66.3,
+   "tier1_share_not": 8.8,
+   "tier1_share_eligible": 11.6,
+   "tier1_share_designated": 20.0,
+   "nmtc_share_designated": 16.9,
+   "poverty_median_designated": 29.7,
+   "poverty_median_not": 28.1,
+   "mfi_ratio_median_designated": 64.3,
+   "mfi_ratio_median_not": 65.4,
+   "nonwhite_designated": 77.0,
+   "nonwhite_not": 74.7,
+   "density_median_designated": 1860.0,
+   "density_median_not": 638.0,
+   "counties_eligible": 29,
+   "counties_designated": 22,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 230223,
+   "leaning": [
+    {
+     "smd": 0.35,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.35,
+     "text": "favored Urban Institute Tier 1 tracts"
+    },
+    {
+     "smd": 0.3,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "36",
+   "abbr": "NY",
+   "name": "New York",
+   "eligible": 1717,
+   "designated": 430,
+   "designated_rural": 124,
+   "rural_share_eligible": 17.8,
+   "rural_share_designated": 28.8,
+   "oz1_share_eligible": 25.1,
+   "oz1_share_designated": 50.5,
+   "oz1_share_not": 16.6,
+   "rural_share_not": 14.1,
+   "tier1_share_not": 9.6,
+   "tier1_share_eligible": 11.3,
+   "tier1_share_designated": 16.5,
+   "nmtc_share_designated": 17.9,
+   "poverty_median_designated": 27.8,
+   "poverty_median_not": 23.8,
+   "mfi_ratio_median_designated": 54.3,
+   "mfi_ratio_median_not": 57.4,
+   "nonwhite_designated": 64.6,
+   "nonwhite_not": 68.1,
+   "density_median_designated": 14800.0,
+   "density_median_not": 34367.0,
+   "counties_eligible": 60,
+   "counties_designated": 57,
+   "full_designation": false,
+   "added_oct": 15,
+   "added_oct_designated": 1,
+   "pop_designated": 1690801,
+   "leaning": [
+    {
+     "smd": 0.78,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.41,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.38,
+     "text": "favored rural tracts"
+    }
+   ]
+  },
+  {
+   "fips": "37",
+   "abbr": "NC",
+   "name": "North Carolina",
+   "eligible": 814,
+   "designated": 204,
+   "designated_rural": 126,
+   "rural_share_eligible": 52.9,
+   "rural_share_designated": 61.8,
+   "oz1_share_eligible": 24.0,
+   "oz1_share_designated": 41.7,
+   "oz1_share_not": 18.0,
+   "rural_share_not": 50.0,
+   "tier1_share_not": 21.0,
+   "tier1_share_eligible": 23.5,
+   "tier1_share_designated": 30.9,
+   "nmtc_share_designated": 13.2,
+   "poverty_median_designated": 23.1,
+   "poverty_median_not": 23.4,
+   "mfi_ratio_median_designated": 64.6,
+   "mfi_ratio_median_not": 62.0,
+   "nonwhite_designated": 54.7,
+   "nonwhite_not": 57.1,
+   "density_median_designated": 590.0,
+   "density_median_not": 1028.0,
+   "counties_eligible": 93,
+   "counties_designated": 93,
+   "full_designation": false,
+   "added_oct": 7,
+   "added_oct_designated": 0,
+   "pop_designated": 775412,
+   "leaning": [
+    {
+     "smd": 0.55,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.31,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.24,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "38",
+   "abbr": "ND",
+   "name": "North Dakota",
+   "eligible": 37,
+   "designated": 25,
+   "designated_rural": 11,
+   "rural_share_eligible": 48.6,
+   "rural_share_designated": 44.0,
+   "oz1_share_eligible": 40.5,
+   "oz1_share_designated": 44.0,
+   "oz1_share_not": 33.3,
+   "rural_share_not": 58.3,
+   "tier1_share_not": 8.3,
+   "tier1_share_eligible": 8.1,
+   "tier1_share_designated": 8.0,
+   "nmtc_share_designated": 16.0,
+   "poverty_median_designated": 23.8,
+   "poverty_median_not": 25.8,
+   "mfi_ratio_median_designated": 64.5,
+   "mfi_ratio_median_not": 63.0,
+   "nonwhite_designated": 34.9,
+   "nonwhite_not": 47.9,
+   "density_median_designated": 2262.0,
+   "density_median_not": 390.0,
+   "counties_eligible": 12,
+   "counties_designated": 11,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 91456,
+   "leaning": [
+    {
+     "smd": 0.73,
+     "text": "favored more populous tracts"
+    },
+    {
+     "smd": -0.67,
+     "text": "favored lower-vacancy tracts"
+    },
+    {
+     "smd": -0.49,
+     "text": "favored tracts with fewer residents of color"
+    }
+   ]
+  },
+  {
+   "fips": "39",
+   "abbr": "OH",
+   "name": "Ohio",
+   "eligible": 1040,
+   "designated": 260,
+   "designated_rural": 96,
+   "rural_share_eligible": 26.9,
+   "rural_share_designated": 36.9,
+   "oz1_share_eligible": 22.7,
+   "oz1_share_designated": 45.4,
+   "oz1_share_not": 15.1,
+   "rural_share_not": 23.6,
+   "tier1_share_not": 16.7,
+   "tier1_share_eligible": 18.8,
+   "tier1_share_designated": 25.0,
+   "nmtc_share_designated": 28.5,
+   "poverty_median_designated": 27.5,
+   "poverty_median_not": 26.5,
+   "mfi_ratio_median_designated": 59.7,
+   "mfi_ratio_median_not": 59.1,
+   "nonwhite_designated": 42.9,
+   "nonwhite_not": 48.2,
+   "density_median_designated": 2397.0,
+   "density_median_not": 3843.0,
+   "counties_eligible": 75,
+   "counties_designated": 75,
+   "full_designation": false,
+   "added_oct": 8,
+   "added_oct_designated": 1,
+   "pop_designated": 804475,
+   "leaning": [
+    {
+     "smd": 0.72,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.4,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.4,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "40",
+   "abbr": "OK",
+   "name": "Oklahoma",
+   "eligible": 414,
+   "designated": 104,
+   "designated_rural": 57,
+   "rural_share_eligible": 45.4,
+   "rural_share_designated": 54.8,
+   "oz1_share_eligible": 19.6,
+   "oz1_share_designated": 42.3,
+   "oz1_share_not": 11.9,
+   "rural_share_not": 42.3,
+   "tier1_share_not": 9.0,
+   "tier1_share_eligible": 10.9,
+   "tier1_share_designated": 16.3,
+   "nmtc_share_designated": 21.2,
+   "poverty_median_designated": 25.7,
+   "poverty_median_not": 24.3,
+   "mfi_ratio_median_designated": 65.5,
+   "mfi_ratio_median_not": 63.9,
+   "nonwhite_designated": 46.4,
+   "nonwhite_not": 51.0,
+   "density_median_designated": 707.0,
+   "density_median_not": 2279.0,
+   "counties_eligible": 64,
+   "counties_designated": 47,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 315281,
+   "leaning": [
+    {
+     "smd": 0.76,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.5,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.27,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "41",
+   "abbr": "OR",
+   "name": "Oregon",
+   "eligible": 229,
+   "designated": 58,
+   "designated_rural": 32,
+   "rural_share_eligible": 46.3,
+   "rural_share_designated": 55.2,
+   "oz1_share_eligible": 23.6,
+   "oz1_share_designated": 48.3,
+   "oz1_share_not": 15.2,
+   "rural_share_not": 43.3,
+   "tier1_share_not": 40.4,
+   "tier1_share_eligible": 40.2,
+   "tier1_share_designated": 39.7,
+   "nmtc_share_designated": 34.5,
+   "poverty_median_designated": 21.8,
+   "poverty_median_not": 21.0,
+   "mfi_ratio_median_designated": 65.3,
+   "mfi_ratio_median_not": 64.7,
+   "nonwhite_designated": 35.0,
+   "nonwhite_not": 33.1,
+   "density_median_designated": 2206.0,
+   "density_median_not": 3561.0,
+   "counties_eligible": 32,
+   "counties_designated": 25,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 233023,
+   "leaning": [
+    {
+     "smd": 0.78,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.52,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.34,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "42",
+   "abbr": "PA",
+   "name": "Pennsylvania",
+   "eligible": 871,
+   "designated": 218,
+   "designated_rural": 76,
+   "rural_share_eligible": 31.6,
+   "rural_share_designated": 34.9,
+   "oz1_share_eligible": 26.3,
+   "oz1_share_designated": 43.6,
+   "oz1_share_not": 20.5,
+   "rural_share_not": 30.5,
+   "tier1_share_not": 18.4,
+   "tier1_share_eligible": 20.3,
+   "tier1_share_designated": 26.1,
+   "nmtc_share_designated": 18.8,
+   "poverty_median_designated": 25.7,
+   "poverty_median_not": 23.6,
+   "mfi_ratio_median_designated": 56.0,
+   "mfi_ratio_median_not": 59.9,
+   "nonwhite_designated": 49.2,
+   "nonwhite_not": 50.6,
+   "density_median_designated": 5187.0,
+   "density_median_not": 6861.0,
+   "counties_eligible": 63,
+   "counties_designated": 63,
+   "full_designation": false,
+   "added_oct": 5,
+   "added_oct_designated": 0,
+   "pop_designated": 690008,
+   "leaning": [
+    {
+     "smd": 0.52,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.49,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.32,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "44",
+   "abbr": "RI",
+   "name": "Rhode Island",
+   "eligible": 55,
+   "designated": 25,
+   "designated_rural": 1,
+   "rural_share_eligible": 1.8,
+   "rural_share_designated": 4.0,
+   "oz1_share_eligible": 29.1,
+   "oz1_share_designated": 56.0,
+   "oz1_share_not": 6.7,
+   "rural_share_not": 0.0,
+   "tier1_share_not": 43.3,
+   "tier1_share_eligible": 41.8,
+   "tier1_share_designated": 40.0,
+   "nmtc_share_designated": 56.0,
+   "poverty_median_designated": 22.9,
+   "poverty_median_not": 23.8,
+   "mfi_ratio_median_designated": 59.8,
+   "mfi_ratio_median_not": 60.9,
+   "nonwhite_designated": 60.4,
+   "nonwhite_not": 70.0,
+   "density_median_designated": 9870.0,
+   "density_median_not": 13436.0,
+   "counties_eligible": 4,
+   "counties_designated": 4,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 98739,
+   "leaning": [
+    {
+     "smd": 1.08,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.68,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.59,
+     "text": "favored tracts with prior NMTC deals"
+    }
+   ]
+  },
+  {
+   "fips": "45",
+   "abbr": "SC",
+   "name": "South Carolina",
+   "eligible": 449,
+   "designated": 113,
+   "designated_rural": 85,
+   "rural_share_eligible": 73.1,
+   "rural_share_designated": 75.2,
+   "oz1_share_eligible": 23.4,
+   "oz1_share_designated": 46.0,
+   "oz1_share_not": 15.8,
+   "rural_share_not": 72.3,
+   "tier1_share_not": 18.2,
+   "tier1_share_eligible": 19.6,
+   "tier1_share_designated": 23.9,
+   "nmtc_share_designated": 15.0,
+   "poverty_median_designated": 26.5,
+   "poverty_median_not": 24.1,
+   "mfi_ratio_median_designated": 64.1,
+   "mfi_ratio_median_not": 64.4,
+   "nonwhite_designated": 56.5,
+   "nonwhite_not": 55.0,
+   "density_median_designated": 563.0,
+   "density_median_not": 357.0,
+   "counties_eligible": 45,
+   "counties_designated": 45,
+   "full_designation": false,
+   "added_oct": 4,
+   "added_oct_designated": 2,
+   "pop_designated": 407658,
+   "leaning": [
+    {
+     "smd": 0.71,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.29,
+     "text": "favored renter-heavy tracts"
+    },
+    {
+     "smd": 0.25,
+     "text": "favored more populous tracts"
+    }
+   ]
+  },
+  {
+   "fips": "46",
+   "abbr": "SD",
+   "name": "South Dakota",
+   "eligible": 52,
+   "designated": 25,
+   "designated_rural": 18,
+   "rural_share_eligible": 67.3,
+   "rural_share_designated": 72.0,
+   "oz1_share_eligible": 38.5,
+   "oz1_share_designated": 72.0,
+   "oz1_share_not": 7.4,
+   "rural_share_not": 63.0,
+   "tier1_share_not": 14.8,
+   "tier1_share_eligible": 15.4,
+   "tier1_share_designated": 16.0,
+   "nmtc_share_designated": 20.0,
+   "poverty_median_designated": 23.0,
+   "poverty_median_not": 28.3,
+   "mfi_ratio_median_designated": 63.7,
+   "mfi_ratio_median_not": 62.2,
+   "nonwhite_designated": 41.1,
+   "nonwhite_not": 47.8,
+   "density_median_designated": 637.0,
+   "density_median_not": 191.0,
+   "counties_eligible": 25,
+   "counties_designated": 19,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 84574,
+   "leaning": [
+    {
+     "smd": 1.31,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.5,
+     "text": "favored lower-poverty tracts"
+    },
+    {
+     "smd": -0.3,
+     "text": "favored less dense tracts"
+    }
+   ]
+  },
+  {
+   "fips": "47",
+   "abbr": "TN",
+   "name": "Tennessee",
+   "eligible": 509,
+   "designated": 128,
+   "designated_rural": 72,
+   "rural_share_eligible": 43.6,
+   "rural_share_designated": 56.2,
+   "oz1_share_eligible": 23.4,
+   "oz1_share_designated": 46.1,
+   "oz1_share_not": 15.7,
+   "rural_share_not": 39.4,
+   "tier1_share_not": 26.2,
+   "tier1_share_eligible": 29.7,
+   "tier1_share_designated": 39.8,
+   "nmtc_share_designated": 25.0,
+   "poverty_median_designated": 26.7,
+   "poverty_median_not": 24.9,
+   "mfi_ratio_median_designated": 62.2,
+   "mfi_ratio_median_not": 64.7,
+   "nonwhite_designated": 40.9,
+   "nonwhite_not": 49.1,
+   "density_median_designated": 991.0,
+   "density_median_not": 1652.0,
+   "counties_eligible": 82,
+   "counties_designated": 61,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 511759,
+   "leaning": [
+    {
+     "smd": 0.72,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.42,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.34,
+     "text": "favored rural tracts"
+    }
+   ]
+  },
+  {
+   "fips": "48",
+   "abbr": "TX",
+   "name": "Texas",
+   "eligible": 2431,
+   "designated": 608,
+   "designated_rural": 184,
+   "rural_share_eligible": 21.7,
+   "rural_share_designated": 30.3,
+   "oz1_share_eligible": 20.7,
+   "oz1_share_designated": 33.4,
+   "oz1_share_not": 16.5,
+   "rural_share_not": 18.9,
+   "tier1_share_not": 20.9,
+   "tier1_share_eligible": 22.9,
+   "tier1_share_designated": 28.8,
+   "nmtc_share_designated": 9.4,
+   "poverty_median_designated": 25.8,
+   "poverty_median_not": 24.6,
+   "mfi_ratio_median_designated": 62.1,
+   "mfi_ratio_median_not": 61.4,
+   "nonwhite_designated": 74.4,
+   "nonwhite_not": 79.5,
+   "density_median_designated": 2062.0,
+   "density_median_not": 4000.0,
+   "counties_eligible": 187,
+   "counties_designated": 106,
+   "full_designation": false,
+   "added_oct": 11,
+   "added_oct_designated": 2,
+   "pop_designated": 2349438,
+   "leaning": [
+    {
+     "smd": 0.42,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.31,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.28,
+     "text": "favored rural tracts"
+    }
+   ]
+  },
+  {
+   "fips": "49",
+   "abbr": "UT",
+   "name": "Utah",
+   "eligible": 147,
+   "designated": 37,
+   "designated_rural": 10,
+   "rural_share_eligible": 20.4,
+   "rural_share_designated": 27.0,
+   "oz1_share_eligible": 22.4,
+   "oz1_share_designated": 37.8,
+   "oz1_share_not": 17.3,
+   "rural_share_not": 18.2,
+   "tier1_share_not": 48.2,
+   "tier1_share_eligible": 44.2,
+   "tier1_share_designated": 32.4,
+   "nmtc_share_designated": 18.9,
+   "poverty_median_designated": 20.3,
+   "poverty_median_not": 18.2,
+   "mfi_ratio_median_designated": 59.2,
+   "mfi_ratio_median_not": 65.2,
+   "nonwhite_designated": 35.3,
+   "nonwhite_not": 37.5,
+   "density_median_designated": 4334.0,
+   "density_median_not": 5402.0,
+   "counties_eligible": 17,
+   "counties_designated": 15,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 155756,
+   "leaning": [
+    {
+     "smd": 0.49,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": -0.32,
+     "text": "passed over Urban Institute Tier 1 tracts"
+    },
+    {
+     "smd": 0.22,
+     "text": "favored rural tracts"
+    }
+   ]
+  },
+  {
+   "fips": "50",
+   "abbr": "VT",
+   "name": "Vermont",
+   "eligible": 24,
+   "designated": 24,
+   "designated_rural": 24,
+   "rural_share_eligible": 100.0,
+   "rural_share_designated": 100.0,
+   "oz1_share_eligible": 37.5,
+   "oz1_share_designated": 37.5,
+   "oz1_share_not": null,
+   "rural_share_not": null,
+   "tier1_share_not": null,
+   "tier1_share_eligible": 8.3,
+   "tier1_share_designated": 8.3,
+   "nmtc_share_designated": 37.5,
+   "poverty_median_designated": 17.0,
+   "poverty_median_not": null,
+   "mfi_ratio_median_designated": 65.2,
+   "mfi_ratio_median_not": null,
+   "nonwhite_designated": 10.4,
+   "nonwhite_not": null,
+   "density_median_designated": 215.0,
+   "density_median_not": null,
+   "counties_eligible": 11,
+   "counties_designated": 11,
+   "full_designation": true,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 76102,
+   "leaning": []
+  },
+  {
+   "fips": "51",
+   "abbr": "VA",
+   "name": "Virginia",
+   "eligible": 611,
+   "designated": 153,
+   "designated_rural": 77,
+   "rural_share_eligible": 47.1,
+   "rural_share_designated": 50.3,
+   "oz1_share_eligible": 26.2,
+   "oz1_share_designated": 47.1,
+   "oz1_share_not": 19.2,
+   "rural_share_not": 46.1,
+   "tier1_share_not": 15.1,
+   "tier1_share_eligible": 16.7,
+   "tier1_share_designated": 21.6,
+   "nmtc_share_designated": 14.4,
+   "poverty_median_designated": 20.8,
+   "poverty_median_not": 18.4,
+   "mfi_ratio_median_designated": 59.1,
+   "mfi_ratio_median_not": 59.2,
+   "nonwhite_designated": 51.6,
+   "nonwhite_not": 51.1,
+   "density_median_designated": 1604.0,
+   "density_median_not": 2343.0,
+   "counties_eligible": 107,
+   "counties_designated": 89,
+   "full_designation": false,
+   "added_oct": 4,
+   "added_oct_designated": 1,
+   "pop_designated": 558237,
+   "leaning": [
+    {
+     "smd": 0.63,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.32,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.2,
+     "text": "favored higher-poverty tracts"
+    }
+   ]
+  },
+  {
+   "fips": "53",
+   "abbr": "WA",
+   "name": "Washington",
+   "eligible": 396,
+   "designated": 99,
+   "designated_rural": 36,
+   "rural_share_eligible": 37.1,
+   "rural_share_designated": 36.4,
+   "oz1_share_eligible": 23.5,
+   "oz1_share_designated": 49.5,
+   "oz1_share_not": 14.8,
+   "rural_share_not": 37.4,
+   "tier1_share_not": 37.0,
+   "tier1_share_eligible": 40.2,
+   "tier1_share_designated": 49.5,
+   "nmtc_share_designated": 29.3,
+   "poverty_median_designated": 20.4,
+   "poverty_median_not": 16.7,
+   "mfi_ratio_median_designated": 60.7,
+   "mfi_ratio_median_not": 63.0,
+   "nonwhite_designated": 46.3,
+   "nonwhite_not": 48.1,
+   "density_median_designated": 3448.0,
+   "density_median_not": 4121.0,
+   "counties_eligible": 35,
+   "counties_designated": 27,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 0,
+   "pop_designated": 399988,
+   "leaning": [
+    {
+     "smd": 0.82,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.55,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": 0.26,
+     "text": "favored higher-poverty tracts"
+    }
+   ]
+  },
+  {
+   "fips": "54",
+   "abbr": "WV",
+   "name": "West Virginia",
+   "eligible": 208,
+   "designated": 52,
+   "designated_rural": 52,
+   "rural_share_eligible": 100.0,
+   "rural_share_designated": 100.0,
+   "oz1_share_eligible": 20.2,
+   "oz1_share_designated": 44.2,
+   "oz1_share_not": 12.2,
+   "rural_share_not": 100.0,
+   "tier1_share_not": 9.0,
+   "tier1_share_eligible": 10.1,
+   "tier1_share_designated": 13.5,
+   "nmtc_share_designated": 19.2,
+   "poverty_median_designated": 24.5,
+   "poverty_median_not": 26.0,
+   "mfi_ratio_median_designated": 70.6,
+   "mfi_ratio_median_not": 73.7,
+   "nonwhite_designated": 15.5,
+   "nonwhite_not": 11.7,
+   "density_median_designated": 882.0,
+   "density_median_not": 165.0,
+   "counties_eligible": 49,
+   "counties_designated": 32,
+   "full_designation": false,
+   "added_oct": 1,
+   "added_oct_designated": 0,
+   "pop_designated": 156152,
+   "leaning": [
+    {
+     "smd": 0.8,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.34,
+     "text": "favored tracts with more residents of color"
+    },
+    {
+     "smd": 0.34,
+     "text": "favored renter-heavy tracts"
+    }
+   ]
+  },
+  {
+   "fips": "55",
+   "abbr": "WI",
+   "name": "Wisconsin",
+   "eligible": 308,
+   "designated": 77,
+   "designated_rural": 24,
+   "rural_share_eligible": 21.8,
+   "rural_share_designated": 31.2,
+   "oz1_share_eligible": 28.2,
+   "oz1_share_designated": 63.6,
+   "oz1_share_not": 16.5,
+   "rural_share_not": 18.6,
+   "tier1_share_not": 14.3,
+   "tier1_share_eligible": 16.6,
+   "tier1_share_designated": 23.4,
+   "nmtc_share_designated": 55.8,
+   "poverty_median_designated": 23.6,
+   "poverty_median_not": 22.0,
+   "mfi_ratio_median_designated": 60.4,
+   "mfi_ratio_median_not": 59.4,
+   "nonwhite_designated": 47.5,
+   "nonwhite_not": 56.5,
+   "density_median_designated": 4278.0,
+   "density_median_not": 5827.0,
+   "counties_eligible": 45,
+   "counties_designated": 32,
+   "full_designation": false,
+   "added_oct": 2,
+   "added_oct_designated": 1,
+   "pop_designated": 244542,
+   "leaning": [
+    {
+     "smd": 1.05,
+     "text": "favored former OZ 1.0 tracts"
+    },
+    {
+     "smd": 0.6,
+     "text": "favored tracts with prior NMTC deals"
+    },
+    {
+     "smd": -0.35,
+     "text": "favored less dense tracts"
+    }
+   ]
+  },
+  {
+   "fips": "56",
+   "abbr": "WY",
+   "name": "Wyoming",
+   "eligible": 20,
+   "designated": 20,
+   "designated_rural": 16,
+   "rural_share_eligible": 80.0,
+   "rural_share_designated": 80.0,
+   "oz1_share_eligible": 40.0,
+   "oz1_share_designated": 40.0,
+   "oz1_share_not": null,
+   "rural_share_not": null,
+   "tier1_share_not": null,
+   "tier1_share_eligible": 10.0,
+   "tier1_share_designated": 10.0,
+   "nmtc_share_designated": 20.0,
+   "poverty_median_designated": 23.1,
+   "poverty_median_not": null,
+   "mfi_ratio_median_designated": 71.8,
+   "mfi_ratio_median_not": null,
+   "nonwhite_designated": 27.0,
+   "nonwhite_not": null,
+   "density_median_designated": 583.0,
+   "density_median_not": null,
+   "counties_eligible": 9,
+   "counties_designated": 9,
+   "full_designation": true,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 66090,
+   "leaning": []
+  },
+  {
+   "fips": "60",
+   "abbr": "AS",
+   "name": "American Samoa",
+   "eligible": 16,
+   "designated": 16,
+   "designated_rural": 16,
+   "rural_share_eligible": 100.0,
+   "rural_share_designated": 100.0,
+   "oz1_share_eligible": 100.0,
+   "oz1_share_designated": 100.0,
+   "oz1_share_not": null,
+   "rural_share_not": null,
+   "tier1_share_not": null,
+   "tier1_share_eligible": 0.0,
+   "tier1_share_designated": 0.0,
+   "nmtc_share_designated": 12.5,
+   "poverty_median_designated": 53.8,
+   "poverty_median_not": null,
+   "mfi_ratio_median_designated": 101.3,
+   "mfi_ratio_median_not": null,
+   "nonwhite_designated": null,
+   "nonwhite_not": null,
+   "density_median_designated": null,
+   "density_median_not": null,
+   "counties_eligible": 3,
+   "counties_designated": 3,
+   "full_designation": true,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 0,
+   "leaning": []
+  },
+  {
+   "fips": "66",
+   "abbr": "GU",
+   "name": "Guam",
+   "eligible": 20,
+   "designated": 20,
+   "designated_rural": 20,
+   "rural_share_eligible": 100.0,
+   "rural_share_designated": 100.0,
+   "oz1_share_eligible": 50.0,
+   "oz1_share_designated": 50.0,
+   "oz1_share_not": null,
+   "rural_share_not": null,
+   "tier1_share_not": null,
+   "tier1_share_eligible": 0.0,
+   "tier1_share_designated": 0.0,
+   "nmtc_share_designated": 0.0,
+   "poverty_median_designated": 25.7,
+   "poverty_median_not": null,
+   "mfi_ratio_median_designated": 87.4,
+   "mfi_ratio_median_not": null,
+   "nonwhite_designated": null,
+   "nonwhite_not": null,
+   "density_median_designated": null,
+   "density_median_not": null,
+   "counties_eligible": 1,
+   "counties_designated": 1,
+   "full_designation": true,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 0,
+   "leaning": []
+  },
+  {
+   "fips": "69",
+   "abbr": "MP",
+   "name": "Commonwealth of the Northern Mariana Islands",
+   "eligible": 19,
+   "designated": 19,
+   "designated_rural": 19,
+   "rural_share_eligible": 100.0,
+   "rural_share_designated": 100.0,
+   "oz1_share_eligible": 94.7,
+   "oz1_share_designated": 94.7,
+   "oz1_share_not": null,
+   "rural_share_not": null,
+   "tier1_share_not": null,
+   "tier1_share_eligible": 0.0,
+   "tier1_share_designated": 0.0,
+   "nmtc_share_designated": 0.0,
+   "poverty_median_designated": 38.7,
+   "poverty_median_not": null,
+   "mfi_ratio_median_designated": 96.5,
+   "mfi_ratio_median_not": null,
+   "nonwhite_designated": null,
+   "nonwhite_not": null,
+   "density_median_designated": null,
+   "density_median_not": null,
+   "counties_eligible": 4,
+   "counties_designated": 4,
+   "full_designation": true,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 0,
+   "leaning": []
+  },
+  {
+   "fips": "72",
+   "abbr": "PR",
+   "name": "Puerto Rico",
+   "eligible": 712,
+   "designated": 178,
+   "designated_rural": 82,
+   "rural_share_eligible": 34.1,
+   "rural_share_designated": 46.1,
+   "oz1_share_eligible": 99.4,
+   "oz1_share_designated": 99.4,
+   "oz1_share_not": 99.4,
+   "rural_share_not": 30.1,
+   "tier1_share_not": 12.5,
+   "tier1_share_eligible": 12.8,
+   "tier1_share_designated": 13.5,
+   "nmtc_share_designated": 5.1,
+   "poverty_median_designated": 47.7,
+   "poverty_median_not": 46.2,
+   "mfi_ratio_median_designated": 82.7,
+   "mfi_ratio_median_not": 84.6,
+   "nonwhite_designated": 99.5,
+   "nonwhite_not": 99.6,
+   "density_median_designated": 1991.0,
+   "density_median_not": 2247.0,
+   "counties_eligible": 78,
+   "counties_designated": 78,
+   "full_designation": false,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 678984,
+   "leaning": [
+    {
+     "smd": -0.39,
+     "text": "favored less dense tracts"
+    },
+    {
+     "smd": 0.34,
+     "text": "favored rural tracts"
+    },
+    {
+     "smd": 0.32,
+     "text": "favored more populous tracts"
+    }
+   ]
+  },
+  {
+   "fips": "78",
+   "abbr": "VI",
+   "name": "United States Virgin Islands",
+   "eligible": 18,
+   "designated": 18,
+   "designated_rural": 18,
+   "rural_share_eligible": 100.0,
+   "rural_share_designated": 100.0,
+   "oz1_share_eligible": 72.2,
+   "oz1_share_designated": 72.2,
+   "oz1_share_not": null,
+   "rural_share_not": null,
+   "tier1_share_not": null,
+   "tier1_share_eligible": 0.0,
+   "tier1_share_designated": 0.0,
+   "nmtc_share_designated": 5.6,
+   "poverty_median_designated": 27.9,
+   "poverty_median_not": null,
+   "mfi_ratio_median_designated": 79.7,
+   "mfi_ratio_median_not": null,
+   "nonwhite_designated": null,
+   "nonwhite_not": null,
+   "density_median_designated": null,
+   "density_median_not": null,
+   "counties_eligible": 3,
+   "counties_designated": 3,
+   "full_designation": true,
+   "added_oct": 0,
+   "added_oct_designated": 0,
+   "pop_designated": 0,
+   "leaning": []
+  }
+ ]
+}

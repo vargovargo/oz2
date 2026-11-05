@@ -36,6 +36,12 @@ export const DATES = {
   reportingHearing: '2026-11-05',
   /** Latest possible Treasury certification (30 + 30 days from a maximally extended filing). */
   certificationLatest: '2026-12-27',
+  /**
+   * Treasury published the final 2027 QOZ designation list (6,576 tracts, all 56
+   * jurisdictions) and a revised eligible-tract file on its data-transparency page.
+   * Both files are dated October 30, 2026. See references.md §18.
+   */
+  designationsPublished: '2026-10-30',
   /** Mandatory OZ 1.0 deferred-gain inclusion date. Cannot itself be re-deferred. */
   oz1GainInclusion: '2026-12-31',
   /** OZ 2.0 designations take effect. */
@@ -52,6 +58,7 @@ export type Phase =
   | 'pre_window'      // before July 1, 2026
   | 'window_open'     // governors filing
   | 'awaiting_certification' // window closed (or extended), Treasury reviewing
+  | 'certified'       // final list published, not yet in effect
   | 'designated'      // designations in effect
   | 'post_period';    // after 2036
 
@@ -97,7 +104,8 @@ export function asOf(): Date {
 export function currentPhase(now: Date = asOf()): Phase {
   if (now < dStart(DATES.windowOpens)) return 'pre_window';
   if (now <= dEnd(DATES.windowCloses)) return 'window_open';
-  if (now < dStart(DATES.designationsEffective)) return 'awaiting_certification';
+  if (now < dStart(DATES.designationsPublished)) return 'awaiting_certification';
+  if (now < dStart(DATES.designationsEffective)) return 'certified';
   if (now <= dEnd(DATES.designationsExpire)) return 'designated';
   return 'post_period';
 }
@@ -157,6 +165,17 @@ export function phaseCopy(now: Date = asOf()): PhaseCopy {
           'The map is out of local hands. Shift to readiness: line up the capital stack, the site control, and the community benefit terms you want attached to whatever gets designated.',
       };
 
+    case 'certified':
+      return {
+        banner: `The final OZ 2.0 map is out — 6,576 tracts, in effect ${fmt(DATES.designationsEffective)}.`,
+        counter: {
+          label: 'Days until designations take effect',
+          value: daysUntil(DATES.designationsEffective, now, 'start'),
+        },
+        callToAction:
+          'The map is settled. Find out which of your tracts made it, which OZ 1.0 tracts did not, and who is already working in the ones that did.',
+      };
+
     case 'designated':
       return {
         banner: `OZ 2.0 designations are in effect through ${fmt(DATES.designationsExpire)}.`,
@@ -207,6 +226,12 @@ export const MILESTONES: Milestone[] = [
     detail:
       'Treasury has 30 days from receipt to certify a state\'s nominations, extendable by another 30. For a state that used the full extension, that pushes certification as late as December 27, 2026. Most states should be certified well before then.',
     contingent: true,
+  },
+  {
+    date: DATES.designationsPublished,
+    label: 'Treasury publishes the final designations',
+    detail:
+      'Treasury posted the 2027 QOZ list — 6,576 tracts across all 50 states, DC and five territories, 2,594 of them rural — together with a revised eligible-tract file that adds 130 tracts qualified under its missing-data rules. Every state used its full allocation.',
   },
   {
     date: DATES.oz1GainInclusion,
