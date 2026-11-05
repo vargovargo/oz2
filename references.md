@@ -448,3 +448,29 @@ local CLI with working fetch before being relied on for a transaction.
 **PA DCED Opportunity Zones FAQs.** https://dced.pa.gov/programs-funding/federal-funding-opportunities/qualified-opportunity-zones/faqs/ — Source for Pennsylvania's reopened input window (August 17–21, 2026, closing 5 p.m. ET August 21) and its 866 eligible tracts / 217 designation cap. Cited on how-to-advocate as the example of a state reopening input after its initial window closed. last_checked: 2026-09-18
 
 **Novogradac, "State Opportunity Zones 2.0 Information."** https://www.novoco.com/resource-centers/opportunity-zones-resource-center/state-opportunity-zones-20-information — Running compilation of state OZ 2.0 resource guides and nomination processes. Useful as a cross-check on `state_metadata.yaml` during the certification period. last_checked: 2026-09-18
+
+## 18. Final 2027 designations and the designation post-mortem (added 2026-11-05)
+
+Sources for `/designations`, the designation sections of every state page, the map's designation
+layer and `data/designations_by_state.json`. Unlike §17, **every file below was downloaded
+directly** in this session (the sandbox environment was given access to home.treasury.gov,
+www.irs.gov and www2.census.gov), so these are primary-source reads, not search-snippet
+cross-references.
+
+**Treasury Office of Tax Policy, "Qualified Opportunity Zones" data-transparency page.** https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones — Hosts the files below plus the methodology PDFs and OTA working papers WP-123 and WP-128. last_checked: 2026-11-05
+
+**Treasury, "2027 QOZ Designations."** https://home.treasury.gov/system/files/131/OZ2-Designations-2027-Data-Transparency-10302026.xlsx — Dated October 2026 (file stamp 10/30/2026). 6,576 designated tracts across all 56 jurisdictions; 2,594 rural, 3,982 non-rural. Columns: Census Tract Number, QOZID (R|N + GEOID + "27"), State or Territory, County, Rural QOZ. Every state designated exactly its cap of max(25, ⌈25% × eligible⌉) on the October eligible list; Vermont, Wyoming, American Samoa, Guam, CNMI and USVI designated every eligible tract. Certified counts differ slightly from pre-certification state reports because the cap was recomputed on the revised list: Arizona reported 125 and was certified for 127 (506 eligible); Texas reported 605 and was certified for 608 (2,431 eligible). Ingested by `scripts/ingest_designated_tracts.py`. last_checked: 2026-11-05
+
+**Treasury, "Eligible LICs for Nomination as 2027 QOZs."** https://home.treasury.gov/system/files/131/OZ2-Eligible-Tracts-Data-Transparency-10302026.xlsx — All 85,529 tracts with Treasury's poverty rate, median family income, area MFI and MFI ratio (ACS 2020–2024), MFI upper-bound fields, temporary-displacement and post-survey-occupancy flags, `eligible_lic` and `rural_status`. 25,462 eligible LICs: the 25,332 on the April Rev. Proc. 2026-14 appendix plus 130 added, none removed. All 130 additions qualify only under the missing-data rules; 15 were designated. No designated tract falls outside this list. last_checked: 2026-11-05
+
+**Treasury, "Determining Eligible LICs for Nomination as 2027 QOZs."** https://home.treasury.gov/system/files/131/OZ2-Eligibility-Criteria-Data-Transparency-10302026.pdf — Methodology for the file above: CBSA (or state, outside a CBSA) as comparison area; treatment of missing MFI or poverty data, including the B19101 income-distribution upper bound, post-survey residential occupancy, and extraordinary temporary displacement (e.g. a declared disaster). last_checked: 2026-11-05
+
+**IRS Notice 2018-48, IRB 2018-28.** https://www.irs.gov/irb/2018-28_IRB — Table of the 8,762 OZ 1.0 tracts (2010 geography) with tract type (LIC / non-LIC contiguous). Plus **Notice 2019-42, IRB 2019-29** (https://www.irs.gov/irb/2019-29_IRB), adding Puerto Rico tracts 72119130102 and 72137122002 — 8,764 in all. Parsed by `scripts/ingest_oz1_tracts.py`. last_checked: 2026-11-05
+
+**Treasury, "Rural 2018 QOZs as Provided in Notice 2025-50."** https://home.treasury.gov/system/files/131/QOZ-Rural-2018-Area-Zones-as-in-2025-50.xlsx — 3,309 OZ 1.0 tracts comprised entirely of rural area. last_checked: 2026-11-05
+
+**Census Bureau, 2020 Census Tract to 2010 Census Tract Relationship File.** https://www2.census.gov/geo/docs/maps-data/data/rel2020/tract/tab20_tract20_tract10_natl.txt — Land-area overlap used to carry OZ 1.0 status onto 2020 tracts (former OZ 1.0 = ≥50% of land area in a 2018 QOZ; 9,950 tracts). Connecticut GEOIDs are remapped to 2022 planning regions with the Census county↔county-subdivision crosswalk, https://www2.census.gov/geo/docs/reference/ct_change/ct_cou_to_cousub_crosswalk.xlsx. last_checked: 2026-11-05
+
+**Census Bureau, ACS 2020–2024 5-year Summary File (table-based).** https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/ — Tables B01002, B01003, B03002, B15003, B19013, B23025, B25002, B25003, B25064, B25070, B25077 for tract demographics. Same ACS vintage Treasury used for eligibility. Ingested by `scripts/ingest_acs_tract_demographics.py` (the Census API now requires a key; the bulk files do not). last_checked: 2026-11-05
+
+**Census Bureau, 2024 Gazetteer — census tracts.** https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_tracts_national.zip — Land area for population density. last_checked: 2026-11-05

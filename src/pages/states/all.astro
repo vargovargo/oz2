@@ -1,10 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getAllStates } from '@/lib/states';
+import { DATES, asOf, currentPhase, fmt } from '@/lib/timeline';
 
 const states = getAllStates();
+const phase = currentPhase();
+const certified = phase === 'certified' || phase === 'designated' || phase === 'post_period';
 
-const today = new Date();
+const today = asOf();
 today.setHours(0, 0, 0, 0);
 function deadlinePassed(s: ReturnType<typeof getAllStates>[number]) {
   return s.state_deadline
@@ -31,23 +34,35 @@ const counts = {
 };
 ---
 
-<Layout title="All States" description="Browse all 51 state + DC Opportunity Zone 2.0 spotlight pages.">
+<Layout title="All States" description={certified
+  ? 'The 2027 Opportunity Zone designations for all 50 states and DC: designated tracts, rural QROF tracts, and the partners already active in them.'
+  : 'Browse all 51 state + DC Opportunity Zone 2.0 spotlight pages.'}>
   <div class="mb-8">
     <h1 class="text-3xl font-bold mb-3">States & DC</h1>
-    <p class="text-oz-neutral-500">
-      Select a state to see eligible tract counts, the nomination process, key contacts, and what to do next.
-      Status tiers reflect what's publicly known as of the last check date.
-    </p>
+    {certified ? (
+      <p class="text-oz-neutral-500">
+        Treasury published the final designations on {fmt(DATES.designationsPublished)}. Select a state for its
+        designated tracts, how they compare with the tracts passed over, the OZ 1.0 tracts that lost designation,
+        and the CDEs and local partners already active in the new zones.
+        <a href="/designations" class="text-oz-blue underline">National post-mortem →</a>
+      </p>
+    ) : (
+      <p class="text-oz-neutral-500">
+        Select a state to see eligible tract counts, the nomination process, key contacts, and what to do next.
+        Status tiers reflect what's publicly known as of the last check date.
+      </p>
+    )}
   </div>
 
-  <!-- Legend with live counts -->
-  <div class="flex flex-wrap gap-3 mb-8 text-sm">
-    {Object.entries(tierLabel).map(([key, label]) => (
-      <span class={`px-3 py-1 rounded border font-medium ${tierColor[key]}`}>
-        {label} <span class="font-mono ml-1">({counts[key as keyof typeof counts]})</span>
-      </span>
-    ))}
-  </div>
+  {!certified && (
+    <div class="flex flex-wrap gap-3 mb-8 text-sm">
+      {Object.entries(tierLabel).map(([key, label]) => (
+        <span class={`px-3 py-1 rounded border font-medium ${tierColor[key]}`}>
+          {label} <span class="font-mono ml-1">({counts[key as keyof typeof counts]})</span>
+        </span>
+      ))}
+    </div>
+  )}
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {states.map(s => (
@@ -57,26 +72,51 @@ const counts = {
       >
         <div class="flex items-start justify-between mb-3">
           <h2 class="font-semibold text-oz-neutral-900 group-hover:text-oz-blue transition-colors">{s.name}</h2>
-          <span class={`text-xs px-2 py-0.5 rounded border font-medium ${deadlinePassed(s) ? 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200' : tierColor[s.status_tier]}`}>
-            {deadlinePassed(s) ? 'Input closed' : tierLabel[s.status_tier]}
-          </span>
+          {!certified && (
+            <span class={`text-xs px-2 py-0.5 rounded border font-medium ${deadlinePassed(s) ? 'text-oz-neutral-500 bg-oz-neutral-100 border-oz-neutral-200' : tierColor[s.status_tier]}`}>
+              {deadlinePassed(s) ? 'Input closed' : tierLabel[s.status_tier]}
+            </span>
+          )}
         </div>
-        <div class="flex gap-4 text-sm font-mono">
-          <div>
-            <p class="text-oz-neutral-900 font-semibold">{s.total_eligible.toLocaleString()}</p>
-            <p class="text-oz-neutral-500 text-xs">eligible</p>
+        {certified ? (
+          <div class="flex gap-4 text-sm font-mono">
+            <div>
+              <p class="text-oz-neutral-900 font-semibold">{s.designation.designated.toLocaleString()}</p>
+              <p class="text-oz-neutral-500 text-xs">designated</p>
+            </div>
+            <div>
+              <p class="text-oz-neutral-900 font-semibold">{s.designation.designated_rural.toLocaleString()}</p>
+              <p class="text-oz-neutral-500 text-xs">rural</p>
+            </div>
+            <div>
+              <p class="text-oz-neutral-900 font-semibold">{s.designation.eligible_final.toLocaleString()}</p>
+              <p class="text-oz-neutral-500 text-xs">eligible</p>
+            </div>
+            <div>
+              <p class="text-oz-neutral-900 font-semibold">{s.designation.oz1_lost.toLocaleString()}</p>
+              <p class="text-oz-neutral-500 text-xs">OZ 1.0 lost</p>
+            </div>
           </div>
-          <div>
-            <p class="text-oz-neutral-900 font-semibold">{s.rural_eligible.toLocaleString()}</p>
-            <p class="text-oz-neutral-500 text-xs">rural</p>
+        ) : (
+          <div class="flex gap-4 text-sm font-mono">
+            <div>
+              <p class="text-oz-neutral-900 font-semibold">{s.total_eligible.toLocaleString()}</p>
+              <p class="text-oz-neutral-500 text-xs">eligible</p>
+            </div>
+            <div>
+              <p class="text-oz-neutral-900 font-semibold">{s.rural_eligible.toLocaleString()}</p>
+              <p class="text-oz-neutral-500 text-xs">rural</p>
+            </div>
           </div>
-        </div>
+        )}
       </a>
     ))}
   </div>
 
   <p class="mt-8 text-sm text-oz-neutral-500">
-    Tract counts from IRS Rev. Proc. 2026-14 (April 6, 2026).
-    Status tiers last verified May 2026. <a href="/methodology" class="underline hover:text-oz-neutral-700">Methodology</a>.
+    {certified
+      ? `Designations: Treasury 2027 QOZ designations and revised eligible-tract file (${fmt(DATES.designationsPublished)}). "OZ 1.0 lost" = 2020 tracts at least half inside a 2018 zone that were not redesignated.`
+      : 'Tract counts from IRS Rev. Proc. 2026-14 (April 6, 2026). Status tiers last verified May 2026.'}
+    {' '}<a href="/methodology" class="underline hover:text-oz-neutral-700">Methodology</a>.
   </p>
 </Layout>

@@ -21,6 +21,22 @@ Last verified against the repository: 2026-08-06.
 The rural flag is assigned by Treasury per Notice 2025-50 § 4.01. A community cannot earn
 or lose it through advocacy.
 
+## Final designations (Treasury, files dated 2026-10-30) — added 2026-11-05
+
+| Figure | Value |
+|---|---|
+| Designated 2027 QOZs (all 56 jurisdictions) | **6,576** |
+| Of those, rural (QROF treatment) | **2,594** |
+| Eligible LICs on Treasury's revised October list | **25,462** (April list 25,332 + 130 added under missing-data rules, none removed) |
+| Cap actually applied | max(25, ⌈25% of eligible⌉) on the October list — every state used it in full |
+| Former OZ 1.0 tracts (2020 geography) redesignated | **2,974** of 9,950; **6,976** not redesignated |
+| Designations outside the eligible list | **none** |
+
+Selection post-mortem (`/designations`, `docs/designation-postmortem-2026-11.md`): former OZ 1.0
+tracts were designated at 1.67× the rate expected within their states; prior NMTC investment
+1.62×; rural 1.17×; EIG distress, CRA status and persistent poverty made no measurable
+difference. Source: Treasury OTP data-transparency page, references.md §18.
+
 ## Program timeline — use these dates, do not infer others
 
 | Date | Event |

@@ -75,14 +75,24 @@ alabama:
     Main phone (334) 242-5100; Community and Economic Development division administers OZ
     program.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 141
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 563
+    designated: 141
+    designated_rural: 65
+    cap: 141
+    oz1_redesignated: 72
+    oz1_lost: 127
+    counties_designated: 66
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 alaska:
   name: Alaska
   fips: '02'
@@ -165,14 +175,24 @@ alaska:
     Commissioner inbox dcced.commissioner@alaska.gov / (907) 465-2500. Alaska has only 32
     eligible tracts; statutory minimum 25 designations means very limited discretion.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 33
+    designated: 25
+    designated_rural: 17
+    cap: 25
+    oz1_redesignated: 11
+    oz1_lost: 16
+    counties_designated: 14
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 arizona:
   name: Arizona
   fips: '04'
@@ -256,15 +276,26 @@ arizona:
     Tribal nations have statewide input rights on tribal territory tracts. ACA targets July
     1, 2026 for Treasury submission.
   nomination:
-    status: filed_confirmed
+    status: certified
     submitted_date: '2026-07-09'
-    tract_count: 125
+    tract_count: 127
     off_list_count: 3
     list_published_url: null
     source_url: https://opportunityzones.com/2026/08/oz-live-392/
     source_note: 125 tracts is exactly Arizona's 25% cap on 500 eligible tracts, which corroborates
       the reported figure. Off-list count is secondary-sourced; confirm against Treasury certification.
-    last_checked: '2026-09-18'
+      State reported 125 tracts filed; Treasury certified 127.
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 506
+    designated: 127
+    designated_rural: 40
+    cap: 127
+    oz1_redesignated: 66
+    oz1_lost: 131
+    counties_designated: 14
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 arkansas:
   name: Arkansas
   fips: '05'
@@ -344,14 +375,24 @@ arkansas:
   notes: AEDC page addresses OZ 1.0 only as of 2026-05-07. No OZ 2.0 guidance published. General
     contact info@arkansasedc.com / (501) 682-5996.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 78
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 310
+    designated: 78
+    designated_rural: 49
+    cap: 78
+    oz1_redesignated: 38
+    oz1_lost: 68
+    counties_designated: 44
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 california:
   name: California
   fips: '06'
@@ -436,14 +477,24 @@ california:
     Center via gobiz.zendesk.com. No formal application or deadline published as of 2026-05-07.
     Contact Zones@GOBIZ.CA.GOV; Trelynd Bradley named as OZ point of contact.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 620
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 2479
+    designated: 620
+    designated_rural: 106
+    cap: 620
+    oz1_redesignated: 232
+    oz1_lost: 796
+    counties_designated: 55
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 colorado:
   name: Colorado
   fips: 08
@@ -524,14 +575,24 @@ colorado:
     convenings through April 2026; Western Slope event May 11. Contact oedit.info@state.co.us
     / (303) 892-3840.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 91
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 362
+    designated: 91
+    designated_rural: 28
+    cap: 91
+    oz1_redesignated: 46
+    oz1_lost: 99
+    counties_designated: 32
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 connecticut:
   name: Connecticut
   fips: 09
@@ -607,14 +668,24 @@ connecticut:
   ui_invest_q1_tracts: 40
   notes: Contact confirmed. No application portal or deadline published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 61
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 243
+    designated: 61
+    designated_rural: 13
+    cap: 61
+    oz1_redesignated: 37
+    oz1_lost: 41
+    counties_designated: 9
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 delaware:
   name: Delaware
   fips: '10'
@@ -682,14 +753,24 @@ delaware:
     slots remain as of early April 2026 reporting (23 already nominated). max_designations
     corrected from 16 to 25 per DSB press release (March 2026).
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 61
+    designated: 25
+    designated_rural: 12
+    cap: 25
+    oz1_redesignated: 18
+    oz1_lost: 10
+    counties_designated: 3
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 district-of-columbia:
   name: District of Columbia
   fips: '11'
@@ -737,14 +818,24 @@ district-of-columbia:
     statutory minimum 25 zones out of 66 eligible tracts. DMPED OZ page reflects OZ 1.0 history
     only.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 69
+    designated: 25
+    designated_rural: 0
+    cap: 25
+    oz1_redesignated: 17
+    oz1_lost: 8
+    counties_designated: 1
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 florida:
   name: Florida
   fips: '12'
@@ -824,14 +915,24 @@ florida:
   ui_invest_q1_tracts: 504
   notes: Public input window closed. 340 tracts to be nominated from 1,360 eligible.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 342
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 1367
+    designated: 342
+    designated_rural: 98
+    cap: 342
+    oz1_redesignated: 124
+    oz1_lost: 382
+    counties_designated: 63
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 georgia:
   name: Georgia
   fips: '13'
@@ -907,14 +1008,24 @@ georgia:
   ui_invest_q1_tracts: 194
   notes: DCA confirmed lead. No OZ 2.0 application or deadline published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 238
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 949
+    designated: 238
+    designated_rural: 118
+    cap: 238
+    oz1_redesignated: 78
+    oz1_lost: 234
+    counties_designated: 91
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 hawaii:
   name: Hawaii
   fips: '15'
@@ -977,14 +1088,24 @@ hawaii:
     BDSD, mark.j.ritchie@hawaii.gov, (808) 587-2785. No OZ 2.0 nomination guidance or deadline
     published as of 2026-05-07.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 89
+    designated: 25
+    designated_rural: 8
+    cap: 25
+    oz1_redesignated: 12
+    oz1_lost: 17
+    counties_designated: 3
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 idaho:
   name: Idaho
   fips: '16'
@@ -1067,14 +1188,24 @@ idaho:
     opened July 1, 2026. Max designations corrected to 25 (statutory minimum for states with
     fewer than 100 eligible tracts).
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 81
+    designated: 25
+    designated_rural: 9
+    cap: 25
+    oz1_redesignated: 5
+    oz1_lost: 29
+    counties_designated: 14
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 illinois:
   name: Illinois
   fips: '17'
@@ -1154,14 +1285,24 @@ illinois:
   ui_invest_q1_tracts: 170
   notes: 238 tracts to be nominated from 950 eligible.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 240
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 957
+    designated: 240
+    designated_rural: 78
+    cap: 240
+    oz1_redesignated: 76
+    oz1_lost: 260
+    counties_designated: 58
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 indiana:
   name: Indiana
   fips: '18'
@@ -1241,14 +1382,24 @@ indiana:
   notes: 'IEDC page references federal September 28, 2026 deadline. OZ-specific email confirmed:
     opportunityzones@gov.in.gov. No internal state application process published as of 2026-05-07.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 126
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 503
+    designated: 126
+    designated_rural: 42
+    cap: 126
+    oz1_redesignated: 67
+    oz1_lost: 102
+    counties_designated: 47
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 iowa:
   name: Iowa
   fips: '19'
@@ -1327,14 +1478,24 @@ iowa:
   notes: 'IEDA confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07. General
     communications contact: communications@iowaeda.com.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 44
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 175
+    designated: 44
+    designated_rural: 21
+    cap: 44
+    oz1_redesignated: 20
+    oz1_lost: 45
+    counties_designated: 28
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 kansas:
   name: Kansas
   fips: '20'
@@ -1427,14 +1588,24 @@ kansas:
     matrix published on agency OZ 2.0 page; specific criterion weights not publicly indexed
     as of 2026-05-06.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 53
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 211
+    designated: 53
+    designated_rural: 27
+    cap: 53
+    oz1_redesignated: 19
+    oz1_lost: 57
+    counties_designated: 24
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 kentucky:
   name: Kentucky
   fips: '21'
@@ -1524,14 +1695,24 @@ kentucky:
   cra_lmi_tracts: 402
   ui_invest_q1_tracts: 82
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 137
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 546
+    designated: 137
+    designated_rural: 90
+    cap: 137
+    oz1_redesignated: 53
+    oz1_lost: 131
+    counties_designated: 76
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 louisiana:
   name: Louisiana
   fips: '22'
@@ -1613,14 +1794,24 @@ louisiana:
   notes: LED confirmed lead. No OZ 2.0 nomination process published as of 2026-05-07. Main
     line 800-450-8115 / 225-342-3000.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 156
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 621
+    designated: 156
+    designated_rural: 82
+    cap: 156
+    oz1_redesignated: 62
+    oz1_lost: 108
+    counties_designated: 56
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 maine:
   name: Maine
   fips: '23'
@@ -1701,14 +1892,24 @@ maine:
     Duguay. No formal portal published. Governor nominates starting July 1, 2026; 20 of 78
     eligible tracts (74 rural-flagged).'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 78
+    designated: 25
+    designated_rural: 22
+    cap: 25
+    oz1_redesignated: 8
+    oz1_lost: 27
+    counties_designated: 10
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 maryland:
   name: Maryland
   fips: '24'
@@ -1793,14 +1994,24 @@ maryland:
     May 2026; Local Stakeholders Kickoff Webinar May 20. DHCD comms: Allison.Foster@Maryland.gov,
     (443) 257-5478. No community submission deadline published as of 2026-05-12.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 114
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 454
+    designated: 114
+    designated_rural: 29
+    cap: 114
+    oz1_redesignated: 58
+    oz1_lost: 97
+    counties_designated: 20
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 massachusetts:
   name: Massachusetts
   fips: '25'
@@ -1881,14 +2092,24 @@ massachusetts:
   notes: MOBD confirmed lead. No OZ 2.0 application, deadline, or contact email published
     as of 2026-05-07. 103 of 410 eligible tracts to be nominated.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 104
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 414
+    designated: 104
+    designated_rural: 22
+    cap: 104
+    oz1_redesignated: 59
+    oz1_lost: 92
+    counties_designated: 12
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 michigan:
   name: Michigan
   fips: '26'
@@ -1972,14 +2193,24 @@ michigan:
   notes: 'Co-leads MEDC and MSHDA confirmed. No OZ 2.0 nomination portal or deadline published
     as of 2026-05-07. MSHDA contact: MSHDA@michigan.gov, 517-335-9885.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 215
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 860
+    designated: 215
+    designated_rural: 60
+    cap: 215
+    oz1_redesignated: 101
+    oz1_lost: 204
+    counties_designated: 41
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 minnesota:
   name: Minnesota
   fips: '27'
@@ -2055,14 +2286,24 @@ minnesota:
   notes: DEED page explicitly states more information will be posted when the July 1, 2026
     window opens. No application or deadline published.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 73
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 291
+    designated: 73
+    designated_rural: 29
+    cap: 73
+    oz1_redesignated: 43
+    oz1_lost: 102
+    counties_designated: 35
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 mississippi:
   name: Mississippi
   fips: '28'
@@ -2154,14 +2395,24 @@ mississippi:
   ui_invest_q1_tracts: 46
   notes: 101 tracts to be nominated from 404 eligible. No formal scoring rubric published.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 102
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 406
+    designated: 102
+    designated_rural: 78
+    cap: 102
+    oz1_redesignated: 55
+    oz1_lost: 81
+    counties_designated: 50
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 missouri:
   name: Missouri
   fips: '29'
@@ -2257,14 +2508,24 @@ missouri:
     form; multiple submissions per entity are permitted. No scoring rubric published as of
     2026-05-06.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 131
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 523
+    designated: 131
+    designated_rural: 68
+    cap: 131
+    oz1_redesignated: 53
+    oz1_lost: 134
+    counties_designated: 49
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 montana:
   name: Montana
   fips: '30'
@@ -2344,14 +2605,24 @@ montana:
   notes: Commerce page addresses OZ 1.0. Montana subject to 25-zone statutory minimum. No
     OZ 2.0 guidance published.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 58
+    designated: 25
+    designated_rural: 15
+    cap: 25
+    oz1_redesignated: 10
+    oz1_lost: 21
+    counties_designated: 16
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 nebraska:
   name: Nebraska
   fips: '31'
@@ -2431,14 +2702,24 @@ nebraska:
   ui_invest_q1_tracts: 33
   notes: Application window closed. 28 tracts to be nominated from 112 eligible.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 28
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 112
+    designated: 28
+    designated_rural: 12
+    cap: 28
+    oz1_redesignated: 13
+    oz1_lost: 32
+    counties_designated: 15
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 nevada:
   name: Nevada
   fips: '32'
@@ -2516,14 +2797,24 @@ nevada:
     page linked above has OZ 1.0 content only. No OZ 2.0 guidance or community input published
     as of 2026-05-06. Best contact is GOED by phone (800) 336-1600.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 49
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 195
+    designated: 49
+    designated_rural: 14
+    cap: 49
+    oz1_redesignated: 19
+    oz1_lost: 51
+    counties_designated: 9
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 new-hampshire:
   name: New Hampshire
   fips: '33'
@@ -2602,14 +2893,24 @@ new-hampshire:
   ui_invest_q1_tracts: 13
   notes: BEA confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 process published.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 53
+    designated: 25
+    designated_rural: 17
+    cap: 25
+    oz1_redesignated: 14
+    oz1_lost: 21
+    counties_designated: 10
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 new-jersey:
   name: New Jersey
   fips: '34'
@@ -2688,14 +2989,24 @@ new-jersey:
   ui_invest_q1_tracts: 146
   notes: Resource center confirmed. No OZ 2.0 nomination process or deadline published.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 130
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 518
+    designated: 130
+    designated_rural: 13
+    cap: 130
+    oz1_redesignated: 70
+    oz1_lost: 118
+    counties_designated: 20
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 new-mexico:
   name: New Mexico
   fips: '35'
@@ -2788,14 +3099,24 @@ new-mexico:
     still accepting input through June 15. No named OZ staff contact found beyond general
     info@edd.nm.gov.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 65
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 258
+    designated: 65
+    designated_rural: 36
+    cap: 65
+    oz1_redesignated: 16
+    oz1_lost: 67
+    counties_designated: 22
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 new-york:
   name: New York
   fips: '36'
@@ -2874,14 +3195,24 @@ new-york:
   notes: ESD confirmed lead. Page addresses OZ 1.0 only. No OZ 2.0 nomination process published.
     426 tracts to be nominated from 1,702 eligible.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 430
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 1717
+    designated: 430
+    designated_rural: 124
+    cap: 430
+    oz1_redesignated: 217
+    oz1_lost: 365
+    counties_designated: 57
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 north-carolina:
   name: North Carolina
   fips: '37'
@@ -2984,14 +3315,24 @@ north-carolina:
     all 807 eligible tracts available at public.nccommerce.com/oz. Press release (Apr 29,
     2026): commerce.nc.gov/news/press-releases/2026/04/29/nc-commerce-invites-public-feedback-help-identify-new-opportunity-zones-north-carolina.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 204
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 814
+    designated: 204
+    designated_rural: 126
+    cap: 204
+    oz1_redesignated: 85
+    oz1_lost: 215
+    counties_designated: 93
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 north-dakota:
   name: North Dakota
   fips: '38'
@@ -3073,14 +3414,24 @@ north-dakota:
     ND subject to 25-zone statutory minimum (37 eligible tracts). No OZ 2.0 guidance published
     as of 2026-05-07.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 37
+    designated: 25
+    designated_rural: 11
+    cap: 25
+    oz1_redesignated: 11
+    oz1_lost: 15
+    counties_designated: 11
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 ohio:
   name: Ohio
   fips: '39'
@@ -3177,14 +3528,24 @@ ohio:
   cra_lmi_tracts: 805
   ui_invest_q1_tracts: 195
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 260
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 1040
+    designated: 260
+    designated_rural: 96
+    cap: 260
+    oz1_redesignated: 118
+    oz1_lost: 194
+    counties_designated: 75
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 oklahoma:
   name: Oklahoma
   fips: '40'
@@ -3264,14 +3625,24 @@ oklahoma:
   ui_invest_q1_tracts: 45
   notes: 104 tracts to be nominated from 413 eligible; 188 qualify as rural.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 104
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 414
+    designated: 104
+    designated_rural: 57
+    cap: 104
+    oz1_redesignated: 44
+    oz1_lost: 86
+    counties_designated: 47
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 oregon:
   name: Oregon
   fips: '41'
@@ -3361,14 +3732,24 @@ oregon:
   ui_invest_q1_tracts: 92
   notes: 'Tribal liaison: Brian Plinski (Brian.PLINSKI@biz.oregon.gov). 58 tracts to be nominated.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 58
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 229
+    designated: 58
+    designated_rural: 32
+    cap: 58
+    oz1_redesignated: 28
+    oz1_lost: 85
+    counties_designated: 25
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 pennsylvania:
   name: Pennsylvania
   fips: '42'
@@ -3447,14 +3828,24 @@ pennsylvania:
   notes: County deadline was June 5, 2026 (confirmed 2026-06-16). DCED in internal review.
     217 tracts to be nominated. Contact oppzones@pa.gov for status.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 218
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 871
+    designated: 218
+    designated_rural: 76
+    cap: 218
+    oz1_redesignated: 95
+    oz1_lost: 207
+    counties_designated: 63
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 rhode-island:
   name: Rhode Island
   fips: '44'
@@ -3517,14 +3908,24 @@ rhode-island:
   notes: Contact Giselle Mahoney, giselle.mahoney.ctr@commerce.ri.gov, (401) 545-0626. Subject
     to 25-zone statutory minimum. No OZ 2.0 guidance published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 55
+    designated: 25
+    designated_rural: 1
+    cap: 25
+    oz1_redesignated: 14
+    oz1_lost: 11
+    counties_designated: 4
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 south-carolina:
   name: South Carolina
   fips: '45'
@@ -3620,14 +4021,24 @@ south-carolina:
     1, 2026, when federal submission window opens. July 15 in prior entry was unverified —
     corrected to July 1.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 113
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 449
+    designated: 113
+    designated_rural: 85
+    cap: 113
+    oz1_redesignated: 52
+    oz1_lost: 114
+    counties_designated: 45
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 south-dakota:
   name: South Dakota
   fips: '46'
@@ -3708,14 +4119,24 @@ south-dakota:
   notes: GOED presumed lead. No confirmed contact email found. Subject to 25-zone statutory
     minimum.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 25
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 52
+    designated: 25
+    designated_rural: 18
+    cap: 25
+    oz1_redesignated: 18
+    oz1_lost: 10
+    counties_designated: 19
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 tennessee:
   name: Tennessee
   fips: '47'
@@ -3796,14 +4217,24 @@ tennessee:
   notes: TNECD held stakeholder discussion February 18, 2026. No OZ 2.0 application or deadline
     published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 128
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 509
+    designated: 128
+    designated_rural: 72
+    cap: 128
+    oz1_redesignated: 59
+    oz1_lost: 139
+    counties_designated: 61
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 texas:
   name: Texas
   fips: '48'
@@ -3903,15 +4334,26 @@ texas:
     from the EDT OZ page; EDT FAQ also available at https://gov.texas.gov/uploads/files/business/OZ_2.0_FAQ_.pdf.
     No phone number published for the OppZone2.0@gov.texas.gov contact as of 2026-05-06.
   nomination:
-    status: filed_confirmed
+    status: certified
     submitted_date: '2026-09-04'
-    tract_count: 605
+    tract_count: 608
     off_list_count: null
     list_published_url: null
     source_url: https://www.jw.com/news/insights-texas-qualified-opportunity-zone-tracts/
     source_note: Governor Abbott finalized nominations 2026-09-04. Reported by Jackson Walker
-      and corroborated by City of Arlington's announcement of five nominated tracts.
-    last_checked: '2026-09-18'
+      and corroborated by City of Arlington's announcement of five nominated tracts. State
+      reported 605 tracts filed; Treasury certified 608.
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 2431
+    designated: 608
+    designated_rural: 184
+    cap: 608
+    oz1_redesignated: 203
+    oz1_lost: 598
+    counties_designated: 106
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 utah:
   name: Utah
   fips: '49'
@@ -3991,14 +4433,24 @@ utah:
   notes: Governor's office stated it is 'already working on how best to proceed.' No formal
     process published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 37
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 147
+    designated: 37
+    designated_rural: 10
+    cap: 37
+    oz1_redesignated: 14
+    oz1_lost: 41
+    counties_designated: 15
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 vermont:
   name: Vermont
   fips: '50'
@@ -4079,14 +4531,24 @@ vermont:
   notes: ACCD confirmed lead. All 24 eligible tracts are rural-designated; statutory minimum
     allows full pool to be nominated. No OZ 2.0 process published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 24
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 24
+    designated: 24
+    designated_rural: 24
+    cap: 25
+    oz1_redesignated: 9
+    oz1_lost: 17
+    counties_designated: 11
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 virginia:
   name: Virginia
   fips: '51'
@@ -4166,14 +4628,24 @@ virginia:
     survey closed April 27, 2026. Contacts: oz2026@vedp.org and oz@dhcd.virginia.gov. 152
     tracts to be nominated from 607 eligible (25% cap).'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 153
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 611
+    designated: 153
+    designated_rural: 77
+    cap: 153
+    oz1_redesignated: 72
+    oz1_lost: 175
+    counties_designated: 89
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 washington:
   name: Washington
   fips: '53'
@@ -4268,14 +4740,24 @@ washington:
     EO 25-10, Centennial Accord, RCW 43.376. Q&A closes May 21 — 7 days before application
     deadline. Contact: Community.Engagement@Commerce.wa.gov.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 99
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 396
+    designated: 99
+    designated_rural: 36
+    cap: 99
+    oz1_redesignated: 49
+    oz1_lost: 112
+    counties_designated: 27
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 west-virginia:
   name: West Virginia
   fips: '54'
@@ -4372,14 +4854,24 @@ west-virginia:
     tracts to be nominated from 207 eligible; all eligible tracts are rural-designated. No
     scoring rubric or contact email found as of 2026-05-07.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 52
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 208
+    designated: 52
+    designated_rural: 52
+    cap: 52
+    oz1_redesignated: 23
+    oz1_lost: 40
+    counties_designated: 32
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 wisconsin:
   name: Wisconsin
   fips: '55'
@@ -4459,14 +4951,24 @@ wisconsin:
     fetcher). Contact lorena.garcia-cabrera@wedc.org for multi-region and OZ questions; no
     OZ 2.0 guidance published as of 2026-05-07.
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 77
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 308
+    designated: 77
+    designated_rural: 24
+    cap: 77
+    oz1_redesignated: 49
+    oz1_lost: 80
+    counties_designated: 32
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones
 wyoming:
   name: Wyoming
   fips: '56'
@@ -4545,11 +5047,21 @@ wyoming:
     5 tracts to be nominated from 20 eligible (25% cap); 16 eligible tracts are rural-designated.
     No formal application or deadline as of 2026-05-07.'
   nomination:
-    status: unknown
+    status: certified
     submitted_date: null
-    tract_count: null
+    tract_count: 20
     off_list_count: null
     list_published_url: null
     source_url: null
     source_note: null
-    last_checked: '2026-09-18'
+    last_checked: '2026-11-05'
+  designation:
+    published: '2026-10-30'
+    eligible_final: 20
+    designated: 20
+    designated_rural: 16
+    cap: 25
+    oz1_redesignated: 8
+    oz1_lost: 23
+    counties_designated: 9
+    source_url: https://home.treasury.gov/policy-issues/tax-policy/data-transparency/qualified-opportunity-zones

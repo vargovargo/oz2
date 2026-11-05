@@ -1,0 +1,377 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getAllStates, getDesignationAnalysis } from '@/lib/states';
+import { DATES, fmt } from '@/lib/timeline';
+
+const a = getDesignationAnalysis();
+const n = a.national;
+const slugByFips = Object.fromEntries(getAllStates().map((s) => [s.fips, s.slug]));
+const bin = Object.fromEntries(a.binary.map((b: any) => [b.key, b]));
+const con = Object.fromEntries(a.continuous.map((c: any) => [c.key, c]));
+const term = Object.fromEntries(a.logit.terms.map((t: any) => [t.term, t]));
+
+const pct = (x: number, d: number) => Math.round((x / d) * 1000) / 10;
+const oz1Lost = n.oz1.oz1_2020_tracts - n.oz1.redesignated;
+
+// Lift chart: sorted, with 1.0 as the reference line.
+const liftRows = [...a.binary].sort((x: any, y: any) => y.lift - x.lift);
+const liftMax = 1.8;
+const liftX = (v: number) => (Math.min(v, liftMax) / liftMax) * 100;
+
+// Decile small multiples
+const curves = ['poverty_rate', 'pct_renter', 'pop_density', 'dci_score', 'pct_nonwhite', 'mfi_ratio'].map((k) => con[k]);
+const W = 260, H = 120, PL = 28, PR = 8, PT = 10, PB = 22;
+const yMin = 10, yMax = 40;
+const cx = (i: number) => PL + (i / 9) * (W - PL - PR);
+const cy = (v: number) => PT + (1 - (v - yMin) / (yMax - yMin)) * (H - PT - PB);
+const baseline = (n.designated / n.eligible) * 100;
+
+const TERM_LABELS: Record<string, string> = {
+                  poverty_rate_z: 'Poverty rate', mfi_ratio_z: 'Family income, % of area', pop_z: 'Population',
+                  log_density_z: 'Population density (log)', unemp_rate_z: 'Unemployment rate', pct_ba_plus_z: 'BA or more',
+                  pct_renter_z: 'Renter share', vacancy_rate_z: 'Vacancy rate', median_home_value_z: 'Median home value',
+                  pct_nonwhite_z: 'Residents of color', is_oz1: 'Former OZ 1.0 tract', has_nmtc: 'Prior NMTC investment',
+                  is_rural: 'Rural', is_cra_lmi: 'CRA-eligible', ui_tier1: 'Urban Institute Tier 1', ui_tier3: 'Urban Institute Tier 3',
+                };
+
+const SHARE_KEYS = ['unemp_rate', 'pct_ba_plus', 'pct_renter', 'vacancy_rate', 'pct_rent_burdened', 'pct_nonwhite', 'pct_black_nh', 'pct_hispanic'];
+function fmtTrait(key: string, v: number | null): string {
+  if (v == null) return '—';
+  if (SHARE_KEYS.includes(key)) return `${(v * 100).toFixed(1)}%`;
+  if (key === 'poverty_rate' || key === 'mfi_ratio') return `${v.toFixed(1)}%`;
+  if (key === 'dci_score') return v.toFixed(1);
+  if (key === 'median_home_value') return '$' + Math.round(v).toLocaleString();
+  return Math.round(v).toLocaleString();
+}
+
+const states = [...a.states].filter((s: any) => !['AS', 'GU', 'MP', 'VI'].includes(s.abbr))
+  .sort((x: any, y: any) => x.name.localeCompare(y.name));
+
+const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`;
+---
+
+<Layout
+  title="The 2027 Designations"
+  description="Which of the 25,462 eligible tracts became 2027 Opportunity Zones, and what set the chosen tracts apart from the ones passed over."
+>
+  <div class="max-w-3xl">
+    <p class="text-sm font-mono text-oz-blue uppercase tracking-widest mb-3">Post-mortem</p>
+    <h1 class="text-3xl font-bold mb-4">The 2027 designations: who got picked, and why</h1>
+    <p class="text-oz-neutral-500 mb-8">
+      Treasury published the final OZ 2.0 map on {fmt(DATES.designationsPublished)}:{' '}
+      {n.designated.toLocaleString()} tracts in all 50 states, DC and five territories, home to about{' '}
+      {(n.pop_designated / 1e6).toFixed(1)} million people. They take effect {fmt(DATES.designationsEffective)}.
+      This page compares the tracts governors chose with the eligible tracts they passed over, to see what
+      actually drove selection.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+      {[
+        { v: n.designated.toLocaleString(), l: `designated, of ${n.eligible.toLocaleString()} eligible` },
+        { v: n.designated_rural.toLocaleString(), l: `rural — ${pct(n.designated_rural, n.designated)}% of designations` },
+        { v: n.oz1.redesignated.toLocaleString(), l: 'former OZ 1.0 tracts redesignated' },
+        { v: oz1Lost.toLocaleString(), l: 'former OZ 1.0 tracts not redesignated' },
+      ].map(({ v, l }) => (
+        <div class="bg-white border border-oz-neutral-200 rounded p-5">
+          <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{v}</p>
+          <p class="text-xs text-oz-neutral-500">{l}</p>
+        </div>
+      ))}
+    </div>
+
+    <section id="findings" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The short version<a href="#findings" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <ol class="text-sm text-oz-neutral-700 space-y-3 list-decimal list-inside">
+        <li>
+          <strong class="text-oz-neutral-900">Incumbency was the strongest predictor.</strong>{' '}
+          Eligible tracts that had been OZ 1.0 zones were designated {bin.is_oz1.rate_with}% of the time; tracts
+          that had not were designated {bin.is_oz1.rate_without}% of the time. Within states, former OZ tracts were
+          picked {bin.is_oz1.lift}× as often as each state's overall rate would predict, and the effect holds
+          after controlling for everything else measured here (odds ratio {term.is_oz1.odds_ratio}).
+          {pct(n.oz1.designated_that_were_oz1, n.designated)}% of the new map is old map.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">A deal track record came next.</strong>{' '}
+          Tracts with a prior New Markets Tax Credit investment were designated {bin.has_nmtc.lift}× as often as
+          expected. Together with incumbency, this points to states nominating where projects, sponsors and
+          local capacity already existed.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Rural tracts were favored — modestly.</strong>{' '}
+          Rural tracts were {Math.round(n.eligible_rural / n.eligible * 100)}% of the eligible pool and{' '}
+          {pct(n.designated_rural, n.designated)}% of designations ({bin.is_rural.lift}× expected). The QROF
+          rural bonus shifted selection at the margin, not wholesale.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Distress did not drive selection.</strong>{' '}
+          Designation rates are flat across the EIG Distressed Communities Index: designated tracts sat at the{' '}
+          {con.dci_score.designated_percentile}th within-state percentile of distress, where 50 means no preference.
+          CRA eligibility (lift {bin.is_cra_lmi.lift}) and persistent-poverty counties ({bin.is_persistent_poverty.lift})
+          made no difference either. Poverty rate tilted selection slightly upward
+          ({con.poverty_rate.designated_percentile}th percentile).
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">States preferred mid-density, renter-heavy tracts</strong> over both
+          the densest urban cores and the emptiest rural ones, and leaned toward tracts the Urban Institute rated
+          likely to attract investment with larger impact (Tier 1, lift {bin.ui_tier1.lift}) over its
+          low-probability Tier 3 ({bin.ui_tier3.lift}).
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Most of the choice is not explained by tract data.</strong>{' '}
+          Everything above, combined in one model with state fixed effects, explains little of which tracts were
+          picked (pseudo-R² {a.logit.pseudo_r2}). Local advocacy, project pipelines, political geography and
+          county-level spreading — none of which the census measures — did most of the work.
+        </li>
+      </ol>
+    </section>
+
+    <section id="lift" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">Which traits raised the odds<a href="#lift" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Designations among eligible tracts with each trait, divided by the number expected if every state had
+        picked at its own overall rate. 1.0 means no preference. Within-state comparison across{' '}
+        {a.selection_states} jurisdictions; the six that designated every eligible tract
+        ({n.full_designation_jurisdictions.join(', ')}) are excluded because no selection took place.
+      </p>
+      <figure class="bg-white border border-oz-neutral-200 rounded p-5">
+        <figcaption class="text-sm font-semibold text-oz-neutral-900 mb-3">Designation lift by tract trait</figcaption>
+        <div class="space-y-2">
+          {liftRows.map((b: any) => (
+            <div class="grid grid-cols-[minmax(0,11rem)_1fr_3rem] items-center gap-3 text-xs"
+                 title={`${b.label}: ${b.n_designated.toLocaleString()} of ${b.n_eligible.toLocaleString()} designated (${b.rate_with}% vs ${b.rate_without}% without). Lift ${b.lift}.`}>
+              <span class="text-oz-neutral-700 truncate">{b.label}</span>
+              <div class="relative h-4">
+                <div class="absolute inset-y-0 border-l border-dashed border-oz-neutral-400" style={`left:${liftX(1)}%`}></div>
+                <div class={`absolute inset-y-0.5 left-0 rounded-r ${b.lift >= 1 ? 'bg-oz-blue' : 'bg-oz-neutral-400'}`} style={`width:${liftX(b.lift)}%`}></div>
+              </div>
+              <span class="font-mono text-right text-oz-neutral-900">{b.lift.toFixed(2)}</span>
+            </div>
+          ))}
+        </div>
+        <p class="text-xs text-oz-neutral-500 mt-3">Dashed line = 1.0 (no preference). Hover a row for counts.</p>
+      </figure>
+    </section>
+
+    <section id="shape" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The shape of the preference<a href="#shape" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Each eligible tract is ranked against the other eligible tracts in its own state, then grouped into
+        tenths. Each panel shows the share of each tenth that was designated. A flat line at{' '}
+        {baseline.toFixed(0)}% means the trait made no difference.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {curves.map((c: any) => (
+          <figure class="bg-white border border-oz-neutral-200 rounded p-3">
+            <figcaption class="text-xs font-semibold text-oz-neutral-900 mb-1">{c.label}</figcaption>
+            <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img"
+                 aria-label={`Designation rate by within-state decile of ${c.label}: ${c.deciles.join(', ')} percent`}>
+              {[10, 20, 30, 40].map((g) => (
+                <g>
+                  <line x1={PL} x2={W - PR} y1={cy(g)} y2={cy(g)} stroke="currentColor" class="text-oz-neutral-200" stroke-width="1" />
+                  <text x={PL - 4} y={cy(g) + 3} text-anchor="end" font-size="8" fill="#6b7280">{g}%</text>
+                </g>
+              ))}
+              <line x1={PL} x2={W - PR} y1={cy(baseline)} y2={cy(baseline)} stroke="#9ca3af" stroke-dasharray="3 3" stroke-width="1" />
+              <polyline fill="none" stroke="#1e40af" stroke-width="2" stroke-linejoin="round"
+                        points={c.deciles.map((v: number, i: number) => `${cx(i)},${cy(v)}`).join(' ')} />
+              {c.deciles.map((v: number, i: number) => (
+                <g>
+                  <circle cx={cx(i)} cy={cy(v)} r="9" fill="transparent"><title>{`Tenth ${i + 1}: ${v}% designated`}</title></circle>
+                  <circle cx={cx(i)} cy={cy(v)} r="3" fill="#1e40af" stroke="white" stroke-width="1.5" pointer-events="none" />
+                </g>
+              ))}
+              <text x={PL} y={H - 6} font-size="8" fill="#6b7280">lowest in state</text>
+              <text x={W - PR} y={H - 6} font-size="8" fill="#6b7280" text-anchor="end">highest</text>
+            </svg>
+          </figure>
+        ))}
+      </div>
+      <details class="mt-3 text-xs text-oz-neutral-600">
+        <summary class="cursor-pointer text-oz-blue">Table view</summary>
+        <div class="overflow-x-auto mt-2">
+          <table class="w-full font-mono">
+            <thead><tr><th class="text-left pr-2">Trait</th>{[1,2,3,4,5,6,7,8,9,10].map((d) => <th class="text-right px-1">{d}</th>)}</tr></thead>
+            <tbody>{a.continuous.map((c: any) => (
+              <tr><td class="pr-2 font-sans">{c.label}</td>{c.deciles.map((v: number) => <td class="text-right px-1">{v}</td>)}</tr>
+            ))}</tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <section id="demographics" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">Income and demographics<a href="#demographics" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        On income, the designated and passed-over tracts look much alike. Median family income relative to the
+        area median shows a shallow U: the very lowest-income tracts and the near-threshold tracts were both
+        picked a little more often than the middle. On education, unemployment and home values, there is
+        essentially no difference.
+      </p>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        On race and ethnicity, designated tracts had on average a somewhat smaller share of residents of color
+        than the eligible tracts passed over in the same state (within-state percentile{' '}
+        {con.pct_nonwhite.designated_percentile}). Part of that comes from the rural tilt, since rural eligible
+        tracts are whiter on average; but the association remains after controlling for rural status, density,
+        income and the other traits ({term.pct_nonwhite_z.ame_pp} percentage points per standard deviation).
+        Neither the share of Black residents nor the share of Hispanic residents shows a consistent pattern on
+        its own. This describes the selected set, not anyone's intent.
+      </p>
+      <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-oz-neutral-100 text-oz-neutral-500 text-xs uppercase tracking-wide">
+            <tr>
+              <th class="px-3 py-2 text-left">Trait</th>
+              <th class="px-3 py-2 text-right">Median, designated</th>
+              <th class="px-3 py-2 text-right">Median, passed over</th>
+              <th class="px-3 py-2 text-right" title="Mean within-state percentile of designated tracts; 50 = no preference">Within-state pctile</th>
+            </tr>
+          </thead>
+          <tbody>
+            {a.continuous.map((c: any, i: number) => {
+              const f = (v: number | null) => fmtTrait(c.key, v);
+              return (
+                <tr class={i % 2 ? 'bg-oz-neutral-50' : ''}>
+                  <td class="px-3 py-2">{c.label}</td>
+                  <td class="px-3 py-2 text-right font-mono">{f(c.median_designated)}</td>
+                  <td class="px-3 py-2 text-right font-mono">{f(c.median_not)}</td>
+                  <td class="px-3 py-2 text-right font-mono">{c.designated_percentile}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-oz-neutral-500 mt-2">
+        Medians pool all states and are for orientation; the percentile column is the within-state comparison.
+      </p>
+    </section>
+
+    <section id="model" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">All traits at once<a href="#model" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        A logistic regression of designation on every trait together, with a fixed effect for each state
+        (so each tract is compared only with its own state's pool) and standard errors clustered by county.
+        Continuous traits are scaled per standard deviation. The effect column is the average change in the
+        probability of designation, in percentage points. n = {a.logit.n.toLocaleString()}.
+      </p>
+      <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-oz-neutral-100 text-oz-neutral-500 text-xs uppercase tracking-wide">
+            <tr><th class="px-3 py-2 text-left">Trait</th><th class="px-3 py-2 text-right">Effect (pp)</th><th class="px-3 py-2 text-right">Odds ratio</th><th class="px-3 py-2 text-right">p</th></tr>
+          </thead>
+          <tbody>
+            {[...a.logit.terms].sort((x: any, y: any) => Math.abs(y.ame_pp) - Math.abs(x.ame_pp)).map((t: any, i: number) => (
+              <tr class={i % 2 ? 'bg-oz-neutral-50' : ''}>
+                <td class="px-3 py-2">{TERM_LABELS[t.term] ?? t.term}</td>
+                <td class="px-3 py-2 text-right font-mono">{t.ame_pp > 0 ? '+' : ''}{t.ame_pp}</td>
+                <td class="px-3 py-2 text-right font-mono">{t.odds_ratio}</td>
+                <td class={`px-3 py-2 text-right font-mono ${t.p < 0.01 ? 'text-oz-neutral-900' : 'text-oz-neutral-400'}`}>{t.p < 0.001 ? '<0.001' : t.p}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="oz1" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The OZ 1.0 handoff<a href="#oz1" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        The 8,764 OZ 1.0 zones were drawn on 2010 census tracts. Mapped onto 2020 tracts, they cover{' '}
+        {n.oz1.oz1_2020_tracts.toLocaleString()} tracts. {n.oz1.still_eligible.toLocaleString()} of those
+        are still low-income enough to be eligible; {n.oz1.redesignated.toLocaleString()} were redesignated.
+        That leaves {oz1Lost.toLocaleString()} former zones — {Math.round(oz1Lost / n.oz1.oz1_2020_tracts * 100)}% —
+        that will not be OZs after {fmt(DATES.oz1Expires)}, and that under Notice 2026-40 generally cannot take
+        new capital after 2026 except under a working capital safe harbor plan adopted by {fmt(DATES.oz1GainInclusion)}.
+      </p>
+      <p class="text-sm text-oz-neutral-700">
+        Nobody is documenting what happens to projects in those tracts. Each state page lists them by county.
+        <a href="/whats-next#transition" class="text-oz-blue underline">Transition rules →</a>
+      </p>
+    </section>
+
+    <section id="off-list" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">The late additions<a href="#off-list" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700">
+        Treasury's October eligible list has {n.added_oct} more tracts than the April Rev. Proc. 2026-14
+        appendix, and drops none. All {n.added_oct} qualify under its missing-data rules — tracts without a usable
+        ACS income or poverty figure that were shown eligible with supplemental data (new occupied housing, an
+        income-distribution upper bound, or temporary disaster displacement). {n.added_oct_designated} of them were
+        designated, {bin.added_oct.rate_with}% against {bin.added_oct.rate_without}% for everything else. Every
+        designated tract is on Treasury's eligible list; there are no designations outside it.
+        <a href="/off-list-nominations" class="text-oz-blue underline">Background on off-list nominations →</a>
+      </p>
+    </section>
+
+    <section id="what-it-means" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">What this means for the next ten years<a href="#what-it-means" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <ul class="text-sm text-oz-neutral-700 space-y-3 list-disc list-inside">
+        <li>
+          <strong class="text-oz-neutral-900">Expect OZ 2.0 capital to follow OZ 1.0's paths.</strong> States picked
+          where deals had already happened. That makes early OZ 2.0 investment likelier — and makes it likelier the
+          program repeats OZ 1.0's concentration, where 42% of capital went to 1% of tracts.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">The most distressed tracts are no better represented than the rest.</strong>{' '}
+          Community-benefit terms, CDFI participation and public-sector gap financing will decide whether OZ 2.0
+          reaches them, not the map.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">For the 2036 round, the lesson is about pipelines.</strong> The tracts
+          that won had a project history. A jurisdiction that wants designation next decade should start building a
+          deal record now.
+        </li>
+      </ul>
+    </section>
+
+    <section id="states" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">State by state<a href="#states" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Every state designated its full allocation — 25% of its eligible tracts, or 25 tracts where that is
+        larger. The columns compare the designated set with the state's full eligible pool. Click a state for its
+        tract list, county table and the partners already active in its designated tracts.
+      </p>
+      <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead class="bg-oz-neutral-100 text-oz-neutral-500 uppercase tracking-wide">
+            <tr>
+              <th class="px-2 py-2 text-left">State</th>
+              <th class="px-2 py-2 text-right">Designated / eligible</th>
+              <th class="px-2 py-2 text-right" title="Rural share: eligible → designated">Rural %</th>
+              <th class="px-2 py-2 text-right" title="Former OZ 1.0 share: eligible → designated">OZ 1.0 %</th>
+              <th class="px-2 py-2 text-right" title="Median poverty rate: passed over → designated">Poverty</th>
+              <th class="px-2 py-2 text-left">Biggest differences</th>
+            </tr>
+          </thead>
+          <tbody>
+            {states.map((s: any, i: number) => (
+              <tr class={`${i % 2 ? 'bg-oz-neutral-50' : ''} align-top`}>
+                <td class="px-2 py-2 whitespace-nowrap">
+                  {slugByFips[s.fips] ? <a href={`/states/${slugByFips[s.fips]}#designations`} class="text-oz-blue hover:underline">{s.name}</a> : s.name}
+                </td>
+                <td class="px-2 py-2 text-right font-mono whitespace-nowrap">{s.designated} / {s.eligible}</td>
+                <td class="px-2 py-2 text-right font-mono whitespace-nowrap">{Math.round(s.rural_share_eligible)} → {Math.round(s.rural_share_designated)}</td>
+                <td class="px-2 py-2 text-right font-mono whitespace-nowrap">{Math.round(s.oz1_share_eligible)} → {Math.round(s.oz1_share_designated)}</td>
+                <td class="px-2 py-2 text-right font-mono whitespace-nowrap">{s.poverty_median_not ?? '—'} → {s.poverty_median_designated}</td>
+                <td class="px-2 py-2 text-oz-neutral-600">{s.full_designation ? 'All eligible tracts designated' : s.leaning.length ? s.leaning.map((l: any) => l.text).join('; ') : 'No large differences'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="data" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">Data and method<a href="#data" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-3">
+        <a href="/data/oz2-designations-2027.csv" download class="text-oz-blue underline">Download every eligible tract with its designation status and indicators (CSV)</a>.
+      </p>
+      <ul class="text-xs text-oz-neutral-600 space-y-1.5 list-disc list-inside">
+        <li>Designations and eligibility: Treasury Office of Tax Policy, 2027 QOZ designations and eligible LICs files, dated {fmt(DATES.designationsPublished)}. Poverty and income ratios are Treasury's own (ACS 2020–2024).</li>
+        <li>Demographics: ACS 2020–2024 5-year Summary File (tables B01003, B03002, B15003, B23025, B25002, B25003, B25070, B25077); land area from the 2024 Census Gazetteer.</li>
+        <li>OZ 1.0: IRS Notice 2018-48 and 2019-42, crosswalked to 2020 tracts with the Census 2020↔2010 tract relationship file; a 2020 tract counts as former OZ 1.0 if at least half its land area was in a 2018 zone. Connecticut's 2022 planning-region GEOIDs are remapped.</li>
+        <li>Overlays: EIG Distressed Communities Index, FFIEC CRA income levels, Urban Institute investability tiers, CDFI Fund NMTC data, USDA ERS persistent poverty — all as used elsewhere on this site. These were joined to the April eligible list, so the {n.added_oct} October additions have no overlay values.</li>
+        <li>Scripts: <code>ingest_designated_tracts.py</code>, <code>ingest_acs_tract_demographics.py</code>, <code>ingest_oz1_tracts.py</code>, <code>analyze_designations.py</code>. Full detail in <code>docs/designation-postmortem-2026-11.md</code>.</li>
+      </ul>
+    </section>
+  </div>
+</Layout>

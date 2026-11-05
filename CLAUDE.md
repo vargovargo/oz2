@@ -10,7 +10,64 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
-## Where things stand (as of 2026-09-18)
+## Where things stand (as of 2026-11-05)
+
+**Completed in the 2026-11-05 session — the final designations landed.**
+
+Treasury published the 2027 QOZ list on its data-transparency page (files dated 2026-10-30):
+**6,576 designated tracts** (2,594 rural) in all 56 jurisdictions, plus a **revised eligible
+list of 25,462** (the April 25,332 + 130 added under missing-data rules, none removed). Every
+state used exactly max(25, ⌈25% of eligible⌉) on the revised list. No designation is outside
+the eligible list. This session ran with a cloud environment ("oz2") that allows
+home.treasury.gov, www.irs.gov, api.census.gov and www2.census.gov, so these are direct
+downloads, not search-snippet verification. (api.census.gov now requires a key; use the ACS
+bulk Summary Files on www2 instead.)
+
+*Pipeline — run in this order (all re-runnable; raw downloads cache in gitignored `data/raw/`):*
+1. `scripts/ingest_designated_tracts.py` → `data/designated_tracts.parquet`, `data/oz2_tracts.parquet`
+   (the new master: every eligible tract + Treasury poverty/MFI + `is_designated`). The April
+   `data/eligible_tracts.parquet` is kept as the record; overlays are still keyed to it.
+2. `scripts/ingest_acs_tract_demographics.py` → `data/acs_tract_demographics.parquet` (ACS 2020–2024).
+3. `scripts/ingest_oz1_tracts.py` → `data/oz1_tracts_2010.parquet`, `data/oz1_overlap.parquet`
+   (2018 QOZs from Notice 2018-48/2019-42, crosswalked to 2020 tracts by land area; CT remapped to
+   2022 planning-region GEOIDs).
+4. `scripts/analyze_designations.py` → `data/designation_analysis.json`,
+   `data/designations_by_state.json`, `public/data/oz2-designations-2027.csv`.
+5. `scripts/patch_designation_status.py` → `designation` block in `state_metadata.yaml`;
+   `nomination.status` = `certified`.
+6. `scripts/patch_geo_designations.py` → adds `is_designated`/`qozid`/`is_oz1` to `public/geo/*.geojson`
+   and appends the 130 added tracts' boundaries.
+
+*Site:*
+- `timeline.ts`: new `certified` phase (2026-10-30 → 2027-01-01) and `DATES.designationsPublished`.
+- **`/designations`** (new, in nav): the post-mortem. Within-state lift, decile curves, logit with
+  state FE. Narrative + full tables in `docs/designation-postmortem-2026-11.md`.
+- State pages: designation badge + tiles, "How {state} chose" comparison, OZ 1.0-lost callout,
+  county table (designated/eligible, rural, OZ 1.0 kept/lost, NMTC CDEs active), and a tag-filtered
+  tract finder (QROF, former OZ 1.0, NMTC, CRA, housing pressure, vacancy, UI Tier 1, tribal,
+  persistent poverty). The nomination-process record is collapsed into a `<details>`.
+- Map: "Designation" is the default choropleth; new filters for designated and former OZ 1.0.
+- `/states/all`, home, `/whats-next`, `/off-list-nominations` updated for the phase.
+- **Bug fixed:** js-yaml read Colorado's and Connecticut's unquoted `fips: 08`/`09` as numbers, so
+  their maps requested `/geo/8.geojson` and fell back to the EIG iframe. Normalized in `states.ts`.
+
+*Headline findings:* former OZ 1.0 tracts designated at 1.67× the within-state expected rate
+(OR 2.7); prior NMTC 1.62×; rural 1.17×; UI Tier 1 1.28×; EIG distress, CRA and persistent poverty
+~1.0. Pseudo-R² 0.09 — most of the choice is not in tract data. 6,976 former OZ 1.0 tracts
+(2020 geography) were not redesignated.
+
+*Not done:* project skills (`oz2-local-planner` etc.) quality-gate pass on `/designations` and the
+new state-page sections; `export_study_pack.py` not re-run; overlays (CRA, DCI, Urban, NMTC) not
+extended to the 130 added tracts; `status_tier` not yet moved into a `history` block.
+
+**Next priorities (supersedes the 2026-09-18 list):**
+1. Transition-affected projects: the 6,976 OZ 1.0 tracts not redesignated are listed per county —
+   use them to find and document OZ 1.0 deals now cut off from new capital (case studies).
+2. Set `VERCEL_DEPLOY_HOOK_URL` so the daily rebuild flips the phase to `designated` on Jan 1.
+3. OZ 2.0 scorecard as § 6039K data arrives from 2027 — `data/oz2_tracts.parquet` is the denominator.
+4. Re-run overlay ingests (CRA, DCI, tribal, NMTC) against `oz2_tracts.parquet` to cover the 130 additions.
+
+## Where things stood (as of 2026-09-18)
 
 **Completed in the 2026-09-18 session (branch: claude/oz-2-site-revision-wnu0vk):**
 

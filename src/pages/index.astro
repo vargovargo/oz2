@@ -1,9 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { DATES, currentPhase, fmt, phaseCopy } from '@/lib/timeline';
+import { getDesignationAnalysis } from '@/lib/states';
 
-const totalEligible = 25332;
-const ruralEligible = 8334;
+const nat = getDesignationAnalysis().national;
+const totalEligible = nat.eligible;
+const designatedCount = nat.designated;
+const designatedRural = nat.designated_rural;
 const caseStudyCount = 22;
 
 const phase = currentPhase();
@@ -15,6 +18,7 @@ const heroHeadline: Record<string, string> = {
   pre_window:             'The eligible map is out.',
   window_open:            'The nomination window is open.',
   awaiting_certification: 'Nominations are in. The map lands next.',
+  certified:              'The OZ 2.0 map is final.',
   designated:             'The OZ 2.0 map is live.',
   post_period:            'The first OZ 2.0 designation period has ended.',
 };
@@ -22,12 +26,13 @@ const heroSub: Record<string, string> = {
   pre_window:             'Shape the nominations that follow.',
   window_open:            'Shape the investments that follow.',
   awaiting_certification: 'Get ready for the investment that follows.',
+  certified:              'Now find the projects and the partners.',
   designated:             'Now the question is what gets built.',
   post_period:            'What the decade produced, and what comes next.',
 };
 ---
 
-<Layout title="Home" description="OZ 2.0 designations are underway. Find your state's eligible tracts, learn from OZ 1.0 case studies, and build the investment case for your community.">
+<Layout title="Home" description="The OZ 2.0 map is final. Find your state's eligible tracts, learn from OZ 1.0 case studies, and build the investment case for your community.">
 
   <!-- Hero -->
   <section class="mb-12">
@@ -47,6 +52,9 @@ const heroSub: Record<string, string> = {
         <a href="/states/all" class="bg-oz-blue text-white px-5 py-3 rounded font-medium hover:bg-blue-800 transition-colors">
           Find your state
         </a>
+        <a href="/designations" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
+          Who got designated, and why
+        </a>
         <a href="/case-studies" class="border border-oz-neutral-300 text-oz-neutral-700 px-5 py-3 rounded font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
           OZ 1.0 case studies
         </a>
@@ -60,8 +68,8 @@ const heroSub: Record<string, string> = {
   <!-- National numbers -->
   <section class="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
     {[
-      { label: 'Eligible tracts', value: totalEligible.toLocaleString() },
-      { label: 'Rural eligible', value: ruralEligible.toLocaleString() },
+      { label: `Designated tracts, of ${totalEligible.toLocaleString()} eligible`, value: designatedCount.toLocaleString() },
+      { label: 'Rural designated (QROF)', value: designatedRural.toLocaleString() },
       { label: 'Verified case studies', value: caseStudyCount },
       { label: copy.counter.label, value: copy.counter.value },
     ].map(({ label, value }) => (
@@ -94,6 +102,15 @@ const heroSub: Record<string, string> = {
   <!-- Key resources -->
   <section class="mb-12">
     <h2 class="text-xl font-semibold mb-4">Key resources</h2>
+    <div class="mb-4 bg-white border border-oz-blue/30 rounded p-5">
+      <p class="font-semibold text-oz-neutral-900 mb-2">The 2027 designations: who got picked, and why</p>
+      <p class="text-sm text-oz-neutral-500 mb-4">
+        Treasury's final list compared tract by tract with the {(totalEligible - designatedCount).toLocaleString()} eligible
+        tracts passed over. The strongest predictor was having been an OZ 1.0 zone; distress made almost no difference.
+        Every state page now lists its designated tracts with the signals and partners that point to projects.
+      </p>
+      <a href="/designations" class="text-sm text-oz-blue hover:underline">Read the post-mortem →</a>
+    </div>
     <div class="grid sm:grid-cols-2 gap-4">
       <div class="bg-white border border-oz-neutral-200 rounded p-5">
         <p class="font-semibold text-oz-neutral-900 mb-2">OZ 1.0 Case Studies</p>
@@ -124,8 +141,8 @@ const heroSub: Record<string, string> = {
       <a href="/states/all" class="text-sm text-oz-blue hover:underline">View all →</a>
     </div>
     <p class="text-sm text-oz-neutral-500 mb-6">
-      {copy.callToAction} Select your state to see eligible tracts, where its nomination process
-      landed, and the local contacts who will know first when the certified list arrives.
+      {copy.callToAction} Select your state to see its designated tracts, how they compare with the ones
+      passed over, and the CDEs, lenders and local contacts already working in them.
     </p>
     <a href="/states/all" class="inline-block border border-oz-neutral-200 bg-white rounded px-5 py-3 text-sm font-medium hover:border-oz-blue hover:text-oz-blue transition-colors">
       Browse all 51 state pages →
