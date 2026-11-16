@@ -5,6 +5,7 @@ import { DATES, asOf, currentPhase, fmt } from '@/lib/timeline';
 
 const phase = currentPhase();
 const windowShut = phase !== 'pre_window' && phase !== 'window_open';
+const certified = phase === 'certified' || phase === 'designated' || phase === 'post_period';
 
 const today = asOf();
 today.setHours(0, 0, 0, 0);
@@ -39,13 +40,17 @@ const closedDeadlines = statesWithDeadlines.filter(
     {windowShut && (
       <div class="mb-8 border border-amber-200 bg-amber-50 rounded p-5">
         <p class="text-sm text-oz-neutral-700">
-          <strong class="text-oz-neutral-900">This cycle's nomination window closed {fmt(DATES.windowCloses)}.</strong>{' '}
-          The playbook below is kept as a record of how the 2026 round worked — it is the reference
-          for the next decennial cycle, and parts of it still apply to any state process that
-          reopens. For what is actionable now, see
-          {' '}<a href="/whats-next" class="text-oz-blue underline">what happens next</a>: the
-          certification timeline, the Notice 2026-40 transition rules, and the reporting rule
-          whose comment period closes {fmt(DATES.reportingCommentDeadline)}.
+          <strong class="text-oz-neutral-900">Archived. This cycle's nomination window closed {fmt(DATES.windowCloses)}.</strong>{' '}
+          The playbook below is kept as a record of how the 2026 round worked and as the reference
+          for the next decennial round.
+          {certified ? (
+            <> Treasury published the final designations on {fmt(DATES.designationsPublished)}. See
+            {' '}<a href="/designations" class="text-oz-blue underline">who was designated and why</a>, or
+            your <a href="/states/all" class="text-oz-blue underline">state page</a> for its tract list.</>
+          ) : (
+            <> For what is actionable now, see
+            {' '}<a href="/whats-next" class="text-oz-blue underline">what happens next</a>.</>
+          )}
         </p>
       </div>
     )}

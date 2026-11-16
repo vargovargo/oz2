@@ -10,6 +10,16 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
+## Fix 2026-11-16 — tract place names were wrong sitewide
+
+`build_state_geo.py` paired each tract GEOID with another shapefile row's centroid (index
+misalignment after filtering to eligible tracts), so `place_name` was wrong for ~79% of tracts
+(e.g. Marin 06041112202 showed "Long Beach"; it is San Rafael). Fixed in `assign_place_names()`;
+existing GeoJSON repaired with `scripts/patch_geo_places.py` (20,088 of 25,462 changed), then
+`analyze_designations.py` re-run. Only map popups, the state-page tract finder and the national
+CSV used the field; no analysis figure depended on it. Run `patch_geo_places.py` after any
+`patch_geo_designations.py` that appends tracts.
+
 ## Where things stand (as of 2026-11-05)
 
 **Completed in the 2026-11-05 session — the final designations landed.**

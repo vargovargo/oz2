@@ -118,6 +118,30 @@ def load_shp(zip_path: Path, tmpdir: Path, suffix: str) -> gpd.GeoDataFrame | No
     return gdf
 
 
+def assign_place_names(tracts: gpd.GeoDataFrame, places: gpd.GeoDataFrame, name_col: str) -> pd.Series:
+    """Census Place containing each tract's interior point, as a Series indexed by geoid.
+
+    The point is `representative_point()` (guaranteed inside the polygon, unlike a centroid,
+    which can fall outside a crescent-shaped tract). A tract spanning several places gets the
+    one holding that point; tracts outside any incorporated place or CDP get null.
+
+    Bug history (fixed 2026-11-16): the earlier version built the point layer as
+    GeoDataFrame({"geoid": tracts["geoid"].values}, geometry=tracts.geometry.centroid). The
+    dict got a fresh 0..n index while the geometry kept the shapefile's row index (non-contiguous
+    after filtering to eligible tracts), so pandas paired each GEOID with some other row's
+    point. Nearly every place_name on the site was wrong. Keep geoid and geometry on the same
+    index.
+    """
+    pts = gpd.GeoDataFrame(
+        {"geoid": tracts["geoid"].to_numpy()},
+        geometry=tracts.geometry.representative_point().to_numpy(),
+        crs=tracts.crs,
+    )
+    places = places[[name_col, "geometry"]].to_crs(pts.crs)
+    joined = pts.sjoin(places, how="left", predicate="within")
+    return joined.groupby("geoid")[name_col].first().rename("place_name")
+
+
 # -------------------------------------------------------------------
 # Data loading
 # -------------------------------------------------------------------
@@ -251,20 +275,7 @@ def build_state(fips: str, state_rows: pd.DataFrame, tmpdir: Path) -> bool:
             if name_col:
                 places = places[[name_col, "geometry"]].copy()
 
-                # Compute centroids as a separate GeoDataFrame
-                centroids = gpd.GeoDataFrame(
-                    {"geoid": gdf["geoid"].values},
-                    geometry=gdf.geometry.centroid,
-                    crs="EPSG:4326",
-                )
-                joined = centroids.sjoin(
-                    places[["geometry", name_col]],
-                    how="left",
-                    predicate="within",
-                )
-                # Keep first match per geoid (sjoin can produce duplicates)
-                joined = joined.groupby("geoid")[name_col].first()
-                place_name_series = joined.rename("place_name")
+                place_name_series = assign_place_names(gdf, places, name_col)
     except Exception as e:
         print(f"  [{abbr}] Places unavailable ({e}); place_name will be null")
 
