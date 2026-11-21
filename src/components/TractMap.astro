@@ -188,7 +188,7 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
         </label>
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" data-filter="tribal" class="accent-oz-blue" />
-          <span class="text-oz-neutral-700">Tribal / AIAN overlap</span>
+          <span class="text-oz-neutral-700">Native land or community</span>
         </label>
       </div>
       <p class="text-oz-neutral-400 text-xs mt-2 leading-snug">Active filters narrow to tracts matching all selected criteria.</p>
@@ -360,14 +360,18 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
     // Tribal section
     let tribalSection = '';
     if (isTribal) {
-      const nameStr  = tribalName || 'Tribal area or demographic overlap detected';
-      const pctStr   = aianPct && aianPct > 0.005 ? ` — ${(aianPct * 100).toFixed(0)}% AIAN population` : '';
+      const landShare = props.native_land_share != null ? parseFloat(String(props.native_land_share)) : 0;
+      const hhlShare  = props.hhl_share != null ? parseFloat(String(props.hhl_share)) : 0;
+      const isHI      = stateAbbr === 'HI';
+      const landStr   = landShare >= 0.01 ? `${Math.round(landShare * 100)}% of tract is reservation or trust land`
+                      : hhlShare >= 0.01 ? `${Math.round(hhlShare * 100)}% of tract is Hawaiian Home Land` : '';
+      const pctStr    = aianPct != null ? `${(aianPct * 100).toFixed(0)}% Native residents${isHI ? ' (AIAN + NHPI)' : ''}` : '';
       tribalSection = `
         <div class="ozp-section">
-          <div class="ozp-section-head">Tribal / Indigenous Context</div>
-          <div class="ozp-row">
-            <span class="ozp-val">${nameStr}${pctStr} (Census ACS 2022)</span>
-          </div>
+          <div class="ozp-section-head">Native land and community</div>
+          ${tribalName ? `<div class="ozp-row"><span class="ozp-val">${tribalName}</span></div>` : ''}
+          ${landStr ? `<div class="ozp-row"><span class="ozp-val">${landStr}</span></div>` : ''}
+          ${pctStr ? `<div class="ozp-row"><span class="ozp-val">${pctStr} (ACS 2020–24)</span></div>` : ''}
         </div>`;
     }
 

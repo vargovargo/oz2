@@ -10,6 +10,20 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
+## Native lands lens on the designations (2026-11-21)
+
+`scripts/ingest_native_lands.py` → `data/native_lands.parquet` (all 25,462 eligible tracts: area share
+in federal reservation/trust land, Hawaiian Home Lands, OTSA/ANVSA/SDTSA kept separate; ACS 2020–24
+AIAN/NHPI counts). `scripts/analyze_native_lands.py` → `data/native_lands_analysis.json`, shown at
+`/designations#native-lands` and on state pages (`#native`). Two lenses: **land** (≥50% reservation/trust
+land; HI ≥10% Home Land; 193 eligible, 62 designated) and **people** (≥20% Native residents; 326 / 101).
+Lift ≈1.0 for both — no boost, so no share in the 1.18× rural preference. 44 of 76 reservations got ≥1
+designated tract; Navajo Nation 7/49 (NM 0/19). `native_lands.parquet` **supersedes `tribal_overlap.parquet`**
+in `analyze_designations.py` (tag `tribal` now 381 tracts, was 1,064) and in the map
+(`scripts/patch_geo_native.py`). Full notes: `docs/native-lands-designations-2026-11.md`.
+Pipeline order: after step 4 run `ingest_native_lands.py`, `analyze_designations.py`,
+`analyze_native_lands.py`, `patch_geo_native.py`.
+
 ## Fix 2026-11-16 — tract place names were wrong sitewide
 
 `build_state_geo.py` paired each tract GEOID with another shapefile row's centroid (index

@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getAllStates, getDesignationDetail, getDesignationAnalysis, TAG_LABELS } from '@/lib/states';
+import { getAllStates, getDesignationDetail, getDesignationAnalysis, getNativeAnalysis, TAG_LABELS } from '@/lib/states';
 import type { StateMetadata, TractTag } from '@/lib/states';
 import craPlaces from '../../../data/cra_lmi_places.json';
 import TractMap from '@/components/TractMap.astro';
@@ -38,6 +38,11 @@ const leaningSentence = (profile?.leaning ?? []).map((l: any, i: number, arr: an
   const t = i > 0 && l.text.startsWith('favored ') && prev.startsWith('favored ') ? l.text.slice(8) : l.text;
   return t + (i < arr.length - 2 ? ', ' : i === arr.length - 2 ? ' and ' : '');
 }).join('');
+// Native lands lens (scripts/analyze_native_lands.py). Null for states with no Native land
+// or community tracts and no tribal statistical areas.
+const native = getNativeAnalysis().states[fips] ?? null;
+const nativeHasData = native && (native.either.eligible > 0);
+const landWord = name === 'Hawaii' ? 'Hawaiian Home Land' : 'reservation or trust land';
 const cdeCount = new Set(detail.tracts.flatMap((t) => t.cdes)).size;
 const pct = (n: number, d: number) => (d ? Math.round((n / d) * 100) : 0);
 const fmtNum = (v: number | null | undefined, suffix = '') => (v == null ? '—' : `${v.toLocaleString()}${suffix}`);
@@ -816,10 +821,76 @@ const badgeColor = certified
     </div>
   </section>
 
-  <!-- 6. Tribal callout -->
-  <section class="mb-10">
-    <h2 class="text-lg font-semibold mb-4">Native / tribal</h2>
+  <!-- 6. Native lands and communities -->
+  <section id="native" class="mb-10">
+    <h2 class="text-lg font-semibold mb-4">Native lands and communities</h2>
+    {certified && native && (
+      <div class="bg-white border border-oz-neutral-200 rounded p-6 text-sm text-oz-neutral-700 mb-4">
+        {nativeHasData && (
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            {[
+              { v: `${native.land.designated} / ${native.land.eligible}`, l: `${landWord} tracts designated` },
+              { v: `${native.pop.designated} / ${native.pop.eligible}`, l: 'tracts with ≥20% Native residents designated' },
+              { v: `${native.native_share_eligible}% → ${native.native_share_designated}%`, l: 'Native share of residents: eligible pool → designated tracts' },
+            ].map(({ v, l }) => (
+              <div class="border border-oz-neutral-200 rounded p-4">
+                <p class="font-mono text-xl font-semibold text-oz-neutral-900 mb-1">{v}</p>
+                <p class="text-xs text-oz-neutral-500">{l}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {nativeHasData && (
+          <p class="mb-3">
+            {native.full_designation
+              ? <>{name} designated every eligible tract, so every Native land and community tract is a QOZ.</>
+              : <>{name} designated {native.rate}% of its eligible tracts overall. At that rate, about {native.expected_either}{' '}
+                  of its {native.either.eligible} Native land or community tracts would have been picked; {native.either.designated}{' '}
+                  {native.either.designated === 1 ? 'was' : 'were'}.
+                  {native.land_oz1.eligible === 1 && <> {`The one ${landWord} tract that had been an OZ 1.0 zone ${native.land_oz1.designated ? 'was' : 'was not'} redesignated.`}</>}
+                  {native.land_oz1.eligible > 1 && <> {`Of the ${native.land_oz1.eligible} ${landWord} tracts that had been OZ 1.0 zones, ${native.land_oz1.designated} ${native.land_oz1.designated === 1 ? 'was' : 'were'} redesignated.`}</>}
+                </>}
+          </p>
+        )}
+        {native.reservations.length > 0 && (
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-xs">
+              <thead class="bg-oz-neutral-100 text-oz-neutral-500 uppercase tracking-wide">
+                <tr><th class="px-2 py-1.5 text-left">Reservation / trust land</th><th class="px-2 py-1.5 text-right">Designated / eligible tracts</th></tr>
+              </thead>
+              <tbody>
+                {native.reservations.map((r: any, i: number) => (
+                  <tr class={i % 2 ? 'bg-oz-neutral-50' : ''}>
+                    <td class="px-2 py-1">{r.name}</td>
+                    <td class="px-2 py-1 text-right font-mono">{r.designated} / {r.eligible}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p class="text-[11px] text-oz-neutral-400 mt-1">Eligible tracts at least half inside the reservation or its trust land. Use the Native land / community tag in the tract finder above for every designated tract that touches one.</p>
+          </div>
+        )}
+        {native.otsa.eligible > 0 && (
+          <p class="mb-2 text-oz-neutral-600">{native.otsa.designated} of {native.otsa.eligible} eligible tracts lying mostly inside a{' '}
+            {name === 'Oklahoma' ? 'tribal statistical area (OTSA)' : 'tribal designated statistical area'} were designated.
+            {name === 'Oklahoma' && <> These areas follow the historical reservation boundaries of Oklahoma tribes; since <em>McGirt v. Oklahoma</em> (2020), courts have held several of those reservations were never disestablished, but Census still tabulates them as statistical areas, so they are not counted as reservation land above.</>}
+          </p>
+        )}
+        {native.sdtsa.eligible > 0 && (
+          <p class="mb-2 text-oz-neutral-600">{native.sdtsa.designated} of {native.sdtsa.eligible} eligible tracts lying mostly inside a state-designated tribal statistical area were designated. These are Census areas for state-recognized tribes, not trust land.</p>
+        )}
+        {native.anvsa.eligible > 0 && (
+          <p class="mb-2 text-oz-neutral-600">{native.anvsa.designated} of {native.anvsa.eligible} eligible tracts lying mostly inside an Alaska Native village statistical area were designated. Most villages are far smaller than their tract, so the population measure is the better guide in Alaska.</p>
+        )}
+        <p class="text-xs text-oz-neutral-500">
+          Reservation and trust land: ≥50% of tract area (Hawaiian Home Lands: ≥10%), Census TIGER/Line 2024. Native residents:
+          AIAN alone{name === 'Hawaii' ? ' plus NHPI alone' : ''}, ACS 2020–2024.
+          <a href="/designations#native-lands" class="text-oz-blue underline">National picture →</a>
+        </p>
+      </div>
+    )}
     <div class="bg-white border border-oz-neutral-200 rounded p-6 text-sm text-oz-neutral-700">
+      {certified && <p class="text-xs font-medium uppercase tracking-wide text-oz-neutral-400 mb-2">Nomination-era {name === 'Hawaii' ? 'Native Hawaiian' : 'tribal'} consultation</p>}
       {tribal_consultation.framework ? (
         <>
           <p>{tribal_consultation.framework}</p>
@@ -827,9 +898,17 @@ const badgeColor = certified
         </>
       ) : (
         <p class="text-oz-neutral-500">
-          No formal tribal consultation process has been published for {name}'s OZ 2.0 nomination.
-          If your jurisdiction contains or is adjacent to tribal land, contact the relevant
-          Tribal Historic Preservation Office (THPO) or tribal government directly before submitting a nomination.
+          {certified
+            ? (name === 'Hawaii'
+                ? <>No formal Native Hawaiian consultation process was published for Hawaii's OZ 2.0 nomination. For projects
+                    on or near Hawaiian Home Lands, the Department of Hawaiian Home Lands is the landholder and a principal;
+                    Native Hawaiian organizations and the Office of Hawaiian Affairs are the community counterparts.</>
+                : <>No formal tribal consultation process was published for {name}'s OZ 2.0 nomination. For projects on or near
+                    tribal land, the tribal government is a principal: contact it, and its Tribal Historic Preservation Office
+                    (THPO), before structuring a deal.</>)
+            : <>No formal tribal consultation process has been published for {name}'s OZ 2.0 nomination.
+                If your jurisdiction contains or is adjacent to tribal land, contact the relevant
+                Tribal Historic Preservation Office (THPO) or tribal government directly before submitting a nomination.</>}
         </p>
       )}
     </div>

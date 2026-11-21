@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-16",
+  "generated": "2026-11-21",
   "sources": {
    "designations": "Treasury OTP, OZ2-Designations-2027-Data-Transparency-10302026.xlsx",
    "eligible": "Treasury OTP, OZ2-Eligible-Tracts-Data-Transparency-10302026.xlsx",
@@ -12,7 +12,7 @@
    "oz1": "Was an OZ 1.0 tract (\u226550% of land area in a 2018 QOZ)",
    "nmtc": "Prior New Markets Tax Credit investment in the tract",
    "cra": "CRA-eligible (LMI or distressed/underserved middle-income)",
-   "tribal": "Overlaps tribal land or has a significant AIAN population",
+   "tribal": "Native land or community: \u226510% of the tract is reservation, trust land or Hawaiian Home Land, or \u226520% of residents are Native (AIAN; in Hawaii, AIAN + NHPI)",
    "housing": "Housing pressure: \u226550% renters and \u226550% of renters cost-burdened",
    "vacancy": "High vacancy: \u226515% of housing units vacant",
    "sweetspot": "Urban Institute Tier 1 \u2014 likely to attract investment, with larger impact",
@@ -111,13 +111,22 @@
    "lift": 0.91
   },
   {
-   "key": "is_tribal_overlap",
-   "label": "Tribal overlap",
-   "n_eligible": 1064,
-   "n_designated": 296,
-   "rate_with": 27.8,
+   "key": "native_land",
+   "label": "Reservation or trust land (\u226550% of tract)",
+   "n_eligible": 190,
+   "n_designated": 59,
+   "rate_with": 31.1,
    "rate_without": 25.4,
    "lift": 1.01
+  },
+  {
+   "key": "native_pop",
+   "label": "Native residents \u226520%",
+   "n_eligible": 324,
+   "n_designated": 99,
+   "rate_with": 30.6,
+   "rate_without": 25.4,
+   "lift": 0.96
   },
   {
    "key": "added_oct",

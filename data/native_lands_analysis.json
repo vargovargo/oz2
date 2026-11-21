@@ -1,0 +1,3057 @@
+{
+ "meta": {
+  "generated": "2026-11-21",
+  "definitions": {
+   "land": "\u226550% of tract area in a federally recognized reservation or off-reservation trust land, or (Hawaii) \u226510% in Hawaiian Home Lands",
+   "pop": "Native residents \u226520% of population (AIAN alone; in Hawaii, AIAN + NHPI alone)",
+   "maj": "Native residents \u226550%"
+  },
+  "sources": {
+   "boundaries": "Census TIGER/Line 2024 AIANNH; 2024 cartographic boundary tracts (500k)",
+   "population": "ACS 2020\u20132024 5-year, tables B02001, B02010, B02012"
+  }
+ },
+ "national": {
+  "eligible": 25462,
+  "designated": 6576,
+  "land": {
+   "eligible": 193,
+   "designated": 62
+  },
+  "land_res": {
+   "eligible": 184,
+   "designated": 60
+  },
+  "land_hhl": {
+   "eligible": 9,
+   "designated": 2
+  },
+  "pop": {
+   "eligible": 326,
+   "designated": 101
+  },
+  "maj": {
+   "eligible": 177,
+   "designated": 52
+  },
+  "either": {
+   "eligible": 352,
+   "designated": 113
+  },
+  "both": {
+   "eligible": 167,
+   "designated": 50
+  },
+  "land_only": {
+   "eligible": 26,
+   "designated": 12
+  },
+  "pop_only": {
+   "eligible": 159,
+   "designated": 51
+  },
+  "native_residents_eligible": 1491643,
+  "native_residents_designated": 428337,
+  "residents_eligible": 90433494,
+  "residents_designated": 23579966,
+  "land_oz1": {
+   "eligible": 62,
+   "designated": 32
+  },
+  "pop_oz1": {
+   "eligible": 102,
+   "designated": 54
+  },
+  "rural_share_land": 92.2,
+  "poverty_median_land": 28.7,
+  "poverty_median_all": 23.9,
+  "states_with_land": 21,
+  "states_with_pop": 30,
+  "native_resident_share_designated": 28.7,
+  "resident_share_designated": 26.1
+ },
+ "selection": {
+  "states": 50,
+  "excluded": [
+   "AS",
+   "GU",
+   "MP",
+   "VI",
+   "VT",
+   "WY"
+  ],
+  "land": {
+   "n_eligible": 190,
+   "n_designated": 59,
+   "rate": 31.1,
+   "expected": 58.2,
+   "lift": 1.01
+  },
+  "land_res": {
+   "n_eligible": 181,
+   "n_designated": 57,
+   "rate": 31.5,
+   "expected": 55.7,
+   "lift": 1.02
+  },
+  "pop": {
+   "n_eligible": 324,
+   "n_designated": 99,
+   "rate": 30.6,
+   "expected": 102.7,
+   "lift": 0.96
+  },
+  "maj": {
+   "n_eligible": 176,
+   "n_designated": 51,
+   "rate": 29.0,
+   "expected": 58.3,
+   "lift": 0.88
+  },
+  "both": {
+   "n_eligible": 165,
+   "n_designated": 48,
+   "rate": 29.1,
+   "expected": 51.6,
+   "lift": 0.93
+  },
+  "land_only": {
+   "n_eligible": 25,
+   "n_designated": 11,
+   "rate": 44.0,
+   "expected": 6.6,
+   "lift": 1.68
+  },
+  "pop_only": {
+   "n_eligible": 159,
+   "n_designated": 51,
+   "rate": 32.1,
+   "expected": 51.1,
+   "lift": 1.0
+  },
+  "rural_not_native": {
+   "n_eligible": 7956,
+   "n_designated": 2392,
+   "rate": 30.1,
+   "expected": 2027.9,
+   "lift": 1.18
+  },
+  "logit": {
+   "native_land": {
+    "odds_ratio": 1.01,
+    "ci": [
+     0.52,
+     1.95
+    ],
+    "ame_pp": 0.1,
+    "p": 0.98
+   },
+   "native_pop": {
+    "odds_ratio": 0.65,
+    "ci": [
+     0.4,
+     1.05
+    ],
+    "ame_pp": -7.2,
+    "p": 0.077
+   },
+   "n": 22904,
+   "n_native_land": 181,
+   "n_native_pop": 299,
+   "note": "Logit with state fixed effects and county-clustered SEs; same controls as the main model on /designations (poverty, income, population, density, unemployment, education, renters, vacancy, home value, residents of color, OZ 1.0, NMTC, rural, CRA, Urban tiers)."
+  },
+  "native_pct_percentile": {
+   "states": 13,
+   "designated_percentile": 50.6
+  }
+ },
+ "context": {
+  "otsa": {
+   "eligible": 252,
+   "designated": 65,
+   "states": [
+    "NY",
+    "OK"
+   ]
+  },
+  "anvsa": {
+   "eligible": 2,
+   "designated": 2,
+   "states": [
+    "AK"
+   ]
+  },
+  "sdtsa": {
+   "eligible": 119,
+   "designated": 25,
+   "states": [
+    "AL",
+    "DE",
+    "LA",
+    "NC",
+    "SC"
+   ]
+  }
+ },
+ "reservations": {
+  "n": 76,
+  "with_designation": 44,
+  "without_designation": 32,
+  "list": [
+   {
+    "name": "Navajo Nation",
+    "states": [
+     "AZ",
+     "NM",
+     "UT"
+    ],
+    "eligible": 49,
+    "designated": 7,
+    "native_residents": 135987,
+    "full_state": false
+   },
+   {
+    "name": "Pine Ridge",
+    "states": [
+     "SD"
+    ],
+    "eligible": 5,
+    "designated": 1,
+    "native_residents": 15025,
+    "full_state": false
+   },
+   {
+    "name": "Yakama Nation",
+    "states": [
+     "WA"
+    ],
+    "eligible": 5,
+    "designated": 4,
+    "native_residents": 3779,
+    "full_state": false
+   },
+   {
+    "name": "Fort Apache",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 4,
+    "designated": 1,
+    "native_residents": 13319,
+    "full_state": false
+   },
+   {
+    "name": "Standing Rock",
+    "states": [
+     "ND",
+     "SD"
+    ],
+    "eligible": 4,
+    "designated": 1,
+    "native_residents": 5636,
+    "full_state": false
+   },
+   {
+    "name": "Cheyenne River",
+    "states": [
+     "SD"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 5521,
+    "full_state": false
+   },
+   {
+    "name": "Colorado River",
+    "states": [
+     "AZ",
+     "CA"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 1310,
+    "full_state": false
+   },
+   {
+    "name": "Colville",
+    "states": [
+     "WA"
+    ],
+    "eligible": 3,
+    "designated": 2,
+    "native_residents": 3808,
+    "full_state": false
+   },
+   {
+    "name": "Crow",
+    "states": [
+     "MT"
+    ],
+    "eligible": 3,
+    "designated": 0,
+    "native_residents": 5408,
+    "full_state": false
+   },
+   {
+    "name": "Flathead",
+    "states": [
+     "MT"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 2969,
+    "full_state": false
+   },
+   {
+    "name": "Fort Berthold",
+    "states": [
+     "ND"
+    ],
+    "eligible": 3,
+    "designated": 2,
+    "native_residents": 3430,
+    "full_state": false
+   },
+   {
+    "name": "Gila River",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 11780,
+    "full_state": false
+   },
+   {
+    "name": "Hopi",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 3,
+    "designated": 0,
+    "native_residents": 10431,
+    "full_state": false
+   },
+   {
+    "name": "Osage",
+    "states": [
+     "OK"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 1499,
+    "full_state": false
+   },
+   {
+    "name": "Puyallup",
+    "states": [
+     "WA"
+    ],
+    "eligible": 3,
+    "designated": 2,
+    "native_residents": 344,
+    "full_state": false
+   },
+   {
+    "name": "Tohono O'odham Nation",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 6313,
+    "full_state": false
+   },
+   {
+    "name": "White Earth",
+    "states": [
+     "MN"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 2913,
+    "full_state": false
+   },
+   {
+    "name": "Wind River",
+    "states": [
+     "WY"
+    ],
+    "eligible": 3,
+    "designated": 3,
+    "native_residents": 4961,
+    "full_state": true
+   },
+   {
+    "name": "Zuni",
+    "states": [
+     "NM"
+    ],
+    "eligible": 3,
+    "designated": 0,
+    "native_residents": 6872,
+    "full_state": false
+   },
+   {
+    "name": "Agua Caliente",
+    "states": [
+     "CA"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 56,
+    "full_state": false
+   },
+   {
+    "name": "Allegany",
+    "states": [
+     "NY"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 1274,
+    "full_state": false
+   },
+   {
+    "name": "Blackfeet",
+    "states": [
+     "MT"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 7970,
+    "full_state": false
+   },
+   {
+    "name": "Cattaraugus",
+    "states": [
+     "NY"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 1193,
+    "full_state": false
+   },
+   {
+    "name": "Fort Belknap",
+    "states": [
+     "MT"
+    ],
+    "eligible": 2,
+    "designated": 2,
+    "native_residents": 2782,
+    "full_state": false
+   },
+   {
+    "name": "Fort Hall",
+    "states": [
+     "ID"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 3012,
+    "full_state": false
+   },
+   {
+    "name": "Fort Peck",
+    "states": [
+     "MT"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 5770,
+    "full_state": false
+   },
+   {
+    "name": "Isabella",
+    "states": [
+     "MI"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 203,
+    "full_state": false
+   },
+   {
+    "name": "Jicarilla Apache Nation",
+    "states": [
+     "NM"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 6398,
+    "full_state": false
+   },
+   {
+    "name": "Lac Courte Oreilles",
+    "states": [
+     "WI"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 1994,
+    "full_state": false
+   },
+   {
+    "name": "Lake Traverse",
+    "states": [
+     "SD"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 3095,
+    "full_state": false
+   },
+   {
+    "name": "Leech Lake",
+    "states": [
+     "MN"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 2310,
+    "full_state": false
+   },
+   {
+    "name": "Rosebud",
+    "states": [
+     "SD"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 7739,
+    "full_state": false
+   },
+   {
+    "name": "San Carlos",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 5187,
+    "full_state": false
+   },
+   {
+    "name": "Santa Clara",
+    "states": [
+     "NM"
+    ],
+    "eligible": 2,
+    "designated": 2,
+    "native_residents": 227,
+    "full_state": false
+   },
+   {
+    "name": "Spirit Lake",
+    "states": [
+     "ND"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 2927,
+    "full_state": false
+   },
+   {
+    "name": "Ute Mountain",
+    "states": [
+     "CO",
+     "NM"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 1579,
+    "full_state": false
+   },
+   {
+    "name": "Yankton",
+    "states": [
+     "SD"
+    ],
+    "eligible": 2,
+    "designated": 1,
+    "native_residents": 2603,
+    "full_state": false
+   },
+   {
+    "name": "Crow Creek",
+    "states": [
+     "SD"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1428,
+    "full_state": false
+   },
+   {
+    "name": "Fort McDowell Yavapai Nation",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 739,
+    "full_state": false
+   },
+   {
+    "name": "Fort Yuma",
+    "states": [
+     "CA"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 900,
+    "full_state": false
+   },
+   {
+    "name": "Hoopa Valley",
+    "states": [
+     "CA"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1655,
+    "full_state": false
+   },
+   {
+    "name": "Hualapai",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1144,
+    "full_state": false
+   },
+   {
+    "name": "Isleta",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2493,
+    "full_state": false
+   },
+   {
+    "name": "Jemez",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2189,
+    "full_state": false
+   },
+   {
+    "name": "Lac du Flambeau",
+    "states": [
+     "WI"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1840,
+    "full_state": false
+   },
+   {
+    "name": "Laguna",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 2992,
+    "full_state": false
+   },
+   {
+    "name": "Lower Brule",
+    "states": [
+     "SD"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1352,
+    "full_state": false
+   },
+   {
+    "name": "Lummi",
+    "states": [
+     "WA"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 1913,
+    "full_state": false
+   },
+   {
+    "name": "Makah",
+    "states": [
+     "WA"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 899,
+    "full_state": false
+   },
+   {
+    "name": "Menominee",
+    "states": [
+     "WI"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 1345,
+    "full_state": false
+   },
+   {
+    "name": "Mescalero",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 3198,
+    "full_state": false
+   },
+   {
+    "name": "Mille Lacs",
+    "states": [
+     "MN"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 900,
+    "full_state": false
+   },
+   {
+    "name": "Mississippi Choctaw",
+    "states": [
+     "MS"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 3016,
+    "full_state": false
+   },
+   {
+    "name": "Nez Perce",
+    "states": [
+     "ID"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 25,
+    "full_state": false
+   },
+   {
+    "name": "Northern Cheyenne",
+    "states": [
+     "MT"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2436,
+    "full_state": false
+   },
+   {
+    "name": "Oneida Indian Nation",
+    "states": [
+     "NY"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 9,
+    "full_state": false
+   },
+   {
+    "name": "Onondaga Nation",
+    "states": [
+     "NY"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 317,
+    "full_state": false
+   },
+   {
+    "name": "Pascua Pueblo Yaqui",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2849,
+    "full_state": false
+   },
+   {
+    "name": "Pyramid Lake Paiute",
+    "states": [
+     "NV"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 906,
+    "full_state": false
+   },
+   {
+    "name": "Quinault",
+    "states": [
+     "WA"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 867,
+    "full_state": false
+   },
+   {
+    "name": "Red Lake",
+    "states": [
+     "MN"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 5079,
+    "full_state": false
+   },
+   {
+    "name": "Rocky Boy's",
+    "states": [
+     "MT"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2407,
+    "full_state": false
+   },
+   {
+    "name": "Salt River",
+    "states": [
+     "AZ"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 3153,
+    "full_state": false
+   },
+   {
+    "name": "Sandia",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 196,
+    "full_state": false
+   },
+   {
+    "name": "Santo Domingo",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2189,
+    "full_state": false
+   },
+   {
+    "name": "Skokomish",
+    "states": [
+     "WA"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 285,
+    "full_state": false
+   },
+   {
+    "name": "Southern Ute",
+    "states": [
+     "CO"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 41,
+    "full_state": false
+   },
+   {
+    "name": "Spokane",
+    "states": [
+     "WA"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1340,
+    "full_state": false
+   },
+   {
+    "name": "St. Regis Mohawk",
+    "states": [
+     "NY"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 2987,
+    "full_state": false
+   },
+   {
+    "name": "Taos",
+    "states": [
+     "NM"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 1030,
+    "full_state": false
+   },
+   {
+    "name": "Tonawanda",
+    "states": [
+     "NY"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 147,
+    "full_state": false
+   },
+   {
+    "name": "Turtle Mountain",
+    "states": [
+     "ND"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 4660,
+    "full_state": false
+   },
+   {
+    "name": "Tuscarora Nation",
+    "states": [
+     "NY"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 273,
+    "full_state": false
+   },
+   {
+    "name": "Uintah and Ouray",
+    "states": [
+     "UT"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 235,
+    "full_state": false
+   },
+   {
+    "name": "Warm Springs",
+    "states": [
+     "OR"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 2208,
+    "full_state": false
+   },
+   {
+    "name": "Winnebago",
+    "states": [
+     "NE"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 1923,
+    "full_state": false
+   }
+  ],
+  "note": "Federally recognized reservations and off-reservation trust land with at least one eligible tract \u226550% inside it. A tract is attributed to the entity holding the most land in it."
+ },
+ "states": {
+  "01": {
+   "abbr": "AL",
+   "name": "Alabama",
+   "eligible": 563,
+   "designated": 141,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 15,
+    "designated": 5
+   },
+   "native_residents_eligible": 8403,
+   "native_residents_designated": 2753,
+   "residents_eligible": 1651814,
+   "residents_designated": 428052,
+   "native_share_eligible": 0.5,
+   "native_share_designated": 0.6,
+   "reservations": [],
+   "expected_either": 0.5
+  },
+  "02": {
+   "abbr": "AK",
+   "name": "Alaska",
+   "eligible": 33,
+   "designated": 25,
+   "rate": 75.8,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 16,
+    "designated": 13
+   },
+   "maj": {
+    "eligible": 9,
+    "designated": 7
+   },
+   "either": {
+    "eligible": 16,
+    "designated": 13
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 2,
+    "designated": 2
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 42659,
+   "native_residents_designated": 26258,
+   "residents_eligible": 109828,
+   "residents_designated": 72553,
+   "native_share_eligible": 38.8,
+   "native_share_designated": 36.2,
+   "reservations": [],
+   "expected_either": 12.1
+  },
+  "04": {
+   "abbr": "AZ",
+   "name": "Arizona",
+   "eligible": 506,
+   "designated": 127,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 48,
+    "designated": 14
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 52,
+    "designated": 15
+   },
+   "maj": {
+    "eligible": 45,
+    "designated": 13
+   },
+   "either": {
+    "eligible": 52,
+    "designated": 15
+   },
+   "land_oz1": {
+    "eligible": 11,
+    "designated": 7
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 198220,
+   "native_residents_designated": 51177,
+   "residents_eligible": 1945536,
+   "residents_designated": 482575,
+   "native_share_eligible": 10.2,
+   "native_share_designated": 10.6,
+   "reservations": [
+    {
+     "name": "Navajo Nation",
+     "eligible": 28,
+     "designated": 7
+    },
+    {
+     "name": "Fort Apache",
+     "eligible": 4,
+     "designated": 1
+    },
+    {
+     "name": "Gila River",
+     "eligible": 3,
+     "designated": 1
+    },
+    {
+     "name": "Hopi",
+     "eligible": 3,
+     "designated": 0
+    },
+    {
+     "name": "Tohono O'odham Nation",
+     "eligible": 3,
+     "designated": 1
+    },
+    {
+     "name": "San Carlos",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Colorado River",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Fort McDowell Yavapai Nation",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Hualapai",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Pascua Pueblo Yaqui",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Salt River",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 13.1
+  },
+  "06": {
+   "abbr": "CA",
+   "name": "California",
+   "eligible": 2479,
+   "designated": 620,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 6,
+    "designated": 2
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 8,
+    "designated": 4
+   },
+   "maj": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 12,
+    "designated": 5
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 193485,
+   "native_residents_designated": 49752,
+   "residents_eligible": 10187281,
+   "residents_designated": 2647006,
+   "native_share_eligible": 1.9,
+   "native_share_designated": 1.9,
+   "reservations": [
+    {
+     "name": "Agua Caliente",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Colorado River",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Fort Yuma",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Hoopa Valley",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 3.0
+  },
+  "08": {
+   "abbr": "CO",
+   "name": "Colorado",
+   "eligible": 362,
+   "designated": 91,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 23665,
+   "native_residents_designated": 7465,
+   "residents_eligible": 1350646,
+   "residents_designated": 322560,
+   "native_share_eligible": 1.8,
+   "native_share_designated": 2.3,
+   "reservations": [
+    {
+     "name": "Southern Ute",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Ute Mountain",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 0.8
+  },
+  "10": {
+   "abbr": "DE",
+   "name": "Delaware",
+   "eligible": 61,
+   "designated": 25,
+   "rate": 41.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "native_residents_eligible": 2052,
+   "native_residents_designated": 1359,
+   "residents_eligible": 229604,
+   "residents_designated": 98375,
+   "native_share_eligible": 0.9,
+   "native_share_designated": 1.4,
+   "reservations": []
+  },
+  "12": {
+   "abbr": "FL",
+   "name": "Florida",
+   "eligible": 1367,
+   "designated": 342,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 31970,
+   "native_residents_designated": 9338,
+   "residents_eligible": 5501704,
+   "residents_designated": 1369041,
+   "native_share_eligible": 0.6,
+   "native_share_designated": 0.7,
+   "reservations": [],
+   "expected_either": 0.5
+  },
+  "15": {
+   "abbr": "HI",
+   "name": "Hawaii",
+   "eligible": 89,
+   "designated": 25,
+   "rate": 28.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 9,
+    "designated": 2
+   },
+   "land_hhl": {
+    "eligible": 9,
+    "designated": 2
+   },
+   "pop": {
+    "eligible": 25,
+    "designated": 9
+   },
+   "maj": {
+    "eligible": 5,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 27,
+    "designated": 9
+   },
+   "land_oz1": {
+    "eligible": 2,
+    "designated": 2
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 45709,
+   "native_residents_designated": 13944,
+   "residents_eligible": 263986,
+   "residents_designated": 75924,
+   "native_share_eligible": 17.3,
+   "native_share_designated": 18.4,
+   "reservations": [],
+   "expected_either": 7.6
+  },
+  "16": {
+   "abbr": "ID",
+   "name": "Idaho",
+   "eligible": 81,
+   "designated": 25,
+   "rate": 30.9,
+   "full_designation": false,
+   "land": {
+    "eligible": 3,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 6645,
+   "native_residents_designated": 1182,
+   "residents_eligible": 321156,
+   "residents_designated": 100727,
+   "native_share_eligible": 2.1,
+   "native_share_designated": 1.2,
+   "reservations": [
+    {
+     "name": "Fort Hall",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Nez Perce",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 0.9
+  },
+  "20": {
+   "abbr": "KS",
+   "name": "Kansas",
+   "eligible": 211,
+   "designated": 53,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 8817,
+   "native_residents_designated": 1827,
+   "residents_eligible": 662199,
+   "residents_designated": 167803,
+   "native_share_eligible": 1.3,
+   "native_share_designated": 1.1,
+   "reservations": [],
+   "expected_either": 0.3
+  },
+  "22": {
+   "abbr": "LA",
+   "name": "Louisiana",
+   "eligible": 621,
+   "designated": 156,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 26,
+    "designated": 4
+   },
+   "native_residents_eligible": 12229,
+   "native_residents_designated": 2540,
+   "residents_eligible": 1837168,
+   "residents_designated": 471616,
+   "native_share_eligible": 0.7,
+   "native_share_designated": 0.5,
+   "reservations": [],
+   "expected_either": 0.3
+  },
+  "26": {
+   "abbr": "MI",
+   "name": "Michigan",
+   "eligible": 860,
+   "designated": 215,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 14466,
+   "native_residents_designated": 4710,
+   "residents_eligible": 2479756,
+   "residents_designated": 640084,
+   "native_share_eligible": 0.6,
+   "native_share_designated": 0.7,
+   "reservations": [
+    {
+     "name": "Isabella",
+     "eligible": 2,
+     "designated": 0
+    }
+   ],
+   "expected_either": 0.8
+  },
+  "27": {
+   "abbr": "MN",
+   "name": "Minnesota",
+   "eligible": 291,
+   "designated": 73,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 7,
+    "designated": 2
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 8,
+    "designated": 2
+   },
+   "maj": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 8,
+    "designated": 2
+   },
+   "land_oz1": {
+    "eligible": 4,
+    "designated": 1
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 25010,
+   "native_residents_designated": 8915,
+   "residents_eligible": 1030368,
+   "residents_designated": 256836,
+   "native_share_eligible": 2.4,
+   "native_share_designated": 3.5,
+   "reservations": [
+    {
+     "name": "White Earth",
+     "eligible": 3,
+     "designated": 1
+    },
+    {
+     "name": "Leech Lake",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Mille Lacs",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Red Lake",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 2.0
+  },
+  "28": {
+   "abbr": "MS",
+   "name": "Mississippi",
+   "eligible": 406,
+   "designated": 102,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 9128,
+   "native_residents_designated": 4407,
+   "residents_eligible": 1241136,
+   "residents_designated": 314093,
+   "native_share_eligible": 0.7,
+   "native_share_designated": 1.4,
+   "reservations": [
+    {
+     "name": "Mississippi Choctaw",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 0.8
+  },
+  "30": {
+   "abbr": "MT",
+   "name": "Montana",
+   "eligible": 58,
+   "designated": 25,
+   "rate": 43.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 14,
+    "designated": 5
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 16,
+    "designated": 5
+   },
+   "maj": {
+    "eligible": 12,
+    "designated": 4
+   },
+   "either": {
+    "eligible": 17,
+    "designated": 5
+   },
+   "land_oz1": {
+    "eligible": 7,
+    "designated": 2
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 38367,
+   "native_residents_designated": 15871,
+   "residents_eligible": 179569,
+   "residents_designated": 80644,
+   "native_share_eligible": 21.4,
+   "native_share_designated": 19.7,
+   "reservations": [
+    {
+     "name": "Crow",
+     "eligible": 3,
+     "designated": 0
+    },
+    {
+     "name": "Flathead",
+     "eligible": 3,
+     "designated": 1
+    },
+    {
+     "name": "Blackfeet",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Fort Belknap",
+     "eligible": 2,
+     "designated": 2
+    },
+    {
+     "name": "Fort Peck",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Northern Cheyenne",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Rocky Boy's",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 7.3
+  },
+  "31": {
+   "abbr": "NE",
+   "name": "Nebraska",
+   "eligible": 112,
+   "designated": 28,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 7631,
+   "native_residents_designated": 1885,
+   "residents_eligible": 365834,
+   "residents_designated": 104240,
+   "native_share_eligible": 2.1,
+   "native_share_designated": 1.8,
+   "reservations": [
+    {
+     "name": "Winnebago",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 0.2
+  },
+  "32": {
+   "abbr": "NV",
+   "name": "Nevada",
+   "eligible": 195,
+   "designated": 49,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 3,
+    "designated": 2
+   },
+   "maj": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 2
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 14349,
+   "native_residents_designated": 4322,
+   "residents_eligible": 738796,
+   "residents_designated": 167643,
+   "native_share_eligible": 1.9,
+   "native_share_designated": 2.6,
+   "reservations": [
+    {
+     "name": "Pyramid Lake Paiute",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 0.8
+  },
+  "35": {
+   "abbr": "NM",
+   "name": "New Mexico",
+   "eligible": 258,
+   "designated": 65,
+   "rate": 25.2,
+   "full_designation": false,
+   "land": {
+    "eligible": 34,
+    "designated": 6
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 55,
+    "designated": 12
+   },
+   "maj": {
+    "eligible": 41,
+    "designated": 7
+   },
+   "either": {
+    "eligible": 58,
+    "designated": 15
+   },
+   "land_oz1": {
+    "eligible": 6,
+    "designated": 2
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 134548,
+   "native_residents_designated": 28977,
+   "residents_eligible": 863702,
+   "residents_designated": 230223,
+   "native_share_eligible": 15.6,
+   "native_share_designated": 12.6,
+   "reservations": [
+    {
+     "name": "Navajo Nation",
+     "eligible": 19,
+     "designated": 0
+    },
+    {
+     "name": "Zuni",
+     "eligible": 3,
+     "designated": 0
+    },
+    {
+     "name": "Jicarilla Apache Nation",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Santa Clara",
+     "eligible": 2,
+     "designated": 2
+    },
+    {
+     "name": "Isleta",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Jemez",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Laguna",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Mescalero",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Sandia",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Santo Domingo",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Taos",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Ute Mountain",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 14.6
+  },
+  "36": {
+   "abbr": "NY",
+   "name": "New York",
+   "eligible": 1717,
+   "designated": 430,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 9,
+    "designated": 2
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 10,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 5,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 12,
+    "designated": 2
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 62954,
+   "native_residents_designated": 18311,
+   "residents_eligible": 6243633,
+   "residents_designated": 1690801,
+   "native_share_eligible": 1.0,
+   "native_share_designated": 1.1,
+   "reservations": [
+    {
+     "name": "Allegany",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Cattaraugus",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Oneida Indian Nation",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Onondaga Nation",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "St. Regis Mohawk",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Tonawanda",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Tuscarora Nation",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 3.0
+  },
+  "37": {
+   "abbr": "NC",
+   "name": "North Carolina",
+   "eligible": 814,
+   "designated": 204,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 25,
+    "designated": 2
+   },
+   "maj": {
+    "eligible": 12,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 25,
+    "designated": 2
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 74,
+    "designated": 14
+   },
+   "native_residents_eligible": 70321,
+   "native_residents_designated": 13317,
+   "residents_eligible": 2990956,
+   "residents_designated": 775412,
+   "native_share_eligible": 2.4,
+   "native_share_designated": 1.7,
+   "reservations": [],
+   "expected_either": 6.3
+  },
+  "38": {
+   "abbr": "ND",
+   "name": "North Dakota",
+   "eligible": 37,
+   "designated": 25,
+   "rate": 67.6,
+   "full_designation": false,
+   "land": {
+    "eligible": 8,
+    "designated": 5
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 10,
+    "designated": 5
+   },
+   "maj": {
+    "eligible": 8,
+    "designated": 4
+   },
+   "either": {
+    "eligible": 10,
+    "designated": 5
+   },
+   "land_oz1": {
+    "eligible": 4,
+    "designated": 2
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 21170,
+   "native_residents_designated": 13527,
+   "residents_eligible": 123308,
+   "residents_designated": 91456,
+   "native_share_eligible": 17.2,
+   "native_share_designated": 14.8,
+   "reservations": [
+    {
+     "name": "Fort Berthold",
+     "eligible": 3,
+     "designated": 2
+    },
+    {
+     "name": "Spirit Lake",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Standing Rock",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Turtle Mountain",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 6.8
+  },
+  "40": {
+   "abbr": "OK",
+   "name": "Oklahoma",
+   "eligible": 414,
+   "designated": 104,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 37,
+    "designated": 8
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 39,
+    "designated": 8
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "otsa": {
+    "eligible": 251,
+    "designated": 64
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 101766,
+   "native_residents_designated": 28081,
+   "residents_eligible": 1223905,
+   "residents_designated": 315281,
+   "native_share_eligible": 8.3,
+   "native_share_designated": 8.9,
+   "reservations": [
+    {
+     "name": "Osage",
+     "eligible": 3,
+     "designated": 1
+    }
+   ],
+   "expected_either": 9.8
+  },
+  "41": {
+   "abbr": "OR",
+   "name": "Oregon",
+   "eligible": 229,
+   "designated": 58,
+   "rate": 25.3,
+   "full_designation": false,
+   "land": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 2,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 15829,
+   "native_residents_designated": 5127,
+   "residents_eligible": 933222,
+   "residents_designated": 233023,
+   "native_share_eligible": 1.7,
+   "native_share_designated": 2.2,
+   "reservations": [
+    {
+     "name": "Warm Springs",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 0.5
+  },
+  "42": {
+   "abbr": "PA",
+   "name": "Pennsylvania",
+   "eligible": 871,
+   "designated": 218,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 12320,
+   "native_residents_designated": 2245,
+   "residents_eligible": 2951539,
+   "residents_designated": 690008,
+   "native_share_eligible": 0.4,
+   "native_share_designated": 0.3,
+   "reservations": [],
+   "expected_either": 0.3
+  },
+  "45": {
+   "abbr": "SC",
+   "name": "South Carolina",
+   "eligible": 449,
+   "designated": 113,
+   "rate": 25.2,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 3,
+    "designated": 2
+   },
+   "native_residents_eligible": 7650,
+   "native_residents_designated": 1954,
+   "residents_eligible": 1497051,
+   "residents_designated": 407658,
+   "native_share_eligible": 0.5,
+   "native_share_designated": 0.5,
+   "reservations": []
+  },
+  "46": {
+   "abbr": "SD",
+   "name": "South Dakota",
+   "eligible": 52,
+   "designated": 25,
+   "rate": 48.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 18,
+    "designated": 7
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 23,
+    "designated": 10
+   },
+   "maj": {
+    "eligible": 16,
+    "designated": 6
+   },
+   "either": {
+    "eligible": 23,
+    "designated": 10
+   },
+   "land_oz1": {
+    "eligible": 5,
+    "designated": 5
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 48957,
+   "native_residents_designated": 22861,
+   "residents_eligible": 170354,
+   "residents_designated": 84574,
+   "native_share_eligible": 28.7,
+   "native_share_designated": 27.0,
+   "reservations": [
+    {
+     "name": "Pine Ridge",
+     "eligible": 5,
+     "designated": 1
+    },
+    {
+     "name": "Cheyenne River",
+     "eligible": 3,
+     "designated": 1
+    },
+    {
+     "name": "Lake Traverse",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Rosebud",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Standing Rock",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Yankton",
+     "eligible": 2,
+     "designated": 1
+    },
+    {
+     "name": "Crow Creek",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Lower Brule",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 11.1
+  },
+  "47": {
+   "abbr": "TN",
+   "name": "Tennessee",
+   "eligible": 509,
+   "designated": 128,
+   "rate": 25.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 8695,
+   "native_residents_designated": 2119,
+   "residents_eligible": 1875813,
+   "residents_designated": 511759,
+   "native_share_eligible": 0.5,
+   "native_share_designated": 0.4,
+   "reservations": [],
+   "expected_either": 0.3
+  },
+  "49": {
+   "abbr": "UT",
+   "name": "Utah",
+   "eligible": 147,
+   "designated": 37,
+   "rate": 25.2,
+   "full_designation": false,
+   "land": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 2,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 14643,
+   "native_residents_designated": 1625,
+   "residents_eligible": 617282,
+   "residents_designated": 155756,
+   "native_share_eligible": 2.4,
+   "native_share_designated": 1.0,
+   "reservations": [
+    {
+     "name": "Navajo Nation",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Uintah and Ouray",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 0.8
+  },
+  "51": {
+   "abbr": "VA",
+   "name": "Virginia",
+   "eligible": 611,
+   "designated": 153,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 1,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 10263,
+   "native_residents_designated": 1526,
+   "residents_eligible": 2186604,
+   "residents_designated": 558237,
+   "native_share_eligible": 0.5,
+   "native_share_designated": 0.3,
+   "reservations": [],
+   "expected_either": 0.3
+  },
+  "53": {
+   "abbr": "WA",
+   "name": "Washington",
+   "eligible": 396,
+   "designated": 99,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 16,
+    "designated": 9
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 10,
+    "designated": 5
+   },
+   "maj": {
+    "eligible": 6,
+    "designated": 3
+   },
+   "either": {
+    "eligible": 16,
+    "designated": 9
+   },
+   "land_oz1": {
+    "eligible": 7,
+    "designated": 4
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 34859,
+   "native_residents_designated": 12789,
+   "residents_eligible": 1591515,
+   "residents_designated": 399988,
+   "native_share_eligible": 2.2,
+   "native_share_designated": 3.2,
+   "reservations": [
+    {
+     "name": "Yakama Nation",
+     "eligible": 5,
+     "designated": 4
+    },
+    {
+     "name": "Colville",
+     "eligible": 3,
+     "designated": 2
+    },
+    {
+     "name": "Puyallup",
+     "eligible": 3,
+     "designated": 2
+    },
+    {
+     "name": "Lummi",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Makah",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Quinault",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Skokomish",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Spokane",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "expected_either": 4.0
+  },
+  "55": {
+   "abbr": "WI",
+   "name": "Wisconsin",
+   "eligible": 308,
+   "designated": 77,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 4,
+    "designated": 1
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 4,
+    "designated": 1
+   },
+   "maj": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 4,
+    "designated": 1
+   },
+   "land_oz1": {
+    "eligible": 3,
+    "designated": 1
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 13049,
+   "native_residents_designated": 4290,
+   "residents_eligible": 995228,
+   "residents_designated": 244542,
+   "native_share_eligible": 1.3,
+   "native_share_designated": 1.8,
+   "reservations": [
+    {
+     "name": "Lac Courte Oreilles",
+     "eligible": 2,
+     "designated": 0
+    },
+    {
+     "name": "Lac du Flambeau",
+     "eligible": 1,
+     "designated": 1
+    },
+    {
+     "name": "Menominee",
+     "eligible": 1,
+     "designated": 0
+    }
+   ],
+   "expected_either": 1.0
+  },
+  "56": {
+   "abbr": "WY",
+   "name": "Wyoming",
+   "eligible": 20,
+   "designated": 20,
+   "rate": 100.0,
+   "full_designation": true,
+   "land": {
+    "eligible": 3,
+    "designated": 3
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 2,
+    "designated": 2
+   },
+   "maj": {
+    "eligible": 1,
+    "designated": 1
+   },
+   "either": {
+    "eligible": 3,
+    "designated": 3
+   },
+   "land_oz1": {
+    "eligible": 2,
+    "designated": 2
+   },
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 5436,
+   "native_residents_designated": 5436,
+   "residents_eligible": 66090,
+   "residents_designated": 66090,
+   "native_share_eligible": 8.2,
+   "native_share_designated": 8.2,
+   "reservations": [
+    {
+     "name": "Wind River",
+     "eligible": 3,
+     "designated": 3
+    }
+   ]
+  }
+ }
+}

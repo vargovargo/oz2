@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getAllStates, getDesignationAnalysis } from '@/lib/states';
+import { getAllStates, getDesignationAnalysis, getNativeAnalysis } from '@/lib/states';
 import { DATES, fmt } from '@/lib/timeline';
 
 const a = getDesignationAnalysis();
@@ -11,6 +11,15 @@ const con = Object.fromEntries(a.continuous.map((c: any) => [c.key, c]));
 const term = Object.fromEntries(a.logit.terms.map((t: any) => [t.term, t]));
 
 const pct = (x: number, d: number) => Math.round((x / d) * 1000) / 10;
+
+// Native lands lens (scripts/analyze_native_lands.py)
+const na = getNativeAnalysis();
+const nn = na.national, ns = na.selection;
+const nResTable = na.reservations.list.filter((r: any) => r.eligible >= 3);
+const navajoNM = na.states['35']?.reservations.find((r: any) => r.name === 'Navajo Nation');
+const nStates = Object.entries(na.states).map(([fips, s]: [string, any]) => ({ fips, ...s }))
+  .filter((s: any) => s.either.eligible >= 5)
+  .sort((x: any, y: any) => y.either.eligible - x.either.eligible);
 const oz1Lost = n.oz1.oz1_2020_tracts - n.oz1.redesignated;
 
 // Lift chart: sorted, with 1.0 as the reference line.
@@ -101,6 +110,13 @@ const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
           Rural tracts were {Math.round(n.eligible_rural / n.eligible * 100)}% of the eligible pool and{' '}
           {pct(n.designated_rural, n.designated)}% of designations ({bin.is_rural.lift}× expected). The QROF
           rural bonus shifted selection at the margin, not wholesale.
+        </li>
+        <li>
+          <strong class="text-oz-neutral-900">Native lands got neither a boost nor a penalty on average</strong>{' '}
+          — reservation and trust land tracts were picked at {ns.land.lift}× the expected rate — which means they did
+          not share in the rural preference. Outcomes by reservation vary widely: {na.reservations.without_designation}{' '}
+          reservations in states that had to choose received no designated tract.{' '}
+          <a href="#native-lands" class="text-oz-blue underline">Native lands →</a>
         </li>
         <li>
           <strong class="text-oz-neutral-900">Distress did not drive selection.</strong>{' '}
@@ -289,6 +305,119 @@ const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
       </p>
     </section>
 
+    <section id="native-lands" class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">Native lands and communities<a href="#native-lands" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        Two questions, kept apart because they pick out different tracts. <strong>Land:</strong> is at least half
+        the tract federally recognized reservation or off-reservation trust land (in Hawaii, at least a tenth
+        Hawaiian Home Land)? <strong>People:</strong> are at least 20% of residents Native — American Indian or
+        Alaska Native, plus Native Hawaiian and Pacific Islander in Hawaii? {nn.land.eligible} eligible tracts meet
+        the land test and {nn.pop.eligible} the population test; {nn.both.eligible} meet both. The land tracts are
+        overwhelmingly rural ({nn.rural_share_land}%) and poorer than the eligible pool (median poverty{' '}
+        {nn.poverty_median_land}% against {nn.poverty_median_all}%).
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
+        {[
+          { v: `${nn.land.designated} / ${nn.land.eligible}`, l: 'reservation, trust or Home Land tracts designated' },
+          { v: `${nn.pop.designated} / ${nn.pop.eligible}`, l: 'tracts with ≥20% Native residents designated' },
+          { v: `${na.reservations.with_designation} / ${na.reservations.n}`, l: 'reservations with at least one designated tract' },
+          { v: `${nn.native_resident_share_designated}%`, l: `of Native residents of eligible tracts now live in a QOZ (all residents: ${nn.resident_share_designated}%)` },
+        ].map(({ v, l }) => (
+          <div class="bg-white border border-oz-neutral-200 rounded p-5">
+            <p class="font-mono text-2xl font-semibold text-oz-neutral-900 mb-1">{v}</p>
+            <p class="text-xs text-oz-neutral-500">{l}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        <strong>Nationally, neither lens moved the odds.</strong> Within states, reservation and trust land tracts
+        were designated {ns.land.lift}× as often as each state's overall rate would predict, tracts with a
+        substantial Native population {ns.pop.lift}×, and majority-Native tracts {ns.maj.lift}×. That is neutral, but
+        it is worth setting beside the rural preference: other rural tracts were picked {ns.rural_not_native.lift}× as
+        often as expected, and these tracts are nearly all rural. After controlling for poverty, income, density,
+        incumbency and the rest of the model above, the land lens is flat (odds ratio {ns.logit.native_land.odds_ratio},
+        95% interval {ns.logit.native_land.ci[0]}–{ns.logit.native_land.ci[1]}) and the population lens leans
+        negative without reaching conventional significance (odds ratio {ns.logit.native_pop.odds_ratio},{' '}
+        {ns.logit.native_pop.ci[0]}–{ns.logit.native_pop.ci[1]}, p = {ns.logit.native_pop.p}). Incumbency worked here
+        as everywhere: {nn.land_oz1.designated} of the {nn.land_oz1.eligible} land tracts that had been OZ 1.0 zones
+        were redesignated, against {nn.land.designated - nn.land_oz1.designated} of the{' '}
+        {nn.land.eligible - nn.land_oz1.eligible} that had not.
+      </p>
+
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        <strong>The average hides the reservation-level picture.</strong> {na.reservations.n} reservations have at
+        least one eligible tract that lies mostly inside them. {na.reservations.with_designation} came away with at
+        least one designated tract; {na.reservations.without_designation}, in states that had to choose, came away with
+        none. The largest gap is the Navajo Nation: {nResTable[0].designated} of its {nResTable[0].eligible} eligible
+        tracts were designated, about {Math.round(nResTable[0].designated / nResTable[0].eligible * 100)}%, in states
+        that designated roughly a quarter of their pools. All {nResTable[0].designated} are in Arizona; New Mexico
+        designated none of its {navajoNM?.eligible ?? 0} Navajo Nation tracts. Tracts are attributed to the reservation holding the most
+        land in them; a reservation can also contain designated tracts that are mostly outside its boundary.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6 mb-5">
+        <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto">
+          <table class="w-full text-xs">
+            <caption class="text-left px-3 pt-3 pb-1 text-oz-neutral-500">Reservations with three or more eligible tracts</caption>
+            <thead class="bg-oz-neutral-100 text-oz-neutral-500 uppercase tracking-wide">
+              <tr><th class="px-2 py-2 text-left">Reservation</th><th class="px-2 py-2 text-left">State</th><th class="px-2 py-2 text-right">Designated / eligible</th></tr>
+            </thead>
+            <tbody>
+              {nResTable.map((r: any, i: number) => (
+                <tr class={i % 2 ? 'bg-oz-neutral-50' : ''}>
+                  <td class="px-2 py-1.5">{r.name}</td>
+                  <td class="px-2 py-1.5 text-oz-neutral-500">{r.states.join(', ')}</td>
+                  <td class="px-2 py-1.5 text-right font-mono">{r.designated} / {r.eligible}{r.full_state && <span class="text-oz-neutral-400" title="State designated every eligible tract"> *</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="px-3 py-2 text-[11px] text-oz-neutral-400">* Wyoming designated every eligible tract.</p>
+        </div>
+        <div class="bg-white border border-oz-neutral-200 rounded overflow-x-auto">
+          <table class="w-full text-xs">
+            <caption class="text-left px-3 pt-3 pb-1 text-oz-neutral-500">States with five or more Native land or community tracts</caption>
+            <thead class="bg-oz-neutral-100 text-oz-neutral-500 uppercase tracking-wide">
+              <tr>
+                <th class="px-2 py-2 text-left">State</th>
+                <th class="px-2 py-2 text-right" title="Tracts meeting either lens: designated / eligible (expected at the state's overall rate)">Designated / eligible (exp.)</th>
+                <th class="px-2 py-2 text-right" title="Native share of residents: eligible pool → designated tracts">Native residents</th>
+              </tr>
+            </thead>
+            <tbody>
+              {nStates.map((s: any, i: number) => (
+                <tr class={i % 2 ? 'bg-oz-neutral-50' : ''}>
+                  <td class="px-2 py-1.5 whitespace-nowrap">{slugByFips[s.fips] ? <a href={`/states/${slugByFips[s.fips]}#native`} class="text-oz-blue hover:underline">{s.name}</a> : s.name}</td>
+                  <td class="px-2 py-1.5 text-right font-mono whitespace-nowrap">{s.either.designated} / {s.either.eligible} <span class="text-oz-neutral-400">({s.expected_either ?? 'all'})</span></td>
+                  <td class="px-2 py-1.5 text-right font-mono whitespace-nowrap">{s.native_share_eligible}% → {s.native_share_designated}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="text-sm text-oz-neutral-700 mb-4">
+        <strong>Statistical areas are reported separately.</strong> Oklahoma's tribal statistical areas, Alaska Native
+        village statistical areas and state-designated tribal statistical areas are Census tabulation geographies, not
+        land held by or for a tribe, so they are not counted as Native land above. Oklahoma's cover most of the
+        eastern half of the state, Tulsa included; {na.context.otsa.designated} of the {na.context.otsa.eligible} eligible
+        tracts mostly inside one were designated, about the state's overall rate. Since <em>McGirt v. Oklahoma</em> (2020),
+        courts have held that several of these reservations were never disestablished, but Census still tabulates them as
+        statistical areas. In Alaska, where there is one reservation, the population lens does the work: Native
+        residents are {na.states['02'].native_share_eligible}% of the eligible pool and {na.states['02'].native_share_designated}%
+        of designated tracts.
+      </p>
+      <p class="text-xs text-oz-neutral-500">
+        Boundaries: Census TIGER/Line 2024 AIANNH, intersected with 2024 cartographic tract boundaries in an equal-area
+        projection — an area share, not a population share. Population: ACS 2020–2024 (B02001; alone-or-in-combination
+        counts from B02010 and B02012 are in the data for sensitivity checks). Scripts: <code>ingest_native_lands.py</code>,{' '}
+        <code>analyze_native_lands.py</code>. Notes in <code>docs/native-lands-designations-2026-11.md</code>.
+      </p>
+    </section>
+
     <section id="off-list" class="mb-12">
       <h2 class="text-xl font-semibold mb-3">The late additions<a href="#off-list" class="anchor-link" aria-label="Copy link to section" set:html={linkIcon} /></h2>
       <p class="text-sm text-oz-neutral-700">
@@ -370,7 +499,8 @@ const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
         <li>Demographics: ACS 2020–2024 5-year Summary File (tables B01003, B03002, B15003, B23025, B25002, B25003, B25070, B25077); land area from the 2024 Census Gazetteer.</li>
         <li>OZ 1.0: IRS Notice 2018-48 and 2019-42, crosswalked to 2020 tracts with the Census 2020↔2010 tract relationship file; a 2020 tract counts as former OZ 1.0 if at least half its land area was in a 2018 zone. Connecticut's 2022 planning-region GEOIDs are remapped.</li>
         <li>Overlays: EIG Distressed Communities Index, FFIEC CRA income levels, Urban Institute investability tiers, CDFI Fund NMTC data, USDA ERS persistent poverty — all as used elsewhere on this site. These were joined to the April eligible list, so the {n.added_oct} October additions have no overlay values.</li>
-        <li>Scripts: <code>ingest_designated_tracts.py</code>, <code>ingest_acs_tract_demographics.py</code>, <code>ingest_oz1_tracts.py</code>, <code>analyze_designations.py</code>. Full detail in <code>docs/designation-postmortem-2026-11.md</code>.</li>
+        <li>Native lands: Census TIGER/Line 2024 AIANNH boundaries (federal reservations and trust land, Hawaiian Home Lands, statistical areas kept separate) and ACS 2020–2024 race tables, joined to the October eligible list.</li>
+        <li>Scripts: <code>ingest_designated_tracts.py</code>, <code>ingest_acs_tract_demographics.py</code>, <code>ingest_oz1_tracts.py</code>, <code>ingest_native_lands.py</code>, <code>analyze_designations.py</code>, <code>analyze_native_lands.py</code>. Full detail in <code>docs/designation-postmortem-2026-11.md</code>.</li>
       </ul>
     </section>
   </div>

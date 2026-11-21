@@ -474,3 +474,16 @@ cross-references.
 **Census Bureau, ACS 2020–2024 5-year Summary File (table-based).** https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/ — Tables B01002, B01003, B03002, B15003, B19013, B23025, B25002, B25003, B25064, B25070, B25077 for tract demographics. Same ACS vintage Treasury used for eligibility. Ingested by `scripts/ingest_acs_tract_demographics.py` (the Census API now requires a key; the bulk files do not). last_checked: 2026-11-05
 
 **Census Bureau, 2024 Gazetteer — census tracts.** https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_tracts_national.zip — Land area for population density. last_checked: 2026-11-05
+
+## 19. Native lands and the 2027 designations (added 2026-11-21)
+
+Sources for `/designations#native-lands`, the "Native lands and communities" section of each state
+page, and the map's Native-land layer. Census files were downloaded directly from www2.census.gov.
+
+**Census Bureau, TIGER/Line 2024 — American Indian / Alaska Native / Native Hawaiian Areas (AIANNH).** https://www2.census.gov/geo/tiger/TIGER2024/AIANNH/tl_2024_us_aiannh.zip — 864 features. CLASSFP used to separate federally recognized reservations and off-reservation trust land (D2, D3, D5, D8), Hawaiian Home Lands (F1), state reservations (D4), Oklahoma tribal and tribal designated statistical areas (D0, D6), Alaska Native village statistical areas (E1) and state-designated tribal statistical areas (D9). Ingested by `scripts/ingest_native_lands.py`. last_checked: 2026-11-21
+
+**Census Bureau, 2024 cartographic boundary file — census tracts, 1:500,000.** https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_tract_500k.zip — Shoreline-clipped tract polygons for area shares. last_checked: 2026-11-21
+
+**Census Bureau, ACS 2020–2024 5-year Summary File, tables B02001 (race), B02010 (AIAN alone or in combination), B02012 (NHPI alone or in combination).** https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/ — Native share of residents. Same vintage Treasury used for eligibility. last_checked: 2026-11-21
+
+**McGirt v. Oklahoma, No. 18-9526 (U.S. July 9, 2020).** https://www.law.cornell.edu/supct/cert/18-9526 — Held the Muscogee (Creek) reservation was never disestablished. The Oklahoma Court of Criminal Appeals extended the reasoning in 2021 to the Cherokee, Chickasaw, Choctaw, Seminole and Quapaw reservations (e.g. Oklahoman, "Quapaw is sixth reservation to gain court recognition," Oct. 22, 2021, https://www.pressreader.com/usa/the-oklahoman/20211022/281513639355192). Cited only to explain why Census OTSAs are reported separately rather than as reservation land. Verified via WebSearch; supremecourt.gov blocked in sandbox. last_checked: 2026-11-21
