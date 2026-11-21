@@ -16,7 +16,8 @@ Treasury published the final OZ 2.0 list on October 30, 2026. Of 25,462 eligible
 | Designations, eligibility, poverty, MFI ratio | Treasury OTP files dated 2026-10-30 (references.md §18) | `ingest_designated_tracts.py` |
 | Race/ethnicity, education, employment, housing | ACS 2020–2024 5-year Summary File | `ingest_acs_tract_demographics.py` |
 | OZ 1.0 status | Notice 2018-48 / 2019-42 + Census 2020↔2010 relationship file | `ingest_oz1_tracts.py` |
-| CRA, DCI, Urban Institute, NMTC, persistent poverty, tribal | Existing site overlays | — |
+| CRA, DCI, Urban Institute, NMTC, persistent poverty | Existing site overlays | — |
+| Native lands (AIANNH 2024 + ACS B02001) | `ingest_native_lands.py` — see `native-lands-designations-2026-11.md` | — |
 | Analysis | | `analyze_designations.py` |
 
 ## Method
@@ -79,7 +80,8 @@ priority.
 | Urban Institute Tier 1 | 5,684 | 1,845 | 32.5% | 23.5% | 1.28 |
 | Rural (QROF) | 8,249 | 2,481 | 30.1% | 23.3% | 1.17 |
 | CRA-eligible | 18,871 | 4,860 | 25.8% | 24.7% | 1.01 |
-| Tribal overlap | 1,064 | 296 | 27.8% | 25.4% | 1.01 |
+| Reservation or trust land (≥50% of tract) | 190 | 59 | 31.1% | 25.4% | 1.01 |
+| Native residents ≥20% | 324 | 99 | 30.6% | 25.4% | 0.96 |
 | Persistent-poverty county | 3,136 | 722 | 23.0% | 25.8% | 0.91 |
 | Urban Institute Tier 3 (low probability) | 14,825 | 3,262 | 22.0% | 30.4% | 0.86 |
 | Added in October (missing-data rule) | 130 | 15 | 11.5% | 25.6% | 0.45 |

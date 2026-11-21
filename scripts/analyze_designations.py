@@ -7,7 +7,7 @@ Inputs (all produced by other scripts in this directory)
     data/acs_tract_demographics.parquet   ingest_acs_tract_demographics.py
     data/oz1_overlap.parquet              ingest_oz1_tracts.py
     data/cra_lmi_overlap.parquet, dci.parquet, urban_investability.parquet,
-    tribal_overlap.parquet, cdfi_nmtc.parquet, persistent_poverty.parquet
+    native_lands.parquet, cdfi_nmtc.parquet, persistent_poverty.parquet
     public/geo/*.geojson                  (place names only)
 
 Outputs
@@ -33,11 +33,15 @@ Usage
 
 import json
 import math
+import sys
 from datetime import date
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).parent))
+from native_rules import add_flags  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
 DATA = ROOT / "data"
@@ -59,7 +63,8 @@ TAG_RULES = {
     "oz1": "Was an OZ 1.0 tract (≥50% of land area in a 2018 QOZ)",
     "nmtc": "Prior New Markets Tax Credit investment in the tract",
     "cra": "CRA-eligible (LMI or distressed/underserved middle-income)",
-    "tribal": "Overlaps tribal land or has a significant AIAN population",
+    "tribal": "Native land or community: ≥10% of the tract's area or residents on reservation, trust land or "
+              "Hawaiian Home Land, or ≥20% of residents Native (AIAN; in Hawaii, AIAN + NHPI)",
     "housing": "Housing pressure: ≥50% renters and ≥50% of renters cost-burdened",
     "vacancy": "High vacancy: ≥15% of housing units vacant",
     "sweetspot": "Urban Institute Tier 1 — likely to attract investment, with larger impact",
@@ -91,7 +96,8 @@ BINARY = [
     ("ui_tier3", "Urban Institute Tier 3 (low probability)"),
     ("is_cra_lmi", "CRA-eligible"),
     ("is_persistent_poverty", "Persistent-poverty county"),
-    ("is_tribal_overlap", "Tribal overlap"),
+    ("native_land", "Reservation or trust land (≥50% of residents)"),
+    ("native_pop", "Native residents ≥20%"),
     ("added_oct", "Added in October (missing-data rule)"),
 ]
 
@@ -118,7 +124,12 @@ def load() -> pd.DataFrame:
     cra = pd.read_parquet(DATA / "cra_lmi_overlap.parquet", columns=["geoid", "is_cra_lmi"])
     dci = pd.read_parquet(DATA / "dci.parquet", columns=["geoid", "dci_score", "dci_quintile"])
     ui = pd.read_parquet(DATA / "urban_investability.parquet", columns=["geoid", "ui_invest_score"])
-    tr = pd.read_parquet(DATA / "tribal_overlap.parquet", columns=["geoid", "is_tribal_overlap", "tribal_area_name"])
+    # Native lands (ingest_native_lands.py); thresholds in native_rules.py.
+    tr = add_flags(pd.read_parquet(DATA / "native_lands.parquet"))
+    tr["is_tribal_overlap"] = tr.tribal_tag
+    tr["tribal_area_name"] = tr.federal_name.fillna(tr.native_area_name).where(tr.is_tribal_overlap)
+    tr = tr[["geoid", "native_land", "native_pop", "is_tribal_overlap", "tribal_area_name",
+             "federal_share", "federal_pop_share", "native_pct"]]
     pp = pd.read_parquet(DATA / "persistent_poverty.parquet", columns=["county_fips", "is_persistent_poverty"])
     nm_raw = pd.read_parquet(DATA / "cdfi_nmtc.parquet")
     nm = nm_raw.groupby("geoid").agg(nmtc_n=("qlici_amount", "size"), nmtc_usd=("qlici_amount", "sum"),
@@ -137,7 +148,7 @@ def load() -> pd.DataFrame:
           .merge(nm, on="geoid", how="left").merge(pp, on="county_fips", how="left"))
     df["place_name"] = df.geoid.map(places)
     df["oz1_land_share"] = df.oz1_land_share.fillna(0.0)
-    for c in ["is_oz1", "is_cra_lmi", "is_tribal_overlap", "is_persistent_poverty"]:
+    for c in ["is_oz1", "is_cra_lmi", "is_tribal_overlap", "native_land", "native_pop", "is_persistent_poverty"]:
         df[c] = df[c].fillna(False).astype(bool)
     df["nmtc_n"] = df.nmtc_n.fillna(0).astype(int)
     df["nmtc_usd"] = df.nmtc_usd.fillna(0.0)
@@ -385,7 +396,8 @@ def main() -> None:
             "pct_nonwhite", "pct_black_nh", "pct_hispanic", "unemp_rate", "pct_ba_plus", "pct_renter",
             "vacancy_rate", "pct_rent_burdened", "median_home_value", "median_gross_rent",
             "median_hh_income", "is_oz1", "oz1_land_share", "is_cra_lmi", "dci_score",
-            "ui_invest_score", "is_persistent_poverty", "is_tribal_overlap", "tribal_area_name",
+            "ui_invest_score", "is_persistent_poverty", "federal_share", "federal_pop_share", "native_pct", "native_land",
+            "native_pop", "is_tribal_overlap", "tribal_area_name",
             "nmtc_n", "nmtc_usd", "cde_names", "tags"]
     (ROOT / "public" / "data").mkdir(parents=True, exist_ok=True)
     out[cols].sort_values("geoid").to_csv(ROOT / "public" / "data" / "oz2-designations-2027.csv",

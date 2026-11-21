@@ -202,10 +202,20 @@ export const TAG_LABELS: Record<TractTag, string> = {
   oz1: 'Former OZ 1.0',
   nmtc: 'NMTC track record',
   cra: 'CRA-eligible',
-  tribal: 'Tribal',
+  tribal: 'Native land / community',
   housing: 'Housing pressure',
   vacancy: 'High vacancy',
   sweetspot: 'UI Tier 1',
   ppov: 'Persistent poverty',
   added: 'Added Oct. 2026',
 };
+
+let _native: any = null;
+
+/** Native lands lens on the designations (data/native_lands_analysis.json, from analyze_native_lands.py). */
+export function getNativeAnalysis(): any {
+  if (!_native) {
+    _native = JSON.parse(readFileSync(join(process.cwd(), 'data', 'native_lands_analysis.json'), 'utf8'));
+  }
+  return _native;
+}

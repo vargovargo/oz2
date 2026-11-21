@@ -10,6 +10,24 @@ You are working on a state-by-state Opportunity Zone 2.0 resource for local
 planners and nonprofits. The full spec is in SPEC.md; the bibliography is
 in references.md. Read both before substantive edits.
 
+## Native lands lens on the designations (2026-11-21)
+
+Pipeline (after step 4 below): `ingest_native_lands.py` → `data/native_lands.parquet` (area shares from
+TIGER 2024 AIANNH; **population-weighted shares from 2020 PL 94-171 blocks**, AIANHH = geo field 36;
+ACS 2020–24 AIAN/NHPI); `ingest_native_cdfis.py` → `data/cdfis_certified.parquet` (CDFI Fund certified
+list with the Native flag, HQ geocoded, PO boxes placed by town); `analyze_designations.py`;
+`analyze_native_lands.py` → `data/native_lands_analysis.json`; `patch_geo_native.py`. **Thresholds live
+only in `scripts/native_rules.py`.** Shown at `/designations#native-lands` and state pages (`#native`).
+
+Lenses: **land** = ≥50% of 2020 residents on reservation/trust land (HI ≥10% Home Land; 201 eligible /
+67 designated); **people** = ≥20% Native residents (326 / 101). Raw lift ≈1.0 for both, against 1.18×
+for other rural tracts; with controls the people lens is OR 0.59 (p = 0.02, robust 0.53–0.65). 48 of
+80 reservations got ≥1 designated tract; Navajo Nation 9/53 (AZ 6/26, NM 3/25, UT 0/2). 65 Native
+CDFIs; having one on the reservation did not predict designation, an NMTC record did.
+`native_lands.parquet` supersedes `tribal_overlap.parquet` (tag `tribal` = 394 tracts, was 1,064).
+The oz2 environment now allows www.cdfifund.gov and geocoding.geo.census.gov and has a setup script
+(pip + npm ci). Full notes and the three quality-gate reviews: `docs/native-lands-designations-2026-11.md`.
+
 ## Fix 2026-11-16 — tract place names were wrong sitewide
 
 `build_state_geo.py` paired each tract GEOID with another shapefile row's centroid (index
