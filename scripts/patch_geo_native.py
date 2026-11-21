@@ -2,11 +2,12 @@
 """
 Refresh the Native-lands properties in public/geo/*.geojson from data/native_lands.parquet.
 
-    is_tribal_overlap   ≥10% reservation / trust land / Hawaiian Home Land, or ≥20% Native residents
-                        (same rule as the "tribal" tag in analyze_designations.py)
+    is_tribal_overlap   ≥10% of area or residents on reservation / trust land / Hawaiian Home Land,
+                        or ≥20% Native residents (native_rules.tribal_tag — same as the finder tag)
     tribal_area_name    federally recognized entity with the most land in the tract, else the
                         largest AIANNH area of any kind (OTSA, ANVSA, SDTSA, HHL)
     native_land_share   share of tract area in federal reservation / trust land (0–1)
+    native_land_pop_share  share of 2020 residents living in federal reservation / trust land blocks
     hhl_share           share in Hawaiian Home Lands (0–1)
     aian_pct            Native share of residents (AIAN alone; in Hawaii AIAN + NHPI alone), ACS 2020–2024
 
@@ -21,7 +22,12 @@ import json
 import math
 from pathlib import Path
 
+import sys
+
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).parent))
+from native_rules import add_flags  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
 GEO = ROOT / "public" / "geo"
@@ -32,9 +38,8 @@ def clean(v):
 
 
 def main() -> None:
-    n = pd.read_parquet(ROOT / "data" / "native_lands.parquet").set_index("geoid")
-    native_pop = n.native_pct.fillna(0) >= 0.20
-    flag = (n.federal_share >= 0.10) | (n.hhl_share >= 0.10) | native_pop
+    n = add_flags(pd.read_parquet(ROOT / "data" / "native_lands.parquet")).set_index("geoid")
+    flag = n.tribal_tag
     name = n.federal_name.fillna(n.native_area_name).where(flag)
     changed = total = 0
     for f in sorted(GEO.glob("[0-9][0-9].geojson")):
@@ -49,6 +54,7 @@ def main() -> None:
                 "is_tribal_overlap": bool(flag[g]),
                 "tribal_area_name": clean(name[g]),
                 "native_land_share": round(float(n.federal_share[g]), 3),
+                "native_land_pop_share": None if pd.isna(n.federal_pop_share[g]) else round(float(n.federal_pop_share[g]), 3),
                 "hhl_share": round(float(n.hhl_share[g]), 3),
                 "aian_pct": clean(None if pd.isna(n.native_pct[g]) else round(float(n.native_pct[g]), 4)),
             }

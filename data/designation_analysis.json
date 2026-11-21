@@ -12,7 +12,7 @@
    "oz1": "Was an OZ 1.0 tract (\u226550% of land area in a 2018 QOZ)",
    "nmtc": "Prior New Markets Tax Credit investment in the tract",
    "cra": "CRA-eligible (LMI or distressed/underserved middle-income)",
-   "tribal": "Native land or community: \u226510% of the tract is reservation, trust land or Hawaiian Home Land, or \u226520% of residents are Native (AIAN; in Hawaii, AIAN + NHPI)",
+   "tribal": "Native land or community: \u226510% of the tract's area or residents on reservation, trust land or Hawaiian Home Land, or \u226520% of residents Native (AIAN; in Hawaii, AIAN + NHPI)",
    "housing": "Housing pressure: \u226550% renters and \u226550% of renters cost-burdened",
    "vacancy": "High vacancy: \u226515% of housing units vacant",
    "sweetspot": "Urban Institute Tier 1 \u2014 likely to attract investment, with larger impact",
@@ -112,12 +112,12 @@
   },
   {
    "key": "native_land",
-   "label": "Reservation or trust land (\u226550% of tract)",
-   "n_eligible": 190,
-   "n_designated": 59,
-   "rate_with": 31.1,
+   "label": "Reservation or trust land (\u226550% of residents)",
+   "n_eligible": 198,
+   "n_designated": 64,
+   "rate_with": 32.3,
    "rate_without": 25.4,
-   "lift": 1.01
+   "lift": 1.05
   },
   {
    "key": "native_pop",

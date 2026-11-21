@@ -363,7 +363,8 @@ const { stateFips, stateName, tractCount, eigMapUrl } = Astro.props;
       const landShare = props.native_land_share != null ? parseFloat(String(props.native_land_share)) : 0;
       const hhlShare  = props.hhl_share != null ? parseFloat(String(props.hhl_share)) : 0;
       const isHI      = stateAbbr === 'HI';
-      const landStr   = landShare >= 0.01 ? `${Math.round(landShare * 100)}% of tract is reservation or trust land`
+      const landPop   = props.native_land_pop_share != null ? parseFloat(String(props.native_land_pop_share)) : null;
+      const landStr   = landShare >= 0.01 ? `${Math.round(landShare * 100)}% of tract area is reservation or trust land${landPop != null ? `; ${Math.round(landPop * 100)}% of residents live on it (2020)` : ''}`
                       : hhlShare >= 0.01 ? `${Math.round(hhlShare * 100)}% of tract is Hawaiian Home Land` : '';
       const pctStr    = aianPct != null ? `${(aianPct * 100).toFixed(0)}% Native residents${isHI ? ' (AIAN + NHPI)' : ''}` : '';
       tribalSection = `

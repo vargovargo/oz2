@@ -867,7 +867,34 @@ const badgeColor = certified
                 ))}
               </tbody>
             </table>
-            <p class="text-[11px] text-oz-neutral-400 mt-1">Eligible tracts at least half inside the reservation or its trust land. Use the Native land / community tag in the tract finder above for every designated tract that touches one.</p>
+            <p class="text-[11px] text-oz-neutral-400 mt-1">Eligible tracts where most 2020 residents live on the reservation or its trust land. Use the Native land / community tag in the tract finder above for every designated tract that touches one.</p>
+          </div>
+        )}
+        {nativeHasData && !native.full_designation && (native.land.eligible > 0 || native.pop.eligible > 0) && (
+          <p class="mb-3">
+            <strong>What this means for projects.</strong>{' '}
+            {native.land.designated > 0
+              ? <>{`The ${native.land.designated === 1 ? 'one' : native.land.designated} designated ${landWord} ${native.land.designated === 1 ? 'tract is an OZ' : 'tracts are OZs'} from ${fmt(DATES.designationsEffective)}`}{native.land_designated_rural > 0
+                  ? `; ${native.land_designated_rural === native.land.designated ? (native.land.designated === 1 ? 'it is' : 'all are') : `${native.land_designated_rural} are`} rural, so QROF treatment applies (30% step-up at five years, 50% improvement test). `
+                  : '. '}Filter the tract finder above by the Native land / community tag to see them. </>
+              : <>{`None of ${name}'s ${landWord} tracts was designated. `}</>}
+            {native.land_oz1.eligible - native.land_oz1.designated > 0 && <>
+              {`${native.land_oz1.eligible - native.land_oz1.designated} ${landWord} ${native.land_oz1.eligible - native.land_oz1.designated === 1 ? 'tract was an OZ 1.0 zone and was' : 'tracts were OZ 1.0 zones and were'} not redesignated: projects there keep OZ status until ${fmt(DATES.oz1Expires)} but generally cannot take new OZ capital after ${fmt(DATES.oz1GainInclusion)} except under a working capital safe harbor plan `}(<a href="/whats-next#transition" class="text-oz-blue underline">transition rules</a>). </>}
+            {native.cdfis.length > 0 && <>For tracts left off the map, the Native CDFIs below lend regardless of OZ status.</>}
+          </p>
+        )}
+        {native.cdfis.length > 0 && (
+          <div class="mb-3">
+            <p class="font-medium text-oz-neutral-900 mb-1">Native CDFIs headquartered in {name}</p>
+            <ul class="space-y-1">
+              {native.cdfis.map((c: any) => (
+                <li>
+                  {c.website ? <a href={c.website.startsWith('http') ? c.website : `https://${c.website}`} target="_blank" rel="noopener" class="text-oz-blue hover:underline">{c.name}</a> : c.name}
+                  <span class="text-oz-neutral-500"> — {c.type}, {c.city}{c.on_class === 'federal' || c.on_class === 'hhl' ? `, on ${c.on}` : ''}{c.hq_designated ? '; headquarters in a designated tract' : ''}{c.approx ? ' (location by town)' : ''}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-[11px] text-oz-neutral-400 mt-1">CDFI Fund certified list ({getNativeAnalysis().cdfis.list_date}). Headquarters only; most serve a whole reservation or region.</p>
           </div>
         )}
         {native.otsa.eligible > 0 && (
@@ -883,7 +910,7 @@ const badgeColor = certified
           <p class="mb-2 text-oz-neutral-600">{native.anvsa.designated} of {native.anvsa.eligible} eligible tracts lying mostly inside an Alaska Native village statistical area were designated. Most villages are far smaller than their tract, so the population measure is the better guide in Alaska.</p>
         )}
         <p class="text-xs text-oz-neutral-500">
-          Reservation and trust land: ≥50% of tract area (Hawaiian Home Lands: ≥10%), Census TIGER/Line 2024. Native residents:
+          {name === 'Hawaii' ? 'Hawaiian Home Lands: ≥10% of 2020 residents' : 'Reservation and trust land: ≥50% of 2020 residents'}, 2020 Census block data. Native residents:
           AIAN alone{name === 'Hawaii' ? ' plus NHPI alone' : ''}, ACS 2020–2024.
           <a href="/designations#native-lands" class="text-oz-blue underline">National picture →</a>
         </p>

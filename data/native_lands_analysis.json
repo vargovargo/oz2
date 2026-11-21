@@ -2,30 +2,46 @@
  "meta": {
   "generated": "2026-11-21",
   "definitions": {
-   "land": "\u226550% of tract area in a federally recognized reservation or off-reservation trust land, or (Hawaii) \u226510% in Hawaiian Home Lands",
+   "land": "\u226550% of 2020 residents live on federally recognized reservation or off-reservation trust land, or (Hawaii) \u226510% on Hawaiian Home Lands",
+   "land_area": "\u226550% of tract area in reservation or trust land (sensitivity check)",
    "pop": "Native residents \u226520% of population (AIAN alone; in Hawaii, AIAN + NHPI alone)",
    "maj": "Native residents \u226550%"
   },
   "sources": {
    "boundaries": "Census TIGER/Line 2024 AIANNH; 2024 cartographic boundary tracts (500k)",
-   "population": "ACS 2020\u20132024 5-year, tables B02001, B02010, B02012"
+   "population": "ACS 2020\u20132024 5-year, tables B02001, B02010, B02012",
+   "blocks": "2020 Census PL 94-171 redistricting file, block level (AIANHH code, P1)"
   }
  },
  "national": {
   "eligible": 25462,
   "designated": 6576,
   "land": {
-   "eligible": 193,
-   "designated": 62
+   "eligible": 201,
+   "designated": 67
   },
   "land_res": {
+   "eligible": 195,
+   "designated": 66
+  },
+  "land_hhl": {
+   "eligible": 6,
+   "designated": 1
+  },
+  "land_area": {
    "eligible": 184,
    "designated": 60
   },
-  "land_hhl": {
-   "eligible": 9,
-   "designated": 2
+  "land_by_pop_not_area": {
+   "eligible": 14,
+   "designated": 7
   },
+  "land_by_area_not_pop": {
+   "eligible": 3,
+   "designated": 1
+  },
+  "native_on_land_eligible": 432013,
+  "native_on_land_designated": 142615,
   "pop": {
    "eligible": 326,
    "designated": 101
@@ -35,37 +51,38 @@
    "designated": 52
   },
   "either": {
-   "eligible": 352,
-   "designated": 113
+   "eligible": 353,
+   "designated": 114
   },
   "both": {
-   "eligible": 167,
-   "designated": 50
+   "eligible": 174,
+   "designated": 54
   },
   "land_only": {
-   "eligible": 26,
-   "designated": 12
+   "eligible": 27,
+   "designated": 13
   },
   "pop_only": {
-   "eligible": 159,
-   "designated": 51
+   "eligible": 152,
+   "designated": 47
   },
   "native_residents_eligible": 1491643,
   "native_residents_designated": 428337,
   "residents_eligible": 90433494,
   "residents_designated": 23579966,
   "land_oz1": {
-   "eligible": 62,
+   "eligible": 67,
    "designated": 32
   },
+  "land_designated_rural": 59,
   "pop_oz1": {
    "eligible": 102,
    "designated": 54
   },
-  "rural_share_land": 92.2,
-  "poverty_median_land": 28.7,
+  "rural_share_land": 91.5,
+  "poverty_median_land": 29.2,
   "poverty_median_all": 23.9,
-  "states_with_land": 21,
+  "states_with_land": 22,
   "states_with_pop": 30,
   "native_resident_share_designated": 28.7,
   "resident_share_designated": 26.1
@@ -81,13 +98,20 @@
    "WY"
   ],
   "land": {
-   "n_eligible": 190,
-   "n_designated": 59,
-   "rate": 31.1,
-   "expected": 58.2,
-   "lift": 1.01
+   "n_eligible": 198,
+   "n_designated": 64,
+   "rate": 32.3,
+   "expected": 60.8,
+   "lift": 1.05
   },
   "land_res": {
+   "n_eligible": 192,
+   "n_designated": 63,
+   "rate": 32.8,
+   "expected": 59.1,
+   "lift": 1.07
+  },
+  "land_area": {
    "n_eligible": 181,
    "n_designated": 57,
    "rate": 31.5,
@@ -109,56 +133,115 @@
    "lift": 0.88
   },
   "both": {
-   "n_eligible": 165,
-   "n_designated": 48,
-   "rate": 29.1,
-   "expected": 51.6,
-   "lift": 0.93
+   "n_eligible": 172,
+   "n_designated": 52,
+   "rate": 30.2,
+   "expected": 54.0,
+   "lift": 0.96
   },
   "land_only": {
-   "n_eligible": 25,
-   "n_designated": 11,
-   "rate": 44.0,
-   "expected": 6.6,
-   "lift": 1.68
+   "n_eligible": 26,
+   "n_designated": 12,
+   "rate": 46.2,
+   "expected": 6.8,
+   "lift": 1.76
   },
   "pop_only": {
-   "n_eligible": 159,
-   "n_designated": 51,
-   "rate": 32.1,
-   "expected": 51.1,
-   "lift": 1.0
+   "n_eligible": 152,
+   "n_designated": 47,
+   "rate": 30.9,
+   "expected": 48.8,
+   "lift": 0.96
   },
   "rural_not_native": {
    "n_eligible": 7956,
    "n_designated": 2392,
    "rate": 30.1,
-   "expected": 2027.9,
+   "expected": 2028.0,
    "lift": 1.18
   },
   "logit": {
    "native_land": {
-    "odds_ratio": 1.01,
+    "odds_ratio": 1.2,
     "ci": [
-     0.52,
-     1.95
+     0.65,
+     2.19
     ],
-    "ame_pp": 0.1,
-    "p": 0.98
+    "ame_pp": 3.0,
+    "p": 0.56
    },
    "native_pop": {
-    "odds_ratio": 0.65,
+    "odds_ratio": 0.59,
     "ci": [
-     0.4,
-     1.05
+     0.38,
+     0.93
     ],
-    "ame_pp": -7.2,
-    "p": 0.077
+    "ame_pp": -8.8,
+    "p": 0.023
    },
+   "robustness": [
+    {
+     "spec": "without residents of color",
+     "native_land": {
+      "odds_ratio": 1.06,
+      "p": 0.85
+     },
+     "native_pop": {
+      "odds_ratio": 0.53,
+      "p": 0.0066
+     }
+    },
+    {
+     "spec": "population lens only",
+     "native_pop": {
+      "odds_ratio": 0.65,
+      "p": 0.015
+     }
+    },
+    {
+     "spec": "population lens only, without residents of color",
+     "native_pop": {
+      "odds_ratio": 0.55,
+      "p": 0.00045
+     }
+    },
+    {
+     "spec": "land lens only",
+     "native_land": {
+      "odds_ratio": 0.79,
+      "p": 0.33
+     }
+    }
+   ],
    "n": 22904,
-   "n_native_land": 181,
+   "n_native_land": 188,
    "n_native_pop": 299,
    "note": "Logit with state fixed effects and county-clustered SEs; same controls as the main model on /designations (poverty, income, population, density, unemployment, education, renters, vacancy, home value, residents of color, OZ 1.0, NMTC, rural, CRA, Urban tiers)."
+  },
+  "consultation": {
+   "with_framework": {
+    "n_eligible": 105,
+    "n_designated": 28,
+    "rate": 26.7,
+    "expected": 26.4,
+    "lift": 1.06,
+    "states": [
+     "KS",
+     "MS",
+     "NC",
+     "NM",
+     "OR",
+     "WA"
+    ]
+   },
+   "without_framework": {
+    "n_eligible": 245,
+    "n_designated": 83,
+    "rate": 33.9,
+    "expected": 83.2,
+    "lift": 1.0
+   },
+   "note": "Native land or community tracts, by whether the state's tribal_consultation.framework is populated."
   },
   "native_pct_percentile": {
    "states": 13,
@@ -194,8 +277,8 @@
   }
  },
  "reservations": {
-  "n": 76,
-  "with_designation": 44,
+  "n": 80,
+  "with_designation": 48,
   "without_designation": 32,
   "list": [
    {
@@ -205,10 +288,13 @@
      "NM",
      "UT"
     ],
-    "eligible": 49,
-    "designated": 7,
-    "native_residents": 135987,
-    "full_state": false
+    "eligible": 53,
+    "designated": 9,
+    "native_residents": 143907,
+    "full_state": false,
+    "cdfis": [
+     "Navajo community Development Financial Institution Inc Non Profit"
+    ]
    },
    {
     "name": "Pine Ridge",
@@ -218,7 +304,12 @@
     "eligible": 5,
     "designated": 1,
     "native_residents": 15025,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Lakota Federal Credit Union",
+     "Lakota Fund, Inc., The",
+     "Mazaska Owecaso Otipi Financial, Inc"
+    ]
    },
    {
     "name": "Yakama Nation",
@@ -228,7 +319,8 @@
     "eligible": 5,
     "designated": 4,
     "native_residents": 3779,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Fort Apache",
@@ -238,7 +330,8 @@
     "eligible": 4,
     "designated": 1,
     "native_residents": 13319,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Standing Rock",
@@ -249,7 +342,8 @@
     "eligible": 4,
     "designated": 1,
     "native_residents": 5636,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Cheyenne River",
@@ -259,7 +353,11 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 5521,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Akiptan, Inc.",
+     "Four Bands Community Fund, Incorporated"
+    ]
    },
    {
     "name": "Colorado River",
@@ -270,7 +368,8 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 1310,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Colville",
@@ -280,7 +379,10 @@
     "eligible": 3,
     "designated": 2,
     "native_residents": 3808,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Northwest Native Development Fund"
+    ]
    },
    {
     "name": "Crow",
@@ -290,7 +392,8 @@
     "eligible": 3,
     "designated": 0,
     "native_residents": 5408,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Flathead",
@@ -300,7 +403,8 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 2969,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Fort Berthold",
@@ -310,7 +414,19 @@
     "eligible": 3,
     "designated": 2,
     "native_residents": 3430,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
+   },
+   {
+    "name": "Fort Hall",
+    "states": [
+     "ID"
+    ],
+    "eligible": 3,
+    "designated": 1,
+    "native_residents": 3077,
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Gila River",
@@ -320,7 +436,8 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 11780,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Hopi",
@@ -330,7 +447,10 @@
     "eligible": 3,
     "designated": 0,
     "native_residents": 10431,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Hopi Credit Association"
+    ]
    },
    {
     "name": "Osage",
@@ -340,7 +460,8 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 1499,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Puyallup",
@@ -350,7 +471,8 @@
     "eligible": 3,
     "designated": 2,
     "native_residents": 344,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Tohono O'odham Nation",
@@ -360,7 +482,8 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 6313,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "White Earth",
@@ -370,7 +493,10 @@
     "eligible": 3,
     "designated": 1,
     "native_residents": 2913,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "White Earth Investment Initiative"
+    ]
    },
    {
     "name": "Wind River",
@@ -380,7 +506,10 @@
     "eligible": 3,
     "designated": 3,
     "native_residents": 4961,
-    "full_state": true
+    "full_state": true,
+    "cdfis": [
+     "Wind River Development Fund"
+    ]
    },
    {
     "name": "Zuni",
@@ -390,7 +519,8 @@
     "eligible": 3,
     "designated": 0,
     "native_residents": 6872,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Agua Caliente",
@@ -400,7 +530,8 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 56,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Allegany",
@@ -410,7 +541,10 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 1274,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Seneca Nation of Indians Economic Development Company"
+    ]
    },
    {
     "name": "Blackfeet",
@@ -420,7 +554,10 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 7970,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "NACDC Financial Services Inc."
+    ]
    },
    {
     "name": "Cattaraugus",
@@ -430,7 +567,8 @@
     "eligible": 2,
     "designated": 0,
     "native_residents": 1193,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Fort Belknap",
@@ -440,17 +578,8 @@
     "eligible": 2,
     "designated": 2,
     "native_residents": 2782,
-    "full_state": false
-   },
-   {
-    "name": "Fort Hall",
-    "states": [
-     "ID"
-    ],
-    "eligible": 2,
-    "designated": 0,
-    "native_residents": 3012,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Fort Peck",
@@ -460,7 +589,8 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 5770,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Isabella",
@@ -470,7 +600,8 @@
     "eligible": 2,
     "designated": 0,
     "native_residents": 203,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Jicarilla Apache Nation",
@@ -480,7 +611,8 @@
     "eligible": 2,
     "designated": 0,
     "native_residents": 6398,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Lac Courte Oreilles",
@@ -490,7 +622,8 @@
     "eligible": 2,
     "designated": 0,
     "native_residents": 1994,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Lake Traverse",
@@ -500,7 +633,10 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 3095,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Sisseton Wahpeton Federal Credit Union"
+    ]
    },
    {
     "name": "Leech Lake",
@@ -510,7 +646,32 @@
     "eligible": 2,
     "designated": 0,
     "native_residents": 2310,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
+   },
+   {
+    "name": "Mille Lacs",
+    "states": [
+     "MN"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 1049,
+    "full_state": false,
+    "cdfis": []
+   },
+   {
+    "name": "Northern Cheyenne",
+    "states": [
+     "MT"
+    ],
+    "eligible": 2,
+    "designated": 0,
+    "native_residents": 3928,
+    "full_state": false,
+    "cdfis": [
+     "Peoples Partners for Community Development"
+    ]
    },
    {
     "name": "Rosebud",
@@ -520,7 +681,8 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 7739,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "San Carlos",
@@ -530,7 +692,10 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 5187,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "San Carlos Apache Tribe Relending Enterprise"
+    ]
    },
    {
     "name": "Santa Clara",
@@ -540,7 +705,8 @@
     "eligible": 2,
     "designated": 2,
     "native_residents": 227,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Spirit Lake",
@@ -550,18 +716,19 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 2927,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
-    "name": "Ute Mountain",
+    "name": "Turtle Mountain",
     "states": [
-     "CO",
-     "NM"
+     "ND"
     ],
     "eligible": 2,
-    "designated": 0,
-    "native_residents": 1579,
-    "full_state": false
+    "designated": 1,
+    "native_residents": 7900,
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Yankton",
@@ -571,7 +738,19 @@
     "eligible": 2,
     "designated": 1,
     "native_residents": 2603,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
+   },
+   {
+    "name": "Big Cypress",
+    "states": [
+     "FL"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 322,
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Crow Creek",
@@ -581,7 +760,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1428,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Fort McDowell Yavapai Nation",
@@ -591,7 +771,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 739,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Fort Yuma",
@@ -601,7 +782,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 900,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Hoopa Valley",
@@ -611,7 +793,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1655,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Hualapai",
@@ -621,7 +804,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1144,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Isleta",
@@ -631,7 +815,10 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 2493,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Tiwa Lending Services"
+    ]
    },
    {
     "name": "Jemez",
@@ -641,7 +828,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 2189,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Lac du Flambeau",
@@ -651,7 +839,10 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1840,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Wisconsin Native Loan Fund, Inc."
+    ]
    },
    {
     "name": "Laguna",
@@ -661,7 +852,10 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 2992,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Native Community Capital"
+    ]
    },
    {
     "name": "Lower Brule",
@@ -671,7 +865,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1352,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Lummi",
@@ -681,7 +876,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 1913,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Makah",
@@ -691,7 +887,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 899,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Menominee",
@@ -701,7 +898,10 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 1345,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Woodland Financial Partners Inc"
+    ]
    },
    {
     "name": "Mescalero",
@@ -711,17 +911,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 3198,
-    "full_state": false
-   },
-   {
-    "name": "Mille Lacs",
-    "states": [
-     "MN"
-    ],
-    "eligible": 1,
-    "designated": 0,
-    "native_residents": 900,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Mississippi Choctaw",
@@ -731,7 +922,10 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 3016,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Choctaw Federal Credit Union"
+    ]
    },
    {
     "name": "Nez Perce",
@@ -741,17 +935,10 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 25,
-    "full_state": false
-   },
-   {
-    "name": "Northern Cheyenne",
-    "states": [
-     "MT"
-    ],
-    "eligible": 1,
-    "designated": 0,
-    "native_residents": 2436,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Nimiipuu Community Development Fund"
+    ]
    },
    {
     "name": "Oneida Indian Nation",
@@ -761,7 +948,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 9,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Onondaga Nation",
@@ -771,7 +959,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 317,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Pascua Pueblo Yaqui",
@@ -781,7 +970,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 2849,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Pyramid Lake Paiute",
@@ -791,7 +981,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 906,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Quinault",
@@ -801,7 +992,10 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 867,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Taala Fund"
+    ]
    },
    {
     "name": "Red Lake",
@@ -811,7 +1005,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 5079,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Rocky Boy's",
@@ -821,7 +1016,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 2407,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Salt River",
@@ -831,7 +1027,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 3153,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Sandia",
@@ -841,7 +1038,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 196,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Santo Domingo",
@@ -851,7 +1049,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 2189,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Skokomish",
@@ -861,7 +1060,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 285,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Southern Ute",
@@ -871,7 +1071,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 41,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Spokane",
@@ -881,7 +1082,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1340,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "St. Regis Mohawk",
@@ -891,7 +1093,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 2987,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Taos",
@@ -901,7 +1104,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 1030,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Tonawanda",
@@ -911,17 +1115,19 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 147,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
-    "name": "Turtle Mountain",
+    "name": "Torres-Martinez",
     "states": [
-     "ND"
+     "CA"
     ],
     "eligible": 1,
-    "designated": 1,
-    "native_residents": 4660,
-    "full_state": false
+    "designated": 0,
+    "native_residents": 36,
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Tuscarora Nation",
@@ -931,7 +1137,8 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 273,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Uintah and Ouray",
@@ -941,7 +1148,30 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 235,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
+   },
+   {
+    "name": "Ute Mountain",
+    "states": [
+     "CO"
+    ],
+    "eligible": 1,
+    "designated": 0,
+    "native_residents": 1110,
+    "full_state": false,
+    "cdfis": []
+   },
+   {
+    "name": "Walker River",
+    "states": [
+     "NV"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 855,
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Warm Springs",
@@ -951,7 +1181,8 @@
     "eligible": 1,
     "designated": 1,
     "native_residents": 2208,
-    "full_state": false
+    "full_state": false,
+    "cdfis": []
    },
    {
     "name": "Winnebago",
@@ -961,7 +1192,21 @@
     "eligible": 1,
     "designated": 0,
     "native_residents": 1923,
-    "full_state": false
+    "full_state": false,
+    "cdfis": [
+     "Ho-Chunk Community Capital Inc."
+    ]
+   },
+   {
+    "name": "Yurok",
+    "states": [
+     "CA"
+    ],
+    "eligible": 1,
+    "designated": 1,
+    "native_residents": 313,
+    "full_state": false,
+    "cdfis": []
    }
   ],
   "note": "Federally recognized reservations and off-reservation trust land with at least one eligible tract \u226550% inside it. A tract is attributed to the entity holding the most land in it."
@@ -998,6 +1243,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1017,6 +1263,8 @@
    "native_share_eligible": 0.5,
    "native_share_designated": 0.6,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.5
   },
   "02": {
@@ -1050,6 +1298,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1069,6 +1318,53 @@
    "native_share_eligible": 38.8,
    "native_share_designated": 36.2,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Alaska Growth Capital BIDCO, Inc.",
+     "city": "Anchorage",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "http://www.alaskagrowth.com"
+    },
+    {
+     "name": "Cook Inlet Lending Center, Inc.",
+     "city": "Anchorage",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "www.cookinletlending.com"
+    },
+    {
+     "name": "Haa Yakaawu Financial Corporation",
+     "city": "Juneau",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "Non given"
+    },
+    {
+     "name": "Spruce Root, Inc.",
+     "city": "Juneau",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "www.spruceroot.org"
+    }
+   ],
    "expected_either": 12.1
   },
   "04": {
@@ -1079,8 +1375,8 @@
    "rate": 25.1,
    "full_designation": false,
    "land": {
-    "eligible": 48,
-    "designated": 14
+    "eligible": 46,
+    "designated": 13
    },
    "land_hhl": {
     "eligible": 0,
@@ -1102,6 +1398,7 @@
     "eligible": 11,
     "designated": 7
    },
+   "land_designated_rural": 11,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1123,8 +1420,8 @@
    "reservations": [
     {
      "name": "Navajo Nation",
-     "eligible": 28,
-     "designated": 7
+     "eligible": 26,
+     "designated": 6
     },
     {
      "name": "Fort Apache",
@@ -1177,6 +1474,42 @@
      "designated": 1
     }
    ],
+   "nmtc_projects_land": 6,
+   "cdfis": [
+    {
+     "name": "Hopi Credit Association",
+     "city": "Keams Canyon",
+     "type": "Loan Fund",
+     "on": "Hopi",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "hopicredit.us"
+    },
+    {
+     "name": "Navajo community Development Financial Institution Inc Non Profit",
+     "city": "Window Rock",
+     "type": "Loan Fund",
+     "on": "Navajo Nation",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "http://www.navajocdfi.com"
+    },
+    {
+     "name": "San Carlos Apache Tribe Relending Enterprise",
+     "city": "Peridot",
+     "type": "Loan Fund",
+     "on": "San Carlos",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "Not Available"
+    }
+   ],
    "expected_either": 13.1
   },
   "06": {
@@ -1187,8 +1520,8 @@
    "rate": 25.0,
    "full_designation": false,
    "land": {
-    "eligible": 6,
-    "designated": 2
+    "eligible": 8,
+    "designated": 3
    },
    "land_hhl": {
     "eligible": 0,
@@ -1203,13 +1536,14 @@
     "designated": 1
    },
    "either": {
-    "eligible": 12,
+    "eligible": 13,
     "designated": 5
    },
    "land_oz1": {
-    "eligible": 1,
+    "eligible": 2,
     "designated": 1
    },
+   "land_designated_rural": 2,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1248,9 +1582,55 @@
      "name": "Hoopa Valley",
      "eligible": 1,
      "designated": 1
+    },
+    {
+     "name": "Torres-Martinez",
+     "eligible": 1,
+     "designated": 0
+    },
+    {
+     "name": "Yurok",
+     "eligible": 1,
+     "designated": 1
     }
    ],
-   "expected_either": 3.0
+   "nmtc_projects_land": 2,
+   "cdfis": [
+    {
+     "name": "FIVE RIVERS LOAN FUND, INC",
+     "city": "Happy Camp",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "5rlf.org"
+    },
+    {
+     "name": "Westwater Financial, Inc.",
+     "city": "Windsor",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.westwaterfinancial.org"
+    },
+    {
+     "name": "Yurok Alliance for Northern California Housing",
+     "city": "Klamath",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.yurokalliancecdfi.org"
+    }
+   ],
+   "expected_either": 3.3
   },
   "08": {
    "abbr": "CO",
@@ -1283,6 +1663,7 @@
     "eligible": 1,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1311,6 +1692,42 @@
      "name": "Ute Mountain",
      "eligible": 1,
      "designated": 0
+    }
+   ],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Native American Bancorporation, Co.",
+     "city": "Denver",
+     "type": "Bank Holding Company",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.nabna.com"
+    },
+    {
+     "name": "Native American Bank, N.A.",
+     "city": "Denver",
+     "type": "Bank or Thrift",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.nativeamericanbank.com"
+    },
+    {
+     "name": "Oweesta Corporation",
+     "city": "Longmont",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "www.oweesta.org"
     }
    ],
    "expected_either": 0.8
@@ -1346,6 +1763,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1364,7 +1782,9 @@
    "residents_designated": 98375,
    "native_share_eligible": 0.9,
    "native_share_designated": 1.4,
-   "reservations": []
+   "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": []
   },
   "12": {
    "abbr": "FL",
@@ -1374,8 +1794,8 @@
    "rate": 25.0,
    "full_designation": false,
    "land": {
-    "eligible": 0,
-    "designated": 0
+    "eligible": 1,
+    "designated": 1
    },
    "land_hhl": {
     "eligible": 0,
@@ -1397,6 +1817,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1415,7 +1836,15 @@
    "residents_designated": 1369041,
    "native_share_eligible": 0.6,
    "native_share_designated": 0.7,
-   "reservations": [],
+   "reservations": [
+    {
+     "name": "Big Cypress",
+     "eligible": 1,
+     "designated": 1
+    }
+   ],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.5
   },
   "15": {
@@ -1426,12 +1855,12 @@
    "rate": 28.1,
    "full_designation": false,
    "land": {
-    "eligible": 9,
-    "designated": 2
+    "eligible": 6,
+    "designated": 1
    },
    "land_hhl": {
-    "eligible": 9,
-    "designated": 2
+    "eligible": 6,
+    "designated": 1
    },
    "pop": {
     "eligible": 25,
@@ -1442,13 +1871,14 @@
     "designated": 0
    },
    "either": {
-    "eligible": 27,
+    "eligible": 25,
     "designated": 9
    },
    "land_oz1": {
-    "eligible": 2,
-    "designated": 2
+    "eligible": 1,
+    "designated": 1
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1468,7 +1898,65 @@
    "native_share_eligible": 17.3,
    "native_share_designated": 18.4,
    "reservations": [],
-   "expected_either": 7.6
+   "nmtc_projects_land": 4,
+   "cdfis": [
+    {
+     "name": "Council for Native Hawaiian Advancement",
+     "city": "Kapolei",
+     "type": "Loan Fund",
+     "on": "Kanehili",
+     "on_class": "hhl",
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.hawaiiancouncil.org"
+    },
+    {
+     "name": "HAWAII FIRST FCU",
+     "city": "Kamuela",
+     "type": "Credit Union",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "www.hawaiifirstfcu.com"
+    },
+    {
+     "name": "Hawaii Central Federal Credit Union",
+     "city": "Honolulu",
+     "type": "Credit Union",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "http://www.hawaiicentral.org"
+    },
+    {
+     "name": "Hawaiian Lending & Investments",
+     "city": "Honolulu",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "www.hawaiianhomesteads.org"
+    },
+    {
+     "name": "Molokai Community Federal Credit Union",
+     "city": "Kaunakakai",
+     "type": "Credit Union",
+     "on": "Kapaakea",
+     "on_class": "hhl",
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "http://www.molokaicommunityfcu.com"
+    }
+   ],
+   "expected_either": 7.0
   },
   "16": {
    "abbr": "ID",
@@ -1478,8 +1966,8 @@
    "rate": 30.9,
    "full_designation": false,
    "land": {
-    "eligible": 3,
-    "designated": 0
+    "eligible": 4,
+    "designated": 1
    },
    "land_hhl": {
     "eligible": 0,
@@ -1494,13 +1982,14 @@
     "designated": 0
    },
    "either": {
-    "eligible": 3,
-    "designated": 0
+    "eligible": 4,
+    "designated": 1
    },
    "land_oz1": {
     "eligible": 1,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1522,8 +2011,8 @@
    "reservations": [
     {
      "name": "Fort Hall",
-     "eligible": 2,
-     "designated": 0
+     "eligible": 3,
+     "designated": 1
     },
     {
      "name": "Nez Perce",
@@ -1531,7 +2020,21 @@
      "designated": 0
     }
    ],
-   "expected_either": 0.9
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Nimiipuu Community Development Fund",
+     "city": "Lapwai",
+     "type": "Loan Fund",
+     "on": "Nez Perce",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.nimiipuufund.org"
+    }
+   ],
+   "expected_either": 1.2
   },
   "20": {
    "abbr": "KS",
@@ -1564,6 +2067,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1583,6 +2087,8 @@
    "native_share_eligible": 1.3,
    "native_share_designated": 1.1,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.3
   },
   "22": {
@@ -1616,6 +2122,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1635,7 +2142,75 @@
    "native_share_eligible": 0.7,
    "native_share_designated": 0.5,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.3
+  },
+  "23": {
+   "abbr": "ME",
+   "name": "Maine",
+   "eligible": 78,
+   "designated": 25,
+   "rate": 32.1,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_designated_rural": 0,
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 1950,
+   "native_residents_designated": 698,
+   "residents_eligible": 228152,
+   "residents_designated": 84112,
+   "native_share_eligible": 0.9,
+   "native_share_designated": 0.8,
+   "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Four Directions Development Corporation",
+     "city": "Orono",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.fourdirectionsmaine.org"
+    }
+   ]
   },
   "26": {
    "abbr": "MI",
@@ -1668,6 +2243,7 @@
     "eligible": 2,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1693,6 +2269,42 @@
      "designated": 0
     }
    ],
+   "nmtc_projects_land": 1,
+   "cdfis": [
+    {
+     "name": "Chi Ishobak, Inc.",
+     "city": "Dowagiac",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "www.chiishobak.org"
+    },
+    {
+     "name": "Lake Superior Community Development Corp.",
+     "city": "L'Anse",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "https://www.lakesuperiorcdc.com/"
+    },
+    {
+     "name": "Northern Shores Community Development, Inc.",
+     "city": "Harbor Springs",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "nscdi.org"
+    }
+   ],
    "expected_either": 0.8
   },
   "27": {
@@ -1703,7 +2315,7 @@
    "rate": 25.1,
    "full_designation": false,
    "land": {
-    "eligible": 7,
+    "eligible": 8,
     "designated": 2
    },
    "land_hhl": {
@@ -1719,13 +2331,14 @@
     "designated": 1
    },
    "either": {
-    "eligible": 8,
+    "eligible": 9,
     "designated": 2
    },
    "land_oz1": {
-    "eligible": 4,
+    "eligible": 5,
     "designated": 1
    },
+   "land_designated_rural": 2,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1757,7 +2370,7 @@
     },
     {
      "name": "Mille Lacs",
-     "eligible": 1,
+     "eligible": 2,
      "designated": 0
     },
     {
@@ -1766,7 +2379,43 @@
      "designated": 1
     }
    ],
-   "expected_either": 2.0
+   "nmtc_projects_land": 8,
+   "cdfis": [
+    {
+     "name": "Indian Land Capital Company LLC",
+     "city": "Little Canada",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "http://www.ilcc.net"
+    },
+    {
+     "name": "Mni Sota Fund",
+     "city": "Minneapolis",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "mnisotafund.org"
+    },
+    {
+     "name": "White Earth Investment Initiative",
+     "city": "Ogema",
+     "type": "Loan Fund",
+     "on": "White Earth",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.weii.website"
+    }
+   ],
+   "expected_either": 2.3
   },
   "28": {
    "abbr": "MS",
@@ -1799,6 +2448,7 @@
     "eligible": 1,
     "designated": 1
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1824,6 +2474,20 @@
      "designated": 1
     }
    ],
+   "nmtc_projects_land": 3,
+   "cdfis": [
+    {
+     "name": "Choctaw Federal Credit Union",
+     "city": "Choctaw",
+     "type": "Credit Union",
+     "on": "Mississippi Choctaw",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "http://www.choctaw.org"
+    }
+   ],
    "expected_either": 0.8
   },
   "30": {
@@ -1834,7 +2498,7 @@
    "rate": 43.1,
    "full_designation": false,
    "land": {
-    "eligible": 14,
+    "eligible": 15,
     "designated": 5
    },
    "land_hhl": {
@@ -1857,6 +2521,7 @@
     "eligible": 7,
     "designated": 2
    },
+   "land_designated_rural": 5,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1903,13 +2568,49 @@
     },
     {
      "name": "Northern Cheyenne",
-     "eligible": 1,
+     "eligible": 2,
      "designated": 0
     },
     {
      "name": "Rocky Boy's",
      "eligible": 1,
      "designated": 0
+    }
+   ],
+   "nmtc_projects_land": 5,
+   "cdfis": [
+    {
+     "name": "Montana Homeownership Network, Inc. The",
+     "city": "Great Falls",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "http://www.nwmt.org"
+    },
+    {
+     "name": "NACDC Financial Services Inc.",
+     "city": "Browning",
+     "type": "Loan Fund",
+     "on": "Blackfeet",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "www.nacdcfinancialservices.com"
+    },
+    {
+     "name": "Peoples Partners for Community Development",
+     "city": "Lame Deer",
+     "type": "Loan Fund",
+     "on": "Northern Cheyenne",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "www.peoplespartners.org"
     }
    ],
    "expected_either": 7.3
@@ -1945,6 +2646,7 @@
     "eligible": 1,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -1970,6 +2672,31 @@
      "designated": 0
     }
    ],
+   "nmtc_projects_land": 5,
+   "cdfis": [
+    {
+     "name": "Ho-Chunk Community Capital Inc.",
+     "city": "Winnebago",
+     "type": "Loan Fund",
+     "on": "Winnebago",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "www.hochunkcdfi.org"
+    },
+    {
+     "name": "Native360 Loan Fund, Inc.",
+     "city": "Grand Island",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "https://native360.org/"
+    }
+   ],
    "expected_either": 0.2
   },
   "32": {
@@ -1980,8 +2707,8 @@
    "rate": 25.1,
    "full_designation": false,
    "land": {
-    "eligible": 1,
-    "designated": 0
+    "eligible": 2,
+    "designated": 1
    },
    "land_hhl": {
     "eligible": 0,
@@ -2003,6 +2730,7 @@
     "eligible": 1,
     "designated": 0
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2026,8 +2754,15 @@
      "name": "Pyramid Lake Paiute",
      "eligible": 1,
      "designated": 0
+    },
+    {
+     "name": "Walker River",
+     "eligible": 1,
+     "designated": 1
     }
    ],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.8
   },
   "35": {
@@ -2038,8 +2773,8 @@
    "rate": 25.2,
    "full_designation": false,
    "land": {
-    "eligible": 34,
-    "designated": 6
+    "eligible": 39,
+    "designated": 9
    },
    "land_hhl": {
     "eligible": 0,
@@ -2058,9 +2793,10 @@
     "designated": 15
    },
    "land_oz1": {
-    "eligible": 6,
-    "designated": 2
+    "eligible": 9,
+    "designated": 3
    },
+   "land_designated_rural": 8,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2082,8 +2818,8 @@
    "reservations": [
     {
      "name": "Navajo Nation",
-     "eligible": 19,
-     "designated": 0
+     "eligible": 25,
+     "designated": 3
     },
     {
      "name": "Zuni",
@@ -2134,11 +2870,42 @@
      "name": "Taos",
      "eligible": 1,
      "designated": 1
+    }
+   ],
+   "nmtc_projects_land": 10,
+   "cdfis": [
+    {
+     "name": "Native Community Capital",
+     "city": "Laguna",
+     "type": "Loan Fund",
+     "on": "Laguna",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.nativecap.org"
     },
     {
-     "name": "Ute Mountain",
-     "eligible": 1,
-     "designated": 0
+     "name": "Native Partnership for Housing, Inc.",
+     "city": "Gallup",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.npfh.org"
+    },
+    {
+     "name": "Tiwa Lending Services",
+     "city": "Isleta",
+     "type": "Loan Fund",
+     "on": "Isleta",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "tiwalending.org"
     }
    ],
    "expected_either": 14.6
@@ -2174,6 +2941,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 2,
    "otsa": {
     "eligible": 1,
     "designated": 1
@@ -2229,6 +2997,20 @@
      "designated": 0
     }
    ],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Seneca Nation of Indians Economic Development Company",
+     "city": "Salamanca",
+     "type": "Loan Fund",
+     "on": "Allegany",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "http://www.sniedc.org"
+    }
+   ],
    "expected_either": 3.0
   },
   "37": {
@@ -2262,6 +3044,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2281,6 +3064,20 @@
    "native_share_eligible": 2.4,
    "native_share_designated": 1.7,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Sequoyah Fund Inc., The",
+     "city": "Cherokee",
+     "type": "Loan Fund",
+     "on": "Eastern Cherokee",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "http://www.sequoyahfund.org"
+    }
+   ],
    "expected_either": 6.3
   },
   "38": {
@@ -2291,7 +3088,7 @@
    "rate": 67.6,
    "full_designation": false,
    "land": {
-    "eligible": 8,
+    "eligible": 9,
     "designated": 5
    },
    "land_hhl": {
@@ -2311,9 +3108,10 @@
     "designated": 5
    },
    "land_oz1": {
-    "eligible": 4,
+    "eligible": 5,
     "designated": 2
    },
+   "land_designated_rural": 5,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2350,10 +3148,12 @@
     },
     {
      "name": "Turtle Mountain",
-     "eligible": 1,
+     "eligible": 2,
      "designated": 1
     }
    ],
+   "nmtc_projects_land": 3,
+   "cdfis": [],
    "expected_either": 6.8
   },
   "40": {
@@ -2387,6 +3187,7 @@
     "eligible": 1,
     "designated": 1
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 251,
     "designated": 64
@@ -2410,6 +3211,86 @@
      "name": "Osage",
      "eligible": 3,
      "designated": 1
+    }
+   ],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Chickasaw Banc Holding Company",
+     "city": "Oklahoma City",
+     "type": "Bank Holding Company",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "Not Available"
+    },
+    {
+     "name": "Chickasaw Community Bank",
+     "city": "Oklahoma City",
+     "type": "Bank or Thrift",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "http://www.bank2online.com"
+    },
+    {
+     "name": "Choctaw Home Finance Corporation",
+     "city": "Hugo",
+     "type": "Loan Fund",
+     "on": "Choctaw",
+     "on_class": "otsa",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.choctawhomefinance.web-loans.com"
+    },
+    {
+     "name": "Citizen Potawatomi Community Development Corporation",
+     "city": "Shawnee",
+     "type": "Loan Fund",
+     "on": "Sac and Fox",
+     "on_class": "otsa",
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "http://www.cpcdc.org"
+    },
+    {
+     "name": "Local Bank",
+     "city": "Hulbert",
+     "type": "Bank or Thrift",
+     "on": "Cherokee",
+     "on_class": "otsa",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.localbank.com"
+    },
+    {
+     "name": "Mvskoke Loan Fund",
+     "city": "Okmulgee",
+     "type": "Loan Fund",
+     "on": "Creek",
+     "on_class": "otsa",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "https://www.MvskokeFund.com"
+    },
+    {
+     "name": "The Cherokee Nation d/b/a Cherokee Nation Economic Development Trust Authority, Inc",
+     "city": "Tahlequah",
+     "type": "Loan Fund",
+     "on": "Cherokee",
+     "on_class": "otsa",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "Non given"
     }
    ],
    "expected_either": 9.8
@@ -2445,6 +3326,7 @@
     "eligible": 1,
     "designated": 1
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2468,6 +3350,20 @@
      "name": "Warm Springs",
      "eligible": 1,
      "designated": 1
+    }
+   ],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Nixyaawii Community Financial Services",
+     "city": "Pendleton",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "Nixyaawii-cdfi.org"
     }
    ],
    "expected_either": 0.5
@@ -2503,6 +3399,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2522,6 +3419,8 @@
    "native_share_eligible": 0.4,
    "native_share_designated": 0.3,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.3
   },
   "45": {
@@ -2555,6 +3454,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2573,7 +3473,9 @@
    "residents_designated": 407658,
    "native_share_eligible": 0.5,
    "native_share_designated": 0.5,
-   "reservations": []
+   "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": []
   },
   "46": {
    "abbr": "SD",
@@ -2606,6 +3508,7 @@
     "eligible": 5,
     "designated": 5
    },
+   "land_designated_rural": 7,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2666,6 +3569,75 @@
      "designated": 1
     }
    ],
+   "nmtc_projects_land": 5,
+   "cdfis": [
+    {
+     "name": "Akiptan, Inc.",
+     "city": "Eagle Butte",
+     "type": "Loan Fund",
+     "on": "Cheyenne River",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "akiptan.org"
+    },
+    {
+     "name": "Four Bands Community Fund, Incorporated",
+     "city": "Eagle Butte",
+     "type": "Loan Fund",
+     "on": "Cheyenne River",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.fourbands.org"
+    },
+    {
+     "name": "Lakota Federal Credit Union",
+     "city": "Kyle",
+     "type": "Credit Union",
+     "on": "Pine Ridge",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "Not Available"
+    },
+    {
+     "name": "Lakota Fund, Inc., The",
+     "city": "Kyle",
+     "type": "Loan Fund",
+     "on": "Pine Ridge",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.lakotafunds.org"
+    },
+    {
+     "name": "Mazaska Owecaso Otipi Financial, Inc",
+     "city": "Pine Ridge",
+     "type": "Loan Fund",
+     "on": "Pine Ridge",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.mazaskacdfi.org"
+    },
+    {
+     "name": "Sisseton Wahpeton Federal Credit Union",
+     "city": "Agency Village",
+     "type": "Credit Union",
+     "on": "Lake Traverse",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "http://www.sisseton-wahpetonfcu.com"
+    }
+   ],
    "expected_either": 11.1
   },
   "47": {
@@ -2699,6 +3671,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2718,7 +3691,75 @@
    "native_share_eligible": 0.5,
    "native_share_designated": 0.4,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.3
+  },
+  "48": {
+   "abbr": "TX",
+   "name": "Texas",
+   "eligible": 2431,
+   "designated": 608,
+   "rate": 25.0,
+   "full_designation": false,
+   "land": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_hhl": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "pop": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "maj": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "either": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_oz1": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "land_designated_rural": 0,
+   "otsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "anvsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "sdtsa": {
+    "eligible": 0,
+    "designated": 0
+   },
+   "native_residents_eligible": 92250,
+   "native_residents_designated": 18547,
+   "residents_eligible": 9472237,
+   "residents_designated": 2349438,
+   "native_share_eligible": 1.0,
+   "native_share_designated": 0.8,
+   "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Tigua Community Development Corporation",
+     "city": "El Paso",
+     "type": "Loan Fund",
+     "on": "Ysleta del Sur",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "Non given"
+    }
+   ]
   },
   "49": {
    "abbr": "UT",
@@ -2751,6 +3792,7 @@
     "eligible": 1,
     "designated": 0
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2781,6 +3823,8 @@
      "designated": 1
     }
    ],
+   "nmtc_projects_land": 0,
+   "cdfis": [],
    "expected_either": 0.8
   },
   "51": {
@@ -2814,6 +3858,7 @@
     "eligible": 0,
     "designated": 0
    },
+   "land_designated_rural": 0,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2833,6 +3878,20 @@
    "native_share_eligible": 0.5,
    "native_share_designated": 0.3,
    "reservations": [],
+   "nmtc_projects_land": 0,
+   "cdfis": [
+    {
+     "name": "Lower Brule Community Development Enterprise, LLC",
+     "city": "Reston",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.lowerbrulecde.com"
+    }
+   ],
    "expected_either": 0.3
   },
   "53": {
@@ -2866,6 +3925,7 @@
     "eligible": 7,
     "designated": 4
    },
+   "land_designated_rural": 6,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2926,6 +3986,64 @@
      "designated": 1
     }
    ],
+   "nmtc_projects_land": 6,
+   "cdfis": [
+    {
+     "name": "Chehalis Tribal Loan Fund",
+     "city": "Oakville",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": true,
+     "website": "http://www.ctlf-empowers.org"
+    },
+    {
+     "name": "Jamestown S'Klallam Tribal Capital, Incorporated",
+     "city": "Sequim",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.jamestowncapital.org"
+    },
+    {
+     "name": "Northwest Native Development Fund",
+     "city": "Coulee Dam",
+     "type": "Loan Fund",
+     "on": "Colville",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.thenndf.org"
+    },
+    {
+     "name": "Pacific Northwest Tribal Lending, a Community Development Financial Institution",
+     "city": "Bellingham",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.lummicdfi.org"
+    },
+    {
+     "name": "Taala Fund",
+     "city": "Taholah",
+     "type": "Loan Fund",
+     "on": "Quinault",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.taalafund.org"
+    }
+   ],
    "expected_either": 4.0
   },
   "55": {
@@ -2959,6 +4077,7 @@
     "eligible": 3,
     "designated": 1
    },
+   "land_designated_rural": 1,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -2994,6 +4113,75 @@
      "designated": 0
     }
    ],
+   "nmtc_projects_land": 1,
+   "cdfis": [
+    {
+     "name": "Bay Bancorporation",
+     "city": "Green Bay",
+     "type": "Bank Holding Company",
+     "on": null,
+     "on_class": null,
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "Non given"
+    },
+    {
+     "name": "Bay Bank",
+     "city": "Green Bay",
+     "type": "Bank or Thrift",
+     "on": null,
+     "on_class": null,
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "Non given"
+    },
+    {
+     "name": "Cedar Growth Corporation",
+     "city": "Black River Falls",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "www.firstnationsfinancial.org"
+    },
+    {
+     "name": "First American Capital Corporation, Inc.",
+     "city": "Hale Corners",
+     "type": "Loan Fund",
+     "on": null,
+     "on_class": null,
+     "hq_designated": false,
+     "hq_eligible": false,
+     "approx": false,
+     "website": "https://faccwi.org/"
+    },
+    {
+     "name": "Wisconsin Native Loan Fund, Inc.",
+     "city": "Lac Du Flambeau",
+     "type": "Loan Fund",
+     "on": "Lac du Flambeau",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "www.winlf.org"
+    },
+    {
+     "name": "Woodland Financial Partners Inc",
+     "city": "Keshena",
+     "type": "Loan Fund",
+     "on": "Menominee",
+     "on_class": "federal",
+     "hq_designated": false,
+     "hq_eligible": true,
+     "approx": false,
+     "website": "www.woodlandfinancial.org"
+    }
+   ],
    "expected_either": 1.0
   },
   "56": {
@@ -3027,6 +4215,7 @@
     "eligible": 2,
     "designated": 2
    },
+   "land_designated_rural": 3,
    "otsa": {
     "eligible": 0,
     "designated": 0
@@ -3051,7 +4240,50 @@
      "eligible": 3,
      "designated": 3
     }
+   ],
+   "nmtc_projects_land": 1,
+   "cdfis": [
+    {
+     "name": "Wind River Development Fund",
+     "city": "Fort Washakie",
+     "type": "Loan Fund",
+     "on": "Wind River",
+     "on_class": "federal",
+     "hq_designated": true,
+     "hq_eligible": true,
+     "approx": true,
+     "website": "http://www.wrdf.org"
+    }
    ]
   }
+ },
+ "cdfis": {
+  "native_cdfis": 65,
+  "hq_on_land": 27,
+  "hq_in_statistical_area": 5,
+  "hq_in_eligible_tract": 36,
+  "hq_in_designated_tract": 14,
+  "match": {
+   "Place": 31,
+   "Exact": 20,
+   "Non_Exact": 11,
+   "ZIP": 3
+  },
+  "nmtc_projects_land_tracts": 60,
+  "nmtc_usd_land_tracts": 324121717,
+  "nmtc_land_tracts_with_project": 42,
+  "nmtc_land_tracts_with_project_designated": 21,
+  "native_cdes": [
+   "Alaska Growth Capital BIDCO, Inc.",
+   "Chickasaw Nation Community Development Endeavor LLC",
+   "National Tribal Development Association"
+  ],
+  "native_cde_projects": 21,
+  "native_cde_usd": 114140438,
+  "list_date": "2026-11-16",
+  "reservations_with_local_cdfi": 19,
+  "reservations_with_local_cdfi_designated": 12,
+  "reservations_without_local_cdfi": 60,
+  "reservations_without_local_cdfi_designated": 35
  }
 }

@@ -46,6 +46,14 @@ Method
     alone. "Alone" categories are mutually exclusive, so the sum does not double-count.
     The alone-or-in-combination counts are kept for sensitivity checks.
   * The Island Areas (AS, GU, MP, VI) are not in the ACS; their population columns are null.
+  * Population-weighted shares (added 2026-11-21) answer the area share's blind spot: what
+    share of the tract's *residents* live on reservation, trust or Home Land. Source is the
+    2020 Census PL 94-171 redistricting file, block level (SUMLEV 750). Each block row carries
+    its AIANNH code (AIANHH; 0001–4999 federal reservation/trust land, 5000–5499 Hawaiian Home
+    Land) and P1 race counts. Block GEOIDs roll up to 2020 tracts; Connecticut's 2022
+    planning-region tracts are matched on tract code. Only the states with an eligible tract
+    touching federal or Home Land are downloaded (≈30 files, ~1 GB, cached in data/raw/pl2020).
+    Population is 2020 decennial; the ACS columns are 2020–2024 — they will not sum exactly.
 
 Output columns
 --------------
@@ -56,6 +64,9 @@ Output columns
   native_area_name  largest AIANNH feature of any class in the tract, else null
   total_pop, aian_alone, aian_aoic, nhpi_alone, nhpi_aoic                          (ACS counts)
   aian_pct, aian_aoic_pct, nhpi_pct, native_pct                                    (0–1)
+  pop2020        2020 Census population (blocks in the tract; only states downloaded, else null)
+  federal_pop_share, hhl_pop_share   share of 2020 residents in federal / Home Land blocks (0–1)
+  native2020, native_on_land2020     AIAN alone (+ NHPI alone in HI), all blocks / federal+HHL blocks
 """
 
 from pathlib import Path
@@ -81,6 +92,21 @@ CLASSES = {
     "sdtsa": ["D9"],
 }
 EQUAL_AREA = "EPSG:6933"
+PL = ("https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/"
+      "{name}/{st}2020.pl.zip")
+RAW_PL = DATA / "raw" / "pl2020"
+STATE_NAMES = {
+    "04": ("Arizona", "az"), "06": ("California", "ca"), "08": ("Colorado", "co"), "09": ("Connecticut", "ct"),
+    "12": ("Florida", "fl"), "15": ("Hawaii", "hi"), "16": ("Idaho", "id"), "18": ("Indiana", "in"),
+    "19": ("Iowa", "ia"), "20": ("Kansas", "ks"), "22": ("Louisiana", "la"), "23": ("Maine", "me"),
+    "25": ("Massachusetts", "ma"), "26": ("Michigan", "mi"), "27": ("Minnesota", "mn"),
+    "28": ("Mississippi", "ms"), "30": ("Montana", "mt"), "31": ("Nebraska", "ne"), "32": ("Nevada", "nv"),
+    "35": ("New_Mexico", "nm"), "36": ("New_York", "ny"), "37": ("North_Carolina", "nc"),
+    "38": ("North_Dakota", "nd"), "40": ("Oklahoma", "ok"), "41": ("Oregon", "or"),
+    "44": ("Rhode_Island", "ri"), "45": ("South_Carolina", "sc"), "46": ("South_Dakota", "sd"),
+    "47": ("Tennessee", "tn"), "48": ("Texas", "tx"), "49": ("Utah", "ut"), "51": ("Virginia", "va"),
+    "53": ("Washington", "wa"), "55": ("Wisconsin", "wi"), "56": ("Wyoming", "wy"), "02": ("Alaska", "ak"),
+}
 
 
 def fetch(url: str, dest: Path) -> Path:
@@ -143,10 +169,67 @@ def land_shares(geoids: set[str]) -> pd.DataFrame:
     return out
 
 
+def pl_blocks(fips: str) -> pd.DataFrame:
+    """2020 PL 94-171 blocks for one state: tract, AIANNH code, total / AIAN / NHPI population."""
+    import zipfile
+    name, st = STATE_NAMES[fips]
+    z = zipfile.ZipFile(fetch(PL.format(name=name, st=st), RAW_PL / f"{st}2020.pl.zip"))
+    geo = pd.read_csv(z.open(f"{st}geo2020.pl"), sep="|", header=None, dtype=str, encoding="latin-1",
+                      usecols=[2, 7, 9, 35])
+    geo = geo[geo[2] == "750"].rename(columns={7: "logrecno", 9: "geocode", 35: "aianhh"})
+    seg = pd.read_csv(z.open(f"{st}000012020.pl"), sep="|", header=None, dtype=str, usecols=[4, 5, 9, 11])
+    seg.columns = ["logrecno", "pop", "aian", "nhpi"]
+    b = geo.merge(seg, on="logrecno")
+    for c in ["pop", "aian", "nhpi"]:
+        b[c] = b[c].astype(int)
+    code = pd.to_numeric(b.aianhh, errors="coerce")
+    b["federal"] = code.between(1, 4999)
+    b["hhl"] = code.between(5000, 5499)
+    b["tract"] = b.geocode.str[:11]
+    b["native"] = b.aian + (b.nhpi if fips == "15" else 0)
+    return b
+
+
+def pop_shares(out: pd.DataFrame) -> pd.DataFrame:
+    need = sorted({g[:2] for g in out.index[(out.federal_share > 0) | (out.hhl_share > 0)]})
+    rows = []
+    for fips in need:
+        b = pl_blocks(fips)
+        b["land"] = b.federal | b.hhl
+        agg = b.groupby("tract").apply(lambda g: pd.Series({
+            "pop2020": g["pop"].sum(),
+            "federal_pop": g.loc[g.federal, "pop"].sum(),
+            "hhl_pop": g.loc[g.hhl, "pop"].sum(),
+            "native2020": g.native.sum(),
+            "native_on_land2020": g.loc[g.land, "native"].sum(),
+        }), include_groups=False)
+        if fips == "09":  # 2022 planning-region GEOIDs: match on the (statewide-unique) tract code
+            ct = pd.Series([i for i in out.index if i[:2] == "09"])
+            m = dict(zip(ct.str[5:], ct))
+            agg = agg[agg.index.str[5:].isin(m)]
+            agg.index = agg.index.str[5:].map(m)
+        rows.append(agg)
+        print(f"    {fips}: {len(b):,} blocks, {int(b.federal.sum()):,} federal, {int(b.hhl.sum()):,} HHL")
+    p = pd.concat(rows)
+    p = p[p.index.isin(out.index)]
+    out["pop2020"] = p.pop2020.reindex(out.index)
+    den = out.pop2020.where(out.pop2020 > 0)
+    out["federal_pop_share"] = (p.federal_pop.reindex(out.index) / den).round(4)
+    out["hhl_pop_share"] = (p.hhl_pop.reindex(out.index) / den).round(4)
+    out["native2020"] = p.native2020.reindex(out.index)
+    out["native_on_land2020"] = p.native_on_land2020.reindex(out.index)
+    # Tracts in states with no federal or Home Land blocks among eligible tracts: zero by definition.
+    for c in ["federal_pop_share", "hhl_pop_share"]:
+        out[c] = out[c].where(out.index.str[:2].isin(need), 0.0)
+    return out
+
+
 def main() -> None:
     tracts = pd.read_parquet(DATA / "oz2_tracts.parquet", columns=["geoid", "state_fips"])
     ids = set(tracts.geoid)
     out = land_shares(ids)
+    print("  2020 block populations …")
+    out = pop_shares(out)
 
     r = load_acs("b02001", ids)
     out["total_pop"] = r.B02001_E001

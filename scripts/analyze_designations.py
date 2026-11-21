@@ -33,11 +33,15 @@ Usage
 
 import json
 import math
+import sys
 from datetime import date
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).parent))
+from native_rules import add_flags  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
 DATA = ROOT / "data"
@@ -59,8 +63,8 @@ TAG_RULES = {
     "oz1": "Was an OZ 1.0 tract (≥50% of land area in a 2018 QOZ)",
     "nmtc": "Prior New Markets Tax Credit investment in the tract",
     "cra": "CRA-eligible (LMI or distressed/underserved middle-income)",
-    "tribal": "Native land or community: ≥10% of the tract is reservation, trust land or Hawaiian Home Land, "
-              "or ≥20% of residents are Native (AIAN; in Hawaii, AIAN + NHPI)",
+    "tribal": "Native land or community: ≥10% of the tract's area or residents on reservation, trust land or "
+              "Hawaiian Home Land, or ≥20% of residents Native (AIAN; in Hawaii, AIAN + NHPI)",
     "housing": "Housing pressure: ≥50% renters and ≥50% of renters cost-burdened",
     "vacancy": "High vacancy: ≥15% of housing units vacant",
     "sweetspot": "Urban Institute Tier 1 — likely to attract investment, with larger impact",
@@ -92,7 +96,7 @@ BINARY = [
     ("ui_tier3", "Urban Institute Tier 3 (low probability)"),
     ("is_cra_lmi", "CRA-eligible"),
     ("is_persistent_poverty", "Persistent-poverty county"),
-    ("native_land", "Reservation or trust land (≥50% of tract)"),
+    ("native_land", "Reservation or trust land (≥50% of residents)"),
     ("native_pop", "Native residents ≥20%"),
     ("added_oct", "Added in October (missing-data rule)"),
 ]
@@ -120,15 +124,12 @@ def load() -> pd.DataFrame:
     cra = pd.read_parquet(DATA / "cra_lmi_overlap.parquet", columns=["geoid", "is_cra_lmi"])
     dci = pd.read_parquet(DATA / "dci.parquet", columns=["geoid", "dci_score", "dci_quintile"])
     ui = pd.read_parquet(DATA / "urban_investability.parquet", columns=["geoid", "ui_invest_score"])
-    # Native lands (ingest_native_lands.py). Thresholds match analyze_native_lands.py.
-    tr = pd.read_parquet(DATA / "native_lands.parquet")
-    hi = tr.geoid.str[:2] == "15"
-    tr["native_land"] = (tr.federal_share >= 0.5) | (hi & (tr.hhl_share >= 0.10))
-    tr["native_pop"] = tr.native_pct.fillna(0) >= 0.20
-    tr["is_tribal_overlap"] = (tr.federal_share >= 0.10) | (tr.hhl_share >= 0.10) | tr.native_pop
+    # Native lands (ingest_native_lands.py); thresholds in native_rules.py.
+    tr = add_flags(pd.read_parquet(DATA / "native_lands.parquet"))
+    tr["is_tribal_overlap"] = tr.tribal_tag
     tr["tribal_area_name"] = tr.federal_name.fillna(tr.native_area_name).where(tr.is_tribal_overlap)
     tr = tr[["geoid", "native_land", "native_pop", "is_tribal_overlap", "tribal_area_name",
-             "federal_share", "native_pct"]]
+             "federal_share", "federal_pop_share", "native_pct"]]
     pp = pd.read_parquet(DATA / "persistent_poverty.parquet", columns=["county_fips", "is_persistent_poverty"])
     nm_raw = pd.read_parquet(DATA / "cdfi_nmtc.parquet")
     nm = nm_raw.groupby("geoid").agg(nmtc_n=("qlici_amount", "size"), nmtc_usd=("qlici_amount", "sum"),
@@ -395,7 +396,7 @@ def main() -> None:
             "pct_nonwhite", "pct_black_nh", "pct_hispanic", "unemp_rate", "pct_ba_plus", "pct_renter",
             "vacancy_rate", "pct_rent_burdened", "median_home_value", "median_gross_rent",
             "median_hh_income", "is_oz1", "oz1_land_share", "is_cra_lmi", "dci_score",
-            "ui_invest_score", "is_persistent_poverty", "federal_share", "native_pct", "native_land",
+            "ui_invest_score", "is_persistent_poverty", "federal_share", "federal_pop_share", "native_pct", "native_land",
             "native_pop", "is_tribal_overlap", "tribal_area_name",
             "nmtc_n", "nmtc_usd", "cde_names", "tags"]
     (ROOT / "public" / "data").mkdir(parents=True, exist_ok=True)
